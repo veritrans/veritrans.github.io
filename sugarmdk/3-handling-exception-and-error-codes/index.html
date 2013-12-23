@@ -1,0 +1,617 @@
+<!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"><![endif]--><!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8"><![endif]--><!--[if IE 8]><html class="no-js lt-ie10 lt-ie9"><![endif]--><!--[if IE 9]><html class="no-js lt-ie10"><![endif]--><!--[if (gt IE 9)|!(IE)]<!--><html class="nojs"><!--<![endif]--><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Handling Exception and Error Codes</title><meta content="" name="description" /><meta content="width=device-width, initial-scale=1" name="viewport" /><link href="../../assets/stylesheets/app-cb52da42.css" media="screen" rel="stylesheet" type="text/css" /></head><body><!--[if lte IE 7]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]--><header><h1>Veritrans docs</h1></header><section><aside><menu><li><a href="/">Home</a></li><li><a href="/sugarmdk">Sugar MKD</a><ul><li><a href="/sugarmdk/1-introducing/">1. Introducing</a></li><li><a href="/sugarmdk/2-payment-manager/">2. Payment Manager</a></li><li><a href="/sugarmdk/3-handling-exception-and-error-codes/">3. Handling Exception and Error Codes</a></li><li><a href="/sugarmdk/4-order-manager/">4. Order Manager</a></li><li><a href="/sugarmdk/5-sub-merchant-manager/">5. Sub Merchant Manager</a></li><li><a href="/sugarmdk/6-veritrans-sandbox/">6. Veritrans Sandbox</a></li><li><a href="/sugarmdk/7-appendix/">7. Appendix</a></li></ul></li></menu></aside><article><h1>3. Handling Exception and Error Codes</h1>
+
+<p>Every service that is provided by Veritrans Managers, will throw a VeritransException object if an error occurred. 
+From the VeritransException object, the message, status and the error codes can be obtained.</p>
+
+<h3>VeritransException Object</h3>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td style="text-align: left">Error code of the exception occurred</td>
+</tr>
+<tr>
+<td>status</td>
+<td style="text-align: left">Short description of the exception occurred</td>
+</tr>
+<tr>
+<td>message</td>
+<td style="text-align: left">Complete description of the exception occurred</td>
+</tr>
+</tbody></table>
+
+<p>Sample Code: Handle exception for normal charge</p>
+<pre class="highlight java"><span class="k">try</span> <span class="o">{</span>
+    <span class="n">ChargeResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">paymentManager</span><span class="o">.</span><span class="na">doCharge</span><span class="o">(</span><span class="kt">char</span><span class="n">geReq</span><span class="o">,</span> <span class="n">sMerchant</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">VeritransException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">e</span><span class="o">.</span><span class="na">getStatus</span><span class="o">();</span>
+    <span class="n">e</span><span class="o">.</span><span class="na">getCode</span><span class="o">();</span>
+    <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</pre>
+<h3>Response Code List</h3>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>C001</td>
+<td style="text-align: left">Error code of the exception occurred</td>
+</tr>
+<tr>
+<td>status</td>
+<td style="text-align: left">Short description of the exception occurred</td>
+</tr>
+<tr>
+<td>message</td>
+<td style="text-align: left">Complete description of the exception occurred</td>
+</tr>
+</tbody></table>
+
+<p>Codes:</p>
+
+<table><thead>
+<tr>
+<th>Response Code</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>C001</td>
+<td style="text-align: left">Success Authorized or Cancel</td>
+</tr>
+<tr>
+<td>CA01</td>
+<td style="text-align: left">Application error</td>
+</tr>
+<tr>
+<td>CG01</td>
+<td style="text-align: left">Rejected by Bank (Payment provider)</td>
+</tr>
+<tr>
+<td>CC11</td>
+<td style="text-align: left">Validation error. The cardNumber is not valid.</td>
+</tr>
+<tr>
+<td>CC12</td>
+<td style="text-align: left">Validation error. Authorization amount must be &gt; 0.</td>
+</tr>
+<tr>
+<td>CC13</td>
+<td style="text-align: left">Validation error. Capture amount must be &lt;= authorization amount.</td>
+</tr>
+<tr>
+<td>CC14</td>
+<td style="text-align: left">Validation error. Cancel amount must be &lt;= authorization amount.</td>
+</tr>
+<tr>
+<td>CC17</td>
+<td style="text-align: left">Validation error. 3D-secure parameters are invalid.</td>
+</tr>
+<tr>
+<td>CC18</td>
+<td style="text-align: left">Validation error. Airline parameters are invalid.</td>
+</tr>
+<tr>
+<td>CC19</td>
+<td style="text-align: left">Validation error. The nonfare must be &lt;= total amount.</td>
+</tr>
+<tr>
+<td>CC20</td>
+<td style="text-align: left">Validation error. The authTermDays is invalid.</td>
+</tr>
+<tr>
+<td>CC21</td>
+<td style="text-align: left">Requested sector is not supported.</td>
+</tr>
+<tr>
+<td>CD01</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CH01</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CH03</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CH06</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CHS1</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CE01</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CE02</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CE03</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CE04</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CE05</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CE06</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CE07</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>CE08</td>
+<td style="text-align: left">Application error.</td>
+</tr>
+<tr>
+<td>I001</td>
+<td style="text-align: left">Success.</td>
+</tr>
+<tr>
+<td>I002</td>
+<td style="text-align: left">Invalid Transaction</td>
+</tr>
+<tr>
+<td>I003</td>
+<td style="text-align: left">Time-out Transaction</td>
+</tr>
+<tr>
+<td>I004</td>
+<td style="text-align: left">Invalid Parameter: <detail> , <detail>= description for the validation</td>
+</tr>
+<tr>
+<td>I005</td>
+<td style="text-align: left">Session Timeout</td>
+</tr>
+<tr>
+<td>IC12</td>
+<td style="text-align: left">Invalid Request Authorize Amount</td>
+</tr>
+<tr>
+<td>IC13</td>
+<td style="text-align: left">Invalid Request Item Data Null</td>
+</tr>
+<tr>
+<td>IC14</td>
+<td style="text-align: left">Invalid Request Item Name Out Of Length</td>
+</tr>
+<tr>
+<td>IC15</td>
+<td style="text-align: left">Invalid Request Item Price Incorrect</td>
+</tr>
+<tr>
+<td>IC16</td>
+<td style="text-align: left">Invalid Request Item Quantity Incorrect</td>
+</tr>
+<tr>
+<td>IC17</td>
+<td style="text-align: left">Invalid Request Item Price Not Match With Amount</td>
+</tr>
+<tr>
+<td>IC18</td>
+<td style="text-align: left">Invalid Request Unrecognized Signature</td>
+</tr>
+<tr>
+<td>IC19</td>
+<td style="text-align: left">Invalid Transaction Date</td>
+</tr>
+<tr>
+<td>IC20</td>
+<td style="text-align: left">Invalid Pay Type</td>
+</tr>
+<tr>
+<td>IC21</td>
+<td style="text-align: left">Invalid Currency</td>
+</tr>
+<tr>
+<td>IC22</td>
+<td style="text-align: left">Invalid Merchant Code</td>
+</tr>
+<tr>
+<td>IC23</td>
+<td style="text-align: left">Invalid Redirect URL</td>
+</tr>
+<tr>
+<td>IC24</td>
+<td style="text-align: left">Installment Item Properties are Incomplete</td>
+</tr>
+<tr>
+<td>IC25</td>
+<td style="text-align: left">Invalid Tenor</td>
+</tr>
+<tr>
+<td>IC26</td>
+<td style="text-align: left">Invalid Phone Number</td>
+</tr>
+<tr>
+<td>IC27</td>
+<td style="text-align: left">Invalid Email Address</td>
+</tr>
+<tr>
+<td>IC28</td>
+<td style="text-align: left">Invalid Token Response</td>
+</tr>
+<tr>
+<td>IC29</td>
+<td style="text-align: left">Invalid User Not Registered For Internet Banking</td>
+</tr>
+<tr>
+<td>IC31</td>
+<td style="text-align: left">Invalid MID</td>
+</tr>
+<tr>
+<td>IC33</td>
+<td style="text-align: left">Invalid Code Plan</td>
+</tr>
+<tr>
+<td>IC34</td>
+<td style="text-align: left">Invalid Postal Code</td>
+</tr>
+<tr>
+<td>IC35</td>
+<td style="text-align: left">Invalid Merchant CCID</td>
+</tr>
+<tr>
+<td>IC36</td>
+<td style="text-align: left">Cannot cancel settled transaction</td>
+</tr>
+<tr>
+<td>IC37</td>
+<td style="text-align: left">Invalid Notification URL</td>
+</tr>
+<tr>
+<td>IC38</td>
+<td style="text-align: left">Order has been canceled!</td>
+</tr>
+<tr>
+<td>IC39</td>
+<td style="text-align: left">Order has been settled!</td>
+</tr>
+<tr>
+<td>ID01</td>
+<td style="text-align: left">Order Not Found in Database</td>
+</tr>
+<tr>
+<td>ID02</td>
+<td style="text-align: left">Merchant Not Found in DB</td>
+</tr>
+<tr>
+<td>ID03</td>
+<td style="text-align: left">Corporation Not Found in Database</td>
+</tr>
+<tr>
+<td>IG04</td>
+<td style="text-align: left">Error No Connection To Aggregator</td>
+</tr>
+<tr>
+<td>IG05</td>
+<td style="text-align: left">Error Timeout</td>
+</tr>
+<tr>
+<td>IG06</td>
+<td style="text-align: left">Error Aggregator</td>
+</tr>
+<tr>
+<td>LA06</td>
+<td style="text-align: left">Unexpected error.</td>
+</tr>
+<tr>
+<td>NB01</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NB02</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NB03</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NB04</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NB05</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NC01</td>
+<td style="text-align: left">Username is not set into authentication parameter.</td>
+</tr>
+<tr>
+<td>NC04</td>
+<td style="text-align: left">Request parameter is invalid.</td>
+</tr>
+<tr>
+<td>NC06</td>
+<td style="text-align: left">Request parameter is invalid.</td>
+</tr>
+<tr>
+<td>NH01</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH02</td>
+<td style="text-align: left">Order is invalid.</td>
+</tr>
+<tr>
+<td>NH03</td>
+<td style="text-align: left">The original order is invalid.</td>
+</tr>
+<tr>
+<td>NH04</td>
+<td style="text-align: left">Duplicated order was detected.</td>
+</tr>
+<tr>
+<td>NH05</td>
+<td style="text-align: left">The order is under processing.</td>
+</tr>
+<tr>
+<td>NH06</td>
+<td style="text-align: left">The order is not under processing.</td>
+</tr>
+<tr>
+<td>NH08</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH09</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH10</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH12</td>
+<td style="text-align: left">The bandwidth limit was exceeded.</td>
+</tr>
+<tr>
+<td>NH13</td>
+<td style="text-align: left">Timeout occurred in the waiting for execution.</td>
+</tr>
+<tr>
+<td>NH14</td>
+<td style="text-align: left">The interrupt occurred in the waiting for execution.</td>
+</tr>
+<tr>
+<td>NH15</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH17</td>
+<td style="text-align: left">The order is in the pending state.</td>
+</tr>
+<tr>
+<td>NH18</td>
+<td style="text-align: left">The order was already successful.</td>
+</tr>
+<tr>
+<td>NH19</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH20</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH21</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH22</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH23</td>
+<td style="text-align: left">The order did not exist.</td>
+</tr>
+<tr>
+<td>NH26</td>
+<td style="text-align: left">Processing was skipped that it is under the execution.{0}:{1}</td>
+</tr>
+<tr>
+<td>NH27</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH28</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH29</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH30</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH31</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH32</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH33</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH34</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH35</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH36</td>
+<td style="text-align: left">The order had expired.</td>
+</tr>
+<tr>
+<td>NH37</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH38</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>NH39</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND01</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND02</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND03</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND04</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND05</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND06</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND07</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND08</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND09</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND10</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND11</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND12</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND13</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>ND14</td>
+<td style="text-align: left">System error.</td>
+</tr>
+<tr>
+<td>OD01</td>
+<td style="text-align: left">Invalid message format / unregistered merchant.</td>
+</tr>
+<tr>
+<td>R002</td>
+<td style="text-align: left">Denied by FDS</td>
+</tr>
+<tr>
+<td>R003</td>
+<td style="text-align: left">Challenged by FDS</td>
+</tr>
+<tr>
+<td>S001</td>
+<td style="text-align: left">Approval Status of Card/Issuer Participate in 3DS</td>
+</tr>
+<tr>
+<td>S011</td>
+<td style="text-align: left">Verify Status for 3D Secure</td>
+</tr>
+<tr>
+<td>SE02</td>
+<td style="text-align: left">ACS Failure</td>
+</tr>
+<tr>
+<td>SE01</td>
+<td style="text-align: left">Member or Issuer not participate in 3D Secure</td>
+</tr>
+<tr>
+<td>SE12</td>
+<td style="text-align: left">Failed attempt to authenticate 3D Secure.</td>
+</tr>
+<tr>
+<td>SE14</td>
+<td style="text-align: left">Communication error on 3D Secure service</td>
+</tr>
+<tr>
+<td>SG01</td>
+<td style="text-align: left">Application Errors</td>
+</tr>
+<tr>
+<td>SG02</td>
+<td style="text-align: left">Validation Error: <detail> , <detail>= description for the validation</td>
+</tr>
+<tr>
+<td>SG03</td>
+<td style="text-align: left">Submerchant Manager Error</td>
+</tr>
+<tr>
+<td>SG04</td>
+<td style="text-align: left">Accept Challenge Error</td>
+</tr>
+<tr>
+<td>SG05</td>
+<td style="text-align: left">Resource Not Found</td>
+</tr>
+<tr>
+<td>SG06</td>
+<td style="text-align: left">Error Executing MAP Service</td>
+</tr>
+<tr>
+<td>SG07</td>
+<td style="text-align: left">Invalid Order Type</td>
+</tr>
+<tr>
+<td>SG08</td>
+<td style="text-align: left">Cannot communicate with Gateway</td>
+</tr>
+<tr>
+<td>SG41</td>
+<td style="text-align: left">Wrong username or password</td>
+</tr>
+</tbody></table>
+</article></section><section><footer>&copy; Veritrans Documentation portal ^2014</footer></section><script src="../../assets/javascripts/app-b3406078.js" type="text/javascript"></script></body></html>
