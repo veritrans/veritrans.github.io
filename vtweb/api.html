@@ -561,7 +561,7 @@ TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
     <tr>
       <td>mStatus</td>
       <td>success</td>
-      <td>Status from transaction : <strong>success</strong>, <strong>failure</strong>, or <strong>pending</strong>.</td>
+      <td>Status from transaction : <strong>success</strong>, <strong>failure</strong>, <strong>challenge</strong>, or <strong>fatal</strong>.</td>
     </tr>
     <tr>
       <td>TOKEN_MERCHANT</td>
@@ -571,7 +571,7 @@ TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
   </tbody>
 </table>
 
-<p><strong>mStatus</strong> parameter is related to the <a href="/howto/index.html">Veritrans Fraud Detection System</a>. *mStatus represents the fraud detection system's response.</p>
+<p><strong>mStatus</strong> parameter is related to the <a href="/howto/index.html">Veritrans Fraud Detection System</a>. mStatus represents the fraud detection system's response.</p>
 
 <table>
   <thead>
@@ -590,11 +590,16 @@ TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
       <td>DENY</td>
     </tr>
     <tr>
-      <td>pending</td>
+      <td>challenge</td>
       <td>CHALLENGE</td>
+    </tr>
+    <tr>
+      <td>fatal</td>
+      <td>There is an internal system error. Please contact Veritrans Support when this occurs.</td>
     </tr>
   </tbody>
 </table>
+
 
 
 			<div class="pagination">

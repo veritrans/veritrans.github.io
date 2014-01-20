@@ -228,6 +228,57 @@
 </span><span class="cp">?&gt;</span>
 </pre>
 
+<h3 id="installment-transaction">Installment Transaction</h3>
+
+<p>To accept installment transactions, merchants are required to sign a separate agreement with the acquiring bank. To conduct an installment transactions with VT-web, you need to add <code>installment_banks</code> parameter to choose which banks are allowed, and <code>installment_terms</code> parameter to specify monthly installment available.</p>
+
+<h5 id="php-2">PHP</h5>
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+<span class="c1">//...
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">installment_banks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bni&#39;</span><span class="p">,</span> <span class="s1">&#39;cimb&#39;</span><span class="p">,</span> <span class="s1">&#39;mandiri&#39;</span><span class="p">];</span>
+
+<span class="cm">/* This will be the default parameters if you don&#39;t send any installment_terms parameter
+$terms = array(
+	&quot;bni&quot; =&gt; [&quot;3&quot;, &quot;6&quot;, &quot;12&quot;],
+	&quot;cimb&quot;=&gt; [&quot;3&quot;, &quot;6&quot;, &quot;12&quot;],
+	&quot;mandiri&quot;=&gt; [&quot;3&quot;,&quot;6&quot;,&quot;12&quot;]
+);
+*/</span>
+
+<span class="nv">$terms</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+	<span class="s2">&quot;bni&quot;</span>    <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="s2">&quot;11&quot;</span><span class="p">],</span>
+	<span class="s2">&quot;cimb&quot;</span>   <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">&quot;6&quot;</span><span class="p">],</span>
+	<span class="s2">&quot;mandiri&quot;</span><span class="o">=&gt;</span> <span class="p">[</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;6&quot;</span><span class="p">]</span>
+<span class="p">);</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">installment_terms</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$terms</span><span class="p">);</span>
+
+<span class="c1">//...
+</span><span class="cp">?&gt;</span>
+</pre>
+
+<h3 id="bank-points">Bank Points</h3>
+
+<p>To accept customer transactions using their credit card points, merchants are required to sign a separate agreement with the acquiring bank. To conduct this kind of transaction, you need to add <code>point_banks</code> parameter to choose which banks are allowed. The customer will choose how many points to use for the transaction in our VT-Web payment page. </p>
+
+<h5 id="php-3">PHP</h5>
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+<span class="c1">//...
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">point_banks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bni&#39;</span><span class="p">,</span> <span class="s1">&#39;cimb&#39;</span><span class="p">,</span> <span class="s1">&#39;mandiri&#39;</span><span class="p">];</span>
+<span class="c1">//...
+</span><span class="cp">?&gt;</span>
+</pre>
+<p>### Acquiring Bank</p>
+
+<p>If a merchant have multiple bank accounts registered to Veritrans, the merchant can choose which acquiring banks to use for any particular transaction. To choose which bank account to use in a transaction, you need to add <code>bank</code> parameter. </p>
+
+<h5 id="php-4">PHP</h5>
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+<span class="c1">//...
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">bank</span> <span class="o">=</span> <span class="s1">&#39;bni&#39;</span><span class="p">;</span>
+<span class="c1">//...
+</span><span class="cp">?&gt;</span>
+</pre>
+
 
 			<div class="pagination">
 				<ul><li class="left">« <small>Previous:</small> <a href="api.html">VT-Web: API Parameters</a></li><li class="right"><small>Next:</small> <a href="plugins_and_examples.html">VT-Web: Plugins and examples</a> »</li></ul>
