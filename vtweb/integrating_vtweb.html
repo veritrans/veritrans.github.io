@@ -236,7 +236,6 @@
 		<ul class="nav nav-tabs">
 		  <li class="active"><a href="#php1" data-toggle="tab">PHP</a></li>
 		  <li><a href="#ruby1" data-toggle="tab">Ruby</a></li>
-		  <li><a href="#net1" data-toggle="tab">.NET</a></li>
 		</ul>
 
 		<div class="tab-content">
@@ -285,36 +284,6 @@
 				Jump to step-2. Special case in Ruby, step-1 and step-2 are simplified into one step.
 			</div>
 
-			<div class="tab-pane" id="net1">				
-				
-				<pre class="highlight java">
-<span class="n">Veritrans</span> <span class="n">veritrans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Veritrans</span><span class="o">();</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">merchantId</span> <span class="o">=</span> <span class="s">&quot;sample1&quot;</span><span class="o">;</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">merchantHash</span> <span class="o">=</span> <span class="s">&quot;12323111&quot;</span><span class="o">;</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">orderId</span> <span class="o">=</span> <span class="s">&quot;your_unique_order_id&quot;</span><span class="o">;</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">sessionId</span> <span class="o">=</span> <span class="s">&quot;your_application_session_id&quot;</span><span class="o">;</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">grossAmount</span> <span class="o">=</span> <span class="s">&quot;250000&quot;</span><span class="o">;</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">email</span> <span class="o">=</span> <span class="s">&quot;john.smith@example.com&quot;</span><span class="o">;</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">customerSpecificationFlag</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span><span class="o">;</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">shippingFlag</span> <span class="o">=</span> <span class="s">&quot;0&quot;</span><span class="o">;</span>
-
-<span class="c1">// Set Commodities</span>
-<span class="c1">//Add new item</span>
-<span class="c1">//Format:</span>
-<span class="c1">//item id</span>
-<span class="c1">//price per unit</span>
-<span class="c1">//unit</span>
-<span class="c1">//name 1 : Indonesia</span>
-<span class="c1">//name 2 : English</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">addCommodity</span><span class="o">(</span><span class="s">&quot;sku1&quot;</span><span class="o">,</span> <span class="s">&quot;150000&quot;</span><span class="o">,</span>  <span class="s">&quot;1&quot;</span><span class="o">,</span> <span class="s">&quot;Kaos&quot;</span><span class="o">,</span> <span class="s">&quot;T-shirt&quot;</span><span class="o">);</span>
-<span class="n">veritrans</span><span class="o">.</span><span class="na">addCommodity</span><span class="o">(</span><span class="s">&quot;sku2&quot;</span><span class="o">,</span> <span class="s">&quot;100000&quot;</span><span class="o">,</span> <span class="s">&quot;1&quot;</span><span class="o">,</span> <span class="s">&quot;Celana&quot;</span><span class="o">,</span> <span class="s">&quot;Pants&quot;</span><span class="o">);</span>
-
-<span class="c1">// It will returns array of keys</span>
-<span class="c1">// veritrans.getTokenBrowser();</span>
-<span class="c1">// veritrans.getTokenMerchant();</span>
-
-<span class="n">veritrans</span><span class="o">.</span><span class="na">getKeys</span><span class="o">();</span>
-</pre>			</div>
 		</div>
 
 	</div>
@@ -331,7 +300,6 @@
 		<ul class="nav nav-tabs">
 		  <li class="active"><a href="#php2" data-toggle="tab">PHP</a></li>
 		  <li><a href="#ruby2" data-toggle="tab">Ruby</a></li>
-		  <li><a href="#net2" data-toggle="tab">.NET</a></li>
 		</ul>
 
 		<div class="tab-content">
@@ -415,33 +383,6 @@
 				</pre>
 			</div>
 
-			<div class="tab-pane" id="net2">
-				
-				<pre class="highlight html">
-<span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-	<span class="nt">&lt;script </span><span class="na">language=</span><span class="s">&quot;javascript&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
-	<span class="c">&lt;!--</span>
-	<span class="kd">function</span> <span class="nx">onloadEvent</span><span class="p">()</span> <span class="p">{</span>
-	  <span class="nb">document</span><span class="p">.</span><span class="nx">form_auto_post</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
-	<span class="p">}</span>
-	<span class="c1">//--&gt;
-</span>	<span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body</span> <span class="na">onload=</span><span class="s">&quot;onloadEvent();&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h1</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>Go to select payment options<span class="nt">&lt;/h1&gt;</span>
-
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&lt;?= Veritrans.PAYMENT_REDIRECT_URL ?&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">onSubmit=</span><span class="s">&quot;document.getElementById(&#39;submitBtn&#39;).disabled=true;&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;MERCHANT_ID&quot;</span> <span class="na">value=</span><span class="s">&quot;your_merchand_id&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;ORDER_ID&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?= your_order_id ?&gt;&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;TOKEN_BROWSER&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?= veritrans.getTokenBrowser() ?&gt;&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;submitBtn&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Confirm Checkout&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/form&gt;</span>
- <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-				</pre>
-			</div>
 		</div>
 	</div>
 
@@ -458,7 +399,6 @@
 		<ul class="nav nav-tabs">
 		  <li class="active"><a href="#php3" data-toggle="tab">PHP</a></li>
 		  <li><a href="#ruby3" data-toggle="tab">Ruby</a></li>
-		  <li><a href="#net3" data-toggle="tab">.NET</a></li>
 		</ul>
 
 		<div class="tab-content">
@@ -554,17 +494,6 @@
 				</pre>
 			</div>
 
-			<div class="tab-pane" id="net3">
-				<pre class="highlight java">
-<span class="n">VeritransNotification</span> <span class="n">notif</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VeritransNotification</span><span class="o">();</span>
-<span class="n">notif</span><span class="o">.</span><span class="na">parseMessage</span><span class="o">(</span><span class="n">http_post_message</span><span class="o">);</span>
-
-<span class="k">if</span><span class="o">(</span><span class="n">notif</span><span class="o">.</span><span class="na">tokenMerchant</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">veritrans</span><span class="o">.</span><span class="na">getTokenMerchant</span><span class="o">()){</span>
-  <span class="n">Console</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">&quot;Paid&quot;</span><span class="o">);</span>
-  <span class="n">Exit</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-<span class="o">}</span>
-				</pre>
-			</div>
 		</div>
 	</div>
 </div>
