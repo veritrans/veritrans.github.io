@@ -417,50 +417,26 @@
 
 <span class="c1">// Order exists?
 </span><span class="k">if</span><span class="p">(</span><span class="nv">$order_query</span><span class="o">-&gt;</span><span class="na">num_rows</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">){</span>
-  <span class="k">echo</span> <span class="s2">&quot;ERR&quot;</span><span class="p">;</span>
-  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;payment_notifications&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;params&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;no order&#39;</span><span class="p">));</span>
+  <span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Order ID does not exist.&quot;</span><span class="p">);</span>
   <span class="k">exit</span><span class="p">();</span>
 <span class="p">}</span>
   
 <span class="c1">// Verify the Merchant Key 
 </span><span class="k">if</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">token_merchant</span> <span class="o">!=</span> <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">TOKEN_MERCHANT</span><span class="p">){</span>
-  <span class="k">echo</span> <span class="s2">&quot;ERR&quot;</span><span class="p">;</span>
-  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;payment_notifications&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;params&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;no match&#39;</span><span class="p">));</span>
+  <span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Token merchant doesn not match.&quot;</span><span class="p">);</span>
   <span class="k">exit</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="c1">// Populate veritrans notification
-</span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;postalcode&#39;</span>          <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">postalcode</span><span class="p">,</span>
-  <span class="s1">&#39;mStatus&#39;</span>             <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">mStatus</span><span class="p">,</span> 
-  <span class="s1">&#39;phone&#39;</span>               <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">phone</span><span class="p">,</span> 
-  <span class="s1">&#39;shippingPhone&#39;</span>       <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">shippingPhone</span><span class="p">,</span> 
-  <span class="s1">&#39;mErrMsg&#39;</span>             <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">mErrMsg</span><span class="p">,</span> 
-  <span class="s1">&#39;email&#39;</span>               <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">,</span> 
-  <span class="s1">&#39;address&#39;</span>             <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">address</span><span class="p">,</span> 
-  <span class="s1">&#39;name&#39;</span>                <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span>
-  <span class="s1">&#39;vResultCode&#39;</span>         <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">vResultCode</span><span class="p">,</span> 
-  <span class="s1">&#39;shippingAddress&#39;</span>     <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">shippingAddress</span><span class="p">,</span>
-  <span class="s1">&#39;orderId&#39;</span>             <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">orderId</span><span class="p">,</span>
-  <span class="s1">&#39;shippingPostalcode&#39;</span>  <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">shippingPostalcode</span><span class="p">,</span>
-  <span class="s1">&#39;shippingName&#39;</span>        <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">shippingName</span><span class="p">,</span>
-  <span class="s1">&#39;TOKEN_MERCHANT&#39;</span>      <span class="o">=&gt;</span>  <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">TOKEN_MERCHANT</span><span class="p">,</span>
-  <span class="s1">&#39;params&#39;</span>              <span class="o">=&gt;</span>  <span class="nv">$post_vars</span>
-  <span class="p">);</span>
-
 <span class="c1">// Check transaction result
 </span><span class="k">if</span><span class="p">(</span><span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">mStatus</span> <span class="o">==</span> <span class="s1">&#39;success&#39;</span><span class="p">){</span>
-  <span class="c1">// log the notification
-</span>  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;payment_notifications&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
   
   <span class="c1">// Mark order as paid
 </span>  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;order_id&#39;</span><span class="p">,</span> <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">orderId</span><span class="p">);</span>
   <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s1">&#39;orders&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;paid&#39;</span><span class="p">));</span>      
   
-  <span class="k">echo</span> <span class="s2">&quot;OK&quot;</span><span class="p">;</span> 
+  <span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Payment success.&quot;</span><span class="p">);</span> 
 <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;payment_notifications&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-  <span class="k">echo</span> <span class="s2">&quot;ERR&quot;</span><span class="p">;</span>
+  <span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Payment failure. Payment status:&quot;</span><span class="o">.</span><span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">mStatus</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 				</pre>
