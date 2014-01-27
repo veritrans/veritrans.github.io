@@ -158,7 +158,7 @@
     <tr>
       <td>1</td>
       <td>Request Get Token to Veritrans.</td>
-      <td>Veritrans send TOKEN_MERCHANT and TOKEN_BROWSER.</td>
+      <td>Veritrans send <code>TOKEN_MERCHANT</code> and <code>TOKEN_BROWSER</code>.</td>
     </tr>
     <tr>
       <td>2</td>
@@ -178,12 +178,12 @@
     <tr>
       <td>5</td>
       <td>Transaction using invalid credit card number with: <strong>CC No</strong>: 1111111111111111, <strong>CVV</strong> : Random 3 Digit, <strong>Expiration Date</strong>: 2013-above.</td>
-      <td>Transaction failed with CC11 Error Message Code.</td>
+      <td>Transaction failed. Customer will see "Please correct credit card information" message.</td>
     </tr>
     <tr>
       <td>6</td>
       <td>Test finish redirection url.</td>
-      <td>After payment has been completed, it will be redirected back to merchant website based on finish_payment_return_url parameter.</td>
+      <td>After payment has been completed, it will be redirected back to merchant website based on <code>finish_payment_return_url</code> parameter.</td>
     </tr>
     <tr>
       <td>7</td>
@@ -200,9 +200,9 @@
 
 <h3 id="tips-how-to-test-notification-service-on-local-machine">Tips: How to test notification service on local machine</h3>
 
-<p>You need to specify public internet domain or public IP addresss on the <a href="https://payments.veritrans.co.id/map/settings/config_info">VT-Web Configuration Page</a> to test the Veritrans notification service. Local addresses such as <strong>http://localhost/</strong> or <strong>http://127.0.0.1/</strong> will not work. So, in the traditional way, you need to deploy/upload your code to the public web server/web hosting in order to test the Veritrans notification service.</p>
+<p>You need to specify public internet domain or public IP address on the <a href="https://payments.veritrans.co.id/map/settings/config_info">VT-Web Configuration Page</a> to test the Veritrans notification service. Local addresses such as <strong>http://localhost/</strong> or <strong>http://127.0.0.1/</strong> will not work. So, in the traditional way, you need to deploy/upload your code to the public web server/web hosting in order to test the Veritrans notification service.</p>
 
-<p>But, hey… We have some tips for you so you can test the Veritrans notification service on your local machine. You can use <a href="http://ngrok.com">Ngrok</a> to test HTTP(S) POST request notification on your local machine. With <strong>Ngrok</strong>, there is no need to deploy your code in the public web server/web hosting just to test the Veritrans notification service. However, your local machine need to be connected to internet in order to use With <strong>Ngrok</strong>.</p>
+<p>But, hey… We have some tips for you so you can test the Veritrans notification service on your local machine. You can use <a href="http://ngrok.com">Ngrok</a> to test HTTP(S) POST request notification on your local machine. With <strong>Ngrok</strong>, there is no need to deploy your code in the public web server/web hosting just to test the Veritrans notification service. However, your local machine need to be connected to internet in order to use <strong>Ngrok</strong>.</p>
 
 <p>Here are the steps:</p>
 
@@ -236,7 +236,7 @@
   </li>
   <li>Done. Now you can test your payment routine.</li>
   <li>
-    <p>Bonus tips: <strong>Ngrok</strong> captures all of the HTTP traffic that runs through it and provides a real-time web UI where you can introspect the requests in more detail. After starting With <strong>Ngrok</strong>, open http://localhost:4040. Make a request to your tunnel and you should see the web UI update with detailed information about the request to examine the raw bytes sent over the wire.</p>
+    <p>Bonus tips: <strong>Ngrok</strong> captures all of the HTTP traffic that runs through it and provides a real-time web UI where you can introspect the requests in more detail. After starting <strong>Ngrok</strong>, open http://localhost:4040. Make a request to your tunnel and you should see the web UI update with detailed information about the request to examine the raw bytes sent over the wire.</p>
 
     <p><img src="../images/ngrok-inspect.png" /></p>
   </li>

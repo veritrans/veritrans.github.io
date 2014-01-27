@@ -144,7 +144,7 @@
           <div class="vtweb-api">
             <h2 id="api-parameters">API Parameters</h2>
 
-<p>Veritrans API currently consists of request token and redirection to payment page. Please see the detail constraints of each API parameter and examples of success or error response.</p>
+<p>Veritrans VT-Web API currently consists of request token and redirection to payment page. Please see the detail constraints of each API parameter and examples of success or error response.</p>
 
 <h3 id="request-token-api">Request Token API</h3>
 
@@ -185,7 +185,7 @@
       <td>String</td>
       <td>128</td>
       <td><a href="http://en.wikipedia.org/wiki/Secure_Hash_Algorithm">SHA-512 hex</a></td>
-      <td>Generated SHA-512 hash of merchant_id, merchant_hash_key, settlement_type, order_id, and gross_amount</td>
+      <td>Generated SHA-512 hash of <code>merchant_id</code>, <code>merchant_hash_key</code>, <code>settlement_type</code>, <code>order_id</code>, and <code>gross_amount</code>. You can see a sample code to generate the <code>merchanthash</code> <a href="https://github.com/veritrans/veritrans-php/blob/master/lib/hash_generator.php">here</a>.</td>
     </tr>
     <tr>
       <td>order_id</td>
@@ -260,7 +260,7 @@
   </tbody>
 </table>
 
-<p>Required Field if required_shipping_address = 1</p>
+<p>Required Field if <code>required_shipping_address</code> = 1</p>
 
 <table>
   <thead>
@@ -313,7 +313,7 @@
       <td>String</td>
       <td>3</td>
       <td>A-Z</td>
-      <td><a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case; example “IDN” for Indonesia</td>
+      <td><a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case; example "IDN" for Indonesia</td>
     </tr>
     <tr>
       <td>shipping_postal_code</td>
@@ -327,7 +327,7 @@
       <td>String</td>
       <td>19</td>
       <td>+0-9 -</td>
-      <td>requires more than 9 digits can be started with '+'</td>
+      <td>Requires more than 9 digits can be started with '+'</td>
     </tr>
     <tr>
       <td>email</td>
@@ -420,7 +420,7 @@
       <td>String</td>
       <td>3</td>
       <td>A-Z</td>
-      <td><a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case; example “IDN” for Indonesia.</td>
+      <td><a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case; example "IDN" for Indonesia.</td>
     </tr>
     <tr>
       <td>postal_code</td>

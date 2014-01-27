@@ -164,8 +164,8 @@
 		<p>This is the first step of the payment process using VT-Web. In this step, you will get two tokens from VT-Web:</p>
 
 		<ul>
-			<li><strong>TOKEN_MERCHANT</strong>: Used to verify payment notification.</li>
-			<li><strong>TOKEN_BROWSER</strong>: Used for redirection parameter.</li>
+			<li><code>token_merchant</code>: Used to verify payment notification.</li>
+			<li><code>token_browser</code>: Used for redirection parameter.</li>
 		</ul>
 
 		<p>To get the tokens, there are several mandatory parameters that you would need to send:</p>
@@ -184,19 +184,19 @@
 		    </tr>
 		    <tr>
 		      <td>merchanthash</td>
-		      <td>Merchant unique configuration hash key, Please use the Development Merchant Hash Key indicated in <a href="getting_started.html">Getting Started</a> for testing purposes.</td>
+		      <td>Generated <a href="http://en.wikipedia.org/wiki/Secure_Hash_Algorithm">SHA-512</a> hash of <code>merchant_id</code>, <code>merchant_hash_key</code>, <code>settlement_type</code>, <code>order_id</code>, and <code>gross_amount</code>. You can see a sample code to generate the <code>merchanthash</code> <a href="https://github.com/veritrans/veritrans-php/blob/master/lib/hash_generator.php">here</a>.</td>
 		    </tr>
 		    <tr>
 		      <td>order_id</td>
-		      <td>Order Identifier set by the merchant</td>
+		      <td>Order Identifier set by the merchant.</td>
 		    </tr>
 				<tr>
 		      <td>payment_type</td>
-		      <td>'01' for default value (card transaction)</td>
+		      <td>'01' for default value (card transaction).</td>
 		    </tr>
 		    <tr>
 		      <td>billing_different_with_shipping</td>
-		      <td>Flag if billing and shipping addresses are different (1 = true, 0 = false). Useful to limit the number of fields that a customer needs to input if billing and shipping are the same</td>
+		      <td>Flag if billing and shipping addresses are different (1 = true, 0 = false). Useful to limit the number of fields that a customer needs to input if billing and shipping are same.</td>
 		    </tr>
 		    <tr>
 		      <td>required_shipping_address</td>
@@ -204,27 +204,27 @@
 		    </tr>
 				<tr>
 		      <td>repeat_line</td>
-		      <td>Total item in a cart</td>
+		      <td>Total item in a cart.</td>
 		    </tr>
 		    <tr>
 		      <td>item_id</td>
-		      <td>Product identifier set by the merchant</td>
+		      <td>Product identifier set by the merchant.</td>
 		    </tr>
 		    <tr>
 		      <td>price</td>
-		      <td>Price in Indonesian Rupiah</td>
+		      <td>Price in Indonesian Rupiah.</td>
 		    </tr>
 		    <tr>
 		      <td>quantity</td>
-		      <td>Quantity of Product</td>
+		      <td>Quantity of Product.</td>
 		    </tr>
 		    <tr>
 		      <td>item_name1</td>
-		      <td>Product Name (English Name)</td>
+		      <td>Product Name (English Name).</td>
 		    </tr>
 		    <tr>
 		      <td>item_name2</td>
-		      <td>Product Name (Indonesian Name)</td>
+		      <td>Product Name (Indonesian Name).</td>
 		    </tr>
 		  </tbody>
 		</table>
@@ -392,7 +392,7 @@
 
 		<p>Once the payment process is complete, VT-Web will send email notifications to both the merchant admin and the customer. VT-Web will also send a HTTP(S) POST request as notification to the merchant server. Please set the target URL for the HTTP POST request notification and the email notification at <a href="https://payments.veritrans.co.id/map/settings/config_info">VT-Web Configuration Page</a>.</p>
 
-		<p><strong>SECURITY TIP</strong>: The merchant needs to verify every notification request. The parameters that will be verified are <strong>order_id</strong> and <strong>TOKEN_MERCHANT</strong>. Please make sure that both parameters match with the ones inside your merchant database.</p>
+		<p><strong>SECURITY TIP</strong>: The merchant needs to verify every notification request. The parameters that will be verified are <code>orderId</code> and <code>TOKEN_MERCHANT</code>. Please make sure that both parameters match with the ones inside your merchant database.</p>
 
 		<h4>Sample Codes</h4>
 

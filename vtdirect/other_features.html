@@ -146,11 +146,11 @@
 
 <h3 id="bin-promo">BIN Promo</h3>
 
-<p>The BIN promo feature enables a merchant to offer promotions based on the customer's credit card BIN (Bank Identification Number). BIN is the first six digits in the credit card number that helps to identify which particular bank issues the card. This feature allows a merchant to cooperate with a particular bank for any marketing offers/programs. </p>
+<p>The BIN promo <code>bins</code> feature enables a merchant to offer promotions based on the customer's credit card BIN (Bank Identification Number). BIN is the first six digits in the credit card number that helps to identify which particular bank issues the card. This feature allows a merchant to cooperate with a particular bank for any marketing offers/programs. </p>
 
-<p>BIN promo works by the whitelist method. When the merchant's server sends a customer's transaction with the discounted price to Veritrans, it also sends along a list of credit card BIN numbers that are allowed to make the transaction. Veritrans will check if the credit card number used by the customer is in the list of allowed BIN. If not, the customer will not be able to finish the transaction. </p>
+<p><code>bins</code> works by the whitelist method. When the merchant's server sends a customer's transaction with the discounted price to Veritrans, it also sends along a list of credit card <code>bins</code> that are allowed to make the transaction. Veritrans will check if the credit card number used by the customer is in the list of allowed <code>bins</code>. If not, the customer will not be able to finish the transaction. </p>
 
-<p>For BIN promo transaction, merchant only need to add a JSON parameter representing the BIN card numbers allowed.</p>
+<p>For BIN promo transaction, merchant only need to add a JSON parameter <code>bins</code> representing the BIN card numbers allowed.</p>
 
 <h5 id="endpoint">Endpoint</h5>
 
@@ -261,7 +261,7 @@
 
 <p>The 3-D Secure protocol is a technical platform that includes technical specifications and requirements for issuers, acquirers, and merchants. In addition to utilizing the widely supported Internet technology Secure Sockets Layer (SSL) encryption to protect payment card information during transmission over the Internet, 3-D Secure uses cardholder authentication to verify the parties involved in the transaction.</p>
 
-<p>For 3D Secure Transaction, merchant only need add some flag in Normal Credit Card Transaction request.
+<p>For 3D Secure Transaction, merchant only need a flag <code>3dsecure</code>in Normal Credit Card Transaction request.
 Please refer to the sample code below for the additional JSON parameters that you need to add for a 3D secure transaction.</p>
 
 <h5 id="endpoint-1">Endpoint</h5>
@@ -436,11 +436,11 @@ Please refer to the sample code below for the additional JSON parameters that yo
 
 <h5 id="redirect-url">Redirect URL</h5>
 
-<p>After merchant get response, merchant need to redirect customer to <strong>redirect_url</strong>.</p>
+<p>After merchant get response, merchant need to redirect customer to <code>redirect_url</code>.</p>
 
 <h5 id="d-secure-callback-response">3D Secure Callback Response</h5>
 
-<p>After transaction finished by customer, veritrans will send a HTTP POST message back to the merchant’s 3dsecure_callback_url with a POST parameter called "vtdirect":</p>
+<p>After transaction finished by customer, veritrans will send a HTTP POST message back to the merchant’s <code>3dsecure_callback_url</code> with a POST parameter called <code>vtdirect</code>:</p>
 
 <pre class="highlight php">$data = $_POST[‘vtdirect’];
 </pre>
@@ -459,9 +459,9 @@ Please refer to the sample code below for the additional JSON parameters that yo
 
 <h5 id="d-secure-notification-response">3D Secure Notification Response</h5>
 
-<p>Other than the callback, veritrans will send a notification to the 3dsecure_notification_url set by the merchant. For security reasons, we suggest that you utilize the data in the 3dsecure_notification_url instead of the 3dsecure_callback_url to update the status of a transaction.</p>
+<p>Other than the callback, veritrans will send a notification to the <code>3dsecure_notification_url</code> set by the merchant. For security reasons, we suggest that you utilize the data in the <code>3dsecure_notification_url</code> instead of the <code>3dsecure_callback_url</code> to update the status of a transaction.</p>
 
-<p>Below is the data that we will send to your notification_url:</p>
+<p>Below is the data that we will send to your <code>3dsecure_notification_url</code>:</p>
 
 <pre class="highlight java"><span class="o">{</span>
   <span class="s">&quot;data&quot;</span><span class="o">:</span> <span class="o">{</span>
@@ -474,7 +474,7 @@ Please refer to the sample code below for the additional JSON parameters that yo
   <span class="s">&quot;message&quot;</span><span class="o">:</span> <span class="s">&quot;Success get status transaction&quot;</span>
 <span class="o">}</span>
 </pre>
-<p><strong>IMPORTANT</strong>: For security purposes, please make sure that the server_key included in the notification is the same as what you have on your server.</p>
+<p><strong>IMPORTANT</strong>: For security purposes, please make sure that the <code>server_key</code> included in the notification is the same as what you have on your server.</p>
 
 <h3 id="point-transaction">Point Transaction</h3>
 
@@ -811,7 +811,7 @@ exactly the same with the ones for a normal charge transactions</p>
 
 <h5 id="body-content-3">Body Content</h5>
 
-<p>Example of transaction request with installment parameters added in JSON (line 4-9):</p>
+<p>Example of transaction request with <code>installment</code> parameters added in JSON (line 4-9):</p>
 
 <pre class="highlight java"><span class="o">{</span>
   <span class="s">&quot;token_id&quot;</span> <span class="o">:</span> <span class="s">&quot;94960ece-9513-4265-9cf2-67a4da330213&quot;</span><span class="o">,</span> 
@@ -912,7 +912,7 @@ exactly the same with the ones for a normal charge transactions</p>
 
 <h5 id="sample-response-3">Sample Response:</h5>
 
-<p>The response you will receive from an installment transaction is identical to anormal transaction, but with one additional parameter: “monthly_payment” (line 45).</p>
+<p>The response you will receive from an installment transaction is identical to anormal transaction, but with one additional parameter: <code>monthly_payment</code> (line 45).</p>
 
 <pre class="highlight java"><span class="o">{</span>
 	<span class="s">&quot;data&quot;</span><span class="o">:</span> <span class="o">{</span>

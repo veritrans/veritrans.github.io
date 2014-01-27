@@ -166,17 +166,17 @@
   <li>Customer finish order and clicks checkout on the merchant website.</li>
   <li>Merchant server requests two tokens to VT-Web to be used for redirection.</li>
   <li>
-    <p>VT-Web will respond with two tokens: <strong>Merchant Token</strong> and <strong>Browser Token</strong>.</p>
+    <p>VT-Web will respond with two tokens: <code>TOKEN_MERCHANT</code> and <code>TOKEN_BROWSER</code>.</p>
 
-    <p><strong>Browser Token</strong> is used as one of the parameters to redirect the customer to the VT-Web payment page on Veritrans website.</p>
+    <p><code>TOKEN_MERCHANT</code> is used for verification purposes when providing notifications back to the merchant server.</p>
 
-    <p><strong>Merchant Token</strong> is used for verification purposes when providing notifications back to the merchant server.</p>
+    <p><code>TOKEN_BROWSER</code> is used as one of the parameters to redirect the customer to the VT-Web payment page on Veritrans website.</p>
   </li>
-  <li>Utilizing the Browser Token, the customer will be redirected to the VT-Web payment page on Veritrans website.</li>
+  <li>Utilizing the <code>TOKEN_BROWSER</code>, the customer will be redirected to the VT-Web payment page on Veritrans website.</li>
   <li>Customer enters payment details and completes the transaction on VT-Web's payment page on Veritrans website.</li>
   <li>After the payment process is complete, the customer will be redirected back to a page designated by the merchant.</li>
   <li>At the same time, Veritrans will send an email notification to the merchant admin and the customer. </li>
-  <li>Veritrans will also send a HTTP(S) POST request as notification to the merchant server. This HTTP(S) POST request consists of payment status information. With this information, merchant server can update the transaction status in the merchant database (Ex: paid, pending, failed).</li>
+  <li>Veritrans will also send a HTTP(S) POST request as notification to the merchant server. This HTTP(S) POST request consists of payment status information. With this information, merchant server can update the transaction status in the merchant database (For example: <code>success</code>, <code>failure</code>, <code>challenge</code>).</li>
   <li>Payment process is complete.</li>
 </ol>
 

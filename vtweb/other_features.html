@@ -158,7 +158,7 @@
 
 <p>BIN promo works by the whitelist method. When the merchant's server sends a customer's transaction with the discounted price to Veritrans, it also sends along a list of credit card BIN numbers that are allowed to make the transaction. Veritrans will check if the credit card number used by the customer is in the list of allowed BIN. If not, the customer will not be able to finish the transaction. </p>
 
-<p>The <strong>promo_bins</strong> parameter can be set during the 'get token' step of VT-Web. See <a href="integrating_vtweb.html">Integrating VT-Web</a> for further details.</p>
+<p>The <code>promo_bins</code> parameter can be set during the Get Token step of VT-Web. See <a href="integrating_vtweb.html">Integrating VT-Web</a> for further details.</p>
 
 <h5 id="php">PHP</h5>
 <pre class="highlight php"><span class="cp">&lt;?php</span>
@@ -219,7 +219,7 @@
 
 <h4 id="technical-implementation-1">Technical Implementation</h4>
 
-<p>Before your shop can use 3D Secure, you have to check with our sales representative if your 3D Secure MID is ready. Once it's ready, you can use it by enabling the 3D Secure flag parameter. This 3D Secure flag parameter can be set during the 'get token' step of VT-Web. See <a href="integrating_vtweb.html">Integrating VT-Web</a> for further details.</p>
+<p>Before your shop can use 3D Secure, you have to check with our sales representative if your 3D Secure MID is ready. Once it's ready, you can use it by enabling the 3D Secure flag parameter. This 3D Secure flag parameter can be set during the Get Token step of VT-Web. See <a href="integrating_vtweb.html">Integrating VT-Web</a> for further details.</p>
 
 <h5 id="php-1">PHP</h5>
 <pre class="highlight php"><span class="cp">&lt;?php</span>
