@@ -409,7 +409,7 @@
 
 <span class="c1">// Create VeritransNotification instance
 // It&#39;s a convinient way to evaluate veritrans payment notification params
-</span><span class="nv">$veritrans_notification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VeritransNotification</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">);</span>
+</span><span class="nv">$veritrans_notification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VeritransNotification</span><span class="p">();</span>
 
 <span class="c1">// Find our order
 </span><span class="nv">$order_query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get_where</span><span class="p">(</span><span class="s1">&#39;orders&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;order_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">orderId</span><span class="p">));</span>
