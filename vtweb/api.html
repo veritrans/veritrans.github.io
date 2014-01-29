@@ -284,35 +284,35 @@
       <td>String</td>
       <td>20</td>
       <td>a-z A-Z</td>
-      <td>-</td>
+      <td>Shipping first name</td>
     </tr>
     <tr>
       <td>shipping_last_name</td>
       <td>String</td>
       <td>20</td>
       <td>a-z A-Z</td>
-      <td>-</td>
+      <td>Shipping last name</td>
     </tr>
     <tr>
       <td>shipping_address1</td>
       <td>String</td>
       <td>100</td>
       <td>a-zA-Z0-9-_',.@()/ \</td>
-      <td>-</td>
+      <td>Shipping address line 1</td>
     </tr>
     <tr>
       <td>shipping_address2</td>
       <td>String</td>
       <td>100</td>
       <td>a-zA-Z0-9-_',.@()/ \</td>
-      <td>-</td>
+      <td>Shipping address line 2</td>
     </tr>
     <tr>
       <td>shipping_city</td>
       <td>String</td>
       <td>20</td>
       <td>a-zA-Z-_', .@</td>
-      <td>-</td>
+      <td>Shipping city</td>
     </tr>
     <tr>
       <td>shipping_country_code</td>
@@ -326,7 +326,7 @@
       <td>String</td>
       <td>9</td>
       <td>0-9</td>
-      <td>-</td>
+      <td>Shipping postal code</td>
     </tr>
     <tr>
       <td>shipping_phone</td>
@@ -363,7 +363,7 @@
       <td>Array</td>
       <td>-</td>
       <td>a-z A-Z</td>
-      <td>['credit_card', 'mandiri_clickpay']</td>
+      <td>Payment method showed, e.g. ['credit_card', 'mandiri_clickpay']</td>
     </tr>
     <tr>
       <td>finish_payment_return_url</td>
@@ -391,35 +391,35 @@
       <td>String</td>
       <td>20</td>
       <td>a-z A-Z</td>
-      <td>-</td>
+      <td>Billing first name</td>
     </tr>
     <tr>
       <td>last_name</td>
       <td>String</td>
       <td>20</td>
       <td>a-z A-Z</td>
-      <td>-</td>
+      <td>Billing last name</td>
     </tr>
     <tr>
       <td>address1</td>
       <td>String</td>
       <td>100</td>
       <td>a-zA-Z0-9 -_',.@()/\</td>
-      <td>-</td>
+      <td>Billing address line 1</td>
     </tr>
     <tr>
       <td>address2</td>
       <td>String</td>
       <td>100</td>
       <td>a-zA-Z0-9 -_',.@()/\</td>
-      <td>-</td>
+      <td>Billing address line 2</td>
     </tr>
     <tr>
       <td>city</td>
       <td>String</td>
       <td>20</td>
       <td>a-zA-Z-_', .@</td>
-      <td>-</td>
+      <td>Billing city</td>
     </tr>
     <tr>
       <td>country_code</td>
@@ -433,56 +433,56 @@
       <td>String</td>
       <td>9</td>
       <td>0-9</td>
-      <td>-</td>
+      <td>Billing postal code</td>
     </tr>
     <tr>
       <td>phone</td>
       <td>String</td>
       <td>19</td>
       <td>+0-9 -</td>
-      <td>requires more than 9 digits</td>
+      <td>Billing phone number, requires more than 9 digits</td>
     </tr>
     <tr>
       <td>promo_bins</td>
       <td>Array</td>
       <td>16</td>
       <td>0-9</td>
-      <td>1 up to 16 digits; example: ['411111', '5'] <a href="other_features.html">more..</a></td>
+      <td>Promo BIN code, 1 to 16 digits; e.g. ['411111', '5'] <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>enable_3d_secure</td>
       <td>String</td>
       <td>1</td>
       <td>1 or 0</td>
-      <td>1 = enabled; 0 = not enabled. <a href="other_features.html">more..</a></td>
+      <td>Enable 3D Secure, 1 = enabled; 0 = not enabled. <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>point_banks</td>
       <td>Array</td>
       <td>-</td>
       <td>'bni', 'cimb'</td>
-      <td>['bni', 'cimb'] <a href="other_features.html">more..</a></td>
+      <td>Point Banks, e.g. ['bni', 'cimb'] <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>installment_banks</td>
       <td>Array</td>
       <td>-</td>
       <td>'bni', 'cimb', 'mandiri'</td>
-      <td>['bni', 'cimb', 'mandiri'] <a href="other_features.html">more..</a></td>
+      <td>Installment Banks, e.g. ['bni', 'cimb', 'mandiri'] <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>installment_terms</td>
       <td>JSON Array</td>
       <td>-</td>
       <td>bank as key and terms as value</td>
-      <td>{"bni":["3", "6", "12"], "cimb":["3", "6", "12"]} <a href="other_features.html">more..</a></td>
+      <td>Installment terms, e.g. {"bni":["3", "6", "12"], "cimb":["3", "6", "12"]} <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>bank</td>
       <td>String</td>
       <td>-</td>
-      <td>'bni', 'cimb' or 'mandiri' <a href="other_features.html">more..</a></td>
-      <td>Acquiring Bank</td>
+      <td>'bni', 'cimb' or 'mandiri'</td>
+      <td>Acquiring Bank <a href="other_features.html">more..</a></td>
     </tr>
   </tbody>
 </table>
