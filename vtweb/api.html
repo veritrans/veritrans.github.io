@@ -153,6 +153,12 @@
 
 <pre class="highlight text">https://vtweb.veritrans.co.id/v1/tokens
 </pre>
+
+<p>Type:</p>
+
+<pre class="highlight text">JSON
+</pre>
+
 <p>HTTP Method:</p>
 
 <pre class="highlight text">POST
@@ -485,16 +491,29 @@
 
 <p>Type:</p>
 
-<pre class="highlight text">Plain text
+<pre class="highlight text">JSON
 </pre>
 <p>Example of successful response:</p>
 
-<pre class="highlight text">TOKEN_MERCHANT=af27bd7b-c4c1-45bd-b730-a46de616dbe5 
-TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
+<pre class="highlight text">
+{
+    "token_merchant": "3a258a55-6729-4eda-aeaa-c19e5a9af022",
+    "token_browser": "320b9231-a93b-4fd0-803f-54e4f093937d"
+}
 </pre>
 <p>Example of error response:</p>
 
-<pre class="highlight text">Shipping address1 can&#39;t be blank, Shipping first name should be alphabet, Shipping postal code is not valid
+<pre class="highlight text">
+{
+    "errors": {
+        "shipping_address1": "should be alphanumeric and specified symbol",
+        "shipping_country_code": [
+            "should be in ISO 3166-1 alpha-3",
+            "is the wrong length (should be 3 characters)"
+        ],
+        "installment_banks": "must be an Array"
+    }
+}
 </pre>
 
 <h3 id="redirection-api">Redirection API</h3>
@@ -504,6 +523,12 @@ TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
 
 <pre class="highlight text">https://vtweb.veritrans.co.id/v1/payments
 </pre>
+
+<p>Type:</p>
+
+<pre class="highlight text">JSON
+</pre>
+
 <p>HTTP Method:</p>
 
 <pre class="highlight text">POST
