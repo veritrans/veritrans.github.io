@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Veritrans API Documentation">
     <meta name="author" content="">
     <link href="../stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="../stylesheets/offcanvas.css" media="screen" rel="stylesheet" type="text/css" />
@@ -158,7 +158,7 @@
     <tr>
       <td>1</td>
       <td>Request Get Token to Veritrans.</td>
-      <td>Veritrans send <code>TOKEN_MERCHANT</code> and <code>TOKEN_BROWSER</code>.</td>
+      <td>Veritrans send <code>token_merchant</code> and <code>token_browser</code>.</td>
     </tr>
     <tr>
       <td>2</td>
@@ -167,17 +167,17 @@
     </tr>
     <tr>
       <td>3</td>
-      <td>Test dummy transaction using Visa Dummy Credit Card Number with <strong>CC No</strong>: 4111111111111111, <strong>CVV</strong>: Random 3 Digit, <strong>Expiration Date</strong>: 2013-above.</td>
+      <td>Test dummy transaction using Visa Dummy Credit Card Number with <strong>CC No</strong>: 4111111111111111, <strong>CVV</strong>: Random 3 Digit, <strong>Expiration Date</strong>: 2014-above.</td>
       <td>Transaction success.</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>Test dummy transaction using MasterCard Dummy Credit Card Number with: <strong>CC No</strong>: 5555555555554444, <strong>CVV</strong>: Random 3 Digit, <strong>Expiration Date</strong>: 2013-above.</td>
+      <td>Test dummy transaction using MasterCard Dummy Credit Card Number with: <strong>CC No</strong>: 5555555555554444, <strong>CVV</strong>: Random 3 Digit, <strong>Expiration Date</strong>: 2014-above.</td>
       <td>Transaction success.</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>Transaction using invalid credit card number with: <strong>CC No</strong>: 1111111111111111, <strong>CVV</strong> : Random 3 Digit, <strong>Expiration Date</strong>: 2013-above.</td>
+      <td>Transaction using invalid credit card number with: <strong>CC No</strong>: 1111111111111111, <strong>CVV</strong> : Random 3 Digit, <strong>Expiration Date</strong>: 2014-above.</td>
       <td>Transaction failed. Customer will see "Please correct credit card information" message.</td>
     </tr>
     <tr>
@@ -188,7 +188,7 @@
     <tr>
       <td>7</td>
       <td>Test HTTP post send after payment notification handling from Veritrans.</td>
-      <td>Merchant server will get HTTP Post Notification from Veritrans which include details of transaction.</td>
+      <td>Merchant server will get HTTP Post Notification from Veritrans which include details of transaction. Please set the notification url on <a href="https://payments.veritrans.co.id/map/settings/config_info">VT-Web Configuration Page</a> beforehand.</td>
     </tr>
     <tr>
       <td>8</td>

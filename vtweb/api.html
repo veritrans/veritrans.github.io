@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Veritrans API Documentation">
     <meta name="author" content="">
     <link href="../stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="../stylesheets/offcanvas.css" media="screen" rel="stylesheet" type="text/css" />
@@ -144,7 +144,7 @@
           <div class="vtweb-api">
             <h2 id="api-parameters">API Parameters</h2>
 
-<p>Veritrans VT-Web API currently consists of request token and redirection to payment page. Please see the detail constraints of each API parameter and examples of success or error response.</p>
+<p>Veritrans VT-Web API currently consists of request tokens and redirection to payment page. Please see the detail constraints of each API parameter and examples of success or error response.</p>
 
 <h3 id="request-token-api">Request Token API</h3>
 
@@ -152,6 +152,10 @@
 <p>Resource URL:</p>
 
 <pre class="highlight text">https://vtweb.veritrans.co.id/v1/tokens
+</pre>
+<p>Type:</p>
+
+<pre class="highlight text">JSON
 </pre>
 <p>HTTP Method:</p>
 
@@ -174,11 +178,18 @@
   </thead>
   <tbody>
     <tr>
+      <td>version</td>
+      <td>String</td>
+      <td>1</td>
+      <td>1</td>
+      <td>To be able to use params in this documentation, you have to set '1' as the value.</td>
+    </tr>
+    <tr>
       <td>merchant_id</td>
       <td>String</td>
       <td>22</td>
       <td>A-Z0-9</td>
-      <td><a href="getting_started.html">Merchant identifier</a></td>
+      <td><a href="getting_started.html">Merchant identifier</a>.</td>
     </tr>
     <tr>
       <td>merchanthash</td>
@@ -192,70 +203,63 @@
       <td>String</td>
       <td>30</td>
       <td>a-zA-Z0-9</td>
-      <td>Order Identifier</td>
-    </tr>
-    <tr>
-      <td>payment_type <sup style="color:red">*DEPRECATED</sup></td>
-      <td>String</td>
-      <td>2</td>
-      <td>01</td>
-      <td>'01' for default value (card transaction)</td>
+      <td>Order Identifier.</td>
     </tr>
     <tr>
       <td>billing_different_with_shipping</td>
       <td>String</td>
       <td>1</td>
       <td>1 or 0</td>
-      <td>1 = different with shipping; 0 = same with shipping</td>
+      <td>1 = different with shipping; 0 = same with shipping.</td>
     </tr>
     <tr>
       <td>required_shipping_address</td>
       <td>String</td>
       <td>1</td>
       <td>0 and 1</td>
-      <td>1 = required; 0 = not required</td>
+      <td>1 = required; 0 = not required.</td>
     </tr>
     <tr>
       <td>repeat_line</td>
       <td>String</td>
       <td>12</td>
       <td>0-9</td>
-      <td>Total item in a cart</td>
+      <td>Total item in the cart.</td>
     </tr>
     <tr>
       <td>item_id</td>
       <td>Array</td>
       <td>12</td>
       <td>a-zA-Z0-9</td>
-      <td>Item Identifier</td>
+      <td>Item Identifier.</td>
     </tr>
     <tr>
       <td>price</td>
       <td>Array</td>
       <td>9</td>
       <td>&gt; 0 and &lt; 100000000</td>
-      <td>IDR. Price of a commodity.</td>
+      <td>IDR. Price of the item.</td>
     </tr>
     <tr>
       <td>quantity</td>
       <td>Array</td>
       <td>4</td>
       <td>&gt; 0 and &lt; 1000</td>
-      <td>Quantity of a commodity</td>
+      <td>Quantity of the item.</td>
     </tr>
     <tr>
       <td>item_name1</td>
       <td>Array</td>
       <td>20</td>
       <td>a-zA-Z0-9 -_',.@&amp;+/</td>
-      <td>Name of commodity (English Name)</td>
+      <td>Name of the item (English Name).</td>
     </tr>
     <tr>
       <td>item_name2</td>
       <td>Array</td>
       <td>20</td>
       <td>a-zA-Z0-9 -_',.@&amp;+/</td>
-      <td>Name of commodity (Indonesian Name)</td>
+      <td>Name of the item (Indonesian Name).</td>
     </tr>
   </tbody>
 </table>
@@ -278,63 +282,63 @@
       <td>String</td>
       <td>20</td>
       <td>a-z A-Z</td>
-      <td>-</td>
+      <td>Shipping first name.</td>
     </tr>
     <tr>
       <td>shipping_last_name</td>
       <td>String</td>
       <td>20</td>
       <td>a-z A-Z</td>
-      <td>-</td>
+      <td>Shipping last name.</td>
     </tr>
     <tr>
       <td>shipping_address1</td>
       <td>String</td>
       <td>100</td>
       <td>a-zA-Z0-9-_',.@()/ \</td>
-      <td>-</td>
+      <td>Shipping address line 1.</td>
     </tr>
     <tr>
       <td>shipping_address2</td>
       <td>String</td>
       <td>100</td>
       <td>a-zA-Z0-9-_',.@()/ \</td>
-      <td>-</td>
+      <td>Shipping address line 2.</td>
     </tr>
     <tr>
       <td>shipping_city</td>
       <td>String</td>
       <td>20</td>
       <td>a-zA-Z-_', .@</td>
-      <td>-</td>
+      <td>Shipping city.</td>
     </tr>
     <tr>
       <td>shipping_country_code</td>
       <td>String</td>
       <td>3</td>
       <td>A-Z</td>
-      <td><a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case; example "IDN" for Indonesia</td>
+      <td><a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case; example "IDN" for Indonesia.</td>
     </tr>
     <tr>
       <td>shipping_postal_code</td>
       <td>String</td>
       <td>9</td>
       <td>0-9</td>
-      <td>-</td>
+      <td>Shipping postal code.</td>
     </tr>
     <tr>
       <td>shipping_phone</td>
       <td>String</td>
       <td>19</td>
       <td>+0-9 -</td>
-      <td>Requires more than 9 digits can be started with '+'</td>
+      <td>Shipping phone number, requires more than 9 digits can be started with '+'.</td>
     </tr>
     <tr>
       <td>email</td>
       <td>String</td>
       <td>30</td>
       <td>email</td>
-      <td>Email address</td>
+      <td>Email address.</td>
     </tr>
   </tbody>
 </table>
@@ -357,7 +361,7 @@
       <td>Array</td>
       <td>-</td>
       <td>a-z A-Z</td>
-      <td>['credit_card', 'mandiri_clickpay']</td>
+      <td>Payment method showed, e.g. ['credit_card', 'mandiri_clickpay'].</td>
     </tr>
     <tr>
       <td>finish_payment_return_url</td>
@@ -371,49 +375,49 @@
       <td>String</td>
       <td>256</td>
       <td>URL</td>
-      <td>URL redirection for transaction that never completed</td>
+      <td>URL redirection for transaction that never completed.</td>
     </tr>
     <tr>
       <td>error_payment_return_url</td>
       <td>String</td>
       <td>256</td>
       <td>URL</td>
-      <td>URL redirection if there is an error ocurred after payment</td>
+      <td>URL redirection if there is an error ocurred after payment.</td>
     </tr>
     <tr>
       <td>first_name</td>
       <td>String</td>
       <td>20</td>
       <td>a-z A-Z</td>
-      <td>-</td>
+      <td>Billing first name.</td>
     </tr>
     <tr>
       <td>last_name</td>
       <td>String</td>
       <td>20</td>
       <td>a-z A-Z</td>
-      <td>-</td>
+      <td>Billing last name.</td>
     </tr>
     <tr>
       <td>address1</td>
       <td>String</td>
       <td>100</td>
       <td>a-zA-Z0-9 -_',.@()/\</td>
-      <td>-</td>
+      <td>Billing address line 1.</td>
     </tr>
     <tr>
       <td>address2</td>
       <td>String</td>
       <td>100</td>
       <td>a-zA-Z0-9 -_',.@()/\</td>
-      <td>-</td>
+      <td>Billing address line 2.</td>
     </tr>
     <tr>
       <td>city</td>
       <td>String</td>
       <td>20</td>
       <td>a-zA-Z-_', .@</td>
-      <td>-</td>
+      <td>Billing city.</td>
     </tr>
     <tr>
       <td>country_code</td>
@@ -427,56 +431,56 @@
       <td>String</td>
       <td>9</td>
       <td>0-9</td>
-      <td>-</td>
+      <td>Billing postal code.</td>
     </tr>
     <tr>
       <td>phone</td>
       <td>String</td>
       <td>19</td>
       <td>+0-9 -</td>
-      <td>requires more than 9 digits</td>
+      <td>Billing phone number, requires more than 9 digits.</td>
     </tr>
     <tr>
       <td>promo_bins</td>
       <td>Array</td>
       <td>16</td>
       <td>0-9</td>
-      <td>1 up to 16 digits; example: ['411111', '5'] <a href="other_features.html">more..</a></td>
+      <td>Promo BIN code, 1 to 16 digits; e.g. ['411111', '5'] <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>enable_3d_secure</td>
       <td>String</td>
       <td>1</td>
       <td>1 or 0</td>
-      <td>1 = enabled; 0 = not enabled. <a href="other_features.html">more..</a></td>
+      <td>Enable 3D Secure, 1 = enabled; 0 = not enabled. <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>point_banks</td>
       <td>Array</td>
       <td>-</td>
-      <td>'bni', 'cimb', 'mandiri'</td>
-      <td>['bni', 'cimb', 'mandiri']</td>
+      <td>'bni', 'cimb'</td>
+      <td>Point Banks, e.g. ['bni', 'cimb'] <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>installment_banks</td>
       <td>Array</td>
       <td>-</td>
       <td>'bni', 'cimb', 'mandiri'</td>
-      <td>['bni', 'cimb', 'mandiri']</td>
+      <td>Installment Banks, e.g. ['bni', 'cimb', 'mandiri'] <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>installment_terms</td>
       <td>JSON Array</td>
       <td>-</td>
-      <td>bank followed by terms</td>
-      <td>{"bni"=&gt;["3", "6", "12"], "cimb"=&gt;["3", "6", "12"]}</td>
+      <td>bank as key and terms as value</td>
+      <td>Installment terms, e.g. {"bni":["3", "6", "12"], "cimb":["3", "6", "12"]} <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>bank</td>
       <td>String</td>
       <td>-</td>
       <td>'bni', 'cimb' or 'mandiri'</td>
-      <td>Acquiring Bank</td>
+      <td>Acquiring Bank <a href="other_features.html">more..</a></td>
     </tr>
   </tbody>
 </table>
@@ -485,17 +489,28 @@
 
 <p>Type:</p>
 
-<pre class="highlight text">Plain text
+<pre class="highlight text">JSON
 </pre>
 <p>Example of successful response:</p>
 
-<pre class="highlight text">TOKEN_MERCHANT=af27bd7b-c4c1-45bd-b730-a46de616dbe5 
-TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
-</pre>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;token_merchant&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3a258a55-6729-4eda-aeaa-c19e5a9af022&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;token_browser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;320b9231-a93b-4fd0-803f-54e4f093937d&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
 <p>Example of error response:</p>
 
-<pre class="highlight text">Shipping address1 can&#39;t be blank, Shipping first name should be alphabet, Shipping postal code is not valid
-</pre>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;errors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;shipping_address1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;should be alphanumeric and specified symbol&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;shipping_country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">&quot;should be in ISO 3166-1 alpha-3&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;is the wrong length (should be 3 characters)&quot;</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">&quot;installment_banks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;must be an Array&quot;</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
 
 <h3 id="redirection-api">Redirection API</h3>
 
@@ -503,6 +518,10 @@ TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
 <p>Resource URL:</p>
 
 <pre class="highlight text">https://vtweb.veritrans.co.id/v1/payments
+</pre>
+<p>Type:</p>
+
+<pre class="highlight text">JSON
 </pre>
 <p>HTTP Method:</p>
 
@@ -541,7 +560,7 @@ TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
 
 <p>After successful payment process, Veritrans will send the notification email to Merchant and Customer. Veritrans will send the HTTP POST request notification to Merchant Server as well. The target URL can be configured as the Merchant desires.</p>
 
-<p>To set the target URL to where message notification will be sent to, you can contact us for the further support.</p>
+<p>To set the target URL to where message notification will be sent to, you can <a href="https://www.veritrans.co.id/contact.html">contact us</a> for the further support.</p>
 
 <h4 id="sample-of-payment-notification-parameters">Sample of Payment notification parameters</h4>
 
@@ -556,7 +575,7 @@ TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
   <tbody>
     <tr>
       <td>orderId</td>
-      <td>ordersMhZmkVgspGMxmpj2Lkc4OJJT</td>
+      <td>QBOHHJ</td>
       <td> </td>
     </tr>
     <tr>
@@ -596,7 +615,7 @@ TOKEN_BROWSER=61d59cd0-fad2-49cb-b101-be92b9f63ad2
     </tr>
     <tr>
       <td>fatal</td>
-      <td>There is an internal system error. Please contact Veritrans Support when this occurs.</td>
+      <td>There is an internal system error. Please <a href="https://www.veritrans.co.id/contact.html">contact Veritrans Support</a> when this occurs.</td>
     </tr>
   </tbody>
 </table>

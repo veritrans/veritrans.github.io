@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Veritrans API Documentation">
     <meta name="author" content="">
     <link href="../stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="../stylesheets/offcanvas.css" media="screen" rel="stylesheet" type="text/css" />
@@ -168,68 +168,7 @@
 			<li><code>token_browser</code>: Used for redirection parameter.</li>
 		</ul>
 
-		<p>To get the tokens, there are several mandatory parameters that you would need to send:</p>
-
-		<table>
-		  <thead>
-		    <tr>
-		      <th>Parameter</th>
-		      <th>Description</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <td>merchant_id</td>
-		      <td>Merchant unique identifier, Please use the Development Merchant ID indicated in <a href="getting_started.html">Getting Started</a> for testing purposes.</td>
-		    </tr>
-		    <tr>
-		      <td>merchanthash</td>
-		      <td>Generated <a href="http://en.wikipedia.org/wiki/Secure_Hash_Algorithm">SHA-512</a> hash of <code>merchant_id</code>, <code>merchant_hash_key</code>, and <code>order_id</code>. You can see a sample code to generate the <code>merchanthash</code> <a href="https://github.com/panggi/vtweb/blob/master/lib/vtweb/merchant_hash_generator.rb">here</a>.</td>
-		    </tr>
-		    <tr>
-		      <td>order_id</td>
-		      <td>Order Identifier set by the merchant.</td>
-		    </tr>
-				<tr>
-		      <td>payment_type</td>
-		      <td>'01' for default value (card transaction).</td>
-		    </tr>
-		    <tr>
-		      <td>billing_different_with_shipping</td>
-		      <td>Flag if billing and shipping addresses are different (1 = true, 0 = false). Useful to limit the number of fields that a customer needs to input if billing and shipping are same.</td>
-		    </tr>
-		    <tr>
-		      <td>required_shipping_address</td>
-		      <td>Depending on the product sold, a merchant may or may not need a shipping address. Flag to set if a shipping address is required (1 = true, 0 = false)</td>
-		    </tr>
-				<tr>
-		      <td>repeat_line</td>
-		      <td>Total item in a cart.</td>
-		    </tr>
-		    <tr>
-		      <td>item_id</td>
-		      <td>Product identifier set by the merchant.</td>
-		    </tr>
-		    <tr>
-		      <td>price</td>
-		      <td>Price in Indonesian Rupiah.</td>
-		    </tr>
-		    <tr>
-		      <td>quantity</td>
-		      <td>Quantity of Product.</td>
-		    </tr>
-		    <tr>
-		      <td>item_name1</td>
-		      <td>Product Name (English Name).</td>
-		    </tr>
-		    <tr>
-		      <td>item_name2</td>
-		      <td>Product Name (Indonesian Name).</td>
-		    </tr>
-		  </tbody>
-		</table>
-
-		<p> See <a href="getting_started.html">API Parameters Page</a> for further details.</p>
+		<p>To get the tokens, there are several mandatory parameters that you would need to send. See <a href="getting_started.html">API Parameters Page</a> for the required parameters and further details.</p>
 
 		<h4>Sample Codes</h4>
 
@@ -244,39 +183,76 @@
 
 				<pre class="highlight php">
 <span class="cp">&lt;?php</span>
-<span class="nv">$veritrans</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans</span><span class="p">;</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">merchant_id</span>       <span class="o">=</span> <span class="s1">&#39;sample1&#39;</span><span class="p">;</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">merchant_hash_key</span> <span class="o">=</span> <span class="s1">&#39;12323111&#39;</span><span class="p">;</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">settlement_type</span>   <span class="o">=</span> <span class="s1">&#39;01&#39;</span><span class="p">;</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">order_id</span>          <span class="o">=</span> <span class="nv">$order_id</span><span class="p">;</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">session_id</span>        <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;session_id&#39;</span><span class="p">);</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">email</span>             <span class="o">=</span> <span class="s1">&#39;john.smith@example.com&#39;</span><span class="p">;</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">gross_amount</span>      <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">total</span><span class="p">();</span>
+<span class="nv">$veritrans</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans</span><span class="p">();</span>
 
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">billing_address_different_with_shipping_address</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">required_shipping_address</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="c1">//TODO: Change with your actual merchant id and merchant hash key
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">merchant_id</span>         <span class="o">=</span> <span class="s1">&#39;T100000000000001000001&#39;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">merchant_hash_key</span>   <span class="o">=</span> <span class="s1">&#39;305e0328a366cbce8e17a385435bb7eb3f0cbcfbfc0f1c3ef56b658&#39;</span><span class="p">;</span>
 
-<span class="c1">// Set commodities
-</span><span class="nv">$commodities</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="k">array</span><span class="p">(</span><span class="s2">&quot;COMMODITY_ID&quot;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;item1&#39;</span><span class="p">,</span> 
-        <span class="s2">&quot;COMMODITY_PRICE&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;130000&#39;</span><span class="p">,</span> 
-        <span class="s2">&quot;COMMODITY_QTY&quot;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> 
-        <span class="s2">&quot;COMMODITY_NAME1&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sepatu&#39;</span><span class="p">,</span> 
-        <span class="s2">&quot;COMMODITY_NAME2&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Shoes&#39;</span><span class="p">),</span>
-  <span class="k">array</span><span class="p">(</span><span class="s2">&quot;COMMODITY_ID&quot;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;item2&#39;</span><span class="p">,</span> 
-        <span class="s2">&quot;COMMODITY_PRICE&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;250000&#39;</span><span class="p">,</span> 
-        <span class="s2">&quot;COMMODITY_QTY&quot;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> 
-        <span class="s2">&quot;COMMODITY_NAME1&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Kaos&#39;</span><span class="p">,</span> 
-        <span class="s2">&quot;COMMODITY_NAME2&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TShirt&#39;</span><span class="p">),</span>
-      <span class="p">);</span>
+<span class="c1">//TODO: Change with your actual order_id.
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">order_id</span>            <span class="o">=</span> <span class="s1">&#39;your_unique_order_id&#39;</span><span class="p">;</span>
 
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">commodity</span> <span class="o">=</span> <span class="nv">$commodities</span><span class="p">;</span>
+<span class="c1">// Set commodity items
+</span><span class="nv">$items</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s2">&quot;item_id&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;itemsatu&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;price&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;250000&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;quantity&quot;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;item_name1&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sepatu&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;item_name2&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Shoes&#39;</span>
+            <span class="p">),</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s2">&quot;item_id&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;itemdua&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;price&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;500000&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;quantity&quot;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;item_name1&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Tas&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;item_name2&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Bag&#39;</span>
+            <span class="p">),</span>
+        <span class="p">);</span>
 
-<span class="c1">// It will returns array of keys
-// $keys[&#39;browser_key&#39;]
-// $keys[&#39;merchant_key&#39;]
-// If error accoured $keys[&#39;error_message&#39;] will be set
-</span><span class="nv">$keys</span> <span class="o">=</span> <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">get_keys</span><span class="p">();</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">items</span> <span class="o">=</span> <span class="nv">$items</span><span class="p">;</span>
+
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">required_shipping_address</span>                       <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Set &#39;0&#39; if shipping address is not required
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">billing_address_different_with_shipping_address</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Set &#39;0&#39; if shipping address = billing address
+</span>
+<span class="c1">// Set billing info. If you don&#39;t set this info, customer will need to fill it at the Veritrans payment page.
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">first_name</span>  <span class="o">=</span> <span class="s2">&quot;Andri&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">last_name</span>   <span class="o">=</span> <span class="s2">&quot;Setiawan&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">email</span>       <span class="o">=</span> <span class="s2">&quot;customer@email.com&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">address1</span>    <span class="o">=</span> <span class="s2">&quot;Karet Belakang&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">address2</span>    <span class="o">=</span> <span class="s2">&quot;Setiabudi&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">city</span>        <span class="o">=</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">country_code</span><span class="o">=</span> <span class="s2">&quot;IDN&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">postal_code</span> <span class="o">=</span> <span class="s2">&quot;12345&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">phone</span>       <span class="o">=</span> <span class="s2">&quot;08123123123123&quot;</span><span class="p">;</span>
+
+<span class="c1">// Set shipping info. If you don&#39;t set this info, customer will need to fill it at the Veritrans payment page.
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_first_name</span>     <span class="o">=</span> <span class="s2">&quot;John&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_last_name</span>      <span class="o">=</span> <span class="s2">&quot;Watson&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_address1</span>       <span class="o">=</span> <span class="s2">&quot;Bakerstreet 221B&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_address2</span>       <span class="o">=</span> <span class="s2">&quot;Tebet&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_city</span>           <span class="o">=</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_country_code</span>   <span class="o">=</span> <span class="s2">&quot;IDN&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_postal_code</span>    <span class="o">=</span> <span class="s2">&quot;12346&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_phone</span>          <span class="o">=</span> <span class="s2">&quot;082313123131&quot;</span><span class="p">;</span>
+
+<span class="c1">//Call Veritrans VT-Web API Get Token
+</span><span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$keys</span> <span class="o">=</span> <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">getTokens</span><span class="p">();</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$keys</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">print_r</span><span class="p">(</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">errors</span><span class="p">);</span>
+        <span class="k">exit</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">//Save this token_merchant on your database to be used for checking veritrans notification response.
+</span>        <span class="nv">$token_merchant</span> <span class="o">=</span> <span class="nv">$keys</span><span class="p">[</span><span class="s1">&#39;token_merchant&#39;</span><span class="p">];</span>
+
+        <span class="c1">//Use this token_browser for redirecting customer to Veritrans payment page.
+</span>        <span class="nv">$token_browser</span> <span class="o">=</span> <span class="nv">$keys</span><span class="p">[</span><span class="s1">&#39;token_browser&#39;</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
+<span class="p">}</span>
 <span class="cp">?&gt;</span>
 				</pre>
 			</div>
@@ -310,26 +286,24 @@
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
-	<span class="nt">&lt;script </span><span class="na">language=</span><span class="s">&quot;javascript&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
-	<span class="c">&lt;!--</span>
-	<span class="kd">function</span> <span class="nx">onloadEvent</span><span class="p">()</span> <span class="p">{</span>
-	  <span class="nb">document</span><span class="p">.</span><span class="nx">form_auto_post</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
-	<span class="p">}</span>
-	<span class="c1">//--&gt;
-</span>	<span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body</span> <span class="na">onload=</span><span class="s">&quot;onloadEvent();&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h1</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>Go to select payment options<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">language=</span><span class="s">&quot;javascript&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--</span>
+    <span class="kd">function</span> <span class="nx">onloadEvent</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">form_auto_post</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="c1">//--&gt;
+</span>    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&lt;?= Veritrans::PAYMENT_REDIRECT_URL ?&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">name=</span><span class="s">&#39;form_auto_post&#39;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;MERCHANT_ID&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?= MERCHANT_ID ?&gt;&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;ORDER_ID&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?= $order[&#39;order_id&#39;] ?&gt;&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;TOKEN_BROWSER&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?= $keys[&#39;token_browser&#39;] ?&gt;&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;submitBtn&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Confirm Checkout&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;body</span> <span class="na">onload=</span><span class="s">&quot;onloadEvent();&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&lt;?php echo Veritrans::PAYMENT_REDIRECT_URL ?&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">name=</span><span class="s">&#39;form_auto_post&#39;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;MERCHANT_ID&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?php echo $veritrans-&gt;merchant_id ?&gt;&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;ORDER_ID&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?php echo $veritrans-&gt;order_id ?&gt;&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;TOKEN_BROWSER&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?php echo $token_browser ?&gt;&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;span&gt;</span>Please wait. You are being redirected to Veritrans payment page...<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
 
- <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 				</pre>
 			</div>
 
@@ -390,9 +364,9 @@
 	<div class="tab-pane" id="step3">
 		<h3>Step-3: Handling Response</h3>
 
-		<p>Once the payment process is complete, VT-Web will send email notifications to both the merchant admin and the customer. VT-Web will also send a HTTP(S) POST request as notification to the merchant server. Please set the target URL for the HTTP POST request notification and the email notification at <a href="https://payments.veritrans.co.id/map/settings/config_info">VT-Web Configuration Page</a>.</p>
+		<p>Once the payment process is complete, VT-Web will send email notifications to both the merchant admin and the customer. VT-Web will also send a HTTP(S) POST request as notification to the merchant server. Please set the target URL for the HTTP(S) POST request notification and the email notification at <a href="https://payments.veritrans.co.id/map/settings/config_info">VT-Web Configuration Page</a>.</p>
 
-		<p><strong>SECURITY TIP</strong>: The merchant needs to verify every notification request. The parameters that will be verified are <code>orderId</code> and <code>TOKEN_MERCHANT</code>. Please make sure that both parameters match with the ones inside your merchant database.</p>
+		<p><strong>SECURITY TIP</strong>: The merchant needs to verify every notification request. The parameters that will be verified are <code>orderId</code> and <code>token_merchant</code>. Please make sure that both parameters match with the ones inside your merchant database.</p>
 
 		<h4>Sample Codes</h4>
 
@@ -407,36 +381,31 @@
 				<pre class="highlight php">
 <span class="cp">&lt;?php</span>
 
-<span class="c1">// Create VeritransNotification instance
-// It&#39;s a convinient way to evaluate veritrans payment notification params
-</span><span class="nv">$veritrans_notification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VeritransNotification</span><span class="p">();</span>
+<span class="nv">$notification</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VeritransNotification</span><span class="p">();</span>
 
-<span class="c1">// Find our order
-</span><span class="nv">$order_query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get_where</span><span class="p">(</span><span class="s1">&#39;orders&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;order_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">orderId</span><span class="p">));</span>
-<span class="nv">$order</span> <span class="o">=</span> <span class="nv">$order_query</span><span class="o">-&gt;</span><span class="na">row</span><span class="p">();</span>
-
-<span class="c1">// Order exists?
-</span><span class="k">if</span><span class="p">(</span><span class="nv">$order_query</span><span class="o">-&gt;</span><span class="na">num_rows</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">){</span>
-  <span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Order ID does not exist.&quot;</span><span class="p">);</span>
-  <span class="k">exit</span><span class="p">();</span>
-<span class="p">}</span>
-  
-<span class="c1">// Verify the Merchant Key 
-</span><span class="k">if</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">token_merchant</span> <span class="o">!=</span> <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">TOKEN_MERCHANT</span><span class="p">){</span>
-  <span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Token merchant doesn not match.&quot;</span><span class="p">);</span>
-  <span class="k">exit</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// Check transaction result
-</span><span class="k">if</span><span class="p">(</span><span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">mStatus</span> <span class="o">==</span> <span class="s1">&#39;success&#39;</span><span class="p">){</span>
-  
-  <span class="c1">// Mark order as paid
-</span>  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;order_id&#39;</span><span class="p">,</span> <span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">orderId</span><span class="p">);</span>
-  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s1">&#39;orders&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;paid&#39;</span><span class="p">));</span>      
-  
-  <span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Payment success.&quot;</span><span class="p">);</span> 
-<span class="p">}</span><span class="k">else</span><span class="p">{</span>
-  <span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Payment failure. Payment status:&quot;</span><span class="o">.</span><span class="nv">$veritrans_notification</span><span class="o">-&gt;</span><span class="na">mStatus</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$notification</span><span class="o">-&gt;</span><span class="na">mStatus</span> <span class="o">==</span> <span class="s2">&quot;fatal&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Veritrans internal system error. Please contact Veritrans Support if this occurs.
+</span><span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="c1">// TODO: Retrieve order info from your database to check the token_merchant for security purpose.
+</span>    <span class="c1">// The token_merchant that you get from this http(s) POST notification must be the same as token_merchant that you get previously when requesting token (before redirecting customer to Veritrans payment page.)
+</span>
+    <span class="c1">//$order = Order::find(&#39;order_id&#39; =&gt; $notification-&gt;orderId);
+</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$order</span><span class="p">[</span><span class="s1">&#39;TOKEN_MERCHANT&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$notification</span><span class="o">-&gt;</span><span class="na">TOKEN_MERCHANT</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// TODO: update order payment status on your database. 3 possibilities $notification-&gt;mStatus responses from Veritrans: &#39;success&#39;, &#39;failure&#39;, and &#39;challenge&#39;
+</span>        <span class="c1">// $order[&#39;payment_status&#39;] = $notification-&gt;mStatus; 
+</span>        <span class="c1">// $order-&gt;save();
+</span>    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// If token_merchant that you get from this http(s) POST request is different with token_merchant that you get previously when requesting token (before redirecting customer to Veritrans payment page.), there is a possibility that the http(s) POST request is not coming from Veritrans. 
+</span>        <span class="c1">// Don&#39;t update your payment status. 
+</span>        <span class="c1">// To make sure, check your Merchant Administration Portal (MAP) at https://payments.veritrans.co.id/map/
+</span>    <span class="p">}</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 				</pre>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Veritrans API Documentation">
     <meta name="author" content="">
     <link href="../stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="../stylesheets/offcanvas.css" media="screen" rel="stylesheet" type="text/css" />
@@ -166,13 +166,13 @@
   <li>Customer finish order and clicks checkout on the merchant website.</li>
   <li>Merchant server requests two tokens to VT-Web to be used for redirection.</li>
   <li>
-    <p>VT-Web will respond with two tokens: <code>TOKEN_MERCHANT</code> and <code>TOKEN_BROWSER</code>.</p>
+    <p>VT-Web will respond with two tokens: <code>token_merchant</code> and <code>token_browser</code>.</p>
 
-    <p><code>TOKEN_MERCHANT</code> is used for verification purposes when providing notifications back to the merchant server.</p>
+    <p><code>token_merchant</code> is used for verification purposes when providing notifications back to the merchant server.</p>
 
-    <p><code>TOKEN_BROWSER</code> is used as one of the parameters to redirect the customer to the VT-Web payment page on Veritrans website.</p>
+    <p><code>token_browser</code> is used as one of the parameters to redirect the customer to the VT-Web payment page on Veritrans website.</p>
   </li>
-  <li>Utilizing the <code>TOKEN_BROWSER</code>, the customer will be redirected to the VT-Web payment page on Veritrans website.</li>
+  <li>Utilizing the <code>token_browser</code>, the customer will be redirected to the VT-Web payment page on Veritrans website.</li>
   <li>Customer enters payment details and completes the transaction on VT-Web's payment page on Veritrans website.</li>
   <li>After the payment process is complete, the customer will be redirected back to a page designated by the merchant.</li>
   <li>At the same time, Veritrans will send an email notification to the merchant admin and the customer. </li>
