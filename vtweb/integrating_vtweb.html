@@ -63,6 +63,9 @@
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
 	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
 		<ul class="sidebar">
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
@@ -196,15 +199,15 @@
 </span><span class="nv">$items</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
             <span class="k">array</span><span class="p">(</span>
                 <span class="s2">&quot;item_id&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;itemsatu&#39;</span><span class="p">,</span>
-                <span class="s2">&quot;price&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;250000&#39;</span><span class="p">,</span>
-                <span class="s2">&quot;quantity&quot;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;price&quot;</span> <span class="o">=&gt;</span> <span class="mi">250000</span><span class="p">,</span>
+                <span class="s2">&quot;quantity&quot;</span>   <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
                 <span class="s2">&quot;item_name1&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sepatu&#39;</span><span class="p">,</span>
                 <span class="s2">&quot;item_name2&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Shoes&#39;</span>
             <span class="p">),</span>
             <span class="k">array</span><span class="p">(</span>
                 <span class="s2">&quot;item_id&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;itemdua&#39;</span><span class="p">,</span>
-                <span class="s2">&quot;price&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;500000&#39;</span><span class="p">,</span>
-                <span class="s2">&quot;quantity&quot;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;price&quot;</span> <span class="o">=&gt;</span> <span class="mi">500000</span><span class="p">,</span>
+                <span class="s2">&quot;quantity&quot;</span>   <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="s2">&quot;item_name1&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Tas&#39;</span><span class="p">,</span>
                 <span class="s2">&quot;item_name2&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Bag&#39;</span>
             <span class="p">),</span>
@@ -212,8 +215,8 @@
 
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">items</span> <span class="o">=</span> <span class="nv">$items</span><span class="p">;</span>
 
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">required_shipping_address</span>                       <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Set &#39;0&#39; if shipping address is not required
-</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">billing_address_different_with_shipping_address</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Set &#39;0&#39; if shipping address = billing address
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">required_shipping_address</span>                       <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Set 0 if shipping address is not required
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">billing_address_different_with_shipping_address</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Set 0 if shipping address = billing address
 </span>
 <span class="c1">// Set billing info. If you don&#39;t set this info, customer will need to fill it at the Veritrans payment page.
 </span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">first_name</span>  <span class="o">=</span> <span class="s2">&quot;Andri&quot;</span><span class="p">;</span>
@@ -235,6 +238,18 @@
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_country_code</span>   <span class="o">=</span> <span class="s2">&quot;IDN&quot;</span><span class="p">;</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_postal_code</span>    <span class="o">=</span> <span class="s2">&quot;12346&quot;</span><span class="p">;</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_phone</span>          <span class="o">=</span> <span class="s2">&quot;082313123131&quot;</span><span class="p">;</span>
+
+<span class="c1">// Payment options
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">enable_3d_secure</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">bank</span>                <span class="o">=</span> <span class="s2">&quot;bni&quot;</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">installment_banks</span>   <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bni&quot;</span><span class="p">,</span> <span class="s2">&quot;cimb&quot;</span><span class="p">];</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">promo_bins</span>          <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;411111&quot;</span><span class="p">,</span> <span class="s2">&quot;444444&quot;</span><span class="p">];</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">point_banks</span>         <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bni&quot;</span><span class="p">,</span> <span class="s2">&quot;cimb&quot;</span><span class="p">];</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">payment_methods</span>     <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span> <span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">];</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">installment_terms</span>   <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;bni&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span>
+    <span class="s1">&#39;cimb&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+    <span class="p">);</span>
 
 <span class="c1">//Call Veritrans VT-Web API Get Token
 </span><span class="k">try</span> <span class="p">{</span>
@@ -447,7 +462,7 @@
 
 
 			<div class="pagination">
-				<ul><li class="left">« <small>Previous:</small> <a href="getting_started.html">VT-Web: Getting Started</a></li><li class="right"><small>Next:</small> <a href="testing_vtweb.html">VT-Web: Testing</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Web: Getting Started</a></li><li class="right">Next: <a href="testing_vtweb.html">VT-Web: Testing</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

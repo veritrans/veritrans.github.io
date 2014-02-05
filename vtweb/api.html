@@ -63,6 +63,9 @@
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
 	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
 		<ul class="sidebar">
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
@@ -151,7 +154,7 @@
 <h4 id="url-endpoint">URL Endpoint</h4>
 <p>Resource URL:</p>
 
-<pre class="highlight text">https://vtweb.veritrans.co.id/v1/tokens
+<pre class="highlight text">https://vtweb.veritrans.co.id/v1/tokens.json
 </pre>
 <p>Type:</p>
 
@@ -160,6 +163,11 @@
 <p>HTTP Method:</p>
 
 <pre class="highlight text">POST
+</pre>
+<p>HTTP Header:</p>
+
+<pre class="highlight text">Content-Type: application/json
+Accept: application/json
 </pre>
 
 <h4 id="request-token-parameters">Request Token Parameters</h4>
@@ -179,7 +187,7 @@
   <tbody>
     <tr>
       <td>version</td>
-      <td>String</td>
+      <td>Integer</td>
       <td>1</td>
       <td>1</td>
       <td>To be able to use params in this documentation, you have to set '1' as the value.</td>
@@ -207,21 +215,21 @@
     </tr>
     <tr>
       <td>billing_different_with_shipping</td>
-      <td>String</td>
+      <td>Integer</td>
       <td>1</td>
       <td>1 or 0</td>
       <td>1 = different with shipping; 0 = same with shipping.</td>
     </tr>
     <tr>
       <td>required_shipping_address</td>
-      <td>String</td>
+      <td>Integer</td>
       <td>1</td>
       <td>0 and 1</td>
       <td>1 = required; 0 = not required.</td>
     </tr>
     <tr>
       <td>repeat_line</td>
-      <td>String</td>
+      <td>Integer</td>
       <td>12</td>
       <td>0-9</td>
       <td>Total item in the cart.</td>
@@ -235,14 +243,14 @@
     </tr>
     <tr>
       <td>price</td>
-      <td>Array</td>
+      <td>Integer</td>
       <td>9</td>
       <td>&gt; 0 and &lt; 100000000</td>
       <td>IDR. Price of the item.</td>
     </tr>
     <tr>
       <td>quantity</td>
-      <td>Array</td>
+      <td>Integer</td>
       <td>4</td>
       <td>&gt; 0 and &lt; 1000</td>
       <td>Quantity of the item.</td>
@@ -449,7 +457,7 @@
     </tr>
     <tr>
       <td>enable_3d_secure</td>
-      <td>String</td>
+      <td>Integer</td>
       <td>1</td>
       <td>1 or 0</td>
       <td>Enable 3D Secure, 1 = enabled; 0 = not enabled. <a href="other_features.html">more..</a></td>
@@ -473,7 +481,7 @@
       <td>JSON Array</td>
       <td>-</td>
       <td>bank as key and terms as value</td>
-      <td>Installment terms, e.g. {"bni":["3", "6", "12"], "cimb":["3", "6", "12"]} <a href="other_features.html">more..</a></td>
+      <td>Installment terms, e.g. {"bni":[3, 6, 12], "cimb":[3, 6, 12]} <a href="other_features.html">more..</a></td>
     </tr>
     <tr>
       <td>bank</td>
@@ -517,7 +525,7 @@
 <h4 id="url-endpoint-1">URL Endpoint</h4>
 <p>Resource URL:</p>
 
-<pre class="highlight text">https://vtweb.veritrans.co.id/v1/payments
+<pre class="highlight text">https://vtweb.veritrans.co.id/v1/payments.json
 </pre>
 <p>Type:</p>
 
@@ -526,6 +534,11 @@
 <p>HTTP Method:</p>
 
 <pre class="highlight text">POST
+</pre>
+<p>HTTP Header:</p>
+
+<pre class="highlight text">Content-Type: application/json
+Accept: application/json
 </pre>
 <h4>Redirection Parameters</h4>
 
@@ -547,7 +560,7 @@
     </tr>
     <tr>
       <td>token_browser</td>
-      <td>Use the value of token_browser you got from the request key process.</td>
+      <td>Use the value of token_browser you got from the request key process.                   ——</td>
     </tr>
   </tbody>
 </table>
@@ -623,7 +636,7 @@
 
 
 			<div class="pagination">
-				<ul><li class="left">« <small>Previous:</small> <a href="going_live.html">VT-Web: Going Live</a></li><li class="right"><small>Next:</small> <a href="other_features.html">VT-Web: Other Features</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="going_live.html">VT-Web: Going Live</a></li><li class="right">Next: <a href="other_features.html">VT-Web: Other Features</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
