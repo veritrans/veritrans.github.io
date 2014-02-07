@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
     <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
-    <link href="../stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="../stylesheets/github.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="../stylesheets/vt.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="shortcut icon" href="/favicon.ico"/>
 
@@ -165,7 +163,7 @@
 <!-- satu -->
 <h3>Token Request</h3>
 
-<img src="../images/vtdirect_introduction_1.png" /><p>This section covers steps 1-3 of the VT-Direct process flow chart (Figure 1). Every credit card transaction begins with a <strong>token request</strong>. When the customer clicks "pay", the customer’s credit card data is sent directly to Veritrans by Veritrans.js. Veritrans server than returns a <strong>one-time token</strong> back to the customer's web browser. The one-time token represents the customer's credit card details. This step alleviates the merchant's server from storing or processing credit card information, and thereby significantly reduce the information security compliance requirements for the merchant. </p>
+<img title="vtdirect" class="img-responsive" src="../images/vtdirect_introduction_1.png" /><p>This section covers steps 1-3 of the VT-Direct process flow chart (Figure 1). Every credit card transaction begins with a <strong>token request</strong>. When the customer clicks "pay", the customer’s credit card data is sent directly to Veritrans by Veritrans.js. Veritrans server than returns a <strong>one-time token</strong> back to the customer's web browser. The one-time token represents the customer's credit card details. This step alleviates the merchant's server from storing or processing credit card information, and thereby significantly reduce the information security compliance requirements for the merchant. </p>
 <p>We have provided a small JavaScript applet, Veritrans.js, to simplify the process of requesting Tokens to Veritrans system. To utilize the JavaScript, add Veritrans.js to your payment page like in the example below:</p>
 
 <pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="na">src=</span><span class="s">&quot;https://payments.veritrans.co.id/vtdirect/veritrans.min.js&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/script&gt;</span>
