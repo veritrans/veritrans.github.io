@@ -197,7 +197,7 @@ Accept: application/json
       <td>String</td>
       <td>128</td>
       <td><a href="http://en.wikipedia.org/wiki/Secure_Hash_Algorithm">SHA-512 hex</a></td>
-      <td>Generated SHA-512 hash of <code>merchant_id</code>, <code>merchant_hash_key</code>, and <code>order_id</code>. You can see a sample code to generate the <code>merchanthash</code> <a href="https://github.com/panggi/vtweb/blob/master/lib/vtweb/merchant_hash_generator.rb">here</a>.</td>
+      <td>Generated SHA-512 hash of <code>merchant_id</code>, <code>merchant_hash_key</code>, and <code>order_id</code>. You can see a sample code to generate the <code>merchanthash</code> here: <a href="https://github.com/veritrans/veritrans-php/blob/vtweb-2/lib/hash_generator.php">PHP</a>, <a href="https://github.com/panggi/vtweb_json/blob/master/lib/vtweb_json/merchant_hash_generator.rb">Ruby</a>.</td>
     </tr>
     <tr>
       <td>order_id</td>
@@ -564,9 +564,7 @@ Accept: application/json
 
 <h3 id="payment-notification">Payment Notification</h3>
 
-<p>After successful payment process, Veritrans will send the notification email to Merchant and Customer. Veritrans will send the HTTP POST request notification to Merchant Server as well. The target URL can be configured as the Merchant desires.</p>
-
-<p>To set the target URL to where message notification will be sent to, you can <a href="https://www.veritrans.co.id/contact.html">contact us</a> for the further support.</p>
+<p>After successful payment process, Veritrans will send the notification email to Merchant and Customer. Veritrans will send the HTTP POST request notification to Merchant Server as well. The target URL can be configured as the Merchant desires through <a href="https://payments.veritrans.co.id/map/settings/config_info">MAP</a></p>
 
 <h4 id="sample-of-payment-notification-parameters">Sample of Payment notification parameters</h4>
 
