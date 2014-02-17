@@ -155,7 +155,7 @@
 
 <div class="tab-content">
 	<div class="tab-pane active" id="step1">
-		<h3>Step-1: Get Tokens</h3>
+		<h3>Get Tokens</h3>
 
 		<p>This is the first step of the payment process using VT-Web. In this step, you will get two tokens from VT-Web:</p>
 
@@ -165,6 +165,8 @@
 		</ul>
 
 		<p>To get the tokens, there are several mandatory parameters that you would need to send. See <a href="getting_started.html">API Parameters Page</a> for the required parameters and further details.</p>
+		
+		<p>Note: If your system/database already contains your customers' information (phone, email, address, etc), you can pass those parameters as well so customers don't need to refill those details at the Veritrans payment page again.</p>
 
 		<h4>Sample Codes</h4>
 
@@ -275,7 +277,7 @@
 
 	<div class="tab-pane" id="step2">
 
-		<h3> Step-2: Creating the Form for Redirection </h3>
+		<h3>Creating the Form for Redirection </h3>
 
 		<p>The next step in the process is to redirect the customer from the checkout page to VT-Web's payment page. This action will require you to create a small form with Javascript auto submit. Please see the sample code below to get a clearer picture of the implementation.</p>
 
@@ -370,7 +372,7 @@
 	</div>
 
 	<div class="tab-pane" id="step3">
-		<h3>Step-3: Handling Response</h3>
+		<h3>Handling Response</h3>
 
 		<p>Once the payment process is complete, VT-Web will send email notifications to both the merchant admin and the customer. VT-Web will also send a HTTP(S) POST request as notification to the merchant server. Please set the target URL for the HTTP(S) POST request notification and the email notification at <a href="https://payments.veritrans.co.id/map/settings/config_info">VT-Web Configuration Page</a>.</p>
 
