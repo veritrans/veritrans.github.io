@@ -142,9 +142,9 @@
 
 <h3 id="bin-promo">BIN Promo</h3>
 
-<p>The BIN promo <code>bins</code> feature enables a merchant to offer promotions based on the customer's credit card BIN (Bank Identification Number). BIN is the first six digits in the credit card number that helps to identify which particular bank issues the card. This feature allows a merchant to cooperate with a particular bank for any marketing offers/programs. </p>
+<p>The BIN promo feature enables a merchant to offer promotions based on the customer's credit card BIN (Bank Identification Number). BIN is the first six digits in the credit card number that helps to identify which particular bank issues the card. This feature allows a merchant to cooperate with a particular bank for any marketing offers/programs. </p>
 
-<p><code>bins</code> works by the whitelist method. When the merchant's server sends a customer's transaction with the discounted price to Veritrans, it also sends along a list of credit card <code>bins</code> that are allowed to make the transaction. Veritrans will check if the credit card number used by the customer is in the list of allowed <code>bins</code>. If not, the customer will not be able to finish the transaction. </p>
+<p>BIN promo works by the whitelist method. When the merchant's server sends a customer's transaction with the discounted price to Veritrans, it also sends along a list of credit card <code>bins</code> that are allowed to make the transaction. Veritrans will check if the credit card number used by the customer is in the list of allowed <code>bins</code>. If not, the customer will not be able to finish the transaction. </p>
 
 <p>For BIN promo transaction, merchant only need to add a JSON parameter <code>bins</code> representing the BIN card numbers allowed.</p>
 
@@ -188,6 +188,25 @@
 </table>
 
 <p>Note: Endpoint, HTTP Method, and Header for installment transactions are exactly the same with the ones for a normal charge transactions</p>
+
+<h5 id="additional-parameter">Additional Parameter</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bins</td>
+      <td>Integer array with numbers of 1-6 digits</td>
+      <td><code>4</code>, <code>4321</code>, or <code>456789</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <h5 id="body-content">Body Content:</h5>
 
@@ -236,28 +255,11 @@
 <span class="o">}</span>
 </pre>
 
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>bins</td>
-      <td>Integer array with numbers of 1-6 digits</td>
-      <td>4,4321,456789</td>
-    </tr>
-  </tbody>
-</table>
-
 <h3 id="d-secure-transaction">3D Secure Transaction</h3>
 
 <p>The 3-D Secure protocol is a technical platform that includes technical specifications and requirements for issuers, acquirers, and merchants. In addition to utilizing the widely supported Internet technology Secure Sockets Layer (SSL) encryption to protect payment card information during transmission over the Internet, 3-D Secure uses cardholder authentication to verify the parties involved in the transaction.</p>
 
-<p>For 3D Secure Transaction, merchant only need a flag <code>3dsecure</code>in Normal Credit Card Transaction request.
+<p>For 3D Secure Transaction, merchant needs to add <code>3dsecure</code>, <code>3dsecure_callback_url</code>, and <code>3dsecure_notification_url</code> in normal credit card Transaction request.
 Please refer to the sample code below for the additional JSON parameters that you need to add for a 3D secure transaction.</p>
 
 <h5 id="endpoint-1">Endpoint</h5>
@@ -300,6 +302,35 @@ Please refer to the sample code below for the additional JSON parameters that yo
 </table>
 
 <p><strong>Note</strong>: Endpoint, HTTP Method, and Header for 3D secure transactions are exactly the same with the ones for a normal charge transactions.</p>
+
+<h5 id="additional-parameter-1">Additional Parameter</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3dsecure</td>
+      <td>3D Secure Flag</td>
+      <td><code>true</code> or <code>false</code></td>
+    </tr>
+    <tr>
+      <td>3dsecure_callback_url</td>
+      <td>Merchant callback url</td>
+      <td><code>http://sample.co.id/callback</code></td>
+    </tr>
+    <tr>
+      <td>3dsecure_notification_url</td>
+      <td>Merchant notification url</td>
+      <td><code>http://sample.co.id/notification</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <h5 id="body">Body</h5>
 
@@ -350,33 +381,6 @@ Please refer to the sample code below for the additional JSON parameters that yo
     <span class="o">}</span>
 <span class="o">}</span>
 </pre>
-
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>3dsecure</td>
-      <td>3D Secure Flag</td>
-      <td>true / false</td>
-    </tr>
-    <tr>
-      <td>3dsecure_callback_url</td>
-      <td>Merchant callback url</td>
-      <td>http://sample.co.id/callback</td>
-    </tr>
-    <tr>
-      <td>3dsecure_notification_url</td>
-      <td>Merchant notification url</td>
-      <td>http://sample.co.id/notification</td>
-    </tr>
-  </tbody>
-</table>
 
 <h5 id="sample-response">Sample response</h5>
 
@@ -438,7 +442,7 @@ Please refer to the sample code below for the additional JSON parameters that yo
 
 <p>After transaction finished by customer, veritrans will send a HTTP POST message back to the merchant’s <code>3dsecure_callback_url</code> with a POST parameter called <code>vtdirect</code>:</p>
 
-<pre class="highlight php">$data = $_POST[‘vtdirect’];
+<pre class="highlight php">$data = $_POST[&#39;vtdirect&#39;];
 </pre>
 <p>$data will include a JSON String with the following information:</p>
 
@@ -539,12 +543,12 @@ Please refer to the sample code below for the additional JSON parameters that yo
     <tr>
       <td>Token_id</td>
       <td>String. Token</td>
-      <td>e0fcc426-4a7c-4902- a332-3a3e563ec86e- 410505-1244</td>
+      <td><code>e0fcc426-4a7c-4902-a332-3a3e563ec86e-410505-1244</code></td>
     </tr>
     <tr>
       <td>Bank</td>
       <td>Name of bank</td>
-      <td>BNI, CIMB</td>
+      <td><code>bni</code> or <code>cimb</code></td>
     </tr>
   </tbody>
 </table>
@@ -609,6 +613,52 @@ Please refer to the sample code below for the additional JSON parameters that yo
 
 <p><strong>Note</strong>: Endpoint, HTTP Method, and Header for point transactions are exactly the same with the ones for a normal charge transactions.</p>
 
+<h5 id="additional-parameter-2">Additional Parameter</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>Transaction type</td>
+      <td><code>point</code></td>
+    </tr>
+    <tr>
+      <td>point</td>
+      <td>Details of point usage</td>
+      <td>JSON Object. Please see below for details</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bank</td>
+      <td>Name of bank</td>
+      <td><code>bni</code> atau <code>cimb</code></td>
+    </tr>
+    <tr>
+      <td>redeem_amount</td>
+      <td>Long. Amount of point used in the transaction</td>
+      <td><code>40000</code></td>
+    </tr>
+  </tbody>
+</table>
+
 <h5 id="body-content-2">Body Content:</h5>
 
 <pre class="highlight java"><span class="o">{</span>
@@ -657,50 +707,6 @@ Please refer to the sample code below for the additional JSON parameters that yo
   <span class="o">}</span>
 <span class="o">}</span>
 </pre>
-
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>type</td>
-      <td>Transaction type</td>
-      <td>Point</td>
-    </tr>
-    <tr>
-      <td>point</td>
-      <td>Details of point usage</td>
-      <td>JSON Object. Please see below for details</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>bank</td>
-      <td>Name of bank</td>
-      <td><strong>bni</strong> or <strong>cimb</strong></td>
-    </tr>
-    <tr>
-      <td>redeem_amount</td>
-      <td>Long. Amount of point used in the transaction</td>
-      <td>40000</td>
-    </tr>
-  </tbody>
-</table>
 
 <h5 id="sample-response-2">Sample Response:</h5>
 
@@ -868,8 +874,8 @@ exactly the same with the ones for a normal charge transactions</p>
   <tbody>
     <tr>
       <td>type</td>
-      <td>Type of transaction</td>
-      <td>Installment</td>
+      <td>Type of transaction.</td>
+      <td><code>installment</code></td>
     </tr>
     <tr>
       <td>installment</td>
@@ -890,18 +896,18 @@ exactly the same with the ones for a normal charge transactions</p>
   <tbody>
     <tr>
       <td>bank</td>
-      <td>Name of bank</td>
-      <td>bni/cimb</td>
+      <td>Name of bank.</td>
+      <td><code>bni</code> or <code>cimb</code></td>
     </tr>
     <tr>
       <td>term</td>
-      <td>Integer # of months of installment</td>
-      <td>3/6/9/12</td>
+      <td>Integer. Number of months of installment.</td>
+      <td><code>3</code>, <code>6</code>, <code>12</code>, …</td>
     </tr>
     <tr>
       <td>type</td>
-      <td>Installment code you received from bank</td>
-      <td>1</td>
+      <td>Installment code you received from bank.</td>
+      <td><code>1</code></td>
     </tr>
   </tbody>
 </table>
@@ -973,9 +979,9 @@ exactly the same with the ones for a normal charge transactions</p>
   </thead>
   <tbody>
     <tr>
-        <td>monthly payment</td>
-        <td>The monthly payment amount for the installment transaction</td>
-        <td>1667</td>
+        <td>monthly_payment</td>
+        <td>The monthly payment amount for the installment transaction.</td>
+        <td><code>1667</code></td>
     </tr>              
   </tbody>
 </table>
