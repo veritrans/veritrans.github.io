@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
     <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
-    <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="shortcut icon" href="/favicon.ico"/>
 
@@ -63,68 +63,68 @@
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="/vtweb/">Introduction</a></li>
+					<li class=""><a href="/id/vtweb/">Perkenalan</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="../vtweb/integrating_vtweb.html">Integrating</a></li>
+					<li class=""><a href="../vtweb/integrating_vtweb.html">Integrasi</a></li>
 					
-					<li class=""><a href="../vtweb/testing_vtweb.html">Testing</a></li>
+					<li class=""><a href="../vtweb/testing_vtweb.html">Pengujian</a></li>
 					
 					<li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="../vtweb/api.html">API Parameters</a></li>
+					<li class=""><a href="../vtweb/api.html">Parameter API</a></li>
 					
-					<li class=""><a href="../vtweb/other_features.html">Other Features</a></li>
+					<li class=""><a href="../vtweb/other_features.html">Fitur Lain</a></li>
 					
-					<li class=""><a href="../vtweb/plugins_and_examples.html">Plugins and examples</a></li>
+					<li class=""><a href="../vtweb/plugins_and_examples.html">Plugin dan Contoh</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Introduction</a></li>
+					<li class=""><a href="introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="getting_started.html">Getting Started</a></li>
+					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
 					
-					<li class="active"><a href="integrating_vtdirect.html">Integrating</a></li>
+					<li class=""><a href="integrating_vtdirect.html">Integrasi</a></li>
 					
-					<li class=""><a href="mobile_integration.html">Mobile Integration</a></li>
+					<li class="active"><a href="mobile_integration.html">Integrasi Mobile App</a></li>
 					
-					<li class=""><a href="testing_vtdirect.html">Testing</a></li>
+					<li class=""><a href="testing_vtdirect.html">Pengujian</a></li>
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_command.html">Other Commands</a></li>
+					<li class=""><a href="other_command.html">Perintah Lain</a></li>
 					
-					<li class=""><a href="other_features.html">Other Features</a></li>
+					<li class=""><a href="other_features.html">Fitur Lain</a></li>
 					
-					<li class=""><a href="examples.html">Examples</a></li>
+					<li class=""><a href="examples.html">Contoh</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Fraud Detection System (FDS) Response</a></li>
+					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Cancel/Void an Authorised Transaction</a></li>
+					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">General</a></li>
+					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
 					<li class=""><a href="../faq/fraud_and_security.html">Fraud and Security</a></li>
 					
-					<li class=""><a href="../faq/integration.html">Integration</a></li>
+					<li class=""><a href="../faq/integration.html">Integrasi</a></li>
 					
-					<li class=""><a href="../faq/account_management.html">Account Management</a></li>
+					<li class=""><a href="../faq/account_management.html">Manajemen Akun</a></li>
 					
 					<li class=""><a href="../faq/fds_response.html">Fraud Detection System (FDS) Response</a></li>
 					
@@ -137,148 +137,325 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="vtdirect-integrating-vtdirect">
-            <h2>Integrating VT-Direct</h2>
+          <div class="id-vtdirect-mobile-integration">
+            <h2>VT-Direct di Mobile Application</h2>
 
-<h3>Four Quick Steps</h3>
+<h3>Alur kerja VT-Direct di Mobile Application</h3>
+
+<p><img title="vt direct flow on mobile application" class="img-responsive" src="/images/vtdirect-mobile-flow.png"></p>
+
 <ol>
-	<li>Token Request</li>
-	<li>Send Token to Merchant</li>
-	<li>Charge Transaction</li>
-	<li>Response Handling</li>
+	<li>
+		<p>Checkout</p>
+		<p>Pelanggan memasukkan informasi kartu kreditnya di mobile application merchant dan kemudian mengeklik tombol "Pay (Bayar)" untuk melakukan pembayaran.</p>
+	</li>
+	<li>
+		<p>Send Card Data</p>
+		<p>Ketika pelanggan mengeklik tombol "Pay (Bayar)", mobile application merchant akan menggabungkan data sensitif(nomor kartu kredit, CVV, dan expired date) dengan public-key kemudian mengirimkannya ke server Veritrans untuk me-request sebuah onetime-token (<code>Token</code>).</p>
+	</li>
+	<li>
+		<p><strong>Get Token</strong></p> 
+		<p>Veritrans akan mengembalikan sebuah <code>Token</code> ke mobile application. <code>Token</code> hanya akan valid untuk jangka waktu 75 detik, dan tidak dapat digunakan lagi setelahnya.
+		</p>
+	</li>
+	<li>
+		<p><strong>Send Token</strong></p>
+		<p><code>Token</code> kemudian dikirimkan ke server merchant oleh mobile application. Perlu diperhatikan bahwa merchant hanya mendapatkan <code>Token</code> yang merepresentasikan informasil kartu kredit, dan tidak secara langsung menyimpan ataupun memproses informasi sensitif kartu kredit.</p>
+	</li>
+	<li>
+		<p><strong>Request Charge</strong></p>
+		<p>Merchant mengirim request 'charge' ke Veritrans yang berisi parameter <code>Token</code> dan detail lain yang dibutuhkan Veritrans untuk memproses transaksi (Misalnya: detail produk dan alamat pengiriman).</p>
+	</li>
+	<li>
+		<p><strong>Transaction Response Handling</strong></p> 
+		<p>Veritrans mengembalikan respon ke server merchant hasil dari proses transaksi ke server merchant(Contoh: successful atau failure).</p>
+	</li>
+	<li>
+		<p><strong>Notify Customer</strong></p>
+		<p>Mobile application merchant mendapatkan respon hasil transaksi dari server merchant dan kemudian menampilkannya ke pelanggan.</p>
+	</li>
 </ol>
 
-<p><br /></p>
+
+<h3>Perbedaan antara VT-Direct pada Mobile Application dengan VT-Direct pada Web Application</h3>
+
+<p>Secara konsep, implementasi VT-Direct pada Mobile Application sama dengan implementasi VT-Direct pada Web Application. Perbedaannya adalah alur nomor 1 sampai dengan alur nomor 4 terjadi di mobile application, tidak di browser pelanggan.</p>
+
+<p><strong>Catatan penting:</strong></p>
+
+<p>Satu hal penting yang perlu diperhatikan adalah bahwa Charge Request harus diimplementasikan di server merchant. Dengan demikian, Anda tidak perlu memasukkan <code>server_key</code> di mobile application. Bahkan, untuk alasan keamanan, Anda tidak boleh menyimpan <code>server_key</code> di mobile application. Cukup simpan <code>server_key</code> di server merchant saja.</p>
+
+
+<h3>Integrasi VT-Direct di Mobile Application</h3>
+
+<p>Empat langkah integrasi:</p>
+<ol>
+	<li>Mendapatkan Token</li>
+	<li>Mengirim Token ke Merchant</li>
+	<li>Melakukan Charge Transaksi</li>
+	<li>Menangani Respon</li>
+</ol>
+
+<br />
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#step1" data-toggle="tab"><span>Step 1</span>Token Request</a></li>
-  <li><a href="#step2" data-toggle="tab"><span>Step 2</span>Send Token to Merchant</a></li>
-  <li><a href="#step3" data-toggle="tab"><span>Step 3</span>Charge Transaction</a></li>
-  <li><a href="#step4" data-toggle="tab"><span>Step 4</span>Response Handling</a></li>
+  <li class="active"><a href="#step1" data-toggle="tab"><span>Langkah 1</span>Mendapatkan Token</a></li>
+  <li><a href="#step2" data-toggle="tab"><span>Langkah 2</span>Mengirim Token ke Merchant</a></li>
+  <li><a href="#step3" data-toggle="tab"><span>Langkah 3</span>Melakukan Charge Transaksi</a></li>
+  <li><a href="#step4" data-toggle="tab"><span>Langkah 4</span>Menangani Respon</a></li>
 </ul>
 
 <div class="tab-content">
 <div class="tab-pane active" id="step1"><!-- step 1-->
-<!-- satu -->
-<h3>Token Request</h3>
+<h3>Mendapatkan Token</h3>
+<h4>Contoh kode</h4>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#ios1" data-toggle="tab">iOS</a></li>
+  <li><a href="#android1" data-toggle="tab">Android</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="ios1">
 
-<img title="vtdirect" class="img-responsive" src="../images/vtdirect_introduction_1.png" /><p>This section covers steps 1-3 of the VT-Direct process flow chart (Figure 1). Every credit card transaction begins with a <strong>token request</strong>. When the customer clicks "pay", the customer’s credit card data is sent directly to Veritrans by Veritrans.js. Veritrans server than returns a <strong>one-time token</strong> back to the customer's web browser. The one-time token represents the customer's credit card details. This step alleviates the merchant's server from storing or processing credit card information, and thereby significantly reduce the information security compliance requirements for the merchant. </p>
-<p>We have provided a small JavaScript applet, Veritrans.js, to simplify the process of requesting Tokens to Veritrans system. To utilize the JavaScript, add Veritrans.js to your payment page like in the example below:</p>
+<p>Download <strong>VTDirectSDK</strong> untuk menggunakan VTDirectService class.</p>
 
-<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="na">src=</span><span class="s">&quot;https://payments.veritrans.co.id/vtdirect/veritrans.min.js&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/script&gt;</span>
+<pre class="highlight text">https://github.com/veritrans/vtdirectsdk-ios
 </pre>
-<p>Next, create a payment form to collect the credit card details of your customer. Note that all fields related to the credit card must not have name attribute to it. This prevents credit card data from being sent over to the merchant's server. </p>
+<p>Contoh kode untuk melakukan Request Token:</p>
 
-<p>Sample HTML form to collect credit card detail of a customer:</p>
+<pre class="highlight text">VTDirectService *vtdirect_service = [VTDirectService new];
+credentials_response = [vtdirect_service request_credentials:[card_number_input text] // card number
+                                                            :@&quot;12&quot; // expired month
+                                                            :@&quot;15&quot; // expired year
+                                                            :[card_cvv_input text] // cvv
+                                                            :@&quot;YOUR_MERCHANT_CLIENT_KEY&quot;]; // client key
 
-<pre class="highlight html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;http://mysamplestore.com/sample_payment_handler_url&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">id=</span><span class="s">&quot;payment-form&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;fieldset&gt;</span>
-    <span class="nt">&lt;legend&gt;</span>Checkout<span class="nt">&lt;/legend&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-      <span class="nt">&lt;label&gt;</span>Card Number<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-number&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-      <span class="nt">&lt;label&gt;</span>Expiration (MM/YYYY)<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-expiry-month&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;MM&quot;</span> <span class="na">size=</span><span class="s">&quot;2&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;span&gt;</span> / <span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-expiry-year&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;YYYY&quot;</span> <span class="na">size=</span><span class="s">&quot;4&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-      <span class="nt">&lt;label&gt;</span>CVV<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-cvv&quot;</span> <span class="na">size=</span><span class="s">&quot;4&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;token_id&quot;</span> <span class="na">name=</span><span class="s">&quot;token_id&quot;</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;submit-button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>Submit Payment<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;/fieldset&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
+NSString *token_id = [credentials_response valueForKeyPath:@&quot;data.token_id&quot;];
+NSString *message = [credentials_response valueForKey:@&quot;message&quot;];
+
+if(token_id) {
+    response = [self do_payment_processing:token_id];
+}
+
 </pre>
-<p>Once the card details are collected, the JavaScript code below utilizes the Veritrans.js library to send the sensitive card details to Veritrans. Note that the example below utilizes jQuery.</p>
+</div>
+<div class="tab-pane" id="android1">
+<pre class="highlight java"><span class="c1">// Change with your actual merchant Client Key</span>
+<span class="n">String</span> <span class="n">clientKey</span> <span class="o">=</span> <span class="s">&quot;0000000000000000000000&quot;</span><span class="o">;</span> 
 
-<p>JavaScript code to send card details to Veritrans:</p>
+<span class="c1">// Sample credit card information</span>
+<span class="n">String</span> <span class="n">cardNumber</span> <span class="o">=</span> <span class="s">&quot;4111111111111111&quot;</span><span class="o">;</span> 
+<span class="n">String</span> <span class="n">cardExpMonth</span> <span class="o">=</span> <span class="s">&quot;10&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">cardExpYear</span> <span class="o">=</span> <span class="s">&quot;2017&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">cardCvv</span> <span class="o">=</span> <span class="s">&quot;123&quot;</span><span class="o">;</span>
 
-<pre class="highlight html"><span class="nt">&lt;script&gt;</span> <span class="nx">$</span><span class="p">(</span>
-  <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">client_key</span> <span class="o">=</span> <span class="s2">&quot;client-key&quot;</span><span class="p">;</span> <span class="c1">// please add client-key from veritrans
-</span>
-    <span class="kd">function</span> <span class="nx">_cardSet</span><span class="p">(){</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">&quot;card_number&quot;</span> <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input.card-number&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-        <span class="s2">&quot;card_exp_month&quot;</span><span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input.card-expiry-month&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-        <span class="s2">&quot;card_exp_year&quot;</span> <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input.card-expiry-year&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-        <span class="s2">&quot;card_cvv&quot;</span> <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input.card-cvv&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
-      <span class="p">}</span>
-    <span class="p">};</span>
+<span class="n">StringBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span> 
+<span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;https://payments.veritrans.co.id/vtdirect/v1/tokens?&quot;</span><span class="o">);</span> 
+<span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;card_number=&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">cardNumber</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;&amp;&quot;</span><span class="o">);</span> 
+<span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;card_exp_month=&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">cardExpMonth</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;&amp;&quot;</span><span class="o">);</span> 
+<span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;card_exp_year=&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">cardExpYear</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;&amp;&quot;</span><span class="o">);</span> 
+<span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;card_cvv=&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">cardCvv</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;&amp;&quot;</span><span class="o">);</span> 
+<span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;client_key=&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">clientKey</span><span class="o">);</span>
 
-    <span class="kd">function</span> <span class="nx">_success</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#token_id&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">token_id</span><span class="p">);</span> <span class="c1">// store token data in input #token_id
-</span>      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#payment-form&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">submit</span><span class="p">();</span> <span class="c1">//submits Token to merchant server
-</span>    <span class="p">};</span>
+<span class="n">HttpGet</span> <span class="n">get</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpGet</span><span class="o">(</span><span class="n">builder</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> 
+<span class="n">HttpClient</span> <span class="n">httpClient</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultHttpClient</span><span class="o">();</span>
+<span class="n">HttpResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">httpClient</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">get</span><span class="o">);</span>
 
-    <span class="kd">function</span> <span class="nx">_error</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span> <span class="c1">// please customize the error
-</span>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.submit-button&#39;</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">);</span>
-    <span class="p">};</span>
+<span class="n">StringWriter</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringWriter</span><span class="o">();</span>
+<span class="n">IOUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">getEntity</span><span class="o">().</span><span class="na">getContent</span><span class="o">(),</span> <span class="n">writer</span><span class="o">,</span> <span class="s">&quot;UTF-8&quot;</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">bodyContent</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
 
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#payment-form&quot;</span><span class="p">).</span><span class="nx">submit</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.submit-button&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="s2">&quot;disabled&quot;</span><span class="p">);</span> <span class="c1">// disable the submit button
-</span>      <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">tokenGet</span><span class="p">(</span><span class="nx">_cardSet</span><span class="p">,</span> <span class="nx">_success</span><span class="p">,</span> <span class="nx">_error</span><span class="p">);</span>
-      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre>
-<p>Each token is valid for 75 seconds and for only one transaction. The token expires after a transaction is completed or it exceeds the 75 second time limit.</p>
+<span class="n">JSONObject</span> <span class="n">json</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">(</span><span class="n">bodyContent</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">code</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;code&quot;</span><span class="o">);</span> 
 
-<h4>Required Query Parameter</h4>
-<table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Example</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>card_number</td>
-			<td>Credit Card number</td>
-			<td>4111111111111111</td>
-		</tr>
-		<tr>
-			<td>card_exp_month</td>
-			<td>Credit Card expiry month</td>
-			<td>06</td>
-		</tr>
-		<tr>
-			<td>card_exp_year</td>
-			<td>Credit Card expiry year</td>
-			<td>2020</td>
-		</tr>
-		<tr>
-			<td>card_cvv</td>
-			<td>CVV (Card Verification Value)</td>
-			<td>123</td>
-		</tr>
-		<tr>
-			<td>client_key</td>
-			<td>Merchant Client Key</td>
-			<td>567aee9a-a345-435a-a98c-d001b96c3fa9</td>
-		</tr>
-	</tbody>
-</table>
+<span class="n">String</span> <span class="n">token</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">code</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;VD00&quot;</span><span class="o">))</span> <span class="o">{</span>
+	<span class="c1">// success get token</span>
+	
+	<span class="n">JSONObject</span> <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">getJSONObject</span><span class="o">(</span><span class="s">&quot;data&quot;</span><span class="o">);</span>
+	<span class="n">token</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;token_id&quot;</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+	<span class="c1">// failed get token</span>
+	
+	<span class="n">String</span> <span class="n">status</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;status&quot;</span><span class="o">);</span> 
+	<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;message&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
 
-</div><!-- end of step 1-->
-
+<!-- end of step 1-->
+</div>
 <div class="tab-pane" id="step2"><!-- step 2-->
 
-<!-- dua -->
+<h3>Mengirim Token ke Merchant</h3>
+<h4>Contoh kode</h4>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#ios2" data-toggle="tab">iOS</a></li>
+  <li><a href="#android2" data-toggle="tab">Android</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="ios2">
 
-<h3>Send Token to Merchant</h3>
-<p>If you followed the sample HTML code in Step 1-3, remember that you stored the Token in the input <code>token_id</code>.  Use a simple HTTP POST to send the Token into your server.</p>
-<h4>Sample code</h4>
-<p>This is a sample code on the merchant server to handle the <code>token_id</code> that has been sent from the previous form.</p>
+<p>Mengirim <code>Token</code> ke server merchant</p>
+<pre class="highlight text">
+- (NSData*) do_payment_processing:(NSString*)token_id
+{
+    // BUILD Json Body
+    NSMutableDictionary *jsonBody = [NSMutableDictionary dictionary];
+    
+    [jsonBody setObject:token_id forKey:@&quot;token_id&quot;];
+    [jsonBody setObject:@&quot;order-123&quot; forKey:@&quot;order_id&quot;];
+    
+    // order items
+    NSMutableArray *order_items = [NSMutableArray array];
+    
+    NSMutableDictionary *single_item = [NSMutableDictionary dictionary];
+    NSString *item_id = [NSString stringWithFormat:@&quot;%d&quot;, self.rowNumber];
+    NSString *item_price = [NSString stringWithFormat:@&quot;%d&quot;, prices[self.rowNumber]];
+    NSString *item_qty = @&quot;1&quot;;
+    NSString *item_name = names[self.rowNumber];
+    
+    [single_item setObject:item_id forKey:@&quot;id&quot;];
+    [single_item setObject:item_price forKey:@&quot;price&quot;];
+    [single_item setObject:item_qty forKey:@&quot;qty&quot;];
+    [single_item setObject:item_name forKey:@&quot;name&quot;];
+    
+    [order_items addObject:single_item];
+    
+    [jsonBody setObject:order_items forKey:@&quot;order_items&quot;];
+    
+    // gross amount
+    NSString *gross_amount = [NSString stringWithFormat:@&quot;%d&quot;, prices[self.rowNumber]];
+    [jsonBody setObject:gross_amount forKey:@&quot;gross_amount&quot;];
+    
+    // email
+    NSString *email = [email_input text];
+    [jsonBody setObject:email forKey:@&quot;email&quot;];
+    
+    // Shipping and Billing Address
+    NSMutableDictionary *address = [NSMutableDictionary dictionary];
+    [address setObject:[self.first_name_input text] forKey:@&quot;first_name&quot;];
+    [address setObject:[self.last_name_input text] forKey:@&quot;last_name&quot;];
+    [address setObject:[self.address1_input text] forKey:@&quot;address1&quot;];
+    [address setObject:@&quot;&quot; forKey:@&quot;address2&quot;];
+    [address setObject:[self.city_input text] forKey:@&quot;city&quot;];
+    [address setObject:[self.postal_code_input text] forKey:@&quot;postal_code&quot;];
+    [address setObject:[self.phone_input text] forKey:@&quot;phone&quot;];
+    
+    [jsonBody setObject:address forKey:@&quot;shipping_address&quot;];
+    [jsonBody setObject:address forKey:@&quot;billing_address&quot;];
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonBody options:NSJSONWritingPrettyPrinted error:&amp;error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    // TODO : Change this with your merchant server url
+    NSURL *credential_url = [ NSURL URLWithString:@&quot;http://localhost/sampleserver/charge_test.php&quot;];
+    
+    // start initializing request for credentials
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
+                                    initWithURL:credential_url];
+    NSString *params = [[NSString stringWithFormat:@&quot;json_body=%@&quot; ,jsonString] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSData *data = [params dataUsingEncoding:NSUTF8StringEncoding];
+    [request setHTTPMethod:@&quot;POST&quot;];
+    [request setHTTPBody:data];
+    
+    NSURLResponse *response;
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request
+                                                 returningResponse:&amp;response
+                                                             error:&amp;error];
+    
+    return responseData;
+}
+
+</pre>
+</div>
+<div class="tab-pane" id="android2">
+<pre class="highlight java"><span class="n">JSONObject</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+<span class="k">try</span> <span class="o">{</span>
+	<span class="n">obj</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;token_id&quot;</span><span class="o">,</span> <span class="n">tokenId</span><span class="o">);</span>
+
+	<span class="c1">// Sample order details data</span>
+	<span class="n">obj</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;order_id&quot;</span><span class="o">,</span> <span class="s">&quot;order509129888812&quot;</span><span class="o">);</span>
+
+	<span class="n">JSONArray</span> <span class="n">order_items</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONArray</span><span class="o">();</span>
+	<span class="n">JSONObject</span> <span class="n">item1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+	<span class="n">item1</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="mi">123</span><span class="o">);</span>
+	<span class="n">item1</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;price&quot;</span><span class="o">,</span> <span class="mi">10000</span><span class="o">);</span>
+	<span class="n">item1</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;qty&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+	<span class="n">item1</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Mie Ayam&quot;</span><span class="o">);</span>
+
+	<span class="n">JSONObject</span> <span class="n">item2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+	<span class="n">item2</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="mi">124</span><span class="o">);</span>
+	<span class="n">item2</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;price&quot;</span><span class="o">,</span> <span class="mi">20000</span><span class="o">);</span>
+	<span class="n">item2</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;qty&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+	<span class="n">item2</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;Mie Sapi&quot;</span><span class="o">);</span>
+
+	<span class="n">order_items</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">item1</span><span class="o">);</span>
+	<span class="n">order_items</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">item2</span><span class="o">);</span>
+	<span class="n">obj</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;order_items&quot;</span><span class="o">,</span> <span class="n">order_items</span><span class="o">);</span>
+	
+	<span class="n">obj</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;gross_amount&quot;</span><span class="o">,</span> <span class="mi">30000</span><span class="o">);</span>
+	<span class="n">obj</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;email&quot;</span><span class="o">,</span> <span class="s">&quot;customer@email.com&quot;</span><span class="o">);</span>
+
+	<span class="n">JSONObject</span> <span class="n">shipping_address</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+	<span class="n">shipping_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;first_name&quot;</span><span class="o">,</span> <span class="s">&quot;Sam&quot;</span><span class="o">);</span>
+	<span class="n">shipping_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;last_name&quot;</span><span class="o">,</span> <span class="s">&quot;Anthony&quot;</span><span class="o">);</span>
+	<span class="n">shipping_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;address1&quot;</span><span class="o">,</span> <span class="s">&quot;Buaran I&quot;</span><span class="o">);</span>
+	<span class="n">shipping_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;address2&quot;</span><span class="o">,</span> <span class="s">&quot;Pulogadung&quot;</span><span class="o">);</span>
+	<span class="n">shipping_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;city&quot;</span><span class="o">,</span> <span class="s">&quot;Jakarta&quot;</span><span class="o">);</span>
+	<span class="n">shipping_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;postal_code&quot;</span><span class="o">,</span> <span class="s">&quot;16954&quot;</span><span class="o">);</span>
+	<span class="n">shipping_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;phone&quot;</span><span class="o">,</span> <span class="s">&quot;0123456789123&quot;</span><span class="o">);</span>
+	<span class="n">obj</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;shipping_address&quot;</span><span class="o">,</span> <span class="n">shipping_address</span><span class="o">);</span>
+
+	<span class="n">JSONObject</span> <span class="n">billing_address</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+	<span class="n">billing_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;first_name&quot;</span><span class="o">,</span> <span class="s">&quot;Sam&quot;</span><span class="o">);</span>
+	<span class="n">billing_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;last_name&quot;</span><span class="o">,</span> <span class="s">&quot;Anthony&quot;</span><span class="o">);</span>
+	<span class="n">billing_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;address1&quot;</span><span class="o">,</span> <span class="s">&quot;Buaran I&quot;</span><span class="o">);</span>
+	<span class="n">billing_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;address2&quot;</span><span class="o">,</span> <span class="s">&quot;Pulogadung&quot;</span><span class="o">);</span>
+	<span class="n">billing_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;city&quot;</span><span class="o">,</span> <span class="s">&quot;Jakarta&quot;</span><span class="o">);</span>
+	<span class="n">billing_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;postal_code&quot;</span><span class="o">,</span> <span class="s">&quot;16954&quot;</span><span class="o">);</span>
+	<span class="n">billing_address</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;phone&quot;</span><span class="o">,</span> <span class="s">&quot;0123456789123&quot;</span><span class="o">);</span>
+	<span class="n">obj</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;billing_address&quot;</span><span class="o">,</span> <span class="n">billing_address</span><span class="o">);</span>
+
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+	<span class="n">message</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="n">String</span> <span class="n">jsondata</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+
+<span class="k">try</span> <span class="o">{</span>
+	<span class="n">HttpClient</span> <span class="n">httpClient2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultHttpClient</span><span class="o">();</span>
+	<span class="c1">// TODO : Change this with your merchant server url</span>
+	<span class="n">HttpPost</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpPost</span><span class="o">(</span><span class="s">&quot;http://10.0.2.2/sampleserver/charge_test.php&quot;</span><span class="o">);</span>
+    
+	<span class="n">List</span><span class="o">&lt;</span><span class="n">NameValuePair</span><span class="o">&gt;</span> <span class="n">pairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">NameValuePair</span><span class="o">&gt;();</span>
+	<span class="n">pairs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">BasicNameValuePair</span><span class="o">(</span><span class="s">&quot;json_body&quot;</span><span class="o">,</span> <span class="n">jsondata</span><span class="o">));</span>
+	<span class="n">request</span><span class="o">.</span><span class="na">setEntity</span><span class="o">(</span><span class="k">new</span> <span class="n">UrlEncodedFormEntity</span><span class="o">(</span><span class="n">pairs</span><span class="o">));</span>
+    
+	<span class="n">HttpResponse</span> <span class="n">response2</span> <span class="o">=</span> <span class="n">httpClient2</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+    
+	<span class="c1">//Convert Inputstream to String</span>
+	<span class="n">StringWriter</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringWriter</span><span class="o">();</span>
+	<span class="n">IOUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">response2</span><span class="o">.</span><span class="na">getEntity</span><span class="o">().</span><span class="na">getContent</span><span class="o">(),</span> <span class="n">writer</span><span class="o">,</span> <span class="s">&quot;UTF-8&quot;</span><span class="o">);</span>
+	<span class="n">String</span> <span class="n">bodyContent</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+    
+	<span class="n">message</span> <span class="o">=</span> <span class="n">bodyContent</span><span class="o">;</span>
+	<span class="c1">// handle response here...</span>
+	
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+	<span class="c1">// handle exception here</span>
+	<span class="n">message</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+	<span class="n">httpClient</span><span class="o">.</span><span class="na">getConnectionManager</span><span class="o">().</span><span class="na">shutdown</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+
+<h4>Contoh kode</h4>
+<p>Berikut ini adalah contoh kode di sisi server merchant untuk menangani <code>token_id</code> yang telah dikirim oleh mobile application.</p>
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#php1" data-toggle="tab">PHP</a></li>
 	<li><a href="#ruby1" data-toggle="tab">Ruby</a></li>
@@ -295,18 +472,18 @@
 </pre></div>	
 </div>
 
-</div><!-- end of step 2-->
+<!-- end of step 2-->
 
+</div>
 <div class="tab-pane" id="step3"><!-- step 3-->
-
 <!-- tiga -->
+<h3>Melakukan Charge Transaksi</h3>
 
-<h3>Charge Transaction</h3>
-<p>Once the Token is submitted to the merchant, the merchant can utilize the Token to conduct a credit card Charge transaction.</p>
+<p>Setelah <code>Token</code> terkirim ke merchant server, merchant server dapat menggunakannya untuk melakukan charge transaksi ke kartu kredit tersebut.</p>
 
-<p>Since the Token request is done on the customer's web browser while the Charge transaction is done between the merchant and Veritrans, the IP address for the Token request and Charge transaction should be different from each other. To prevent misuse, we have added a validation to block transactions when the location of the IP address for request Token and Charge transaction is the same.</p>
+<p>Karena proses Token Request dilakukan oleh web browser pelanggan, sedangkan request Charge Transaksi dilakukan oleh merchant server, maka alamat IP  Token Request dan Charge Transaction akan berbeda. Untuk alasan keamanan, Veritrans telah menambahkan sistem validasi untuk menolak proses Charge Transaction jika berasal dari alamat IP yang sama dengan Token Request.</p>
 
-<p>As noted before, the Token can only be used for one transaction request. If the transaction fails (e.g., declined by bank  or Veritrans' Fraud Detection System), then the merchant will need to get the customer to request a new Token.</p>
+<p>Seperti yang telah disebutkan sebelumnya, <code>Token</code> hanya dapat digunakan untuk sekali transaksi. Jika terjadi kegagalan saat proses transaksi dilakukan (misalnya: transaksi ditolak oleh bank atau ditolak oleh Veritrans Fraud Detection System), maka pelanggan harus mengulangi proses Request Token untuk mendapatkan <code>Token</code> baru.</p>
 
 <h4>Endpoint</h4>
 <table>
@@ -342,33 +519,28 @@
     </tr>
 </table> 
 
-<p>The header for authorization can be generated by obtaining the Base 64 of the <code>server_key</code>. This is an implementation of Basic Authentication.</p>
-<p>Basic authentication must follow the following format:</p>
+<p>Header untuk authorization mengikuti format Basic Authentication yang merupakan hasil generate Base 64 dari username & password. Gunakan <code>server_key</code> sebagai username dan biarkan password kosong.</p>
 
 <pre class="highlight text">username:password
 </pre>
-<p>Since there is no password for the <code>server_key</code>, we will leave the password blank. Therefore, if our <code>server_key</code> is</p>
+<p>Sebagai contoh, jika <code>server_key</code> adalah:</p>
 
 <pre class="highlight text">94960ece-9513-4265-9cf2-67a4da330213
 </pre>
-<p>It will become:</p>
+<p>maka akan menjadi:</p>
 
 <pre class="highlight text">94960ece-9513-4265-9cf2-67a4da330213:
 </pre>
-<p>Note: make  sure  that  there  is  a  colon  ":"  after  the <code>server_key</code>. Merchant then needs to convert it into Base 64 to get:</p>
-
+<p>Catatan: pastikan bahwa terdapat tanda ":" setelah <code>server_key</code>. Selanjutnya konvert ke format Base 64, sehingga menjadi:</p>
 
 <pre class="highlight text">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
 </pre>
-<p>Therefore, the header Authorization will be:</p>
+<p>Tambahkan <code>Basic</code>di depan hasil generate format Base 64. Sehingga hasil akhir header Authorization-nya menjadi:</p>
 
 <pre class="highlight text">Authorization : Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
 </pre>
-<p>Make sure that you include "Basic" before the Base 64 <code>server_key</code>.</p>
-
 <h4>Body</h4>
-
-<p>Here is a body raw example of a charge transaction request to Veritrans in JSON:</p>
+<p>Berikut ini adalah contoh body raw untuk request Charge Transaction ke Veritrans dalam format JSON:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">&quot;token_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;94960ece-9513-4265-9cf2-67a4da330213&quot;</span><span class="p">,</span><span class="w"> 
@@ -412,7 +584,7 @@
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
-<h4>Sample Code</h4>
+<h4>Contoh Kode</h4>
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
   <li class="active"><a href="#php32" data-toggle="tab">PHP</a></li>
@@ -480,17 +652,16 @@
 </pre></div>
 
 <div class="tab-pane" id="ruby32">
-		<p>
-		In this example, we use <strong>Faraday</strong> to help us make HTTP requests. Faraday is a ruby library for making HTTP requests. So, we need to add Faraday to the gemfile. Don't forget to run 'bundle' and restart your server after updating the gemfile.
-		</p>
+		<p>Pada contoh ini kita menggunakan <strong>Faraday</strong> untuk membantu kita mengirim HTTP request. Faraday adalah sebuah Ruby library untuk mengirim HTTP request. Jadi kita perlu menambahkan Faraday di <code>gemfile</code>. Jangan lupa untuk menjalankan <code>bundle</code> dan me-restart server setelah mengupdate <code>gemfile</code>.</p>
+
 <pre class="highlight ruby"><span class="n">gem</span> <span class="s2">&quot;faraday&quot;</span><span class="p">,</span> <span class="s2">&quot;~&gt; 0.8.8&quot;</span>
 </pre>
-<p>Add this lines to your controller:</p>
+<p>Tambahkan baris ini ke controller:</p>
 
 <pre class="highlight ruby"><span class="nb">require</span> <span class="s1">&#39;faraday&#39;</span>
 <span class="nb">require</span> <span class="s1">&#39;base64&#39;</span>
 </pre>
-<p>Finally, this is the sample code on the action that handle the payment form in the previous step. In this sample code we conduct <strong>charge transaction</strong> by utilising Faraday to send the charge data to the Veritrans charges endpoint.</p>
+<p>Berikut ini adalah contoh kode di action yang menangani payment form dari langkah sebelumnya. Pada contoh kode ini kita melakukan <strong>Charge Transaction</strong> dengan memanfaatkan Faraday untuk mengirim request <strong>Charge</strong> ke Veritrans.</p>
 
 <pre class="highlight ruby">
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
@@ -552,179 +723,178 @@
 </pre>	</div>	
 </div><!-- tab-content -->
 
-<h4>Detail Parameters for Charge Transaction</h4>
+<h4>Parameter yang perlu dikirim saat melakukan Charge Transaction</h4>
 <table>
 <thead>
   <tr>
-      <th>Name</th>
-      <th>Required</th>
+      <th>Nama</th>
+      <th>Wajib/Opsional</th>
       <th>Type/Size</th>
-      <th>Description</th>
-      <th>Example</th>
+      <th>Deskripsi</th>
+      <th>Contoh</th>
   </tr>
 </thead>
 <tbody>
   <tr>
       <td>token</td>
-      <td>Yes</td>
+      <td>Wajib</td>
       <td>Not Applicable</td>
-      <td>Token received by the customer's web browser from Veritrans</td>
+      <td><code>Token</code> yang diterima dari browser pelanggan hasil proses Token Request.</td>
       <td>94960ece-9513-4265-9cf2-67a4da330213</td>
   </tr>
   <tr>
       <td>order_id</td>
-      <td>Yes</td>
+      <td>Wajib</td>
       <td>20 character alpha-numeric [a-zA-Z0-9]. No white space.</td>
-      <td>Merchant generated order id. Each order id can only perform one charge transaction.</td>
+      <td>Order id yang di-genearte oleh merchant. Setiap order id hanya dapat melakukan sekali charge transaction.</td>
       <td>order1</td>
   </tr>
   <tr>
       <td>order_items</td>
-      <td>Yes</td>
+      <td>Wajib</td>
       <td>JSON</td>
-      <td>List of items purchased</td>
+      <td>Daftar item yang dibeli.</td>
       <td>See example below</td>
   </tr>
   <tr>
       <td>gross_amount</td>
-      <td>Yes</td>
-      <td>Numeric [0-9], maximum 99.999.999</td>
-      <td>Total transaction amount</td>
+      <td>Wajib</td>
+      <td>Numeric [0-9], maximum 99.999.999.</td>
+      <td>Total harga dari transaksi.</td>
       <td>200</td>
   </tr>
   <tr>
       <td>email</td>
-      <td>Yes</td>
+      <td>Wajib</td>
       <td>30 character alpha-numeric-symbols. No white space.</td>
-      <td>Customer email</td>
+      <td>Email pelanggan.</td>
       <td>pelanggan@website.com</td>
   </tr>
   <tr>
       <td>billing_address</td>
-      <td>Yes</td>
+      <td>Wajib</td>
       <td>JSON</td>
-      <td>Customer billing address.</td>
-      <td>See example below</td>
+      <td>Alamat billing pelanggan.</td>
+      <td>Lihat contoh di atas.</td>
   </tr>
   <tr>
       <td>shipping_address</td>
-      <td>Optional</td>
+      <td>Opsional</td>
       <td>JSON</td>
-      <td>Customer shipping address.</td>
-      <td>See example below</td>
+      <td>Customer shipping address</td>
+      <td>Lihat contoh di atas.</td>
   </tr>
 </tbody>
 </table>
 
-<p><strong>Note</strong>: As stated before, to prevent misuse, we have added a validation to block transactions when the location of the IP address for request Token and Charge transaction is the same. This can be troublesome when you're doing transactions test on the same computer (same IP address). Here is the solution: for testing purpose, use <strong>vt-testing@veritrans.co.id</strong> for the <code>email</code> parameter so you can test VT-Direct on the same IP address.</p>
+<p><strong>Catatan</strong>: Seperti telah disebutkan sebelumnya, karena alasan kemanan, Veritrans telah menambahkan sistem validasi untuk menolak Charge Transaction yang berasal dari alamat IP yang sama dengan Request Token dilakukan. Validasi ini mungkin akan merepotkan di tahap development karena Anda tidak dapat melakukan pengujian transaksi dari komputer yang sama (alamat IP sama). Veritrans menyediakan solusi untuk permasalahan ini, yaitu dengan menggunakan alamat <code>vt-testing@veritrans.co.id</code> untuk parameter email. Dengan menggunakan parameter email tersebut, transaksi (proses Request Token dan proses Charge Transaction) dapat dilakukan dari alamat IP yang sama.</p>
 
-
-<h4>Parameters for Order Item Details</h4>
+<h4>Parameter untuk Order Item</h4>
 
 <table>
     <thead>
       <tr>
-          <th>Name</th>
-          <th>Required</th>
+          <th>Nama</th>
+          <th>Wajib/Opsional</th>
           <th>Type/Size</th>
-          <th>Description</th>
-          <th>Example</th>
+          <th>Deskripsi</th>
+          <th>Contoh</th>
       </tr>
     </thead>
     <tbody>
       <tr>
           <td>id</td>
-          <td>Yes</td>
+          <td>Wajib</td>
           <td>20 character alpha-numeric [a-zA-Z0-9].</td>
-          <td>Product ID</td>
+          <td>ID Produk</td>
           <td>produk1</td>
       </tr>
       <tr>
           <td>price</td>
-          <td>Yes</td>
+          <td>Wajib</td>
           <td>Numeric [0-9], maximum 9.999.999.</td>
-          <td>Product Price</td>
+          <td>Harga Produk</td>
           <td>100</td>
       </tr>
       <tr>
           <td>qty</td>
-          <td>Yes</td>
+          <td>Wajib</td>
           <td>Numeric [0-9], maximum 9999.</td>
-          <td>Product Quantity</td>
+          <td>Banyaknya Produk</td>
           <td>1</td>
       </tr>
       <tr>
           <td>name</td>
-          <td>Yes</td>
+          <td>Wajib</td>
           <td>20 character alpha-numeric [a-zA-Z0-9].</td>
-          <td>Product Name</td>
+          <td>Nama Produk</td>
           <td>Mie Instan</td>
       </tr>        
     </tbody>
 </table>
 
-<h4>Parameters for Billing and Shipping Address</h4>
+<h4>Parameter untuk Alamat Billing dan Alamat Pengiriman</h4>
 
 <table>
     <thead>
       <tr>
-          <th>Name</th>
-          <th>Required</th>
+          <th>Nama</th>
+          <th>Wajib/Opsional</th>
           <th>Type/Size</th>
-          <th>Description</th>
-          <th>Example</th>
+          <th>Deskripsi</th>
+          <th>Contoh</th>
       </tr>
     </thead>
     <tbody>
       <tr>
           <td>first_name</td>
           <td>Yes</td>
-          <td>20 character alphabet [a-zA-Z]</td>
-          <td>Customer first name</td>
+          <td>20 character alphabet [a-zA-Z].</td>
+          <td>Nama depan pelanggan</td>
           <td>Sam</td>
       </tr>
       <tr>
           <td>last_name</td>
           <td>Yes</td>
-          <td>20 character alphabet [a-zA-Z]</td>
-          <td>Customer last name</td>
+          <td>20 character alphabet [a-zA-Z].</td>
+          <td>Nama belakang pelanggan</td>
           <td>Anthony</td>
       </tr>
       <tr>
           <td>address1</td>
           <td>Yes</td>
-          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@()/]</td>
-          <td>Customer address</td>
+          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@()/].</td>
+          <td>Alamat pelanggan (baris pertama)</td>
           <td>Buaran I</td>
       </tr>
       <tr>
           <td>address2</td>
           <td>Optional</td>
-          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@()/]</td>
-          <td>Customer Address</td>
+          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@()/].</td>
+          <td>Alamat pelanggan (baris kedua)</td>
           <td>Pulogadung</td>
       </tr>
       <tr>
           <td>city</td>
           <td>Yes</td>
-          <td>20 character alphabet [a-zA-Z]</td>
-          <td>Customer city</td>
+          <td>20 character alphabet [a-zA-Z].</td>
+          <td>Kota alamat pelanggan.</td>
           <td>Jakarta</td>
       </tr>
       <tr>
           <td>postal_code</td>
           <td>Yes</td>
-          <td>10 character numbers [0-9]</td>
-          <td>Customer postal code</td>
+          <td>10 character numbers [0-9].</td>
+          <td>Kode pos alamat pelanggan</td>
           <td>16954</td>
       </tr>
       <tr>
           <td>phone</td>
           <td>Yes</td>
-          <td>Numeric minimum 9 character and maximum 19 character [0-9]</td>
-          <td>Customer phone. No characters like "+" and "-" allowed.</td>
+          <td>Numeric minimum 9 character and maximum 19 character [0-9].</td>
+          <td>Nomor telepon pelanggan</td>
           <td>0123456789123</td>
-      </tr>        
+      </tr>
     </tbody>
 </table>
 
@@ -733,97 +903,98 @@
 <div class="tab-pane" id="step4"><!-- step 4-->
 
 <!-- empat -->
-<h3>Response Handling</h3>
 
-<h4>Request and Transaction Status</h4>
-<p>For every action on VT-Direct, the merchant will receive two status response: Request Status ("status") and Transaction Status ("transaction_status"). The Request Status lets the merchant know whether their request for a particular action was successful or not, while the Transaction Status informs the user of the latest transaction status of a particular order. Please see below for details:</p>
+<h3>Menangani Respon</h3>
+<h4>Request Status dan Transaction Status</h4>
+
+<p>Untuk setiap request ke VT-Direct, merchant akan memperoleh 2 status response: Request Status (<code>status</code>) dan Transaction Status (<code>transaction_status</code>). Request Status menunjukkan apakah request yang dilakukan merchant berhasil atau tidak. Sedangkan Transaction Status menunjukkan status transaksi dari order yang terkait dengan request tersebut. Lihat contoh berikut ini untuk lebih detil:</p>
 
 <h4>Request Status</h4>
-<p>Every time the merchant communicates with VT-Direct, the merchant will get a request status response back from Veritrans’ system. Below is a list of possible request status that will be returned to the merchant:</p>
+<p>Setiap kali merchant mengirim request ke VT-Direct, merchant akan mendapatkan respon Request Status dari VT-Direct. Berikut ini adalah daftar kemungkinan Request Status yang dikembalikan oleh VT-Direct:</p>
 
 <table>
   <thead>
     <tr>
       <th>Code</th>
       <th>Request Status</th>
-      <th>Description</th>
+      <th>Deskripsi</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>VD00</td>
-      <td>Success</td>
-      <td>Request is successful (e.g., token request, charge, void, or get status)</td>
+      <td>Sukses</td>
+      <td>Request sukses.</td>
     </tr>
     <tr>
       <td>VD01</td>
-      <td>Failure</td>
-      <td>Validation error (e.g., invalid credit card number, invalid parameter)</td>
+      <td>Gagal</td>
+      <td>Validasi gagal (Contoh: nomor kartu kredit tidak valid, parameter lain tidak valid)</td>
     </tr>
     <tr>
       <td>VD02</td>
-      <td>Failure</td>
-      <td>Merchant is not registered, or incorrect client key or server key</td>
+      <td>Gagal</td>
+      <td>Merchant tidak terdaftar, atau client_key/server_key salah.</td>
     </tr>
     <tr>
       <td>VD03</td>
-      <td>Failure</td>
-      <td>Token is incorrect, or Token is expired</td>
+      <td>Gagal</td>
+      <td>Token salah, atau Token sudah tidak berlaku.</td>
     </tr>
     <tr>
       <td>VD04</td>
-      <td>Failure</td>
-      <td>The IP address that requested the token and the one did the transaction is the same (it needs to be different)</td>
+      <td>Gagal</td>
+      <td>Alamat IP yang melakukukan Charge Request sama dengan alamat IP yang melakukan Request Token. (Seharusnya berbeda).</td>
     </tr>
     <tr>
       <td>VD05</td>
-      <td>Failure</td>
-      <td>Multiple charges to the same credit card number. The same credit card can only be utilized for the another transaction 75 seconds after the previous transaction is complete</td>
+      <td>Gagal</td>
+      <td>Multiple charges dilakukan pada satu kartu kredit yang sama. Kartu kredit yang sama hanya bisa melakukan transaksi lagi 75 detik setelah transaksi sebelumnya selesai.</td>
     </tr>
     <tr>
       <td>VD99</td>
-      <td>Failure</td>
-      <td>Veritrans system error. Please contact Veritrans support ASAP.</td>
+      <td>Gagal</td>
+      <td>Terjadi kesalahan dalam sistem Veritrans. <a href="mailto:support@veritrans.co.id">Hubungi Veritrans Support</a> jika hal ini terjadi.</td>
     </tr>
   </tbody>
 </table>
 
 <h4>Transaction Status</h4>
-<p>Each transaction will be associated with one of the five transaction statuses: Deny, Cancel, Challenge, Authorize, and Settlement.</p>
+<p>Setiap transaksi memiliki lima kemungkinan Transaction Status, yaitu: Deny, Cancel, Challenge, Authorize, and Settlement.</p>
 
 <table>
   <thead>
     <tr>
       <th>Code</th>
-      <th>Description</th>
+      <th>Deskripsi</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>deny</td>
-      <td>Denied  by  the  bank  or  by  Veritrans’  Fraud  Detection  System (FDS)</td>
+      <td>Transaksi ditolak oleh bank atau Veritrans Fraud Detection System(FDS)</td>
     </tr>
     <tr>
       <td>cancel</td>
-      <td>Transaction cancelled</td>
+      <td>Transaksi dibatalkan</td>
     </tr>
     <tr>
       <td>challenge</td>
-      <td>Transaction approved by the bank, but flagged by FDS for further manual review</td>
+      <td>Transaksi diterima oleh bank, tetapi FDS menganggap transaksi perlu direview secara manual oleh merchant di MAP.</td>
     </tr>
     <tr>
       <td>authorize</td>
-      <td>Transaction authorized by the bank and accepted by FDS. Transaction can still be cancelled since the funds has not been settled by the bank</td>
+      <td>Transaksi sudah diterima oleh bank dan FDS. (Transaksi masih bisa dibatalkan selama bank belum melakukan proses settlement.)</td>
     </tr>
     <tr>
       <td>settlement</td>
-      <td>Transaction is settled by the bank. Transaction cannot be cancelled. If a merchant still needs to reverse a transaction, it will have to go through a manual refund process (please contact Veritrans for further details).</td>
+      <td>Transaksi telah melalui proses settlement oleh bank. (Transaksi sudah tidak dapat dibatalkan. Jika merchant ingin melakukan reverse transaction, harus melalui proses refund manual. Hubungi Veritrans untuk informasi lebih lanjut.)</td>
     </tr>
   </tbody>
 </table>
 
-<h4>Sample Response</h4>
-<p>If the transaction request is successful, below is a sample response that you will get back from Veritrans:</p>
+<h4>Contoh Response</h4>
+<p>Jika request transaction sukses, berikut ini adalah contoh response yang diberikan oleh VT-Direct:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -870,7 +1041,7 @@
   </span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Success do charge transaction&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-<p>If an error occurs during transmission of the request, you will get a response like the one below:</p>
+<p>Jika ada kesalahan yang terjadi saat request dilakukan, berikut ini adalah contoh response yang diberikan oleh VT-Direct:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
 </span><span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VD03&quot;</span><span class="p">,</span><span class="w">
@@ -878,7 +1049,7 @@
 </span><span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your token is expire&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-<h4>Sample code</h4>
+<h4>Contoh kode</h4>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -957,13 +1128,11 @@
 </div><!-- end of step 4-->
 
 	
-</div>
-<!-- end of tab-content-->
-
+</div><!-- end of tab-content-->
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Direct: Getting Started</a></li><li class="right">Next: <a href="mobile_integration.html">VT-Direct: Mobile Integration</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="integrating_vtdirect.html">VT-Direct: Integrasi</a></li><li class="right">Next: <a href="testing_vtdirect.html">VT-Direct: Pengujian</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
@@ -998,8 +1167,8 @@
   </div>
 </div>
 
-    <script src="../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="../javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
     <script>
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {

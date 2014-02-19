@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+<div class="header navbar navbar-default navbar-fixed-top">
+  <div class="custom-container">
+    <div class="col-md-3 navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h2 class="logo"><a href="https://www.veritrans.co.id/" title="Home"><span>Veritrans</span></a></h2>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="https://www.veritrans.co.id/whatwedo.html">what we do</a></li>
+				<li><a href="https://www.veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
+        <li><a href="https://www.veritrans.co.id/pricing.html">pricing</a></li>
+        <li><a href="https://www.veritrans.co.id/about.html">about</a></li>
+        <li><a href="http://docs.veritrans.co.id/" class="current">docs</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">more <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://blog.veritrans.co.id/">blog</a></li>
+            <li><a href="https://www.veritrans.co.id/career.html">career</a></li>
+            <li><a href="https://www.veritrans.co.id/contact.html">contact</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right register-login">
+        <li class="pull-left"><a href="https://payments.veritrans.co.id/map/users/sign_up" class="register">register</a></li>
+        <li class="pull-left"><a href="https://payments.veritrans.co.id/map/users/sign_in">login</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<ul class="sidebar">
+			<li><a class="parent">VT-Web</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="/id/vtweb/">Perkenalan</a></li>
+					
+					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					
+					<li class=""><a href="integrating_vtweb.html">Integrasi</a></li>
+					
+					<li class=""><a href="testing_vtweb.html">Pengujian</a></li>
+					
+					<li class=""><a href="going_live.html">Going Live</a></li>
+					
+					<li class="active"><a href="api.html">Parameter API</a></li>
+					
+					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					
+					<li class=""><a href="plugins_and_examples.html">Plugin dan Contoh</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">VT-Direct</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
+					
+					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
+					
+					<li class=""><a href="../vtdirect/integrating_vtdirect.html">Integrasi</a></li>
+					
+					<li class=""><a href="../vtdirect/mobile_integration.html">Integrasi Mobile App</a></li>
+					
+					<li class=""><a href="../vtdirect/testing_vtdirect.html">Pengujian</a></li>
+					
+					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
+					
+					<li class=""><a href="../vtdirect/other_command.html">Perintah Lain</a></li>
+					
+					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
+					
+					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">How to</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					
+					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">FAQ</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					
+					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
+					
+					<li class=""><a href="../faq/fraud_and_security.html">Fraud and Security</a></li>
+					
+					<li class=""><a href="../faq/integration.html">Integrasi</a></li>
+					
+					<li class=""><a href="../faq/account_management.html">Manajemen Akun</a></li>
+					
+					<li class=""><a href="../faq/fds_response.html">Fraud Detection System (FDS) Response</a></li>
+					
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="id-vtweb-api">
+            <h2>Parameter API</h2>
+
+<p>API VT-Web Veritrans terdiri dari API untuk <strong>request token</strong> dan <strong>redirection</strong> ke halaman pembayaran. Silakan lihat secara rinci batasan-batasan untuk setiap parameter API dan contoh-contoh dari response yang sukses atau gagal.</p>
+
+<h3>Request Token API </h3>
+
+<h4>URL Endpoint</h4>
+<p>Resource URL:</p>
+
+<pre class="highlight text">https://vtweb.veritrans.co.id/v1/tokens.json
+</pre>
+<p>Type:</p>
+
+<pre class="highlight text">JSON
+</pre>
+<p>HTTP Method:</p>
+
+<pre class="highlight text">POST
+</pre>
+<p>HTTP Header:</p>
+
+<pre class="highlight text">Content-Type: application/json
+Accept: application/json
+</pre>
+<h4>Request Token Parameters</h4>
+
+<p>Parameter-parameter yang wajib diisi</p>
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Tipe data</th>
+      <th>Panjang</th>
+      <th>Format</th>
+      <th>Deskripsi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>version</td>
+      <td>Integer</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Agar dapat menggunakan parameter pada dokumentasi ini, isi <code>version</code> dengan nilai <code>1</code>.</td>
+    </tr>
+    <tr>
+      <td>merchant_id</td>
+      <td>String</td>
+      <td>22</td>
+      <td>A-Z0-9</td>
+      <td><a href="getting_started.html">Identifier Merchant.</a>.</td>
+    </tr>
+    <tr>
+      <td>merchanthash</td>
+      <td>String</td>
+      <td>128</td>
+      <td><a href="http://en.wikipedia.org/wiki/Secure_Hash_Algorithm">SHA-512 hex</a></td>
+      <td>Nilai sha512 hash yang dihasilkan dari kombinasi <code>merchant_id</code>, <code>merchant_hash_key</code>, dan <code>order_id</code>. Klik di sini</a> untuk melihat contoh kode untuk men-generate <code>merchanthash</code>: <a href="https://github.com/veritrans/veritrans-php/blob/vtweb-2/lib/hash_generator.php">PHP</a>, <a href="https://github.com/panggi/vtweb_json/blob/master/lib/vtweb_json/merchant_hash_generator.rb">Ruby</a>.</td>
+    </tr>
+    <tr>
+      <td>order_id</td>
+      <td>String</td>
+      <td>30</td>
+      <td>a-zA-Z0-9</td>
+      <td>Identifier Order.</td>
+    </tr>
+    <tr>
+      <td>billing_different_with_shipping</td>
+      <td>Integer</td>
+      <td>1</td>
+      <td>1 or 0</td>
+      <td>1 = jika informasi billing berbeda dengan informasi shipping; 0 = jika informasi billing sama dengan informasi shipping.</td>
+    </tr>
+    <tr>
+      <td>required_shipping_address</td>
+      <td>Integer</td>
+      <td>1</td>
+      <td>0 and 1</td>
+      <td>1 = jika informasi shipping dibutuhkan; 0 = jika informasi shipping tidak dibutuhkan.</td>
+    </tr>
+    <tr>
+      <td>repeat_line</td>
+      <td>Integer</td>
+      <td>12</td>
+      <td>0-9</td>
+      <td>Total banyaknya jenis barang yg ada di keranjang belanja.</td>
+    </tr>
+    <tr>
+      <td>item_id</td>
+      <td>Array</td>
+      <td>12</td>
+      <td>a-zA-Z0-9</td>
+      <td>Identifier barang.</td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>Integer</td>
+      <td>9</td>
+      <td>&gt; 0 and &lt; 100000000</td>
+      <td>Harga (satu jenis) barang dalam rupiah.</td>
+    </tr>
+    <tr>
+      <td>quantity</td>
+      <td>Integer</td>
+      <td>4</td>
+      <td>&gt; 0 and &lt; 1000</td>
+      <td>Banyaknya (satu jenis) barang.</td>
+    </tr>
+    <tr>
+      <td>item_name1</td>
+      <td>Array</td>
+      <td>20</td>
+      <td>a-zA-Z0-9 -_',.@&amp;+/</td>
+      <td>Nama barang (Misalkan nama dalam bahasa Inggris.).</td>
+    </tr>
+    <tr>
+      <td>item_name2</td>
+      <td>Array</td>
+      <td>20</td>
+      <td>a-zA-Z0-9 -_',.@&amp;+/</td>
+      <td>Nama barang (Misalkan nama dalam bahasa Indonesia. Boleh sama dengan <code>item_name1</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Parameter-parameter yang wajib diisi jika <code>required_shipping_address</code> = 1</p>
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Tipe data</th>
+      <th>Panjang</th>
+      <th>Format</th>
+      <th>Deskripsi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>shipping_first_name</td>
+      <td>String</td>
+      <td>20</td>
+      <td>a-z A-Z</td>
+      <td>Nama depan untuk pengiriman.</td>
+    </tr>
+    <tr>
+      <td>shipping_last_name</td>
+      <td>String</td>
+      <td>20</td>
+      <td>a-z A-Z</td>
+      <td>Nama belakang untuk pengiriman.</td>
+    </tr>
+    <tr>
+      <td>shipping_address1</td>
+      <td>String</td>
+      <td>100</td>
+      <td>a-zA-Z0-9-_',.@()/ \</td>
+      <td>Alamat pengiriman (baris pertama).</td>
+    </tr>
+    <tr>
+      <td>shipping_address2</td>
+      <td>String</td>
+      <td>100</td>
+      <td>a-zA-Z0-9-_',.@()/ \</td>
+      <td>Alamat pengiriman (baris kedua).</td>
+    </tr>
+    <tr>
+      <td>shipping_city</td>
+      <td>String</td>
+      <td>20</td>
+      <td>a-zA-Z-_', .@</td>
+      <td>Kota alamat pengiriman.</td>
+    </tr>
+    <tr>
+      <td>shipping_country_code</td>
+      <td>String</td>
+      <td>3</td>
+      <td>A-Z</td>
+      <td>Negara alamat pengiriman. <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case; Contoh "IDN" untuk Indonesia.</td>
+    </tr>
+    <tr>
+      <td>shipping_postal_code</td>
+      <td>String</td>
+      <td>9</td>
+      <td>0-9</td>
+      <td>Kodepos alamat pengiriman.</td>
+    </tr>
+    <tr>
+      <td>shipping_phone</td>
+      <td>String</td>
+      <td>19</td>
+      <td>+0-9 -</td>
+      <td>Nomor telepon alamat pengiriman. Lebih dari 9 digit dan boleh diawali dengan tanda '+'.</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>String</td>
+      <td>30</td>
+      <td>email</td>
+      <td>Alamat email.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Parameter-parameter yang tidak wajib diisi (opsional).</p>
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Tipe data</th>
+      <th>Panjang</th>
+      <th>Format</th>
+      <th>Deskripsi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>payment_methods</td>
+      <td>Array</td>
+      <td>-</td>
+      <td>a-z A-Z</td>
+      <td>Metode pembayaran yang ditampilkan. Misalnya: <code>['credit_card', 'mandiri_clickpay']</code>.</td>
+    </tr>
+    <tr>
+      <td>finish_payment_return_url</td>
+      <td>String</td>
+      <td>256</td>
+      <td>URL</td>
+      <td>Url untuk kembali ke website merchant setelah pelanggan menyelesaikan transaksi.</td>
+    </tr>
+    <tr>
+      <td>unfinish_payment_return_url</td>
+      <td>String</td>
+      <td>256</td>
+      <td>URL</td>
+      <td>Url untuk kembali ke website merchant saat proses transaksi tidak selesai.</td>
+    </tr>
+    <tr>
+      <td>error_payment_return_url</td>
+      <td>String</td>
+      <td>256</td>
+      <td>URL</td>
+      <td>Url untuk kembali ke website merchant jika terjadi error pada saat transaksi dilakukan.</td>
+    </tr>
+    <tr>
+      <td>first_name</td>
+      <td>String</td>
+      <td>20</td>
+      <td>a-z A-Z</td>
+      <td>Nama depan untuk informasi billing.</td>
+    </tr>
+    <tr>
+      <td>last_name</td>
+      <td>String</td>
+      <td>20</td>
+      <td>a-z A-Z</td>
+      <td>Nama belakang untuk informasi billing.</td>
+    </tr>
+    <tr>
+      <td>address1</td>
+      <td>String</td>
+      <td>100</td>
+      <td>a-zA-Z0-9 -_',.@()/\</td>
+      <td>Alamat untuk informasi billing (baris pertama).</td>
+    </tr>
+    <tr>
+      <td>address2</td>
+      <td>String</td>
+      <td>100</td>
+      <td>a-zA-Z0-9 -_',.@()/\</td>
+      <td>Alamat untuk informasi billing (baris kedua).</td>
+    </tr>
+    <tr>
+      <td>city</td>
+      <td>String</td>
+      <td>20</td>
+      <td>a-zA-Z-_', .@</td>
+      <td>Kota untuk alamat billing.</td>
+    </tr>
+    <tr>
+      <td>country_code</td>
+      <td>String</td>
+      <td>3</td>
+      <td>A-Z</td>
+      <td>Negara alamat billing. <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case; Contoh "IDN" untuk Indonesia.</td>
+    </tr>
+    <tr>
+      <td>postal_code</td>
+      <td>String</td>
+      <td>9</td>
+      <td>0-9</td>
+      <td>Kodepos alamat billing.</td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>String</td>
+      <td>19</td>
+      <td>+0-9 -</td>
+      <td>Nomor telepon untuk billing. Lebih dari 9 digit, boleh diawal dengan tanda '+'.</td>
+    </tr>
+    <tr>
+      <td>promo_bins</td>
+      <td>Array</td>
+      <td>16</td>
+      <td>0-9</td>
+      <td>Kode promo BIN, 1 sampai 16 digit; Contoh: <code>['411111', '5']</code>. <a href="id/other_features.html">Info lebih lanjut..</a></td>
+    </tr>
+    <tr>
+      <td>enable_3d_secure</td>
+      <td>Integer</td>
+      <td>1</td>
+      <td>1 or 0</td>
+      <td>Mengaktifkan fitur 3D Secure, <code>1</code> = aktif; <code>0</code> = tidak aktif. <a href="id/other_features.html">Info lebih lanjut..</a></td>
+    </tr>
+    <tr>
+      <td>point_banks</td>
+      <td>Array</td>
+      <td>-</td>
+      <td>'bni', 'cimb'</td>
+      <td>Pengaturan bank yang aktif untuk fitur Point Banks. Contoh: <code>['bni', 'cimb']</code>. <a href="id/other_features.html">Info lebih lanjut..</a></td>
+    </tr>
+    <tr>
+      <td>installment_banks</td>
+      <td>Array</td>
+      <td>-</td>
+      <td>'bni', 'cimb', 'mandiri'</td>
+      <td>Pengaturan bank yang aktif untuk fitur Installment Banks. Contoh: <code>['bni', 'cimb', 'mandiri']</code>. <a href="id/other_features.html">Info lebih lanjut..</a></td>
+    </tr>
+    <tr>
+      <td>installment_terms</td>
+      <td>JSON Array</td>
+      <td>-</td>
+      <td>Bank sebagai key, dan terms sebagai value.</td>
+      <td>Pengaturan installment terms. Contoh: <code>{"bni":[3, 6, 12], "cimb":[3, 6, 12]}</code>. <a href="id/other_features.html">Info lebih lanjut..</a></td>
+    </tr>
+    <tr>
+      <td>bank</td>
+      <td>String</td>
+      <td>-</td>
+      <td>'bni', 'cimb' or 'mandiri'</td>
+      <td>Pengaturan untuk acquiring bank yang dipilih. Contoh: <code>'bni'</code>. <a href="id/other_features.html">Info lebih lanjut..</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4>Response</h4>
+
+<p>Type:</p>
+
+<pre class="highlight text">JSON
+</pre>
+<p>Contoh response jika sukses:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;token_merchant&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3a258a55-6729-4eda-aeaa-c19e5a9af022&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;token_browser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;320b9231-a93b-4fd0-803f-54e4f093937d&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+<p>Contoh response jika terjadi kesalahan:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;errors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;shipping_address1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;should be alphanumeric and specified symbol&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;shipping_country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">&quot;should be in ISO 3166-1 alpha-3&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;is the wrong length (should be 3 characters)&quot;</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">&quot;installment_banks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;must be an Array&quot;</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+<h3>Redirection API</h3>
+
+<h4>URL Endpoint</h4>
+<p>Resource URL:</p>
+
+<pre class="highlight text">https://vtweb.veritrans.co.id/v1/payments.json
+</pre>
+<p>Type:</p>
+
+<pre class="highlight text">JSON
+</pre>
+<p>HTTP Method:</p>
+
+<pre class="highlight text">POST
+</pre>
+<p>HTTP Header:</p>
+
+<pre class="highlight text">Content-Type: application/json
+Accept: application/json
+</pre>
+<h4>Redirection Parameters</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Nama parameter</th>
+      <th>Deskripsi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>merchant_id</td>
+      <td>Merchant ID</td>
+    </tr>
+    <tr>
+      <td>order_id</td>
+      <td>Order ID digenerate oleh Merchant. Order ID yang sama yang digunakan pada saat request token.</td>
+    </tr>
+    <tr>
+      <td>token_browser</td>
+      <td><code>token_browser</code> didapatkan dari proses request token.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Response</h4>
+
+<p>Tidak ada. Pelanggan akan diarahkan ke halaman pembayaran VT-Web di website Veritrans.</p>
+
+<h3>Payment Notification</h3>
+
+<p>Setelah proses pembayaran berhasil. Veritrans akan mengirimkan notifikasi berupa email yang ditujukan kepada Merchant dan Customer. Selain itu, Veritrans juga akan mengirimkan notifikasi berbentuk HTTP(S) POST request ke server Merchant. Adapun target URL yang akan dituju Veritrans dapat dikonfigurasikan sesuai dengan keinginan Merchant di <a href="https://payments.veritrans.co.id/map/settings/config_info">MAP</a>.</p>
+
+<h4>Contoh HTTP(S) POST parameter payment notification yang dikirim ke server merchant.</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Contoh</th>
+      <th>Deskripsi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>orderId</td>
+      <td>QBOHHJ</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>mStatus</td>
+      <td>success</td>
+      <td>Status transaksi pembayaran: <strong>success</strong>, <strong>failure</strong>, <strong>challenge</strong>, or <strong>fatal</strong>.</td>
+    </tr>
+    <tr>
+      <td>TOKEN_MERCHANT</td>
+      <td>af27bd7b-c4c1-45bd-b730-a46de616dbe5</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Parameter <code>mStatus</code> terkat dengan <a href="/howto/index.html">Veritrans Fraud Detection System</a>. <code>mStatus</code> merepresentasikan respon dari fraud detection system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>mStatus</th>
+      <th>Respon dari Fraud Detection System</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>success</td>
+      <td>ACCEPT</td>
+    </tr>
+    <tr>
+      <td>failure</td>
+      <td>DENY</td>
+    </tr>
+    <tr>
+      <td>challenge</td>
+      <td>CHALLENGE</td>
+    </tr>
+    <tr>
+      <td>fatal</td>
+      <td>Terjadi kesalahan pada sistem Veritrans. Silakan hubungi <a href="https://www.veritrans.co.id/contact.html">Veritrans Support</a> jika hal ini terjadi.</td>
+    </tr>
+  </tbody>
+</table>
+
+			<div class="pagination">
+				<ul><li class="left">« Previous: <a href="going_live.html">VT-Web: Going Live</a></li><li class="right">Next: <a href="other_features.html">VT-Web: Fitur Lain</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 footer-nav">
+        <div class="content text-center">
+          <a href="https://www.veritrans.co.id" title="">Home</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/whatwedo.html" title="">What We Do</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/pricing.html" title="">Pricing</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/about.html" title="">About</a> <span class="divider">|</span>
+          <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
+          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>©2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>
