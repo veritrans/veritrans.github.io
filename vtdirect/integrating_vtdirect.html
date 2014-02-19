@@ -574,7 +574,7 @@
   <tr>
       <td>order_id</td>
       <td>Yes</td>
-      <td>20 character alpha-numeric. No white space.</td>
+      <td>20 character alpha-numeric [a-zA-Z0-9]. No white space.</td>
       <td>Merchant generated order id. Each order id can only perform one charge transaction.</td>
       <td>order1</td>
   </tr>
@@ -588,7 +588,7 @@
   <tr>
       <td>gross_amount</td>
       <td>Yes</td>
-      <td>Numeric maximum 99.999.999</td>
+      <td>Numeric [0-9], maximum 99.999.999</td>
       <td>Total transaction amount</td>
       <td>200</td>
   </tr>
@@ -603,14 +603,14 @@
       <td>billing_address</td>
       <td>Yes</td>
       <td>JSON</td>
-      <td>Customer billing address</td>
+      <td>Customer billing address.</td>
       <td>See example below</td>
   </tr>
   <tr>
       <td>shipping_address</td>
       <td>Optional</td>
       <td>JSON</td>
-      <td>Customer shipping address</td>
+      <td>Customer shipping address.</td>
       <td>See example below</td>
   </tr>
 </tbody>
@@ -635,28 +635,28 @@
       <tr>
           <td>id</td>
           <td>Yes</td>
-          <td>20 character alpha-numeric</td>
+          <td>20 character alpha-numeric [a-zA-Z0-9].</td>
           <td>Product ID</td>
           <td>produk1</td>
       </tr>
       <tr>
           <td>price</td>
           <td>Yes</td>
-          <td>Numeric maximum 9.999.999</td>
+          <td>Numeric [0-9], maximum 9.999.999.</td>
           <td>Product Price</td>
           <td>100</td>
       </tr>
       <tr>
           <td>qty</td>
           <td>Yes</td>
-          <td>Numeric maximum 9999</td>
+          <td>Numeric [0-9], maximum 9999.</td>
           <td>Product Quantity</td>
           <td>1</td>
       </tr>
       <tr>
           <td>name</td>
           <td>Yes</td>
-          <td>20 character alpha-numeric</td>
+          <td>20 character alpha-numeric [a-zA-Z0-9].</td>
           <td>Product Name</td>
           <td>Mie Instan</td>
       </tr>        
@@ -679,49 +679,49 @@
       <tr>
           <td>first_name</td>
           <td>Yes</td>
-          <td>20 character alphabet</td>
+          <td>20 character alphabet [a-zA-Z]</td>
           <td>Customer first name</td>
           <td>Sam</td>
       </tr>
       <tr>
           <td>last_name</td>
           <td>Yes</td>
-          <td>20 character alphabet</td>
+          <td>20 character alphabet [a-zA-Z]</td>
           <td>Customer last name</td>
           <td>Anthony</td>
       </tr>
       <tr>
           <td>address1</td>
           <td>Yes</td>
-          <td>100 character alpha-numeric-symbols</td>
+          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@&amp;+/]</td>
           <td>Customer address</td>
           <td>Buaran I</td>
       </tr>
       <tr>
           <td>address2</td>
           <td>Optional</td>
-          <td>100 character alpha-numeric-symbols</td>
+          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@&amp;+/]</td>
           <td>Customer Address</td>
           <td>Pulogadung</td>
       </tr>
       <tr>
           <td>city</td>
           <td>Yes</td>
-          <td>20 character alphabet</td>
+          <td>20 character alphabet [a-zA-Z]</td>
           <td>Customer city</td>
           <td>Jakarta</td>
       </tr>
       <tr>
           <td>postal_code</td>
           <td>Yes</td>
-          <td>10 character numbers</td>
+          <td>10 character numbers [0-9]</td>
           <td>Customer postal code</td>
           <td>16954</td>
       </tr>
       <tr>
           <td>phone</td>
           <td>Yes</td>
-          <td>Numeric minimum 9 character and maximum 19 character</td>
+          <td>Numeric minimum 9 character and maximum 19 character [0-9]</td>
           <td>Customer phone. No characters like "+" and "-" allowed.</td>
           <td>0123456789123</td>
       </tr>        
