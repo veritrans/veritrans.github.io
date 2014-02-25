@@ -153,20 +153,20 @@
 	<tbody>
 		<tr>
 			<td>1</td>
-			<td>Mengirim request Get Token ke VT-Web.</td>
-			<td><code>token_merchant</code> dan <code>token_browser</code>.</td>
+			<td>Meminta token ke Veritrans.</td>
+			<td>Server Veritrans memberikan <code>token_merchant</code> dan <code>token_browser</code>.</td>
 		</tr>
 		<tr>
 			<td>2</td>
 			<td>Mengirim request redirection ke VT-Web.</td>
-			<td>Diarahkan ke halaman pembayaran VT-Web.</td>
+			<td>Berhasil diarahkan ke halaman pembayaran VT-Web.</td>
 		</tr>
 		<tr>
 			<td>3</td>
 			<td>
 				Melakukan transaksi pembayaran dengan menggunakan nomor kartu kredit dummy Visa.
 				<ul>
-					<li>CC No: 4111111111111111</li>
+					<li>CC No: 4111 1111 1111 1111</li>
 					<li>CVV: 3 digit acak</li>
 					<li>Expiration Date: 2015-ke atas</li>
 				</ul>
@@ -177,7 +177,7 @@
 			<td>4</td>
 			<td>Melakukan transaksi pembayaran dengan menggunakan nomor kartu kredit dummy Mastercard.
 				<ul>
-					<li>CC No: 5555555555554444</li>
+					<li>CC No: 5555 5555 5555 4444</li>
 					<li>CVV: 3 digit acak</li>
 					<li>Expiration Date: 2015-ke atas</li>
 				</ul>
@@ -189,7 +189,7 @@
 			<td>
 				Melakukan transaksi pembayaran dengan menggunakan nomor kartu kredit yang tidak valid.
 				<ul>
-					<li>CC No: 1111111111111111</li>
+					<li>CC No: 1111 1111 1111 1111</li>
 					<li>CVV : 3 digit acak</li>
 					<li>Expiration Date: 2015-above</li>
 				</ul>

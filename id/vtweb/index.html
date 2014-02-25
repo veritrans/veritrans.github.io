@@ -140,17 +140,16 @@
           <div class="id-vtweb-index">
             <h2>Perkenalan VT-Web</h2>
 
-<h3>Cara kerja</h3>
-
+<h3>Bagaimana VT-Web bekerja</h3>
 
 <h4>Penjelasan secara garis besar:</h4>
 
 <ol>
 	<li>Pelanggan selesai melakukan pemesanan(order) dan mengeklik tombol 'checkout'.</li>
-	<li>Pelanggan diarahkan ke halaman VT-Web di web Veritrans.</li>
+	<li>Pelanggan diarahkan ke halaman pembayaran VT-Web di website Veritrans.</li>
 	<li>Pelanggan mengisi informasi terkait pembayaran (informasi credit card, alamat, dll.) di halaman VT-Web.</li>
-	<li>Pelanggan status hasil proses pembayaran ('success', 'failed', atau 'pending'), kemudian diarahkan ke website merchant untuk kemudian mengikuti instruksi selanjutnya dari merchant.</li>
-	<li>Pelanggan dan merchant mendapatkan notifikasi melalui email yang berisi status pembayaran.</li>
+	<li>Pelanggan melihat status hasil proses pembayaran ('success', 'failed', atau 'pending'), kemudian diarahkan ke website merchant untuk kemudian mengikuti instruksi selanjutnya dari merchant.</li>
+	<li>Pelanggan dan merchant menerima email yang berisi status pembayaran yang baru saja dilakukan.</li>
 </ol>
 
 
@@ -159,7 +158,7 @@
 <img title="flowchart" class="img-responsive" src="../../images/vt-payment-flowchart.png" />
 <ol>
 	<li>Pelanggan selesai melakukan pemesanan(order) dan mengeklik tombol 'checkout'.</li>
-	<li>Server merchant mengirim request token ke VT-Web server untuk digunakan proses di redirection.</li>
+	<li>Server merchant mengirim request token ke VT-Web server untuk digunakan dalam proses redirection.</li>
 	<li>
 		<p>VT-Web server akan mengembalikan respon yang berisi dua token, yaitu <code>token_merchant</code> dan <code>token_browser</code>.</p>
 		<p><code>token_browser</code> digunakan sebagai salah satu parameter untuk me-redirect pelanggan ke halaman pembayaran VT-Web Veritrans.</p>
@@ -167,7 +166,7 @@
 	</li>
 	<li>Menggunakan parameter <code>token_browser</code>, merchant mengirim request ke VT-Web server agar me-redirect pelanggan ke halaman pembayaran VT-Web Veritrans.</li>
 	<li>Pelanggan mengisi informasi terkait pembayaran (informasi credit card, alamat, dll.) di halaman VT-Web.</li>
-	<li>Pelanggan status hasil proses pembayaran ('success', 'failed', atau 'pending'), kemudian diarahkan ke website merchant untuk kemudian mengikuti instruksi selanjutnya dari merchant.</li>
+	<li>Pelanggan melihat status hasil proses pembayaran ('success', 'failed', atau 'pending'), kemudian pelanggan akan diarahkan ke halaman website merchant yang sudah ditentukan oleh merchant.</li>
 	<li>Pada waktu bersamaan, Veritrans akan mengirim email notifikasi ke admin merchant dan ke pelanggan.</li>
 	<li>Veritrans juga mengirim HTTP(S) POST request sebagai notifikasi ke server merchant. HTTP(S) POST request ini berisi parameter terkait informasi status pembayaran. Dengan informasi ini, merchant server dapat meng-update status transaksi di database merchant. (Contoh: <code>success</code>, <code>failure</code>, <code>challenge</code>).</li>
 	<li>Proses pembayaran selesai.</li>
