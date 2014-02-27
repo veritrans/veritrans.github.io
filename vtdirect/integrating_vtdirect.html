@@ -694,14 +694,14 @@
       <tr>
           <td>address1</td>
           <td>Yes</td>
-          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@()/]</td>
+          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@()/#]</td>
           <td>Customer address</td>
           <td>Buaran I</td>
       </tr>
       <tr>
           <td>address2</td>
           <td>Optional</td>
-          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@()/]</td>
+          <td>100 character alpha-numeric-symbols [a-zA-Z0-9 -_',.@()/#]</td>
           <td>Customer Address</td>
           <td>Pulogadung</td>
       </tr>
@@ -718,6 +718,13 @@
           <td>10 character numbers [0-9]</td>
           <td>Customer postal code</td>
           <td>16954</td>
+      </tr>
+	  <tr>
+          <td>country_code</td>
+          <td>Optional</td>
+		  <td><a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a> – Upper Case. Default is IDN if parameter unsent.</td>
+          <td>Customer country code</td>
+          <td>IDN</td>
       </tr>
       <tr>
           <td>phone</td>
