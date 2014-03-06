@@ -153,7 +153,7 @@
     <p><strong>Send Card Data</strong>: When the customer clicks "pay", Merchant mobile application will combine sensitive payment details (CC number, CVV, exp. Date) + public-key and send it over to the Veritrans server to request the issuance of a onetime-token ("Token").  </p>
   </li>
   <li>
-    <p><strong>Get Token</strong>: Veritrans will return a Token to the Merchant mobile application. The Token will be valid for 75 seconds, and it will expire if not used within that time frame.</p>
+    <p><strong>Get Token</strong>: Veritrans will return a Token to the Merchant mobile application. The Token will be valid for 3 minutes, and it will expire if not used within that time frame.</p>
   </li>
   <li>
     <p><strong>Send Token</strong>: The Token will then be submitted by mobile application to the merchant's server. Note that the merchant has only a Token that represents the credit card details, and does not directly store or process credit card information.</p>
@@ -944,7 +944,7 @@ if(token_id) {
     <tr>
       <td>VD05</td>
       <td>Failure</td>
-      <td>Multiple charges to the same credit card number. The same credit card can only be utilized for the another transaction 75 seconds after the previous transaction is complete</td>
+      <td>Multiple charges to the same credit card number. The same credit card can only be utilized for the another transaction 3 minutes after the previous transaction is complete</td>
     </tr>
     <tr>
       <td>VD99</td>

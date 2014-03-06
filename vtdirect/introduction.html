@@ -171,7 +171,7 @@
     <p><strong>Send Card Data</strong>: When the customer clicks "pay", Veritrans.js, a small JavaScript load from Veritrans' server, will combine sensitive payment details (CC number, CVV, exp. Date) + public-key and send it over to the Veritrans server to request the issuance of a onetime-token ("Token").  </p>
   </li>
   <li>
-    <p><strong>Get Token</strong>: Veritrans will return a Token to the customer's web browser. The Token will be valid for 75 seconds, and it will expire if not used within that time frame.</p>
+    <p><strong>Get Token</strong>: Veritrans will return a Token to the customer's web browser. The Token will be valid for 3 minutes, and it will expire if not used within that time frame.</p>
   </li>
   <li>
     <p><strong>Send Token</strong>: The Token will then be submitted to the merchant's server. Note that the merchant has only a Token that represents the credit card details, and does not directly store or process credit card information.</p>
