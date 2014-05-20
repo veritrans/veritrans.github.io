@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <!-- Fixed navbar -->
+     <!-- Fixed navbar -->
 <div class="header navbar navbar-default navbar-fixed-top">
   <div class="custom-container">
     <div class="col-md-3 navbar-header">
@@ -26,27 +26,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h2 class="logo"><a href="https://www.veritrans.co.id/" title="Home"><span>Veritrans</span></a></h2>
+      <h2 class="logo"><a href="index.html" title="Home"><span>Veritrans</span></a></h2>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="https://www.veritrans.co.id/whatwedo.html">what we do</a></li>
-				<li><a href="https://www.veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
-        <li><a href="https://www.veritrans.co.id/pricing.html">pricing</a></li>
-        <li><a href="https://www.veritrans.co.id/about.html">about</a></li>
-        <li><a href="http://docs.veritrans.co.id/" class="current">docs</a></li>
+        <li><a href="whatwedo.html" title="What We Do">what we do</a></li>
+        <li><a href="index.html#vt-products" title="Our Online Payment Products">products</a></li>
+        <li><a href="pricing.html" title="Check for Our Pricing">pricing</a></li>
+        <li><a href="about.html" title="About Veritrans">about</a></li>
+        <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="sandbox.html">sandbox</a></li>
+            <li><a href="https://docs.google.com/document/d/1Z0s7CsXp91YD52ibWcQ7iIQ6TDtWr3XCI1uaFQF12-w/pub">documentation</a></li>
+          </ul>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">more <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="http://blog.veritrans.co.id/">blog</a></li>
-            <li><a href="https://www.veritrans.co.id/career.html">career</a></li>
-            <li><a href="https://www.veritrans.co.id/contact.html">contact</a></li>
+            <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+            <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+            <li><a href="career.html" title="Career at Veritrans">career</a></li>
+            <li><a href="contact.html" title="Contact Us">contact</a></li>
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right register-login">
-        <li class="pull-left"><a href="https://payments.veritrans.co.id/map/users/sign_up" class="register">register</a></li>
-        <li class="pull-left"><a href="https://payments.veritrans.co.id/map/users/sign_in">login</a></li>
+        <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+        <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -61,59 +69,7 @@
 		</div>
 		<div class="language-toggle"> <a href="../../vtdirect/examples.html">English</a> / Bahasa Indonesia</div>
 		<ul class="sidebar">
-			<li><a class="parent">VT-Web</a>
-				<ul class="child-menu">
-					
-					<li class=""><a href="/id/vtweb/">Perkenalan</a></li>
-					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
-					
-					<li class=""><a href="../vtweb/integrating_vtweb.html">Integrasi</a></li>
-					
-					<li class=""><a href="../vtweb/testing_vtweb.html">Pengujian</a></li>
-					
-					<li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
-					
-					<li class=""><a href="../vtweb/api.html">Parameter API</a></li>
-					
-					<li class=""><a href="../vtweb/other_features.html">Fitur Lain</a></li>
-					
-					<li class=""><a href="../vtweb/plugins_and_examples.html">Plugin dan Contoh</a></li>
-					
-				</ul>
-			</li>
-			<li><a class="parent">VT-Direct</a>
-				<ul class="child-menu">
-					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
-					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
-					
-					<li class=""><a href="integrating_vtdirect.html">Integrasi</a></li>
-					
-					<li class=""><a href="mobile_integration.html">Integrasi Mobile App</a></li>
-					
-					<li class=""><a href="testing_vtdirect.html">Pengujian</a></li>
-					
-					<li class=""><a href="going_live.html">Going Live</a></li>
-					
-					<li class=""><a href="other_command.html">Perintah Lain</a></li>
-					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
-					
-					<li class="active"><a href="examples.html">Contoh</a></li>
-					
-				</ul>
-			</li>
-			<li><a class="parent">How to</a>
-				<ul class="child-menu">
-					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
-					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
-					
-				</ul>
-			</li>
+			
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
@@ -128,6 +84,15 @@
 					<li class=""><a href="../faq/account_management.html">Manajemen Akun</a></li>
 					
 					<li class=""><a href="../faq/fds_response.html">Fraud Detection System (FDS) Response</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">How to</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					
+					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
 					
 				</ul>
 			</li>
@@ -164,7 +129,7 @@
 </ul>
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="other_features.html">VT-Direct: Fitur Lain</a></li><li class="right">Next: <a href="../howto/fds.html">How to: Sistem Deteksi Fraud</a> »</li></ul>
+				<ul></ul>
 			</div>
           </div>
         </div><!--/span-->
@@ -183,7 +148,7 @@
           <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
           <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
           <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
-          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://docs.google.com/document/d/1Z0s7CsXp91YD52ibWcQ7iIQ6TDtWr3XCI1uaFQF12-w/pub" title="System Documentations">Docs</a> <span class="divider">|</span>
           <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
           <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
         </div>

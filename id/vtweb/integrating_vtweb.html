@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <!-- Fixed navbar -->
+     <!-- Fixed navbar -->
 <div class="header navbar navbar-default navbar-fixed-top">
   <div class="custom-container">
     <div class="col-md-3 navbar-header">
@@ -26,27 +26,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h2 class="logo"><a href="https://www.veritrans.co.id/" title="Home"><span>Veritrans</span></a></h2>
+      <h2 class="logo"><a href="index.html" title="Home"><span>Veritrans</span></a></h2>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="https://www.veritrans.co.id/whatwedo.html">what we do</a></li>
-				<li><a href="https://www.veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
-        <li><a href="https://www.veritrans.co.id/pricing.html">pricing</a></li>
-        <li><a href="https://www.veritrans.co.id/about.html">about</a></li>
-        <li><a href="http://docs.veritrans.co.id/" class="current">docs</a></li>
+        <li><a href="whatwedo.html" title="What We Do">what we do</a></li>
+        <li><a href="index.html#vt-products" title="Our Online Payment Products">products</a></li>
+        <li><a href="pricing.html" title="Check for Our Pricing">pricing</a></li>
+        <li><a href="about.html" title="About Veritrans">about</a></li>
+        <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="sandbox.html">sandbox</a></li>
+            <li><a href="https://docs.google.com/document/d/1Z0s7CsXp91YD52ibWcQ7iIQ6TDtWr3XCI1uaFQF12-w/pub">documentation</a></li>
+          </ul>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">more <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="http://blog.veritrans.co.id/">blog</a></li>
-            <li><a href="https://www.veritrans.co.id/career.html">career</a></li>
-            <li><a href="https://www.veritrans.co.id/contact.html">contact</a></li>
+            <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+            <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+            <li><a href="career.html" title="Career at Veritrans">career</a></li>
+            <li><a href="contact.html" title="Contact Us">contact</a></li>
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right register-login">
-        <li class="pull-left"><a href="https://payments.veritrans.co.id/map/users/sign_up" class="register">register</a></li>
-        <li class="pull-left"><a href="https://payments.veritrans.co.id/map/users/sign_in">login</a></li>
+        <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+        <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -61,59 +69,7 @@
 		</div>
 		<div class="language-toggle"> <a href="../../vtweb/integrating_vtweb.html">English</a> / Bahasa Indonesia</div>
 		<ul class="sidebar">
-			<li><a class="parent">VT-Web</a>
-				<ul class="child-menu">
-					
-					<li class=""><a href="/id/vtweb/">Perkenalan</a></li>
-					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
-					
-					<li class="active"><a href="integrating_vtweb.html">Integrasi</a></li>
-					
-					<li class=""><a href="testing_vtweb.html">Pengujian</a></li>
-					
-					<li class=""><a href="going_live.html">Going Live</a></li>
-					
-					<li class=""><a href="api.html">Parameter API</a></li>
-					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
-					
-					<li class=""><a href="plugins_and_examples.html">Plugin dan Contoh</a></li>
-					
-				</ul>
-			</li>
-			<li><a class="parent">VT-Direct</a>
-				<ul class="child-menu">
-					
-					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
-					
-					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
-					
-					<li class=""><a href="../vtdirect/integrating_vtdirect.html">Integrasi</a></li>
-					
-					<li class=""><a href="../vtdirect/mobile_integration.html">Integrasi Mobile App</a></li>
-					
-					<li class=""><a href="../vtdirect/testing_vtdirect.html">Pengujian</a></li>
-					
-					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
-					
-					<li class=""><a href="../vtdirect/other_command.html">Perintah Lain</a></li>
-					
-					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
-					
-					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
-					
-				</ul>
-			</li>
-			<li><a class="parent">How to</a>
-				<ul class="child-menu">
-					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
-					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
-					
-				</ul>
-			</li>
+			
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
@@ -128,6 +84,15 @@
 					<li class=""><a href="../faq/account_management.html">Manajemen Akun</a></li>
 					
 					<li class=""><a href="../faq/fds_response.html">Fraud Detection System (FDS) Response</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">How to</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					
+					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
 					
 				</ul>
 			</li>
@@ -184,27 +149,27 @@
 <span class="nv">$veritrans</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans</span><span class="p">();</span>
 
 <span class="c1">//TODO: Change with your actual merchant id and merchant hash key
-</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">merchant_id</span>         <span class="o">=</span> <span class="s1">&#39;T100000000000001000001&#39;</span><span class="p">;</span>
-<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">merchant_hash_key</span>   <span class="o">=</span> <span class="s1">&#39;305e0328a366cbce8e17a385435bb7eb3f0cbcfbfc0f1c3ef56b658&#39;</span><span class="p">;</span>
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">merchant_id</span>         <span class="o">=</span> <span class="s1">'T100000000000001000001'</span><span class="p">;</span>
+<span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">merchant_hash_key</span>   <span class="o">=</span> <span class="s1">'305e0328a366cbce8e17a385435bb7eb3f0cbcfbfc0f1c3ef56b658'</span><span class="p">;</span>
 
 <span class="c1">//TODO: Change with your actual order_id.
-</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">order_id</span>            <span class="o">=</span> <span class="s1">&#39;your_unique_order_id&#39;</span><span class="p">;</span>
+</span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">order_id</span>            <span class="o">=</span> <span class="s1">'your_unique_order_id'</span><span class="p">;</span>
 
 <span class="c1">// Set commodity items
 </span><span class="nv">$items</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
             <span class="k">array</span><span class="p">(</span>
-                <span class="s2">&quot;item_id&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;itemsatu&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;item_id&quot;</span> <span class="o">=&gt;</span> <span class="s1">'itemsatu'</span><span class="p">,</span>
                 <span class="s2">&quot;price&quot;</span> <span class="o">=&gt;</span> <span class="mi">250000</span><span class="p">,</span>
                 <span class="s2">&quot;quantity&quot;</span>   <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-                <span class="s2">&quot;item_name1&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sepatu&#39;</span><span class="p">,</span>
-                <span class="s2">&quot;item_name2&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Shoes&#39;</span>
+                <span class="s2">&quot;item_name1&quot;</span> <span class="o">=&gt;</span> <span class="s1">'sepatu'</span><span class="p">,</span>
+                <span class="s2">&quot;item_name2&quot;</span> <span class="o">=&gt;</span> <span class="s1">'Shoes'</span>
             <span class="p">),</span>
             <span class="k">array</span><span class="p">(</span>
-                <span class="s2">&quot;item_id&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;itemdua&#39;</span><span class="p">,</span>
+                <span class="s2">&quot;item_id&quot;</span> <span class="o">=&gt;</span> <span class="s1">'itemdua'</span><span class="p">,</span>
                 <span class="s2">&quot;price&quot;</span> <span class="o">=&gt;</span> <span class="mi">500000</span><span class="p">,</span>
                 <span class="s2">&quot;quantity&quot;</span>   <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
-                <span class="s2">&quot;item_name1&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Tas&#39;</span><span class="p">,</span>
-                <span class="s2">&quot;item_name2&quot;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Bag&#39;</span>
+                <span class="s2">&quot;item_name1&quot;</span> <span class="o">=&gt;</span> <span class="s1">'Tas'</span><span class="p">,</span>
+                <span class="s2">&quot;item_name2&quot;</span> <span class="o">=&gt;</span> <span class="s1">'Bag'</span>
             <span class="p">),</span>
         <span class="p">);</span>
 
@@ -213,7 +178,7 @@
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">required_shipping_address</span>               <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Set 0 if shipping address is not required
 </span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">billing_address_different_with_shipping</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Set 0 if shipping address = billing address
 </span>
-<span class="c1">// Set billing info. If you don&#39;t set this info, customer will need to fill it at the Veritrans payment page.
+<span class="c1">// Set billing info. If you don't set this info, customer will need to fill it at the Veritrans payment page.
 </span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">first_name</span>  <span class="o">=</span> <span class="s2">&quot;Andri&quot;</span><span class="p">;</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">last_name</span>   <span class="o">=</span> <span class="s2">&quot;Setiawan&quot;</span><span class="p">;</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">email</span>       <span class="o">=</span> <span class="s2">&quot;customer@email.com&quot;</span><span class="p">;</span>
@@ -224,7 +189,7 @@
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">postal_code</span> <span class="o">=</span> <span class="s2">&quot;12345&quot;</span><span class="p">;</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">phone</span>       <span class="o">=</span> <span class="s2">&quot;08123123123123&quot;</span><span class="p">;</span>
 
-<span class="c1">// Set shipping info. If you don&#39;t set this info, customer will need to fill it at the Veritrans payment page.
+<span class="c1">// Set shipping info. If you don't set this info, customer will need to fill it at the Veritrans payment page.
 </span><span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_first_name</span>     <span class="o">=</span> <span class="s2">&quot;John&quot;</span><span class="p">;</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_last_name</span>      <span class="o">=</span> <span class="s2">&quot;Watson&quot;</span><span class="p">;</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">shipping_address1</span>       <span class="o">=</span> <span class="s2">&quot;Bakerstreet 221B&quot;</span><span class="p">;</span>
@@ -242,8 +207,8 @@
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">point_banks</span>         <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bni&quot;</span><span class="p">,</span> <span class="s2">&quot;cimb&quot;</span><span class="p">];</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">payment_methods</span>     <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span> <span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">];</span>
 <span class="nv">$veritrans</span><span class="o">-&gt;</span><span class="na">installment_terms</span>   <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;bni&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span>
-    <span class="s1">&#39;cimb&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+    <span class="s1">'bni'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span>
+    <span class="s1">'cimb'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
     <span class="p">);</span>
 
 <span class="c1">//Call Veritrans VT-Web API Get Token
@@ -255,10 +220,10 @@
         <span class="k">exit</span><span class="p">();</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="c1">//Save this token_merchant on your database to be used for checking veritrans notification response.
-</span>        <span class="nv">$token_merchant</span> <span class="o">=</span> <span class="nv">$keys</span><span class="p">[</span><span class="s1">&#39;token_merchant&#39;</span><span class="p">];</span>
+</span>        <span class="nv">$token_merchant</span> <span class="o">=</span> <span class="nv">$keys</span><span class="p">[</span><span class="s1">'token_merchant'</span><span class="p">];</span>
 
         <span class="c1">//Use this token_browser for redirecting customer to Veritrans payment page.
-</span>        <span class="nv">$token_browser</span> <span class="o">=</span> <span class="nv">$keys</span><span class="p">[</span><span class="s1">&#39;token_browser&#39;</span><span class="p">];</span>
+</span>        <span class="nv">$token_browser</span> <span class="o">=</span> <span class="nv">$keys</span><span class="p">[</span><span class="s1">'token_browser'</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
@@ -306,7 +271,7 @@
 <span class="nt">&lt;/head&gt;</span>
 
 <span class="nt">&lt;body</span> <span class="na">onload=</span><span class="s">&quot;onloadEvent();&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&lt;?php echo Veritrans::PAYMENT_REDIRECT_URL ?&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">name=</span><span class="s">&#39;form_auto_post&#39;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&lt;?php echo Veritrans::PAYMENT_REDIRECT_URL ?&gt;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">name=</span><span class="s">'form_auto_post'</span><span class="nt">&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;MERCHANT_ID&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?php echo $veritrans-&gt;merchant_id ?&gt;&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;ORDER_ID&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?php echo $veritrans-&gt;order_id ?&gt;&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;TOKEN_BROWSER&quot;</span> <span class="na">value=</span><span class="s">&quot;&lt;?php echo $token_browser ?&gt;&quot;</span> <span class="nt">/&gt;</span>
@@ -325,8 +290,8 @@
 <pre class="highlight ruby"><span class="k">def </span><span class="nf">pay</span>
 	<span class="vi">@order</span> <span class="o">=</span> <span class="no">Order</span><span class="nf">.find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:order_id</span><span class="o">]</span><span class="p">)</span>
 	<span class="c1">#change with your actual merchant_id and merchant_hash_key</span>
-	<span class="vi">@merchant_id</span>       <span class="o">=</span> <span class="s1">&#39;T100000000000001001862&#39;</span>
-	<span class="vi">@merchant_hash_key</span> <span class="o">=</span> <span class="s1">&#39;21565170a5a85543b98b0e34071656c104f31266ff436be07edb2d5a33983f97&#39;</span>
+	<span class="vi">@merchant_id</span>       <span class="o">=</span> <span class="s1">'T100000000000001001862'</span>
+	<span class="vi">@merchant_hash_key</span> <span class="o">=</span> <span class="s1">'21565170a5a85543b98b0e34071656c104f31266ff436be07edb2d5a33983f97'</span>
 <span class="k">end</span>
 </pre>
 <p>Maka, view dari <code>pay</code> action (pay.html.haml) adalah seperti berikut:</p>
@@ -334,9 +299,9 @@
 <pre class="highlight ruby"><span class="o">=</span><span class="n">payment_service_for</span> <span class="vi">@order</span><span class="nf">.id</span><span class="p">,</span> <span class="vi">@merchant_id</span><span class="p">,</span>
 <span class="ss">:merchant_hash_key</span> <span class="o">=&gt;</span> <span class="vi">@merchant_hash_key</span><span class="p">,</span>
 <span class="ss">:service</span> <span class="o">=&gt;</span> <span class="ss">:veritrans</span><span class="p">,</span>
-<span class="ss">:html</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="s1">&#39;payment-form&#39;</span> <span class="p">,</span> <span class="ss">:authenticity_token</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">}</span> <span class="p">,</span>
+<span class="ss">:html</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="s1">'payment-form'</span> <span class="p">,</span> <span class="ss">:authenticity_token</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">}</span> <span class="p">,</span>
 <span class="ss">:amount</span> <span class="o">=&gt;</span> <span class="vi">@order</span><span class="nf">.total_price</span> <span class="p">,</span> 
-<span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s1">&#39;IDR&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">service</span><span class="o">|</span>
+<span class="ss">:currency</span> <span class="o">=&gt;</span> <span class="s1">'IDR'</span> <span class="k">do</span> <span class="o">|</span><span class="n">service</span><span class="o">|</span>
      <span class="o">-</span><span class="n">service</span><span class="nf">.return_url</span> <span class="o">=</span> <span class="s2">&quot;http://yourstore.com/payment_success_callback_url/&quot;</span>
      <span class="o">-</span><span class="n">service</span><span class="nf">.cancel_url</span> <span class="o">=</span> <span class="s2">&quot;http://yourstore.com/payment_cancel_callback_url/&quot;</span>
      <span class="o">-</span><span class="n">service</span><span class="nf">.error_url</span>      <span class="o">=</span> <span class="s2">&quot;http://yourstore.com/payment_error_callback_url/&quot;</span>
@@ -351,9 +316,9 @@
      <span class="o">-</span><span class="n">service</span><span class="nf">.billing_address</span> <span class="ss">:address_1</span> <span class="o">=&gt;</span> <span class="s2">&quot;Jalan Karbela Selatan nomor 5 RT 04 RW 05&quot;</span><span class="p">,</span>
           <span class="ss">:address_2</span> <span class="o">=&gt;</span> <span class="s2">&quot;Kelurahan Karet, Setiabudi&quot;</span><span class="p">,</span>
           <span class="ss">:city</span> <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta Selatan&quot;</span><span class="p">,</span>
-          <span class="ss">:zip</span> <span class="o">=&gt;</span> <span class="s1">&#39;12920&#39;</span><span class="p">,</span>
-          <span class="ss">:phone</span> <span class="o">=&gt;</span> <span class="s1">&#39;081322311801&#39;</span><span class="p">,</span>
-          <span class="ss">:country_code</span> <span class="o">=&gt;</span> <span class="s1">&#39;IDN&#39;</span>
+          <span class="ss">:zip</span> <span class="o">=&gt;</span> <span class="s1">'12920'</span><span class="p">,</span>
+          <span class="ss">:phone</span> <span class="o">=&gt;</span> <span class="s1">'081322311801'</span><span class="p">,</span>
+          <span class="ss">:country_code</span> <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
 
      <span class="o">-</span> <span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="vi">@order</span><span class="nf">.line_items</span>
           <span class="o">-</span><span class="n">service</span><span class="nf">.items</span> <span class="o">&lt;&lt;</span> <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="n">item</span><span class="nf">.product.id</span><span class="p">,</span> <span class="ss">:price</span> <span class="o">=&gt;</span> <span class="n">item</span><span class="nf">.product.price.to_i</span><span class="p">,</span> <span class="ss">:qty</span> <span class="o">=&gt;</span> <span class="n">item</span><span class="nf">.quantity.to_i</span><span class="p">,</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="n">item</span><span class="nf">.product.title</span><span class="p">}</span>
@@ -363,7 +328,7 @@
 
 <span class="ss">:javascript</span>
      <span class="err">$</span><span class="p">(</span><span class="n">document</span><span class="p">)</span><span class="nf">.ready</span><span class="p">(</span><span class="n">function</span><span class="p">(){</span>
-          <span class="err">$</span><span class="p">(</span><span class="s1">&#39;#payment-form&#39;</span><span class="p">)</span><span class="nf">.submit</span><span class="p">()</span>
+          <span class="err">$</span><span class="p">(</span><span class="s1">'#payment-form'</span><span class="p">)</span><span class="nf">.submit</span><span class="p">()</span>
      <span class="p">})</span>
 				</pre>
 			</div>
@@ -405,18 +370,18 @@
 	    <span class="c1">// TODO: Retrieve order info from your database to check the token_merchant for security purpose.
 </span>	    <span class="c1">// The token_merchant that you get from this http(s) POST notification must be the same as token_merchant that you get previously when requesting token (before redirecting customer to Veritrans payment page.)
 </span>
-	    <span class="c1">//$order = Order::find(&#39;order_id&#39; =&gt; $notification-&gt;orderId);
+	    <span class="c1">//$order = Order::find('order_id' =&gt; $notification-&gt;orderId);
 </span>
-	    <span class="k">if</span><span class="p">(</span><span class="nv">$order</span><span class="p">[</span><span class="s1">&#39;TOKEN_MERCHANT&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$notification</span><span class="o">-&gt;</span><span class="na">TOKEN_MERCHANT</span> <span class="p">)</span>
+	    <span class="k">if</span><span class="p">(</span><span class="nv">$order</span><span class="p">[</span><span class="s1">'TOKEN_MERCHANT'</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$notification</span><span class="o">-&gt;</span><span class="na">TOKEN_MERCHANT</span> <span class="p">)</span>
 	    <span class="p">{</span>
-	        <span class="c1">// TODO: update order payment status on your database. 3 possibilities $notification-&gt;mStatus responses from Veritrans: &#39;success&#39;, &#39;failure&#39;, and &#39;challenge&#39;
-</span>	        <span class="c1">// $order[&#39;payment_status&#39;] = $notification-&gt;mStatus; 
+	        <span class="c1">// TODO: update order payment status on your database. 3 possibilities $notification-&gt;mStatus responses from Veritrans: 'success', 'failure', and 'challenge'
+</span>	        <span class="c1">// $order['payment_status'] = $notification-&gt;mStatus; 
 </span>	        <span class="c1">// $order-&gt;save();
 </span>	    <span class="p">}</span>
 	    <span class="k">else</span>
 	    <span class="p">{</span>
 	        <span class="c1">// If token_merchant that you get from this http(s) POST request is different with token_merchant that you get previously when requesting token (before redirecting customer to Veritrans payment page.), there is a possibility that the http(s) POST request is not coming from Veritrans. 
-</span>	        <span class="c1">// Don&#39;t update your payment status. 
+</span>	        <span class="c1">// Don't update your payment status. 
 </span>	        <span class="c1">// To make sure, check your Merchant Administration Portal (MAP) at https://payments.veritrans.co.id/map/
 </span>	    <span class="p">}</span>
 	<span class="p">}</span>
@@ -430,8 +395,8 @@
 				<pre class="highlight ruby">
 <span class="k">def </span><span class="nf">payment_notification</span>
 	<span class="c1">#change with your actual merchant_id and merchant_hash_key</span>
-	<span class="n">merchant_id</span>       <span class="o">=</span> <span class="s1">&#39;T100000000000001001862&#39;</span>
-	<span class="n">merchant_hash_key</span> <span class="o">=</span> <span class="s1">&#39;21565170a5a85543b98b0e34071656c104f31266ff436be07edb2d5a33983f97&#39;</span>
+	<span class="n">merchant_id</span>       <span class="o">=</span> <span class="s1">'T100000000000001001862'</span>
+	<span class="n">merchant_hash_key</span> <span class="o">=</span> <span class="s1">'21565170a5a85543b98b0e34071656c104f31266ff436be07edb2d5a33983f97'</span>
 
 	<span class="n">param</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:orderId</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:orderId</span><span class="o">]</span><span class="p">,</span> <span class="ss">:mStatus</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:mStatus</span><span class="o">]</span><span class="p">,</span> <span class="ss">:TOKEN_MERCHANT</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:TOKEN_MERCHANT</span><span class="o">]</span><span class="p">}</span>
 	<span class="vi">@p</span> <span class="o">=</span> <span class="n">param</span><span class="nf">.to_json</span>
@@ -463,7 +428,7 @@
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Web: Langkah Awal</a></li><li class="right">Next: <a href="testing_vtweb.html">VT-Web: Pengujian</a> »</li></ul>
+				<ul></ul>
 			</div>
           </div>
         </div><!--/span-->
@@ -482,7 +447,7 @@
           <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
           <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
           <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
-          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://docs.google.com/document/d/1Z0s7CsXp91YD52ibWcQ7iIQ6TDtWr3XCI1uaFQF12-w/pub" title="System Documentations">Docs</a> <span class="divider">|</span>
           <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
           <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
         </div>
