@@ -81,42 +81,42 @@
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="get_redirect_url.html">Mendapatkan Redirect URL</a></li>
 					
-					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
+					<li class=""><a href="redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="handle_notification.html">Menangani Notifikasi</a></li>
 					
-					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
+					<li class="active"><a href="sample_code.html">Sample Code</a></li>
 					
-					<li class=""><a href="../vtweb/status_code.html">Status Code</a></li>
+					<li class=""><a href="status_code.html">Status Code</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
 					
-					<li class="active"><a href="going_live.html">Going Live</a></li>
+					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
 					
-					<li class=""><a href="status_code.html">Status Code</a></li>
+					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
 				</ul>
 			</li>
@@ -164,27 +164,35 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="vtdirect-going-live">
-            <h2 id="going-live-dengan-vt-direct">Going Live dengan VT-Direct</h2>
-
-<p>Jika Anda sudah selesai melakukan testing di Sandbox dan sudah siap untuk go live di Production Environment, ada 2 hal yang perlu dipastikan:</p>
-
+          <div class="vtweb-sample-code">
+            <h2>Sample Code</h2>
+<p>
+	Contoh kode yang digunakan dalam dokumen ini dapat dilihat secara lengkap di <a href="https://github.com/veritrans/papi-sample-code">https://github.com/veritrans/papi-sample-code</a> pada folder VT-Web/PHP.
+</p>
+<h5>Cara penggunaan:</h5>
 <ol>
-  <li>Arahkan konfigurasi <code>$endpoint</code> ke: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a></li>
-  <li>
-    <p>Gunakan library javascript veritrans production:</p>
-
-    <pre class="highlight html">
- <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://api.veritrans.co.id/assets/js/veritrans.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
- </pre>
-  </li>
+	<li>Download semua file dalam folder VT-Web/PHP ini, letakkan di server (Misalnya: folder htdocs, jika Anda menggunakan XAMPP atau MAMP).</li>
+	<li>
+		Ubah konfigurasi <code>server_key</code> di file <code>config.php</code> sesuai dengan yang ada di Merchant Administration Portal (MAP) di halaman Setting &gt;&gt; Access Keys.
+	</li>
+	<li>
+		Selesai. Buka checkout.html dari browser.
+	</li>
 </ol>
+<h5>Menangani notifikasi:</h5>
+<p>
+	File <code>notification_handler.php</code> adalah contoh script untuk menangani HTTP(POST) notification yang dikirim oleh server Veritrans ke server merchant. Atur alamat endpoint server merchant yang akan dikirimi HTTP(POST) notifikasi di Merchant Administration Portal (MAP) pada halaman Setting &gt;&gt; VT-Web Preferences.
+</p>
 
-<p>Selamat bertransaksi menggunakan Veritrans!</p>
+<h5>Mengaktifkan production environment</h5>
+<p>Jika Anda sudah selesai melakukan testing dan sudah siap untuk go live di Production Environment, ada satu hal yang perlu dipastikan:<br />
+Arahkan konfigurasi <code>$endpoint</code> di file <code>checkout_process.php</code> ke: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a>.
+</p>
+
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="integration.html">VT-Direct: Integrasi</a></li><li class="right">Next: <a href="other_commands.html">VT-Direct: Perintah Lain</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="handle_notification.html">VT-Web: Menangani Notifikasi</a></li><li class="right">Next: <a href="status_code.html">VT-Web: Status Code</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
