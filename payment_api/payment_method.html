@@ -70,11 +70,11 @@
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="payment_type.html">Jenis Pembayaran</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class="active"><a href="payment_method.html">Cara Pembayaran</a></li>
 					
 				</ul>
 			</li>
@@ -100,23 +100,23 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
 					
-					<li class="active"><a href="going_live.html">Going Live</a></li>
+					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
 					
-					<li class=""><a href="status_code.html">Status Code</a></li>
+					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
 				</ul>
 			</li>
@@ -164,27 +164,29 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="vtdirect-going-live">
-            <h2 id="going-live-dengan-vt-direct">Going Live dengan VT-Direct</h2>
+          <div class="payment-api-payment-method">
+            <h2 id="cara-pembayaran">Cara Pembayaran</h2>
 
-<p>Jika Anda sudah selesai melakukan testing di Sandbox dan sudah siap untuk go live di Production Environment, ada 2 hal yang perlu dipastikan:</p>
+<p>Berikut adalah beberapa cara pembayaran yang tersedia di Payment API :</p>
 
 <ol>
-  <li>Arahkan konfigurasi <code>$endpoint</code> ke: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a></li>
-  <li>
-    <p>Gunakan library javascript veritrans production:</p>
-
-    <pre class="highlight html">
- <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://api.veritrans.co.id/assets/js/veritrans.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
- </pre>
+  <li>VT-Direct
+    <ul>
+      <li>RESTful API yang memungkinkan merchant menggunakan sistem pembayaran Veritrans untuk memproses pembayaran langsung di website merchant.</li>
+      <li><a href="../vtdirect/introduction.html">Klik disini untuk melihat Step-by-Step VT-Direct</a></li>
+    </ul>
+  </li>
+  <li>VT-Web
+    <ul>
+      <li>Platform pembayaran yang memungkinkan merchant menggunakan sistem pembayaran Veritrans dengan cara mengalihkan (redirect) customer ke halaman pembayaran Veritrans.</li>
+      <li><a href="../vtweb/introduction.html">Klik disini untuk melihat Step-by-Step VT-Web</a></li>
+    </ul>
   </li>
 </ol>
 
-<p>Selamat bertransaksi menggunakan Veritrans!</p>
-
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="integration.html">VT-Direct: Integrasi</a></li><li class="right">Next: <a href="other_commands.html">VT-Direct: Perintah Lain</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="payment_type.html">Payment API: Jenis Pembayaran</a></li><li class="right">Next: <a href="../vtweb/introduction.html">VT-Web: Perkenalan</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

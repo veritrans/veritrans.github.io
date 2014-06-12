@@ -100,34 +100,34 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
 					
-					<li class="active"><a href="going_live.html">Going Live</a></li>
+					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
 					
-					<li class=""><a href="status_code.html">Status Code</a></li>
+					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class="active"><a href="difference.html">Perbedaan Sandbox dan Production</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="card_list.html">Daftar Kartu Kredit</a></li>
 					
 				</ul>
 			</li>
@@ -164,27 +164,96 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="vtdirect-going-live">
-            <h2 id="going-live-dengan-vt-direct">Going Live dengan VT-Direct</h2>
+          <div class="sandbox-difference">
+            <h2 id="perbedaan-konfigurasi-sandbox-environment-dan-production-environment">Perbedaan Konfigurasi Sandbox Environment dan Production Environment</h2>
 
-<p>Jika Anda sudah selesai melakukan testing di Sandbox dan sudah siap untuk go live di Production Environment, ada 2 hal yang perlu dipastikan:</p>
+<p>Berikut ini adalah hal-hal yang perlu dilakukan untuk beralih dari mode Sandbox ke mode Production atau sebaliknya.</p>
 
 <ol>
-  <li>Arahkan konfigurasi <code>$endpoint</code> ke: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a></li>
   <li>
-    <p>Gunakan library javascript veritrans production:</p>
+    <p>Mengubah merchant id, server key, &amp; client key.</p>
 
-    <pre class="highlight html">
- <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://api.veritrans.co.id/assets/js/veritrans.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
- </pre>
+    <p>Mengubah konfigurasi merchant_id, server key dan client key yang sesuai.  </p>
+
+    <p>Konfigurasi mode sandbox dapat ditemukan di <a href="https://my.sandbox.veritrans.co.id/settings/config_info">https://my.sandbox.veritrans.co.id/settings/config_info</a>.  </p>
+
+    <p>Konfigurasi mode production dapat ditemukan di <a href="https://payments.veritrans.co.id/map/settings/config_info">https://payments.veritrans.co.id/map/settings/config_info</a>.</p>
+  </li>
+  <li>
+    <p>Mengubah API base url endpoint</p>
+
+    <p>Sandbox mode: 	<code>https://api.sandbox.veritrans.co.id/v2 </code> </p>
+
+    <p>Production mode: 	<code>https://api.veritrans.co.id/v2</code></p>
+
+    <table>
+	<thead>
+		<tr>
+			<th>Request</th>
+			<th>Sandbox</th>
+			<th>Production</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Charge</td>
+			<td><a href="https://api.sandbox.veritrans.co.id/v2/charge">https://api.sandbox.veritrans.co.id/v2/charge</a></td>
+			<td><a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a></td>
+			<td>Melakukan suatu transaksi.</td>
+		</tr>
+		<tr>
+			<td>Get transaction status</td>
+			<td>
+				<a href="https://api.sandbox.veritrans.co.id/v2/{id}/status">https://api.sandbox.veritrans.co.id/v2/{id}/status</a>
+			</td>
+			<td>
+				<a href="https://api.veritrans.co.id/v2/{id}/status">https://api.veritrans.co.id/v2/{id}/status</a>
+			</td>
+			<td>
+				Mendapatkan informasi status dari suatu transaksi dengan ID (<code>transaction_id</code> atau <code>order_id</code>) tertentu.
+			</td>
+		</tr>
+		<tr>
+			<td>Approve transaction</td>
+			<td>
+				<a href="https://api.sandbox.veritrans.co.id/v2/{id}/approve">https://api.sandbox.veritrans.co.id/v2/{id}/approve</a>
+			</td>
+			<td>
+				<a href="https://api.veritrans.co.id/v2/{id}/approve">https://api.veritrans.co.id/v2/{id}/approve</a>
+			</td>
+			<td>Meng-approve transaksi dengan ID (<code>transaction_id</code> atau <code>order_id</code>) tertentu yang telah mendapatkan status <code>'challenge</code> dari Fraud Detection System.</td>
+		</tr>
+		<tr>
+			<td>Cancel transaction</td>
+			<td>
+				<a href="https://api.sandbox.veritrans.co.id/v2/{id}/cancel">https://api.sandbox.veritrans.co.id/v2/{id}/cancel</a>
+			</td>
+			<td>
+				<a href="https://api.veritrans.co.id/v2/{id}/cancel">https://api.veritrans.co.id/v2/{id}/cancel</a>
+			</td>
+			<td>Membatalkan transaksi dengan ID (<code>transaction_id</code> atau <code>order_id</code>) tertentu. Pembatalan hanya bisa dilakukan jika transaksi tersebut belum melalui proses settlement. </td>
+		</tr>
+		<tr>
+			<td>Transcript transaction</td>
+			<td>
+				<a href="https://api.sandbox.veritrans.co.id/v2/{id}/transcript">https://api.sandbox.veritrans.co.id/v2/{id}/transcript</a>
+			</td>
+			<td>
+				<a href="https://api.veritrans.co.id/v2/{id}/transcript">https://api.veritrans.co.id/v2/{id}/transcript</a>
+			</td>
+			<td>
+				Mendapatkan detail log informasi dari suatu transaksi dengan  ID (<code>transaction_id</code> atau <code>order_id</code>) tertentu.
+			</td>
+		</tr>
+	</tbody>
+</table>
   </li>
 </ol>
 
-<p>Selamat bertransaksi menggunakan Veritrans!</p>
-
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="integration.html">VT-Direct: Integrasi</a></li><li class="right">Next: <a href="other_commands.html">VT-Direct: Perintah Lain</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="../vtdirect/status_code.html">VT-Direct: Status Code</a></li><li class="right">Next: <a href="testing_vtweb.html">Sandbox: Pengujian VTWeb di Sandbox</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

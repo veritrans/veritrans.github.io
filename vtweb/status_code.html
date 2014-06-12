@@ -81,42 +81,42 @@
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="get_redirect_url.html">Mendapatkan Redirect URL</a></li>
 					
-					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
+					<li class=""><a href="redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="handle_notification.html">Menangani Notifikasi</a></li>
 					
-					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
+					<li class=""><a href="sample_code.html">Sample Code</a></li>
 					
-					<li class=""><a href="../vtweb/status_code.html">Status Code</a></li>
+					<li class="active"><a href="status_code.html">Status Code</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
 					
-					<li class="active"><a href="going_live.html">Going Live</a></li>
+					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
 					
-					<li class=""><a href="status_code.html">Status Code</a></li>
+					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
 				</ul>
 			</li>
@@ -164,27 +164,245 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="vtdirect-going-live">
-            <h2 id="going-live-dengan-vt-direct">Going Live dengan VT-Direct</h2>
-
-<p>Jika Anda sudah selesai melakukan testing di Sandbox dan sudah siap untuk go live di Production Environment, ada 2 hal yang perlu dipastikan:</p>
-
-<ol>
-  <li>Arahkan konfigurasi <code>$endpoint</code> ke: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a></li>
-  <li>
-    <p>Gunakan library javascript veritrans production:</p>
-
-    <pre class="highlight html">
- <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://api.veritrans.co.id/assets/js/veritrans.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
- </pre>
-  </li>
-</ol>
-
-<p>Selamat bertransaksi menggunakan Veritrans!</p>
+          <div class="vtweb-status-code">
+            <h2>Status Code</h2>
+<p>Status code di Payment API terbagi menjadi beberapa bagian, yaitu 2xx, 3xx, 4xx dan 5xx.</p>
+<h3>Code 2xx</h3>
+<table>
+	<thead>
+		<tr>
+			<th style="width:100px">Status Code</th>
+			<th>Keterangan</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<h5>200</h5>
+			</td>
+			<td>
+				OK, request is success, and transaction is success (authorize, capture, settlement, cancel, refund, get order, approve challenge transactions), accepted by Veritrans and bank.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>
+					201
+				</h5>
+			</td>
+			<td>
+				Pending, transaction is success but the processing has not been completed, example, challenge transaction and pending transaction.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>
+					202
+				</h5>
+			</td>
+			<td>
+				Denied, request is success but transaction is denied by bank or Veritrans fraud detection system.
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h3>Code 3xx</h3>
+<table>
+	<thead>
+		<tr>
+			<th style="width:100px">Status Code</th>
+			<th>Keterangan</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<h5>300</h5>
+			</td>
+			<td>
+				Move Permanently, this and all future request should be directed to the new URL
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h3>Code 4xx</h3>
+<table>
+	<thead>
+		<tr>
+			<th style="width:100px">Status Code</th>
+			<th>Keterangan</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<h5>400</h5>
+			</td>
+			<td>
+				Validation Error, merchant send bad request data example; validation error, invalid transaction type, invalid credit card format, etc.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>401</h5>
+			</td>
+			<td>
+				Access denied due to unauthorized transaction, please check client key or server key
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>402</h5>
+			</td>
+			<td>
+				Merchant doesn't have access for this payment type
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>403</h5>
+			</td>
+			<td>
+				The requested resource is only capable of generating content not acceptable according to the accept headers sent in the request
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>404</h5>
+			</td>
+			<td>
+				The requested resource is not found
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>405</h5>
+			</td>
+			<td>
+				Http method is not allowed
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>406</h5>
+			</td>
+			<td>
+				Merchant charges the same order id more than once or transaction has been paid
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>407</h5>
+			</td>
+			<td>
+				Resource is no longer available and will not be available again
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>408</h5>
+			</td>
+			<td>
+				Merchant sends the wrong data type
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>409</h5>
+			</td>
+			<td>
+				Merchant has sent too many transactions for the same card number
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>410</h5>
+			</td>
+			<td>
+				Merchant account is deactivated or not active for a long period
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>411</h5>
+			</td>
+			<td>
+				Token id is missing, invalid, or timed out
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>412</h5>
+			</td>
+			<td>
+				Merchant cannot modify status of the transaction
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>413</h5>
+			</td>
+			<td>
+				The request cannot be processed due to malformed syntax in the request body
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h3>Code 5xx</h3>
+<table>
+	<thead>
+		<tr>
+			<th style="width:100px">Status Code</th>
+			<th>Keterangan</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<h5>500</h5>
+			</td>
+			<td>
+				Internal Server Error
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>501</h5>
+			</td>
+			<td>
+				The feature has not finished yet, it will be available soon
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>502</h5>
+			</td>
+			<td>
+				Internal Server Error: Bank Connection Problem
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>503</h5>
+			</td>
+			<td>
+				Internal Server Error
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h5>504</h5>
+			</td>
+			<td>
+				Internal Server Error: Fraud detection is unavailable
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="integration.html">VT-Direct: Integrasi</a></li><li class="right">Next: <a href="other_commands.html">VT-Direct: Perintah Lain</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="sample_code.html">VT-Web: Sample Code</a></li><li class="right">Next: <a href="../vtdirect/introduction.html">VT-Direct: Perkenalan</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
