@@ -333,7 +333,7 @@ Berikut ini adalah javascript yang digunakan untuk men-generate <code>token_id</
 </pre>
 Ketika customer mengeklik tombol ‘Pay’, Javascript mem-populate <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, dan <code>cvv</code> dari form. Kemudian, dengan memanfaatkan library <code>veritrans.js</code>, Javascript mengirimkan data sensitif tersebut secara aman ke server Veritrans untuk mendapatkan <code>token_id</code>. Setelah mendapatkan response <code>token_id</code>, Javascript menyimpannya ke hidden textfield <code>#token_id</code> dan kemudian men-submit form ke server merchant (<code>checkout_process.php</code>). Perlu dicatat bahwa detail kartu kredit tidak dikirim ke server merchant. Yang dikirim ke server merchant hanyalah <code>token_id</code>.
 
-<h4>Mengaktifkan fitur VT-Direct 3DSecure</h4>
+<h4 id="activate">Mengaktifkan fitur VT-Direct 3DSecure</h4>
 
 Perhatikan script Javascript di atas pada bagian berikut ini:
 
@@ -399,7 +399,7 @@ Sehingga, sebagian script Javascript di atas perlu di-uncomment menjadi:
 
 <!-- dua -->
 
-<h3>Charge Transaksi</h3>
+<h3 id="charge">Charge Transaksi</h3>
 
 Di server merchant (<code>checkout_process.php</code>), setelah mendapatkan <code>token_id</code>, merchant dapat mengirim request charge transaksi dengan spesifikasi sebagai berikut:
 
