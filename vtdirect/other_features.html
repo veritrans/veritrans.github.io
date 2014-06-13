@@ -378,7 +378,7 @@ $transaction_data = array(
   'payment_type'      =&gt; 'credit_card', 
   'credit_card'       =&gt; array(
     'save_token_id' =&gt; true,
-           'token_id'   =&gt; $token_id,
+    'token_id'   =&gt; $token_id,
     'bank'    =&gt; 'cimb'
   ),
   'transaction_details'   =&gt; $transaction_details,
@@ -407,25 +407,111 @@ $transaction_data = array(
 
 <h4 id="charge-request-berikutnya-1">Charge Request Berikutnya</h4>
 
-<p>Untuk charge request berikutnya, meminta customer memasukkan CVV kartu kredit dan mendapatkan <code>"token_cvv_id"</code> dari CVV tersebut. Untuk mendapatkan <code>"token_cvv_id"</code> tersebut, merchant harus menambahkan parameter <code>"two_click": true</code> pada card yang digunakan. Contoh kode untuk mendapatkan <code>"token_cvv_id"</code> adalah seperti di bawah ini.</p>
+<p>Untuk charge request berikutnya, meminta customer memasukkan CVV kartu kredit dan mendapatkan <code>"token_cvv_id"</code> dari CVV tersebut. Selain itu, merchant juga harus menambahkan sebuah field untuk mengirimkan token ini untuk proses transaksi.
+Contoh field yang bisa diterapkan dalam kode HTML adalah seperti di bawah ini.</p>
 
-<pre class="highlight text">//...
-var card = function(){
-  return {
-    'card_cvv'      : $(&quot;.card-cvv&quot;).val(),
-    'two-click'     : true
-  }
-};
-//...
+<pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;token_cvv_id&quot;</span> <span class="na">id=</span><span class="s">&quot;token_cvv_id&quot;</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span><span class="nt">&gt;</span>
 </pre>
-<p>Setelah itu, merchant harus menggunakan token id yang didapat dari response yang pertama, yaitu <code>"saved_token_id"</code>, ditambah dengan <code>"token_cvv_id"</code>. Kedua token tersebut diletakkan di bagian <code>"credit_card"</code>.</p>
+<p>Untuk mendapatkan <code>"token_cvv_id"</code> tersebut, merchant harus menambahkan parameter <code>"two_click": true</code> pada function card yang digunakan pada contoh script di bawah ini. Detail kartu kredit ini kemudian dikirimkan ke endpoint kami bersama dengan client-key merchant pada <code>Veritrans.client_key</code>. Setelah mendapat response, field <code>"token_cvv_id"</code> tadi dapat diisi dengan nilai yang ada pada response.token_id. Contoh kode javascript untuk mendapatkan <code>"token_cvv_id"</code> adalah seperti di bawah ini.</p>
 
-<pre class="highlight json"><span class="s2">&quot;credit_card&quot;</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;saved_token_id&quot;</span><span class="p">,</span><span class="w">
-  </span><span class="s2">&quot;token_cvv_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;token_cvv_id&quot;</span><span class="p">,</span><span class="w">
-  </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre class="highlight javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+   <span class="c1">//endpoint
+</span>   <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.sandbox.veritrans.co.id/v2/token&quot;</span><span class="p">;</span>
+   <span class="c1">//client_key
+</span>   <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">client_key</span> <span class="o">=</span> <span class="s2">&quot;bb558bb6-371a-415b-b7ee-bf285f33868f&quot;</span><span class="p">;</span>
+   <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+   <span class="k">return</span> <span class="p">{</span>
+       <span class="s1">'card_cvv'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.card-cvv&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+       <span class="s1">'two_click'</span>  <span class="err">:</span> <span class="kc">true</span>
+     <span class="p">}</span>
+   <span class="p">};</span>
+
+   <span class="c1">// handler when user click the 'Pay' button.
+</span>   <span class="nx">$</span><span class="p">(</span><span class="s1">'.submit-button'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+     <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+     <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="s2">&quot;disabled&quot;</span><span class="p">);</span>
+     <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">token</span><span class="p">(</span><span class="nx">card</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+   <span class="p">});</span>
+
+   <span class="kd">function</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status_code</span> <span class="o">==</span> <span class="s1">'200'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// success
+</span>       <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#token_cvv_id&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">token_id</span><span class="p">);</span>
+       <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#payment-form&quot;</span><span class="p">).</span><span class="nx">submit</span><span class="p">();</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="c1">// failed request token
+</span>       <span class="nx">$</span><span class="p">(</span><span class="s1">'.submit-button'</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">);</span>
+       <span class="c1">// Show status message.
+</span>       <span class="nx">$</span><span class="p">(</span><span class="s1">'#message'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status_message</span><span class="p">);</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+  <span class="p">});</span>
+<span class="o">&lt;</span><span class="sr">/</span><span class="err">script&gt;</span>
+</pre>
+<p>Setelah itu, merchant harus menggunakan token id yang didapat dari response yang pertama, yaitu <code>"saved_token_id"</code>, ditambah dengan <code>"token_cvv_id"</code>. Kedua token tersebut diletakkan di bagian <code>"credit_card"</code> sehingga format JSON lengkapnya bisa dilihat di bawah ini.</p>
+
+<pre class="highlight php">$token_id = $_POST['token_id']; //yang dari database
+$token_cvv_id = $_POST['token_id']; //yang tadi dari field
+$transaction_details = array(
+    'order_id'       =&gt; 'order_1342',
+    'gross_amount'     =&gt; 200000
+);
+$items = array( //items that customer buys
+    array(
+     'id'      =&gt; 'item1',
+     'price'     =&gt; 100000,
+     'quantity'     =&gt; 1,
+     'name'      =&gt; 'Adidas f50'
+    ),
+    array(
+     'id'      =&gt; 'item2',
+     'price'     =&gt; 50000,
+     'quantity'     =&gt; 2,
+     'name'      =&gt; 'Nike N90'
+    )
+);
+$billing_address = array( //customer's billing address
+    'first_name'     =&gt; &quot;Andri&quot;,
+    'last_name'     =&gt; &quot;Setiawan&quot;,
+    'address'      =&gt; &quot;Karet Belakang 15A, Setiabudi.&quot;,
+    'city'         =&gt; &quot;Jakarta&quot;,
+    'postal_code'     =&gt; &quot;51161&quot;,
+    'phone'      =&gt; &quot;081322311801&quot;,
+    'country_code'     =&gt; 'IDN'
+    );
+$shipping_address = array( //customer's shipping address
+    'first_name'     =&gt; &quot;John&quot;,
+    'last_name'     =&gt; &quot;Watson&quot;,
+    'address'      =&gt; &quot;Bakerstreet 221B.&quot;,
+    'city'         =&gt; &quot;Jakarta&quot;,
+    'postal_code'     =&gt; &quot;51162&quot;,
+    'phone'      =&gt; &quot;081322311801&quot;,
+    'country_code'     =&gt; 'IDN'
+    );
+$customer_details = array( //customer's Info
+    'first_name'     =&gt; &quot;Andri&quot;,
+    'last_name'     =&gt; &quot;Setiawan&quot;,
+    'email'      =&gt; &quot;payment-api@veritrans.co.id&quot;,
+    'phone'      =&gt; &quot;081322311801&quot;,
+    'billing_address'  =&gt; $billing_address,
+    'shipping_address' =&gt; $shipping_address
+    );
+$transaction_data = array( //
+    'payment_type'     =&gt; 'credit_card',
+    'credit_card'      =&gt; array(
+     'token_id'       =&gt; $token_id,
+     'token_cvv_id'   =&gt; $token_cvv_id,
+     'bank'       =&gt; 'bni',
+     ),
+    'transaction_details'  =&gt; $transaction_details,
+    'item_details'      =&gt; $items,
+    'customer_details'      =&gt; $customer_details
+);
+$json_transaction_data = json_encode($transaction_data);
+</pre>
 <p>JSON request format untuk charge transaksi sama seperti biasanya. Silahkan lihat <a href="integration.html">Charge Transaction</a> untuk format selengkapnya. Jika response sukses akan mendapatkan hasil sebagai berikut:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
