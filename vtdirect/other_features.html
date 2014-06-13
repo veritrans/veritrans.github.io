@@ -299,7 +299,7 @@ $transaction_data = array(
 
 <h4 id="mendapatkan-token-3dsecure">Mendapatkan Token 3DSecure</h4>
 
-<p>Token 3DSecure harus diaktifkan untuk menggunakan fitur One Click. Silahkan lihat bagian <a href="/vtdirect/charge_transaction.html">Charge Transaction - Mengaktifkan fitur VT-Direct 3DSecure</a> untuk request parameter yang dibutuhkan oleh token 3DSecure.</p>
+<p>Token 3DSecure harus diaktifkan untuk menggunakan fitur One Click. Silahkan lihat bagian <a href="integration.html">Langkah 2: Melakukan Charge Transaksi- Integrasi VT-Direct</a> untuk request parameter yang dibutuhkan oleh token 3DSecure.</p>
 
 <h4 id="charge-request-pertama">Charge Request Pertama</h4>
 
@@ -349,7 +349,7 @@ $transaction_data = array(
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
-<p>JSON request format untuk charge transaksi sama seperti biasanya. Silahkan lihat bagian <a href="/vtdirect/charge_transaction.html">Charge Transaction</a> untuk format selengkapnya. Jika response sukses akan mendapatkan hasil sebagai berikut:</p>
+<p>JSON request format untuk charge transaksi sama seperti biasanya. Silahkan lihat bagian <a href="integration.html">Charge Transaction</a> untuk format selengkapnya. Jika response sukses akan mendapatkan hasil sebagai berikut:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;05dfbd23-b767-4748-8fe9-7e30769e1857&quot;</span><span class="p">,</span><span class="w">
@@ -360,6 +360,83 @@ $transaction_data = array(
     </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card transaction is successful&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<h3 id="two-clicks">Two Clicks</h3>
+
+<h4 id="mendapatkan-token-3dsecure-1">Mendapatkan Token 3DSecure</h4>
+
+<p>Sama seperti One Click, token 3DSecure harus diaktifkan untuk menggunakan fitur Two Clicks. Silahkan lihat bagian <a href="integration.html#activate">Mengaktifkan fitur VT-Direct 3DSecure</a> untuk request parameter yang dibutuhkan oleh token 3DSecure.</p>
+
+<h4 id="charge-request-pertama-1">Charge Request Pertama</h4>
+
+<p>Charge request pertama untuk Two Clicks untuk mempunyai format yang sama persis dengan charge request pertama pada One Click. Pada charge request pertama, <code>"save_token_id": true</code> harus di masukan di JSON request dalam bagian <code>"credit_card"</code>. Dengan demikian, token akan disimpan untuk pembayaran berikutnya. Contoh dalam PHP:</p>
+
+<pre class="highlight php">// Data yang akan dikirim untuk request charge transaction dengan credit card.
+$transaction_data = array(
+  'payment_type'      =&gt; 'credit_card', 
+  'credit_card'       =&gt; array(
+    'save_token_id' =&gt; true,
+           'token_id'   =&gt; $token_id,
+    'bank'    =&gt; 'cimb'
+  ),
+  'transaction_details'   =&gt; $transaction_details,
+  'item_details'      =&gt; $items,
+  'customer_details'    =&gt; $customer_details
+);
+</pre>
+<p>Response yang akan dikembalikan jika transaksi sukses seperti berikut ini:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ca5e0ff5-4297-48ef-aa25-b3ab018d4ead&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order52&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200000&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-03-27 17:20:53&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1111&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;saved_token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4111117d16c884-2cc7-4624-b0a8-10273b7f6cc8&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;saved_token_id_expired_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-27 17:20:53&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+<p>Dari response di atas, hasil <code>"saved_token_id"</code> perlu disimpan oleh merchant, misalnya di database, sehingga dapat digunakan untuk pembayaran berikutnya.</p>
+
+<h4 id="charge-request-berikutnya-1">Charge Request Berikutnya</h4>
+
+<p>Untuk charge request berikutnya, meminta customer memasukkan CVV kartu kredit dan mendapatkan <code>"token_cvv_id"</code> dari CVV tersebut. Untuk mendapatkan <code>"token_cvv_id"</code> tersebut, merchant harus menambahkan parameter <code>"two_click": true</code> pada card yang digunakan. Contoh kode untuk mendapatkan <code>"token_cvv_id"</code> adalah seperti di bawah ini.</p>
+
+<pre class="highlight text">//...
+var card = function(){
+  return {
+    'card_cvv'      : $(&quot;.card-cvv&quot;).val(),
+    'two-click'     : true
+  }
+};
+//...
+</pre>
+<p>Setelah itu, merchant harus menggunakan token id yang didapat dari response yang pertama, yaitu <code>"saved_token_id"</code>, ditambah dengan <code>"token_cvv_id"</code>. Kedua token tersebut diletakkan di bagian <code>"credit_card"</code>.</p>
+
+<pre class="highlight json"><span class="s2">&quot;credit_card&quot;</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;saved_token_id&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;token_cvv_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;token_cvv_id&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+<p>JSON request format untuk charge transaksi sama seperti biasanya. Silahkan lihat <a href="integration.html">Charge Transaction</a> untuk format selengkapnya. Jika response sukses akan mendapatkan hasil sebagai berikut:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;05dfbd23-b767-4748-8fe9-7e30769e1857&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order53&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200000&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-03-27 17:25:12&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card transaction is successful&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
