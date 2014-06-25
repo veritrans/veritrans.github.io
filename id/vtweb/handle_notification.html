@@ -166,17 +166,19 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="id-vtweb-handle-notification">
-            <h2>Menangani Notifikasi</h2>
-<p>Setelah pembeli telah menyelesaikan proses pembayaran, apapun hasil proses pembayaran tersebut, baik berhasil maupun gagal (misalnya karena kartu kredit pembeli telah melampaui limit), Veritrans akan mengirim notifikasi berupa HTTP POST ke server merchant. </p>
+            <h2 id="menangani-notifikasi">Menangani Notifikasi</h2>
 
-<p>Alamat URL spesifik server merchant yang akan dikirimi HTTP(S) POST notification dapat diatur di halaman konfigurasi MAP pada field Payment Notification URL. Merchant dapat memanfaatkan HTTP(S) POST notification ini untuk dapat mengupdate status pembayaran dari suatu transaksi(order) secara real time. Hal ini bisa dilakukan karena Veritrans mengirim notifikasi ini seketika setelah pelanggan menyelesaikan proses pembayaran. </p>
+<p>Setelah pembeli telah menyelesaikan proses pembayaran, apapun hasil proses pembayaran tersebut, baik berhasil maupun gagal (misalnya karena kartu kredit pembeli telah melampaui limit), Veritrans akan mengirim notifikasi berupa HTTP POST ke server merchant.</p>
+
+<p>Alamat URL spesifik server merchant yang akan dikirimi HTTP(S) POST notification dapat diatur di halaman konfigurasi MAP pada field Payment Notification URL. Merchant dapat memanfaatkan HTTP(S) POST notification ini untuk dapat mengupdate status pembayaran dari suatu transaksi(order) secara real time. Hal ini bisa dilakukan karena Veritrans mengirim notifikasi ini seketika setelah pelanggan menyelesaikan proses pembayaran.</p>
 
 <p>Untuk memanfaat fasilitas ini, merchant harus menyediakan endpoint untuk menerima notifikasi. Endpoint notifikasi bisa di-set melalui MAP, di halaman Settings -&gt; Configuration.</p>
 
 <p><img title="config payment" class="img-responsive" src="../../images/vtweb-config-payment.png" /></p>
 
 <p>Isi dari notifikasi tersebut berupa JSON object sebagai berikut:</p>
-<h3>6.1 Contoh Success Response</h3>
+
+<h3 id="contoh-success-response">Contoh Success Response</h3>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="err">transaction_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93c6a0ff-b270-4b00-adba-f1738ff90261&quot;</span><span class="p">,</span><span class="w">
@@ -192,7 +194,9 @@
     </span><span class="err">notification_key</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1a794e3f-f023-4cda-92b7-dcb7a22a46ff&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-<h3>6.2 Contoh Deny Response</h3>
+
+<h3 id="contoh-deny-response">Contoh Deny Response</h3>
+
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="err">transaction_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ee946272-44b9-4e19-8ae7-ffd12c2cbb18&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">order_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201303131612&quot;</span><span class="p">,</span><span class="w">
@@ -203,7 +207,7 @@
     </span><span class="err">fraud_status</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;challenge&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">masked_card</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1244&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">status_code</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">status_message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [MANDIRI] with code [05] and    message [Do not honour]&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">status_message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [MANDIRI] with code [05] and message [Do not honour]&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">notification_key</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1a794e3f-f023-4cda-92b7-dcb7a22a46ff&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
@@ -249,11 +253,8 @@
 	<span class="p">}</span>	
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
-
 </pre>
-<p>
-	Sampai di sini, proses pembayaran suatu transaksi telah selesai. Merchant dapat menggunakan data dari HTTP(POST) notification tersebut untuk mengupdate database-nya, misalnya untuk menandai bahwa transaksi dengan order_id tersebut telah terbayar. Selain itu, informasi detail transaksi tersebut juga sudah tercatat di Merchant Administration Portal(MAP). Merchant perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut.
-</p>
+<p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Merchant dapat menggunakan data dari HTTP(POST) notification tersebut untuk mengupdate database-nya, misalnya untuk menandai bahwa transaksi dengan order_id tersebut telah terbayar. Selain itu, informasi detail transaksi tersebut juga sudah tercatat di Merchant Administration Portal(MAP). Merchant perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut.</p>
 
 <p><img title="payment info" class="img-responsive" src="../../images/payment-info.png" />  </p>
 
