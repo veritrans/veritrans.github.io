@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/vtdirect/integration.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Getting Started</a></li>
 					
-					<li class="active"><a href="integration.html">Integrasi</a></li>
+					<li class="active"><a href="integration.html">Integration</a></li>
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="examples.html">Examples</a></li>
 					
 					<li class=""><a href="status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -169,31 +170,30 @@
 
 <h3>Tiga Langkah Integrasi</h3>
 <ol>
-  <li>Mendapatkan Token</li>
-  <li>Melakukan Charge Transaksi</li>
-  <li>Mendapatkan Respon</li>
+  <li>Obtaining the Token</li>
+  <li>Charge Transaction</li>
+  <li>Handling Response</li>
 </ol>
 
 <p><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#step1" data-toggle="tab"><span>Langkah 1</span>Mendapatkan Token</a></li>
-  <li><a href="#step2" data-toggle="tab"><span>Langkah 2</span>Melakukan Charge Transaksi</a></li>
-  <li><a href="#step3" data-toggle="tab"><span>Langkah 3</span>Mendapatkan Respon</a></li>
+  <li class="active"><a href="#step1" data-toggle="tab"><span>Step 1</span>Obtaining the Token</a></li>
+  <li><a href="#step2" data-toggle="tab"><span>Step 2</span>Charge Transaction</a></li>
+  <li><a href="#step3" data-toggle="tab"><span>Step 3</span>Handling Response</a></li>
 </ul>
 
 <div class="tab-content">
 <div class="tab-pane active" id="step1"><!-- step 1-->
 <!-- satu -->
 
-<h3> Mendapatkan Token</h3>
+<h3> Obtaining the Token</h3>
+We have provided a small JavaScript applet, <code>veritrans.js</code>, to simplify the process of requesting Tokens to Veritrans’ system. For security purposes, we ask that all of our merchants utilize our veritrans.js for their implementation of VT-direct. If there is a feature that merchant want related to VT-Direct, please contact Veritrans support.
 
-Untuk menerima informasi kartu kredit pembeli dan mengirimkannya secara aman ke Veritrans, merchant memerlukan library Javascript <code>veritrans.js</code>. Script ini kami sediakan untuk mempermudah merchant dalam melakukan transaksi VT-Direct. Demi alasan keamanan, kami melarang merchant untuk mengimplementasikan Javascript sendiri. Jika ada fitur yang diinginkan berkaitan tentang VT-Direct, harap hubungi Veritrans support.
+<h4>Setting up the Payment Form HTML</h4>
 
-<h4> Menyiapkan halaman HTML</h4>
-
-Halaman HTML ini akan digunakan pembeli untuk menginputkan informasi kartu kreditnya. Nama file HTML bebas, dalam contoh ini kita beri nama <code>checkout.html</code>.
+This HTML page will be utilized to create our payment page. We’ve named this sample checkout page as <code>checkout.html</code>.
 
 <pre class="highlight html">  <span class="nt">&lt;html&gt;</span>
       <span class="nt">&lt;head&gt;</span>
@@ -205,18 +205,18 @@ Halaman HTML ini akan digunakan pembeli untuk menginputkan informasi kartu kredi
   <span class="nt">&lt;/html&gt;</span>
 </pre>
 
-<h4>Menggunakan library veritrans.js</h4>
+<h4>Adding the veritrans.js library</h4>
 
-Ketika di Production Environment, tambahkan baris ini di HTML head:
+When in Production Environment, add the line below in the HTML head:
 
 <pre class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://api.veritrans.co.id/v2/assets/js/veritrans.min.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre>
-Ketika di Sandbox/Development Environment, tambahkan baris ini di HTML head:
+When in Sandbox/Development Environment, add the line below in the HTML head:
 
 <pre class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre>
-
-<h4>Membuat HTML form untuk pembeli menginputkan detail kartu kreditnya</h4>
+<h4>Creating the Payment Page </h4>
+Below is the sample HTML for the payment page:
 
 Tambahkan form berikut ini di bagian body HTML:
 
@@ -240,22 +240,22 @@ Tambahkan form berikut ini di bagian body HTML:
   <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;submit-button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 </pre>
-Catatan: 
+Note: 
 
-Contoh nomor credit card yang dapat digunakan untuk pengujian sukses atau pengujian gagal dapat dilihat <a href="/sandbox/card_list.html">disini</a>.
+Sample of credit card number which can be used to test the success or failure of testing can be seen <a href="/sandbox/card_list.html">here</a>
 
 
-<h4>Menambahkan Javascript untuk memproses transaksi</h4>
+<h4>Adding Javascript to process 3DS transactions</h4>
 
-Contoh ini menggunakan jQuery dan jQuery fancybox untuk memudahkan saat menampilkan dialog 3DSecure. Merchant dapat menggunakan framework javascript lain atau menggunakan javascript sendiri untuk menampilkan dialog 3DSecure ini.
+This example utilizes jQuery and jQuery fancybox to simplify the UI for the 3DSecure input page. You can choose to utilize another javascript framework should you feel more comfortable.
 
-Tambahkan baris ini ke HTML di bagian head:
+Add the following in the HTML header:
 
 <pre class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;js/jquery.fancybox.pack.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;css/jquery.fancybox.css&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span> <span class="nt">/&gt;</span>
 </pre>
-Berikut ini adalah javascript yang digunakan untuk men-generate <code>token_id</code>. Tambahkan script berikut ini setelah script di atas.
+Below is the javascript required to generate the <code>token_id</code>. Add the script below after adding jQuery and jQuery fancybox.
 
 <pre class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
@@ -331,11 +331,11 @@ Berikut ini adalah javascript yang digunakan untuk men-generate <code>token_id</
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre>
-Ketika customer mengeklik tombol ‘Pay’, Javascript mem-populate <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, dan <code>cvv</code> dari form. Kemudian, dengan memanfaatkan library <code>veritrans.js</code>, Javascript mengirimkan data sensitif tersebut secara aman ke server Veritrans untuk mendapatkan <code>token_id</code>. Setelah mendapatkan response <code>token_id</code>, Javascript menyimpannya ke hidden textfield <code>#token_id</code> dan kemudian men-submit form ke server merchant (<code>checkout_process.php</code>). Perlu dicatat bahwa detail kartu kredit tidak dikirim ke server merchant. Yang dikirim ke server merchant hanyalah <code>token_id</code>.
+Once the customer clicks ‘Pay’, the Javascript will populate the <code>card_number</code> , <code>card_exp_month</code>, <code>card_exp_year</code>, and cvv from the form. Then, utilizing <code>veritrans.js</code>, the script will send sensitive data securely to the veritrans server and return a token_id. Once you receive the <code>token_id</code>, the script will save it in the hidden textfield <code>#token_id</code> and then will submit the form to the merchant’s server (<code>checkout_process.php</code>). Note that the credit card number will not be sent to the merchant server, and the merchant will only record the <code>token_id</code>.
 
-<h4 id="activate">Mengaktifkan fitur VT-Direct 3DSecure</h4>
+<h4 id="activate">Activating 3DSecure</h4>
 
-Perhatikan script Javascript di atas pada bagian berikut ini:
+If you want to process using 3D-Secure, please use the script below:
 
 <pre class="highlight javascript"><span class="c1">//...
 </span><span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
@@ -353,29 +353,28 @@ Perhatikan script Javascript di atas pada bagian berikut ini:
 <span class="p">};</span>
 <span class="c1">//...
 </span></pre>
-
-Jika merchant ingin memproses transaksi dengan 3DSecure, maka parameter <code>secure</code>, <code>bank</code>, dan <code>gross_amout</code> perlu ditambahkan. 
+For 3DSecure transactions, you need to add the <code>parameters secure</code>, <code>bank</code>, and <code>gross_amout</code>. 
 
 <table>
   <tr>
     <th>Parameter</th>
-    <th>Penjelasan</th>
+    <th>Definition</th>
   </tr>
   <tr>
     <td><code>secure</code></td>
-    <td>Penanda bahwa transaksi ini menggunakan 3DSecure.</td>
+    <td>Marker for 3DSecure transaction.</td>
   </tr>
   <tr>
     <td><code>bank</code></td>
-    <td>Acquirer bank yang akan digunakan.</td>
+    <td>Acquiring bank.</td>
   </tr>
   <tr>
     <td><code>gross_amount</code></td>
-    <td>Total jumlah uang yang akan di-charge.</td>
+    <td>Total amount of money to be charged.</td>
   </tr>
 </table>
 
-Sehingga, sebagian script Javascript di atas perlu di-uncomment menjadi:
+Uncomment a portion of the script above to get the following:
 
 <pre class="highlight javascript"><span class="c1">//...
 </span><span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
@@ -399,11 +398,11 @@ Sehingga, sebagian script Javascript di atas perlu di-uncomment menjadi:
 
 <!-- dua -->
 
-<h3 id="charge">Charge Transaksi</h3>
+<h3 id="charge">Charge Transaction</h3>
 
-Di server merchant (<code>checkout_process.php</code>), setelah mendapatkan <code>token_id</code>, merchant dapat mengirim request charge transaksi dengan spesifikasi sebagai berikut:
+On merchant server (<code>checkout_process.php</code>), after receiving <code>token_id</code>, merchant can send charge transaction request with the following specification:
 
-Catatan: Spesifikasi request charge transaksi 3DSecure dan transaksi normal (tanpa 3DSecure) adalah sama. Perbedaan untuk melakukan transaksi 3DSecure hanya ada pada langkah Get Token saja.
+Note: Charge transaction request specification for 3DSecure and normal transactions are the same. The only difference is when calling Get Token.
 
 <table>
   <tr>
@@ -425,7 +424,7 @@ Accept: application/json</td>
   </tr>
 </table>
 
-Message yang dikirim saat mengirim request tersebut adalah data detail transaksi dalam format JSON. Contoh:
+The messages that are sent during request contain transaction details. The messages is in JSON format. Example:
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
@@ -474,32 +473,32 @@ Message yang dikirim saat mengirim request tersebut adalah data detail transaksi
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-Keterangan objek <code>JSON Request</code>:
+Object Description <code>JSON Request</code>:
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>payment_type</code></td>
             <td>String</td>
-            <td>Ya</td>
-            <td>Pilihan tipe pembayaran yang akan digunakan. Contoh: <br />
+            <td>Yes</td>
+            <td>Payment type options will be used. For example: <br />
                 <ul>
-                    <li>Dengan VT-Direct:
+                    <li>With VT-Direct:
                         <ul>
-                            <li>Isi “CREDIT_CARD” untuk pembayaran melalui VT-Direct.</li>
+                            <li>Fill “CREDIT_CARD” for payment with VT-Direct.</li>
                         </ul>
                     </li>
-                    <li>Dengan VT-WEB:
+                    <li>With VT-WEB:
                         <ul>
-                            <li>Isi “VTWEB” untuk pembayaran melalui VT-Web</li>
+                            <li>Fill “VTWEB” for payment with VT-Web</li>
                         </ul>
                     </li>
                 </ul>
@@ -508,216 +507,278 @@ Keterangan objek <code>JSON Request</code>:
         <tr>
             <td><code>credit_card</code></td>
             <td>JSON Object</td>
-            <td>Ya</td>
-            <td>Field khusus apabila menggunakan payment type: "CREDIT_CARD"</td>
+            <td>Yes</td>
+            <td>Specific field if using payment type: "CREDIT_CARD"</td>
         </tr>
         <tr>
             <td><code>transaction_details</code></td>
             <td>JSON Object</td>
-            <td>Ya</td>
-            <td>Detail data transaksi yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Transaction data detail that will be paid by customer</td>
         </tr>
         <tr>
             <td><code>item_details</code></td>
             <td>JSON Array</td>
-            <td>Ya</td>
-            <td>Detail item pembelanjaan yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Shopping item detail that will be paid by customer</td>
         </tr>
         <tr>
             <td><code>customer_details</code></td>
             <td>JSON Object</td>
-            <td>Ya</td>
-            <td>Detail data customer yang melakukan pembayaran</td>
+            <td>Yes</td>
+            <td>Customer data detail that make payment</td>
         </tr>
     </tbody>
 </table>
 
-Keterangan Objek <code>credit_card</code>:
+Object Description <code>credit_card</code>:
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
+            <th>JSON Attribute</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>token_id</code></td>
-            <td>Ya</td>
-            <td>Representasi data kartu kredit yang disimpan dalam bentuk token</td>
+            <td>Yes</td>
+            <td>Representations of the credit card data that is stored in tokens</td>
         </tr>
         <tr>
             <td><code>bank</code></td>
             <td>Ya</td>
-            <td>Acquirer bank yang digunakan</td>
+            <td>Acquirer bank used</td>
         </tr>
     </tbody>
 </table>
 
-Keterangan Objek <code>transaction_details</code>:
+Object Description <code>transaction_details</code>:
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>order_id</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>ID pembayaran customer</td>
+            <td>Yes</td>
+            <td>Customer Payment ID</td>
         </tr>
         <tr>
             <td><code>gross_amount</code></td>
             <td>Long</td>
-            <td>Ya</td>
-            <td>Total harga transaksi pembayaran yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Total of transaction price that will be paid by customer</td>
         </tr>
     </tbody>
 </table>
 
-Keterangan Objek <code>item_details</code>:
+Object Description <code>item_details</code>:
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>id</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>ID barang</td>
+            <td>Yes</td>
+            <td>Item ID</td>
         </tr>
         <tr>
             <td><code>price</code></td>
             <td>Long</td>
-            <td>Ya</td>
-            <td>Harga barang</td>
+            <td>Yes</td>
+            <td>Item Price</td>
         </tr>
         <tr>
             <td><code>quantity</code></td>
             <td>Integer</td>
-            <td>Ya</td>
-            <td>Jumlah barang</td>
+            <td>Yes</td>
+            <td>Total Item</td>
         </tr>
         <tr>
             <td><code>name</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>Nama barang</td>
+            <td>Yes</td>
+            <td>Item Name</td>
         </tr>
     </tbody>
 </table>
 
-Keterangan Objek <code>customer_details</code>:
+Object Description <code>customer_details</code>:
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>first_name</code></td>
             <td>String(20)</td>
-            <td>Ya</td>
-            <td>Nama depan customer</td>
+            <td>Yes</td>
+            <td>Customer first name</td>
         </tr>
         <tr>
             <td><code>last_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang customer</td>
+            <td>Recommended</td>
+            <td>Customer last name</td>
         </tr>
         <tr>
             <td><code>email</code></td>
             <td>String(45)</td>
-            <td>Ya</td>
-            <td>Email customer.<br />
-Note: terdapat validasi untuk mengecek format email yang valid</td>
+            <td>Yes</td>
+            <td>Customer email.<br />
+Note: there is a validation to check valid email</td>
         </tr>
         <tr>
             <td><code>phone</code></td>
             <td>String(19)</td>
-            <td>Ya</td>
-            <td>Nomor telepon customer. <br />
-Note: Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan (). Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+            <td>Yes</td>
+            <td>Customer phone number. <br />
+                Note: Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.
+            </td>
         </tr>
         <tr>
             <td><code>billing_address</code></td>
             <td>JSON Object</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
+            <td>Optional, except for payment type using credit card, this attribute is mandatory</td>
             <td>Billing address customer</td>
         </tr>
         <tr>
             <td><code>shipping_address</code></td>
             <td>JSON Object</td>
-            <td>Dianjurkan</td>
+            <td>Recommended</td>
             <td>Shipping address customer</td>
         </tr>
     </tbody>
 </table>
 
-Keterangan Objek <code>billing_address</code>:
+Object Description <code>billing_address</code>:
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>first_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama depan billing address. <br />
-Note : Tidak perlu diisi apabila isinya sama dengan customer details - first_name</td>
+            <td>Recommended</td>
+            <td>Billing address first name. <br />
+ Note : No need to be filled if same as the customer details - first_name</td>
         </tr>
         <tr>
             <td><code>last_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang billing address</td>
+            <td>Recommended</td>
+            <td>Billing address last name</td>
         </tr>
         <tr>
             <td><code>address</code></td>
             <td>String(200)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Alamat billing address</td>
+            <td>Optional, except for payment using credit card, this attribute is mandatory</td>
+            <td>Address of billing address</td>
         </tr>
         <tr>
             <td><code>city</code></td>
             <td>String(20)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Kota billing address</td>
+            <td>Optional, except for payment using credit card, this attribute is mandatory</td>
+            <td>Billing address city</td>
         </tr>
         <tr>
             <td><code>postal_code</code></td>
-            <td>String(9)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Kode pos shipping address <br />
-Note: format alpha-numeric, bisa menerima “-” dan spasi</td>
+            <td>String(10)</td>
+            <td>Optional, except for payment using credit card, this attribute is mandatory</td>
+            <td>Shipping address postal code<br />
+                Note: format alpha-numeric, can accept “-” and space
+            </td>
+        </tr>
+        <tr>
+            <td><code>phone</code></td>
+            <td>String(19)</td>
+            <td>Recommended</td>
+            <td>Billing address phone number. <br />
+                Note: No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.
+            </td>
+        </tr>
+        <tr>
+            <td><code>country_code</code></td>
+            <td>String(200)</td>
+            <td>Recommended</td>
+            <td>Country ID (contoh: IDN)</td>
+        </tr>
+    </tbody>
+</table>
+
+Object Description <code>shipping_address</code>:
+
+<table>
+    <thead>
+        <tr>
+            <th>JSON Attribuet</th>
+            <th>Data Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>first_name</code></td>
+            <td>String(20)</td>
+            <td>Recommended</td>
+            <td>Shipping address first name</td>
+        </tr>
+        <tr>
+            <td><code>last_name</code></td>
+            <td>String(20)</td>
+            <td>Recommended</td>
+            <td>Shipping address last name</td>
+        </tr>
+        <tr>
+            <td><code>address</code></td>
+            <td>String(200)</td>
+            <td>Recommended</td>
+            <td>Address of shipping address</td>
+        </tr>
+        <tr>
+            <td><code>city</code></td>
+            <td>String(20)</td>
+            <td>Recommended</td>
+            <td>Shipping address city</td>
+        </tr>
+        <tr>
+            <td><code>postal_code</code></td>
+            <td>String(10)</td>
+            <td>Optional, except for payment using credit card, this attribute is mandatory</td>
+            <td>Shipping address postal code<br />
+Note: format alpha-numeric, can accept “-” and space</td>
         </tr>
         <tr>
             <td><code>phone</code></td>
@@ -729,72 +790,13 @@ Note : Tidak perlu diisi apabila isinya sama dengan customer details - phone. Pa
         <tr>
             <td><code>country_code</code></td>
             <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>ID negara (contoh: IDN)</td>
+            <td>Recommended</td>
+            <td>Country ID (contoh: IDN)</td>
         </tr>
     </tbody>
 </table>
 
-Keterangan Objek <code>shipping_address</code>:
-
-<table>
-    <thead>
-        <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
-            <th>Required</th>
-            <th>Keterangan</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>first_name</code></td>
-            <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama depan shipping address</td>
-        </tr>
-        <tr>
-            <td><code>last_name</code></td>
-            <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang shipping address</td>
-        </tr>
-        <tr>
-            <td><code>address</code></td>
-            <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>Alamat shipping address</td>
-        </tr>
-        <tr>
-            <td><code>city</code></td>
-            <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Kota shipping address</td>
-        </tr>
-        <tr>
-            <td><code>postal_code</code></td>
-            <td>String(9)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Kode pos shipping address <br />
-Note: format alpha-numeric, bisa menerima “-” dan spasi</td>
-        </tr>
-        <tr>
-            <td><code>phone</code></td>
-            <td>String(19)</td>
-            <td>Dianjurkan</td>
-            <td>Nomor telpon billing address. <br />
-Note : Tidak perlu diisi apabila isinya sama dengan customer details - phone. Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan (). Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
-        </tr>
-        <tr>
-            <td><code>country_code</code></td>
-            <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>ID negara (contoh: IDN)</td>
-        </tr>
-    </tbody>
-</table>
-
-Berikut ini adalah contoh implementasi request untuk melakukan charge transaksi dalam PHP. Untuk mengikuti contoh di atas, kita beri nama file ini <code>checkout_process.php</code>.
+Below is an example on how to implement charge transaction request in PHP. We will call it <code>checkout_process.php</code>.
 
 <pre class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token_id'</span><span class="p">]))</span> 
@@ -931,10 +933,10 @@ Berikut ini adalah contoh implementasi request untuk melakukan charge transaksi 
 
 <!-- tiga -->
 
-<h3> Menangani Respon </h3>
+<h3> Handling Response </h3>
 <h4>Success Response</h4>
 
-Jika sukses, maka request di atas akan mendapatkan response dari Veritrans berupa JSON seperti berikut ini:
+If request succeed, the following response will be returned in JSON format:
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="err">transaction_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;93c6a0ff-b270-4b00-adba-f1738ff90261&quot;</span><span class="p">,</span><span class="w">
@@ -952,14 +954,14 @@ Jika sukses, maka request di atas akan mendapatkan response dari Veritrans berup
 
 <h4>Error Response</h4>
 
-Jika ada kesalahan yang menyebabkan kegagalan, misalnya <code>order_id</code> sudah pernah dibayar, maka request di atas akan mendapatkan response seperti berikut ini:
+If there is error during the request, for example using the same <code>order_id</code> again for another request, the following response will be returned:
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;406&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Merchant charges the same order id more than once or transaction has been paid&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-Jika credit card ditolak oleh bank, maka request di atas akan mendapatkan response:
+If the bank denied the credit card, the following response will be returned:
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="err">transaction_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ee946272-44b9-4e19-8ae7-ffd12c2cbb18&quot;</span><span class="p">,</span><span class="w">
@@ -974,8 +976,7 @@ Jika credit card ditolak oleh bank, maka request di atas akan mendapatkan respon
     </span><span class="err">status_message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [MANDIRI] with code [05] and    message [Do not honour]&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-Sampai di sini, proses pembayaran suatu transaksi telah selesai. Ketika request charge sudah mendapatkan success response(<code>transaction_status = ’capture’</code>), itu berarti kartu kredit pembeli sudah di-charge ke akun merchant. Merchant dapat menggunakan data dari response tersebut untuk mengupdate database-nya, misalnya untuk menandai bahwa transaksi dengan <code>order_id</code> tersebut telah terbayar. Selain itu, informasi detail transaksi tersebut juga sudah tercatat di Merchant Administration Portal(MAP). Merchant perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut.
-
+Once charge transaction has been completed and received success response (<code>transaction_status = ’capture’</code>), credit card has been charged to merchant’s account. Merchant can use such response to update his database, for example, to mark the transaction with <code>order_id</code> has been paid. The transaction details will also be reflected in Merchant Administration Portal (MAP). Merchant can login to MAP to see the updated transaction details.
 </div><!-- end of step 3-->
 
   
@@ -985,7 +986,7 @@ Sampai di sini, proses pembayaran suatu transaksi telah selesai. Ketika request 
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Direct: Langkah Awal</a></li><li class="right">Next: <a href="going_live.html">VT-Direct: Going Live</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Direct: Getting Started</a></li><li class="right">Next: <a href="going_live.html">VT-Direct: Going Live</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

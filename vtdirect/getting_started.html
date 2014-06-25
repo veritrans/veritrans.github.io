@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/vtdirect/getting_started.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Introduction</a></li>
 					
-					<li class="active"><a href="getting_started.html">Langkah Awal</a></li>
+					<li class="active"><a href="getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="integration.html">Integration</a></li>
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="examples.html">Examples</a></li>
 					
 					<li class=""><a href="status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -165,50 +166,55 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtdirect-getting-started">
-            <h2 id="langkah-awal">Langkah Awal</h2>
+            <h2 id="getting-started">Getting Started</h2>
 
-<h3 id="autentikasi">Autentikasi</h3>
+<h3 id="authentication">Authentication</h3>
 
-<p>Untuk melakukan transaksi menggunakan VT-Direct, merchant perlu melalui tahap autentikasi terlebih dahulu. Proses autentikasi menggunakan BASIC AUTH http, dimana merchant perlu mengirim <code>server_key</code>.</p>
+<p>Authentication is required to utilize the Payment API. We utilize BASIC AUTH http, whereby merchant is required to send us the <code>server_key</code>.</p>
 
 <h4 id="server-key-dan-client-key">Server Key dan Client Key</h4>
-
-<p>Untuk melakukan proses transaksi, Veritrans akan memberikan <code>server_key</code> dan <code>client_key</code> kepada merchant. Merchant bisa melihat data <code>server_key</code> dan <code>client_key</code> nya di MAP (Merchant Administration Portal) yang telah disediakan oleh Veritrans.</p>
+<p>Veritrans provides a server_key and client_key to allow merchant to communicate with the Payment API. Merchants can find the <code>server_key</code> and <code>client_key</code> in the MAP (Merchant Administration Portal).</p>
 
 <ul>
-  <li><code>server_key</code>, merupakan key untuk autentikasi merchant ketika melakukan transaksi. Server_key bersifat rahasia, <u>jangan sampai ada pihak lain yang tahu</u>.</li>
-  <li><code>client_key</code>, merupakan key untuk menggenerate token (khusus transaksi kartu kredit), client_key tidak bersifat rahasia.</li>
+  <li><code>server_key</code>, is a private key that needs to be kept secret by the merchant. <code>server_key</code> is utilized by the merchant to send a transaction request to Veritrans.
+.</li>
+  <li><code>client_key</code>, is a public key and is utilized for every Token request.</li>
 </ul>
 
 <h4 id="basic-auth-http-header">Basic Auth HTTP Header</h4>
 
-<p>Untuk melewati proses autentikasi, merchant perlu mengirim server_key di header “Authorization” sebagai spesifikasi standard BASIC AUTH. Spesifikasi standard BASIC AUTH dapat dilihat <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">disini</a>.</p>
+<p>The header for authorization can be generated by obtaining the Base 64 of the Server Key. This is an implementation of Basic Authentication.
+<a href="http://en.wikipedia.org/wiki/Basic_access_authentication">http://en.wikipedia.org/wiki/Basic_access_authentication</a></p>
 
-<p>BASIC AUTH harus mengikuti format sebagai berikut :</p>
+<p>Basic authentication must use the following format :</p>
 
 <pre class="highlight text">username:password
 </pre>
-<p>Karena tidak ada pasword untuk server_key, sehingga merchant bisa membiarkan passwordnya kosong. Jika merchant memiliki server_key seperti berikut :</p>
+<p>Since there is no password for the Server Key, we will leave the password blank. Therefore, if our <em>Server Key</em> is :</p>
 
 <pre class="highlight text">94960ece-9513-4265-9cf2-67a4da330213
 </pre>
-<p>Ini akan menjadi :</p>
+<p>it will become :</p>
 
 <pre class="highlight text">94960ece-9513-4265-9cf2-67a4da330213:
 </pre>
-<p><em>(Note: pastikan ada karakter “:” setelah server_key)</em></p>
+<p><em>(Note: make sure that there is a colon “:” after the Server Key)</em></p>
 
-<p>Selanjutnya merchant perlu mengubah ke BASE 64, sehingga hasilnya seperti berikut</p>
+<p>Merchant then needs to convert it into Base 64 to get:</p>
 
 <pre class="highlight text">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
 </pre>
-<p>Pastikan merchant menaruh string "Basic &lt; space &gt;" sebelum BASE 64 server_key.</p>
+<p>Therefore, the header Authorization will be:</p>
+
+<pre class="highlight text">Authorization: Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
+</pre>
+<p>Make sure the merchant put the string "Basic <space>" before BASE 64 server_key.</space></p>
 
 <h3 id="http-header">HTTP Header</h3>
 
-<p>Payment API menggunakan JSON sebagai data komunikasi dengan merchant, oleh karena itu merchant perlu mengirim beberapa header default setiap transaksi dengan Payment API.</p>
+<p>Given that the Payment API uses JSON to communicate with the merchant, there are several header that needs to be sent by the merchant for every transaction with the Payment API. </p>
 
-<p>Berikut adalah header yang perlu dikirim oleh merchant di http request ketika bertransaksi dengan Payment API.</p>
+<p>Below is the required header for every http request sent to the Payment API.</p>
 
 <table>
 	<tr>
@@ -231,22 +237,22 @@
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p>URL endpoint merupakan alamat URL yang menerima request charge transaksi. URL endpoint ini akan dibutuhkan pada langkah berikutnya. Veritrans menyediakan 2 base URL endpoint yang dapat digunakan, yaitu:</p>
+<p>URL endpoint is the URL address that will receive the request charge transaction. You will need the URL endpoint for next step. Veritrans provides separate endpoints for testing and production environments:</p>
 
 <pre class="highlight text">Testing / Development / Sandbox 	: https://api.sandbox.veritrans.co.id
 Production 				: https://api.veritrans.co.id
 </pre>
-<p>Untuk tahap development, merchant menggunakan endpoint Testing/Development/Sandbox. Setelah selesai melakukan proses development/pengujian dan sudah siap untuk “go live”, merchant perlu mengubah base URL endpoint ke mode Production.</p>
+<p>During the development phase, please use Testing / Development / Sandbox endpoint. Once you are ready to “go live”, the merchant is required to change the URL endpoint to that for production.</p>
 
 <h3 id="callback-url">Callback URL</h3>
 
-<p>Sebelum melakukan transaksi menggunakan VT-Direct, merchant harus mengatur callback URL melalui MAP (Merchant Administration Portal). Pengaturan Callback URL dapat ditemukan pada menu Settings → Configuration.</p>
+<p>Before conducting transactions using VT-Direct, merchant must set the callback URL via MAP (Merchant Administration Portal). Callback URL Settings can be found on the menu Settings → Configuration.</p>
 
 <p><img title="Permata VA" class="img-responsive" src="../images/callback_url.png" /></p>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="introduction.html">VT-Direct: Perkenalan</a></li><li class="right">Next: <a href="integration.html">VT-Direct: Integrasi</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="introduction.html">VT-Direct: Introduction</a></li><li class="right">Next: <a href="integration.html">VT-Direct: Integration</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/vtweb/get_redirect_url.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Getting Started</a></li>
 					
-					<li class="active"><a href="get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class="active"><a href="get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integration</a></li>
 					
 					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Examples</a></li>
 					
 					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -165,32 +166,33 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtweb-get-redirect-url">
-            <h2 id="mendapatkan-redirect-url">Mendapatkan Redirect URL</h2>
-<p>Pada tahap ini merchant akan mendapatkan URL halaman pembayaran VT-Web untuk suatu transaksi. Untuk mendapatkan URL tersebut, merchant perlu mengirimkan request ke Veritrans dengan spesifikasi sebagai berikut:</p>
+            <h2 id="obtaining-redirect-url">Obtaining Redirect URL</h2>
+<p>In this phase, merchant will receive URL to VT-Web payment page. To obtain the URL, merchant needs to send request to Veritrans with the following specifications:</p>
 <table>
-	<tr>
-		<td>URL endpoint</td>
-		<td>/v2/charge</td>
-	</tr>
-	<tr>
-		<td>Header</td>
-		<td>
-			Content-Type: application/json<br />
-			Accept: application/json
-		</td>
-	</tr>
-	<tr>
-		<td>HTTP Method</td>
-		<td>POST</td>
-	</tr>
-	<tr>
-		<td>Authorization</td>
-		<td>Basic (<code>server_key</code>:)</td>
-	</tr>
+    <tr>
+        <td>URL endpoint</td>
+        <td>/v2/charge</td>
+    </tr>
+    <tr>
+        <td>Header</td>
+        <td>
+            Content-Type: application/json<br />
+            Accept: application/json
+        </td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>Basic (<code>server_key</code>:)</td>
+    </tr>
 </table>
 
-<h4 id="transaksi-kartu-kredit-menggunakan-vt-web">Transaksi kartu kredit menggunakan VT-WEB</h4>
-<p>Message yang dikirim saat mengirim request tersebut adalah data detail transaksi dalam format JSON. Contoh:  </p>
+<h4 id="credit-card-transaction-using-vt-web">Credit card transaction using VT-WEB</h4>
+
+<p>Messages that will be send during request contain transaction details in JSON format. Example:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
@@ -240,34 +242,34 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-<p>Kode diatas adalah format default JSON untuk melakukan transaksi di Payment API.</p>
+<p>Code above is the default JSON format to make transactions on the Payment API.</p>
 
-<p>Keterangan objek <code>JSON Request</code>:</p>
+<p>Object Description <code>JSON Request</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>payment_type</code></td>
             <td>String</td>
-            <td>Ya</td>
-            <td>Pilihan tipe pembayaran yang akan digunakan. Contoh: <br />
+            <td>Yes</td>
+            <td>Payment type options will be used. For example: <br />
                 <ul>
-                    <li>Dengan VT-Direct:
+                    <li>With VT-Direct:
                         <ul>
-                            <li>Isi “CREDIT_CARD” untuk pembayaran melalui VT-Direct.</li>
+                            <li>Fill “CREDIT_CARD” for payment with VT-Direct.</li>
                         </ul>
                     </li>
-                    <li>Dengan VT-WEB:
+                    <li>With VT-WEB:
                         <ul>
-                            <li>Isi “VTWEB” untuk pembayaran melalui VT-Web</li>
+                            <li>Fill “VTWEB” for payment with VT-Web</li>
                         </ul>
                     </li>
                 </ul>
@@ -276,340 +278,341 @@
         <tr>
             <td><code>transaction_details</code></td>
             <td>JSON Object</td>
-            <td>Ya</td>
-            <td>Detail data transaksi yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Transaction data detail that will be paid by customer</td>
         </tr>
         <tr>
             <td><code>item_details</code></td>
             <td>JSON Array</td>
-            <td>Ya</td>
-            <td>Detail item pembelanjaan yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Shopping item detail that will be paid by customer</td>
         </tr>
         <tr>
             <td><code>customer_details</code></td>
             <td>JSON Object</td>
-            <td>Ya</td>
-            <td>Detail data customer yang melakukan pembayaran</td>
+            <td>Yes</td>
+            <td>Customer data detail that make payment</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>transaction_details</code>:</p>
+<p>Object Description <code>transaction_details</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>order_id</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>ID pembayaran customer</td>
+            <td>Yes</td>
+            <td>Customer Payment ID</td>
         </tr>
         <tr>
             <td><code>gross_amount</code></td>
             <td>Long</td>
-            <td>Ya</td>
-            <td>Total harga transaksi pembayaran yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Total of transaction price that will be paid by customer</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>item_details</code>:</p>
+<p>Object Description <code>item_details</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>id</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>ID barang</td>
+            <td>Yes</td>
+            <td>Item ID</td>
         </tr>
         <tr>
             <td><code>price</code></td>
             <td>Long</td>
-            <td>Ya</td>
-            <td>Harga barang</td>
+            <td>Yes</td>
+            <td>Item price</td>
         </tr>
         <tr>
             <td><code>quantity</code></td>
             <td>Integer</td>
-            <td>Ya</td>
-            <td>Jumlah barang</td>
+            <td>Yes</td>
+            <td>Total Item</td>
         </tr>
         <tr>
             <td><code>name</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>Nama barang</td>
+            <td>Yes</td>
+            <td>Item name</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>customer_details</code>:</p>
+<p>Object Description <code>customer_details</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>first_name</code></td>
             <td>String(20)</td>
-            <td>Ya</td>
-            <td>Nama depan customer</td>
+            <td>Yes</td>
+            <td>Customer first name</td>
         </tr>
         <tr>
             <td><code>last_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang customer</td>
+            <td>Recommended</td>
+            <td>Customer last name</td>
         </tr>
         <tr>
             <td><code>email</code></td>
             <td>String(45)</td>
-            <td>Ya</td>
-            <td>Email customer.<br />
-                Note: terdapat validasi untuk mengecek format email yang valid</td>
+            <td>Yes</td>
+            <td>Customer email.<br />
+                Note: there is a validation to check valid email</td>
         </tr>
         <tr>
             <td><code>phone</code></td>
             <td>String(19)</td>
-            <td>Ya</td>
-            <td>Nomor telepon customer. <br />
-                Note: Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan (). Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+            <td>Yes</td>
+            <td>Customer phone number. <br />
+                Note: Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
         </tr>
         <tr>
             <td><code>billing_address</code></td>
             <td>JSON Object</td>
-            <td>Dianjurkan</td>
+            <td>Recommended</td>
             <td>Billing address customer</td>
         </tr>
         <tr>
             <td><code>shipping_address</code></td>
             <td>JSON Object</td>
-            <td>Dianjurkan</td>
+            <td>Recommended</td>
             <td>Shipping address customer</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>billing_address</code>:</p>
+<p>Object Description <code>billing_address</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>Attribute JSON</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>first_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama depan billing address. <br />
-                Note : Tidak perlu diisi apabila isinya sama dengan customer details - first_name</td>
+            <td>Recommended</td>
+            <td>First name billing address. <br />
+                Note: No need to be filled if same as the customer details - first_name</td>
         </tr>
         <tr>
             <td><code>last_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang billing address</td>
+            <td>Recommended</td>
+            <td>Last name billing address</td>
         </tr>
         <tr>
             <td><code>address</code></td>
             <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>Alamat billing address</td>
+            <td>Recommended</td>
+            <td>Address of billing address</td>
         </tr>
         <tr>
             <td><code>city</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Kota billing address</td>
+            <td>Recommended</td>
+            <td>Billing address city</td>
         </tr>
         <tr>
             <td><code>postal_code</code></td>
-            <td>String(9)</td>
-            <td>Dianjurkan</td>
-            <td>Kode pos shipping address <br />
-                Note: format alpha-numeric, bisa menerima “-” dan spasi</td>
+            <td>String(10)</td>
+            <td>Recommended</td>
+            <td>Billing address postal code<br />
+                Note: format alpha-numeric, can accept “-” and space</td>
         </tr>
         <tr>
             <td><code>phone</code></td>
             <td>String(19)</td>
-            <td>Dianjurkan</td>
-            <td>Nomor telpon billing address. <br />
-                Note : Tidak perlu diisi apabila isinya sama dengan customer details - phone. Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan (). Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+            <td>Recommended</td>
+            <td>Billing address phone number. <br />
+                Note : No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
         </tr>
         <tr>
             <td><code>country_code</code></td>
             <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>ID negara (contoh: IDN)</td>
+            <td>Recommended</td>
+            <td>Country ID(example: IDN)</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>shipping_address</code>:</p>
+<p>Object Description <code>shipping_address</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>first_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama depan shipping address</td>
+            <td>Recommended</td>
+            <td>First name shipping address</td>
         </tr>
         <tr>
             <td><code>last_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang shipping address</td>
+            <td>Recommended</td>
+            <td>Last name shipping address</td>
         </tr>
         <tr>
             <td><code>address</code></td>
             <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>Alamat shipping address</td>
+            <td>Recommended</td>
+            <td>Address of shipping address</td>
         </tr>
         <tr>
             <td><code>city</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Kota shipping address</td>
+            <td>Recommended</td>
+            <td>Shipping address city</td>
         </tr>
         <tr>
             <td><code>postal_code</code></td>
-            <td>String(9)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Kode pos shipping address <br />
-                Note: format alpha-numeric, bisa menerima “-” dan spasi</td>
+            <td>String(10)</td>
+            <td>Optional, except for payment type using credit card, this attribute is mandatory</td>
+            <td>Shipping address postal code<br />
+                Note: format alpha-numeric, can accept “-” and space</td>
         </tr>
         <tr>
             <td><code>phone</code></td>
             <td>String(19)</td>
-            <td>Dianjurkan</td>
-            <td>Nomor telpon billing address. <br />
-                Note : Tidak perlu diisi apabila isinya sama dengan customer details - phone. Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan (). Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+            <td>Recommended</td>
+            <td>Billing address phone number. <br />
+                Note: No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
         </tr>
         <tr>
             <td><code>country_code</code></td>
             <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>ID negara (contoh: IDN)</td>
+            <td>Recommended</td>
+            <td>Country ID (contoh: IDN)</td>
         </tr>
     </tbody>
 </table>
 
-<h4>Mengaktifkan fitur VT-Web 3DSecure</h4>
-<p>Jika merchant ingin memproses transaksi dengan 3DSecure, maka parameter <code>”credit_card_3d_secure” : true</code> perlu ditambahkan, sehingga message JSON-nya menjadi:  </p>
+<h4 id="activating-3dsecure">Activating 3DSecure</h4>
 
-<pre class="highlight json"><span class="w">	</span><span class="p">{</span><span class="w">
-	    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	        </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">],</span><span class="w">
-	        </span><span class="s2">&quot;credit_card_3d_secure&quot;</span><span class="p">:</span><span class="kc">true</span><span class="w">
-	    </span><span class="p">},</span><span class="w">
-	    </span><span class="err">transaction_details</span><span class="s2">&quot;: {
-	        &quot;</span><span class="err">order_id</span><span class="s2">&quot;: &quot;</span><span class="err">order45</span><span class="s2">&quot;,
-	        &quot;</span><span class="err">gross_amount</span><span class="s2">&quot;: 200000
-	    },
-	    &quot;</span><span class="err">item_details</span><span class="s2">&quot;: [{
-	        &quot;</span><span class="err">id</span><span class="s2">&quot;: &quot;</span><span class="err">item1</span><span class="s2">&quot;,
-	        &quot;</span><span class="err">price</span><span class="s2">&quot;: 100000,
-	        &quot;</span><span class="err">quantity</span><span class="s2">&quot;: 1,
-	        &quot;</span><span class="err">name</span><span class="s2">&quot;: &quot;</span><span class="err">Adidas</span><span class="w"> </span><span class="err">f50</span><span class="s2">&quot;
-	    }, {
-	        &quot;</span><span class="err">id</span><span class="s2">&quot;: &quot;</span><span class="err">item2</span><span class="s2">&quot;,
-	        &quot;</span><span class="err">price</span><span class="s2">&quot;: 50000,
-	        &quot;</span><span class="err">quantity</span><span class="s2">&quot;: 2,
-	        &quot;</span><span class="err">name</span><span class="s2">&quot;: &quot;</span><span class="err">Nike</span><span class="w"> </span><span class="err">N90</span><span class="s2">&quot;
-	    }],
-	    &quot;</span><span class="err">customer_details</span><span class="s2">&quot;: {
-	        &quot;</span><span class="err">first_name</span><span class="s2">&quot;: &quot;</span><span class="err">Andri</span><span class="s2">&quot;,
-	        &quot;</span><span class="err">last_name</span><span class="s2">&quot;: &quot;</span><span class="err">Setiawan</span><span class="s2">&quot;,
-	        &quot;</span><span class="err">email</span><span class="s2">&quot;: &quot;</span><span class="err">andri.setiawan@veritrans.co.id</span><span class="s2">&quot;,
-	        &quot;</span><span class="err">phone</span><span class="s2">&quot;: &quot;</span><span class="err">08195010132</span><span class="s2">&quot;,
-	        &quot;</span><span class="err">billing_address</span><span class="s2">&quot;: {
-	            &quot;</span><span class="err">first_name</span><span class="s2">&quot;: &quot;</span><span class="err">Andri</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">last_name</span><span class="s2">&quot;: &quot;</span><span class="err">Setiawan</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">address</span><span class="s2">&quot;: &quot;</span><span class="err">Karet</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">city</span><span class="s2">&quot;: &quot;</span><span class="err">Jakarta</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">postal_code</span><span class="s2">&quot;: &quot;</span><span class="err">523112</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">phone</span><span class="s2">&quot;: &quot;</span><span class="err">08195010132</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">country_code</span><span class="s2">&quot;: &quot;</span><span class="err">IDN</span><span class="s2">&quot;
-	        },
-	        &quot;</span><span class="err">shipping_address</span><span class="s2">&quot;: {
-	            &quot;</span><span class="err">first_name</span><span class="s2">&quot;: &quot;</span><span class="err">John</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">last_name</span><span class="s2">&quot;: &quot;</span><span class="err">Watson</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">address</span><span class="s2">&quot;: &quot;</span><span class="err">Bakerstreet</span><span class="w"> </span><span class="err">221B</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">city</span><span class="s2">&quot;: &quot;</span><span class="err">London</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">postal_code</span><span class="s2">&quot;: &quot;</span><span class="err">12354</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">phone</span><span class="s2">&quot;: &quot;</span><span class="err">081323123123</span><span class="s2">&quot;,
-	            &quot;</span><span class="err">country_code</span><span class="s2">&quot;: &quot;</span><span class="err">IDN&quot;</span><span class="w">
-	        </span><span class="err">}</span><span class="w">
-	    </span><span class="err">}</span><span class="w">
-	</span><span class="err">}</span><span class="w">
+<p>3DSecure transaction is activated by setting parameter ”secure” : true. The updated JSON format: </p>
+
+<pre class="highlight json"><span class="w">    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">],</span><span class="w">
+            </span><span class="s2">&quot;credit_card_3d_secure&quot;</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">transaction_details</span><span class="s2">&quot;: {
+            &quot;</span><span class="err">order_id</span><span class="s2">&quot;: &quot;</span><span class="err">order45</span><span class="s2">&quot;,
+            &quot;</span><span class="err">gross_amount</span><span class="s2">&quot;: 200000
+        },
+        &quot;</span><span class="err">item_details</span><span class="s2">&quot;: [{
+            &quot;</span><span class="err">id</span><span class="s2">&quot;: &quot;</span><span class="err">item1</span><span class="s2">&quot;,
+            &quot;</span><span class="err">price</span><span class="s2">&quot;: 100000,
+            &quot;</span><span class="err">quantity</span><span class="s2">&quot;: 1,
+            &quot;</span><span class="err">name</span><span class="s2">&quot;: &quot;</span><span class="err">Adidas</span><span class="w"> </span><span class="err">f50</span><span class="s2">&quot;
+        }, {
+            &quot;</span><span class="err">id</span><span class="s2">&quot;: &quot;</span><span class="err">item2</span><span class="s2">&quot;,
+            &quot;</span><span class="err">price</span><span class="s2">&quot;: 50000,
+            &quot;</span><span class="err">quantity</span><span class="s2">&quot;: 2,
+            &quot;</span><span class="err">name</span><span class="s2">&quot;: &quot;</span><span class="err">Nike</span><span class="w"> </span><span class="err">N90</span><span class="s2">&quot;
+        }],
+        &quot;</span><span class="err">customer_details</span><span class="s2">&quot;: {
+            &quot;</span><span class="err">first_name</span><span class="s2">&quot;: &quot;</span><span class="err">Andri</span><span class="s2">&quot;,
+            &quot;</span><span class="err">last_name</span><span class="s2">&quot;: &quot;</span><span class="err">Setiawan</span><span class="s2">&quot;,
+            &quot;</span><span class="err">email</span><span class="s2">&quot;: &quot;</span><span class="err">andri.setiawan@veritrans.co.id</span><span class="s2">&quot;,
+            &quot;</span><span class="err">phone</span><span class="s2">&quot;: &quot;</span><span class="err">08195010132</span><span class="s2">&quot;,
+            &quot;</span><span class="err">billing_address</span><span class="s2">&quot;: {
+                &quot;</span><span class="err">first_name</span><span class="s2">&quot;: &quot;</span><span class="err">Andri</span><span class="s2">&quot;,
+                &quot;</span><span class="err">last_name</span><span class="s2">&quot;: &quot;</span><span class="err">Setiawan</span><span class="s2">&quot;,
+                &quot;</span><span class="err">address</span><span class="s2">&quot;: &quot;</span><span class="err">Karet</span><span class="s2">&quot;,
+                &quot;</span><span class="err">city</span><span class="s2">&quot;: &quot;</span><span class="err">Jakarta</span><span class="s2">&quot;,
+                &quot;</span><span class="err">postal_code</span><span class="s2">&quot;: &quot;</span><span class="err">523112</span><span class="s2">&quot;,
+                &quot;</span><span class="err">phone</span><span class="s2">&quot;: &quot;</span><span class="err">08195010132</span><span class="s2">&quot;,
+                &quot;</span><span class="err">country_code</span><span class="s2">&quot;: &quot;</span><span class="err">IDN</span><span class="s2">&quot;
+            },
+            &quot;</span><span class="err">shipping_address</span><span class="s2">&quot;: {
+                &quot;</span><span class="err">first_name</span><span class="s2">&quot;: &quot;</span><span class="err">John</span><span class="s2">&quot;,
+                &quot;</span><span class="err">last_name</span><span class="s2">&quot;: &quot;</span><span class="err">Watson</span><span class="s2">&quot;,
+                &quot;</span><span class="err">address</span><span class="s2">&quot;: &quot;</span><span class="err">Bakerstreet</span><span class="w"> </span><span class="err">221B</span><span class="s2">&quot;,
+                &quot;</span><span class="err">city</span><span class="s2">&quot;: &quot;</span><span class="err">London</span><span class="s2">&quot;,
+                &quot;</span><span class="err">postal_code</span><span class="s2">&quot;: &quot;</span><span class="err">12354</span><span class="s2">&quot;,
+                &quot;</span><span class="err">phone</span><span class="s2">&quot;: &quot;</span><span class="err">081323123123</span><span class="s2">&quot;,
+                &quot;</span><span class="err">country_code</span><span class="s2">&quot;: &quot;</span><span class="err">IDN&quot;</span><span class="w">
+            </span><span class="err">}</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+    </span><span class="err">}</span><span class="w">
 </span></pre>
-<p>Kode diatas adalah format default JSON untuk melakukan transaksi di Payment API.</p>
+<p>Code above is the default JSON format to make transactions on the Payment API.</p>
 
-<p>Keterangan objek <code>JSON Request</code>:</p>
+<p>Object Description <code>JSON Request</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>payment_type</code></td>
             <td>String</td>
-            <td>Ya</td>
-            <td>Pilihan tipe pembayaran yang akan digunakan. Contoh: <br />
+            <td>Yes</td>
+            <td>Payment type options will be used. For example: <br />
                 <ul>
-                    <li>Dengan VT-Direct:
+                    <li>With VT-Direct:
                         <ul>
-                            <li>Isi “CREDIT_CARD” untuk pembayaran melalui VT-Direct.</li>
+                            <li>Fill “CREDIT_CARD” for payment with VT-Direct.</li>
                         </ul>
                     </li>
-                    <li>Dengan VT-WEB:
+                    <li>With VT-WEB:
                         <ul>
-                            <li>Isi “VTWEB” untuk pembayaran melalui VT-Web</li>
+                            <li>Fill “VTWEB” for payment with VT-Web</li>
                         </ul>
                     </li>
                 </ul>
@@ -618,263 +621,266 @@
         <tr>
             <td><code>transaction_details</code></td>
             <td>JSON Object</td>
-            <td>Ya</td>
-            <td>Detail data transaksi yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Transaction data detail that will be paid by customer</td>
         </tr>
         <tr>
             <td><code>item_details</code></td>
             <td>JSON Array</td>
-            <td>Ya</td>
-            <td>Detail item pembelanjaan yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Shopping item detail that will be paid by customer</td>
         </tr>
         <tr>
             <td><code>customer_details</code></td>
             <td>JSON Object</td>
-            <td>Ya</td>
-            <td>Detail data customer yang melakukan pembayaran</td>
+            <td>Yes</td>
+            <td>Customer data detail that make payment</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>transaction_details</code>:</p>
+<p>Object Description <code>transaction_details</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>order_id</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>ID pembayaran customer</td>
+            <td>Yes</td>
+            <td>Customer Payment ID</td>
         </tr>
         <tr>
             <td><code>gross_amount</code></td>
             <td>Long</td>
-            <td>Ya</td>
-            <td>Total harga transaksi pembayaran yang akan dibayar oleh customer</td>
+            <td>Yes</td>
+            <td>Total of transaction price that will be paid by customer</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>item_details</code>:</p>
+<p>Object Description <code>item_details</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>id</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>ID barang</td>
+            <td>Yes</td>
+            <td>Item ID</td>
         </tr>
         <tr>
             <td><code>price</code></td>
             <td>Long</td>
-            <td>Ya</td>
-            <td>Harga barang</td>
+            <td>Yes</td>
+            <td>Item price</td>
         </tr>
         <tr>
             <td><code>quantity</code></td>
             <td>Integer</td>
-            <td>Ya</td>
-            <td>Jumlah barang</td>
+            <td>Yes</td>
+            <td>Total Item</td>
         </tr>
         <tr>
             <td><code>name</code></td>
             <td>String(50)</td>
-            <td>Ya</td>
-            <td>Nama barang</td>
+            <td>Yes</td>
+            <td>Item Name</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>customer_details</code>:</p>
+<p>Object Description <code>customer_details</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>first_name</code></td>
             <td>String(20)</td>
-            <td>Ya</td>
-            <td>Nama depan customer</td>
+            <td>Yes</td>
+            <td>Customer first name</td>
         </tr>
         <tr>
             <td><code>last_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang customer</td>
+            <td>Recommended</td>
+            <td>Customer last name</td>
         </tr>
         <tr>
             <td><code>email</code></td>
             <td>String(45)</td>
-            <td>Ya</td>
-            <td>Email customer.<br />
-                Note: terdapat validasi untuk mengecek format email yang valid</td>
+            <td>Yes</td>
+            <td>Customer Email.<br />
+                Note: there is a validation to check valid email</td>
         </tr>
         <tr>
             <td><code>phone</code></td>
             <td>String(19)</td>
-            <td>Ya</td>
-            <td>Nomor telepon customer. <br />
-                Note: Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan (). Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+            <td>Yes</td>
+            <td>Customer phone number. <br />
+                Note: Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.
+            </td>
         </tr>
         <tr>
             <td><code>billing_address</code></td>
             <td>JSON Object</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
+            <td>Optional, except for payment type using credit card, this attribute is mandatory</td>
             <td>Billing address customer</td>
         </tr>
         <tr>
             <td><code>shipping_address</code></td>
             <td>JSON Object</td>
-            <td>Dianjurkan</td>
+            <td>Recommended</td>
             <td>Shipping address customer</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>billing_address</code>:</p>
+<p>Object Description <code>billing_address</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>first_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama depan billing address. <br />
-                Note : Tidak perlu diisi apabila isinya sama dengan customer details - first_name</td>
+            <td>Recommended</td>
+            <td>First name billing address. <br />
+                Note :No need to be filled if same as the customer details - first_name</td>
         </tr>
         <tr>
             <td><code>last_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang billing address</td>
+            <td>Recommended</td>
+            <td>Last name billing address</td>
         </tr>
         <tr>
             <td><code>address</code></td>
             <td>String(200)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Alamat billing address</td>
+            <td>Optional, except for payment using credit card, this attribute is mandatory</td>
+            <td>Address of billing address</td>
         </tr>
         <tr>
             <td><code>city</code></td>
             <td>String(20)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Kota billing address</td>
+            <td>Optional, except for payment using credit card, this attribute is mandatory</td>
+            <td>Billing address city</td>
         </tr>
         <tr>
             <td><code>postal_code</code></td>
-            <td>String(9)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Kode pos shipping address <br />
-                Note: format alpha-numeric, bisa menerima “-” dan spasi</td>
+            <td>String(10)</td>
+            <td>Optional, except for payment using credit card, this attribute is mandatory</td>
+            <td>Shipping address postal code<br />
+                Note: format alpha-numeric, can accept “-” and space</td>
         </tr>
         <tr>
             <td><code>phone</code></td>
             <td>String(19)</td>
-            <td>Dianjurkan</td>
-            <td>Nomor telpon billing address. <br />
-                Note : Tidak perlu diisi apabila isinya sama dengan customer details - phone. Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan (). Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+            <td>Recommended</td>
+            <td>Billing address phone number. <br />
+                Note: No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.
+            </td>
         </tr>
         <tr>
             <td><code>country_code</code></td>
             <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>ID negara (contoh: IDN)</td>
+            <td>Recommended</td>
+            <td>Country ID (contoh: IDN)</td>
         </tr>
     </tbody>
 </table>
 
-<p>Keterangan Objek <code>shipping_address</code>:</p>
+<p>Object Description <code>shipping_address</code>:</p>
 
 <table>
     <thead>
         <tr>
-            <th>Atribut JSON</th>
-            <th>Tipe Data</th>
+            <th>JSON Attribute</th>
+            <th>Data Type</th>
             <th>Required</th>
-            <th>Keterangan</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><code>first_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama depan shipping address</td>
+            <td>Recommended</td>
+            <td>Shipping address first name</td>
         </tr>
         <tr>
             <td><code>last_name</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Nama belakang shipping address</td>
+            <td>Recommended</td>
+            <td>Shipping address last name</td>
         </tr>
         <tr>
             <td><code>address</code></td>
             <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>Alamat shipping address</td>
+            <td>Recommended</td>
+            <td>Address of shipping address</td>
         </tr>
         <tr>
             <td><code>city</code></td>
             <td>String(20)</td>
-            <td>Dianjurkan</td>
-            <td>Kota shipping address</td>
+            <td>Recommended</td>
+            <td>Shipping address city</td>
         </tr>
         <tr>
             <td><code>postal_code</code></td>
-            <td>String(9)</td>
-            <td>Opsional, kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan</td>
-            <td>Kode pos shipping address <br />
-                Note: format alpha-numeric, bisa menerima “-” dan spasi</td>
+            <td>String(10)</td>
+            <td>Optional, except for payment type using credit card, this attribute is mandatory</td>
+            <td>Shipping address postal code<br />
+                Note: format alpha-numeric, can accept “-” and space</td>
         </tr>
         <tr>
             <td><code>phone</code></td>
             <td>String(19)</td>
-            <td>Dianjurkan</td>
-            <td>Nomor telpon billing address. <br />
-                Note : Tidak perlu diisi apabila isinya sama dengan customer details - phone. Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan (). Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+            <td>Recommended</td>
+            <td>Billing address phone number. <br />
+                Note: No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.
+            </td>
         </tr>
         <tr>
             <td><code>country_code</code></td>
             <td>String(200)</td>
-            <td>Dianjurkan</td>
-            <td>ID negara (contoh: IDN)</td>
+            <td>Recommended</td>
+            <td>Country ID (contoh: IDN)</td>
         </tr>
     </tbody>
 </table>
 
-<p>Berikut ini adalah contoh implementasi request untuk mendapatkan redirect URL ke halaman VT-Web ini dalam PHP:</p>
+<p>Below is a PHP example to obtain URL redirect to VT-Web payment page:</p>
 
 <pre class="highlight php"><span class="cp">&lt;?php</span>
 <span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
@@ -888,69 +894,72 @@
 </span>
 
 <span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-	<span class="s1">'order_id'</span> 		<span class="o">=&gt;</span> <span class="nb">uniqid</span><span class="p">(),</span>
-	<span class="s1">'gross_amount'</span> 	<span class="o">=&gt;</span> <span class="mi">200000</span>
+    <span class="s1">'order_id'</span>      <span class="o">=&gt;</span> <span class="nb">uniqid</span><span class="p">(),</span>
+    <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="mi">200000</span>
 <span class="p">);</span>
 
 <span class="c1">// Populate items
 </span><span class="nv">$items</span> <span class="o">=</span> <span class="p">[</span>
-	<span class="k">array</span><span class="p">(</span>
-		<span class="s1">'id'</span> 		<span class="o">=&gt;</span> <span class="s1">'item1'</span><span class="p">,</span>
-		<span class="s1">'price'</span> 	<span class="o">=&gt;</span> <span class="mi">100000</span><span class="p">,</span>
-		<span class="s1">'quantity'</span> 	<span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">'name'</span> 		<span class="o">=&gt;</span> <span class="s1">'Adidas f50'</span>
-	<span class="p">),</span>
-	<span class="k">array</span><span class="p">(</span>
-		<span class="s1">'id'</span>		<span class="o">=&gt;</span> <span class="s1">'item2'</span><span class="p">,</span>
-		<span class="s1">'price'</span> 	<span class="o">=&gt;</span> <span class="mi">50000</span><span class="p">,</span>
-		<span class="s1">'quantity'</span> 	<span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
-		<span class="s1">'name'</span> 		<span class="o">=&gt;</span> <span class="s1">'Nike N90'</span>
-	<span class="p">)</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'id'</span>        <span class="o">=&gt;</span> <span class="s1">'item1'</span><span class="p">,</span>
+        <span class="s1">'price'</span>     <span class="o">=&gt;</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s1">'quantity'</span>  <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">'name'</span>      <span class="o">=&gt;</span> <span class="s1">'Adidas f50'</span>
+    <span class="p">),</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'id'</span>        <span class="o">=&gt;</span> <span class="s1">'item2'</span><span class="p">,</span>
+        <span class="s1">'price'</span>     <span class="o">=&gt;</span> <span class="mi">50000</span><span class="p">,</span>
+        <span class="s1">'quantity'</span>  <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">'name'</span>      <span class="o">=&gt;</span> <span class="s1">'Nike N90'</span>
+    <span class="p">)</span>
 <span class="p">];</span>
 
 <span class="c1">// Populate customer's billing address
 </span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-	<span class="s1">'first_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-	<span class="s1">'last_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span>
-	<span class="s1">'address'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;Karet Belakang 15A, Setiabudi.&quot;</span><span class="p">,</span>
-	<span class="s1">'city'</span> 			<span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
-	<span class="s1">'postal_code'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;51161&quot;</span><span class="p">,</span>
-	<span class="s1">'phone'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
-	<span class="s1">'country_code'</span> 	<span class="o">=&gt;</span> <span class="s1">'IDN'</span>
-	<span class="p">);</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Karet Belakang 15A, Setiabudi.&quot;</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;51161&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
+    <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
+    <span class="p">);</span>
 
 <span class="c1">// Populate customer's shipping address
 </span><span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-	<span class="s1">'first_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-	<span class="s1">'last_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Watson&quot;</span><span class="p">,</span>
-	<span class="s1">'address'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;Bakerstreet 221B.&quot;</span><span class="p">,</span>
-	<span class="s1">'city'</span> 			<span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
-	<span class="s1">'postal_code'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;51162&quot;</span><span class="p">,</span>
-	<span class="s1">'phone'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
-	<span class="s1">'country_code'</span> 	<span class="o">=&gt;</span> <span class="s1">'IDN'</span>
-	<span class="p">);</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Watson&quot;</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Bakerstreet 221B.&quot;</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;51162&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
+    <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
+    <span class="p">);</span>
 
 <span class="c1">// Populate customer's Info
 </span><span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-	<span class="s1">'first_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-	<span class="s1">'last_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span>
-	<span class="s1">'email'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;andrisetiawan@me.com&quot;</span><span class="p">,</span>
-	<span class="s1">'phone'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
-	<span class="s1">'billing_address'</span>  <span class="o">=&gt;</span> <span class="nv">$billing_address</span><span class="p">,</span>
-	<span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span>
-	<span class="p">);</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span>
+    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;andrisetiawan@me.com&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
+    <span class="s1">'billing_address'</span>  <span class="o">=&gt;</span> <span class="nv">$billing_address</span><span class="p">,</span>
+    <span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span>
+    <span class="p">);</span>
 
 <span class="c1">// Data yang akan dikirim untuk request redirect_url.
 // Uncomment 'secure' =&gt; true jika transaksi ingin diproses dengan 3DSecure.
-</span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-	<span class="s1">'payment_type'</span> 			<span class="o">=&gt;</span> <span class="s1">'vtweb'</span><span class="p">,</span> 
-	<span class="s1">'vtweb'</span> 			<span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-		<span class="s1">'enabled_payments'</span> 	<span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'credit_card'</span><span class="p">]</span>
-	<span class="p">),</span>
-	<span class="c1">//'credit_card_3d_secure'				=&gt; true,
-</span>	<span class="s1">'transaction_details'</span> 	<span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
-	<span class="s1">'item_details'</span> 			<span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">,</span>
-	<span class="s1">'customer_details'</span> 		<span class="o">=&gt;</span> <span class="nv">$customer_details</span>
+</span>
+<span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'payment_type'</span>          <span class="o">=&gt;</span> <span class="s1">'vtweb'</span><span class="p">,</span> 
+    <span class="s1">'vtweb'</span>             <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'enabled_payments'</span>  <span class="o">=&gt;</span> <span class="p">[</span><span class="err">‘</span><span class="nx">credit_card</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="nx">mandiri_clickpay</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="nx">cimb_clicks</span><span class="err">’</span><span class="p">]</span>
+        <span class="c1">//‘credit_card_3d_secure' =&gt; true,
+</span>        <span class="c1">//credit_card_bins = [ &quot;41111&quot;, &quot;42222&quot;, ... ]
+</span>    <span class="p">),</span>
+    
+    <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+    <span class="s1">'item_details'</span>          <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">,</span>
+    <span class="s1">'customer_details'</span>      <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
 <span class="p">);</span>
 
 <span class="nv">$json_transaction_data</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
@@ -958,9 +967,9 @@
 <span class="c1">// Mengirimkan request dengan menggunakan CURL
 // HTTP METHOD : POST
 // Header:
-//	Content-Type : application/json
-//	Accept: application/json
-// 	Basic Auth using server_key
+//  Content-Type : application/json
+//  Accept: application/json
+//  Basic Auth using server_key
 </span><span class="nv">$request</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$endpoint</span><span class="p">);</span>
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">CURLOPT_CUSTOMREQUEST</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">);</span>
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$json_transaction_data</span><span class="p">);</span>
@@ -968,9 +977,9 @@
 <span class="nv">$auth</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s1">'Authorization: Basic %s'</span><span class="p">,</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$server_key</span><span class="o">.</span><span class="s1">':'</span><span class="p">));</span>
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'Content-Type: application/json'</span><span class="p">,</span>
-	<span class="s1">'Accept: application/json'</span><span class="p">,</span>
-	<span class="nv">$auth</span> 
-	<span class="p">)</span>
+    <span class="s1">'Accept: application/json'</span><span class="p">,</span>
+    <span class="nv">$auth</span> 
+    <span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// Excute request and parse the response
@@ -979,44 +988,44 @@
 <span class="c1">// Check Response
 </span><span class="k">if</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">&quot;201&quot;</span><span class="p">)</span>
 <span class="p">{</span>
-	<span class="c1">//success
-</span>	<span class="c1">//redirect to vtweb payment page
-</span>	<span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: &quot;</span><span class="o">.</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">redirect_url</span><span class="p">);</span>
+    <span class="c1">//success
+</span>    <span class="c1">//redirect to vtweb payment page
+</span>    <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: &quot;</span><span class="o">.</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">redirect_url</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
-	<span class="c1">//error
-</span>	<span class="k">echo</span> <span class="s2">&quot;Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;&quot;</span><span class="p">;</span>
-	<span class="k">echo</span> <span class="s2">&quot;Status message: [&quot;</span><span class="o">.</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">status_code</span><span class="o">.</span><span class="s2">&quot;] &quot;</span><span class="o">.</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">status_message</span><span class="p">;</span>
+    <span class="c1">//error
+</span>    <span class="k">echo</span> <span class="s2">&quot;Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;Status message: [&quot;</span><span class="o">.</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">status_code</span><span class="o">.</span><span class="s2">&quot;] &quot;</span><span class="o">.</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">status_message</span><span class="p">;</span>
 
-	<span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Response:&lt;/h3&gt;&quot;</span><span class="p">;</span>
-	<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Response:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="cp">?&gt;</span>
 </pre>
-<h3>3.1 Success Response </h3>
-<p>Jika sukses, maka request di atas akan mendapatkan response dari Veritrans berupa JSON seperti berikut ini:  </p>
+<h3>Success Response </h3>
+<p>If request succeed, the following response will be returned in JSON format: </p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w"> 
-	</span><span class="s2">&quot;redirect_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vtweb.sandbox.veritrans.co.id/vtweb/ce72694f-3284-408d-9198-bc0ac269df2d&quot;</span><span class="p">,</span><span class="w"> 
-	</span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
-	</span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, success do VTWeb transaction, please go to redirect_url&quot;</span><span class="w"> 
+    </span><span class="s2">&quot;redirect_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vtweb.sandbox.veritrans.co.id/vtweb/ce72694f-3284-408d-9198-bc0ac269df2d&quot;</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, success do VTWeb transaction, please go to redirect_url&quot;</span><span class="w"> 
 </span><span class="p">}</span><span class="w">
 </span></pre>
-<h3>3.2 Error Response</h3>
-<p>Jika ada kesalahan yang menyebabkan kegagalan, misalnya order_id sudah pernah dibayar, maka request di atas akan mendapatkan response seperti berikut ini:  </p>
+<h3>Error Response</h3>
+<p>If there is error during the request, for example using the same order_id again for another request, the following response will be returned:  </p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
-	</span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;406&quot;</span><span class="p">,</span><span class="w"> 
-	</span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Merchant charges the same order id more than once or transaction has been paid&quot;</span><span class="w"> 
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;406&quot;</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Merchant charges the same order id more than once or transaction has been paid&quot;</span><span class="w"> 
 </span><span class="p">}</span><span class="w">
 </span></pre>
-<p>Status code lain beserta keterangannya yang mungkin didapatkan saat mengirim request dapat dilihat di bagian Reference-Status Code dari dokumen ini.</p>
+<p>Please refer to Reference-Status Code section for complete description of the status codes.</p>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Web: Langkah Awal</a></li><li class="right">Next: <a href="redirect.html">VT-Web: Redirect</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Web: Getting Started</a></li><li class="right">Next: <a href="redirect.html">VT-Web: Redirect</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

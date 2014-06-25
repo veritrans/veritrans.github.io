@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/vtdirect/payment_options.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="integration.html">Integration</a></li>
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="other_features.html">Other Features</a></li>
 					
-					<li class="active"><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class="active"><a href="payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="examples.html">Examples</a></li>
 					
 					<li class=""><a href="status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -165,32 +166,32 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtdirect-payment-options">
-            <h2 id="pilihan-pembayaran">Pilihan Pembayaran</h2>
+            <h2 id="payment-options">Payment Options</h2>
 
-<p>Saat ini Veritrans menyediakan 2 pilihan pembayaran, yaitu:</p>
+<p>Currently Veritrans provide 2 payment options:</p>
 
 <ol>
   <li><a href="payment_options.html#mandiri-clickpay">Mandiri ClickPay</a></li>
   <li><a href="payment_options.html#cimb-clicks">CIMB Clicks</a></li>
 </ol>
 
-<p>Berikut adalah tutorial untuk melakukan integrasi menggunakan pilihan pembayaran sesuai dengan kebutuhan anda.</p>
+<p>Here is a tutorial for integrate using payment options to suit your needs.</p>
 
 <h3 id="mandiri-clickpay">Mandiri ClickPay</h3>
 
 <h4 id="charge-transaction">Charge Transaction</h4>
 
-<p>Untuk melakukan charge transaction menggunakan Mandiri ClickPay, beberapa langkah harus dilakukan sebagai berikut:</p>
+<p>To perform a charge transaction using Mandiri ClickPay, several steps must be carried out as follows:</p>
 
 <ol>
-  <li><code>"payment_type"</code> harus di-set menjadi <code>"mandiri_clickpay"</code></li>
-  <li>JSON object baru harus ditambahkan, dengan nama <code>"mandiri_clickpay"</code>,dan mempunyai nama/value pasangan sebagai berikut:
+  <li><code>"payment_type"</code> must be set into<code>"mandiri_clickpay"</code></li>
+  <li>JSON new object must be added, with name <code>"mandiri_clickpay"</code>,and has pairing name/value as follows:
     <ul>
-      <li><code>"card_number"</code> → nomor kartu debit</li>
-      <li><code>"input1"</code> → 10 angka terakhir dari nomor kartu debit</li>
-      <li><code>"input2"</code> → jumlah total transaksi</li>
+      <li><code>"card_number"</code> → credit card number</li>
+      <li><code>"input1"</code> → last 10 digit from credit card number</li>
+      <li><code>"input2"</code> → sum of total transactions</li>
       <li><code>"input3"</code> → merchant order id</li>
-      <li><code>"token"</code> → token yang diisi oleh customer</li>
+      <li><code>"token"</code> → token that have been filled by customer</li>
     </ul>
   </li>
 </ol>
@@ -227,7 +228,7 @@
 
 <h4 id="response">Response</h4>
 
-<p>Contoh response yang didapat dari charge transaksi untuk Mandiri Clickpay sebagai berikut:</p>
+<p>Sample response that obtained from charge transaction for Mandiri Clickpay as follows:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cddd6c1f-3b03-4c89-b0a8-0ea7dccf5217&quot;</span><span class="p">,</span><span class="w">
@@ -245,16 +246,16 @@
 
 <h4 id="charge-transaction-1">Charge Transaction</h4>
 
-<p>Untuk melakukan charge transaction menggunakan Mandiri ClickPay, beberapa langkah harus dilakukan sebagai berikut:</p>
+<p>To perform charge transaction using CIMB Clicks, several steps must be carried out as follows:</p>
 
 <ol>
-  <li><code>"payment_type"</code> harus di-set menjadi <code>"cimb_clicks"</code></li>
-  <li>JSON object baru harus ditambahkan, dengan nama <code>"cimb_clicks"</code>,dan mempunyai nama/value pasangan sebagai berikut:
-    <ul>
-      <li><code>"description"</code> → keterangan transaksi</li>
-    </ul>
-  </li>
+  <li><code>"payment_type"</code> must be set into <code>"cimb_clicks"</code></li>
+  <li>JSON new object must be added, with name <code>"cimb_clicks"</code>, and has pairing name/value as follows:</li>
 </ol>
+
+<ul>
+  <li><code>"description"</code> → transaction description</li>
+</ul>
 
 <pre class="highlight json"><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">,</span><span class="w">
@@ -284,7 +285,7 @@
 
 <h4 id="response-1">Response</h4>
 
-<p>Contoh response yang didapat dari charge transaksi untuk CIMB Clicks sebagai berikut:</p>
+<p>Sample response that obtained from charge transaction for CIMB Clicks as follows: </p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
@@ -298,17 +299,16 @@
   </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10000.00&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-
-<p>Setelah mendapat response, merchant harus mengalihkan halaman tampilan menurut <code>"redirect_url"</code> sehingga customer dapat melanjutkan pembayaran. Halaman seperti dibawah ini akan ditampilkan dimana customer dapat melanjutkan pembayaran.</p>
+<p>After receiving the response, merchant must redirect page according to <code>"redirect_url"</code> so that the customer can resume payments. Page as below will be displayed where customers can resume payments.</p>
 
 <p><img title="CIMB Clicks" class="img-responsive" src="../images/vtdirect_cimb_clicks.png" />
-Setelah customer melakukan pembayaran, halaman berikut akan ditampilkan:</p>
+After the customer makes a payment, the following page is displayed:</p>
 
 <p><img title="CIMB Clicks" class="img-responsive" src="../images/vtdirect_cimb_clicks_2.png" /></p>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="other_features.html">VT-Direct: Fitur Lain</a></li><li class="right">Next: <a href="examples.html">VT-Direct: Contoh</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="other_features.html">VT-Direct: Other Features</a></li><li class="right">Next: <a href="examples.html">VT-Direct: Examples</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

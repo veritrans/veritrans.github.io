@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/howto/fds.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integration</a></li>
 					
 					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Examples</a></li>
 					
 					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class="active"><a href="fds.html">Sistem Deteksi Fraud</a></li>
+					<li class="active"><a href="fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -165,52 +166,45 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="howto-fds">
-            <h2>Respon Sistem Deteksi Fraud</h2>
+            
+<h2 id="fraud-detection-system-response">Fraud Detection System Response</h2>
 
-<p>Sistem deteksi fraud Veritrans memonitor semua transaksi dan akan memberikan respon untuk masing-masing transaksi yaitu: <code>ACCEPT</code> (diterima), <code>DENY</code> (ditolak), atau <code>CHALLENGE</code> (dipertanyakan).</p>
+<p>Veritrans fraud detection system monitors all transaction and will give 3 responses: <code>ACCEPT</code>, <code>DENY</code> or <code>CHALLENGE</code>.</p>
+
+<ol>
+  <li>
+    <p><code>ACCEPT</code> means the transaction is successfully authorized and will be settled during settlement time (5 PM next day).</p>
+  </li>
+  <li>
+    <p><code>DENY</code> means the transaction is failed/rejected, and will be cancelled.</p>
+  </li>
+  <li>
+    <p><code>CHALLENGE</code> means the transaction hits one of the rules of the fraud detection system. The merchant should manually ACCEPT or DENY the CHALLENGE transaction on the <a href="https://payments.veritrans.co.id/map/payment">Merchant Administration Portal (MAP)</a> so that it will be processed properly.</p>
+  </li>
+</ol>
+
+<p>Merchant is able to cancel a successful transaction, as long as it is before the settlement time (5 PM next day).</p>
+
+<h3 id="acceptingdenying-challenged-transaction-on-map">Accepting/Denying Challenged Transaction on MAP</h3>
 
 <ol>
 	<li>
-		<p>ACCEPT</p>
-		<p>Ketika transaksi mendapat respon <code>ACCEPT</code>, berarti transaksi akan sukses diotorisasi dan akan di-settle sesuai dengan waktu settlement (Pukul 17.00 pada hari berikutnya).</p>
+		<p>Click at the orderID in order to see the transaction in more detail (Detailed Transaction View). Merchant will be able to locate CHALLENGE transaction from the MAP (Transaction Page), in addition to the email notifications Veritrans sends to the merchant. </p>
+		<p><img title="challenge transaction" class="img-responsive" src="../images/challenge_transaction.png" /></p>
 	</li>
 	<li>
-		<p>DENY</p>
-		<p>Ketika transaksi mendapat respon <code>DENY</code>, berarti transaksi tersebut gagal dan akan dibatalkan.</p>
-	</li>
-	<li>
-		<p>CHALLENGE</p>
-		<p>Ketika transaksi mendapat respon <code>CHALLENGE</code>, berarti transaksi tersebut melanggar salah satu peraturan dari sistem deteksi fraud. Merchant harus memutuskan transaksi CHALLENGE tersebut akan di ACCEPT atau DENY di <a href="https://payments.veritrans.co.id/map/payment">Merchant Administration Portal (MAP)</a> agar transaksi tersebut dapat diproses.</p>
+		<p>In the Detailed Transaction View, merchant will be able to ACCEPT or DENY a CHALLENGED transaction simply by a click of a button. The status will then be changed accordingly.</p>
+		<p><img title="challenge action" class="img-responsive" src="../images/challenge_action.png" /></p>
 	</li>
 </ol>
 
-<p>Merchant dapat membatalkan transaksi yang sukses jika pembatalan dilakukan sebelum jam 17.00 WIB pada hari berikutnya.</p>
+<h3 id="challenge-transaction-flowchart">Challenge Transaction Flowchart</h3>
 
+<p><img title="flowchart challenge" class="img-responsive" src="../images/flowchart_challenge.png" /></p>
 
-<h3>Menerima/Menolak Transaksi yang Dipertanyakan (Challenged Transaction) melalui MAP</h3>
-<ol>
-	<li>
-		<p>Klik orderID untuk melihat detil transaksi bersangkutan. Merchant akan dapat melihat adanya transaksi CHALLENGE pada MAP (halaman Transaksi), sebagai tambahan dari email notifikasi yang akan dikirimkan Veritrans.</p>
-		<p><img title="challenge transaction" class="img-responsive" src="/images/challenge_transaction.png"></p>
-	</li>
-	<li>
-		<p>Pada tampilan detil transaksi, merchant akan dapat memilih untuk melakukan ACCEPT atau DENY untuk transaksi CHALLENGE secara mudah dengan meng-klik tombol berikut. Selanjutnya status transaksi akan berubah berdasarkan keputusan merchant.</p>
-		<p><img title="challenge action" class="img-responsive" src="/images/challenge_action.png"></p>
-	</li>
-</ol>
-
-
-<h3>Flowchart Transaksi yang Dipertanyakan</h3>
-<table>
-  <tbody>
-    <tr>
-      <td><img title="flowchart challenge" class="img-responsive" src="/images/flowchart_challenge.png"></td>
-    </tr>
-  </tbody>
-</table>
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="../sandbox/card_list.html">Sandbox: Daftar Kartu Kredit</a></li><li class="right">Next: <a href="cancel.html">How to: Pembatalan Transaksi</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="../sandbox/card_list.html">Sandbox: Credit Card List</a></li><li class="right">Next: <a href="cancel.html">How to: Cancel Transaction</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

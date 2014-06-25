@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/vtweb/sample_code.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="handle_notification.html">Handling Notification</a></li>
 					
 					<li class="active"><a href="sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integration</a></li>
 					
 					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Examples</a></li>
 					
 					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -167,32 +168,32 @@
           <div class="vtweb-sample-code">
             <h2>Sample Code</h2>
 <p>
-	Contoh kode yang digunakan dalam dokumen ini dapat dilihat secara lengkap di <a href="https://github.com/veritrans/papi-sample-code">https://github.com/veritrans/papi-sample-code</a> pada folder VT-Web/PHP.
-</p>
-<h5>Cara penggunaan:</h5>
-<ol>
-	<li>Download semua file dalam folder VT-Web/PHP ini, letakkan di server (Misalnya: folder htdocs, jika Anda menggunakan XAMPP atau MAMP).</li>
-	<li>
-		Ubah konfigurasi <code>server_key</code> di file <code>config.php</code> sesuai dengan yang ada di Merchant Administration Portal (MAP) di halaman Setting &gt;&gt; Access Keys.
-	</li>
-	<li>
-		Selesai. Buka checkout.html dari browser.
-	</li>
-</ol>
-<h5>Menangani notifikasi:</h5>
-<p>
-	File <code>notification_handler.php</code> adalah contoh script untuk menangani HTTP(POST) notification yang dikirim oleh server Veritrans ke server merchant. Atur alamat endpoint server merchant yang akan dikirimi HTTP(POST) notifikasi di Merchant Administration Portal (MAP) pada halaman Setting &gt;&gt; VT-Web Preferences.
+	Sample code in this documentation can be found at <a href="https://github.com/veritrans/papi-sample-code">https://github.com/veritrans/papi-sample-code</a> under folder VT-Web/PHP.
 </p>
 
-<h5>Mengaktifkan production environment</h5>
-<p>Jika Anda sudah selesai melakukan testing dan sudah siap untuk go live di Production Environment, ada satu hal yang perlu dipastikan:<br />
-Arahkan konfigurasi <code>$endpoint</code> di file <code>checkout_process.php</code> ke: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a>.
-</p>
+<ol>
+  <li>
+    <p>Download all files under folder VT-Web/PHP. Placed it on to the server (For example: htdocs folder, if you are using XAMPP or MAMP).</p>
+  </li>
+  <li>
+    <p>Change <code>server_key</code> under <code>config.php</code> according to value in Merchant Administration Portal (MAP) Setting » Access Keys.</p>
+  </li>
+  <li>
+    <p>Open checkout.html in browser.</p>
+  </li>
+</ol>
+
+<h4 id="handling-notification">Handling Notification</h4>
+
+<p><code>notification_handler.php</code> contains sample code for handling HTTP(S) POST notification. Configured the endpoint for merchant’s server in MAP under Setting » VT-Web Preferences.</p>
+
+<h4 id="activating-production-environment">Activating production environment:</h4>
+<p>Once you are finished with testing and ready to “go live”, make sure to update the <code>$endpoint</code> in file <code>checkout_process.php</code> to: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a>.</p>
 
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="handle_notification.html">VT-Web: Menangani Notifikasi</a></li><li class="right">Next: <a href="status_code.html">VT-Web: Status Code</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="handle_notification.html">VT-Web: Handling Notification</a></li><li class="right">Next: <a href="status_code.html">VT-Web: Status Code</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

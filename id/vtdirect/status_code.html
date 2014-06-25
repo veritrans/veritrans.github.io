@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+<div class="header navbar navbar-default navbar-fixed-top">
+  <div class="custom-container">
+    <div class="col-md-3 navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h2 class="logo"><a href="https://www.veritrans.co.id/" title="Home"><span>Veritrans</span></a></h2>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="https://www.veritrans.co.id/whatwedo.html">what we do</a></li>
+				<li><a href="https://www.veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
+        <li><a href="https://www.veritrans.co.id/pricing.html">pricing</a></li>
+        <li><a href="https://www.veritrans.co.id/about.html">about</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://www.veritrans.co.id/sandbox.html">sandbox</a></li>
+            <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">more <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+            <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+            <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+            <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right register-login">
+        <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+        <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<div class="language-toggle"> <a href="../../vtdirect/status_code.html">English</a> / Bahasa Indonesia</div>
+		<ul class="sidebar">
+			<li><a class="parent">Payment API</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					
+					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					
+					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">VT-Web</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					
+					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					
+					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					
+					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
+					
+					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					
+					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
+					
+					<li class=""><a href="../vtweb/status_code.html">Status Code</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">VT-Direct</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					
+					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					
+					<li class=""><a href="integration.html">Integrasi</a></li>
+					
+					<li class=""><a href="going_live.html">Going Live</a></li>
+					
+					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					
+					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					
+					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					
+					<li class=""><a href="examples.html">Contoh</a></li>
+					
+					<li class="active"><a href="status_code.html">Status Code</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">Sandbox</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					
+					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					
+					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">How to</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					
+					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					
+				</ul>
+			</li>
+			<li><a class="parent">FAQ</a>
+				<ul class="child-menu">
+					
+					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					
+					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
+					
+					<li class=""><a href="../faq/fraud_and_security.html">Fraud dan Security</a></li>
+					
+					<li class=""><a href="../faq/integration.html">Integrasi</a></li>
+					
+					<li class=""><a href="../faq/account_management.html">Manajemen Akun</a></li>
+					
+					<li class=""><a href="../faq/fds_response.html">Fraud Detection System (FDS) Response</a></li>
+					
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="id-vtdirect-status-code">
+            <h2 id="status-code">Status Code</h2>
+
+<h3 id="code-2xx">Code 2xx</h3>
+
+<table>
+	<tr>
+		<th>Status Code</th>
+		<th>Keterangan</th>
+	</tr>
+	<tr>
+		<td>200</td>
+		<td>OK, request is success, and transaction is success (authorize, capture, settlement, cancel, refund, get order, approve challenge transactions), accepted by Veritrans and bank.</td>
+	</tr>
+	<tr>
+		<td>201</td>
+		<td>Pending, transaction is success but the processing has not been completed, example, challenge transaction and pending transaction.</td>
+	</tr>
+	<tr>
+		<td>202</td>
+		<td>Denied, request is success but transaction is denied by bank or Veritrans fraud detection system.</td>
+	</tr>
+</table>
+
+<h3 id="code-3xx">Code 3xx</h3>
+
+<table>
+	<tr>
+		<th>Status Code</th>
+		<th>Keterangan</th>
+	</tr>
+	<tr>
+		<td>300</td>
+		<td>Move Permanently, this and all future request should be directed to the new URL</td>
+	</tr>
+</table>
+
+<h3 id="code-4xx">Code 4xx</h3>
+
+<table>
+	<tr>
+		<th>Status Code</th>
+		<th>Keterangan</th>
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>Validation Error, merchant send bad request data
+example; validation error, invalid transaction type, invalid credit card format, etc.</td>
+	</tr>
+	<tr>
+		<td>401</td>
+		<td>Access denied due to unauthorized transaction, please check client key or server key</td>
+	</tr>
+	<tr>
+		<td>402</td>
+		<td>Merchant doesn't have access for this payment type</td>
+	</tr>
+	<tr>
+		<td>403</td>
+		<td>The requested resource is only capable of generating content not acceptable according to the accept headers sent in the request</td>
+	</tr>
+	<tr>
+		<td>404</td>
+		<td>The requested resource is not found</td>
+	</tr>
+	<tr>
+		<td>405</td>
+		<td>Http method is not allowed</td>
+	</tr>
+	<tr>
+		<td>406</td>
+		<td>Merchant charges the same order id more than once or transaction has been paid</td>
+	</tr>
+	<tr>
+		<td>407</td>
+		<td>Resource is no longer available and will not be available again</td>
+	</tr>
+	<tr>
+		<td>408</td>
+		<td>Merchant sends the wrong data type</td>
+	</tr>
+	<tr>
+		<td>409</td>
+		<td>Merchant has sent too many transactions for the same card number</td>
+	</tr>
+	<tr>
+		<td>410</td>
+		<td>Merchant account is deactivated or not active for a long period</td>
+	</tr>
+	<tr>
+		<td>411</td>
+		<td>Token id is missing, invalid, or timed out</td>
+	</tr>
+	<tr>
+		<td>412</td>
+		<td>Merchant cannot modify status of the transaction</td>
+	</tr>
+	<tr>
+		<td>413</td>
+		<td>The request cannot be processed due to malformed syntax in the request body</td>
+	</tr>
+</table>
+
+<h3 id="code-5xx">Code 5xx</h3>
+
+<table>
+	<tr>
+		<th>Status Code</th>
+		<th>Keterangan</th>
+	</tr>
+	<tr>
+		<td>500</td>
+		<td>Internal server error</td>
+	</tr>
+	<tr>
+		<td>502</td>
+		<td>Internal server error : Bank connection problem</td>
+	</tr>
+	<tr>
+		<td>503</td>
+		<td>Internal server error</td>
+	</tr>
+	<tr>
+		<td>504</td>
+		<td>Internal server error : Fraud detection is unavailable</td>
+	</tr>
+</table>
+
+
+			<div class="pagination">
+				<ul><li class="left">« Previous: <a href="examples.html">VT-Direct: Contoh</a></li><li class="right">Next: <a href="../sandbox/difference.html">Sandbox: Perbedaan Sandbox dan Production</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 footer-nav">
+        <div class="content text-center">
+          <a href="https://www.veritrans.co.id" title="">Home</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/whatwedo.html" title="">What We Do</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/pricing.html" title="">Pricing</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/about.html" title="">About</a> <span class="divider">|</span>
+          <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
+          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>©2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>

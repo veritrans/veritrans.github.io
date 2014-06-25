@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/howto/cancel.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integration</a></li>
 					
 					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Examples</a></li>
 					
 					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="fds.html">Fraud Detection System</a></li>
 					
-					<li class="active"><a href="cancel.html">Pembatalan Transaksi</a></li>
+					<li class="active"><a href="cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -165,15 +166,17 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="howto-cancel">
-            <h2>Membatalkan Transaksi yang Sudah Diotorisasi</h2>
+            
+<h2 id="cancelvoid-an-authorized-transaction">Cancel/void an authorized transaction</h2>
 
-<p>Pada tampilan detil transaksi, merchant akan mampu untuk melakukan pembatalan atas transaksi yang sudah diterima dan diotorisasi sebelumnya.
-Catatan: Merchant hanya dapat membatalkan transaksi yang belum melalui proses settlement.</p>
+<p>In the Detailed Transaction View, merchant will be able to CANCEL a transaction that was successfully authorized and accepted before.
+NOTE: Merchant can only cancel a transaction before it is settled. Settlement time is 5 pm the next day.</p>
 
-<p><img title="cancel transaction" class="img-responsive" src="/images/cancel_action.png"></p>
+<p><img title="cancel transaction" class="img-responsive" src="../images/cancel_action.png" /></p>
+
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="fds.html">How to: Sistem Deteksi Fraud</a></li><li class="right">Next: <a href="../faq/general.html">FAQ: Informasi Umum</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="fds.html">How to: Fraud Detection System</a></li><li class="right">Next: <a href="../faq/general.html">FAQ: General Information</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
