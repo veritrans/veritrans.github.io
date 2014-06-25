@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/vtdirect/other_features.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="integration.html">Integration</a></li>
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="other_commands.html">Other Commands</a></li>
 					
-					<li class="active"><a href="other_features.html">Fitur Lain</a></li>
+					<li class="active"><a href="other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="examples.html">Examples</a></li>
 					
 					<li class=""><a href="status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -171,7 +172,7 @@
 
 <h4 id="pre-authorization-transaction">Pre-Authorization Transaction</h4>
 
-<p>Untuk melakukan pre-authorization charge transaksi, <code>"type": authorize</code> harus ditambahkan di JSON request dalam bagian <code>"credit_card"</code>. Contoh dalam PHP:</p>
+<p>To conduct pre-authorization charge transaction <code>"type": authorize</code> should be added in JSON request in <code>"credit_card"</code> part. Sample in PHP:</p>
 
 <pre class="highlight php">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 $transaction_data = array(
@@ -189,7 +190,7 @@ $transaction_data = array(
 
 <h4 id="pre-authorization-response">Pre-Authorization Response</h4>
 
-<p>Response yang akan di dapat kalau charge transaksi berhasil:</p>
+<p>Obtained response if charge transaction success:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
@@ -207,7 +208,7 @@ $transaction_data = array(
 
 <h4 id="capture-transaction">Capture Transaction</h4>
 
-<p>Untuk melakukan capture transaksi, URL endpoint harus memakai /v2/capture. Contoh JSON request seperti berikut:</p>
+<p>To capture transaction, URL endpoint should use /v2/capture. Sample JSON request:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">&quot;transaction_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;77e137c0-019b-40c9-95b2-76237773e449&quot;</span><span class="p">,</span><span class="w">
@@ -215,7 +216,7 @@ $transaction_data = array(
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
-<p><code>"gross_amount"</code> elemen tidak boleh melebihi jumlah yang dilakukan pada saat melakukan authorize charge transaksi. Jika <code>"gross_amount"</code> elemen tidak tertera, jumlah total akan disesuaikan dengan jumlah pada saat melakukan authorize charge transaksi.
+<p><code>"gross_amount"</code> element should not exceed the amount at authorize charge transactions. If <code>"gross_amount"</code> element is not listed, the total amount will be adjusted by the amount at authorize charge transactions.
 Hasil contoh capture response yang sukses sebagai berikut:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
@@ -231,8 +232,7 @@ Hasil contoh capture response yang sukses sebagai berikut:</p>
     </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000.00&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-
-<p>Jika <code>"gross_amount"</code> elemen tertera dengan jumlah yang lebih kecil daripada saat melakukan authorize charge transaksi, maka dalam saat melakukan capture, jumlah tersebut akan digunakan dan response yang didapat akan disesuaikan. Contoh capture transaksi dan response nya sebagai berikut:</p>
+<p>If <code>"gross_amount"</code> element is listed by a smaller amount than at authorize charge transaction, so when capture transaction, the amount will be used and obtained response will be adjusted. Examples of capture transactions and its response as follows:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">&quot;transaction_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;77e137c0-019b-40c9-95b2-76237773e449&quot;</span><span class="p">,</span><span class="w">
@@ -258,11 +258,11 @@ Hasil contoh capture response yang sukses sebagai berikut:</p>
 
 <h4 id="charge-transaction">Charge Transaction</h4>
 
-<p>Installment transaksi dapat dilakukan dengan token biasa atau token 3DS.</p>
+<p>Transaction installment can be done by use usual token or 3DS token.</p>
 
-<p>Untuk melakukan installment charge transaksi, <code>"installment_term": &lt; angka &gt;</code> harus ditambahkan di JSON request dalam bagian <code>"credit_card"</code>. Angka untuk <code>"installment_term"</code> harus lebih besar dari satu.</p>
+<p>To conduct installment charge transaction, <code>"installment_term": &lt; angka &gt;</code> should be added in JSON request in <code>"credit_card</code> part. Number for <code>"installment_term"</code> must be greater than one.</p>
 
-<p>Contoh dalam PHP:</p>
+<p>Sample in PHP:</p>
 
 <pre class="highlight php">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 $transaction_data = array(
@@ -280,7 +280,7 @@ $transaction_data = array(
 
 <h4 id="charge-response">Charge Response</h4>
 
-<p>Response yang akan di dapat kalau charge transaksi berhasil:</p>
+<p>Obtained response if charge transaction success:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
@@ -297,13 +297,13 @@ $transaction_data = array(
 
 <h3 id="one-click">One Click</h3>
 
-<h4 id="mendapatkan-token-3dsecure">Mendapatkan Token 3DSecure</h4>
+<h4 id="obtaining-3dsecure-token">Obtaining 3DSecure Token</h4>
 
-<p>Token 3DSecure harus diaktifkan untuk menggunakan fitur One Click. Silahkan lihat bagian <a href="integration.html">Langkah 2: Melakukan Charge Transaksi- Integrasi VT-Direct</a> untuk request parameter yang dibutuhkan oleh token 3DSecure.</p>
+<p>3DSecure token must be activated to use One Click feature. See <a href="integration.html">Step 2: Charge Transaction - VT-Direct Integration</a> to request parameter that required for 3DSecure token.</p>
 
-<h4 id="charge-request-pertama">Charge Request Pertama</h4>
+<h4 id="first-charge-request">First Charge Request</h4>
 
-<p>Untuk One Click charge request pertama, <code>"save_token_id"</code>: true harus di masukan di JSON request dalam bagian <code>"credit_card"</code>. Dengan demikian, token akan disimpan untuk pembayaran berikutnya. Contoh dalam PHP:</p>
+<p>For first charge request of One Click, <code>"save_token_id"</code>: true should be added in JSON request in <code>"credit_card"</code> part. So the token will be saved for future payments. Sample in PHP:</p>
 
 <pre class="highlight php">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 $transaction_data = array(
@@ -318,8 +318,7 @@ $transaction_data = array(
   'customer_details'    =&gt; $customer_details
 );
 </pre>
-
-<p>Response yang akan dikembalikan jika transaksi sukses seperti berikut ini:</p>
+<p>Response will be returned if transaction succeed as follows:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ca5e0ff5-4297-48ef-aa25-b3ab018d4ead&quot;</span><span class="p">,</span><span class="w">
@@ -336,20 +335,18 @@ $transaction_data = array(
     </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
+<p>Based on response above, <code>"save_token_id"</code> result needs to be stored by the merchant, for example in the database, so it can be used for future payments.</p>
 
-<p>Dari response di atas, hasil <code>"save_token_id"</code> perlu disimpan oleh merchant, misalnya di database, sehingga dapat digunakan untuk pembayaran berikutnya.</p>
+<h4 id="next-charge-request">Next Charge Request</h4>
 
-<h4 id="charge-request-berikutnya">Charge Request Berikutnya</h4>
-
-<p>Untuk charge request berikutnya, merchant harus menggunakan token id yang didapat dari response yang pertama, <code>"save_token_id"</code>. Token id tersebut diletakkan di bagian <code>"credit_card"</code>.</p>
+<p>For next charge request, merchant have to use token id that obtained from first response, <code>"save_token_id</code>. The token id is placed in <code>"credit_card"</code> part.</p>
 
 <pre class="highlight json"><span class="s2">&quot;credit_card&quot;</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;save_token_id&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-
-<p>JSON request format untuk charge transaksi sama seperti biasanya. Silahkan lihat bagian <a href="integration.html">Charge Transaction</a> untuk format selengkapnya. Jika response sukses akan mendapatkan hasil sebagai berikut:</p>
+<p>JSON request format for charge transaction are same as usual. See [Charge Transaction] (/ vtdirect / integration.html) for more formats. If the response successfully will get the following results:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;05dfbd23-b767-4748-8fe9-7e30769e1857&quot;</span><span class="p">,</span><span class="w">
@@ -365,13 +362,13 @@ $transaction_data = array(
 
 <h3 id="two-clicks">Two Clicks</h3>
 
-<h4 id="mendapatkan-token-3dsecure-1">Mendapatkan Token 3DSecure</h4>
+<h4 id="obtaining-3dsecure-token-1">Obtaining 3DSecure Token</h4>
 
-<p>Sama seperti One Click, token 3DSecure harus diaktifkan untuk menggunakan fitur Two Clicks. Silahkan lihat bagian <a href="integration.html#activate">Mengaktifkan fitur VT-Direct 3DSecure</a> untuk request parameter yang dibutuhkan oleh token 3DSecure.</p>
+<p>Same as One Click, 3D Secure token must be activated to use Two Clicks feature. See <a href="integration.html#activate">Activating 3DSecure</a> to request parameter that required for 3DSecure token.</p>
 
-<h4 id="charge-request-pertama-1">Charge Request Pertama</h4>
+<h4 id="first-charge-request-1">First Charge Request</h4>
 
-<p>Charge request pertama untuk Two Clicks untuk mempunyai format yang sama persis dengan charge request pertama pada One Click. Pada charge request pertama, <code>"save_token_id": true</code> harus di masukan di JSON request dalam bagian <code>"credit_card"</code>. Dengan demikian, token akan disimpan untuk pembayaran berikutnya. Contoh dalam PHP:</p>
+<p>First charge request for Two Clicks have exactly same format with the first charge on One Click. On first charge request, <code>"save_token_id": true</code> must be added on JSON request in <code>"credit_card"</code> part. So, the token will be saved for future payments. Sample in PHP:</p>
 
 <pre class="highlight php">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 $transaction_data = array(
@@ -386,7 +383,7 @@ $transaction_data = array(
   'customer_details'    =&gt; $customer_details
 );
 </pre>
-<p>Response yang akan dikembalikan jika transaksi sukses seperti berikut ini:</p>
+<p>Response will be returned if transaction succeed as follows:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ca5e0ff5-4297-48ef-aa25-b3ab018d4ead&quot;</span><span class="p">,</span><span class="w">
@@ -403,16 +400,15 @@ $transaction_data = array(
   </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-<p>Dari response di atas, hasil <code>"saved_token_id"</code> perlu disimpan oleh merchant, misalnya di database, sehingga dapat digunakan untuk pembayaran berikutnya.</p>
+<p>From response above, <code>"saved_token_id"</code> result needs to be stored by the merchant, for example in the database, so it can be used for future payments.</p>
 
-<h4 id="charge-request-berikutnya-1">Charge Request Berikutnya</h4>
+<h4 id="next-charge-request-1">Next Charge Request</h4>
 
-<p>Untuk charge request berikutnya, meminta customer memasukkan CVV kartu kredit dan mendapatkan <code>"token_cvv_id"</code> dari CVV tersebut. Selain itu, merchant juga harus menambahkan sebuah field untuk mengirimkan token ini untuk proses transaksi.
-Contoh field yang bisa diterapkan dalam kode HTML adalah seperti di bawah ini.</p>
+<p>For next charge request, ask the customer to enter the credit card CVV and get <code> "token_cvv_id" </code> from the CVV. In addition, the merchant must also add a field to send the token to process the transaction. Examples of fields that can be applied in the HTML code is as below.</p>
 
 <pre class="highlight html"><span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;token_cvv_id&quot;</span> <span class="na">id=</span><span class="s">&quot;token_cvv_id&quot;</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span><span class="nt">&gt;</span>
 </pre>
-<p>Untuk mendapatkan <code>"token_cvv_id"</code> tersebut, merchant harus menambahkan parameter <code>"two_click": true</code> pada function card yang digunakan pada contoh script di bawah ini. Detail kartu kredit ini kemudian dikirimkan ke endpoint kami bersama dengan client-key merchant pada <code>Veritrans.client_key</code>. Setelah mendapat response, field <code>"token_cvv_id"</code> tadi dapat diisi dengan nilai yang ada pada response.token_id. Contoh kode javascript untuk mendapatkan <code>"token_cvv_id"</code> adalah seperti di bawah ini.</p>
+<p>To get <code>"token_cvv_id"</code>, the merchant must add parameter <code> "two_click": true </code> on the function card used in the example script below. Then the credit card details sent to our endpoint together with the client-key merchant on <code>Veritrans.client_key </code>. After receiving the response, field <code>"token_cvv_id"</code> was able to be filled with values ​​in response.token_id. Example javascript code to get <code>"token_cvv_id"&lt;/ code&gt; is as below.</code></p>
 
 <pre class="highlight javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
   <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
@@ -451,7 +447,7 @@ Contoh field yang bisa diterapkan dalam kode HTML adalah seperti di bawah ini.</
   <span class="p">});</span>
 <span class="o">&lt;</span><span class="sr">/</span><span class="err">script&gt;</span>
 </pre>
-<p>Setelah itu, merchant harus menggunakan token id yang didapat dari response yang pertama, yaitu <code>"saved_token_id"</code>, ditambah dengan <code>"token_cvv_id"</code>. Kedua token tersebut diletakkan di bagian <code>"credit_card"</code> sehingga format JSON lengkapnya bisa dilihat di bawah ini.</p>
+<p>After that, merchant must use the token id obtained from the first response, which <code>"saved_token_id"</code>, coupled with <code>"token_cvv_id"</code>. Both tokens are placed at the <code>"credit_card"</code> part so that the JSON format details can be seen below.</p>
 
 <pre class="highlight php">$token_id = $_POST['token_id']; //yang dari database
 $token_cvv_id = $_POST['token_id']; //yang tadi dari field
@@ -512,7 +508,7 @@ $transaction_data = array( //
 );
 $json_transaction_data = json_encode($transaction_data);
 </pre>
-<p>JSON request format untuk charge transaksi sama seperti biasanya. Silahkan lihat <a href="integration.html">Charge Transaction</a> untuk format selengkapnya. Jika response sukses akan mendapatkan hasil sebagai berikut:</p>
+<p>JSON format request for charge transaction are same as usual. Please see <a href="integration.html">Charge Transaction</a> for more formats. If a response succeed will get the following results:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
   </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;05dfbd23-b767-4748-8fe9-7e30769e1857&quot;</span><span class="p">,</span><span class="w">
@@ -528,7 +524,7 @@ $json_transaction_data = json_encode($transaction_data);
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="other_commands.html">VT-Direct: Perintah Lain</a></li><li class="right">Next: <a href="payment_options.html">VT-Direct: Pilihan Pembayaran</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="other_commands.html">VT-Direct: Other Commands</a></li><li class="right">Next: <a href="payment_options.html">VT-Direct: Payment Options</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

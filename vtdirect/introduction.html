@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/vtdirect/introduction.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class="active"><a href="introduction.html">Perkenalan</a></li>
+					<li class="active"><a href="introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="integration.html">Integration</a></li>
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="examples.html">Examples</a></li>
 					
 					<li class=""><a href="status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -165,16 +166,14 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtdirect-introduction">
-            <h2 id="perkenalan-vt-direct">Perkenalan VT-Direct</h2>
+            <h2 id="introduction-vt-direct">Introduction VT-Direct</h2>
 
-<p>VT-Direct adalah RESTful API yang memungkinkan merchant untuk menggunakan sistem pembayaran Veritrans untuk memproses pembayaran langsung di website merchant. VT-Direct memungkinkan pembeli untuk menyelesaikan proses pembayaran di website merchant tanpa perlu dialihkan (di-redirect) ke halaman Veritrans, tetapi dengan tetap meminimalisir risiko keamanan yang muncul pada saat pemrosesan pembayaran menggunakan kartu kredit. </p>
-
-<p>VT-Direct juga dilengkapi dengan script Javascript yang dipasang di website merchant untuk mengirim data kartu kredit secara langsung ke server Veritrans tanpa terlebih dahulu disimpan di server merchant. </p>
+<p>VT-Direct is a RESTful API that allows merchants to utilize the Veritrans payment system to process payments. VT-Direct allow customers to complete payment on the merchant’s website without being redirected to Veritrans, while minimizing the security risk inherit with processing card payments for the merchant. Utilizing a small JavaScript, VT-Direct sends all credit card data directly to Veritrans without touching the merchant’s server.</p>
 
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="../vtweb/status_code.html">VT-Web: Status Code</a></li><li class="right">Next: <a href="getting_started.html">VT-Direct: Langkah Awal</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="../vtweb/status_code.html">VT-Web: Status Code</a></li><li class="right">Next: <a href="getting_started.html">VT-Direct: Getting Started</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

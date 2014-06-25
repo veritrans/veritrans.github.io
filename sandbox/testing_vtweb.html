@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/sandbox/testing_vtweb.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integration</a></li>
 					
 					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Examples</a></li>
 					
 					<li class=""><a href="../vtdirect/status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class="active"><a href="testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class="active"><a href="testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -165,17 +166,18 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="sandbox-testing-vtweb">
-            <h2 id="pengujian-vt-web-di-sandbox-environment">Pengujian VT-Web di Sandbox Environment</h2>
+            <h2 id="testing-vt-web-on-sandbox-environment">Testing VT-Web on Sandbox Environment</h2>
 
-<p>Jika request charge dengan payment_type "vtweb" dilakukan dengan konfigurasi ( <code>merchant_id</code>, <code>server_key</code>, <code>client_key</code>, dan URL endpoint) mode Sandbox, maka Veritrans juga akan mengembalikan respon <code>"redirect_url"</code> berupa alamat ke halaman VT-Web dalam Sandbox Environment. VT-Web di mode Sandbox ditandai dengan tulisan “Testing mode” di kanan atas. Pada VT-Web mode Sandbox ini, Anda dapat melakukan pengujian pembayaran dengan menggunakan kartu kredit khusus untuk mode Sandbox.</p>
+<p>If request charge with payment_type “vtweb” is done with configuration (<code>merchant_id</code>, <code>server_key</code>, <code>client_key</code>, dan URL endpoint) mode of Sandbox, Veritrans will respond back with <code>“redirect_url”</code> address to VT-Web page on Sandbox Environment. VT-Web on Sandbox mode is marked with “Testing mode” sign on the top right hand corner. On VT-Web mode of Sandbox, you will be able to conduct trial transaction using a special credit card number dedicated only for use on Sandbox mode.</p>
 
 <p><img src="/images/vtweb-sandbox.png" alt="vtweb sandbox" class="img-responsive" />  </p>
 
-<h5 id="gambar-vt-web-di-sandbox-environment">Gambar: VT-Web di <em>Sandbox Environment</em></h5>
+<h5 id="screenshot-vt-web-on-sandbox-environment">Screenshot: VT-Web on Sandbox Environment</h5>
+
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="difference.html">Sandbox: Perbedaan Sandbox dan Production</a></li><li class="right">Next: <a href="card_list.html">Sandbox: Daftar Kartu Kredit</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="difference.html">Sandbox: Sandbox and Production Differences</a></li><li class="right">Next: <a href="card_list.html">Sandbox: Credit Card List</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

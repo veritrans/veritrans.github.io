@@ -66,30 +66,31 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
+		<div class="language-toggle"> English / <a href="../id/vtdirect/other_commands.html">Bahasa Indonesia</a></div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../payment_api/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Jenis Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Cara Pembayaran</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="../vtweb/get_redirect_url.html">Obtaining Redirect URL</a></li>
 					
 					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="../vtweb/handle_notification.html">Handling Notification</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -100,21 +101,21 @@
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Getting Started</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="integration.html">Integration</a></li>
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
-					<li class="active"><a href="other_commands.html">Perintah Lain</a></li>
+					<li class="active"><a href="other_commands.html">Other Commands</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="payment_options.html">Payment Options</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="examples.html">Examples</a></li>
 					
 					<li class=""><a href="status_code.html">Status Code</a></li>
 					
@@ -123,27 +124,27 @@
 			<li><a class="parent">Sandbox</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../sandbox/difference.html">Perbedaan Sandbox dan Production</a></li>
+					<li class=""><a href="../sandbox/difference.html">Sandbox and Production Differences</a></li>
 					
-					<li class=""><a href="../sandbox/testing_vtweb.html">Pengujian VTWeb di Sandbox</a></li>
+					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
-					<li class=""><a href="../sandbox/card_list.html">Daftar Kartu Kredit</a></li>
+					<li class=""><a href="../sandbox/card_list.html">Credit Card List</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">How to</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../howto/fds.html">Sistem Deteksi Fraud</a></li>
+					<li class=""><a href="../howto/fds.html">Fraud Detection System</a></li>
 					
-					<li class=""><a href="../howto/cancel.html">Pembatalan Transaksi</a></li>
+					<li class=""><a href="../howto/cancel.html">Cancel Transaction</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">FAQ</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../faq/general.html">Informasi Umum</a></li>
+					<li class=""><a href="../faq/general.html">General Information</a></li>
 					
 					<li class=""><a href="../faq/pricing.html">Pricing</a></li>
 					
@@ -165,19 +166,19 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtdirect-other-commands">
-            <h2 id="perintah-perintah-lain">Perintah-perintah Lain</h2>
+            <h2 id="other-commands">Other Commands</h2>
 
 <h3 id="charge-transaction">Charge Transaction</h3>
 
 <table>
 	<tr>
 		<td>Description</td>
-		<td>Melakukan suatu transaksi.</td>
+		<td>Do transaction.</td>
 	</tr>
 	<tr>
 		<td>Endpoint</td>
 		<td>Sandbox    : https://api.sandbox.veritrans.co.id/v2/charge<br />
-Production : https://api.veritrans.co.id/v2/charge</td>
+			Production : https://api.veritrans.co.id/v2/charge</td>
 	</tr>
 	<tr>
 		<td>HTTP Method</td>
@@ -247,7 +248,7 @@ Authentication: Basic base64(server_key:)</td>
 <table>
 	<tr>
 		<td>Description</td>
-		<td>Mendapatkan informasi status dari suatu transaksi dengan id(<code>transaction_id</code> atau <code>order_id</code>) tertentu.</td>
+		<td>Get status information from transaction with particular id(<code>transaction_id</code> or <code>order_id</code>).</td>
 	</tr>
 	<tr>
 		<td>Endpoint</td>
@@ -275,7 +276,8 @@ Authentication: Basic base64(server_key:)</td>
 <table>
 	<tr>
 		<td>Description</td>
-		<td>Meng-approve transaksi dengan id(transaction_id atau order_id) tertentu yang telah mendapatkan status ‘challenge’ dari Fraud Detection System.</td>
+		<td>
+			Approve transaction with particular id(<code>transaction_id</code> or <code>order_id</code>) that have challenge status from 'Fraud Detection System.</td>
 	</tr>
 	<tr>
 		<td>Endpoint</td>
@@ -303,7 +305,7 @@ Authentication: Basic base64(server_key:)</td>
 <table>
 	<tr>
 		<td>Description</td>
-		<td>Membatalkan transaksi dengan id (<code>transaction_id</code> atau <code>order_id</code>) tertentu. Pembatalan hanya bisa dilakukan jika transaksi tersebut belum melalui proses settlement.</td>
+		<td>Cancel transaction with particular(<code>transaction_id</code> or <code>order_id</code>). Cancellation can only be done if that transaction has not been through the settlement process.</td>
 	</tr>
 	<tr>
 		<td>Endpoint</td>
@@ -331,7 +333,7 @@ Authentication: Basic base64(server_key:)</td>
 <table>
 	<tr>
 		<td>Description</td>
-		<td>Mendapatkan detail log informasi dari suatu transaksi dengan id (<code>transaction_id</code> atau <code>order_id</code>) tertentu.</td>
+		<td>Get detail information log from a transaction from particular ID(<code>transaction_id</code> or <code>order_id</code>).</td>
 	</tr>
 	<tr>
 		<td>Endpoint</td>
@@ -356,7 +358,7 @@ Authentication: Basic base64(server_key:)</td>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="going_live.html">VT-Direct: Going Live</a></li><li class="right">Next: <a href="other_features.html">VT-Direct: Fitur Lain</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="going_live.html">VT-Direct: Going Live</a></li><li class="right">Next: <a href="other_features.html">VT-Direct: Other Features</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
