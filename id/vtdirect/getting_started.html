@@ -178,7 +178,7 @@
 
 <ul>
   <li><code>server_key</code>, merupakan key untuk autentikasi merchant ketika melakukan transaksi. Server_key bersifat rahasia, <u>jangan sampai ada pihak lain yang tahu</u>.</li>
-  <li><code>client_key</code>, merupakan key untuk menggenerate token (khusus transaksi kartu kredit), client_key tidak bersifat rahasia.</li>
+  <li><code>client_key</code>, merupakan key untuk meng-generate token (khusus transaksi kartu kredit), client_key tidak bersifat rahasia.</li>
 </ul>
 
 <h4 id="basic-auth-http-header">Basic Auth HTTP Header</h4>
@@ -202,6 +202,10 @@
 <p>Selanjutnya merchant perlu mengubah ke BASE 64, sehingga hasilnya seperti berikut</p>
 
 <pre class="highlight text">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
+</pre>
+<p>Berikut adalah contoh header untuk basic auth :</p>
+
+<pre class="highlight text">Authorization: Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
 </pre>
 <p>Pastikan merchant menaruh string "Basic &lt; space &gt;" sebelum BASE 64 server_key.</p>
 
