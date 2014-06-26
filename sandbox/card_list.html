@@ -73,9 +73,9 @@
 					
 					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Methods</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Type</a></li>
 					
 				</ul>
 			</li>
@@ -170,6 +170,11 @@
 
 <p>Here is a list of credit card numbers that can be used for transaction in the Sandbox Environment. It can be used both for VT-Web payment page as well as charge request through Payment API (VT-Direct).</p>
 
+<h4 id="visa">Visa</h4>
+<ul>
+  <li>ECI = 5 Otentikasi 3DS berhasil.</li>
+  <li>ECI = 6 Otentikasi 3DS dicoba tetapi pemegang kartu belum terdaftar 3DS.</li>
+</ul>
 <table>
 	<thead>
 		<tr>
@@ -246,6 +251,33 @@
 	</tbody>
 </table>
 
+<table>
+	<thead>
+		<tr>
+			<th>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+				Exp Date
+			</th>
+			<th>
+			12/2020
+			</th>
+		</tr>
+		<tr>
+			<th>
+				CVV
+			</th>
+			<th>
+			123
+			</th>
+		</tr>
+	</thead>
+</table>
+
+<h4 id="master">Master</h4>
+<ul>
+  <li>ECI = 2 Otentikasi 3DS berhasil.</li>
+  <li>ECI = 1 Otentikasi 3DS dicoba tetapi pemegang kartu belum terdaftar 3DS.</li>
+</ul>
 <table>
 	<thead>
 		<tr>

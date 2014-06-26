@@ -170,6 +170,11 @@
 
 <p>Berikut ini adalah daftar nomor kartu kredit khusus yang dapat digunakan untuk melakukan transaksi di Sandbox Environment, baik melalui halaman pembayaran VT-Web maupun charge request melalui Payment API (VT-Direct).</p>
 
+<h4 id="visa">Visa</h4>
+<ul>
+  <li>ECI = 5 Otentikasi 3DS berhasil.</li>
+  <li>ECI = 6 Otentikasi 3DS dicoba tetapi pemegang kartu belum terdaftar 3DS.</li>
+</ul>
 <table>
 	<thead>
 		<tr>
@@ -246,6 +251,32 @@
 	</tbody>
 </table>
 
+<table>
+	<thead>
+		<tr>
+			<th>
+				Exp Date
+			</th>
+			<th>
+			12/2020
+			</th>
+		</tr>
+		<tr>
+			<th>
+				CVV
+			</th>
+			<th>
+			123
+			</th>
+		</tr>
+	</thead>
+</table>
+
+<h4 id="master">Master</h4>
+<ul>
+  <li>ECI = 2 Otentikasi 3DS berhasil.</li>
+  <li>ECI = 1 Otentikasi 3DS dicoba tetapi pemegang kartu belum terdaftar 3DS.</li>
+</ul>
 <table>
 	<thead>
 		<tr>
@@ -339,6 +370,31 @@
 			</th>
 		</tr>
 	</thead>
+</table>
+
+<h4 id="mandiri-clickpay">Mandiri Clickpay</h4>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+				Card Number
+			</td>
+			<td>4111 1111 1111 1111</td>
+		</tr>
+		<tr>
+			<td>
+				Accept Token
+			</td>
+			<td>000000</td>
+		</tr>
+		<tr>
+			<td>
+				Deny Token
+			</td>
+			<td>111111</td>
+		</tr>
+	</tbody>
 </table>
 
 

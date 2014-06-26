@@ -73,9 +73,9 @@
 					
 					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Methods</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Type</a></li>
 					
 				</ul>
 			</li>
@@ -166,25 +166,36 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtdirect-other-features">
-            <h2 id="fitur-lain">Fitur Lain</h2>
+            <h2 id="other-feature">Other Feature</h2>
 
-<h3 id="pre-authorization">Pre-Authorization</h3>
+<p>Currently Veritrans has other features for credit card, namely :</p>
+
+<ol>
+  <li><a href="other_features.html#pre-authorization">Pre-Authorization</a></li>
+  <li><a href="other_features.html#installment">Installment</a></li>
+  <li><a href="other_features.html#oneclick">One Click</a></li>
+  <li><a href="/vtdirect/two_clicks.html">Two Click</a></li>
+</ol>
+
+<p>Here is a tutorial for doing integration using the features to suit your needs.</p>
+
+<h3 id="a-namepre-authorizationapre-authorization"><a name="pre-authorization"></a>Pre-Authorization</h3>
 
 <h4 id="pre-authorization-transaction">Pre-Authorization Transaction</h4>
 
 <p>To conduct pre-authorization charge transaction <code>"type": authorize</code> should be added in JSON request in <code>"credit_card"</code> part. Sample in PHP:</p>
 
-<pre class="highlight php">// Data yang akan dikirim untuk request charge transaction dengan credit card.
+<pre class="highlight php">// Data to be sent to request charge transaction with a credit card
 $transaction_data = array(
-  'payment_type'      =&gt; 'credit_card', 
-  'credit_card'       =&gt; array(
+  'payment_type'    =&gt; 'credit_card', 
+  'credit_card'     =&gt; array(
     'type'          =&gt; authorize,
-           'token_id'   =&gt; $token_id,
-    'bank'    =&gt; 'bni'
+    'token_id'      =&gt; $token_id,
+    'bank'          =&gt; 'bni'
   ),
   'transaction_details'   =&gt; $transaction_details,
-  'item_details'      =&gt; $items,
-  'customer_details'    =&gt; $customer_details
+  'item_details'          =&gt; $items,
+  'customer_details'      =&gt; $customer_details
 );
 </pre>
 
@@ -201,7 +212,7 @@ $transaction_data = array(
     </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-04-21 14:35:32&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authorize&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;noscore&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1111&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000.00&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
@@ -216,8 +227,9 @@ $transaction_data = array(
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
-<p><code>"gross_amount"</code> element should not exceed the amount at authorize charge transactions. If <code>"gross_amount"</code> element is not listed, the total amount will be adjusted by the amount at authorize charge transactions.
-Hasil contoh capture response yang sukses sebagai berikut:</p>
+<p><code>"gross_amount"</code> element should not exceed the amount at authorize charge transactions. If <code>"gross_amount"</code> element is not listed, the total amount will be adjusted by the amount at authorize charge transactions.</p>
+
+<p>Obtained response if charge transaction success:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
@@ -228,7 +240,7 @@ Hasil contoh capture response yang sukses sebagai berikut:</p>
     </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-04-21 14:35:32&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;noscore&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1111&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000.00&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
@@ -249,32 +261,32 @@ Hasil contoh capture response yang sukses sebagai berikut:</p>
     </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-04-21 14:35:32&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;noscore&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1111&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100000.00&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
-<h3 id="installment">Installment</h3>
+<h3 id="a-nameinstallmentainstallment"><a name="installment"></a>Installment</h3>
 
 <h4 id="charge-transaction">Charge Transaction</h4>
 
 <p>Transaction installment can be done by use usual token or 3DS token.</p>
 
-<p>To conduct installment charge transaction, <code>"installment_term": &lt; angka &gt;</code> should be added in JSON request in <code>"credit_card</code> part. Number for <code>"installment_term"</code> must be greater than one.</p>
+<p>To conduct installment charge transaction, <code>"installment_term": &lt; number &gt;</code> should be added in JSON request in <code>"credit_card</code> part. Number for <code>"installment_term"</code> must be greater than one.</p>
 
 <p>Sample in PHP:</p>
 
 <pre class="highlight php">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 $transaction_data = array(
-  'payment_type'      =&gt; 'credit_card', 
-  'credit_card'       =&gt; array(
-    'installment_term'   =&gt; 3,
-           'token_id'   =&gt; $token_id,
-    'bank'    =&gt; 'bni'
+  'payment_type'        =&gt; 'credit_card', 
+  'credit_card'         =&gt; array(
+    'installment_term'  =&gt; 3,
+    'token_id'          =&gt; $token_id,
+    'bank'              =&gt; 'bni'
   ),
   'transaction_details'   =&gt; $transaction_details,
-  'item_details'      =&gt; $items,
-  'customer_details'    =&gt; $customer_details
+  'item_details'          =&gt; $items,
+  'customer_details'      =&gt; $customer_details
 );
 </pre>
 
@@ -290,12 +302,12 @@ $transaction_data = array(
     </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-04-23 18:11:44&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1236&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10000.00&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
-<h3 id="one-click">One Click</h3>
+<h3 id="a-nameoneclickaone-click"><a name="oneclick"></a>One Click</h3>
 
 <h4 id="obtaining-3dsecure-token">Obtaining 3DSecure Token</h4>
 
@@ -309,13 +321,13 @@ $transaction_data = array(
 $transaction_data = array(
   'payment_type'      =&gt; 'credit_card', 
   'credit_card'       =&gt; array(
-    'save_token_id' =&gt; true,
-           'token_id'   =&gt; $token_id,
-    'bank'    =&gt; 'bni'
+    'save_token_id'   =&gt; true,
+    'token_id'        =&gt; $token_id,
+    'bank'            =&gt; 'bni'
   ),
   'transaction_details'   =&gt; $transaction_details,
-  'item_details'      =&gt; $items,
-  'customer_details'    =&gt; $customer_details
+  'item_details'          =&gt; $items,
+  'customer_details'      =&gt; $customer_details
 );
 </pre>
 <p>Response will be returned if transaction succeed as follows:</p>
@@ -328,8 +340,8 @@ $transaction_data = array(
     </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-03-27 17:20:53&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1111&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;saved_token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4111117d16c884-2cc7-4624-b0a8-10273b7f6cc8&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;saved_token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4011117d16c884-2cc7-4624-b0a8-10273b7f6cc8&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;saved_token_id_expired_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-03-27 17:20:53&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="w">
@@ -346,7 +358,7 @@ $transaction_data = array(
     </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
-<p>JSON request format for charge transaction are same as usual. See [Charge Transaction] (/ vtdirect / integration.html) for more formats. If the response successfully will get the following results:</p>
+<p>JSON request format for charge transaction are same as usual. See <a href="integration.html">Charge Transaction</a> for more formats. If the response successfully will get the following results:</p>
 
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;05dfbd23-b767-4748-8fe9-7e30769e1857&quot;</span><span class="p">,</span><span class="w">
