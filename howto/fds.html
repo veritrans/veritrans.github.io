@@ -73,9 +73,9 @@
 					
 					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Methods</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Type</a></li>
 					
 				</ul>
 			</li>
@@ -173,17 +173,17 @@
 
 <ol>
   <li>
-    <p><code>ACCEPT</code> means the transaction is successfully authorized and will be settled during settlement time (5 PM next day).</p>
+    <p><code>ACCEPT</code> means the transaction is successfully authorized and will be settled during settlement time (3 PM next day).</p>
   </li>
   <li>
     <p><code>DENY</code> means the transaction is failed/rejected, and will be cancelled.</p>
   </li>
   <li>
-    <p><code>CHALLENGE</code> means the transaction hits one of the rules of the fraud detection system. The merchant should manually ACCEPT or DENY the CHALLENGE transaction on the <a href="https://payments.veritrans.co.id/map/payment">Merchant Administration Portal (MAP)</a> so that it will be processed properly.</p>
+    <p><code>CHALLENGE</code> means the transaction hits one of the rules of the fraud detection system. The merchant should manually ACCEPT or DENY the CHALLENGE transaction on the <a href="https://my.veritrans.co.id/payments">Merchant Administration Portal (MAP)</a> so that it will be processed properly.</p>
   </li>
 </ol>
 
-<p>Merchant is able to cancel a successful transaction, as long as it is before the settlement time (5 PM next day).</p>
+<p>Merchant is able to cancel a successful transaction, as long as it is before the settlement time (3 PM next day).</p>
 
 <h3 id="acceptingdenying-challenged-transaction-on-map">Accepting/Denying Challenged Transaction on MAP</h3>
 

@@ -73,9 +73,9 @@
 					
 					<li class=""><a href="../payment_api/introduction.html">Introduction</a></li>
 					
-					<li class=""><a href="../payment_api/payment_type.html">Payment Type</a></li>
+					<li class=""><a href="../payment_api/payment_type.html">Payment Methods</a></li>
 					
-					<li class=""><a href="../payment_api/payment_method.html">Payment Methods</a></li>
+					<li class=""><a href="../payment_api/payment_method.html">Payment Type</a></li>
 					
 				</ul>
 			</li>
@@ -166,9 +166,9 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtdirect-integration">
-            <h2>Integrasi VT-Direct</h2>
+            <h2 id="vt-direct-integration">VT-Direct Integration</h2>
 
-<h3>Tiga Langkah Integrasi</h3>
+<h3 id="three-step-for-integration">Three Step for Integration</h3>
 <ol>
   <li>Obtaining the Token</li>
   <li>Charge Transaction</li>
@@ -187,6 +187,8 @@
 <div class="tab-content">
 <div class="tab-pane active" id="step1"><!-- step 1-->
 <!-- satu -->
+
+
 
 <h3> Obtaining the Token</h3>
 We have provided a small JavaScript applet, <code>veritrans.js</code>, to simplify the process of requesting Tokens to Veritrans’ system. For security purposes, we ask that all of our merchants utilize our veritrans.js for their implementation of VT-direct. If there is a feature that merchant want related to VT-Direct, please contact Veritrans support.
@@ -224,13 +226,13 @@ Tambahkan form berikut ini di bagian body HTML:
 <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;checkout_process.php&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">id=</span><span class="s">&quot;payment-form&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;p&gt;</span>
     <span class="nt">&lt;label&gt;</span>Card Number<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-number&quot;</span> <span class="na">value=</span><span class="s">&quot;4111111111111111&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-number&quot;</span> <span class="na">value=</span><span class="s">&quot;4011111111111112&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;p&gt;</span>
     <span class="nt">&lt;label&gt;</span>Expiration (MM/YYYY)<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-expiry-month&quot;</span> <span class="na">value=</span><span class="s">&quot;12&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;MM&quot;</span> <span class="na">size=</span><span class="s">&quot;2&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
       <span class="nt">&lt;span&gt;</span> / <span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-expiry-year&quot;</span> <span class="na">value=</span><span class="s">&quot;2018&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;YYYY&quot;</span> <span class="na">size=</span><span class="s">&quot;4&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;card-expiry-year&quot;</span> <span class="na">value=</span><span class="s">&quot;2020&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;YYYY&quot;</span> <span class="na">size=</span><span class="s">&quot;4&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;p&gt;</span>
       <span class="nt">&lt;label&gt;</span>CVV<span class="nt">&lt;/label&gt;</span>
@@ -247,7 +249,7 @@ Sample of credit card number which can be used to test the success or failure of
 
 <h4>Adding Javascript to process 3DS transactions</h4>
 
-This example utilizes jQuery and jQuery fancybox to simplify the UI for the 3DSecure input page. You can choose to utilize another javascript framework should you feel more comfortable.
+This example utilizes jQuery and jQuery fancybox to simplify the UI for the 3DSecure input page. You can choose to utilize another javascript framework should you feel more comfortable.<br /><br />
 
 Add the following in the HTML header:
 
@@ -331,7 +333,7 @@ Below is the javascript required to generate the <code>token_id</code>. Add the 
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre>
-Once the customer clicks ‘Pay’, the Javascript will populate the <code>card_number</code> , <code>card_exp_month</code>, <code>card_exp_year</code>, and cvv from the form. Then, utilizing <code>veritrans.js</code>, the script will send sensitive data securely to the veritrans server and return a token_id. Once you receive the <code>token_id</code>, the script will save it in the hidden textfield <code>#token_id</code> and then will submit the form to the merchant’s server (<code>checkout_process.php</code>). Note that the credit card number will not be sent to the merchant server, and the merchant will only record the <code>token_id</code>.
+Once the customer clicks ‘Pay’, the Javascript will populate the <code>card_number</code> , <code>card_exp_month</code>, <code>card_exp_year</code>, and <code>cvv</code> from the form. Then, utilizing <code>veritrans.js</code>, the script will send sensitive data securely to the veritrans server and return a <code>token_id</code>. Once you receive the <code>token_id</code>, the script will save it in the hidden textfield <code>#token_id</code> and then will submit the form to the merchant’s server (<code>checkout_process.php</code>). Note that the credit card number will not be sent to the merchant server, and the merchant will only record the <code>token_id</code>.
 
 <h4 id="activate">Activating 3DSecure</h4>
 
@@ -353,7 +355,7 @@ If you want to process using 3D-Secure, please use the script below:
 <span class="p">};</span>
 <span class="c1">//...
 </span></pre>
-For 3DSecure transactions, you need to add the <code>parameters secure</code>, <code>bank</code>, and <code>gross_amout</code>. 
+For 3DSecure transactions, you need to add the parameters<code>secure</code>, <code>bank</code>, and <code>gross_amout</code>. 
 
 <table>
   <tr>
@@ -400,7 +402,7 @@ Uncomment a portion of the script above to get the following:
 
 <h3 id="charge">Charge Transaction</h3>
 
-On merchant server (<code>checkout_process.php</code>), after receiving <code>token_id</code>, merchant can send charge transaction request with the following specification:
+On merchant server (<code>checkout_process.php</code>), after receiving <code>token_id</code>, merchant can send charge transaction request with the following specification:<br />
 
 Note: Charge transaction request specification for 3DSecure and normal transactions are the same. The only difference is when calling Get Token.
 
@@ -429,7 +431,7 @@ The messages that are sent during request contain transaction details. The messa
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;credit_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1236-e9dc7213-8b2c-4353-93a4-b250680e57a5&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112-e9dc7213-8b2c-4353-93a4-b250680e57a5&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -730,7 +732,7 @@ Object Description <code>billing_address</code>:
         </tr>
         <tr>
             <td><code>country_code</code></td>
-            <td>String(200)</td>
+            <td>String(10)</td>
             <td>Recommended</td>
             <td>Country ID (contoh: IDN)</td>
         </tr>
@@ -789,7 +791,7 @@ Note : Tidak perlu diisi apabila isinya sama dengan customer details - phone. Pa
         </tr>
         <tr>
             <td><code>country_code</code></td>
-            <td>String(200)</td>
+            <td>String(10)</td>
             <td>Recommended</td>
             <td>Country ID (contoh: IDN)</td>
         </tr>
@@ -809,8 +811,8 @@ Below is an example on how to implement charge transaction request in PHP. We wi
 </span><span class="nv">$server_key</span> <span class="o">=</span> <span class="s2">&quot;1a794e3f-f023-4cda-92b7-dcb7a22a46ff&quot;</span><span class="p">;</span>
 <span class="nv">$endpoint</span> <span class="o">=</span> <span class="s2">&quot;https://api.sandbox.veritrans.co.id/v2/charge&quot;</span><span class="p">;</span>
 
-<span class="c1">// token_id merepresentasikan credit card yang akan di-carge.
-// token_id didaptkan dari request yang dilakukan melalui veritrans.js
+<span class="c1">// token_id represents credit card to be charged.
+// token_id was acquired from request through veritrans.js
 </span><span class="nv">$token_id</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token_id'</span><span class="p">];</span>
 
 <span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -862,21 +864,21 @@ Below is an example on how to implement charge transaction request in PHP. We wi
   <span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span>
   <span class="p">);</span>
 
-<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
+<span class="c1">// Data that will be send for credit card charge transaction request.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
-  <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span>
+  <span class="s1">'payment_type'</span>    <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
+  <span class="s1">'credit_card'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'token_id'</span>      <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
+    <span class="s1">'bank'</span>          <span class="o">=&gt;</span> <span class="s1">'bni'</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
-  <span class="s1">'item_details'</span>      <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">,</span>
-  <span class="s1">'customer_details'</span>    <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
+  <span class="s1">'item_details'</span>          <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span>      <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
 
 <span class="nv">$json_transaction_data</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 
-<span class="c1">// Mengirimkan request dengan menggunakan CURL
+<span class="c1">// Send the request using CURL
 </span><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$endpoint</span><span class="p">);</span>
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_CUSTOMREQUEST</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">);</span>
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$json_transaction_data</span><span class="p">);</span>
@@ -946,7 +948,7 @@ If request succeed, the following response will be returned in JSON format:
     </span><span class="err">transaction_time</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-03-13 16:10:15&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">transaction_status</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">fraud_status</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">masked_card</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1111&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">masked_card</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">status_code</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">status_message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card transaction is successful&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -971,7 +973,7 @@ If the bank denied the credit card, the following response will be returned:
     </span><span class="err">transaction_time</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-03-13 16:12:35&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">transaction_status</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">fraud_status</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;challenge&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">masked_card</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;411111-1244&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">masked_card</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">status_code</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">status_message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [MANDIRI] with code [05] and    message [Do not honour]&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
