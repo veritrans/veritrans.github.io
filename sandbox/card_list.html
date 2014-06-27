@@ -170,95 +170,197 @@
 
 <p>Here is a list of credit card numbers that can be used for transaction in the Sandbox Environment. It can be used both for VT-Web payment page as well as charge request through Payment API (VT-Direct).</p>
 
-<h4 id="visa">Visa</h4>
-<ul>
-  <li>ECI = 5 Otentikasi 3DS berhasil.</li>
-  <li>ECI = 6 Otentikasi 3DS dicoba tetapi pemegang kartu belum terdaftar 3DS.</li>
-</ul>
 <table>
 	<thead>
 		<tr>
+			<th>
+				Type of Transaction
+			</th>
 			<th>
 				Visa
 			</th>
 			<th>
-				Number
+				Mastercard
 			</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>
-				visa.non3ds.accept
-			</td>
-			<td>4011 1111 1111 1112</td>
-		</tr>
+				<b>Accept Transactions<b>
+			
+			<td></td><td></td>
+		<tr>
 		<tr>
 			<td>
-				visa.non3ds.challenge
+				3DS Full Authentication
 			</td>
-			<td>4111 1111 1111 1111</td>
-		</tr>
+			<td>
+				4811 1111 1111 1114
+			</td>
+			<td>
+				5810 1111 1111 1112
+			</td>
+		<tr>
 		<tr>
 			<td>
-				visa.non3ds.fds.denied
+				3DS Attempted Authentication
 			</td>
-			<td>4211 1111 1111 1110</td>
-		</tr>
+			<td>
+				4411 1111 1111 1118
+			</td>
+			<td>
+				5410 1111 1111 1116
+			</td>
+		<tr>
 		<tr>
 			<td>
-				visa.non3ds.bank.denied
+				Normal Transaction
 			</td>
-			<td>4311 1111 1111 1119</td>
-		</tr>
+			<td>
+				4011 1111 1111 1112
+			</td>
+			<td>
+				5010 1111 1111 1110
+			</td>
+		<tr>
 		<tr>
 			<td>
-				visa.eci6.accept
-			</td>
-			<td>4411 1111 1111 1118</td>
-		</tr>
+				<b>Challenge Transactions by FDS<b>
+			
+			<td></td><td></td>
+		<tr>
 		<tr>
 			<td>
-				visa.eci6.challenge
+				3DS Full Authentication
 			</td>
-			<td>4511 1111 1111 1117</td>
-		</tr>
+			<td>
+				Not Applicable (1)
+			</td>
+			<td>
+				Not Applicable (1)
+			</td>
+		<tr>
 		<tr>
 			<td>
-				visa.eci6.fds.denied
+				3DS Attempted Authentication
 			</td>
-			<td>4611 1111 1111 1116</td>
-		</tr>
+			<td>
+				4511 1111 1111 1117
+			</td>
+			<td>
+				5510 1111 1111 1115
+			</td>
+		<tr>
 		<tr>
 			<td>
-				visa.eci6.bank.denied
+				Normal Transaction
 			</td>
-			<td>4711 1111 1111 1115</td>
-		</tr>
+			<td>
+				4111 1111 1111 1111
+			</td>
+			<td>
+				5110 1111 1111 1119
+			</td>
+		<tr>
+				<tr>
+			<td>
+				<b>Deny Transactions by FDS<b>
+			
+			<td></td><td></td>
+		<tr>
 		<tr>
 			<td>
-				visa.eci5.accept
+				3DS Full Authentication
 			</td>
-			<td>4811 1111 1111 1114</td>
-		</tr>
+			<td>
+				Not Applicable (1)
+			</td>
+			<td>
+				Not Applicable (1)
+			</td>
+		<tr>
 		<tr>
 			<td>
-				visa.eci5.bank.denied
+				3DS Attempted Authentication
 			</td>
-			<td>4911 1111 1111 1113</td>
-		</tr>
+			<td>
+				4611 1111 1111 1116
+			</td>
+			<td>
+				5610 1111 1111 1114
+			</td>
+		<tr>
+		<tr>
+			<td>
+				Normal Transaction
+			</td>
+			<td>
+				4211 1111 1111 1110
+			</td>
+			<td>
+				5210 1111 1111 1118
+			</td>
+		<tr>
+		<tr>
+				<tr>
+			<td>
+				<b>Deny Transactions by Bank<b>
+			
+			<td></td><td></td>
+		<tr>
+		<tr>
+			<td>
+				3DS Full Authentication
+			</td>
+			<td>
+				4911 1111 1111 1113
+			</td>
+			<td>
+				5910 1111 1111 1111
+			</td>
+		<tr>
+		<tr>
+			<td>
+				3DS Attempted Authentication
+			</td>
+			<td>
+				4711 1111 1111 1115
+			</td>
+			<td>
+				5710 1111 1111 1113
+			</td>
+		<tr>
+		<tr>
+			<td>
+				Normal Transaction
+			</td>
+			<td>
+				4311 1111 1111 1119
+			</td>
+			<td>
+				5310 1111 1111 1117
+			</td>
+		<tr>
+	
 
-	</tbody>
-</table>
 
 <table>
 	<thead>
 		<tr>
 			<th>
-				Exp Date
+				Expiry Month
 			</th>
 			<th>
-			12/2020
+			01
+			</th>
+		</tr>
+		<tr>
+			<th>
+				Expiry Year
+			</th>
+			<th>
+			2020
 			</th>
 		</tr>
 		<tr>
@@ -272,105 +374,7 @@
 	</thead>
 </table>
 
-<h4 id="master">Master</h4>
-<ul>
-  <li>ECI = 2 Otentikasi 3DS berhasil.</li>
-  <li>ECI = 1 Otentikasi 3DS dicoba tetapi pemegang kartu belum terdaftar 3DS.</li>
-</ul>
-<table>
-	<thead>
-		<tr>
-			<th>
-				Master
-			</th>
-			<th>
-				Number
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				Master.non3ds.accept
-			</td>
-			<td>5010 1111 1111 1110</td>
-		</tr>
-		<tr>
-			<td>
-				Master.non3ds.challenge
-			</td>
-			<td>5110 1111 1111 1119</td>
-		</tr>
-		<tr>
-			<td>
-				Master.non3ds.fds.denied
-			</td>
-			<td>5210 1111 1111 1118</td>
-		</tr>
-		<tr>
-			<td>
-				Master.non3ds.bank.denied
-			</td>
-			<td>5310 1111 1111 1117</td>
-		</tr>
-		<tr>
-			<td>
-				Master.eci1.accept
-			</td>
-			<td>5410 1111 1111 1116</td>
-		</tr>
-		<tr>
-			<td>
-				Master.eci1.challenge
-			</td>
-			<td>5510 1111 1111 1115</td>
-		</tr>
-		<tr>
-			<td>
-			    Master.eci1.fds.denied
-			</td>
-			<td>5610 1111 1111 1114</td>
-		</tr>
-		<tr>
-			<td>
-				Master.eci1.bank.denied
-			</td>
-			<td>5710 1111 1111 1113</td>
-		</tr>
-		<tr>
-			<td>
-				Master.eci2.accept
-			</td>
-			<td>5810 1111 1111 1112</td>
-		</tr>
-		<tr>
-			<td>
-				Master.eci2.bank.denied
-			</td>
-			<td>5910 1111 1111 1111</td>
-		</tr>
-	</tbody>
-</table>
-<table>
-	<thead>
-		<tr>
-			<th>
-				Exp Date
-			</th>
-			<th>
-			12/2020
-			</th>
-		</tr>
-		<tr>
-			<th>
-				CVV
-			</th>
-			<th>
-			123
-			</th>
-		</tr>
-	</thead>
-</table>
+</tr></tr></tr></tr></tr></tr></tr></b></b></td></tr></tr></tr></tr></tr></tr></tr></tr></tr></b></b></td></tr></tr></tr></tr></tr></tr></tr></tr></b></b></td></tr></tr></tr></tr></tr></tr></tr></tr></b></b></td></tr></tbody></table>
 
 
 			<div class="pagination">

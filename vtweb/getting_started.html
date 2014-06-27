@@ -166,7 +166,9 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtweb-getting-started">
-            <h2 id="authentication">Authentication</h2>
+            <h2 id="getting-started">Getting Started</h2>
+
+<h3 id="authentication">Authentication</h3>
 
 <p>Authentication is required to utilize the Payment API. We utilize BASIC AUTH http, whereby merchant is required to send us the <code>server_key</code>.</p>
 
@@ -175,7 +177,7 @@
 <p>Veritrans provides a server_key and client_key to allow merchant to communicate with the Payment API. Merchants can find the <code>server_key</code> in the MAP (Merchant Administration Portal).</p>
 
 <ul>
-  <li><code>server_key</code>, is a private key that needs to be kept secret by the merchant. Server_key. The Server Key is utilized by the merchant to send a transaction request to Veritrans.</li>
+  <li><code>server_key</code>, is a private key that needs to be kept secret by the merchant. The Server Key is utilized by the merchant to send a transaction request to Veritrans.</li>
 </ul>
 
 <h4 id="basic-auth-http-header">Basic Auth HTTP Header</h4>
@@ -248,16 +250,19 @@
 
 <ul>
   <li>
-    <p>Finish Redirect URL
-URL address to where customer will be redirected when payment succeed.</p>
+    <p>Finish Redirect URL</p>
+
+    <p>URL address to where customer will be redirected when payment succeed.</p>
   </li>
   <li>
-    <p>Error Redirect URL
-URL address to where customer will be redirected when payment failed.</p>
+    <p>Error Redirect URL</p>
+
+    <p>URL address to where customer will be redirected when payment failed.</p>
   </li>
   <li>
-    <p>Unfinish Redirect URL
-URL address to where customer will be redirected when clicking “Back to Merchant Website” button (canceling payment process).</p>
+    <p>Unfinish Redirect URL</p>
+
+    <p>URL address to where customer will be redirected when clicking “Back to Merchant Website” button (canceling payment process).</p>
   </li>
 </ul>
 
