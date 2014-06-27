@@ -183,12 +183,121 @@
   </li>
 </ol>
 
-<h4 id="handling-notification">Handling Notification</h4>
+<h3 id="activating-3dsecure">Activating 3DSecure</h3>
+
+<p>3DSecure transaction is activated by setting parameter <code>”credit_card_3d_secure” : true</code>. The updated JSON format: </p>
+
+<pre class="highlight json"><span class="w">    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">],</span><span class="w">
+            </span><span class="s2">&quot;credit_card_3d_secure&quot;</span><span class="p">:</span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">&quot;item_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item1&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Adidas f50&quot;</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item2&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nike N90&quot;</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="s2">&quot;customer_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri.setiawan@veritrans.co.id&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08195010132&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;billing_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Karet&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;523112&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08195010132&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">&quot;shipping_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Watson&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bakerstreet 221B&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;London&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12354&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081323123123&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></pre>
+<p>Code above is the default JSON format to make transactions on the Payment API.</p>
+
+<h3 id="mengaktifkan-fitur-mandiri-clikpay">Mengaktifkan fitur Mandiri Clikpay</h3>
+
+<p>Mandiri Clickpay transaction is activated by setting parameter <code>"enabled_payments": ["credit_card", "mandiri_clickpay"]</code>. The updated JSON format: </p>
+
+<pre class="highlight json"><span class="w">	</span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	        </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">],</span><span class="w">
+	    </span><span class="err">}</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	        </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+	    </span><span class="s2">&quot;item_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+	        </span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item1&quot;</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Adidas f50&quot;</span><span class="w">
+	    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+	        </span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item2&quot;</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nike N90&quot;</span><span class="w">
+	    </span><span class="p">}],</span><span class="w">
+	    </span><span class="s2">&quot;customer_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	        </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri.setiawan@veritrans.co.id&quot;</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08195010132&quot;</span><span class="p">,</span><span class="w">
+	        </span><span class="s2">&quot;billing_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	            </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Karet&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;523112&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08195010132&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+	        </span><span class="p">},</span><span class="w">
+	        </span><span class="s2">&quot;shipping_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	            </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Watson&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bakerstreet 221B&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;London&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12354&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081323123123&quot;</span><span class="p">,</span><span class="w">
+	            </span><span class="s2">&quot;country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+	        </span><span class="p">}</span><span class="w">
+	    </span><span class="p">}</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<h3 id="handling-notification">Handling Notification</h3>
 
 <p><code>notification_handler.php</code> contains sample code for handling HTTP(S) POST notification. Configured the endpoint for merchant’s server in MAP under Setting » VT-Web Preferences.</p>
 
-<h4 id="activating-production-environment">Activating production environment:</h4>
-<p>Once you are finished with testing and ready to “go live”, make sure to update the <code>$endpoint</code> in file <code>checkout_process.php</code> to: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a>.</p>
+<h3 id="activating-production-environment">Activating production environment:</h3>
+<p>Once you are finished with testing and ready to “go live”, make sure this :</p>
+
+<ul>
+  <li>Update the <code>$endpoint</code> in file <code>checkout_process.php</code> to: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a>.</li>
+  <li>Change Server &amp; Client key from sandbox MAP to Server &amp; Client key from Production MAP.</li>
+</ul>
 
 
 
