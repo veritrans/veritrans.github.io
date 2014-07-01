@@ -92,6 +92,8 @@
 					
 					<li class=""><a href="handle_notification.html">Handling Notification</a></li>
 					
+					<li class=""><a href="going_live.html">Going Live</a></li>
+					
 					<li class=""><a href="sample_code.html">Sample Code</a></li>
 					
 					<li class=""><a href="status_code.html">Status Code</a></li>
@@ -626,6 +628,7 @@
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">CURLOPT_CUSTOMREQUEST</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">);</span>
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$json_transaction_data</span><span class="p">);</span>
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 <span class="nv">$auth</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s1">'Authorization: Basic %s'</span><span class="p">,</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$server_key</span><span class="o">.</span><span class="s1">':'</span><span class="p">));</span>
 <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'Content-Type: application/json'</span><span class="p">,</span>

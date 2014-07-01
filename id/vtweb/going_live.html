@@ -66,7 +66,7 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
-		<div class="language-toggle"> <a href="../../vtdirect/status_code.html">English</a> / Bahasa Indonesia</div>
+		<div class="language-toggle"> <a href="../../vtweb/going_live.html">English</a> / Bahasa Indonesia</div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
@@ -82,44 +82,44 @@
 			<li><a class="parent">VT-Web</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+					<li class=""><a href="introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="../vtweb/get_redirect_url.html">Mendapatkan Redirect URL</a></li>
+					<li class=""><a href="get_redirect_url.html">Mendapatkan Redirect URL</a></li>
 					
-					<li class=""><a href="../vtweb/redirect.html">Redirect</a></li>
+					<li class=""><a href="redirect.html">Redirect</a></li>
 					
-					<li class=""><a href="../vtweb/handle_notification.html">Menangani Notifikasi</a></li>
+					<li class=""><a href="handle_notification.html">Menangani Notifikasi</a></li>
 					
-					<li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+					<li class="active"><a href="going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="../vtweb/sample_code.html">Kode Contoh</a></li>
+					<li class=""><a href="sample_code.html">Kode Contoh</a></li>
 					
-					<li class=""><a href="../vtweb/status_code.html">Kode Status</a></li>
+					<li class=""><a href="status_code.html">Kode Status</a></li>
 					
 				</ul>
 			</li>
 			<li><a class="parent">VT-Direct</a>
 				<ul class="child-menu">
 					
-					<li class=""><a href="introduction.html">Perkenalan</a></li>
+					<li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
 					
-					<li class=""><a href="getting_started.html">Langkah Awal</a></li>
+					<li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
 					
-					<li class=""><a href="integration.html">Integrasi</a></li>
+					<li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
 					
-					<li class=""><a href="going_live.html">Going Live</a></li>
+					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_commands.html">Perintah Lain</a></li>
+					<li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class=""><a href="../vtdirect/other_features.html">Fitur Lain</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class=""><a href="../vtdirect/payment_options.html">Pilihan Pembayaran</a></li>
 					
-					<li class=""><a href="examples.html">Contoh</a></li>
+					<li class=""><a href="../vtdirect/examples.html">Contoh</a></li>
 					
-					<li class="active"><a href="status_code.html">Kode Status</a></li>
+					<li class=""><a href="../vtdirect/status_code.html">Kode Status</a></li>
 					
 				</ul>
 			</li>
@@ -167,137 +167,21 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="id-vtdirect-status-code">
-            <h2 id="status-code">Status Code</h2>
+          <div class="id-vtweb-going-live">
+            <h2 id="going-live-dengan-vt-direct">Going Live dengan VT-Direct</h2>
 
-<h3 id="code-2xx">Code 2xx</h3>
+<p>Jika Anda sudah selesai melakukan testing di Sandbox dan sudah siap untuk go live di Production Environment:</p>
 
-<table>
-	<tr>
-		<th>Status Code</th>
-		<th>Keterangan</th>
-	</tr>
-	<tr>
-		<td>200</td>
-		<td>OK, request is success, and transaction is success (authorize, capture, settlement, cancel, refund, get order, approve challenge transactions), accepted by Veritrans and bank.</td>
-	</tr>
-	<tr>
-		<td>201</td>
-		<td>Pending, transaction is success but the processing has not been completed, example, challenge transaction and pending transaction.</td>
-	</tr>
-	<tr>
-		<td>202</td>
-		<td>Denied, request is success but transaction is denied by bank or Veritrans fraud detection system.</td>
-	</tr>
-</table>
+<ol>
+  <li>Harap mengganti server key yang digunakan dari Sandbox key ke Production key.</li>
+</ol>
 
-<h3 id="code-3xx">Code 3xx</h3>
+<p>Selamat bertransaksi menggunakan Veritrans!</p>
 
-<table>
-	<tr>
-		<th>Status Code</th>
-		<th>Keterangan</th>
-	</tr>
-	<tr>
-		<td>300</td>
-		<td>Move Permanently, this and all future request should be directed to the new URL</td>
-	</tr>
-</table>
-
-<h3 id="code-4xx">Code 4xx</h3>
-
-<table>
-	<tr>
-		<th>Status Code</th>
-		<th>Keterangan</th>
-	</tr>
-	<tr>
-		<td>400</td>
-		<td>Validation Error, merchant send bad request data
-example; validation error, invalid transaction type, invalid credit card format, etc.</td>
-	</tr>
-	<tr>
-		<td>401</td>
-		<td>Access denied due to unauthorized transaction, please check client key or server key</td>
-	</tr>
-	<tr>
-		<td>402</td>
-		<td>Merchant doesn't have access for this payment type</td>
-	</tr>
-	<tr>
-		<td>403</td>
-		<td>The requested resource is only capable of generating content not acceptable according to the accept headers sent in the request</td>
-	</tr>
-	<tr>
-		<td>404</td>
-		<td>The requested resource is not found</td>
-	</tr>
-	<tr>
-		<td>405</td>
-		<td>Http method is not allowed</td>
-	</tr>
-	<tr>
-		<td>406</td>
-		<td>Merchant charges the same order id more than once or transaction has been paid</td>
-	</tr>
-	<tr>
-		<td>407</td>
-		<td>Resource is no longer available and will not be available again</td>
-	</tr>
-	<tr>
-		<td>408</td>
-		<td>Merchant sends the wrong data type</td>
-	</tr>
-	<tr>
-		<td>409</td>
-		<td>Merchant has sent too many transactions for the same card number</td>
-	</tr>
-	<tr>
-		<td>410</td>
-		<td>Merchant account is deactivated or not active for a long period</td>
-	</tr>
-	<tr>
-		<td>411</td>
-		<td>Token id is missing, invalid, or timed out</td>
-	</tr>
-	<tr>
-		<td>412</td>
-		<td>Merchant cannot modify status of the transaction</td>
-	</tr>
-	<tr>
-		<td>413</td>
-		<td>The request cannot be processed due to malformed syntax in the request body</td>
-	</tr>
-</table>
-
-<h3 id="code-5xx">Code 5xx</h3>
-
-<table>
-	<tr>
-		<th>Status Code</th>
-		<th>Keterangan</th>
-	</tr>
-	<tr>
-		<td>500</td>
-		<td>Internal server error</td>
-	</tr>
-	<tr>
-		<td>502</td>
-		<td>Internal server error : Bank connection problem</td>
-	</tr>
-	<tr>
-		<td>503</td>
-		<td>Internal server error</td>
-	</tr>
-	<tr>
-		<td>504</td>
-		<td>Internal server error : Fraud detection is unavailable</td>
-	</tr>
-</table>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="examples.html">VT-Direct: Contoh</a></li><li class="right">Next: <a href="../sandbox/difference.html">Sandbox: Perbedaan Sandbox dan Production</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="handle_notification.html">VT-Web: Menangani Notifikasi</a></li><li class="right">Next: <a href="sample_code.html">VT-Web: Kode Contoh</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
