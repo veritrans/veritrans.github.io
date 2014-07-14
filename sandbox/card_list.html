@@ -184,7 +184,7 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center" colspan="3"><b>Accept transactions</b></td>
+      <td style="text-align: center" colspan="3"><b><font color="#41A317">Accept</font> transactions</b></td>
     </tr>
     <tr>
       <td style="text-align: left">3DS Full Authentication (2)</td>
@@ -202,7 +202,7 @@
       <td>5010 1111 1111 1110</td>
     </tr>
     <tr>
-      <td style="text-align: center" colspan="3"><b>Challenge Transactions by FDS</b></td>
+      <td style="text-align: center" colspan="3"><b><font color="#FFA500">Challenge</font> by FDS transactions</b></td>
     </tr>
     <tr>
       <td style="text-align: left">3DS Full Authentication (2)</td>
@@ -220,7 +220,7 @@
       <td>5110 1111 1111 1119</td>
     </tr>
     <tr>
-	  <td style="text-align: center" colspan="3"><b>Deny Transactions by FDS</b></td>
+	  <td style="text-align: center" colspan="3"><b><font color="#F50000">Deny</font> by FDS transactions</b></td>
     </tr>
     <tr>
       <td style="text-align: left">3DS Full Authentication (2)</td>
@@ -238,7 +238,7 @@
       <td>5210 1111 1111 1118</td>
     </tr>
     <tr>
-      <td style="text-align: center" colspan="3"><b>Deny Transactions by Bank</b></td>
+      <td style="text-align: center" colspan="3"><b><font color="#F50000">Deny</font> by Bank transactions</b></td>
     </tr>
     <tr>
       <td style="text-align: left">3DS Full Authentication (2)</td>
@@ -280,10 +280,10 @@
     <p>For fully authenticated 3DS transaction, it is already verified to be safe by the credit card association (Visa/Mastercard). <br /></p>
   </li>
   <li>
-    <p>Both cardholder and card issuing bank are 3D enabled. 3D card authentication is successful. <br /></p>
+    <p>Both cardholder and merchant are 3D enabled, 3D card authentication is successful. Fraud risk borne by the Issuing Bank. <br /></p>
   </li>
   <li>
-    <p>Either cardholder or card issuing bank is not 3D ready. 3D card authentication is unsuccessful.<br /></p>
+    <p>Cardholder is not registered for authentication, but the merchant is submitting an authentication request. Fraud risk borne by the issuing bank.<br /></p>
   </li>
 </ol>
 
