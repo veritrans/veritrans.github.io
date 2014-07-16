@@ -75,7 +75,7 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
-		<div class="language-toggle"> <a href="../../vtweb/going_live.html">English</a> / Bahasa Indonesia</div>
+		<div class="language-toggle"> <a href="../../vtweb/other_features.html">English</a> / Bahasa Indonesia</div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
@@ -101,9 +101,9 @@
 					
 					<li class=""><a href="handle_notification.html">Menangani Notifikasi</a></li>
 					
-					<li class="active"><a href="going_live.html">Going Live</a></li>
+					<li class=""><a href="going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					<li class="active"><a href="other_features.html">Fitur Lain</a></li>
 					
 					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
 					
@@ -180,22 +180,100 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="id-vtweb-going-live">
-            <h2 id="going-live-dengan-vt-web">Going Live dengan VT-Web</h2>
+          <div class="id-vtweb-other-features">
+            <h2 id="fitur-lain">Fitur Lain</h2>
 
-<p>Jika Anda sudah selesai melakukan testing dan sudah siap untuk go live di Production Environment, ada beberapa hal yang perlu dipastikan:</p>
+<p>Selain pembayaran dengan kartu kredit normal, saat ini Veritrans memiliki fitur lain untuk pembayaran kartu kredit melalui VT-Web, yaitu:</p>
+
+<ol>
+  <li><a href="other_features.html#3ds">Transaksi 3D Secure</a></li>
+  <li><a href="other_features.html#installment">Installment</a></li>
+  <li><a href="../vtdirect/other_features.html#BINpromo">BIN Promo</a></li>
+</ol>
+
+<p>Berikut adalah tutorial untuk melakukan integrasi menggunakan fitur - fitur sesuai dengan kebutuhan anda.</p>
+
+<h3 id="a-name3dsamengaktifkan-fitur-vt-web-3dsecure"><a name="3ds"></a>Mengaktifkan fitur VT-Web 3DSecure</h3>
+
+<p>Sebelum merchant mengaktifkan fitur 3D Secure, merchant perlu menanyakan terlebih dahulu kepada sales representative Veritrans untuk memastikan apakah MID 3D Secure sudah siap. Jika sudah siap, dan merchant ingin memproses transaksi dengan 3D Secure, maka parameter <code>”credit_card_3d_secure” : true</code> perlu ditambahkan, sehingga message JSON-nya menjadi:  </p>
+
+<pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">],</span><span class="w">
+          </span><span class="s2">&quot;credit_card_3d_secure&quot;</span><span class="w"> </span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="err">}</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span></pre>
+
+<h3 id="a-nameinstallmentapembayaran-dengan-cicilan-installment"><a name="installment"></a>Pembayaran dengan cicilan (Installment)</h3>
+
+<p>Untuk mengaktifkan fitur cicilan (installment), merchant terlebih dahulu harus memiliki kesepakatan dengan acquiring bank. Merchant perlu menanyakan terlebih dahulu kepada sales representative Veritrans untuk memastikan apakah MID untuk cicilan sudah siap. Jika sudah siap, dan merchant ingin memproses transaksi dengan cicilan, maka beberapa parameter perlu ditambahkan pada message JSON yang dikirim, hingga menjadi :</p>
+
+<pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">],</span><span class="w">
+        </span><span class="s2">&quot;payment_options&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;installment&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;required&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;installment_terms&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">&quot;bni&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">],</span><span class="w">
+               </span><span class="s2">&quot;mandiri&quot;</span><span class="p">:[</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}}</span><span class="w">
+
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span></pre>
+<p>Keterangan :</p>
 
 <ul>
-  <li>Arahkan konfigurasi <code>$endpoint</code> di file <code>checkout_process.php</code> ke: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a>.</li>
-  <li>Rubah Server &amp; Client key dari MAP Sandbox menjadi Server &amp; Client Key yang di dapat dari MAP Production.</li>
+  <li>
+    <font color="#F50000">Required : True</font>
+    <p>Transaksi tersebut harus menggunakan cicilan.</p>
+  </li>
+  <li>
+    <font color="#F50000">Required : False</font>
+    <p>Transaksi tersebut bisa menggunakan cicilan atau pembayaran full</p>
+  </li>
+  <li>
+    <font color="#F50000">Installment_terms</font>
+    <p>Merupakan program/jangka waktu cicilan yang sudah disetujui antara merchant dan bank.</p>
+  </li>
+  <li>Untuk sandbox, anda bisa menggunakan <font color="#F50000">"bni" : [6,12]</font> dan <font color="#F50000">"mandiri" : [6,12]</font> untuk test transaksi cicilan.</li>
 </ul>
 
-<p>Selamat bertransaksi menggunakan Veritrans!</p>
+<h3 id="a-namebinpromoabin-promo"><a name="BINpromo"></a>BIN Promo</h3>
 
+<p>Bin promo adalah fitur yang memungkinkan merchant untuk menawarkan promosi berdasarkan bank penerbit kartu kredit tertentu yang dimiliki customer. Untuk melakukan identifikasi bank penerbit kartu, digunakan informasi BIN (Bank Identification Number) yang merupakan 6 digit pertama dari nomor kartu kredit.</p>
+
+<p>Bila merchant ingin memproses transaksi dengan fitur BIN Promo, maka beberapa parameter perlu ditambahkan pada message JSON yang dikirim, hingga menjadi :</p>
+
+<pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">],</span><span class="w">
+          </span><span class="s2">&quot;credit_card_bins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;411111&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;422222&quot;</span><span class="p">],</span><span class="w">
+      </span><span class="err">}</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span></pre>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="handle_notification.html">VT-Web: Menangani Notifikasi</a></li><li class="right">Next: <a href="other_features.html">VT-Web: Fitur Lain</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="going_live.html">VT-Web: Going Live</a></li><li class="right">Next: <a href="payment_options.html">VT-Web: Pilihan Pembayaran</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

@@ -103,6 +103,10 @@
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
+					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					
+					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					
 					<li class=""><a href="sample_code.html">Kode Contoh</a></li>
 					
 					<li class=""><a href="status_code.html">Kode Status</a></li>
@@ -197,7 +201,7 @@
 	</tr>
 	<tr>
 		<td>Authorization</td>
-		<td>Basic (<code>server_key</code>:)</td>
+		<td>Basic Base64(<code>server_key</code>:)</td>
 	</tr>
 </table>
 
@@ -215,42 +219,7 @@
         </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
         </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">&quot;item_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item1&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Adidas f50&quot;</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;item2&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nike N90&quot;</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
-    </span><span class="s2">&quot;customer_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri.setiawan@veritrans.co.id&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08195010132&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;billing_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Karet&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;523112&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08195010132&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">&quot;shipping_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Watson&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bakerstreet 221B&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;London&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12354&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081323123123&quot;</span><span class="p">,</span><span class="w">
-            </span><span class="s2">&quot;country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></pre>
 <p>Kode diatas adalah format default JSON untuk melakukan transaksi di Payment API.</p>
 
@@ -555,61 +524,13 @@
 // sandbox/development/testing environment:
 </span><span class="nv">$endpoint</span> <span class="o">=</span> <span class="s2">&quot;https://api.sandbox.veritrans.co.id/v2/charge&quot;</span><span class="p">;</span>
 <span class="c1">// production environment:
-//$endpoint = &quot;https://api.sandbox.veritrans.co.id/v2/charge&quot;;
+//$endpoint = &quot;https://api.veritrans.co.id/v2/charge&quot;;
 </span>
 
 <span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
 	<span class="s1">'order_id'</span> 		<span class="o">=&gt;</span> <span class="nb">uniqid</span><span class="p">(),</span>
 	<span class="s1">'gross_amount'</span> 	<span class="o">=&gt;</span> <span class="mi">200000</span>
 <span class="p">);</span>
-
-<span class="c1">// Populate items
-</span><span class="nv">$items</span> <span class="o">=</span> <span class="p">[</span>
-	<span class="k">array</span><span class="p">(</span>
-		<span class="s1">'id'</span> 		<span class="o">=&gt;</span> <span class="s1">'item1'</span><span class="p">,</span>
-		<span class="s1">'price'</span> 	<span class="o">=&gt;</span> <span class="mi">100000</span><span class="p">,</span>
-		<span class="s1">'quantity'</span> 	<span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s1">'name'</span> 		<span class="o">=&gt;</span> <span class="s1">'Adidas f50'</span>
-	<span class="p">),</span>
-	<span class="k">array</span><span class="p">(</span>
-		<span class="s1">'id'</span>		<span class="o">=&gt;</span> <span class="s1">'item2'</span><span class="p">,</span>
-		<span class="s1">'price'</span> 	<span class="o">=&gt;</span> <span class="mi">50000</span><span class="p">,</span>
-		<span class="s1">'quantity'</span> 	<span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
-		<span class="s1">'name'</span> 		<span class="o">=&gt;</span> <span class="s1">'Nike N90'</span>
-	<span class="p">)</span>
-<span class="p">];</span>
-
-<span class="c1">// Populate customer's billing address
-</span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-	<span class="s1">'first_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-	<span class="s1">'last_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span>
-	<span class="s1">'address'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;Karet Belakang 15A, Setiabudi.&quot;</span><span class="p">,</span>
-	<span class="s1">'city'</span> 			<span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
-	<span class="s1">'postal_code'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;51161&quot;</span><span class="p">,</span>
-	<span class="s1">'phone'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
-	<span class="s1">'country_code'</span> 	<span class="o">=&gt;</span> <span class="s1">'IDN'</span>
-	<span class="p">);</span>
-
-<span class="c1">// Populate customer's shipping address
-</span><span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-	<span class="s1">'first_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-	<span class="s1">'last_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Watson&quot;</span><span class="p">,</span>
-	<span class="s1">'address'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;Bakerstreet 221B.&quot;</span><span class="p">,</span>
-	<span class="s1">'city'</span> 			<span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
-	<span class="s1">'postal_code'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;51162&quot;</span><span class="p">,</span>
-	<span class="s1">'phone'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
-	<span class="s1">'country_code'</span> 	<span class="o">=&gt;</span> <span class="s1">'IDN'</span>
-	<span class="p">);</span>
-
-<span class="c1">// Populate customer's Info
-</span><span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-	<span class="s1">'first_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-	<span class="s1">'last_name'</span> 	<span class="o">=&gt;</span> <span class="s2">&quot;Setiawan&quot;</span><span class="p">,</span>
-	<span class="s1">'email'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;andrisetiawan@me.com&quot;</span><span class="p">,</span>
-	<span class="s1">'phone'</span> 		<span class="o">=&gt;</span> <span class="s2">&quot;081322311801&quot;</span><span class="p">,</span>
-	<span class="s1">'billing_address'</span>  <span class="o">=&gt;</span> <span class="nv">$billing_address</span><span class="p">,</span>
-	<span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span>
-	<span class="p">);</span>
 
 <span class="c1">// Data yang akan dikirim untuk request redirect_url.
 // Uncomment 'credit_card_3d_secure' =&gt; true jika transaksi ingin diproses dengan 3DSecure.

@@ -103,6 +103,10 @@
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
+					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					
+					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					
 					<li class=""><a href="sample_code.html">Kode Contoh</a></li>
 					
 					<li class=""><a href="status_code.html">Kode Status</a></li>
@@ -183,7 +187,7 @@
 
 <p>Alamat URL spesifik server merchant yang akan dikirimi HTTP(S) POST notification dapat diatur di halaman konfigurasi MAP pada field Payment Notification URL. Merchant dapat memanfaatkan HTTP(S) POST notification ini untuk dapat mengupdate status pembayaran dari suatu transaksi(order) secara real time. Hal ini bisa dilakukan karena Veritrans mengirim notifikasi ini seketika setelah pelanggan menyelesaikan proses pembayaran.</p>
 
-<p>Untuk memanfaat fasilitas ini, merchant harus menyediakan endpoint untuk menerima notifikasi. Endpoint notifikasi bisa di-set melalui MAP, di halaman Settings -&gt; Configuration.</p>
+<p>Untuk memanfaat fasilitas ini, merchant harus menyediakan endpoint untuk menerima notifikasi. Endpoint notifikasi bisa di-set melalui MAP, di halaman <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration pada MAP</a>.</p>
 
 <p><img title="config payment" class="img-responsive" src="../../images/vtweb-config-payment.png" /></p>
 
@@ -265,7 +269,7 @@
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </pre>
-<p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Merchant dapat menggunakan data dari HTTP(POST) notification tersebut untuk mengupdate database-nya, misalnya untuk menandai bahwa transaksi dengan order_id tersebut telah terbayar. Selain itu, informasi detail transaksi tersebut juga sudah tercatat di Merchant Administration Portal(MAP). Merchant perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut.</p>
+<p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Merchant dapat menggunakan data dari HTTP(POST) notification tersebut untuk mengupdate database-nya, misalnya untuk menandai bahwa transaksi dengan order_id tersebut telah terbayar. Selain itu, informasi detail transaksi juga sudah tercatat di Merchant Administration Portal (MAP). Merchant perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut.</p>
 
 <p><img title="payment info" class="img-responsive" src="../../images/payment-info.png" />  </p>
 
