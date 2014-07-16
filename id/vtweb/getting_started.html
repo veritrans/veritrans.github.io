@@ -103,6 +103,10 @@
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
+					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					
+					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					
 					<li class=""><a href="sample_code.html">Kode Contoh</a></li>
 					
 					<li class=""><a href="status_code.html">Kode Status</a></li>
@@ -185,7 +189,7 @@
 
 <h4 id="server-key">Server Key</h4>
 
-<p>Untuk melakukan proses transaksi, Veritrans akan memberikan <code>server_key</code> kepada merchant. Merchant bisa melihat data <code>server_key</code> nya di MAP (Merchant Administration Portal) yang telah disediakan oleh Veritrans.</p>
+<p>Untuk melakukan proses transaksi, Veritrans akan memberikan <code>server_key</code> kepada merchant. Merchant bisa melihat data server key <a title="Access keys page on MAP" href="https://my.sandbox.veritrans.co.id/settings/config_info/">melalui menu Settings - Access Keys</a> pada MAP (Merchant Administration Portal) yang telah disediakan oleh Veritrans.</p>
 
 <ul>
   <li><code>server_key</code>, merupakan key untuk autentikasi merchant ketika melakukan transaksi. Server_key bersifat rahasia, <u>jangan sampai ada pihak lain yang tahu</u>.</li>
@@ -256,7 +260,7 @@
 
 <h3 id="mengatur-finish-unfinish-dan-error-redirect-url">Mengatur Finish, Unfinish, dan Error Redirect URL</h3>
 
-<p>Setelah pembeli menyelesaikan proses pembayaran, pembeli akan dialihkan kembali ke website merchant. Kemana pembeli akan dialihkan, dapat diatur melalui MAP di halaman Settings » Configuration. Ada tiga alamat yang perlu diatur, yaitu:</p>
+<p>Setelah pembeli menyelesaikan proses pembayaran, pembeli akan dialihkan kembali ke website merchant. Kemana pembeli akan dialihkan, dapat diatur melalui MAP di halaman <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration pada MAP</a>. Ada tiga alamat yang perlu diatur, yaitu:</p>
 
 <ul>
   <li>
@@ -284,8 +288,7 @@
 
 <h5 id="gambar-ketika-customer-akan-dialihkan-ke-halaman-finish-url-ketika-pembayaran-telah-sukses">Gambar ketika customer akan dialihkan ke halaman finish URL ketika pembayaran telah sukses.</h5>
 
-<p>Saat dialihkan ke merchant website, redirect URL akan membawa 3 parameter, yaitu <code>order_id</code>, <code>status_code</code>, dan <code>transaction_status</code>. Parameter <code>status_code</code> merupakan status transaksi sesaat setelah pembeli melakukan pembayaran di halaman VT-Web. Detail status_code bisa di lihat di dokumentasi Payment API bagian Status Code.<br />
-Contoh: <a href="http://sneeeekers.com/payment/finish?order_id=o1234&amp;transaction_status=pending&amp;status_code=201">http://sneeeekers.com/payment/finish?order_id=o1234&amp;transaction_status=pending&amp;status_code=201</a></p>
+<p>Saat dialihkan ke merchant website, redirect URL akan membawa 3 parameter, yaitu <code>order_id</code>, <code>status_code</code>, dan <code>transaction_status</code>. Parameter <code>status_code</code> merupakan status transaksi sesaat setelah pembeli melakukan pembayaran di halaman VT-Web. Detail status_code bisa di lihat di dokumentasi Payment API bagian Status Code.</p>
 
 
 			<div class="pagination">

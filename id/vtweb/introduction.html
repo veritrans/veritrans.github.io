@@ -103,6 +103,10 @@
 					
 					<li class=""><a href="going_live.html">Going Live</a></li>
 					
+					<li class=""><a href="other_features.html">Fitur Lain</a></li>
+					
+					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					
 					<li class=""><a href="sample_code.html">Kode Contoh</a></li>
 					
 					<li class=""><a href="status_code.html">Kode Status</a></li>
@@ -180,6 +184,100 @@
             <h2 id="perkenalan-vt-web">Perkenalan VT-Web</h2>
 <p>VT-Web merupakan sebuah cara mudah untuk menambahkan fitur pembayaran pada toko online Anda. Dengan menggunakan VT-Web, pembeli akan dialihkan dari toko online Anda ke halaman pembayaran Veritrans untuk melakukan pembayaran. Halaman pembayaran Veritrans membantu pembeli untuk melakukan pembayaran dengan menggunakan berbagai macam metode pembayaran seperti kartu kredit, Mandiri Clickpay, dan CIMB Clicks di dalam lingkungan yang aman, dan pada waktu yang bersamaan juga meminimalisir pekerjaan dari tim teknis Anda untuk melakukan integrasi dengan sistem Veritrans.</p>
 
+<h3 id="bagaimana-melakukan-transaksi-dengan-vt-web">Bagaimana melakukan transaksi dengan VT-Web</h3>
+<p>Untuk melakukan transaksi dengan VT-Web, merchant perlu mengirim request ke endpoint charge dengan spesifikasi sebagai berikut :</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Deskripsi</strong></td>
+      <td><strong>Melakukan suatu transaksi</strong></td>
+    </tr>
+    <tr>
+      <td>Endpoint</td>
+      <td><strong>sandbox :</strong> https://api.sandbox.veritrans.co.id/v2/charge</td>
+    </tr>
+    <tr>
+      <td>&#160;</td>
+      <td><strong>Production :</strong> https://api.veritrans.co.id/v2/charge</td>
+    </tr>
+    <tr>
+      <td>HTTP Method</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>HTTP Header</td>
+      <td>Accept: application/json</td>
+    </tr>
+    <tr>
+      <td>&#160;</td>
+      <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+      <td>&#160;</td>
+      <td>Authentication: Basic base64(server_key:)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Contoh Body Request (JSON) :</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">&quot;credit_card&quot;</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span></pre>
+<p>Saat mengirim request charge dengan <code> payment_type: "vtweb"</code>, Veritrans akan mengembalikan response berupa json yang berisi tiga parameter, yaitu : <code>redirect_url</code>, <code>status_code</code> dan <code>status_message</code>. Merchant perlu mengarahkan customer ke alamat url yang terdapat di parameter <code>redirect_url</code>, alamat tersebut akan mengarah ke halaman pembayaran VT-Web Veritrans.</p>
+
+<p>Setelah diarahkan ke alamat redirect_url, customer akan melihat halaman pembayaran VT-Web seperti berikut :
+<img title="redirect" class="img-responsive" src="../../images/vtweb.png" /></p>
+
+<h3 id="redirect-url-dan-notifikasi">Redirect URL dan Notifikasi</h3>
+
+<p><img src="../../images/vtweb-diagram.png" alt="VT-Web Diagram" /></p>
+
+<h4 id="redirect-url">Redirect URL</h4>
+
+<p>Saat berada di halaman pembayaran Veritrans VT-Web, ada tiga kemungkinan yang akan terjadi :</p>
+
+<ol>
+  <li>
+    <p>Customer <strong>sukses</strong> melakukan pembayaran.
+Setelah sukses melakukan pembayaran, customer akan di alihkan kembali ke halaman website merchant. Alamat spesifik kemana customer akan dialihkan setelah sukses melakukan pembayaran di sebut <strong><em>Finish Redirect URL</em></strong>.</p>
+  </li>
+  <li>
+    <p>Customer <strong>gagal</strong> melakukan pembayaran.
+Jika customer gagal melakukan pembayaran, customer akan dialihkan kembali ke website merchant. Alamat spesifik kemana customer akan dialihkan setelah gagal melakukan pembayaran disebut <strong><em>Error Redirect URL</em></strong>.</p>
+  </li>
+  <li>
+    <p>Customer <strong>batal</strong> melakukan pembayaran.
+Jika customer batal melakukan pembayaran (menekan tombol "back to merchant website"), customer akan dialihkan kembali ke website merchant. Alamat spesifik kemana customer akan dialihkan saat membatalkan pembayaran pembayaran disebut <strong><em>Unfinish Redirect URL</em></strong>.</p>
+  </li>
+</ol>
+
+<h4 id="notification">Notification</h4>
+
+<p>Setelah customer menyelesaikan proses pembayaran, apapun hasil proses pembayaran tersebut baik berhasil ataupun gagal, Veritrans akan mengirimkan dua jenis notifikasi.</p>
+
+<ol>
+  <li>
+    <p>Notifikasi berupa email.
+Notifikasi ini dikirim ke alamat email customer yang melakukan pembayaran serta ke alamat email merchant, merchant dapat melakukan setting pada menu <a title="Veritrans email notification setting page" href="https://my.sandbox.veritrans.co.id/settings/email_notifications">Setttings - email notification pada MAP</a>.</p>
+  </li>
+  <li>
+    <p>Notifikasi berupa HTTP(S) POST. 
+Notifikasi berupa HTTP(S) POST dikirim oleh Veritrans ke server merchant. Merchant dapat memanfaatkan HTTP(S) POST notification ini untuk meng-update status pembayaran dari suatu transaksi secara real time.</p>
+  </li>
+</ol>
+
+<p>Ketiga alamat redirect URL diatas (Finish, Unfinish, Error Redirect URL) serta alamat URL untuk payment notification dapat merchant tentukan melalui menu <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration pada MAP</a></p>
 
 
 			<div class="pagination">

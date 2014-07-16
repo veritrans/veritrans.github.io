@@ -75,7 +75,7 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
-		<div class="language-toggle"> <a href="../../vtweb/going_live.html">English</a> / Bahasa Indonesia</div>
+		<div class="language-toggle"> <a href="../../vtweb/payment_options.html">English</a> / Bahasa Indonesia</div>
 		<ul class="sidebar">
 			<li><a class="parent">Payment API</a>
 				<ul class="child-menu">
@@ -101,11 +101,11 @@
 					
 					<li class=""><a href="handle_notification.html">Menangani Notifikasi</a></li>
 					
-					<li class="active"><a href="going_live.html">Going Live</a></li>
+					<li class=""><a href="going_live.html">Going Live</a></li>
 					
 					<li class=""><a href="other_features.html">Fitur Lain</a></li>
 					
-					<li class=""><a href="payment_options.html">Pilihan Pembayaran</a></li>
+					<li class="active"><a href="payment_options.html">Pilihan Pembayaran</a></li>
 					
 					<li class=""><a href="sample_code.html">Kode Contoh</a></li>
 					
@@ -180,22 +180,63 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="id-vtweb-going-live">
-            <h2 id="going-live-dengan-vt-web">Going Live dengan VT-Web</h2>
+          <div class="id-vtweb-payment-options">
+            <h2 id="pilihan-pembayaran">Pilihan Pembayaran</h2>
 
-<p>Jika Anda sudah selesai melakukan testing dan sudah siap untuk go live di Production Environment, ada beberapa hal yang perlu dipastikan:</p>
+<p>Selain kartu kredit, saat ini Veritrans menyediakan pilihan pembayaran lain, yaitu:</p>
 
-<ul>
-  <li>Arahkan konfigurasi <code>$endpoint</code> di file <code>checkout_process.php</code> ke: <a href="https://api.veritrans.co.id/v2/charge">https://api.veritrans.co.id/v2/charge</a>.</li>
-  <li>Rubah Server &amp; Client key dari MAP Sandbox menjadi Server &amp; Client Key yang di dapat dari MAP Production.</li>
-</ul>
+<ol>
+  <li><a href="payment_options.html#mandiri-clickpay">Mandiri ClickPay</a></li>
+  <li><a href="payment_options.html#cimb-clicks">CIMB Clicks</a></li>
+</ol>
 
-<p>Selamat bertransaksi menggunakan Veritrans!</p>
+<p>Berikut adalah tutorial untuk melakukan integrasi menggunakan pilihan pembayaran sesuai dengan kebutuhan anda.</p>
 
+<h3 id="a-namemandiri-clickpayamandiri-clickpay"><a name="mandiri-clickpay"></a>Mandiri ClickPay</h3>
+
+<p>Mandiri Clickpay merupakan salah satu fitur dari mandiri debit, di mana customer dapat melakukan transaksi pembayaran dan pembelian melalui situs merchant  dengan cara memasukkan 16 digit nomor kartu mandiri debit dan menggunakan Token PIN Mandiri sebagai validasi transaksi.</p>
+
+<p>Untuk mengaktifkan pembayaran Mandiri Clickpay, merchant perlu mendaftar terlebih dahulu kepada sales representative Veritrans untuk metode pembayaran Mandiri Clickpay. Jika sudah didaftarkan, apabila merchant ingin menambah metode pembayaran Mandiri Clickpay, maka parameter <code>mandiri_clickpay</code> perlu ditambahkan di bagian <code>enable_payments</code> pada message JSON yang dikirim, hingga menjadi :</p>
+
+<pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">],</span><span class="w">
+      </span><span class="err">}</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span></pre>
+<p>Sebuah tab baru akan tampil pada halaman pembayaran VT-Web, yang berisi cara melakukan pembayaran menggunakan Mandiri Clickpay.</p>
+
+<p><img title="redirect" class="img-responsive" src="../../images/vtweb_mandiri_click.png" /></p>
+
+<h3 id="a-namecimb-clicksacimb-clicks"><a name="cimb-clicks"></a>CIMB Clicks</h3>
+
+<p>CIMB Clicks adalah salah satu metode pembayaran melalui internet banking yang dikeluarkan oleh Bank CIMB Niaga. Dengan menggunakan metode pembayaran CIMB Clicks, anda akan diarahkan ke halaman pembayaran CIMB Clicks untuk melakukan pembayaran. Untuk info lebih lengkap silahkan mengunjungi <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">website CIMB Niaga</a>.</p>
+
+<p>Untuk mengaktifkan pembayaran CIMB Clicks, merchant perlu mendaftar  terlebih dahulu kepada sales representative Veritrans untuk metode pembayaran CIMB Clicks ini. Jika sudah didaftarkan, apabila merchant ingin menambah metode pembayaran CIMB Clicks, maka parameter <code>cimb_clicks</code> perlu ditambahkan di bagian <code>enable_payments</code> pada message JSON yang dikirim, hingga menjadi :</p>
+
+<pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">],</span><span class="w">
+      </span><span class="err">}</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span></pre>
+<p>Sebuah tab baru akan tampil pada halaman pembayaran VT-Web, yang berisi cara melakukan pembayaran menggunakan CIMB Clicks.</p>
+
+<p><img title="redirect" class="img-responsive" src="../../images/vtweb_cimb_click.png" /></p>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="handle_notification.html">VT-Web: Menangani Notifikasi</a></li><li class="right">Next: <a href="other_features.html">VT-Web: Fitur Lain</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="other_features.html">VT-Web: Fitur Lain</a></li><li class="right">Next: <a href="sample_code.html">VT-Web: Kode Contoh</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
