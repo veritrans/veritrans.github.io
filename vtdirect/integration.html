@@ -908,28 +908,28 @@ Below is an example on how to implement charge transaction request in PHP. We wi
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
 
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;capture&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fraud_status</span> <span class="o">==</span> <span class="s2">&quot;capture&quot;</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//success
 </span>  <span class="k">echo</span> <span class="s2">&quot;Transaksi berhasil. &lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
   <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Detail transaksi:&lt;/h3&gt;&quot;</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;deny&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fraud_status</span> <span class="o">==</span> <span class="s2">&quot;deny&quot;</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//deny
 </span>  <span class="k">echo</span> <span class="s2">&quot;Transaksi ditolak. &lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
 
   <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Detail transaksi:&lt;/h3&gt;&quot;</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;challenge&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fraud_status</span> <span class="o">==</span> <span class="s2">&quot;challenge&quot;</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//challenge
 </span>  <span class="k">echo</span> <span class="s2">&quot;Transaksi challenge. &lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
 
   <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Detail transaksi:&lt;/h3&gt;&quot;</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
