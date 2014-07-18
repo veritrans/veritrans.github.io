@@ -184,6 +184,102 @@
             <h2 id="vt-web-introduction">VT-Web Introduction</h2>
 <p>VT-Web is an easy way to add payment feature for your online store. When using VT-Web, customer will be redirected from your online store to Veritrans payment page to complete payment. Veritrans payment page will help customer paying their order with many payment methods such as credit card, Mandiri Clickpay, and CIMB Clicks in a secure environment and at the same time will minimalized integration work with Veritrans.</p>
 
+<h3 id="using-vt-web">Using VT-Web</h3>
+<p>To use VT-Web, merchants need to send the following request to the charge endpoint to conduct a transaction using VT-Web:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Description</strong></td>
+      <td><strong>Proceed the transaction</strong></td>
+    </tr>
+    <tr>
+      <td>Endpoint</td>
+      <td><strong>sandbox :</strong> https://api.sandbox.veritrans.co.id/v2/charge</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Production :</strong> https://api.veritrans.co.id/v2/charge</td>
+    </tr>
+    <tr>
+      <td>HTTP Method</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>HTTP Header</td>
+      <td>Accept: application/json</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Authentication: Basic base64(server_key:)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example of Body Request (JSON) :</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">&quot;credit_card&quot;</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span></pre>
+
+<p>When sending a request charge with <code> payment_type: "vtweb"</code>, Veritrans will send back a response of JSON that consists of three parameters, which are: <code>redirect_url</code>, <code>status_code</code> dan <code>status_message</code>. merchant needs to direct customers to URL address that is included in parameter <code>redirect_url</code>, That specific URL address will then lead to Veritrans’ payment page of VT-Web.</p>
+
+<p>When it is back on address of redirect_url, shoppers will see Veritrans payment page of VT-Web as below :
+<img title="redirect" class="img-responsive" src="../images/vtweb.png" /></p>
+
+<h3 id="redirect-url-dan-notifikasi">Redirect URL dan Notifikasi</h3>
+
+<p><img src="../../images/vtweb-diagram.png" alt="VT-Web Diagram" /></p>
+
+<h4 id="redirect-url">Redirect URL</h4>
+
+<p>When shoppers are on Veritrans payment page of VT-Web, there will be three possibilities :</p>
+
+<ol>
+  <li>
+    <p>Transaction is <strong><em>successful</em></strong>.
+After successfully paying, shoppers will be brought back to merchant site. Spesific URL address where shoppers are directed to after successful transaction is called <strong><em>Finish Redirect URL</em></strong>.</p>
+  </li>
+  <li>
+    <p>Transaction is <strong><em>failed</em></strong>.
+If a transaction is failed (for example, credit card has reached its limit), shoppers will be brought back to merchant's site. Spesific URL address where shoppers are directed to after a failed transaction is called <strong><em>Error Redirect URL</em></strong>.</p>
+  </li>
+  <li>
+    <p>Transaction is <strong><em>cancelled</em></strong>.
+If shoppers changes mind and cancel the transaction (by clicking on link "Back to Merchant Website"), shoppers will be brought back to merchant's site. Spesific URL address where shoppers are directed to after a cancelled transaction is called <strong><em>Unfinish Redirect URL</em></strong>.</p>
+  </li>
+</ol>
+
+<h4 id="notification">Notification</h4>
+
+<p>After shoppers completed the payment process, either success or failure (for example, credit card has reached its limit), Veritrans will send 2 types of notification: </p>
+
+<ol>
+  <li>
+    <p><strong>Email notification</strong>. 
+Email notification is sent to shopper as well as merchant.</p>
+  </li>
+  <li>
+    <p><strong>HTTP(S) POST notification</strong>. 
+HTTP(S) POST notification is sent by Veritrans to merchant’s server. Merchant can use HTTP(S) POST notification to update payment status from a transaction/order in real time. This can be done with a notification from Veritrans right after shoppers complete the payment process. </p>
+  </li>
+</ol>
+
+<p>All three URL addresses (Finish Redirect URL, Error Redirect URL, dan Unfinish Redirect URL), can be set by merchant in Merchant Administration Portal (MAP) in <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration pada MAP</a> menu.</p>
+
 
 			<div class="pagination">
 				<ul><li class="left">« Previous: <a href="../payment_api/payment_method.html">Payment API: Payment Type</a></li><li class="right">Next: <a href="getting_started.html">VT-Web: Getting Started</a> »</li></ul>

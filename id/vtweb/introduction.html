@@ -234,6 +234,7 @@
         </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span></pre>
+
 <p>Saat mengirim request charge dengan <code> payment_type: "vtweb"</code>, Veritrans akan mengembalikan response berupa json yang berisi tiga parameter, yaitu : <code>redirect_url</code>, <code>status_code</code> dan <code>status_message</code>. Merchant perlu mengarahkan customer ke alamat url yang terdapat di parameter <code>redirect_url</code>, alamat tersebut akan mengarah ke halaman pembayaran VT-Web Veritrans.</p>
 
 <p>Setelah diarahkan ke alamat redirect_url, customer akan melihat halaman pembayaran VT-Web seperti berikut :

@@ -181,9 +181,9 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtweb-other-features">
-            <h2 id="other-feature">Other Feature</h2>
+            <h2 id="other-features">Other Features</h2>
 
-<p>Currently Veritrans has other features for credit card, namely :</p>
+<p>Other than the normal Credit Card payment, Veritrans has other features for credit card payment using VT-Web, such as:</p>
 
 <ol>
   <li><a href="other_features.html#3ds">3D Secure Transaction</a></li>
@@ -195,7 +195,7 @@
 
 <h3 id="a-name3dsaenable-vt-web-3dsecure"><a name="3ds"></a>Enable VT-Web 3DSecure</h3>
 
-<p>Before activate 3D Secure, merchant should ask Veritrans sales to determine whether 3D Secure MID is ready. When it's ready, and the merchant wants to process with 3D Secure transaction, the parameter <code>"credit_card_3d_secure : true</code> should be added in JSON message.</p>
+<p>Before activating 3D Secure, merchant is required to ask the Veritrans sales representative whether MID 3D Secure is ready. If it's ready and merchant needs to process with 3D Secure transaction, parameter <code>"credit_card_3d_secure : true</code> should be added in JSON message.</p>
 
 <pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
       </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
@@ -212,7 +212,7 @@
 
 <h3 id="a-nameinstallmentainstallment"><a name="installment"></a>Installment</h3>
 
-<p>To enable installment feature, the merchant must have an agreement with the acquiring bank. Merchants need to ask veritrans sales to determine whether MID for installment is ready. When it is ready, and the merchant wants to process transactions with installments, then a few parameters need to be added to the JSON message.</p>
+<p>To activate the feature of installment, merchant is required to have an agreement in advance with the Acquiring Bank. Other than that, Merchant should inform Veritrans’ Sales representative  in order to make sure whether MID for installment is ready. If it’s ready and merchant needs to process the transaction with installment, merchant should add other parameters in JSON message as below:</p>
 
 <pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
       </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
@@ -234,29 +234,29 @@
       </span><span class="p">},</span><span class="w">
   </span><span class="err">}</span><span class="w">
 </span></pre>
-<p>Information :</p>
+<p>Notes :</p>
 
 <ul>
   <li>
     <font color="#F50000">Required : True</font>
-    <p>Such transaction must use the installment.</p>
+    <p>means that the transaction should be an installment. </p>
   </li>
   <li>
     <font color="#F50000">Required : False</font>
-    <p>Such transactions may use the installment or full payment</p>
+    <p>means that the transaction should be an installment.</p>
   </li>
   <li>
     <font color="#F50000">Installment_terms</font>
-    <p>Is a program / ​​installment period that has been agreed between the merchant and the bank.</p>
+    <p>means the duration of installment which is agreed between merchant and Bank. </p>
   </li>
-  <li>You can use <font color="#F50000">"bni" : [6,12]</font> dan <font color="#F50000">"mandiri" : [6,12]</font> for installment test transaction on sandbox.</li>
+  <li>In a Sandbox stage, merchant is able to use <font color="#F50000">"bni" : [6,12]</font> dan <font color="#F50000">"mandiri" : [6,12]</font> in order to do the testing for installment.</li>
 </ul>
 
 <h3 id="a-namebinpromoabin-promo"><a name="BINpromo"></a>BIN Promo</h3>
 
-<p>Bin promo is a feature that allows merchants to offer promotions based on certain credit card issuing bank owned by the customer. In order to identify the card-issuing bank, used information BIN (Bank Identification Number) which is the first 6 digits of a credit card number.</p>
+<p>Using the feature of BIN Promo, Merchant is able to offer promotion based on the issuing bank’s card. To identify the issuing Bank’s card, Veritrans is using information from BIN (Bank Identification Number) which is the 6 first number in a credit card number.</p>
 
-<p>If a merchant wants to process transactions with Promo BIN feature, then some parameters need to be added to the JSON message.</p>
+<p>If merchant needs to process the transaction using BIN Promo, merchant should add other parameters in JSON message as below:</p>
 
 <pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
       </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
