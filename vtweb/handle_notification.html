@@ -230,7 +230,6 @@
 <span class="nb">error_log</span><span class="p">(</span><span class="s2">&quot;Menerima notifikasi dari Veritrans: &quot;</span><span class="p">);</span>
 <span class="nb">error_log</span><span class="p">(</span><span class="nv">$json_result</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">notification_key</span> <span class="o">==</span> <span class="nx">server_key</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">&quot;200&quot;</span><span class="p">)</span>
 	<span class="p">{</span>
 		<span class="c1">//OK, trancaction is success
@@ -257,7 +256,7 @@
 		<span class="c1">//error. You can see all the possibilities of the status_code and the explanation on the Veritrans Payment API Documentation
 </span>		<span class="nb">error_log</span><span class="p">(</span><span class="s2">&quot;Terjadi kesalahan. Status code: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span><span class="p">);</span>
 	<span class="p">}</span>	
-<span class="p">}</span>
+
 <span class="cp">?&gt;</span>
 
 </pre>

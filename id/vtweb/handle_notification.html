@@ -203,8 +203,7 @@
     </span><span class="err">fraud_status</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">masked_card</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">status_code</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">status_message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card transaction is successful&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">notification_key</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1a794e3f-f023-4cda-92b7-dcb7a22a46ff&quot;</span><span class="w">
+    </span><span class="err">status_message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card transaction is successful&quot;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -221,8 +220,7 @@
     </span><span class="err">masked_card</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;431111-1119&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">status_code</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
     </span><span class="err">status_message</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [MANDIRI] with code [05] and message [Do not honour]&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">notification_key</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1a794e3f-f023-4cda-92b7-dcb7a22a46ff&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></pre>
 <p>Contoh untuk menerima HTTP(POST) notification dalam PHP:</p>
 
@@ -237,7 +235,6 @@
 <span class="nb">error_log</span><span class="p">(</span><span class="s2">&quot;Menerima notifikasi dari Veritrans: &quot;</span><span class="p">);</span>
 <span class="nb">error_log</span><span class="p">(</span><span class="nv">$json_result</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">notification_key</span> <span class="o">==</span> <span class="nx">server_key</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">&quot;200&quot;</span><span class="p">)</span>
 	<span class="p">{</span>
 		<span class="c1">//OK, trancaction is success
@@ -264,7 +261,7 @@
 		<span class="c1">//error. You can see all the possibilities of the status_code and the explanation on the Veritrans Payment API Documentation
 </span>		<span class="nb">error_log</span><span class="p">(</span><span class="s2">&quot;Terjadi kesalahan. Status code: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span><span class="p">);</span>
 	<span class="p">}</span>	
-<span class="p">}</span>
+
 <span class="cp">?&gt;</span>
 </pre>
 <p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Merchant dapat menggunakan data dari HTTP(POST) notification tersebut untuk mengupdate database-nya, misalnya untuk menandai bahwa transaksi dengan order_id tersebut telah terbayar. Selain itu, informasi detail transaksi juga sudah tercatat di Merchant Administration Portal (MAP). Merchant perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut.</p>
