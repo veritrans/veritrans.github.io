@@ -105,7 +105,7 @@
 					
 					<li class=""><a href="../vtweb/other_features.html">Other Features</a></li>
 					
-					<li class=""><a href="../vtweb/payment_options.html">payment Options</a></li>
+					<li class=""><a href="../vtweb/payment_options.html">Payment Options</a></li>
 					
 					<li class=""><a href="../vtweb/sample_code.html">Sample Code</a></li>
 					
@@ -201,7 +201,7 @@
 		<td>HTTP Header</td>
 		<td>Accept: application/json<br />
 Content-Type: application/json<br />
-Authentication: Basic base64(server_key:)</td>
+Authorization: Basic base64(server_key:)</td>
 	</tr>
 	<tr>
 		<td>Sample Body Request</td>
@@ -276,7 +276,7 @@ Production : https://api.veritrans.co.id/v2/{id}/status</td>
 		<td>HTTP Header</td>
 		<td>Accept: application/json<br />
 Content-Type: application/json<br />
-Authentication: Basic base64(server_key:)</td>
+Authorization: Basic base64(server_key:)</td>
 	</tr>
 	<tr>
 		<td>Body Request</td>
@@ -305,7 +305,7 @@ Production : https://api.veritrans.co.id/v2/{id}/approve</td>
 		<td>HTTP Header</td>
 		<td>Accept: application/json<br />
 Content-Type: application/json<br />
-Authentication: Basic base64(server_key:)</td>
+Authorization: Basic base64(server_key:)</td>
 	</tr>
 	<tr>
 		<td>Body Request</td>
@@ -333,35 +333,7 @@ Production : https://api.veritrans.co.id/v2/{id}/cancel</td>
 		<td>HTTP Header</td>
 		<td>Accept: application/json<br />
 Content-Type: application/json<br />
-Authentication: Basic base64(server_key:)</td>
-	</tr>
-	<tr>
-		<td>Body Request</td>
-		<td>blank</td>
-	</tr>
-</table>
-
-<h3 id="transcript-transaction">Transcript transaction</h3>
-
-<table>
-	<tr>
-		<td>Description</td>
-		<td>Get detail information log from a transaction from particular ID(<code>transaction_id</code> or <code>order_id</code>).</td>
-	</tr>
-	<tr>
-		<td>Endpoint</td>
-		<td>Sandbox    : https://api.sandbox.veritrans.co.id/v2/{id}/transcript<br />
-Production : https://api.veritrans.co.id/v2/{id}/transcript</td>
-	</tr>
-	<tr>
-		<td>HTTP Method</td>
-		<td>GET</td>
-	</tr>
-	<tr>
-		<td>HTTP Header</td>
-		<td>Accept: application/json<br />
-Content-Type: application/json<br />
-Authentication: Basic base64(server_key:)</td>
+Authorization: Basic base64(server_key:)</td>
 	</tr>
 	<tr>
 		<td>Body Request</td>
