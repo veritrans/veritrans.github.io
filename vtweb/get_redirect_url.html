@@ -180,27 +180,28 @@
           </p>
           <div class="vtweb-get-redirect-url">
             <h2 id="obtaining-redirect-url">Obtaining Redirect URL</h2>
+
 <p>In this phase, merchant will receive URL to VT-Web payment page. To obtain the URL, merchant needs to send request to Veritrans with the following specifications:</p>
+
 <table>
+  <tbody>
     <tr>
-        <td>URL endpoint</td>
-        <td>/v2/charge</td>
+      <td>URL endpoint</td>
+      <td>/v2/charge</td>
     </tr>
     <tr>
-        <td>Header</td>
-        <td>
-            Content-Type: application/json<br />
-            Accept: application/json
-        </td>
+      <td>Header</td>
+      <td>Content-Type: application/json<br />Accept: application/json</td>
     </tr>
     <tr>
-        <td>HTTP Method</td>
-        <td>POST</td>
+      <td>HTTP Method</td>
+      <td>POST</td>
     </tr>
     <tr>
-        <td>Authorization</td>
-        <td>Basic (<code>server_key</code>:)</td>
+      <td>Authorization</td>
+      <td>Basic (<code>server_key</code>:)</td>
     </tr>
+  </tbody>
 </table>
 
 <h4 id="credit-card-transaction-using-vt-web">Credit card transaction using VT-WEB</h4>
@@ -210,9 +211,8 @@
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
     </span><span class="s2">&quot;vtweb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">&quot;credit_card&quot;</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="s2">&quot;enabled_payments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit_card&quot;</span><span class="p">],</span><span class="w">
+        </span><span class="s2">&quot;credit_card_3d_secure&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">&quot;transaction_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order45&quot;</span><span class="p">,</span><span class="w">
