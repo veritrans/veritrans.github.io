@@ -122,8 +122,6 @@
 					
 					<li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
 					
-					<li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
-					
 					<li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
 					
 					<li class=""><a href="../vtdirect/payment_options.html">Payment Options</a></li>
@@ -140,6 +138,8 @@
 					<li class=""><a href="../sandbox/testing_vtweb.html">Testing VTWeb on Sandbox</a></li>
 					
 					<li class=""><a href="../sandbox/card_list.html">Credit Card for Testing</a></li>
+					
+					<li class=""><a href="../sandbox/other_commands.html">Other Commands</a></li>
 					
 					<li class=""><a href="../sandbox/status_code.html">Status Code</a></li>
 					
@@ -260,291 +260,271 @@
 <p>Object Description <code>JSON Request</code>:</p>
 
 <table>
-    <thead>
-        <tr>
-            <th>JSON Attribute</th>
-            <th>Data Type</th>
-            <th>Required</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>payment_type</code></td>
-            <td>String</td>
-            <td>Yes</td>
-            <td>Payment type options will be used. For example: <br />
-                <ul>
-                    <li>With VT-Direct:
-                        <ul>
-                            <li>Fill “CREDIT_CARD” for payment with VT-Direct.</li>
-                        </ul>
-                    </li>
-                    <li>With VT-WEB:
-                        <ul>
-                            <li>Fill “VTWEB” for payment with VT-Web</li>
-                        </ul>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><code>transaction_details</code></td>
-            <td>JSON Object</td>
-            <td>Yes</td>
-            <td>Transaction data detail that will be paid by customer</td>
-        </tr>
-        <tr>
-            <td><code>item_details</code></td>
-            <td>JSON Array</td>
-            <td>Yes</td>
-            <td>Shopping item detail that will be paid by customer</td>
-        </tr>
-        <tr>
-            <td><code>customer_details</code></td>
-            <td>JSON Object</td>
-            <td>Yes</td>
-            <td>Customer data detail that make payment</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th style="text-align: center">JSON Attribute</th>
+      <th style="text-align: center">Data Type</th>
+      <th style="text-align: center">Required</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>payment_type</code></td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">* VT-Direct: Fill “CREDIT_CARD” for payment with VT-Direct.<br /> * VT-Web: Fill “VTWEB” for payment with VT-Web</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>transaction_details</code></td>
+      <td style="text-align: center">JSON Object</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Transaction data detail that will be paid by customer</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>item_details</code></td>
+      <td style="text-align: center">JSON Array</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Shopping item detail that will be paid by customer</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>customer_details</code></td>
+      <td style="text-align: center">JSON Object</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Customer data detail that make payment</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>Object Description <code>transaction_details</code>:</p>
 
 <table>
-    <thead>
-        <tr>
-            <th>JSON Attribute</th>
-            <th>Data Type</th>
-            <th>Required</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>order_id</code></td>
-            <td>String(50)</td>
-            <td>Yes</td>
-            <td>Customer Payment ID</td>
-        </tr>
-        <tr>
-            <td><code>gross_amount</code></td>
-            <td>Long</td>
-            <td>Yes</td>
-            <td>Total of transaction price that will be paid by customer</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th style="text-align: center">JSON Attribute</th>
+      <th style="text-align: center">Data Type</th>
+      <th style="text-align: center">Required</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>order_id</code></td>
+      <td style="text-align: center">String(50)</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Customer Payment ID</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>gross_amount</code></td>
+      <td style="text-align: center">Long</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Total of transaction price that will be paid by customer</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>Object Description <code>item_details</code>:</p>
 
 <table>
-    <thead>
-        <tr>
-            <th>JSON Attribute</th>
-            <th>Data Type</th>
-            <th>Required</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>id</code></td>
-            <td>String(50)</td>
-            <td>Yes</td>
-            <td>Item ID</td>
-        </tr>
-        <tr>
-            <td><code>price</code></td>
-            <td>Long</td>
-            <td>Yes</td>
-            <td>Item price</td>
-        </tr>
-        <tr>
-            <td><code>quantity</code></td>
-            <td>Integer</td>
-            <td>Yes</td>
-            <td>Total Item</td>
-        </tr>
-        <tr>
-            <td><code>name</code></td>
-            <td>String(50)</td>
-            <td>Yes</td>
-            <td>Item name</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th style="text-align: center">JSON Attribute</th>
+      <th style="text-align: center">Data Type</th>
+      <th style="text-align: center">Required</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>id</code></td>
+      <td style="text-align: center">String(50)</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Item ID</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>price</code></td>
+      <td style="text-align: center">Long</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Item price</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>quantity</code></td>
+      <td style="text-align: center">Integer</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Total Item</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>name</code></td>
+      <td style="text-align: center">String(50)</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Item name</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>Object Description <code>customer_details</code>:</p>
 
 <table>
-    <thead>
-        <tr>
-            <th>JSON Attribute</th>
-            <th>Data Type</th>
-            <th>Required</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>first_name</code></td>
-            <td>String(20)</td>
-            <td>Yes</td>
-            <td>Customer first name</td>
-        </tr>
-        <tr>
-            <td><code>last_name</code></td>
-            <td>String(20)</td>
-            <td>Recommended</td>
-            <td>Customer last name</td>
-        </tr>
-        <tr>
-            <td><code>email</code></td>
-            <td>String(45)</td>
-            <td>Yes</td>
-            <td>Customer email.<br />
-                Note: there is a validation to check valid email</td>
-        </tr>
-        <tr>
-            <td><code>phone</code></td>
-            <td>String(19)</td>
-            <td>Yes</td>
-            <td>Customer phone number. <br />
-                Note: Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
-        </tr>
-        <tr>
-            <td><code>billing_address</code></td>
-            <td>JSON Object</td>
-            <td>Recommended</td>
-            <td>Billing address customer</td>
-        </tr>
-        <tr>
-            <td><code>shipping_address</code></td>
-            <td>JSON Object</td>
-            <td>Recommended</td>
-            <td>Shipping address customer</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th style="text-align: center">JSON Attribute</th>
+      <th style="text-align: center">Data Type</th>
+      <th style="text-align: center">Required</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>first_name</code></td>
+      <td style="text-align: center">String(20)</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Customer first name</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>last_name</code></td>
+      <td style="text-align: center">String(20)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Customer last name</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>email</code></td>
+      <td style="text-align: center">String(45)</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Customer email.<br /> Note: there is a validation to check valid email</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>phone</code></td>
+      <td style="text-align: center">String(19)</td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: left">Customer phone number. <br /> Note: Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>billing_address</code></td>
+      <td style="text-align: center">JSON Object</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Billing address customer</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>shipping_address</code></td>
+      <td style="text-align: center">JSON Object</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Shipping address customer</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>Object Description <code>billing_address</code>:</p>
 
 <table>
-    <thead>
-        <tr>
-            <th>Attribute JSON</th>
-            <th>Data Type</th>
-            <th>Required</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>first_name</code></td>
-            <td>String(20)</td>
-            <td>Recommended</td>
-            <td>First name billing address. <br />
-                Note: No need to be filled if same as the customer details - first_name</td>
-        </tr>
-        <tr>
-            <td><code>last_name</code></td>
-            <td>String(20)</td>
-            <td>Recommended</td>
-            <td>Last name billing address</td>
-        </tr>
-        <tr>
-            <td><code>address</code></td>
-            <td>String(200)</td>
-            <td>Recommended</td>
-            <td>Address of billing address</td>
-        </tr>
-        <tr>
-            <td><code>city</code></td>
-            <td>String(20)</td>
-            <td>Recommended</td>
-            <td>Billing address city</td>
-        </tr>
-        <tr>
-            <td><code>postal_code</code></td>
-            <td>String(10)</td>
-            <td>Recommended</td>
-            <td>Billing address postal code<br />
-                Note: format alpha-numeric, can accept “-” and space</td>
-        </tr>
-        <tr>
-            <td><code>phone</code></td>
-            <td>String(19)</td>
-            <td>Recommended</td>
-            <td>Billing address phone number. <br />
-                Note : No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
-        </tr>
-        <tr>
-            <td><code>country_code</code></td>
-            <td>String(10)</td>
-            <td>Recommended</td>
-            <td>Country ID(example: IDN)</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th style="text-align: center">JSON Attribute</th>
+      <th style="text-align: center">Data Type</th>
+      <th style="text-align: center">Required</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>first_name</code></td>
+      <td style="text-align: center">String(20)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">First name billing address. <br />Note: No need to be filled if same as the customer details - first_name</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>last_name</code></td>
+      <td style="text-align: center">String(20)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Last name of billing address</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>address</code></td>
+      <td style="text-align: center">String(200)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Address of billing address</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>city</code></td>
+      <td style="text-align: center">String(20)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Billing address city</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>postal_code</code></td>
+      <td style="text-align: center">String(10)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Billing address postal code<br />Note: format alpha-numeric, can accept “-” and space</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>phone</code></td>
+      <td style="text-align: center">String(19)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Billing address phone number. <br />Note : No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>country_code</code></td>
+      <td style="text-align: center">String(10)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Country ID(example: IDN)</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>Object Description <code>shipping_address</code>:</p>
 
 <table>
-    <thead>
-        <tr>
-            <th>JSON Attribute</th>
-            <th>Data Type</th>
-            <th>Required</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>first_name</code></td>
-            <td>String(20)</td>
-            <td>Recommended</td>
-            <td>First name shipping address</td>
-        </tr>
-        <tr>
-            <td><code>last_name</code></td>
-            <td>String(20)</td>
-            <td>Recommended</td>
-            <td>Last name shipping address</td>
-        </tr>
-        <tr>
-            <td><code>address</code></td>
-            <td>String(200)</td>
-            <td>Recommended</td>
-            <td>Address of shipping address</td>
-        </tr>
-        <tr>
-            <td><code>city</code></td>
-            <td>String(20)</td>
-            <td>Recommended</td>
-            <td>Shipping address city</td>
-        </tr>
-        <tr>
-            <td><code>postal_code</code></td>
-            <td>String(10)</td>
-            <td>Optional, except for payment type using credit card, this attribute is mandatory</td>
-            <td>Shipping address postal code<br />
-                Note: format alpha-numeric, can accept “-” and space</td>
-        </tr>
-        <tr>
-            <td><code>phone</code></td>
-            <td>String(19)</td>
-            <td>Recommended</td>
-            <td>Billing address phone number. <br />
-                Note: No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
-        </tr>
-        <tr>
-            <td><code>country_code</code></td>
-            <td>String(10)</td>
-            <td>Recommended</td>
-            <td>Country ID (contoh: IDN)</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th style="text-align: center">JSON Attribute</th>
+      <th style="text-align: center">Data Type</th>
+      <th style="text-align: center">Required</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>first_name</code></td>
+      <td style="text-align: center">String(20)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">First name shipping address</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>last_name</code></td>
+      <td style="text-align: center">String(20)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Last name shipping address</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>address</code></td>
+      <td style="text-align: center">String(200)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Address of shipping address</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>city</code></td>
+      <td style="text-align: center">String(20)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Shipping address city</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>postal_code</code></td>
+      <td style="text-align: center">String(10)</td>
+      <td style="text-align: center">Optional, except for payment type using credit card, this attribute is mandatory</td>
+      <td style="text-align: left">Shipping address postal code<br />Note: format alpha-numeric, can accept “-” and space</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>phone</code></td>
+      <td style="text-align: center">String(19)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Billing address phone number. <br />Note: No need to be filled if same as the customer details - phone. Minimum length 5, can only accept numeric and symbols +, -, (space), and (). For the + symbol itself can only be placed in the front.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>country_code</code></td>
+      <td style="text-align: center">String(10)</td>
+      <td style="text-align: center">Recommended</td>
+      <td style="text-align: left">Country ID (contoh: IDN)</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>Below is a PHP example to obtain URL redirect to VT-Web payment page:</p>
