@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header navbar navbar-default navbar-fixed-top">
+      <div class="custom-container">
+        <div class="col-md-3 navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="logo"><a href="http://veritrans.co.id" title="Home"><span>Veritrans</span></a></h2>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="http://veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
+            <li><a href="http://veritrans.co.id/pricing.html" title="Check for Our Pricing">pricing</a></li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/about.html" title="About Veritrans">about us</a></li>
+                <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+                <li><a href="http://veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="http://veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">community <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/festivalbelanja.html" title="Festival Belanja Veritrans" target="_blank">events</a></li>
+                <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+                <li><a href="http://veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
+                <li><a href="http://veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right register-login">
+            <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+            <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<div class="language-toggle"> English / <a href="../id/vtdirect/integration_cc.html">Bahasa Indonesia</a></div>
+		<ul class="sidebar">
+			
+			<li>
+			
+	          <a class="parent" href="../welcome/welcome.html">Welcome</a>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Web</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
+	            
+	            <li class=""><a href="../vtweb/integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="../vtweb/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Direct</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="getting_started.html">Getting Started</a></li>
+	            
+	            <li class="active"><a href="integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">API Reference</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../sandbox/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../sandbox/charge.html">Transaction Charge</a></li>
+	            
+	            <li class=""><a href="../sandbox/installment.html">Installment</a></li>
+	            
+	            <li class=""><a href="../sandbox/bin.html">BIN Promo</a></li>
+	            
+	            <li class=""><a href="../sandbox/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../sandbox/other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="../sandbox/card_list.html">Testing Card List</a></li>
+	            
+	            <li class=""><a href="../sandbox/status_code.html">Status Code</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+	        
+			</li>
+			
+		</ul>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="vtdirect-integration-cc">
+            <h2 id="vt-direct-integration-credit-card">VT-Direct Integration (Credit Card)</h2>
+<hr />
+
+<h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-with-credit-card-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct with credit card payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
+<hr />
+
+<div class="row">
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_cc.html"><img src="../images/cc_icon.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_mandiri.html"><img src="../images/mc_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_cimb.html"><img src="../images/cic_icon_gray.jpg" /></a>
+    </div>
+  </div>
+</div>
+<hr />
+
+<h3 id="integration-steps-vt-direct-credit-card">Integration Steps VT-Direct Credit Card</h3>
+
+<ol>
+  <li>Acquire Token</li>
+  <li>Perform Charge Transaction</li>
+  <li>Check Transaction Status</li>
+</ol>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#step1" data-toggle="tab"><span>Step 1</span>Acquire Token</a></li>
+  <li><a href="#step2" data-toggle="tab"><span>Step 2</span>Perform Charge Transaction</a></li>
+  <li><a href="#step3" data-toggle="tab"><span>Step 3</span>Check Transaction Status</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="step1">
+    <!-- step 1-->
+    <!-- One -->
+
+    <h2 id="acquire-token">Acquire Token</h2>
+
+    <p><img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_1.png" /></p>
+
+    <p><em>VT-Direct Process (Step 1 - 3)</em></p>
+
+    <p>This phase comprises of step 1-3 of VT-Direct Process diagram. On this step, we will try to acquire token ID for a transaction. Token ID is a unique value that is associated with the customer payment information (credit card number, expiry date, CVV) during a transaction. You need token ID to perform charge transaction on the next step.</p>
+
+    <p>To acquire token, there are three components that need to be prepared:</p>
+
+    <ol>
+      <li><a href="#payment-form">Payment Form</a></li>
+      <li><a href="#javascript">Veritrans Javascript Library</a></li>
+      <li><a href="#additional-script">Additional Script</a></li>
+    </ol>
+
+    <!-- At this moment, there are three method of payments that are provided by VT-Direct: Credit Card, Mandiri ClickPay, dan CIMB Clicks. Every method of payments has a different step of integration. The objective of this document is to perform VT-Direct integration with credit card method of payment. For integration with other method of payment, please refer to the respective documentation page. -->
+
+    <hr />
+
+    <h3 id="payment-form">Payment Form</h3>
+
+    <p>Our payment form is saved as HTML file named <code>form_vtdirect.html</code>. The example that we provide is very simple and can be modified according to your need.</p>
+
+    <p>On credit card payment method, there are at least 4 fields to be filled:</p>
+
+    <ol>
+      <li>Credit card number</li>
+      <li>Credit card expiry month</li>
+      <li>Credit card expiry year</li>
+      <li>CVV (Card Verification Value)</li>
+    </ol>
+
+    <p>The following is a sample from the file <code>form_vtdirect.html</code>:</p>
+
+<pre class="highlight html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>VT-Direct Form Example<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Checkout<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;checkout.php&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">id=</span><span class="s">&quot;payment-form&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>Card Number<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-number&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;4811111111111114&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+
+      <span class="nt">&lt;label&gt;</span>Expiration (MM/YYYY)<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-expiry-month&quot;</span> <span class="na">size=</span><span class="s">&quot;2&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;01&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;span&gt;</span> / <span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-expiry-year&quot;</span> <span class="na">size=</span><span class="s">&quot;4&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;2020&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+      
+      <span class="nt">&lt;label&gt;</span>CVV<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-cvv&quot;</span> <span class="na">size=</span><span class="s">&quot;3&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">value=</span><span class="s">&quot;123&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+      
+      <span class="c">&lt;!-- Additional Field --&gt;</span>
+      <span class="nt">&lt;label&gt;</span>Harga<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;price&quot;</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;200500&quot;</span><span class="nt">/&gt;</span>
+
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;token-id&quot;</span> <span class="na">name=</span><span class="s">&quot;token-id&quot;</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;submit-button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+    <hr />
+
+    <h3 id="javascript">Veritrans Javascript Library</h3>
+
+    <p>This library allows customer credit card to be securely send to Veritrans server. After the credit card information is sent, Veritrans server will send back a token ID. For security purposes, we forbid the merchant to implement their own Javascript. If more feature needs to be added in Javascript library, please contact <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">Veritrans support</a>.</p>
+
+    <p>To utilise this library, you just need to add a line of HTML code at <code>form_vtdirect.html</code> with the tag <code>&lt;head&gt;</code>.</p>
+
+<pre class="highlight html">
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+</pre>
+    <!-- If you are using **production account**, please add:
+
+~~~ html
+
+<script src="https://api.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+~~~ -->
+
+    <p>If you are using sandbox account, please fill the <code>form_vtdirect.html</code> file as follows:</p>
+
+<pre class="highlight html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>VT-Direct Form Example<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  ...
+
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+    <hr />
+
+    <h3 id="additional-script">Additional Script</h3>
+
+    <p>Additional script is used to connect the content form with <code>veritrans.min.js</code>. The first script that is used is <strong>jQuery</strong>. jQuery will ease the HTML access and event addition when the form is submitted. To utilise jQuery, the code that needs to be added at the tag <code>head</code> on the file <code>form_vtdirect.html</code>:</p>
+
+<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre>
+    <p>The second script that is used is <strong>jQuery fancybox</strong>. jQuery fancybox helps in making a dynamic 3D secure confirmation form. You can download jQuery fancy box <a href="https://github.com/fancyapps/fancyBox">here</a>. Extract the library and add the following code at the tag <code>head</code> on the file <code>form_vtdirect.html</code>:</p>
+
+<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;fancybox/jquery.fancybox.pack.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;fancybox/jquery.fancybox.css&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span> <span class="nt">/&gt;</span>
+</pre>
+    <p>Make sure the javascript file path and CSS fancy box is according to your project folder structure.</p>
+
+    <p>The last script is used to integrate all the previous components that we created. On this script, we have to make sure that <strong>client key</strong> and <strong>Veritrans API URL</strong> is accurate. You can acquire the client key from <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Veritrans API URL for Sandbox environment is:</p>
+
+<pre class="highlight text">https://api.sandbox.veritrans.co.id/v2/token
+</pre>
+    <p>To improve the security of online transaction, we recommend you to activate the 3D Secure feature. There are 2 informations that need to be added for this feature to be utilised: acquiring bank (Merchant’s Bank) and transaction value.</p>
+
+    <p>If you are using sandbox environment, the acquiring bank is BNI and the transaction value is Rp 200.000,00. The sample script that we add in the tag <code>head</code> at the file <code>form_vtdirect.html</code>:</p>
+
+<pre class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="c1">// Sandbox API URL. TODO: Change with Production API URL when you're ready to go live.
+</span>  <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.sandbox.veritrans.co.id/v2/token&quot;</span><span class="p">;</span>
+
+  <span class="c1">// TODO: Change with your actual client key that can be found at Merchant Administration Portal &gt;&gt; Settings &gt;&gt; Access Key
+</span>  <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">client_key</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Client Key&gt;&quot;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="s1">'card_number'</span>     <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-number&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_month'</span>  <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-expiry-month&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_year'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-expiry-year&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_cvv'</span>        <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-cvv&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+
+      <span class="c1">// Set 'secure', 'bank', and 'gross_amount', if the merchant wants transaction to be processed with 3D Secure
+</span>      <span class="s1">'secure'</span>       <span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'bank'</span>       <span class="err">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#price&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="c1">// handler when user click the 'Pay' button.
+</span>  <span class="nx">$</span><span class="p">(</span><span class="s1">'#submit-button'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="s2">&quot;disabled&quot;</span><span class="p">);</span> 
+    <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">token</span><span class="p">(</span><span class="nx">card</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">});</span>
+
+  <span class="kd">function</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">redirect_url</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 3Dsecure transaction. Open 3Dsecure dialog
+</span>      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Open Dialog 3Dsecure'</span><span class="p">);</span>
+      <span class="nx">openDialog</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">redirect_url</span><span class="p">);</span>
+
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status_code</span> <span class="o">==</span> <span class="s1">'200'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// success 3d secure or success normal
+</span>      <span class="c1">//close 3d secure dialog if any
+</span>      <span class="nx">closeDialog</span><span class="p">();</span>
+
+      <span class="c1">// store token data in input #token_id and then submit form to merchant server
+</span>      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#token-id&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">token_id</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#payment-form&quot;</span><span class="p">).</span><span class="nx">submit</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// failed request token
+</span>      <span class="c1">//close 3d secure dialog if any
+</span>      <span class="nx">closeDialog</span><span class="p">();</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#submit-button'</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">);</span>
+      <span class="c1">// Show status message.
+</span>      <span class="nx">$</span><span class="p">(</span><span class="s1">'#message'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status_message</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Open 3DSecure dialog box
+</span>  <span class="kd">function</span> <span class="nx">openDialog</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">fancybox</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span>
+          <span class="na">href</span><span class="p">:</span> <span class="nx">url</span><span class="p">,</span>
+          <span class="na">type</span><span class="p">:</span> <span class="s1">'iframe'</span><span class="p">,</span>
+          <span class="na">autoSize</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="na">width</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+          <span class="na">height</span><span class="p">:</span> <span class="mi">420</span><span class="p">,</span>
+          <span class="na">closeBtn</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="na">modal</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Close 3DSecure dialog box
+</span>  <span class="kd">function</span> <span class="nx">closeDialog</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">fancybox</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre>
+    <p>When the customer click <code>Pay</code>, javascript will accumulate the field <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, <code>cvv</code>,  and <code>amount</code> from HTML form. These <em>fields</em> will then be sent securely to Veritrans server. If the <em>field</em> values are valid, Veritrans server will return a token ID that can be used to perform charge transaction.</p>
+
+    <p>When the token ID is acquired, <em>hidden field</em> <code>token_id</code> will be automatically filled and sent to the merchant’s server. Do note that sensitive data from the customer will not be sent to the merchant’s server (Attribute <code>name</code> not included). Merchant’s server will only receive data <code>amount</code> and <code>token_id</code>.</p>
+
+    <p>JQuery and jQuery fancy box usage is optional. You can use other javascript framework or your own script to display 3D Secure dialog.</p>
+
+    <p>The sample credit card that can be used for 3DS transaction is:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Visa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Card Number</td>
+          <td>4811 1111 1111 1114</td>
+        </tr>
+        <tr>
+          <td>CVV</td>
+          <td>123</td>
+        </tr>
+        <tr>
+          <td>Exp. Month</td>
+          <td>01</td>
+        </tr>
+        <tr>
+          <td>Exp. Year</td>
+          <td>2020</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Information about cards that can be used for testing can be found in <a href="../sandbox/card_list.html">API Reference - Testing Card List</a>.</p>
+
+  </div>
+  <!-- end of step 1-->
+
+  <div class="tab-pane" id="step2">
+    <!-- step 2-->
+
+    <!-- Two -->
+
+    <h2 id="charge-transaction">Charge Transaction</h2>
+
+    <p><img alt="vtdirect_intro2" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_2.png" /></p>
+
+    <p><em>VT-Direct Process (Step 4 - 6)</em></p>
+
+    <p>This step explains how charge transaction occurs in VT-Direct. Charge transaction implementation is assumed at the PHP file named <code>checkout.php</code>. In <code>checkout.php</code>, <code>token_id</code> and <code>price</code> attribute can be accessed charge transaction. These two attributes will be will be sent by <code>form_checkout.html</code> during <strong>Acquire Token</strong>.</p>
+
+    <p>To perform charge transaction, there are six components that need to be prepared:</p>
+
+    <ol>
+      <li>Token ID</li>
+      <li>Transaction Value</li>
+      <li>Acquiring bank</li>
+      <li>Server key</li>
+      <li>Order ID</li>
+      <li>Transaction Data
+        <ul>
+          <li>Customer Data</li>
+          <li>Item Data (Optional)</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>The first three components can be obtained from <em>field</em> in <code>form_checkout.html</code>. Server key can be obtained at <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Order ID is an unique value of a transaction which can be set by the merchant.</p>
+
+    <p>Transaction data consists of information about purchased item and customer information. Transaction data will be stored in Veritrans server and can be obtained anytime. This data is optional in nature. In general, transaction data can be obtained by adding the fields in <code>form_checkout.html</code>. Details about structure and transaction data information can be found <a href="../sandbox/charge.html#specification">here</a>.</p>
+
+    <p>Sample script <code>checkout.php</code> to perform charge transaction (simple transaction data):</p>
+
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">]))</span> 
+<span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">&quot;Empty token-id.&quot;</span><span class="p">;</span>
+  <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key&gt;&quot;</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// token_id represents the credit card that will be charged.
+// token_id can be obtained from the request through veritrans.min.js
+</span>
+<span class="nv">$token_id</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">];</span>
+
+<span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span>
+<span class="p">);</span>
+
+<span class="c1">//Data that will be sent to request charge transaction with credit card.
+</span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
+  <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
+    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span>
+    <span class="p">),</span>
+  <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</pre>
+    <p>Sample script <code>checkout.php</code> to perform charge transaction (full transaction data):</p>
+
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">]))</span> 
+<span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">&quot;Empty token-id.&quot;</span><span class="p">;</span>
+  <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key&gt;&quot;</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// token_id represents the credit card that will be charged.
+// token_id can be obtained from the request through veritrans.min.js
+</span><span class="nv">$token_id</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">];</span>
+
+<span class="c1">//Required
+</span><span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span>
+<span class="p">);</span>
+
+<span class="c1">//Optional
+</span><span class="nv">$item1_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a1'</span><span class="p">,</span>
+    <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">500000</span><span class="p">,</span>
+    <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Apple'</span>
+    <span class="p">);</span>
+
+<span class="c1">//Optional
+</span><span class="nv">$item2_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a2'</span><span class="p">,</span>
+    <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">100500</span><span class="p">,</span>
+    <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Orange'</span>
+    <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$items_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
+
+<span class="c1">//Optional
+</span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;16602&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span><span class="p">,</span>
+    <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
+    <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Obet&quot;</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;16601&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;08113366345&quot;</span><span class="p">,</span>
+    <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
+    <span class="p">);</span>
+
+<span class="c1">// Required
+</span><span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
+    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;Andri@Litani.com&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span><span class="p">,</span>
+    <span class="s1">'billing_address'</span>  <span class="o">=&gt;</span> <span class="nv">$billing_address</span><span class="p">,</span>
+    <span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span>
+    <span class="p">);</span>
+
+<span class="c1">// Data that will be send for credit card charge transaction request.
+// Required
+</span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'payment_type'</span>    <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
+  <span class="s1">'credit_card'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'token_id'</span>      <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
+    <span class="s1">'bank'</span>          <span class="o">=&gt;</span> <span class="s1">'bni'</span>
+    <span class="p">),</span>
+  <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="s1">'item_details'</span>          <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span>      <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
+  <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</pre>
+    <hr />
+
+    <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
+
+    <p>Under a certain case, charge transaction on VT-Direct can fail. Veritrans will return error message if failure occurred. The reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Error Code</th>
+          <th>Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format or content of the transaction data is invalid; Example: Wrong variable type, invalid payment method.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Invalid client or server key.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant does not have access to utilise a certain method of payment.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID has previously been used and paid.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Merchant account has been inactive for a long period of time.</td>
+        </tr>
+        <tr>
+          <td><code>411</code> Token error</td>
+          <td>Token missing, invalid, or expired.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
+
+    <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_cc.html#step3">next steps</a>.</p>
+
+  </div>
+  <!-- end of step 2-->
+
+  <div class="tab-pane" id="step3">
+    <!-- step 3-->
+
+    <!-- three -->
+
+    <h2 id="transaction-status">Transaction Status</h2>
+
+    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:</p>
+
+    <h3 id="success-response">Success Response</h3>
+
+<pre class="highlight php">$result = array(
+    &quot;transaction_id&quot; =&gt; &quot;93c6a0ff-b270-4b00-adba-f1738ff90261&quot;,
+    &quot;order_id&quot; =&gt; &quot;201303131610&quot;,
+    &quot;gross_amount&quot; =&gt; 10000.00,
+    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
+    &quot;transaction_time&quot; =&gt; &quot;2014-03-13 16:10:15&quot;,
+    &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
+    &quot;fraud_status&quot; =&gt; &quot;accept&quot;,
+    &quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
+    &quot;status_code&quot; =&gt; &quot;200&quot;,
+    &quot;status_message&quot; =&gt; &quot;OK, Credit Card transaction is successful&quot;
+);
+</pre>
+    <h3 id="failure-response">Failure Response</h3>
+
+<pre class="highlight php">$result = array(
+    &quot;transaction_id&quot; =&gt; &quot;f5507d7c-a46f-4a00-97a1-8a0b29d34ab3&quot;,
+    &quot;order_id&quot; =&gt; &quot;201303121701&quot;,
+    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
+    &quot;transaction_time&quot; =&gt; &quot;2014-07-15 16:01:30&quot;,
+    &quot;transaction_status&quot; =&gt; &quot;deny&quot;,
+    &quot;fraud_status&quot; =&gt; &quot;accept&quot;,
+    &quot;masked_card&quot; =&gt; &quot;491111-1113&quot;,
+    &quot;gross_amount&quot; =&gt; &quot;10000.00&quot;
+    &quot;status_code&quot; =&gt; &quot;202&quot;,
+    &quot;status_message&quot; =&gt; &quot;Deny by Bank [BNI] with code [05] and message [Do not honour]&quot;,
+);
+</pre>
+    <p>One of the most important information in the JSON response is the transaction status, which can be found in <code>transaction_status</code> attribute. There are three types of transaction status:</p>
+
+    <ol>
+      <li><strong>Capture</strong>: Transaction successful.</li>
+      <li><strong>Deny</strong>: Transaction rejected by bank or by Fraud Detection System (FDS).</li>
+      <li><strong>Challenge</strong>: Transaction rejected by FDS. You have to make a confirmation at Merchant Administration Portal (MAP).</li>
+    </ol>
+
+    <p>You can add the following PHP code at the last line of the file <code>checkout.php</code> to send transaction status to your customer:</p>
+
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;capture&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//success
+</span>  <span class="k">echo</span> <span class="s2">&quot;Transaction Successful. &lt;br /&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;Transaction status for order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Transaction detail:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;deny&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//deny
+</span>  <span class="k">echo</span> <span class="s2">&quot;Transaction Denied. &lt;br /&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;Transaction status for order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+
+  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Transaction detail:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;challenge&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//challenge
+</span>  <span class="k">echo</span> <span class="s2">&quot;Transaction Challenged. &lt;br /&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;Transaction status for order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+
+  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Transaction detail:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+  <span class="c1">//error
+</span>  <span class="k">echo</span> <span class="s2">&quot;Error occurred on the sent transaction data.&lt;br /&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Result:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre>
+    <p>Up till here, the payment process of a transaction is completed. If the <code>transaction_status</code> value is <code>capture</code>, the customer’s credit card has been charged to your account. In addition to sending the transaction status to the customer, you can also use the code above to update the respective database. Example, to mark if the respective <code>order_id</code> has been paid.</p>
+
+    <p>Transaction status can also be found in Merchant Administration Portal(MAP). You have to login to MAP to see the detail of the transaction. The other alternative to check on the transaction status is to use the command <a href="other_commands.html#status">VT-Direct — Acquiring Transaction Status</a>.</p>
+
+  </div>
+  <!-- end of step 3-->
+</div>
+<!-- end of tab-content-->
+
+
+
+			<div class="pagination">
+				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Direct : Getting Started</a></li><li class="right">Next: <a href="other_features.html">VT-Direct : Other Features</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 footer-nav">
+        <div class="content text-center">
+          <a href="https://www.veritrans.co.id" title="">Home</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/whatwedo.html" title="">What We Do</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/pricing.html" title="">Pricing</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/about.html" title="">About</a> <span class="divider">|</span>
+          <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
+          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>©2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../javascripts/get-token.js" type="text/javascript"></script>
+<script src="../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../javascripts/tab_custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>

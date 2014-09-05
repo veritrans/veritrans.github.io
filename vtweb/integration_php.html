@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header navbar navbar-default navbar-fixed-top">
+      <div class="custom-container">
+        <div class="col-md-3 navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="logo"><a href="http://veritrans.co.id" title="Home"><span>Veritrans</span></a></h2>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="http://veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
+            <li><a href="http://veritrans.co.id/pricing.html" title="Check for Our Pricing">pricing</a></li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/about.html" title="About Veritrans">about us</a></li>
+                <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+                <li><a href="http://veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="http://veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">community <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/festivalbelanja.html" title="Festival Belanja Veritrans" target="_blank">events</a></li>
+                <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+                <li><a href="http://veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
+                <li><a href="http://veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right register-login">
+            <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+            <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<div class="language-toggle"> English / <a href="../id/vtweb/integration_php.html">Bahasa Indonesia</a></div>
+		<ul class="sidebar">
+			
+			<li>
+			
+	          <a class="parent" href="../welcome/welcome.html">Welcome</a>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Web</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="getting_started.html">Getting Started</a></li>
+	            
+	            <li class="active"><a href="integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Direct</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../vtdirect/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../vtdirect/getting_started.html">Getting Started</a></li>
+	            
+	            <li class=""><a href="../vtdirect/integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">API Reference</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../sandbox/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../sandbox/charge.html">Transaction Charge</a></li>
+	            
+	            <li class=""><a href="../sandbox/installment.html">Installment</a></li>
+	            
+	            <li class=""><a href="../sandbox/bin.html">BIN Promo</a></li>
+	            
+	            <li class=""><a href="../sandbox/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../sandbox/other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="../sandbox/card_list.html">Testing Card List</a></li>
+	            
+	            <li class=""><a href="../sandbox/status_code.html">Status Code</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+	        
+			</li>
+			
+		</ul>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="vtweb-integration-php">
+            <div class="row">
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_php.html"><img src="../images/php.jpg" /></a>
+    <div class="caption">PHP</div>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_prestashop.html"><img src="../images/prestashop_gray.jpg" /></a>
+    <div class="caption">Prestashop</div>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_magento.html"><img src="../images/magento_gray.jpg" /></a>
+    <div class="caption">Magento</div>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_opencart.html"><img src="../images/opencart_gray.jpg" /></a>
+    <div class="caption">Opencart</div>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_woocommerce.html"><img src="../images/woocommerce_gray.jpg" /></a>
+    <div class="caption">Woocommerce</div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content">
+  <div class="tab-pane active">
+    <h3 id="vt-web-php-integration-steps">VT-Web PHP Integration Steps</h3>
+    <ol>
+  <li>Obtain VT-Web URL</li>
+  <li>Transaction Test</li>
+  <li>Transaction Notification</li>
+</ol>
+
+    <p><br /></p>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+  <li class="active"><a href="#step1" data-toggle="tab"><span>Step 1</span>Obtain VT-Web URL</a></li>
+  <li><a href="#step2" data-toggle="tab"><span>Step 2</span>Transaction Test</a></li>
+  <li><a href="#step3" data-toggle="tab"><span>Step 3</span>Transaction Notification</a></li>
+</ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="step1">
+        <!-- step 1-->
+        <!-- One -->
+
+        <h2 id="obtaining-redirect-url">Obtaining Redirect URL</h2>
+
+        <p>On this step, we will try to obtain VT-Web payment page when performing a transaction. There is at least 3 components that are required to obtain VT-Web payment page:</p>
+
+        <ol>
+          <li><code>server key</code></li>
+          <li>Transaction ID</li>
+          <li>Transaction Total Nominal</li>
+        </ol>
+
+        <p>The example below shows an order with with a random Transaction ID with a total nominal of Rp. 10.000,00. Sample PHP code that can be used to obtain and access VT-Web payment page:</p>
+
+<pre class="highlight php"><span class="cp">&lt;?php</span> 
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="c1">// Use sandbox account
+</span><span class="nx">Veritrans_Config</span><span class="o">:</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// Set our server key
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your server key&gt;'</span><span class="p">;</span>
+
+<span class="c1">// Fill transaction data
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">&quot;vtweb&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">&quot;credit_card_3d_secure&quot;</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="nv">$vtweb_url</span> <span class="o">=</span> <span class="nx">Veritrans_Vtweb</span><span class="o">::</span><span class="na">getRedirectionUrl</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
+
+<span class="c1">// Redirect 
+</span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre>
+        <p>The sample code above utilise the <strong>Veritrans-PHP</strong> library that have been downloaded during <a href="getting_started.html">Getting Started</a>. <code>Veritrans.php</code> file can be found in the <strong>Veritrans-PHP</strong> library. This file is assumed to be located in the same directory with the source code.</p>
+
+        <p>To begin with, decide the account type that we are using: Production or Sandbox account. The example above utilise the Sandbox account. Therefore, the flag <code>Veritrans_Config::$isProduction</code> is set to <code>false</code>.</p>
+
+        <p>When VT-Web page is displayed, all payment method that you have will be displayed in tab. This is the <em>default</em> if the parameter <code>enabled_payments</code> is not entered when performing charge transaction. If you wish to configure your own method of payment to be displayed in the VT-Web page, you can follow the link <a href="other_features.html">VT-Web - Other Features</a>.</p>
+
+        <p>VT-Web payment page URL can be obtained by calling <code>Veritrans_Vtweb::getRedirectionUrl</code> function where transaction data is the input. When this process is successful, customer will be redirected to the respective URL.</p>
+
+        <p>The following is the VT-Web display page for the code above:</p>
+
+        <p><img alt="VT-Web Simple" class="img-responsive img-thumbnail" src="../images/vtweb_simple.png" /></p>
+
+        <hr />
+
+        <h2 id="adding-transaction-information-optional">Adding Transaction Information (Optional)</h2>
+
+        <p>Merchant can add on various information in the variable <code>$transaction</code>, such as customer data, order item data, and method of payment. This add on data will affect the VT-Web payment page and transaction log on MAP (Merchant Administration Portal).</p>
+
+        <p>Most fields on VT-Web form page will be filled automatically and information related to order item and delivery address will be displayed. Details and complete transaction data structure in the form of JSON can be found <a href="../sandbox/charge.html#specification">here</a>.</p>
+
+        <p>PHP sample code that includes all transaction data is shown as follow:</p>
+
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="c1">// Set our server key
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your server key&gt;'</span><span class="p">;</span>
+
+<span class="c1">// Use sandbox account
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// Required
+</span><span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+  <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">145000</span><span class="p">,</span>
+  <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$item1_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a1'</span><span class="p">,</span>
+    <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">50000</span><span class="p">,</span>
+    <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="err">‘</span><span class="nx">Apple</span><span class="err">’</span>
+    <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$item2_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a2'</span><span class="p">,</span>
+    <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">45000</span><span class="p">,</span>
+    <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="err">‘</span><span class="nx">Orange</span><span class="err">’</span>
+    <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$items_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="err">“</span><span class="nx">Walter</span><span class="err">”</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;16602&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span><span class="p">,</span>
+    <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
+    <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="err">“</span><span class="nx">White</span><span class="err">”</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;16601&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;08113366345&quot;</span><span class="p">,</span>
+    <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
+    <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="err">“</span><span class="nx">Heisenberg</span><span class="err">”</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
+    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span><span class="p">,</span>
+    <span class="s1">'billing_address'</span>  <span class="o">=&gt;</span> <span class="nv">$billing_address</span><span class="p">,</span>
+    <span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span>
+    <span class="p">);</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'vtweb'</span><span class="p">,</span>
+    <span class="s1">'vtweb'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'credit_card_3d_secure'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+    <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
+    <span class="s1">'item_details'</span> <span class="o">=&gt;</span> <span class="nv">$items_details</span><span class="p">,</span>
+    <span class="p">);</span>
+
+<span class="nv">$vtweb_url</span> <span class="o">=</span> <span class="nx">Veritrans_Vtweb</span><span class="o">::</span><span class="na">getRedirectionUrl</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
+
+<span class="c1">// Go to VT-Web page
+</span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre>        <p>The following figure displays the VT-Web payment page as a result from the code above. Do note that the fields on the <strong>Shopping Details is automatically filled</strong>. Information related to <strong>Purchased Product</strong> and <strong>Shipping Details</strong> is also displayed on the VT_Web page.</p>
+
+        <p><img alt="VT-Web Complete" class="img-responsive img-thumbnail" src="../images/vtweb_complete.png" /></p>
+
+        <hr />
+
+        <h2 id="error-on-vt-web-url-request">Error On VT-Web URL Request</h2>
+
+        <p>Under a few conditions, VT-Web payment URL request can be unsuccessful. The reason of the failure can be inspected from the status code. The status code that occurs in general is:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Error Code</th>
+              <th>Explanation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>400</code> Validation error</td>
+              <td>Format or content of the transaction data is invalid. Example: Wrong variable type, invalid method of payment.</td>
+            </tr>
+            <tr>
+              <td><code>401</code> Access Denied</td>
+              <td>Invalid client or server key.</td>
+            </tr>
+            <tr>
+              <td><code>402</code> Access Denied</td>
+              <td>Merchant is not authorised to utilise a certain method of payment.</td>
+            </tr>
+            <tr>
+              <td><code>406</code> Duplicate Order ID</td>
+              <td>Order ID has been previously created and make use of.</td>
+            </tr>
+            <tr>
+              <td><code>410</code> Account Inactive</td>
+              <td>Merchant account has been inactive for a long time.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The list of status codes can be found in <a href="sandbox/status_code.html">Reference - Status Code</a>. For any inquiries, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
+
+      </div>
+      <!-- end of step 1-->
+
+      <div class="tab-pane" id="step2">
+        <!-- step 2-->
+
+        <!-- Two -->
+
+        <h2 id="transaction-test">Transaction Test</h2>
+
+        <p>On this step, we will try to perform a test transaction in VT-Web. If you are using your Sandbox account, various transaction scenario can be tested. The list of scenarios along with account information that can be tested can be found <a href="../sandbox/card_list.html">here</a>.</p>
+
+        <p>You are advised to perform a test transaction in VT-Web. The benefits of performing a test transaction are:</p>
+
+        <ol>
+          <li>To understand the flow of VT-Web.</li>
+          <li>To be aware of the payment status code from MAP (Merchant Administration Portal) and its notification.</li>
+        </ol>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+  <li class="active"><a href="#testcc" data-toggle="tab">Credit Card</a></li>
+  <li><a href="#testmandiri" data-toggle="tab">Mandiri ClickPay</a></li>
+  <li><a href="#testcimb" data-toggle="tab">CIMB Clicks</a></li>
+</ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="testcc">
+            <!-- step cc-->
+            <!-- CC -->
+
+            <h3 id="transaction-test-successful">Transaction Test Successful</h3>
+            <p>We will try to perform a successful 3D Secure Credit Card transaction. According to <a href="../sandbox/card_list.html">Reference - List of test credit cards</a>, the credit card that can be used is:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Visa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Card Number</td>
+                  <td>4811 1111 1111 1114</td>
+                </tr>
+                <tr>
+                  <td>CVV</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>Exp. Month</td>
+                  <td>01</td>
+                </tr>
+                <tr>
+                  <td>Exp. Year</td>
+                  <td>2020</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
+
+            <p><img alt="vtweb_test1" class="img-responsive img-thumbnail" src="../images/vtweb_test.png" /></p>
+
+            <p>Click Confirm Payment and VT-Web confirmation payment page will be displayed.</p>
+
+            <p><img alt="vtweb_test2" class="img-responsive img-thumbnail" src="../images/vtweb_test2.png" /></p>
+
+            <p>Click <strong>Pay</strong> and you will be redirected to 3D Secure page. Authentication page will pop out and customer simply has to click Authenticate. The following figure displays the 3D Secure authentication page on sandbox.</p>
+
+            <p><img alt="VT-Web 3D Secure" width="784" class="img-responsive img-thumbnail" src="../images/vtweb_3ds.png" /></p>
+
+            <p>After authentication process is completed, payment status will be displayed.</p>
+
+            <p><img alt="vtweb_test3" width="784" class="img-responsive img-thumbnail" src="../images/vtweb_test3.png" /></p>
+
+            <hr />
+
+            <h3 id="understanding-transaction-status">Understanding Transaction Status</h3>
+
+            <p>On our previous step, the customer obtains transaction status after payment process is completed. However, how does the merchant acquire such information? </p>
+
+            <p>Veritrans provides two means for the merchant to obtain transaction status.</p>
+
+            <ol>
+              <li>MAP (Merchant Administration Portal)</li>
+              <li>Transaction Notification</li>
+            </ol>
+
+            <h4 id="transaction-status-from-map">Transaction Status From MAP</h4>
+
+            <p>First, merchant has to log in MAP <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> beforehand. Merchant will notice the list of transaction with the respective status by selecting <a href="https://my.sandbox.veritrans.co.id/payments">Transactions</a> menu on MAP.</p>
+
+            <p><img alt="map_transaction" class="img-responsive img-thumbnail" src="../images/map_transaction.png" /></p>
+
+            <p>Merchant is able to check the transaction status by selecting the <code>Order ID</code> of a transaction item.</p>
+
+            <p><img alt="map_detail_transaction" class="img-responsive img-thumbnail" src="../images/map_detail_transaction.png" /></p>
+
+            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+
+          </div>
+          <!-- end of step cc-->
+
+          <div class="tab-pane" id="testmandiri">
+            <!-- step mandiri-->
+
+            <!-- Mandiri -->
+
+            <h3 id="transaction-test-successful-1">Transaction Test Successful</h3>
+            <p>We will try to perform a successful Mandiri ClickPay transaction. According to <a href="../sandbox/card_list.html">Reference - List of test cards</a>, the card number and token that can be used is:</p>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>Card Number</td>
+                  <td>4111 1111 1111 1111</td>
+                </tr>
+                <tr>
+                  <td>Accept Token</td>
+                  <td>000 000</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
+
+            <p><img alt="VT-Web Mandiri Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_mandiri_test1.png" /></p>
+
+            <p>Click Confirm Payment and VT-Web confirmation payment page will be displayed.</p>
+
+            <p><img alt="VT-Web Mandiri Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_mandiri_test2.png" /></p>
+
+            <p>After authentication process is completed,the status will also be updated in MAP. The following figure displays the update on MAP when Mandiri ClickPay transaction is successful.</p>
+
+            <p><img alt="VT-Web Mandiri Test 3" class="img-responsive img-thumbnail" src="../images/mandiri_status.png" /></p>
+
+            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+
+          </div>
+          <!-- end of step mandiri-->
+
+          <div class="tab-pane" id="testcimb">
+            <!-- step cimb-->
+
+            <!-- cimb -->
+
+            <h3 id="transaction-test-successful-2">Transaction Test Successful</h3>
+            <p>We will try to perform a successful CIMB Clicks transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
+
+            <p><img alt="VT-Web CIMB Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test1.png" /></p>
+
+            <p>Click Confirm Payment and customer will be redirected to a <em>dummy</em> CIMB Clicks web page.</p>
+
+            <p><img alt="VT-Web CIMB Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test2.png" /></p>
+
+            <p>When CIMB Clicks transaction step is completed, select the Pay button confirmation payment page will be displayed.</p>
+
+            <p><img alt="VT-Web CIMB Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test3.png" /></p>
+
+            <p>Transaction status on MAP will be updated. The following figure displays the update on MAP when CIMB Clicks transaction is successful.</p>
+
+            <p><img alt="VT-Web CIMB Test 4" class="img-responsive img-thumbnail" src="../images/cimb_status.png" /></p>
+
+            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+
+          </div>
+          <!-- end of step cimb-->
+
+        </div>
+        <!-- end of tab-content u/ testing-->
+
+      </div>
+      <!-- end of step 2-->
+
+      <div class="tab-pane" id="step3">
+        <!-- step 3-->
+
+        <!-- Three -->
+
+        <h2 id="transaction-notification">Transaction Notification</h2>
+
+        <p>The following steps will describe on how Veritrans will send the merchant transaction notification for every customer that process payment. After the customer process a payment, whichever <em>Transaction Status</em>, whether it is successful or failure (Eq. Payment exceeds card limit), Veritrans will send two types of notification:</p>
+
+        <h3 id="notification-through-email">1. Notification through email</h3>
+        <p>Notification through email will be send both to the email address of the customer who performs payment, as well as the merchant who accepts the payment. You can configure the email notification setting at <a href="https://my.sandbox.veritrans.co.id/settings/email_notification/">Settings - email notification</a> in MAP.</p>
+
+        <p><strong>Note:</strong> For multiple emails, please use comma as a separator. Example : Andri@myemail.com, litani@myemail.com </p>
+
+        <p><img alt="config_payment" class="img-responsive img-thumbnail" src="../images/vtweb-emailnotif.png" /></p>
+
+        <h3 id="notification-through-https-post">2. Notification through HTTP(S) POST</h3>
+        <p>Notification through HTTP(S) POST will also be send to the merchant’s server. You can take advantage of the <em>HTTP(S) POST notification</em> to update a payment status from a transaction (order) in real time. This can be done because Veritrans sends this notification the moment customer completes payment process.</p>
+
+        <p>To make use of this facility, you have to provide the <em>endpoint</em> that receives HTTP(S) POST notification. The endpoint can be set in MAP, at <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration/">Settings - Configuration</a>.</p>
+
+        <p><img alt="config_payment" class="img-responsive img-thumbnail" src="../images/vtweb-httpnotif.png" /></p>
+
+        <p><strong>Note:</strong> Make sure the HTTP(S) POST notification address is not the same as your localhost address.  </p>
+
+        <p>The content of the HTTP(S) POST notification consists of JSON object. A sample notification is described as follows:</p>
+
+        <h4 id="successful-transaction-https-post-notification">Successful Transaction HTTP(S) POST Notification</h4>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d563f026-f46a-4f7d-bc44-226c6e42e12b&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201303121700&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-07-15 12:30:16&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1405402217483&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+        <h4 id="failure-transaction-https-post-notification">Failure Transaction HTTP(S) POST Notification</h4>
+
+<pre class="highlight json"><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [MANDIRI] with code [05] and message [Do not honour]&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f5507d7c-a46f-4a00-97a1-8a0b29d34ab3&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201303121701&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-07-15 16:01:30&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;431111-1119&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></pre>        <hr />
+
+        <p>The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilising <strong>Veritrans-PHP</strong> library. This PHP code is executed when when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.</p>
+
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your server key&gt;'</span><span class="p">;</span>
+
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">isVerified</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
+  <span class="nv">$order_id</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">;</span>
+  <span class="nv">$fraud</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'capture'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// TODO set payment status in merchant's database to 'Captured'
+</span>    
+    <span class="k">echo</span> <span class="s2">&quot;Transaction order_id: &quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">&quot; successfully captured using &quot;</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">)</span>
+    <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
+</span>
+    <span class="k">echo</span> <span class="s2">&quot;Transaction order_id: &quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">&quot; successfully transfered using &quot;</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
+    <span class="c1">// TODO set payment status in merchant's database to 'Pending'
+</span>
+    <span class="k">echo</span> <span class="s2">&quot;Waiting customer to finish transaction order_id: &quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">&quot; using &quot;</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s2">&quot;credit_card&quot;</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s2">&quot;challenge&quot;</span><span class="p">){</span>
+        <span class="c1">// TODO set payment status in merchant's database to 'Denied by FDS'
+</span>        <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
+</span>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// TODO set payment status in merchant's database to 'Denied by Bank
+</span>      <span class="p">}</span>
+      <span class="k">echo</span> <span class="s2">&quot;Credit card payment for transaction order_id:&quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">&quot; is denied. Fraud status: &quot;</span> <span class="o">.</span> <span class="nv">$fraud</span><span class="p">;</span> 
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Denied'
+</span>
+      <span class="k">echo</span> <span class="s2">&quot;Payment using &quot;</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">&quot; for transaction order_id: &quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">&quot; is denied.&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre>
+      </div>
+      <!-- end of step 3-->
+
+    </div>
+    <!-- end of tab-content-->
+
+  </div>
+</div>
+
+
+			<div class="pagination">
+				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Web : Getting Started</a></li><li class="right">Next: <a href="other_features.html">VT-Web : Other Features</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 footer-nav">
+        <div class="content text-center">
+          <a href="https://www.veritrans.co.id" title="">Home</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/whatwedo.html" title="">What We Do</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/pricing.html" title="">Pricing</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/about.html" title="">About</a> <span class="divider">|</span>
+          <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
+          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>©2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../javascripts/get-token.js" type="text/javascript"></script>
+<script src="../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../javascripts/tab_custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>

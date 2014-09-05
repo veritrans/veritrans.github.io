@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header navbar navbar-default navbar-fixed-top">
+      <div class="custom-container">
+        <div class="col-md-3 navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="logo"><a href="http://veritrans.co.id" title="Home"><span>Veritrans</span></a></h2>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="http://veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
+            <li><a href="http://veritrans.co.id/pricing.html" title="Check for Our Pricing">pricing</a></li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/about.html" title="About Veritrans">about us</a></li>
+                <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+                <li><a href="http://veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="http://veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">community <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/festivalbelanja.html" title="Festival Belanja Veritrans" target="_blank">events</a></li>
+                <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+                <li><a href="http://veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
+                <li><a href="http://veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right register-login">
+            <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+            <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<div class="language-toggle"> <a href="../../sandbox/charge.html">English</a> / Bahasa Indonesia</div>
+		<ul class="sidebar">
+			
+			<li>
+        
+          <a class="parent" href="../welcome/welcome.html">Selamat Datang</a>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent">VT-Web</a>
+          <b class="caret"></b>
+          <ul class="child-menu">
+            
+            <li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+            
+            <li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+            
+            <li class=""><a href="../vtweb/integration.html">Integrasi</a></li>
+            
+            <li class=""><a href="../vtweb/other_features.html">Fitur Tambahan</a></li>
+            
+            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+            
+          </ul>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent">VT-Direct</a>
+          <b class="caret"></b>
+          <ul class="child-menu">
+            
+            <li class=""><a href="../vtdirect/introduction.html">Perkenalan</a></li>
+            
+            <li class=""><a href="../vtdirect/getting_started.html">Langkah Awal</a></li>
+            
+            <li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
+            
+            <li class=""><a href="../vtdirect/other_features.html">Fitur Tambahan</a></li>
+            
+            <li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
+            
+            <li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
+            
+          </ul>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent">Referensi API</a>
+          <b class="caret"></b>
+          <ul class="child-menu">
+            
+            <li class=""><a href="introduction.html">Perkenalan</a></li>
+            
+            <li class="active"><a href="charge.html">Charge Transaksi</a></li>
+            
+            <li class=""><a href="installment.html">Cicilan</a></li>
+            
+            <li class=""><a href="bin.html">BIN Promo</a></li>
+            
+            <li class=""><a href="other_features.html">Fitur Tambahan</a></li>
+            
+            <li class=""><a href="other_commands.html">Perintah Lain</a></li>
+            
+            <li class=""><a href="card_list.html">Daftar Kartu Uji Coba</a></li>
+            
+            <li class=""><a href="status_code.html">Status Kode</a></li>
+            
+          </ul>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+        
+			</li>
+			
+		</ul>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="id-sandbox-charge">
+            <h2 id="charge-transaksi">Charge Transaksi</h2>
+
+<p>Charge transaksi memungkinkan anda menerima pembayaran secara online. Pada bagian ini, fokus pembahasan adalah spesifikasi dan contoh charge transaksi dasar pada produk VT-Web dan VT-Direct. Pembahasan untuk kedua produk dipisah karena karena tujuan charge transaksi yang berbeda. Pada VT-Web, fungsi charge transaksi digunakan untuk memperoleh URL pembayaran, sedangkan pada VT-Direct fungsi ini digunakan untuk melakukan pembayaran.</p>
+
+<p>Penjelasan mengenai charge transaksi akan dibagi menjadi 5 bagian:</p>
+
+<ol>
+  <li>Spesifikasi HTTP(S) POST</li>
+  <li>Contoh VT-Web</li>
+  <li>Contoh VT-Direct Kartu Kredit</li>
+  <li>Contoh VT-Direct Mandiri Clickpay</li>
+  <li>Contoh VT-Direct CIMB Clicks</li>
+</ol>
+
+<p>Sebenarnya, parameter charge transaksi cukup bervariasi. Banyak parameter yang dapat dikonfigurasi untuk mengaktifkan fitur cicilan, BIN Promo, one click, dan two clicks. Agar konten materi tetap sederhana dan sistematis, fitur charge transaksi tersebut akan dibahas pada bab yang terpisah.</p>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#specification" data-toggle="tab"><span>Spesifikasi</span></a></li>
+  <li><a href="#vtweb" data-toggle="tab"><span>VT-Web</span></a></li>
+  <li><a href="#vtdirect-cc" data-toggle="tab"><span>Kartu Kredit</span></a></li>
+  <li><a href="#vtdirect-mandiri" data-toggle="tab"><span>Mandiri Clickpay</span></a></li>
+  <li><a href="#vtdirect-cimb" data-toggle="tab"><span>CIMB Clicks</span></a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="specification">
+
+    <h3 id="spesifikasi-https-post">Spesifikasi HTTP(S) POST</h3>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Deskripsi</td>
+          <td>Melakukan charge transaksi</td>
+        </tr>
+        <tr>
+          <td>Endpoint</td>
+          <td><a href="introduction.html#url-endpoint">BASE_URL</a>/charge</td>
+        </tr>
+        <tr>
+          <td>HTTP Method</td>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <td>HTTP Header</td>
+          <td>Accept: application/json <br />Content-Type: application/json <br />Authentication: Basic Base64(server_key:)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="json-request">JSON Request</h3>
+
+    <p>Keterangan objek <code>JSON request</code> charge transaksi:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>Metode pembayaran yang akan digunakan. <br /> <strong>VT-Direct</strong>: <code>"credit_card"</code>, <code>"mandiri_clickpay"</code>, atau <code>"cimb_clicks"</code> <br /><strong>VT-WEB</strong>: <code>"vtweb"</code></td>
+        </tr>
+        <tr>
+          <td>vtweb</td>
+          <td>JSON Object</td>
+          <td>Tidak</td>
+          <td>Konfigurasi VT-Web</td>
+        </tr>
+        <tr>
+          <td>transaction_details</td>
+          <td>JSON Object</td>
+          <td>Ya</td>
+          <td>Detail data transaksi yang akan dibayar oleh customer</td>
+        </tr>
+        <tr>
+          <td>item_details</td>
+          <td>JSON Array</td>
+          <td>Tidak</td>
+          <td>Detail item pembelanjaan yang akan dibayar oleh customer</td>
+        </tr>
+        <tr>
+          <td>customer_details</td>
+          <td>JSON Object</td>
+          <td>Kondisional</td>
+          <td>Detail data customer yang melakukan pembayaran<br /><strong>Note</strong>: <br />VT-Direct: Required<br />VT-Web: Opsional</td>
+        </tr>
+        <tr>
+          <td>credit_card</td>
+          <td>JSON Object</td>
+          <td>Kondisional</td>
+          <td>Detail charge VT-Direct menggunakan kartu kredit<br /><strong>Note</strong>: Hanya untuk VT-Direct menggunakan kartu kredit</td>
+        </tr>
+        <tr>
+          <td>mandiri_clickpay</td>
+          <td>JSON Object</td>
+          <td>Kondisional</td>
+          <td>Detail charge VT-Direct menggunakan Mandiri Clickpay<br /><strong>Note</strong>: Hanya untuk VT-Direct menggunakan Mandiri Clickpay</td>
+        </tr>
+        <tr>
+          <td>cimb_clicks</td>
+          <td>JSON Object</td>
+          <td>Kondisional</td>
+          <td>Detail charge VT-Direct menggunakan CIMB Clicks<br /><strong>Note</strong>: hanya untuk VT-Direct menggunakan CIMB Clicks</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan Objek <strong>request.</strong><code>vtweb</code>:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>enabled_payments</td>
+          <td>JSON Array</td>
+          <td>Tidak</td>
+          <td>Daftar metode pembayaran yang dapat digunakan pelanggan<br />String elemen array yang diperbolehkan: <code>"credit_card"</code>, <code>"cimb_clicks"</code>, dan <code>"mandiri_clickpay"</code>.<br /><strong>Note</strong>: Jika atribut ini tidak dipakai, semua metode pembayaran yang merchant miliki akan digunakan.</td>
+        </tr>
+        <tr>
+          <td>credit_card_3d_secure</td>
+          <td>Boolean</td>
+          <td>Tidak</td>
+          <td>Status apakah 3D secure digunakan</td>
+        </tr>
+        <tr>
+          <td>payment_options</td>
+          <td>JSON Object</td>
+          <td>Tidak</td>
+          <td>Fitur pembayaran yang dapat digunakan pada VT-Web. Contoh: installment.</td>
+        </tr>
+        <tr>
+          <td>credit_card_bins</td>
+          <td>JSON Array</td>
+          <td>Tidak</td>
+          <td>Daftar Bank Identification Number (BIN) yang dapat digunakan pada VT-Web untuk kartu kredit. Setiap BIN dapat memiliki <strong>1 hingga 8</strong> digit</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan objek <strong>request.</strong><code>installment</code>:</p>
+
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>installment</code> digunakan dalam <code>payment_options</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Deskripsi</td>
+        </tr>
+        <tr>
+          <td><code>required</code></td>
+          <td>Boolean</td>
+          <td>Ya</td>
+          <td>Status apakah transaksi wajib menggunakan cicilan atau tidak</td>
+        </tr>
+        <tr>
+          <td><code>installment_terms</code></td>
+          <td>JSON Object</td>
+          <td>Ya</td>
+          <td>Pilihan bank dan masa cicilan</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan objek <strong>request.installment.</strong><code>installment_terms</code>:</p>
+
+    <p><strong>Note</strong>: Minimal satu bank dan satu masa berlaku harus ada pada objek <code>installment_terms</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td><code>bni</code></td>
+          <td>JSON Array</td>
+          <td>Tidak</td>
+          <td>Daftar masa cicilan menggunakan Bank BNI<br /><strong>Note</strong>: Pada sandbox, elemen array yang valid adalah <code>6</code> dan <code>12</code><br /> Jika array kosong, semua masa cicilan yang valid akan ditampilkan</td>
+        </tr>
+        <tr>
+          <td><code>mandiri</code></td>
+          <td>JSON Array</td>
+          <td>Tidak</td>
+          <td>Daftar masa cicilan menggunakan Bank Mandiri<br /><strong>Note</strong>: Pada sandbox, elemen array yang valid adalah <code>6</code> dan <code>12</code><br /> Jika array kosong, semua masa cicilan yang valid akan ditampilkan</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan objek <code>payment_options</code>:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Deskripsi</td>
+        </tr>
+        <tr>
+          <td>installment</td>
+          <td>JSON Object</td>
+          <td>Tidak</td>
+          <td>Detail fitur cicilan pada VT-Web</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan Objek <strong>request.</strong><code>credit_card</code>:</p>
+
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>credit_card</code> digunakan dalam <code>JSON request</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>token_id</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>Token ID yang merepresentasikan informasi kartu kredit pelanggan</td>
+        </tr>
+        <tr>
+          <td>bank</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>Acquiring bank. Nilai yang valid untuk<br />Production: <code>"bni"</code>, <code>"mandiri"</code>, atau <code>"cimb"</code><br />Sandbox: <code>"bni"</code> atau <code>"mandiri"</code></td>
+        </tr>
+        <tr>
+          <td>installment_term</td>
+          <td>Integer</td>
+          <td>Tidak</td>
+          <td>Masa cicilan. Nilai yang valid untuk Sandbox: <code>6</code> atau <code>12</code></td>
+        </tr>
+        <tr>
+          <td>bins</td>
+          <td>JSON Array</td>
+          <td>Tidak</td>
+          <td>Daftar BIN yang diperbolehkan untuk transaksi. Setiap BIN dapat memiliki <strong>1 hingga 8</strong> digit</td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>String</td>
+          <td>Tidak</td>
+          <td>Digunakan pada fitur pre-authorization. Nilai yang valid: <code>"authorize"</code></td>
+        </tr>
+        <tr>
+          <td>save_token_id</td>
+          <td>Boolean</td>
+          <td>Tidak</td>
+          <td>Digunakan pada fitur one click dan two clicks. Status apakah <code>token_id</code> dapat digunakan untuk transaksi selanjutnya</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan Objek <strong>request.</strong><code>mandiri_clickpay</code>:</p>
+
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>mandiri_clickpay</code> digunakan dalam <code>JSON request</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>card_number</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>Nomor kartu Mandiri Clickpay</td>
+        </tr>
+        <tr>
+          <td>input1</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>10 digit terakhir <code>card_number</code></td>
+        </tr>
+        <tr>
+          <td>input2</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>Nilai transaksi</td>
+        </tr>
+        <tr>
+          <td>input3</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>Numeric 5 digit acak yang anda diberikan ke pelanggan</td>
+        </tr>
+        <tr>
+          <td>token</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>Angka yang diberikan oleh mesin token pelanggan setelah <code>input1</code>, <code>input2</code>, dan <code>input3</code> dimasukkan</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan Objek <strong>request.</strong><code>cimb_clicks</code>:</p>
+
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>cimb_clicks</code> digunakan dalam <code>JSON request</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>Keterangan yang ditampilkan pada halaman pembayaran CIMB Clicks</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan Objek <strong>request.</strong><code>transaction_details</code>:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String(50)</td>
+          <td>Ya</td>
+          <td>ID pemesanan pelanggan</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>Long</td>
+          <td>Ya</td>
+          <td>Nilai transaksi</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan elemen Objek <strong>request.</strong><code>item_details</code>:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>String(50)</td>
+          <td>Ya</td>
+          <td>ID barang</td>
+        </tr>
+        <tr>
+          <td>price</td>
+          <td>Long</td>
+          <td>Ya</td>
+          <td>Harga barang</td>
+        </tr>
+        <tr>
+          <td>quantity</td>
+          <td>Integer</td>
+          <td>Ya</td>
+          <td>Jumlah barang</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>String(50)</td>
+          <td>Ya</td>
+          <td>Nama barang</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>item_details</code> digunakan dalam <code>JSON request</code></p>
+
+    <hr />
+
+    <p>Keterangan Objek <strong>request.</strong><code>customer_details</code>:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>first_name</td>
+          <td>String(20)</td>
+          <td>Ya</td>
+          <td>Nama depan customer</td>
+        </tr>
+        <tr>
+          <td>last_name</td>
+          <td>String(20)</td>
+          <td>Tidak</td>
+          <td>Nama belakang customer</td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td>String(45)</td>
+          <td>Ya</td>
+          <td>Email customer.<br /><strong>Note</strong>: terdapat validasi untuk mengecek format email yang valid</td>
+        </tr>
+        <tr>
+          <td>phone</td>
+          <td>String(19)</td>
+          <td>Ya</td>
+          <td>Nomor telepon customer.<br /><strong>Note</strong>:<br />Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan ().<br />Simbol + hanya bisa ditempatkan di paling depan.</td>
+        </tr>
+        <tr>
+          <td>billing_address</td>
+          <td>JSON Object</td>
+          <td>Tidak</td>
+          <td>Billing address customer</td>
+        </tr>
+        <tr>
+          <td>shipping_address</td>
+          <td>JSON Object</td>
+          <td>Tidak</td>
+          <td>Shipping address customer</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan Objek <strong>request.customer_details.</strong><code>billing_address</code>.</p>
+
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>billing_address</code> digunakan dalam <code>customer_details</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>first_name</td>
+          <td>String(20)</td>
+          <td>Tidak</td>
+          <td>Nama depan billing address.<br /><strong>Note</strong> : Tidak perlu diisi apabila isinya sama dengan customer details - first_name</td>
+        </tr>
+        <tr>
+          <td>last_name</td>
+          <td>String(20)</td>
+          <td>Tidak</td>
+          <td>Nama belakang billing address</td>
+        </tr>
+        <tr>
+          <td>address</td>
+          <td>String(200)</td>
+          <td>Ya</td>
+          <td>Alamat billing address</td>
+        </tr>
+        <tr>
+          <td>city</td>
+          <td>String(20)</td>
+          <td>Ya</td>
+          <td>Kota billing address</td>
+        </tr>
+        <tr>
+          <td>postal_code</td>
+          <td>String(10)</td>
+          <td>Ya</td>
+          <td>Kode pos shipping address Note: format alpha-numeric, bisa menerima “-” dan spasi</td>
+        </tr>
+        <tr>
+          <td>phone</td>
+          <td>String(19)</td>
+          <td>Tidak</td>
+          <td>Nomor telpon billing address.<br /><strong>Note</strong> :<br />Tidak perlu diisi apabila isinya sama dengan customer details - phone.<br />Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan ().<br />Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+        </tr>
+        <tr>
+          <td>country_code</td>
+          <td>String(10)</td>
+          <td>Tidak</td>
+          <td>ID negara (contoh: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan objek <strong>request.customer_details.</strong><code>shipping_address</code>.</p>
+
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>shipping_address</code> digunakan dalam <code>customer_details</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>first_name</td>
+          <td>String(20)</td>
+          <td>Tidak</td>
+          <td>Nama depan shipping address</td>
+        </tr>
+        <tr>
+          <td>last_name</td>
+          <td>String(20)</td>
+          <td>Tidak</td>
+          <td>Nama belakang shipping address</td>
+        </tr>
+        <tr>
+          <td>address</td>
+          <td>String(200)</td>
+          <td>Ya</td>
+          <td>Alamat shipping address</td>
+        </tr>
+        <tr>
+          <td>city</td>
+          <td>String(20)</td>
+          <td>Ya</td>
+          <td>Kota shipping address</td>
+        </tr>
+        <tr>
+          <td>postal_code</td>
+          <td>String(10)</td>
+          <td>Ya</td>
+          <td>Kode pos shipping address. kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan.<br /><strong>Note</strong>: format alpha-numeric, bisa menerima “-” dan spasi</td>
+        </tr>
+        <tr>
+          <td>phone</td>
+          <td>String(19)</td>
+          <td>Tidak</td>
+          <td>Nomor telpon billing address.<br /><strong>Note</strong> : Tidak perlu diisi apabila isinya sama dengan customer details - phone.<br />Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan ().<br />Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
+        </tr>
+        <tr>
+          <td>country_code</td>
+          <td>String(10)</td>
+          <td>Tidak</td>
+          <td>ID negara (contoh: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="tab-pane" id="vtweb">
+
+    <p>Berikut adalah contoh JSON request VT-Web. Pada VT-Web, fungsi charge transaksi digunakan untuk memperoleh URL pembayaran. Proses charge transaksi sebenarnya baru terjadi saat pelanggan anda menyelesaikan pembayaran di URL VT-Web. Keterangan lebih lengkap mengenai deskripsi dan alur pembayaran VT-Web dapat dilihat di <a href="../vtweb/integration_php.html">VT-Web – Integrasi</a>. </p>
+
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting pada JSON request VT-Web adalah <code>payment_type</code>, <code>vtweb</code>, dan <code>transaction_details</code>. Pada contoh ini, kita akan mencoba mendapatkan URL pembayaran VT-Web ketika semua parameter digunakan dan fitur 3D Secure diaktifkan:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;vtweb&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;credit_card_3d_secure&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">}</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A17550&quot;</span><span class="p">,</span><span class="w">
+	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">},</span><span class="w">
+		</span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">}</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Perlu diperhatikan bahwa atribut <code>enabled_payments</code> tidak digunakan pada <code>vtweb</code>. Sesuai keterangan pada bagian <a href="charge.html#specification">spesifikasi</a>, semua metode pembayaran yang valid otomatis akan ditampilkan pada halaman pembayaran VT-Web. </p>
+
+    <h3 id="struktur-dan-contoh-json-respon-vt-web">Struktur dan Contoh JSON Respon VT-Web</h3>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code hasil charge transaksi VT-Web. Daftar status code lengkap dapat dilihat di <a href="status_code.html">sini</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Penjelasan hasil charge transaksi VT-Web</td>
+        </tr>
+        <tr>
+          <td>redirect_url</td>
+          <td>String</td>
+          <td>URL halaman pembayaran VT-Web.<br /><strong>Note</strong>: Atribut ini hanya muncul jika charge transaksi berhasil</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Contoh response sukses:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, success do VTWeb transaction, please go to redirect_url&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;redirect_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vtweb.sandbox.veritrans.co.id/v2/vtweb/5126cecf-61a4-4e3d-9695-bce9133a0f63&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Contoh response gagal:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;406&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Merchant charges the same order id more than once or transaction has been paid&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <h3 id="mengetahui-status-transaksi">Mengetahui Status Transaksi</h3>
+
+    <p>Pada VT-Web, anda dapat mengetahui status transaksi melalui beberapa alternatif:</p>
+
+    <ol>
+      <li><a href="../vtweb/integration_php.html#step2">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtweb/integration_php.html#step3">Handle Notifikasi</a></li>
+      <li><a href="other_commands.html">Perintah Status</a></li>
+    </ol>
+
+    <p>Silahkan merujuk halaman terkait untuk keterangan lebih lanjut.</p>
+  </div>
+
+  <div class="tab-pane" id="vtdirect-cc">
+
+    <p>Pada metode pembayaran kartu kredit, anda harus memperoleh token ID terlebih dahulu. Token ID merepresentasikan informasi kartu kredit pelanggan anda yang telah disimpan di server Veritrans. Untuk memperoleh token, anda dapat mengikuti petunjuk di <a href="../vtdirect/integration_cc.html#step1">VT-Direct – Mendapatkan Token</a>.</p>
+
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi kartu kredit VT-Direct adalah <code>payment_type</code>, <code>credit_card</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Kartu Kredit dengan semua parameter digunakan:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;credit_card&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;bank&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt; your token ID &gt;&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
+	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">},</span><span class="w">
+	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">}</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Perlu diperhatikan bahwa struktur JSON request saat fitur 3D Secure digunakan atau tidak adalah sama. Contoh JSON request di atas dapat digunakan untuk kedua jenis transaksi. Perbedaan terjadi pada tahap request token ID.</p>
+
+    <hr />
+
+    <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
+
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kode Error</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format atau konten data transaksi tidak valid. Contoh: Salah tipe variabel, metode pembayaran tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Client atau server key tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant tidak memiliki izin menggunakan metode pembayaran tertentu.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID telah digunakan dan dibayar sebelumnya.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Akun merchant tidak aktif dalam waktu lama</td>
+        </tr>
+        <tr>
+          <td><code>411</code> Token error</td>
+          <td>Token hilang, tidak valid, atau kadaluarsa</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+
+    <hr />
+
+    <h3 id="struktur-dan-contoh-json-response-vt-direct-kartu-kredit">Struktur dan Contoh JSON Response VT-Direct Kartu Kredit</h3>
+
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct kartu kredit adalah sebagai berikut:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>ID transaksi yang diberikan oleh Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>ID pemesanan yang diberikan oleh pihak merchant</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>Nilai transaksi</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Metode pembayaran transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Status transaksi. Setelah charge transaksi kartu kredit, nilai yang mungkin adalah<br /><code>capture</code> : transaksi diterima oleh bank. Jika nilai <code>fraud_status</code> adalah <code>challenge</code>, merchant harus accept transaksi secara manual.<br /><code>deny</code>: transaksi ditolak oleh bank atau FDS.<br /><code>authorize</code>: kartu kredit valid untuk transaksi (pre-authorization)</td>
+        </tr>
+        <tr>
+          <td>fraud_status</td>
+          <td>String</td>
+          <td>Hasil deteksi Fraud Detection System (FDS). NIlai yang mungkin:<br /><code>accept</code> : lolos FDS.<br /><code>deny</code>: tidak lolos FDS. Transaksi otomatis gagal.<br /><code>challenge</code>: Dipertanyakan oleh FDS. Jika <code>transaction_status</code> adalah <code>capture</code>, merchant harus accept transaksi secara manual</td>
+        </tr>
+        <tr>
+          <td>masked_card</td>
+          <td>String</td>
+          <td>6 digit depan dan 4 digit belakang nomor kartu kredit pelanggan</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code hasil charge transaksi. Daftar status code lengkap dapat dilihat di <a href="status_code.html">sini</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Penjelasan hasil charge transaksi</td>
+        </tr>
+        <tr>
+          <td>approval_code</td>
+          <td>String</td>
+          <td>Kode approval. Dapat digunakan untuk melakukan refund. Tidak ada pada denied transaction</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Contoh JSON response transaksi sukses: </p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1a1a66f7-27a7-4844-ba1f-d86dcc16ab27&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:39:22&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408869563148&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Contoh JSON response transaksi gagal:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b98fafec-fc2b-436f-bc6d-87853291cb35&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:44:15&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;491111-1113&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [BNI] with code [05] and message [Do not honour]&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <h3 id="mengetahui-status-transaksi-1">Mengetahui Status Transaksi</h3>
+
+    <p>Pada VT-Direct Kartu Kredit, status transaksi dapat diketahui segera setelah charge transaksi selesai. Sebagai alternatif, anda juga dapat mengetahui status transaksi melalui mekanisme berikut:</p>
+
+    <ol>
+      <li><a href="../vtweb/integration_php.html#step2">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtdirect/integration_cc.html#step3">Handle Notifikasi</a></li>
+      <li><a href="../vtdirect/other_commands.html#status">Perintah Status</a></li>
+    </ol>
+
+    <p>Silahkan merujuk halaman terkait untuk keterangan lebih lanjut.</p>
+
+  </div>
+
+  <div class="tab-pane" id="vtdirect-mandiri">
+
+    <p>Pada metode pembayaran Mandiri Clickpay, anda harus harus menyertakan input dan output mesin token Mandiri Clickpay. Input token terdiri dari <code>input1</code>, <code>input2</code>, dan <code>input3</code>. Sedangkan output token merupakan 6 digit angka yang dapat diperoleh dengan memasukkan ketiga parameter input. Penjelasan lebih rinci mengenai alur dan deskripsi metode Mandiri Clickpay dapat anda ikuti di <a href="../vtdirect/integration_mandiri.html">VT-Direct – Mandiri Clickpay</a>.</p>
+
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi Mandiri Clickpay VT-Direct adalah <code>payment_type</code>, <code>mandiri_clickpay</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Mandiri Clickpay dengan semua parameter digunakan:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;acard_number&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4111111111111111&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;input1&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111111111`&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;input2&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;input3&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;54321&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;token&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;000000&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
+	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">}</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <hr />
+
+    <h3 id="kesalahan-dalam-charge-transaksi-1">Kesalahan dalam Charge Transaksi</h3>
+
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kode Error</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format atau konten data transaksi tidak valid. Contoh: Salah tipe variabel, metode pembayaran tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Client atau server key tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant tidak memiliki izin menggunakan metode pembayaran tertentu.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID telah digunakan dan dibayar sebelumnya.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Akun merchant tidak aktif dalam waktu lama</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+
+    <hr />
+
+    <h3 id="struktur-dan-contoh-json-response-vt-direct-mandiri-clickpay">Struktur dan Contoh JSON Response VT-Direct Mandiri Clickpay</h3>
+
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct Mandiri Clickpay adalah sebagai berikut:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code hasil charge transaksi. Daftar status code lengkap dapat dilihat di <a href="status_code.html">sini</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Penjelasan hasil charge transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>ID transaksi yang diberikan oleh Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>ID pemesanan yang diberikan oleh pihak merchant</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Metode pembayaran transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Status transaksi. Setelah charge transaksi Mandiri Clickpay, nilai yang mungkin adalah<br /><code>settlement</code> : transaksi sukses.<br /><code>deny</code>: transaksi gagal</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>Nilai transaksi</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Contoh JSON response transaksi sukses: </p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Mandiri Clickpay transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a912e975-02c6-40cb-a95c-ed583725a64d&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:53:22&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;settlement&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Contoh JSON response transaksi gagal:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaction has been denied by Bank Mandiri with code [2102] and message [Not enough balance]&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9373b18e-5139-4186-b31b-813fb906a126&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:52:07&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <h3 id="mengetahui-status-transaksi-2">Mengetahui Status Transaksi</h3>
+
+    <p>Pada VT-Direct Mandiri Clickpay, status transaksi dapat diketahui segera setelah charge transaksi selesai. Sebagai alternatif, anda juga dapat mengetahui status transaksi melalui mekanisme berikut:</p>
+
+    <ol>
+      <li><a href="../vtweb/integration_php.html#step2">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtweb/integration_php.html#step3">Handle Notifikasi</a></li>
+      <li><a href="../vtdirect/other_commands.html#status">Perintah Status</a></li>
+    </ol>
+
+    <p>Silahkan merujuk halaman terkait untuk keterangan lebih lanjut.</p>
+
+  </div>
+
+  <div class="tab-pane" id="vtdirect-cimb">
+
+    <p>Pada metode pembayaran CIMB Clicks, charge transaksi yang berhasil hanya akan menghasilkan URL pembayaran. Anda harus me-redirect pelanggan ke URL pembayaran CIMB Clicks untuk menyelesaikan proses transaksi. Info lebih lengkap dapat diperoleh di <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">website CIMB Niaga</a>.</p>
+
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi CIMB Clicks VT-Direct adalah <code>payment_type</code>, <code>cimb_clicks</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct CIMB Clicks dengan semua parameter digunakan:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'description'</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pembelian 2 apel dan 1 jeruk&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H17550&quot;</span><span class="p">,</span><span class="w">
+	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">}</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <hr />
+
+    <h3 id="kesalahan-dalam-charge-transaksi-2">Kesalahan dalam Charge Transaksi</h3>
+
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kode Error</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format atau konten data transaksi tidak valid. Contoh: Salah tipe variabel, metode pembayaran tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Client atau server key tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant tidak memiliki izin menggunakan metode pembayaran tertentu.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID telah digunakan dan dibayar sebelumnya.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Akun merchant tidak aktif dalam waktu lama</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+
+    <hr />
+
+    <h3 id="struktur-dan-contoh-json-response-vt-direct-cimb-clicks">Struktur dan Contoh JSON Response VT-Direct CIMB Clicks</h3>
+
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct CIMB Clicks adalah sebagai berikut:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code hasil charge transaksi. Daftar status code lengkap dapat dilihat di <a href="status_code.html">sini</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Penjelasan hasil charge transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>ID transaksi yang diberikan oleh Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>ID pemesanan yang diberikan oleh pihak merchant</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Metode pembayaran transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Status transaksi. Setelah charge transaksi CIMB Clicks, nilai yang mungkin adalah<br /><code>pending</code> : menunggu hasil transaksi di halaman <code>redirect_url</code></td>
+        </tr>
+        <tr>
+          <td>redirect_url</td>
+          <td>String</td>
+          <td>URL halaman pembayaran CIMB Clicks. Pelanggan harus diredirect ke halaman ini untuk menyelesaikan pembayaran</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>Nilai transaksi</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Dua informasi penting dalam respon JSON adalah <code>transaction_status</code> dan <code>redirect_url</code>. Jika nilai <code>transaction_status</code> adalah <code>pending</code>, maka transaksi berhasil dicatat pada server Veritrans. Namun, transaksi masih belum selesai dan masih menunggu proses pembayaran pelanggan di halaman <code>redirect_url</code>.</p>
+
+    <p>Contoh JSON response saat charge transaksi berhasil: </p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, CIMB Clicks transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7db5f75a-8f41-4266-b4cb-01cd97c3c339&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:58:44&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;redirect_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.sandbox.veritrans.co.id/cimb-clicks/request?id=7db5f75a-8f41-4266-b4cb-01cd97c3c339&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <h3 id="mengetahui-status-transaksi-3">Mengetahui Status Transaksi</h3>
+
+    <p>Pada VT-Direct CIMB Clicks, status transaksi masih <code>pending</code> setelah proses charge transaksi. Status apakah transaksi berhasil atau tidak baru diketahui setelah pelanggan anda menyelesaikan pembayaran di website CIMB Clicks. Anda dapat mengetahui status transaksi melalui mekanisme berikut:</p>
+
+    <ol>
+      <li><a href="../vtdirect/integration_cimb.html#transaction-status-cimb">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtweb/integration_php.html#step3">Handle Notifikasi</a></li>
+      <li><a href="../vtdirect/other_commands.html#status">Perintah Status</a></li>
+    </ol>
+
+    <p>Silahkan merujuk halaman terkait untuk keterangan lebih lanjut.</p>
+  </div>
+</div>
+
+
+			<div class="pagination">
+				<ul><li class="left">« Sebelumnya: <a href="introduction.html">Referensi API : Perkenalan</a></li><li class="right">Selanjutnya: <a href="installment.html">Referensi API : Cicilan</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 footer-nav">
+        <div class="content text-center">
+          <a href="https://www.veritrans.co.id" title="">Home</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/whatwedo.html" title="">What We Do</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/pricing.html" title="">Pricing</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/about.html" title="">About</a> <span class="divider">|</span>
+          <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
+          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>©2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../javascripts/get-token.js" type="text/javascript"></script>
+<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>

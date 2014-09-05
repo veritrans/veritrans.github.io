@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header navbar navbar-default navbar-fixed-top">
+      <div class="custom-container">
+        <div class="col-md-3 navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="logo"><a href="http://veritrans.co.id" title="Home"><span>Veritrans</span></a></h2>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="http://veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
+            <li><a href="http://veritrans.co.id/pricing.html" title="Check for Our Pricing">pricing</a></li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/about.html" title="About Veritrans">about us</a></li>
+                <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+                <li><a href="http://veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="http://veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">community <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/festivalbelanja.html" title="Festival Belanja Veritrans" target="_blank">events</a></li>
+                <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+                <li><a href="http://veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
+                <li><a href="http://veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right register-login">
+            <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+            <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<div class="language-toggle"> English / <a href="../id/sandbox/other_features.html">Bahasa Indonesia</a></div>
+		<ul class="sidebar">
+			
+			<li>
+			
+	          <a class="parent" href="../welcome/welcome.html">Welcome</a>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Web</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
+	            
+	            <li class=""><a href="../vtweb/integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="../vtweb/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Direct</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../vtdirect/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../vtdirect/getting_started.html">Getting Started</a></li>
+	            
+	            <li class=""><a href="../vtdirect/integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">API Reference</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="charge.html">Transaction Charge</a></li>
+	            
+	            <li class=""><a href="installment.html">Installment</a></li>
+	            
+	            <li class=""><a href="bin.html">BIN Promo</a></li>
+	            
+	            <li class="active"><a href="other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="card_list.html">Testing Card List</a></li>
+	            
+	            <li class=""><a href="status_code.html">Status Code</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+	        
+			</li>
+			
+		</ul>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="sandbox-other-features">
+            <h2 id="other-features">Other Features</h2>
+
+<p>Currently, VT-Direct has additional features for credit card payment method, which are:</p>
+
+<ol>
+  <li>Pre-Authorization &amp; Capture</li>
+  <li>One Click</li>
+  <li>Two Clicks</li>
+</ol>
+
+<p>The following is tutorial to utilise those features as needed.</p>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#pre-authorization" data-toggle="tab">Pre-Authorization &amp; Capture</a></li>
+  <li><a href="#one-click" data-toggle="tab">One Click</a></li>
+  <li><a href="#two-click" data-toggle="tab">Two Clicks</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="pre-authorization">
+    <!-- step 1-->
+
+    <h2 id="pre-authorization--capture">Pre-authorization &amp; Capture</h2>
+
+    <p>Pre-authorization is used to check whether a credit card is able to perform the transaction with a specified amount. New transaction only occurs after capture process. Only VT-Direct using <strong>credit cards</strong> is allowed to use this feature. Further explanation can be checked on <a href="../vtdirect/other_features.html#pre-authorization">VT-Direct - Pre-Authorization &amp; Capture</a>.</p>
+
+    <h3 id="pre-authorization">Pre-authorization</h3>
+
+    <p>In VT-Direct, you have to obtain a <a href="../vtdirect/other_features.html#pre-authorization">authorization token ID </a> first. As to be concerned, the request token parameter for pre-authorization is different with <a href="../vtdirect/integration_cc.html#step1">normal transaction</a>. You have to add the <code>"type"</code> attribute on request token parameter.</p>
+
+    <p>After pre-authorization token is obtained, you need to add <code>"type"</code> attribute in <code>"credit_card"</code> when charging is being done. Pre-authorization function specification is similar to <a href="charge.html#specification">credit card transaction charge</a>.</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;credit_card&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;bank&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt; your token ID &gt;&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authorize&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A27550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+      </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+      </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+      </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Pre-authorization JSON response structure is similar to <a href="charge.html#vtdirect-cc">credit card transaction charge</a>. When the process is successful, <code>"transaction_status"</code> value will be <code>"authorize"</code>. Take note that, the transaction <strong>has not</strong> happened yet, the transaction occurs only when the capture function is performed. The following is example for pre-authorization JSON response :</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1ac1a089d-a587-40f1-a936-a7770667d6dd&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A27550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-25 10:20:54&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;authorize&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408936854718&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <hr />
+
+    <h3 id="capture">Capture</h3>
+
+    <p>After a successful pre-authorization process, transaction charge can be done using capture function. You need to record pre-authorization <code>"transaction_id"</code> and use it as one of the attributes of JSON request capture.</p>
+
+    <h4 id="spesification">Spesification</h4>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Description</td>
+          <td>Transaction charge which have passed pre-authorization</td>
+        </tr>
+        <tr>
+          <td>Endpoint</td>
+          <td><a href="introduction.html#url-endpoint">BASE_URL</a>/capture</td>
+        </tr>
+        <tr>
+          <td>HTTP Method</td>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <td>HTTP Header</td>
+          <td>Accept: application/json <br />Content-Type: application/json <br />Authentication: Basic Base64(server_key:)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 id="json-request">JSON Request</h4>
+
+    <p>The following is description for <code>JSON Request</code> capture transaction:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>note</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>Transaction ID which has passed pre-authorization</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>Long</td>
+          <td>Ya</td>
+          <td>The value of transactions which will be paid by the customer.<br /><strong>Note</strong>: Should not exceed the value of current pre-authorization transaction</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The following is example of <code>JSON request</code> capture :</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1ac1a089d-a587-40f1-a936-a7770667d6dd&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">55000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Take note that the value of transactions in above example is smaller than the value during pre-authorization transaction.</p>
+
+    <h4 id="json-response">JSON Response</h4>
+
+    <p>Description of JSON response is similar to <a href="charge.html#vtdirect-cc">normal transaction charge</a>. The following is example of successful capture response :</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card capture transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1ac1a089d-a587-40f1-a936-a7770667d6dd&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A27550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-25 10:20:54&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408937217061&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;55000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+  </div>
+  <div class="tab-pane" id="one-click">
+    <!-- step 2-->
+
+    <h2 id="one-click">One Click</h2>
+
+    <p>One click feature allows you to use one token on several transactions. Token represents the credit card number, expiry date, CVV, and 3D Secure authentication of the customer. This will ease the transaction because the credit card information only need to be filled once. </p>
+
+    <p>Do take note that token will be activated only after the initial transaction is performed. To use the one click feature, 3D Secure feature has to be used.</p>
+
+    <p>In general, there are two steps required to use one click feature:</p>
+
+    <ol>
+      <li>Initial Transaction
+        <ul>
+          <li>Customer fills the credit card number, CVV, expiry date.</li>
+          <li>Customer performs 3D Secure authentication.</li>
+          <li>Merchant receives token.</li>
+          <li>Merchant uses token for transaction charge.</li>
+          <li>When transaction is successful, merchant saves customer’s token in the database. We name this token as <code>saved_token</code>.</li>
+        </ul>
+      </li>
+      <li>Following Transaction
+        <ul>
+          <li>Merchant retrieves customer <code>saved_token</code> from database.</li>
+          <li>Merchant uses <code>saved_token</code> to transaction charge.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <hr />
+
+    <h3 id="first-charge">First Charge Request</h3>
+
+    <p>One click transaction charge specification is similar to the <a href="charge.html#specification">credit card transaction charge</a>. You only need to add the <code>save_token_id</code> attribute on <code>credit_card</code> JSON request</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;credit_card&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111ac7c1182-7d25-4fd1-b31b-884e572950ce&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;save_token_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A47550&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
+        </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+        </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+        </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Response that will be returned for successful transaction is as follows:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e9e88253-adc2-4c7a-914f-8278ddbaa387&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A47550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-25 10:57:06&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;saved_token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111ac7c1182-7d25-4fd1-b31b-884e572950ce&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;saved_token_id_expired_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-08-25 10:57:06&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408939026844&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Based on the response above, <code>"saved_token_id"</code> result needs to be stored by the merchant, e.g in the database. Thus, it can be used for future payments.</p>
+
+    <hr />
+
+    <h3 id="next-transaction-charge">Next Transaction Charge</h3>
+
+    <p>For the next charge request, you have to use the token id obtained from the first response, the <code>"saved_token_id"</code>. Token id is placed in the <code>"credit_card"</code> part. One click transaction charge specification is similar to <a href="charge.html#specification">credit card transaction charge</a>.</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;credit_card&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111ac7c1182-7d25-4fd1-b31b-884e572950ce&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A37550&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
+        </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+        </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+        </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">25000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga&quot;</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></pre>
+    <p>For successful transaction, the response will be as follows:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9946cade-d7d1-4dc2-801e-456c5523e48d&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A37550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-25 10:58:14&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408939095146&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+  </div>
+  <div class="tab-pane" id="two-click">
+
+    <h2 id="two-clicks">Two Clicks</h2>
+
+    <p>Similar to one click feature, two clicks allows your customers to do easier and faster transactions. After the first transaction succeed, you can save the tokens for the next transactions.</p>
+
+    <p>Two clicks token represent the number and expiry date of your customer's credit card. Your customer only need to fill out the CVV and 3D Secure authentication for the subsequent transactions. In contrast with one click feature, two clicks feature can be used on both regular and 3D Secure credit card transactions. </p>
+
+    <p>In general, there are two steps required to use two clicks feature:</p>
+
+    <ol>
+      <li>Initial Transaction
+        <ul>
+          <li>Customer fills the credit card number, CVV, expiry date.</li>
+          <li>Customer performs 3D Secure authentication.</li>
+          <li>Merchant receives token.</li>
+          <li>Merchant uses token to charge transaction.</li>
+          <li>When transaction is successful, merchant save customer’s token in the database. We name this token as <code>saved_token</code>.</li>
+        </ul>
+      </li>
+      <li>Following Transaction
+        <ul>
+          <li>Merchant retrieves customer <code>saved_token</code> from database.</li>
+          <li>Customer fills in CVV.</li>
+          <li>Perform 3D Secure authentication if required</li>
+          <li>Merchant uses <code>saved_token</code> and CVV to acquired new token</li>
+          <li>Merchant uses new token to charge transaction</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3 id="first-transaction-charge">First Transaction Charge</h3>
+
+    <p>First transaction charge for Two Clicks has similar format to the <a href="/sandbox/one_click.html#first-charge">first transaction charge on One Click</a>. During the first transaction charge, <code>"save_token_id"</code> have to be added on <code>"credit_card"</code> part of JSON request. Thus, the token will be stored for the future payments.</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;credit_card&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4811117d16c884-2cc7-4624-b0a8-10273b7f6cc8&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;save_token_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A87550&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
+        </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+        </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+        </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Response returned for successful transaction is as follows:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f50c0aef-b629-4a5b-957b-4c52f45e2e63&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A87550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-25 11:21:48&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;saved_token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4811117d16c884-2cc7-4624-b0a8-10273b7f6cc8&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;saved_token_id_expired_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-08-25 11:21:48&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408940508666&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Based on response above, <code>"saved_token_id"</code> result needs to be stored by the merchant, e.g in the database. Therefore, it can be used for future payments.</p>
+
+    <hr />
+
+    <h3 id="next-transaction-charge-1">Next Transaction Charge</h3>
+
+    <p>For the next transactions, we use <code>"saved_token_id"</code>, CVV, and 3DS authentication (if enabled) that is entered by the customer to obtain the new token. <code>two_click</code> attributes also need to be added when new request token is performed. The new token will be used for the subsequent transactions. The new token will be filled automatically into <code>&lt;input id="token-id" name="token-id" type="hidden" /&gt;</code> by <code>veritrans.min.js</code>.</p>
+
+    <p>Field number and expiry date field can be omitted because the customer only require to fill the CVV and perform 3D Secure authentication. Using the same example in <a href="../vtdirect/integration_cc.html#step2">charge transaction</a>, the following is the new request token using the <code>saved_token</code> and CVV entered by customer:</p>
+
+<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  
+  <span class="p">...</span>
+
+  <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="s1">'card_cvv'</span> <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-cvv&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'token_id'</span> <span class="err">:</span> <span class="s1">'&lt;retrieve this customer saved_token from your database&gt;'</span><span class="p">,</span>
+
+
+      <span class="s1">'two_click'</span> <span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'secure'</span> <span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'bank'</span> <span class="err">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span> <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#price&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="p">...</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</pre>
+    <p>When a new token has been obtained, you can use the token to perform transaction charge as usual. As to be concerned, the new token is <strong>not</strong> stored inside the database. Only the first token is allowed to be stored inside the database and used to <em>generate</em> the next transaction token. Two Clicks specification for charge is similar to <a href="charge.html#specification">credit card transaction</a></p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;credit_card&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">New</span><span class="w"> </span><span class="err">Token.</span><span class="w"> </span><span class="err">Generated</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">saved_token_id,</span><span class="w"> </span><span class="err">CVV,</span><span class="w"> </span><span class="err">&amp;</span><span class="w"> </span><span class="err">3D</span><span class="w"> </span><span class="err">Secure</span><span class="w">
+        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114-7baba36c-5698-47cf-9170-80efd6a2e973&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;bank&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A87551&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
+        </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//Optional</span><span class="w">
+        </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+        </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>The response for successful transaction will be as follows:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6612f7c2-f74e-4ee0-8353-90ee89865e30&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A87551&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-25 11:41:51&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408941711460&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+  </div>
+</div>
+
+
+			<div class="pagination">
+				<ul><li class="left">« Previous: <a href="bin.html">API Reference : BIN Promo</a></li><li class="right">Next: <a href="other_commands.html">API Reference : Other Commands</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 footer-nav">
+        <div class="content text-center">
+          <a href="https://www.veritrans.co.id" title="">Home</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/whatwedo.html" title="">What We Do</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/pricing.html" title="">Pricing</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/about.html" title="">About</a> <span class="divider">|</span>
+          <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
+          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>©2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../javascripts/get-token.js" type="text/javascript"></script>
+<script src="../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../javascripts/tab_custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>

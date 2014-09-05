@@ -1,0 +1,1 @@
+$(document).ready(function(){var t=function(t){var a=t||location.hash,o=a.split("?"),n=$("[href="+o[0]+"]"),h=$(o[0]);n&&n.tab("show"),o[0].length>0&&(console.log(o),$("html, body").animate({scrollTop:$(h).offset().top},0))};t(),$(".nav a").on("click",function(){window.location.hash=$(this).attr("href")}),$(".tab-pane a").click(function(a){a.target.hash&&t(a.target.hash)})});

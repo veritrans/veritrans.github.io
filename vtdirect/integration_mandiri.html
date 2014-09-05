@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header navbar navbar-default navbar-fixed-top">
+      <div class="custom-container">
+        <div class="col-md-3 navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="logo"><a href="http://veritrans.co.id" title="Home"><span>Veritrans</span></a></h2>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="http://veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
+            <li><a href="http://veritrans.co.id/pricing.html" title="Check for Our Pricing">pricing</a></li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/about.html" title="About Veritrans">about us</a></li>
+                <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+                <li><a href="http://veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="http://veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">community <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/festivalbelanja.html" title="Festival Belanja Veritrans" target="_blank">events</a></li>
+                <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+                <li><a href="http://veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
+                <li><a href="http://veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right register-login">
+            <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+            <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<div class="language-toggle"> English / <a href="../id/vtdirect/integration_mandiri.html">Bahasa Indonesia</a></div>
+		<ul class="sidebar">
+			
+			<li>
+			
+	          <a class="parent" href="../welcome/welcome.html">Welcome</a>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Web</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
+	            
+	            <li class=""><a href="../vtweb/integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="../vtweb/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Direct</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="getting_started.html">Getting Started</a></li>
+	            
+	            <li class="active"><a href="integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">API Reference</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../sandbox/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../sandbox/charge.html">Transaction Charge</a></li>
+	            
+	            <li class=""><a href="../sandbox/installment.html">Installment</a></li>
+	            
+	            <li class=""><a href="../sandbox/bin.html">BIN Promo</a></li>
+	            
+	            <li class=""><a href="../sandbox/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../sandbox/other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="../sandbox/card_list.html">Testing Card List</a></li>
+	            
+	            <li class=""><a href="../sandbox/status_code.html">Status Code</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+	        
+			</li>
+			
+		</ul>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="vtdirect-integration-mandiri">
+            <h2 id="vt-direct-integration-mandiri-clickpay">VT-Direct Integration (Mandiri ClickPay)</h2>
+<hr />
+
+<h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-with-credit-card-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct with credit card payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
+<hr />
+
+<div class="row">
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_cc.html"><img src="../images/cc_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_mandiri.html"><img src="../images/mc_icon.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_cimb.html"><img src="../images/cic_icon_gray.jpg" /></a>
+    </div>
+  </div>
+</div>
+<hr />
+
+<p>Mandiri ClickPay is one of the internet banking payment method that is provided by Mandiri Bank. This method allows customer to perform transaction by filling his 16 digits Mandiri Debit Card number and Mandiri PIN Token to validate transaction.</p>
+
+<p>To activate Mandiri ClickPay payment method (Automatically active on Sandbox mode), you have to contact Veritrans sales representative.</p>
+
+<h3 id="transaction-process-flows">Transaction Process Flows</h3>
+
+<p><img alt="Mandiri Flow" class="img-responsive img-thumbnail" src="../images/mandiri_flow.png" /></p>
+
+<h3 id="integration-steps-vt-direct-mandiri-clickpay">Integration Steps VT-Direct Mandiri Clickpay</h3>
+
+<ol>
+  <li>Create Form</li>
+  <li>Perform Charge Transaction</li>
+  <li>Check Transaction Status</li>
+</ol>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#form-mandiri" data-toggle="tab"><span>Step 1</span>Create Form</a></li>
+  <li><a href="#charge-transaction-mandiri" data-toggle="tab"><span>Step 2</span>Perform Charge Transaction</a></li>
+  <li><a href="#status-mandiri" data-toggle="tab"><span>Step 3</span>Check Transaction Status</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="form-mandiri">
+    <!-- step 1-->
+    <!-- satu -->
+
+    <h2 id="create-form">Create Form</h2>
+
+    <p>On this step, we will try to create Mandiri ClickPay transaction form at the file <code>form_vtdirect_mandiri.html</code>. We have prepared some picture assets to ease your form creation, which can be downloaded <a href="../images/payment_methods.png">here</a>. Mandiri ClickPay form is required to have <em>fields</em> as follow:</p>
+
+    <p><img alt="Mandiri Form" class="img-responsive img-thumbnail" src="../images/mandiri_form.png" /></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Field Name</th>
+          <th>Data Type</th>
+          <th style="text-align: center">Length</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Debit Card Number</td>
+          <td>Numeric</td>
+          <td style="text-align: center">16</td>
+          <td>Input at merchant website</td>
+        </tr>
+        <tr>
+          <td>Input-1</td>
+          <td>Numeric</td>
+          <td style="text-align: center">10</td>
+          <td>The last 10 digits of debit card number</td>
+        </tr>
+        <tr>
+          <td>Input-2</td>
+          <td>Numeric</td>
+          <td style="text-align: center">16</td>
+          <td>Total amount of the transaction</td>
+        </tr>
+        <tr>
+          <td>Input-3</td>
+          <td>Numeric</td>
+          <td style="text-align: center">16</td>
+          <td>Can be any random number. We suggest to make it max 5 digits</td>
+        </tr>
+        <tr>
+          <td>Token Response</td>
+          <td>Numeric</td>
+          <td style="text-align: center">6</td>
+          <td>Generated by token</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- When transaction form is displayed, field input 2 (transaction value) and input 3 (token request number) is automatically filled by your system. Input 2 is filled according to the total value of the price of goods that is purchased by your customer. The data type of input 2 is integer. If the transaction value is in decimals, round the value first. Input 3 is a 5 digits integer that you generate randomly.
+ -->
+    <!-- When the form is displayed, your customer simply need to fill the Mandiri card number field. Field input 1 will automatically filled by the last 10 digits of the respective Mandiri card number. Customer can start utilising Mandiri token following the steps as follow:
+
+1. Fill in the number `3` when Mandiri token shows `APPLI`
+2. Fill Input 1
+3. Fill Input 2
+4. Fill Input 3
+5. Mandiri Token will display challenge token
+ -->
+
+    <p>The following is a sample from the file <code>form_vtdirect_mandiri.html</code>:</p>
+
+<pre class="highlight html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>VT-Direct Form Example<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  
+  <span class="nx">updateInput1</span><span class="p">();</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#card-number'</span><span class="p">).</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">updateInput1</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#input3'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">random5digit</span><span class="p">());</span>
+
+  <span class="kd">function</span> <span class="nx">updateInput1</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">ccNumber</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#card-number'</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">ccNumber</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#input1'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">ccNumber</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">ccNumber</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">ccNumber</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">10</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">paddy</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">pad_char</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">c</span> <span class="o">!==</span> <span class="s1">'undefined'</span> <span class="p">?</span> <span class="nx">c</span> <span class="p">:</span> <span class="s1">'0'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">pad</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nx">p</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="nx">pad_char</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">pad</span> <span class="o">+</span> <span class="nx">n</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="nx">pad</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">random5digit</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="nx">paddy</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">99999</span><span class="p">),</span> <span class="mi">5</span><span class="p">);</span> 
+  <span class="p">}</span>
+
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Mandiri Clickpay Transaction<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Activate your Mandiri Token<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Insert Mandiri Token password<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Click 3 when Mandiri Token displays APPLI.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Fill &quot;Input 1&quot;: Last 10 digit of your Mandiri Debit card<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Fill &quot;Input 2&quot;: Transaction Value<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Fill &quot;Input 3&quot;: Request Number<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Fill your Mandiri Token response into “Challenge Token”<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ll&gt;</span>
+
+    <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;checkout_mandiri.php&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">id=</span><span class="s">&quot;payment-form&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>Card Number<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-number&quot;</span> <span class="na">name=</span><span class="s">&quot;card-number&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;4111111111111111&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+      
+      <span class="nt">&lt;label&gt;</span>Input 1<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;input1&quot;</span> <span class="na">name=</span><span class="s">&quot;input1&quot;</span> <span class="na">size=</span><span class="s">&quot;10&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">readonly=</span><span class="s">&quot;readonly&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+
+      <span class="nt">&lt;label&gt;</span>Input 2<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;input2&quot;</span> <span class="na">name=</span><span class="s">&quot;input2&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;200500&quot;</span> <span class="na">readonly=</span><span class="s">&quot;readonly&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+
+      <span class="nt">&lt;label&gt;</span>Input 3<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;input3&quot;</span> <span class="na">name=</span><span class="s">&quot;input3&quot;</span> <span class="na">size=</span><span class="s">&quot;5&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">readonly=</span><span class="s">&quot;readonly&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+
+      <span class="nt">&lt;label&gt;</span>Challenge Token<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;token&quot;</span> <span class="na">name=</span><span class="s">&quot;token&quot;</span> <span class="na">size=</span><span class="s">&quot;10&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;000000&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;submit-button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+</pre>
+    <p>The above form utilise the jQuery library that can be modified as needed. When the form is first shown, <em>field</em> input 2 and 3 are automatically filled. Input 2 is the total transaction value. Input 3 is the 5 digit numeric that is generated randomly by Javascript.</p>
+
+    <p>Javascript also allows field input 1 automatically filled when your customer insert their Mandiri Debit card. Customer simply has to use the Mandiri Token to fill the challenge field and these informations will be submitted to <code>checkout_mandiri.php</code>. This file consists of implementations to charge transaction using Mandiri ClickPay.</p>
+
+    <p>To ease the transaction process, we recommend that the Mandiri ClickPay transaction detail is filled comprehensively in the form page.</p>
+  </div>
+  <div class="tab-pane" id="charge-transaction-mandiri">
+    <!-- step 2-->
+    <!-- dua -->
+
+    <h2 id="perform-charge-transaction">Perform Charge Transaction</h2>
+
+    <p>To perform charge transaction using Mandiri ClickPay, the steps required are as follows:</p>
+
+    <ul>
+      <li><code>payment_type</code> parameter has to be set as <code>mandiri_clickpay</code>.</li>
+      <li>
+        <p>New JSON object has to be added, with the name <code>mandiri_clickpay</code>, and has the pairing name/value as follows:</p>
+
+        <ul>
+          <li>"card_number" → debit card number</li>
+          <li>"input1" → last 10 digits of the debit card number</li>
+          <li>"input2" → total transaction value</li>
+          <li>"input3" → merchant order id</li>
+          <li>"token" → token that is filled by the customer</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>A few informations that can be accessed from the file <code>form_vtdirect_mandiri.html</code> are: Mandiri Debit card number, input 1, input 2, input 3, and token challenge.</p>
+
+    <p>To perform transaction charge in Mandiri ClickPay, we can use Veritrans PHP Library. The following is an example of charge transaction implementation in the file <code>checkout_mandiri.php</code>:</p>
+
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key&gt;&quot;</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="nv">$card_number</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'card-number'</span><span class="p">];</span>
+<span class="nv">$input1</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'input1'</span><span class="p">];</span>
+<span class="nv">$input2</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'input2'</span><span class="p">];</span>
+<span class="nv">$input3</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'input3'</span><span class="p">];</span>
+<span class="nv">$token</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token'</span><span class="p">];</span>
+
+<span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$input2</span>
+<span class="p">);</span>
+
+<span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span> <span class="c1">// Optional
+</span>    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;Andri@Litani.com&quot;</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span>
+    <span class="p">);</span>
+
+<span class="c1">// Data that will be sent for charge transaction request with Mandiri ClickPay.
+</span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'mandiri_clickpay'</span><span class="p">,</span>
+  <span class="s1">'mandiri_clickpay'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'card_number'</span> <span class="o">=&gt;</span> <span class="nv">$card_number</span><span class="p">,</span>
+      <span class="s1">'input1'</span> <span class="o">=&gt;</span> <span class="nv">$input1</span><span class="p">,</span>
+      <span class="s1">'input2'</span> <span class="o">=&gt;</span> <span class="nv">$input2</span><span class="p">,</span>
+      <span class="s1">'input3'</span> <span class="o">=&gt;</span> <span class="nv">$input3</span><span class="p">,</span>
+      <span class="s1">'token'</span> <span class="o">=&gt;</span> <span class="nv">$token</span>
+    <span class="p">),</span>
+  <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
+  <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</pre>
+    <p>On the above example, we utilise the mandiri Clickpay, transaction, and customer data as the charge transaction parameter. You can add additional data during charge transaction, such as: Customer address, Delivery address, and item information.
+To add this data, you can check <a href="../sandbox/charge.html#specification">API Reference - Charge Transaction</a>.</p>
+
+    <p>When the transaction is completed, customer can proceed back to your website. To do this, you have to fill in the callback URL configuration in MAP (Merchant Administration Portal). For more information, please refer to the menu <a href="getting_started.html">Getting Started</a>.</p>
+
+    <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
+
+    <p>Under a certain case, charge transaction on VT-Direct can fail. Veritrans will return an error message if failure occurred, the reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Error Code</th>
+          <th>Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format or content of the transaction data is invalid; Example: Wrong variable type, invalid payment method.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Invalid client or server key.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant does not have access to utilise a certain method of payment.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID has previously been used and paid.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Merchant account has been inactive for a long period of time.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
+
+    <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_mandiri.html#status-mandiri">next step</a>.</p>
+
+  </div>
+  <div class="tab-pane" id="status-mandiri">
+    <!-- step 3-->
+    <!-- tiga -->
+
+    <h2 id="transaction-status">Transaction Status</h2>
+
+    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:</p>
+
+<pre class="highlight php">$result = array(
+    &quot;transaction_id&quot; =&gt; &quot;cddd6c1f-3b03-4c89-b0a8-0ea7dccf5217&quot;,
+    &quot;order_id&quot; =&gt; &quot;201404031721&quot;,
+    &quot;gross_amount&quot; =&gt; &quot;10000&quot;,
+    &quot;payment_type&quot; =&gt; &quot;mandiri_clickpay&quot;,
+    &quot;transaction_time&quot; =&gt; &quot;2014-04-03 17:21:46&quot;,
+    &quot;transaction_status&quot; =&gt; &quot;settlement&quot;,
+    &quot;status_code&quot; =&gt; &quot;200&quot;,
+    &quot;status_message&quot; =&gt; &quot;OK, Mandiri Clickpay transaction is successful&quot;
+);
+</pre>
+    <p>One of the most important information in the JSON response is the transaction status. There are two types of transaction status for Mandiri ClickPay charge transaction response:</p>
+
+    <ol>
+      <li><strong>settlement</strong>: Transaction successful.</li>
+      <li><strong>deny</strong>: Transaction rejected by bank.</li>
+    </ol>
+
+    <p>You can add the following PHP code at the last line of the file <code>checkout_mandiri.php</code> to send transaction status to your customer:</p>
+
+<pre class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;settlement&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//success
+</span>  <span class="k">echo</span> <span class="s2">&quot;Mandiri ClickPay Transaction Successful. &lt;br /&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;Transaction status for order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Transaction details:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;deny&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//deny
+</span>  <span class="k">echo</span> <span class="s2">&quot;Mandiri ClickPay Transaction Failed. &lt;br /&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;Transaction status for order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Transaction details:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">//error
+</span>  <span class="k">echo</span> <span class="s2">&quot;Errors occurs on the sent transaction data.&lt;br /&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Result:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</pre>
+    <p>Up till here, the payment process of a Mandiri ClickPay transaction is completed. If <code>transaction_status</code> value is <code>200</code>, the transaction value has been settled to your account. In addition to sending the transaction status to the customer, you can also use the code above to update the respective database. Example, to mark if the respective <code>order_id</code> has been paid.</p>
+
+    <p>Transaction status can also be found in Merchant Administration Portal (MAP). You have to login to MAP to see the detail of the transaction. The other alternative to check on the transaction status is to use the command <a href="other_commands.html#status">VT-Direct — Acquiring Transaction Status</a>.</p>
+
+  </div>
+</div>
+
+
+			<div class="pagination">
+				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Direct : Getting Started</a></li><li class="right">Next: <a href="other_features.html">VT-Direct : Other Features</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 footer-nav">
+        <div class="content text-center">
+          <a href="https://www.veritrans.co.id" title="">Home</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/whatwedo.html" title="">What We Do</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/pricing.html" title="">Pricing</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/about.html" title="">About</a> <span class="divider">|</span>
+          <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
+          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>©2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../javascripts/get-token.js" type="text/javascript"></script>
+<script src="../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../javascripts/tab_custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>

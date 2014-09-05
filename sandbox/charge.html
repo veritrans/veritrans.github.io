@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header navbar navbar-default navbar-fixed-top">
+      <div class="custom-container">
+        <div class="col-md-3 navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="logo"><a href="http://veritrans.co.id" title="Home"><span>Veritrans</span></a></h2>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="http://veritrans.co.id/index.html#vt-products" title="Our Online Payment Products">products</a></li>
+            <li><a href="http://veritrans.co.id/pricing.html" title="Check for Our Pricing">pricing</a></li>
+
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/about.html" title="About Veritrans">about us</a></li>
+                <li><a href="http://docs.veritrans.co.id/faq/general.html" title="FAQ & How To">FAQ</a></li>
+                <li><a href="http://veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="http://veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">developer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">community <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://veritrans.co.id/festivalbelanja.html" title="Festival Belanja Veritrans" target="_blank">events</a></li>
+                <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+                <li><a href="http://veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
+                <li><a href="http://veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right register-login">
+            <li class="pull-left"><a href="https://my.veritrans.co.id/register" class="register">register</a></li>
+            <li class="pull-left"><a href="https://my.veritrans.co.id/login">login</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<div class="language-toggle"> English / <a href="../id/sandbox/charge.html">Bahasa Indonesia</a></div>
+		<ul class="sidebar">
+			
+			<li>
+			
+	          <a class="parent" href="../welcome/welcome.html">Welcome</a>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Web</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
+	            
+	            <li class=""><a href="../vtweb/integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="../vtweb/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">VT-Direct</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="../vtdirect/introduction.html">Introduction</a></li>
+	            
+	            <li class=""><a href="../vtdirect/getting_started.html">Getting Started</a></li>
+	            
+	            <li class=""><a href="../vtdirect/integration.html">Integration</a></li>
+	            
+	            <li class=""><a href="../vtdirect/other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="../vtdirect/other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent">API Reference</a>
+	          <b class="caret"></b>
+	          <ul class="child-menu">
+	            
+	            <li class=""><a href="introduction.html">Introduction</a></li>
+	            
+	            <li class="active"><a href="charge.html">Transaction Charge</a></li>
+	            
+	            <li class=""><a href="installment.html">Installment</a></li>
+	            
+	            <li class=""><a href="bin.html">BIN Promo</a></li>
+	            
+	            <li class=""><a href="other_features.html">Other Features</a></li>
+	            
+	            <li class=""><a href="other_commands.html">Other Commands</a></li>
+	            
+	            <li class=""><a href="card_list.html">Testing Card List</a></li>
+	            
+	            <li class=""><a href="status_code.html">Status Code</a></li>
+	            
+	          </ul>
+	        
+			</li>
+			
+			<li>
+			
+	          <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+	        
+			</li>
+			
+		</ul>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="sandbox-charge">
+            <h2 id="transaction-charge">Transaction Charge</h2>
+
+<p>Transaction charge allows you to receive payment online. On this section, the focus is on specifications and example of basic transaction charge on VT-Web product and VT-Direct product, both of products will be described seperately because the purpose of charging transaction is different. In VT-Web, transaction charge function is used to obtain payment URL, while the function is used for payment in VT-Direct.</p>
+
+<p>The explanation of transaction charge is divided into 5 sections:</p>
+
+<ol>
+  <li>HTTP(S) POST specification</li>
+  <li>Example of VT-Web</li>
+  <li>Example of VT-Direct for credit card</li>
+  <li>Example of VT-Direct for Mandiri Clickpay</li>
+  <li>Example of VT-Direct for CIMB Clicks</li>
+</ol>
+
+<p>There are various parameters in transaction charge, some parameters need to be configured to activate several features such as: Installment, BIN Promo, one click, and two clicks. Transaction charge features will be described in systematic way in different sections.</p>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#specification" data-toggle="tab"><span>specification</span></a></li>
+  <li><a href="#vtweb" data-toggle="tab"><span>VT-Web</span></a></li>
+  <li><a href="#vtdirect-cc" data-toggle="tab"><span>Credit Card</span></a></li>
+  <li><a href="#vtdirect-mandiri" data-toggle="tab"><span>Mandiri Clickpay</span></a></li>
+  <li><a href="#vtdirect-cimb" data-toggle="tab"><span>CIMB Clicks</span></a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="specification">
+
+    <h3 id="https-post-specification">HTTP(S) POST Specification</h3>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Description</td>
+          <td>Do charge transaction</td>
+        </tr>
+        <tr>
+          <td>Endpoint</td>
+          <td><a href="introduction.html#url-endpoint">BASE_URL</a>/charge</td>
+        </tr>
+        <tr>
+          <td>HTTP Method</td>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <td>HTTP Header</td>
+          <td>Accept: application/json <br />Content-Type: application/json <br />Authentication: Basic Base64(server_key:)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="json-request">JSON Request</h3>
+
+    <p>Description of <code>JSON request</code> transaction charge:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>used payment method. <br /> <strong>VT-Direct</strong>: <code>"credit_card"</code>, <code>"mandiri_clickpay"</code>, or <code>"cimb_clicks"</code> <br /><strong>VT-WEB</strong>: <code>"vtweb"</code></td>
+        </tr>
+        <tr>
+          <td>vtweb</td>
+          <td>JSON Object</td>
+          <td>No</td>
+          <td>VT-Web Configuration</td>
+        </tr>
+        <tr>
+          <td>transaction_details</td>
+          <td>JSON Object</td>
+          <td>Yes</td>
+          <td>Transaction details that will be paid to customers</td>
+        </tr>
+        <tr>
+          <td>item_details</td>
+          <td>JSON Array</td>
+          <td>No</td>
+          <td>Shopping item details that will be paid by customer</td>
+        </tr>
+        <tr>
+          <td>customer_details</td>
+          <td>JSON Object</td>
+          <td>Conditional</td>
+          <td>customer data Details that make payment <br /><strong>Note</strong>: <br />VT-Direct: Required<br />VT-Web: Optional</td>
+        </tr>
+        <tr>
+          <td>credit_card</td>
+          <td>JSON Object</td>
+          <td>Conditional</td>
+          <td>VT-Direct charge details using credit card<br /><strong>Note</strong>: Only for VT-Direct that is using credit card</td>
+        </tr>
+        <tr>
+          <td>mandiri_clickpay</td>
+          <td>JSON Object</td>
+          <td>Conditional</td>
+          <td>VT-Direct charge details using Mandiri Clickpay<br /><strong>Note</strong>: Only for VT-Direct that is using Mandiri Clickpay</td>
+        </tr>
+        <tr>
+          <td>cimb_clicks</td>
+          <td>JSON Object</td>
+          <td>Conditional</td>
+          <td>VT-Direct charge details using CIMB Clicks<br /><strong>Note</strong>: Only for VT-Direct that is using CIMB Clicks</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.</strong><code>vtweb</code> object description.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>enabled_payments</td>
+          <td>JSON Array</td>
+          <td>No</td>
+          <td>List of payment method that can be used by customer<br />Array element string that is allowed: <code>"credit_card"</code>, <code>"cimb_clicks"</code>, dan <code>"mandiri_clickpay"</code>.<br /><strong>Note</strong>: If this attribute is un used, all  payment methods registered to merchant will automatically used.</td>
+        </tr>
+        <tr>
+          <td>credit_card_3d_secure</td>
+          <td>Boolean</td>
+          <td>No</td>
+          <td>Status to indicate whether 3D secure is used or not</td>
+        </tr>
+        <tr>
+          <td>payment_options</td>
+          <td>JSON Object</td>
+          <td>No</td>
+          <td>Payment features that can be used on VT-Web. Example: installment.</td>
+        </tr>
+        <tr>
+          <td>credit_card_bins</td>
+          <td>JSON Array</td>
+          <td>No</td>
+          <td>List of credit card's BIN (Bank Identification Number) that can be used on VT-Web. All BIN can have 1 till 8 digits.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.</strong><code>installment</code> object description.</p>
+
+    <p><strong>Note</strong>: Required status is only applied if <code>installment</code> object is used in <code>payment_options</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td><code>required</code></td>
+          <td>Boolean</td>
+          <td>Yes</td>
+          <td>Status to indicate whether installment is required or not</td>
+        </tr>
+        <tr>
+          <td><code>installment_terms</code></td>
+          <td>JSON Object</td>
+          <td>Yes</td>
+          <td>Bank options and installment period</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.installment.</strong><code>installment_terms</code> Object Description.</p>
+
+    <p><strong>Note</strong>: At least one bank and one installment period have to be exists on <code>installment_terms</code> object</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td><code>bni</code></td>
+          <td>JSON Array</td>
+          <td>No</td>
+          <td>List of installment periods using BNI Bank<br /><strong>Note</strong>: In Sandbox environment, valid array elements are <code>6</code> and <code>12</code>. If array is empty, all valid installment period will be shown.</td>
+        </tr>
+        <tr>
+          <td><code>mandiri</code></td>
+          <td>JSON Array</td>
+          <td>No</td>
+          <td>List of Installment term using Mandiri bank<br /><strong>Note</strong>: In Sandbox environment, valid array elements are <code>6</code> and <code>12</code>. If array is empty, all valid installment period will be shown.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.</strong><code>payment_options</code> object description:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>installment</td>
+          <td>JSON Object</td>
+          <td>No</td>
+          <td>Detail of Installment Feature in VT-Web</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.</strong><code>credit_card</code> object description.</p>
+
+    <p><strong>Note</strong>: required status only applied if <code>credit card</code> object is used in <code>JSON request</code> </p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>token_id</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>Token ID represents customer's credit card information</td>
+        </tr>
+        <tr>
+          <td>bank</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>Acquiring bank. Valid values for<br />Production: <code>"bni"</code>, <code>"mandiri"</code>, or <code>"cimb"</code><br />Sandbox: <code>"bni"</code> or <code>"mandiri"</code></td>
+        </tr>
+        <tr>
+          <td>installment_term</td>
+          <td>Integer</td>
+          <td>No</td>
+          <td>Installment Term. Valid value for Sandbox: <code>6</code> or <code>12</code></td>
+        </tr>
+        <tr>
+          <td>bins</td>
+          <td>JSON Array</td>
+          <td>No</td>
+          <td>List of BINs that are allowed for transaction. All BIN can have <strong>1 till 8</strong> digit(s)</td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>String</td>
+          <td>No</td>
+          <td>Used on pre-authorization feature. Valid value: <code>"authorize"</code></td>
+        </tr>
+        <tr>
+          <td>save_token_id</td>
+          <td>Boolean</td>
+          <td>No</td>
+          <td>Used on 'one click' or 'two click' feature. Status to indicate whether <code>token_id</code> can be used for the next transaction</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.</strong><code>mandiri_clickpay</code> Object Description.</p>
+
+    <p><strong>Note</strong>: required Status only applied if <code>mandiri_clickpay</code> object is used in <code>JSON request</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>card_number</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>Mandiri Clickpay Card number</td>
+        </tr>
+        <tr>
+          <td>input1</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>last 10 digit <code>card_number</code></td>
+        </tr>
+        <tr>
+          <td>input2</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>Transaction value</td>
+        </tr>
+        <tr>
+          <td>input3</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>5-digits random number which will be given to the customer</td>
+        </tr>
+        <tr>
+          <td>token</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>Number given by customers machine token after <code>input1</code>, <code>input2</code>, and <code>input3</code> are entered</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.</strong><code>cimb_clicks</code> Object Description.</p>
+
+    <p><strong>Note</strong>: required status only applied if <code>cimb_clicks</code> object is used in <code>JSON request</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>String</td>
+          <td>Yes</td>
+          <td>Descriptions that is displayed on CIMB Clicks payment page</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.</strong><code>transaction_details</code> Object Description:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String(50)</td>
+          <td>Yes</td>
+          <td>Customer's order id</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>Long</td>
+          <td>Yes</td>
+          <td>Transaction Value</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.</strong><code>item_details</code> Element Object Description:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>String(50)</td>
+          <td>Yes</td>
+          <td>Item ID</td>
+        </tr>
+        <tr>
+          <td>price</td>
+          <td>Long</td>
+          <td>Yes</td>
+          <td>Item Price</td>
+        </tr>
+        <tr>
+          <td>quantity</td>
+          <td>Integer</td>
+          <td>Yes</td>
+          <td>Total Item</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>String(50)</td>
+          <td>Yes</td>
+          <td>Item Name</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Note</strong>: Required status only applied if <code>item_details</code> object is used in <code>JSON request</code></p>
+
+    <hr />
+
+    <p><strong>request.</strong><code>customer_details</code> Object Description:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>first_name</td>
+          <td>String(20)</td>
+          <td>Yes</td>
+          <td>Customer's first name</td>
+        </tr>
+        <tr>
+          <td>last_name</td>
+          <td>String(20)</td>
+          <td>No</td>
+          <td>Customer's last name</td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td>String(45)</td>
+          <td>Yes</td>
+          <td>Customer's Email.<br /><strong>Note</strong>: there will be validity check for format of the email address</td>
+        </tr>
+        <tr>
+          <td>phone</td>
+          <td>String(19)</td>
+          <td>Yes</td>
+          <td>Customer's phone number.<br /><strong>Note</strong>:<br />Minimum length is 5, &amp; it can only accept numeric and symbols +, -, (space), and (). For the + symbol can only be placed in front.</td>
+        </tr>
+        <tr>
+          <td>billing_address</td>
+          <td>JSON Object</td>
+          <td>No</td>
+          <td>Customer's Billing Address</td>
+        </tr>
+        <tr>
+          <td>shipping_address</td>
+          <td>JSON Object</td>
+          <td>No</td>
+          <td>Customer's Shipping Address</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.customer_details.</strong><code>billing_address</code> Object Description.</p>
+
+    <p><strong>Note</strong>: Required status only applied if <code>billing_address</code> object is used in <code>customer_details</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>first_name</td>
+          <td>String(20)</td>
+          <td>No</td>
+          <td>First name of billing address.<br /><strong>Note</strong> : Not required if it's the same as customer's first_name</td>
+        </tr>
+        <tr>
+          <td>last_name</td>
+          <td>String(20)</td>
+          <td>No</td>
+          <td>Last Name of Billing Address</td>
+        </tr>
+        <tr>
+          <td>address</td>
+          <td>String(200)</td>
+          <td>Yes</td>
+          <td>Address of Billing address</td>
+        </tr>
+        <tr>
+          <td>city</td>
+          <td>String(20)</td>
+          <td>Yes</td>
+          <td>City of billing address</td>
+        </tr>
+        <tr>
+          <td>postal_code</td>
+          <td>String(10)</td>
+          <td>Yes</td>
+          <td>Postal code of billing address <br /><strong>Note</strong> format is alpha-numeric, &amp; it can accept “-” and space</td>
+        </tr>
+        <tr>
+          <td>phone</td>
+          <td>String(19)</td>
+          <td>No</td>
+          <td>Phone number of billing address.<br /><strong>Note</strong> :<br />Not required if it's the same as the customer's phone number.<br /> Minimum length is 5, &amp; it can only accept numeric and symbols +, -, (space), and ().<br /> the + symbol can only be placed in front.</td>
+        </tr>
+        <tr>
+          <td>country_code</td>
+          <td>String(10)</td>
+          <td>No</td>
+          <td>Country ID (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p><strong>request.customer_details.</strong><code>shipping_address</code> Object Description. </p>
+
+    <p><strong>Note</strong>: Required status only applied if <code>shipping_address</code> object is used in <code>customer_details</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Required</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>first_name</td>
+          <td>String(20)</td>
+          <td>No</td>
+          <td>First name of shipping address</td>
+        </tr>
+        <tr>
+          <td>last_name</td>
+          <td>String(20)</td>
+          <td>No</td>
+          <td>Last name of shipping address</td>
+        </tr>
+        <tr>
+          <td>address</td>
+          <td>String(200)</td>
+          <td>Yes</td>
+          <td>Shipping address</td>
+        </tr>
+        <tr>
+          <td>city</td>
+          <td>String(20)</td>
+          <td>Yes</td>
+          <td>City of shipping address</td>
+        </tr>
+        <tr>
+          <td>postal_code</td>
+          <td>String(10)</td>
+          <td>Yes</td>
+          <td>Postal code of shipping address. This attribute is required for payment using credit card. <br /><strong>Note</strong>: format is alpha-numeric, &amp; it can accept “-” and space</td>
+        </tr>
+        <tr>
+          <td>phone</td>
+          <td>String(19)</td>
+          <td>No</td>
+          <td>Phone number of billing address.<br /><strong>Note</strong> : Not required if it is the same as customer's phone number.<br /> Minimum length is 5, &amp; it can only accept numeric and symbols +, -, (space), and ().<br /> The + symbol can only be placed in front.</td>
+        </tr>
+        <tr>
+          <td>country_code</td>
+          <td>String(10)</td>
+          <td>No</td>
+          <td>Country ID (e.g : IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="tab-pane" id="vtweb">
+
+    <p>Below is example of JSON request on VT-Web. Transaction charge function is used to obtained payment URL on VT-Web. Transaction charge process only happens after your customer complete the payment in VT-Web's URL. Further explanation about the description and the flow of VT-Web payment can be seen on <a href="../vtweb/integration_php.html">VT-Web – Integration</a>.</p>
+
+    <p>Based on the description in <a href="#specification">specification</a> section, the important attributes on VT-Web JSON request are <code>payment_type</code>, <code>vtweb</code>, and <code>transaction_details</code>. The following example is to obtain VT-Web payment URL when all parameter is used and 3D Secure feature is activated</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;vtweb&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;credit_card_3d_secure&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">}</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A17550&quot;</span><span class="p">,</span><span class="w">
+	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">},</span><span class="w">
+		</span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">}</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>To be concerned that <code>enabled_payments</code> attribute is not used on <code>vtweb</code>. As described on section <a href="charge.html#specification">specification</a>, all valid payment method will be displayed on VT-Web payment page</p>
+
+    <h3 id="structure-and-example-of-vt-web-json-response">Structure and Example of VT-Web JSON Response</h3>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code result of transaction charge VT-Web. Complete list of status code can be seen [here](/sandbox/status_code/html</td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Description of VT-Web transacction charge result</td>
+        </tr>
+        <tr>
+          <td>redirect_url</td>
+          <td>String</td>
+          <td>VT-Web payment page URL. <br /> <strong>Note</strong>: This attribute will only be displayed if transaction charge is successful.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Example of successful Response:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, success do VTWeb transaction, please go to redirect_url&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;redirect_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vtweb.sandbox.veritrans.co.id/v2/vtweb/5126cecf-61a4-4e3d-9695-bce9133a0f63&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Example of Deny Response:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;406&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Merchant charges the same order id more than once or transaction has been paid&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <h3 id="recognizing-transaction-status">Recognizing Transaction Status</h3>
+
+    <p>There are several ways to recognize the transaction status, for instance:</p>
+
+    <ol>
+      <li><a href="../vtweb/integration_php.html#step2">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtweb/integration_php.html#step3">Notification Handle</a></li>
+      <li><a href="other_commands.html">Command Status</a></li>
+    </ol>
+
+    <p>Please refers to the related page for further explanation</p>
+  </div>
+  <div class="tab-pane" id="vtdirect-cc">
+
+    <p>For credit card payment method, you have to obtain the token ID first. Token Id represents customer credit card information that is stored in Veritrans server. To obtain the token, you can follow the tutorial in <a href="../vtdirect/integration_cc.html#step1">VT-Direct – Obtain token </a>.</p>
+
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for credit card transaction charge are <code>payment_type</code>, <code>credit_card</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is example of VT-Direct for credit card transaction charge with all used parameter:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;credit_card&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;bank&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt; your token ID &gt;&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
+	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">}</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>To be concerned that JSON request structure is same regardless 3D secure is activated or not. The above JSON request can be used for both transaction. However, the difference happens while requesting token ID.</p>
+
+    <hr />
+
+    <h3 id="error-on-transaction-charge">Error on Transaction Charge</h3>
+
+    <p>On several occasions, VT-Direct transaction charge might be denied. Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Error Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Validation Error, merchant send bad request data example; validation error, invalid transaction type, invalid credit card format, etc.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Invalid client key or server key</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant doesn't have access for this payment type</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID has been used before or transaction has been paid.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Merchant account is deactivated or not active for a long period</td>
+        </tr>
+        <tr>
+          <td><code>411</code> Token error</td>
+          <td>Token id is missing, invalid, or timed out</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Complete list of status codes can be checked on <a href="status_code.html">API Reference - Status Code</a>.</p>
+
+    <hr />
+
+    <h3 id="the-structure-and-example-of-json-response-vt-direct-using-credit-card">The structure and Example of JSON Response VT-Direct using Credit Card</h3>
+
+    <p>If transaction charge has no errors, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using credit card is as follows:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>Transaction ID given by Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>Order Id given by merchant</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>total transaction</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Transaction payment method</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp of transaction</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Transaction status. After charge credit card transaction, the possible values are<br /><code>capture</code> : Transaction is accepted by the bank. If <code>fraud_status</code> value is <code>challenge</code>, merchant have to accept the transaction manually.<br /><code>deny</code>: transaction is denied by the bank or FDS.<br /><code>authorize</code>: Credit card is valid for transaction (pre-authorization)</td>
+        </tr>
+        <tr>
+          <td>fraud_status</td>
+          <td>String</td>
+          <td>Detection result by Fraud Detection System (FDS). Possible Value:<br /><code>accept</code> : Approved by FDS.<br /><code>deny</code>: Denied by FDS. Transaction automatically failed.<br /><code>challenge</code>: Questioned by FDS. If <code>transaction_status</code> is <code>capture</code>, merchant should accept the transaction manually</td>
+        </tr>
+        <tr>
+          <td>masked_card</td>
+          <td>String</td>
+          <td>first 6-digit and last 4-digit of customer's credit card number</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code of transaction charge result. Complete list of status codes can be seen <a href="status_code.html">here</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Description of transaction charge result</td>
+        </tr>
+        <tr>
+          <td>approval_code</td>
+          <td>String</td>
+          <td>Approval code. It can be used for refund. This does not exist on denied transaction</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>JSON response for successful transaction: </p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1a1a66f7-27a7-4844-ba1f-d86dcc16ab27&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:39:22&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408869563148&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Denied Transaction JSON Response:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b98fafec-fc2b-436f-bc6d-87853291cb35&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:44:15&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;491111-1113&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [BNI] with code [05] and message [Do not honour]&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <h3 id="recognizing-transaction-status-1">Recognizing Transaction Status</h3>
+
+    <p>Transaction status on VT-Direct using credit card can be recognize after transaction charge is finished. However, There are several ways to recognize the transaction status, for instance:</p>
+
+    <ol>
+      <li><a href="../vtweb/integration_php.html#step2">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtdirect/integration_cc.html#step3">Notification Handle</a></li>
+      <li><a href="other_commands.html#status">Command Status</a></li>
+    </ol>
+
+    <p>Please refers to the related page for further explanation</p>
+
+  </div>
+  <div class="tab-pane" id="vtdirect-mandiri">
+
+    <p>For Mandiri Clickpay payment method, you have to insert the input and output of Mandiri Clickpay token machine. Input token consists of <code>input 1</code>, <code>input 2</code>, and <code>input 3</code>. The token output is 6-digit of numeric value that is obtained from those three parameter inputs. Further explanation about the flow and description of Mandiri Clickpay method can be checked on <a href="../vtdirect/integration_mandiri.html">VT-Direct – Mandiri Clickpay</a>.</p>
+
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for Mandiri Clickpay transaction charge are <code>payment_type</code>, <code>mandiri_clickpay</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for Mandiri Clickpay transaction charge with all parameters:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">&quot;acard_number&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4111111111111111&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;input1&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111111111`&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;input2&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;input3&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;54321&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="s2">&quot;token&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;000000&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
+	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">}</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <hr />
+
+    <h3 id="error-on-transaction-charge-1">Error on Transaction Charge</h3>
+
+    <p>On several occassions, Mandiri Clickpay transaction charge might be denied. Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Error Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Validation Error, merchant send bad request data example; validation error, invalid transaction type, invalid credit card format, etc.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Invalid client key or server key</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant doesn't have access for this payment type</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID has been used before or transaction has been paid.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Merchant account is deactivated or not active for a long period</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Complete list of status codes can be seen on <a href="status_code.html">API Reference - Status Code</a>.</p>
+
+    <hr />
+
+    <h3 id="the-structure-and-example-of-json-response-vt-direct-using-mandiri-clickpay">The structure and Example of JSON Response VT-Direct using Mandiri Clickpay</h3>
+
+    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using Mandiri Clickpay is as follows:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code of transaction charge result. Complete list of status code can be checked <a href="status_code.html">here</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Description of transaction charge result</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>Transaction ID given by Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>Order Id given by merchant</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Transaction payment method</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp of transaction</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Transaction status. After Mandiri Clickpay transaction charge, the possible values are<br /> <code>settlement</code> : transaction is successful <br /> <code>deny</code> : transaction is denied</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>Amount of Transaction</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Example of JSON Response for Successful Transaction :</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Mandiri Clickpay transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a912e975-02c6-40cb-a95c-ed583725a64d&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:53:22&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;settlement&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <p>Example of JSON Response for Denied Transaction :</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaction has been denied by Bank Mandiri with code [2102] and message [Not enough balance]&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9373b18e-5139-4186-b31b-813fb906a126&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:52:07&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <h3 id="recognizing-transaction-status-2">Recognizing Transaction Status</h3>
+
+    <p>For VT-Direct using Mandiri Clickpay, transaction status can be recognize after transaction charge is finished. However, There are several ways to recognize the transaction status, for instance:</p>
+
+    <ol>
+      <li><a href="../id/vtweb/integration_php.html#step2">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../id/vtweb/integration_php.html#step3">Handle Notifikasi</a></li>
+      <li><a href="../id/vtdirect/other_commands.html#status">Perintah Status</a></li>
+    </ol>
+
+    <p>Please refers to the related page for further explanation</p>
+
+  </div>
+  <div class="tab-pane" id="vtdirect-cimb">
+
+    <p>For CIMB Clicks payment method, successful transaction charge will only give payment URL. You have to redirect customer to CIMB Clicks payment URL to complete the transaction process. Further explanation about the flow and description of CIMB Clicks method can be checked on <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">CIMB Niaga website</a></p>
+
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for CIMB Clicks transaction charge are <code>payment_type</code>, <code>cimb_clicks</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for CIMB Clicks transaction charge with all parameters:</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'description'</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order 2 apple and 1 orange&quot;</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H17550&quot;</span><span class="p">,</span><span class="w">
+	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
+    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
+	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">},</span><span class="w">
+        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
+			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
+		    </span><span class="p">}</span><span class="w">
+	    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <hr />
+
+    <h3 id="error-on-transaction-charge-2">Error on Transaction Charge</h3>
+
+    <p>On several occassions, CIMB Clicks transaction charge might be denied, Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Error Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Validation Error, merchant send bad request data example; validation error, invalid transaction type, invalid credit card format, etc.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Invalid client key or server key</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant doesn't have access for this payment type</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID has been used before or transaction has been paid.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Merchant account is deactivated or not active for a long period</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Complete list of status codes can be checked on <a href="status_code.html">API Reference - Status Code</a>.</p>
+
+    <hr />
+
+    <h3 id="the-structure-and-example-of-json-response-vt-direct-using-cimb-clicks">The structure and Example of JSON Response VT-Direct using CIMB Clicks</h3>
+
+    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using CIMB Clicks is as follows:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code of transaction charge result. Complete list of status code can be checked <a href="status_code.html">here</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Description of transaction charge result</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>Transaction ID given by Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>Order Id given by merchant</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Transaction payment method</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp of transaction</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Transaction status. After charge CIMB Clicks transaction, the possible value is<br /> <code>pending</code> : waiting for the result of transaction on <code>redirect url</code> web page</td>
+        </tr>
+        <tr>
+          <td>redirect url</td>
+          <td>String</td>
+          <td>CIMB Clicks Payment Page URL. Customer have to be redirected to this page for completing the payment process</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>Amount of Transaction</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Two importants information on JSON Response are <code>transaction_status</code> and <code>redirect_url</code>. If <code>transaction_status</code> value is <code>pending</code>, then transaction is successfully stored in Veritrans server. However, transaction has not finished, and still waiting for customer payment process in <code>redirect_url</code> page.</p>
+
+    <p>Example of JSON Response for Successful Transaction :</p>
+
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, CIMB Clicks transaction is successful&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7db5f75a-8f41-4266-b4cb-01cd97c3c339&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H17550&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:58:44&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;redirect_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.sandbox.veritrans.co.id/cimb-clicks/request?id=7db5f75a-8f41-4266-b4cb-01cd97c3c339&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+    <h3 id="recognizing-transaction-status-3">Recognizing Transaction Status</h3>
+
+    <p>For VT-Direct using CIMB Clicks, transaction status will still <code>pending</code> after transaction charge. Transaction status could be recognized after customer has completed the payment in CIMB Clicks website. However, you can recognize the transaction status from following mechanism:</p>
+
+    <ol>
+      <li><a href="../id/vtdirect/integration_cimb.html#transaction-status-cimb">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../id/vtweb/integration_php.html#step3">Handle Notifikasi</a></li>
+      <li><a href="../id/vtdirect/other_commands.html#status">Perintah Status</a></li>
+    </ol>
+
+    <p>Please refers to the related page for further explanation</p>
+  </div>
+</div>
+
+
+			<div class="pagination">
+				<ul><li class="left">« Previous: <a href="introduction.html">API Reference : Introduction</a></li><li class="right">Next: <a href="installment.html">API Reference : Installment</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 footer-nav">
+        <div class="content text-center">
+          <a href="https://www.veritrans.co.id" title="">Home</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/whatwedo.html" title="">What We Do</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/pricing.html" title="">Pricing</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/about.html" title="">About</a> <span class="divider">|</span>
+          <a href="http://blog.veritrans.co.id/" title="">Blog</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/career.html" title="">Career</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/contact.html" title="">Contact</a> <span class="divider">|</span>
+          <a href="http://docs.veritrans.co.id/" title="">Docs</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/press.html" title="">Press</a> <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>©2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../javascripts/get-token.js" type="text/javascript"></script>
+<script src="../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../javascripts/tab_custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>
