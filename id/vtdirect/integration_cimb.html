@@ -226,7 +226,7 @@
 
     <p>Berikut adalah contoh form pada file <code>form_vtdirect_cimb.php</code>:</p>
 
-<pre class="highlight html"><span class="nt">&lt;html&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>Contoh Form VT-Direct CIMB Clicks<span class="nt">&lt;/title&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
@@ -239,11 +239,11 @@
       <span class="nt">&lt;li&gt;</span>Anda memiliki waktu 1 jam untuk menyelesaikan transaksi ini sebelum terjadi pembatalan secara otomatis<span class="nt">&lt;/li&gt;</span>
       <span class="nt">&lt;li&gt;</span>Pastikan tidak ada pop-up blocker pada browser anda<span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;/ol&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;checkout_cimb.php&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">id=</span><span class="s">&quot;payment-form&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;submit-button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_cimb.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
-</pre>
+</code></pre>
   </div>
   <div class="tab-pane" id="charge-transaction-cimb">
     <!-- step 2-->
@@ -266,11 +266,11 @@
 
     <p>Tahap ini membahas cara charge transaksi CIMB Clicks di file <code>checkout_cimb.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_cimb.php</code>:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key &gt;&quot;</span><span class="p">;</span>
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -279,17 +279,17 @@
 <span class="p">);</span>
 
 <span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
-    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span>
-    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
+    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
     <span class="p">);</span>
 
 <span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'cimb_clicks'</span><span class="p">,</span>
   <span class="s1">'cimb_clicks'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-      <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="s2">&quot;Contoh Deskripsi&quot;</span><span class="p">,</span>
+      <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="s2">"Contoh Deskripsi"</span><span class="p">,</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
@@ -297,7 +297,8 @@
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Pada contoh di atas, kita menggunakan data CIMB Clicks, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
   </div>
 
@@ -309,41 +310,43 @@
 
     <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:</p>
 
-<pre class="highlight php">$result = array(
-  &quot;status_code&quot; =&gt; &quot;201&quot;,
-  &quot;status_message&quot; =&gt; &quot;OK, CIMB Clicks transaction is successful&quot;,
-  &quot;transaction_id&quot; =&gt; &quot;ff05337c-6c94-4f70-8e81-35acd89b688e&quot;,
-  &quot;order_id&quot; =&gt; &quot;201404141421&quot;,
-  &quot;payment_type&quot; =&gt; &quot;cimb_clicks&quot;,
-  &quot;transaction_time&quot; =&gt; &quot;2014-04-14 16:03:51&quot;,
-  &quot;transaction_status&quot; =&gt; &quot;pending&quot;,
-  &quot;redirect_url&quot; =&gt; &quot;https://api.sandbox.veritrans.co.id/cimb-clicks/request?id=ff05337c-6c94-4f70-8e81-35acd89b688e&quot;,
-  &quot;gross_amount&quot; =&gt; &quot;20000&quot;
+<pre><code class="highlight php">$result = array(
+  "status_code" =&gt; "201",
+  "status_message" =&gt; "OK, CIMB Clicks transaction is successful",
+  "transaction_id" =&gt; "ff05337c-6c94-4f70-8e81-35acd89b688e",
+  "order_id" =&gt; "201404141421",
+  "payment_type" =&gt; "cimb_clicks",
+  "transaction_time" =&gt; "2014-04-14 16:03:51",
+  "transaction_status" =&gt; "pending",
+  "redirect_url" =&gt; "https://api.sandbox.veritrans.co.id/cimb-clicks/request?id=ff05337c-6c94-4f70-8e81-35acd89b688e",
+  "gross_amount" =&gt; "20000"
 );
-</pre>
+</code></pre>
+
     <p>Dua informasi penting dalam respon JSON adalah <code>status_code</code> dan <code>redirect_url</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus me-redirect pelanggan anda ke <code>redirect_url</code> untuk menyelesaikan transaksi CIMB Clicks. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_cimb.php</code>:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">&quot;201&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">"201"</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//success
-</span>  <span class="k">echo</span> <span class="s2">&quot;Redirect CIMB Clicks. &lt;br /&gt;&quot;</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Redirect CIMB Clicks. &lt;br /&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
   <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">redirect_url</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="c1">//error
-</span>  <span class="k">echo</span> <span class="s2">&quot;Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Result:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Informasi terkait nilai transaksi, order ID, dan keterangan transaksi akan ditampilkan pada halaman redirect URL. Pada environment sandbox, halaman pembayaran CIMB Clicks bersifat dummy. Pelanggan anda cukup menekan tombol bayar untuk menyelesaikan proses transaksi. </p>
 
     <p>Ketika transaksi selesai, pelanggan anda dapat kembali ke website anda. Untuk melakukan hal ini, anda perlu mengisi konfigurasi callback URL di MAP (Merchant Administration Portal), silahkan melihat menu <a href="getting_started.html">langkah awal</a> untuk informasi lebih lengkap. Berikut adalah tampilan halaman pembayaran environment sandbox:</p>

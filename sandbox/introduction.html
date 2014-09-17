@@ -233,16 +233,19 @@
 
 <p>Based on the <a href="charge.html#specification">specification of transaction charge</a>,  you will find sandbox URL endpoint as follows:</p>
 
-<pre class="highlight text">URL endpoint : BASE_URL/charge
-</pre>
+<pre><code class="highlight plaintext">URL endpoint : BASE_URL/charge
+</code></pre>
+
 <p>Hence URL endpoint for transaction charge in Sandbox is</p>
 
-<pre class="highlight text">https://api.sandbox.veritrans.co.id/v2/charge
-</pre>
+<pre><code class="highlight plaintext">https://api.sandbox.veritrans.co.id/v2/charge
+</code></pre>
+
 <p>URL endpoint for transaction charge in Production is</p>
 
-<pre class="highlight text">https://api.veritrans.co.id/v2/charge
-</pre>
+<pre><code class="highlight plaintext">https://api.veritrans.co.id/v2/charge
+</code></pre>
+
 <hr />
 
 <h3 id="header-authorization">Header Authorization</h3>
@@ -251,26 +254,31 @@
 
 <p>BASIC AUTH must use the following format:</p>
 
-<pre class="highlight text">Username:Password
-</pre>
+<pre><code class="highlight plaintext">Username:Password
+</code></pre>
+
 <p>Since there is no password for the server key, we will leave the password field blank. Therefore, if our server key is:</p>
 
-<pre class="highlight text">94960ece-9513-4265-9cf2-67a4da330213
-</pre>
+<pre><code class="highlight plaintext">94960ece-9513-4265-9cf2-67a4da330213
+</code></pre>
+
 <p>BASIC AUTH Username and password will become:</p>
 
-<pre class="highlight text">94960ece-9513-4265-9cf2-67a4da330213:
-</pre>
+<pre><code class="highlight plaintext">94960ece-9513-4265-9cf2-67a4da330213:
+</code></pre>
+
 <p>(Note: make sure there is ":" character in place after server key)</p>
 
 <p>Afterward you need to convert it into BASE 64 format, hence the result is:</p>
 
-<pre class="highlight text">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
-</pre>
+<pre><code class="highlight plaintext">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
+</code></pre>
+
 <p>The following is header example of BASIC AUTH:</p>
 
-<pre class="highlight text">Authorization: Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
-</pre>
+<pre><code class="highlight plaintext">Authorization: Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
+</code></pre>
+
 <p>Make sure the merchant put "Basic <space>" before BASE 64 server key</space></p>
 
 <hr />

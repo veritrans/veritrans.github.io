@@ -209,16 +209,16 @@
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a> section, the sample PHP code that we can make use of is:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
 
 <span class="c1">// Fill transaction details
 </span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;vtweb&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">&quot;enabled_payments&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;credit_card&quot;</span><span class="p">),</span>
-          <span class="s2">&quot;credit_card_3d_secure&quot;</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
@@ -229,7 +229,8 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p><img alt="redirect" class="img-responsive img-thumbnail" src="../images/vtweb_cc.png" /></p>
 
     <hr />
@@ -247,15 +248,15 @@
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
 
 <span class="c1">// Fill transaction details
 </span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;vtweb&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">&quot;enabled_payments&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">)</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"mandiri_clickpay"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
@@ -266,7 +267,8 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>The Mandiri ClickPay tab will be shown at the VT-Web payment page. Information and procedure to perform Mandiri ClickPay transaction is displayed on the figure below.</p>
 
     <p><img alt="vtweb_mandiri" class="img-responsive img-thumbnail" src="../images/vtweb_mandiri.png" /></p>
@@ -286,15 +288,15 @@
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
 
 <span class="c1">// Fill transaction details
 </span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;vtweb&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">&quot;enabled_payments&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">)</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"cimb_clicks"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
@@ -305,7 +307,8 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>The CIMB Clicks tab will be shown at the VT-Web payment page. Information and procedure to perform CIMB Clicks transaction is displayed on the figure below.</p>
 
     <p><img alt="vtweb_cimb" class="img-responsive img-thumbnail" src="../images/vtweb_cimb.png" /></p>
@@ -318,16 +321,16 @@
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span> 
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;vtweb&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">&quot;enabled_payments&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;credit_card&quot;</span><span class="p">),</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
           <span class="c1">// use false or just remove this parameter
-</span>          <span class="s2">&quot;credit_card_3d_secure&quot;</span> <span class="o">=&gt;</span> <span class="kc">false</span>
+</span>          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">false</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">7145</span><span class="p">,</span>
@@ -338,7 +341,8 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
   </div>
   <div class="tab-pane" id="installment">
 
@@ -348,22 +352,22 @@
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;vtweb&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">&quot;enabled_payments&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;credit_card&quot;</span><span class="p">),</span>
-          <span class="s2">&quot;credit_card_3d_secure&quot;</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
           <span class="c1">// Add installment payment option
-</span>          <span class="s2">&quot;payment_options&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-              <span class="s2">&quot;installment&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-                  <span class="s2">&quot;required&quot;</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">&quot;installment_terms&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-                      <span class="s2">&quot;bni&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
-                      <span class="s2">&quot;mandiri&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span>          <span class="s2">"payment_options"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+              <span class="s2">"installment"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                  <span class="s2">"required"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+                  <span class="s2">"installment_terms"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                      <span class="s2">"bni"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
+                      <span class="s2">"mandiri"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
                     <span class="p">)</span>
                 <span class="p">)</span>
             <span class="p">)</span>
@@ -378,7 +382,8 @@
 
 <span class="cp">?&gt;</span>
 
-</pre>
+</code></pre>
+
     <p>The instalment feature on VT-Web consists of a few parameter. The description of the parameter that can be used:</p>
 
     <table>
@@ -444,17 +449,17 @@
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;vtweb&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">&quot;enabled_payments&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;credit_card&quot;</span><span class="p">),</span>
-          <span class="s2">&quot;credit_card_3d_secure&quot;</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
           <span class="c1">//Register BIN list
-</span>          <span class="s2">&quot;credit_card_bins&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;48111111&quot;</span><span class="p">,</span> <span class="s2">&quot;3111&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">)</span>
+</span>          <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">8033</span><span class="p">,</span>
@@ -467,7 +472,8 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>The example above adds BIN number <code>48111111</code>, <code>3111</code>, and <code>5</code> to the BIN list. If credit card with BIN number “411111” is used, transaction will be denied with an error message as follows:</p>
 
     <p><img alt="VT-Web BIN Error" class="img-responsive" src="../images/vtweb_bin.png" /></p>

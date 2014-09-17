@@ -208,7 +208,7 @@
 
     <p>Menggunakan contoh yang sama dengan <a href="integration.html">charge transaksi</a>, modifikasi script tambahan saat request token adalah sebagai berikut:</p>
 
-<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   
@@ -216,26 +216,27 @@
 
   <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="s1">'card_number'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-number&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_month'</span>  <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-expiry-month&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_year'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-expiry-year&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_cvv'</span>      <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-cvv&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'secure'</span>       <span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span>       <span class="err">:</span> <span class="s1">'bni'</span><span class="p">,</span>
-      <span class="s1">'gross_amount'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#price&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_number'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
 
-      <span class="c1">// Ask for pre-authorization token id
-</span>      <span class="s1">'type'</span> <span class="err">:</span> <span class="s1">'authorize'</span><span class="p">,</span>
+      <span class="c1">// Ask for pre-authorization token id</span>
+      <span class="s1">'type'</span> <span class="p">:</span> <span class="s1">'authorize'</span><span class="p">,</span>
     <span class="p">}</span>
   <span class="p">};</span>
 
   <span class="p">...</span>
 
 <span class="nt">&lt;/script&gt;</span>
-</pre>
+</code></pre>
+
     <p>Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan pre-authorization saat charge transaksi. Modifikasi parameter pada saat charge transaksi adalah sebagai berikut:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
@@ -256,22 +257,24 @@
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Pada contoh di atas, pre-authorization response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses pre-authorization berhasil adalah sebagai berikut:</p>
 
-<pre class="highlight php">$result = array(
-    &quot;status_code&quot; =&gt; &quot;200&quot;,
-    &quot;status_message&quot; =&gt; &quot;OK, Credit Card transaction is successful&quot;,
-    &quot;transaction_id&quot; =&gt; &quot;b505b192-f202-41ad-b82a-18678d0571a9&quot;,
-    &quot;order_id&quot; =&gt; &quot;201404211437&quot;,
-    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-04-21 14:35:32&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;authorize&quot;,
-    &quot;fraud_status&quot; =&gt; &quot;noscore&quot;,
-    &quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
-    &quot;gross_amount&quot; =&gt; &quot;150000.00&quot;
+<pre><code class="highlight php">$result = array(
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "OK, Credit Card transaction is successful",
+    "transaction_id" =&gt; "b505b192-f202-41ad-b82a-18678d0571a9",
+    "order_id" =&gt; "201404211437",
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-04-21 14:35:32",
+    "transaction_status" =&gt; "authorize",
+    "fraud_status" =&gt; "noscore",
+    "masked_card" =&gt; "481111-1114",
+    "gross_amount" =&gt; "150000.00"
 );
-</pre>
+</code></pre>
+
     <p>Atribut penting pada respon pre-authorization adalah <code>transaction_id</code>. Anda perlu menggunakan nilai atribut ini untuk melakukan capture transaksi.</p>
 
     <hr />
@@ -282,12 +285,12 @@
 
     <p>Berikut adalah contoh kode PHP untuk melakukan capture transaksi:</p>
 
-<pre class="highlight php">
+<pre><code class="highlight php">
 <span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key &gt;&quot;</span><span class="p">;</span>
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="c1">// Use transaction_id from Pre-authorization process
@@ -296,22 +299,24 @@
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">capture</span><span class="p">(</span><span class="nv">$transaction_id</span><span class="p">,</span> <span class="nv">$amount</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Pada contoh di atas, capture response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses capture berhasil adalah sebagai berikut:</p>
 
-<pre class="highlight php">$result = array(
-    &quot;status_code&quot; =&gt; &quot;200&quot;,
-    &quot;status_message&quot; =&gt; &quot;OK, Credit Card capture transaction is successful&quot;,
-    &quot;transaction_id&quot; =&gt; &quot;b505b192-f202-41ad-b82a-18678d0571a9&quot;,
-    &quot;order_id&quot; =&gt; &quot;201404211437&quot;,
-    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-04-21 14:35:32&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-    &quot;fraud_status&quot; =&gt; &quot;noscore&quot;,
-    &quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
-    &quot;gross_amount&quot; =&gt; &quot;150000.00&quot;
+<pre><code class="highlight php">$result = array(
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "OK, Credit Card capture transaction is successful",
+    "transaction_id" =&gt; "b505b192-f202-41ad-b82a-18678d0571a9",
+    "order_id" =&gt; "201404211437",
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-04-21 14:35:32",
+    "transaction_status" =&gt; "capture",
+    "fraud_status" =&gt; "noscore",
+    "masked_card" =&gt; "481111-1114",
+    "gross_amount" =&gt; "150000.00"
 );
-</pre>
+</code></pre>
+
   </div>
   <div class="tab-pane" id="installment">
     <!-- step 2-->
@@ -347,7 +352,7 @@
 
     <p>Menggunakan contoh yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, modifikasi script tambahan saat request token adalah sebagai berikut:</p>
 
-<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   
@@ -355,28 +360,29 @@
 
   <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="s1">'card_number'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-number&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_month'</span>  <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-expiry-month&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_year'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-expiry-year&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_cvv'</span>      <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-cvv&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'secure'</span>       <span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'card_number'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
 
-      <span class="c1">// Ask for 12 months installment token_id
-</span>      <span class="s1">'installment'</span> <span class="err">:</span> <span class="kc">true</span><span class="p">,</span> 
-      <span class="s1">'installment_term'</span> <span class="err">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="c1">// Ask for 12 months installment token_id</span>
+      <span class="s1">'installment'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
+      <span class="s1">'installment_term'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
       
-      <span class="s1">'bank'</span>       <span class="err">:</span> <span class="s1">'bni'</span><span class="p">,</span>
-      <span class="s1">'gross_amount'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#price&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
     <span class="p">}</span>
   <span class="p">};</span>
 
   <span class="p">...</span>
 
 <span class="nt">&lt;/script&gt;</span>
-</pre>
+</code></pre>
+
     <p>Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan charge transaksi. Atribut yang harus ditambahkan untuk melakukan installment adalah <code>installment_term</code>. Modifikasi parameter pada saat charge transaksi adalah sebagai berikut:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
@@ -397,22 +403,24 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Pada contoh di atas, installment response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses installment berhasil adalah sebagai berikut:</p>
 
-<pre class="highlight php">$result = array(
-    &quot;status_code&quot; =&gt; &quot;200&quot;,
-    &quot;status_message&quot; =&gt; &quot;OK, Credit Card Installment transaction is successful&quot;,
-    &quot;transaction_id&quot; =&gt; &quot;2a913000-4ed6-4c91-aff1-94e5ffb1b737&quot;,
-    &quot;order_id&quot; =&gt; &quot;201404231811&quot;,
-    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-04-23 18:11:44&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-    &quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
-    &quot;gross_amount&quot; =&gt; &quot;10000.00&quot;
+<pre><code class="highlight php">$result = array(
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "OK, Credit Card Installment transaction is successful",
+    "transaction_id" =&gt; "2a913000-4ed6-4c91-aff1-94e5ffb1b737",
+    "order_id" =&gt; "201404231811",
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-04-23 18:11:44",
+    "transaction_status" =&gt; "capture",
+    "masked_card" =&gt; "481111-1114",
+    "gross_amount" =&gt; "10000.00"
     );
 
-</pre>
+</code></pre>
+
   </div>
   <div class="tab-pane" id="bin-promo">
     <!-- step 3-->
@@ -425,7 +433,7 @@
 
     <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_cc.html#step2">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
@@ -435,7 +443,7 @@
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
     <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
-    <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;48111111&quot;</span><span class="p">,</span> <span class="s2">&quot;3111&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">)</span>
+    <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
@@ -449,7 +457,8 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, charge transaksi akan gagal dan terjadi <em>exception</em>.</p>
 
   </div>
@@ -485,7 +494,7 @@
 
     <p>Untuk mengimplementasikan one click, anda hanya perlu menambahkan atribut <code>save_token_id</code> pada saat charge transaksi pertama dilakukan. Menggunakan contoh yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, modifikasi script PHP saat charge transaksi dilakukan adalah sebagai berikut:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
@@ -506,24 +515,26 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Pada contoh di atas, one click response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses one click berhasil adalah sebagai berikut:</p>
 
-<pre class="highlight php">array(
-  &quot;transaction_id&quot; =&gt; &quot;ca5e0ff5-4297-48ef-aa25-b3ab018d4ead&quot;,
-  &quot;order_id&quot; =&gt; &quot;order52&quot;,
-  &quot;gross_amount&quot; =&gt; &quot;200000.00&quot;,
-  &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-  &quot;transaction_time&quot; =&gt; &quot;2014-03-27 17:20:53&quot;,
-  &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-  &quot;fraud_status&quot; =&gt; &quot;accept&quot;,
-  &quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
-  &quot;saved_token_id&quot; =&gt; &quot;4011117d16c884-2cc7-4624-b0a8-10273b7f6cc8&quot;,
-  &quot;saved_token_id_expired_at&quot; =&gt; &quot;2024-03-27 17:20:53&quot;,
-  &quot;status_code&quot; =&gt; &quot;200&quot;,
-  &quot;status_message&quot; =&gt; &quot;OK, Credit Card 3D Secure transaction is successful&quot;
+<pre><code class="highlight php">array(
+  "transaction_id" =&gt; "ca5e0ff5-4297-48ef-aa25-b3ab018d4ead",
+  "order_id" =&gt; "order52",
+  "gross_amount" =&gt; "200000.00",
+  "payment_type" =&gt; "credit_card",
+  "transaction_time" =&gt; "2014-03-27 17:20:53",
+  "transaction_status" =&gt; "capture",
+  "fraud_status" =&gt; "accept",
+  "masked_card" =&gt; "481111-1114",
+  "saved_token_id" =&gt; "4011117d16c884-2cc7-4624-b0a8-10273b7f6cc8",
+  "saved_token_id_expired_at" =&gt; "2024-03-27 17:20:53",
+  "status_code" =&gt; "200",
+  "status_message" =&gt; "OK, Credit Card 3D Secure transaction is successful"
 );
-</pre>
+</code></pre>
+
     <p>Dua atribut penting pada one click response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired</code>. Atribut <code>saved_token_id</code> adalah token yang dapat anda simpan jika pelanggan anda melakukan transaksi lagi. Atribut ini kita sebut sebagai <code>saved_token</code> pada penjelasan tahapan one click sebelumnya. Nilai dari <code>saved_token</code> dapat terus digunakan hingga <code>saved_token_id_expired</code>.</p>
 
     <hr />
@@ -534,13 +545,13 @@
 
     <p>Berikut adalah contoh charge transaksi selanjutnya menggunakan <code>saved_token_id</code>.</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
 
 <span class="c1">//Retrieve saved token id for this customer from database
-</span><span class="nv">$saved_token_id</span> <span class="o">=</span> <span class="s2">&quot;&lt;saved token id&gt;&quot;</span><span class="p">;</span>
+</span><span class="nv">$saved_token_id</span> <span class="o">=</span> <span class="s2">"&lt;saved token id&gt;"</span><span class="p">;</span>
 
 <span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
@@ -557,20 +568,22 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Struktur dan contoh state <code>$result</code> sama dengan dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa.</p>
 
-<pre class="highlight php">array(
-    &quot;transaction_id&quot; =&gt; &quot;05dfbd23-b767-4748-8fe9-7e30769e1857&quot;,
-    &quot;order_id&quot; =&gt; &quot;order53&quot;,
-    &quot;gross_amount&quot; =&gt; &quot;200000.00&quot;,
-    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-03-27 17:25:12&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-    &quot;status_code&quot; =&gt; &quot;200&quot;,
-    &quot;status_message&quot; =&gt; &quot;OK, Credit Card transaction is successful&quot;
+<pre><code class="highlight php">array(
+    "transaction_id" =&gt; "05dfbd23-b767-4748-8fe9-7e30769e1857",
+    "order_id" =&gt; "order53",
+    "gross_amount" =&gt; "200000.00",
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-03-27 17:25:12",
+    "transaction_status" =&gt; "capture",
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "OK, Credit Card transaction is successful"
 );
-</pre>
+</code></pre>
+
   </div>
   <div class="tab-pane" id="two-click">
 
@@ -607,7 +620,7 @@
 
     <p>Implementasi transaksi pertama mirip dengan <a href="integration_cc.html#step2">charge transaksi</a> biasa. Anda cukup menambahkan atribut <code>saved_token_id</code> saat charge transaksi. Jika transaksi berhasil, token dapat disimpan untuk transaksi pelanggan tersebut selanjutnya.</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
@@ -632,24 +645,26 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Pada contoh di atas, two clicks response disimpan pada <em>variable</em> <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses two clicks berhasil adalah sebagai berikut:</p>
 
-<pre class="highlight php">array(
-  &quot;transaction_id&quot; =&gt; &quot;ca5e0ff5-4297-48ef-aa25-b3ab018d4ead&quot;,
-  &quot;order_id&quot; =&gt; &quot;order52&quot;,
-  &quot;gross_amount&quot; =&gt; &quot;200000.00&quot;,
-  &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-  &quot;transaction_time&quot; =&gt; &quot;2014-03-27 17:20:53&quot;,
-  &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-  &quot;fraud_status&quot; =&gt; &quot;accept&quot;,
-  &quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
-  &quot;saved_token_id&quot; =&gt; &quot;4011117d16c884-2cc7-4624-b0a8-10273b7f6cc8&quot;,
-  &quot;saved_token_id_expired_at&quot; =&gt; &quot;2024-03-27 17:20:53&quot;,
-  &quot;status_code&quot; =&gt; &quot;200&quot;,
-  &quot;status_message&quot; =&gt; &quot;OK, Credit Card 3D Secure transaction is successful&quot;
+<pre><code class="highlight php">array(
+  "transaction_id" =&gt; "ca5e0ff5-4297-48ef-aa25-b3ab018d4ead",
+  "order_id" =&gt; "order52",
+  "gross_amount" =&gt; "200000.00",
+  "payment_type" =&gt; "credit_card",
+  "transaction_time" =&gt; "2014-03-27 17:20:53",
+  "transaction_status" =&gt; "capture",
+  "fraud_status" =&gt; "accept",
+  "masked_card" =&gt; "481111-1114",
+  "saved_token_id" =&gt; "4011117d16c884-2cc7-4624-b0a8-10273b7f6cc8",
+  "saved_token_id_expired_at" =&gt; "2024-03-27 17:20:53",
+  "status_code" =&gt; "200",
+  "status_message" =&gt; "OK, Credit Card 3D Secure transaction is successful"
 );
-</pre>
+</code></pre>
+
     <p>Dua atribut penting pada two clicks response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired</code>. Atribut <code>saved_token_id</code> adalah yang kita sebut sebagai <code>saved_token</code> pada bagian tahapan two clicks. Nilai <code>saved_token</code> ini dapat terus digunakan hingga <code>saved_token_id_expired</code>.</p>
 
     <hr />
@@ -662,7 +677,7 @@
 
     <p>Field nomor dan expiry date pada form dapat dihilangkan karena pelanggan anda cukup mengisi CVV dan melakukan autentikasi 3D Secure saja. Menggunakan kasus yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, Berikut adalah contoh request token baru menggunakan atribut <code>saved_token</code> dan CVV yang dimasukkan pelanggan:</p>
 
-<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   
@@ -670,24 +685,25 @@
 
   <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="s1">'card_cvv'</span> <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-cvv&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'token_id'</span> <span class="err">:</span> <span class="s1">'&lt;retrieve this customer saved_token from your database&gt;'</span><span class="p">,</span>
+      <span class="s1">'card_cvv'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'token_id'</span> <span class="p">:</span> <span class="s1">'&lt;retrieve this customer saved_token from your database&gt;'</span><span class="p">,</span>
 
 
-      <span class="s1">'two_click'</span> <span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'secure'</span> <span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span> <span class="err">:</span> <span class="s1">'bni'</span><span class="p">,</span>
-      <span class="s1">'gross_amount'</span> <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#price&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'two_click'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'secure'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'bank'</span> <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
     <span class="p">}</span>
   <span class="p">};</span>
 
   <span class="p">...</span>
 
 <span class="nt">&lt;/script&gt;</span>
-</pre>
+</code></pre>
+
     <p>Tahap charge transaksi kedua dan selanjutnya pada two clicks sama dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa. Anda cukup menggunakan token baru sebagai token_id.</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
@@ -709,20 +725,22 @@
 <span class="o">...</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa.</p>
 
-<pre class="highlight php">array(
-    &quot;transaction_id&quot; =&gt; &quot;05dfbd23-b767-4748-8fe9-7e30769e1857&quot;,
-    &quot;order_id&quot; =&gt; &quot;order53&quot;,
-    &quot;gross_amount&quot; =&gt; &quot;200000.00&quot;,
-    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-03-27 17:25:12&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-    &quot;status_code&quot; =&gt; &quot;200&quot;,
-    &quot;status_message&quot; =&gt; &quot;OK, Credit Card transaction is successful&quot;
+<pre><code class="highlight php">array(
+    "transaction_id" =&gt; "05dfbd23-b767-4748-8fe9-7e30769e1857",
+    "order_id" =&gt; "order53",
+    "gross_amount" =&gt; "200000.00",
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-03-27 17:25:12",
+    "transaction_status" =&gt; "capture",
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "OK, Credit Card transaction is successful"
 );
-</pre>
+</code></pre>
+
   </div>
 </div>
 

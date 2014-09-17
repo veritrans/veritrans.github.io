@@ -765,63 +765,63 @@
 
     <p>Based on the description in <a href="#specification">specification</a> section, the important attributes on VT-Web JSON request are <code>payment_type</code>, <code>vtweb</code>, and <code>transaction_details</code>. The following example is to obtain VT-Web payment URL when all parameter is used and 3D Secure feature is activated</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vtweb&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-    </span><span class="s2">&quot;vtweb&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">&quot;credit_card_3d_secure&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="err">}</span><span class="p">,</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A17550&quot;</span><span class="p">,</span><span class="w">
-	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
-	</span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-		    </span><span class="p">},</span><span class="w">
-		</span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-		    </span><span class="p">}</span><span class="w">
-	    </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
-		</span><span class="p">}</span><span class="w">
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"vtweb"</span><span class="p">,</span>
+    <span class="c1">// Optional</span>
+    <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
+    	<span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="err">}</span><span class="p">,</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"A17550"</span><span class="p">,</span>
+		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="p">},</span>
+    <span class="c1">// Optional</span>
+    <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
+	    <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+	    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+	    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+	    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16601"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"08113366345"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+    <span class="c1">// Optional</span>
+    <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+		<span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
 
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
     <p>To be concerned that <code>enabled_payments</code> attribute is not used on <code>vtweb</code>. As described on section <a href="charge.html#specification">specification</a>, all valid payment method will be displayed on VT-Web payment page</p>
 
     <h3 id="structure-and-example-of-vt-web-json-response">Structure and Example of VT-Web JSON Response</h3>
@@ -853,19 +853,21 @@
 
     <p>Example of successful Response:</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, success do VTWeb transaction, please go to redirect_url&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;redirect_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vtweb.sandbox.veritrans.co.id/v2/vtweb/5126cecf-61a4-4e3d-9695-bce9133a0f63&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do VTWeb transaction, please go to redirect_url"</span><span class="p">,</span>
+    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://vtweb.sandbox.veritrans.co.id/v2/vtweb/5126cecf-61a4-4e3d-9695-bce9133a0f63"</span>
+<span class="p">}</span>
+</code></pre>
+
     <p>Example of Deny Response:</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;406&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Merchant charges the same order id more than once or transaction has been paid&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"406"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Merchant charges the same order id more than once or transaction has been paid"</span>
+<span class="p">}</span>
+</code></pre>
+
     <h3 id="recognizing-transaction-status">Recognizing Transaction Status</h3>
 
     <p>There are several ways to recognize the transaction status, for instance:</p>
@@ -884,64 +886,57 @@
 
     <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for credit card transaction charge are <code>payment_type</code>, <code>credit_card</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is example of VT-Direct for credit card transaction charge with all used parameter:</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;credit_card&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">&quot;bank&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bni&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt; your token ID &gt;&quot;</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
-	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
-	</span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-		    </span><span class="p">},</span><span class="w">
-        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-		    </span><span class="p">}</span><span class="w">
-	    </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
-		</span><span class="p">}</span><span class="w">
+<pre><code class="highlight json"><span class="p">{</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+	<span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
+    	<span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span>
+    <span class="p">},</span>
+    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+	  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"C17550"</span><span class="p">,</span>
+	  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="p">},</span>
+    <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+	    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+	    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+	    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">},</span>
+	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16601"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"08113366345"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+    <span class="s2">"item_details"</span> <span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+		<span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
 
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
     <p>To be concerned that JSON request structure is same regardless 3D secure is activated or not. The above JSON request can be used for both transaction. However, the difference happens while requesting token ID.</p>
 
     <hr />
@@ -1060,35 +1055,37 @@
 
     <p>JSON response for successful transaction: </p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1a1a66f7-27a7-4844-ba1f-d86dcc16ab27&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:39:22&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;481111-1114&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card 3D Secure transaction is successful&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1408869563148&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1a1a66f7-27a7-4844-ba1f-d86dcc16ab27"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"C17550"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:39:22"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Credit Card 3D Secure transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1408869563148"</span>
+<span class="p">}</span>
+</code></pre>
+
     <p>Denied Transaction JSON Response:</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b98fafec-fc2b-436f-bc6d-87853291cb35&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C17550&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:44:15&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;491111-1113&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [BNI] with code [05] and message [Do not honour]&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"b98fafec-fc2b-436f-bc6d-87853291cb35"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"C17550"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:44:15"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"deny"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"491111-1113"</span><span class="p">,</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"202"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Deny by Bank [BNI] with code [05] and message [Do not honour]"</span>
+<span class="p">}</span>
+</code></pre>
+
     <h3 id="recognizing-transaction-status-1">Recognizing Transaction Status</h3>
 
     <p>Transaction status on VT-Direct using credit card can be recognize after transaction charge is finished. However, There are several ways to recognize the transaction status, for instance:</p>
@@ -1108,67 +1105,67 @@
 
     <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for Mandiri Clickpay transaction charge are <code>payment_type</code>, <code>mandiri_clickpay</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for Mandiri Clickpay transaction charge with all parameters:</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">&quot;acard_number&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4111111111111111&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;input1&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111111111`&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;input2&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;input3&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;54321&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="s2">&quot;token&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;000000&quot;</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
-	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
-	</span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-		    </span><span class="p">},</span><span class="w">
-        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-		    </span><span class="p">}</span><span class="w">
-	    </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
-		</span><span class="p">}</span><span class="w">
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"mandiri_clickpay"</span><span class="p">,</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"mandiri_clickpay"</span><span class="p">:</span> <span class="p">{</span>
+    	<span class="s2">"acard_number"</span><span class="p">:</span> <span class="s2">"4111111111111111"</span><span class="p">,</span>
+        <span class="s2">"input1"</span><span class="p">:</span> <span class="s2">"111111111`"</span><span class="p">,</span>
+        <span class="s2">"input2"</span><span class="p">:</span> <span class="s2">"145000"</span><span class="p">,</span>
+        <span class="s2">"input3"</span><span class="p">:</span> <span class="s2">"54321"</span><span class="p">,</span>
+        <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"000000"</span>
+    <span class="p">},</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"E17550"</span><span class="p">,</span>
+		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="p">},</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
+	    <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+	    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
+	    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+	    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+    <span class="c1">// Optional</span>
+	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">},</span>
+    <span class="c1">// Optional</span>
+	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16601"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"08113366345"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+    <span class="c1">// Optional</span>
+    <span class="s2">"item_details"</span> <span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span> <span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+			<span class="s2">"price"</span> <span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"Apel"</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span> <span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+			<span class="s2">"price"</span> <span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+			<span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"Jeruk"</span>
+		<span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
 
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
     <hr />
 
     <h3 id="error-on-transaction-charge-1">Error on Transaction Charge</h3>
@@ -1266,30 +1263,32 @@
 
     <p>Example of JSON Response for Successful Transaction :</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Mandiri Clickpay transaction is successful&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a912e975-02c6-40cb-a95c-ed583725a64d&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:53:22&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;settlement&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Mandiri Clickpay transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"a912e975-02c6-40cb-a95c-ed583725a64d"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"E17550"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"mandiri_clickpay"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:53:22"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
     <p>Example of JSON Response for Denied Transaction :</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaction has been denied by Bank Mandiri with code [2102] and message [Not enough balance]&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9373b18e-5139-4186-b31b-813fb906a126&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E17550&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandiri_clickpay&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:52:07&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"202"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Transaction has been denied by Bank Mandiri with code [2102] and message [Not enough balance]"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"9373b18e-5139-4186-b31b-813fb906a126"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"E17550"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"mandiri_clickpay"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:52:07"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"deny"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
     <h3 id="recognizing-transaction-status-2">Recognizing Transaction Status</h3>
 
     <p>For VT-Direct using Mandiri Clickpay, transaction status can be recognize after transaction charge is finished. However, There are several ways to recognize the transaction status, for instance:</p>
@@ -1309,63 +1308,63 @@
 
     <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for CIMB Clicks transaction charge are <code>payment_type</code>, <code>cimb_clicks</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for CIMB Clicks transaction charge with all parameters:</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="err">'description'</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order 2 apple and 1 orange&quot;</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;transaction_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	  </span><span class="s2">&quot;order_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H17550&quot;</span><span class="p">,</span><span class="w">
-	  </span><span class="s2">&quot;gross_amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">145000</span><span class="w">
-	</span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="s2">&quot;customer_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span><span class="w">
-	    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
-        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;billing_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Andri&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Litani&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16602&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;081122334455&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-		    </span><span class="p">},</span><span class="w">
-        </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-	    </span><span class="s2">&quot;shipping_address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-			    </span><span class="s2">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obet&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;address&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;city&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;postal_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16601&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;phone&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08113366345&quot;</span><span class="p">,</span><span class="w">
-			    </span><span class="s2">&quot;country_code&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDN&quot;</span><span class="w">
-		    </span><span class="p">}</span><span class="w">
-	    </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-    </span><span class="s2">&quot;item_details&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apel&quot;</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="p">{</span><span class="w">
-		    </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a2&quot;</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;price&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;quantity&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-		    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jeruk&quot;</span><span class="w">
-		</span><span class="p">}</span><span class="w">
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"cimb_clicks"</span><span class="p">:</span> <span class="p">{</span>
+    	<span class="err">'description'</span><span class="p">:</span> <span class="s2">"Pembelian 2 apel dan 1 jeruk"</span>
+    <span class="p">},</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
+		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="p">},</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"customer_details"</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
+		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+    <span class="c1">// Optional</span>
+	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">},</span>
+    <span class="c1">// Optional</span>
+	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16601"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"08113366345"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+    <span class="c1">// Optional</span>
+    <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+		    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+		    <span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+		    <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+		    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+		    <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+		    <span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+		    <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+		    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+		<span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
 
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
     <hr />
 
     <h3 id="error-on-transaction-charge-2">Error on Transaction Charge</h3>
@@ -1470,18 +1469,19 @@
 
     <p>Example of JSON Response for Successful Transaction :</p>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, CIMB Clicks transaction is successful&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7db5f75a-8f41-4266-b4cb-01cd97c3c339&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;H17550&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cimb_clicks&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-08-24 15:58:44&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;redirect_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.sandbox.veritrans.co.id/cimb-clicks/request?id=7db5f75a-8f41-4266-b4cb-01cd97c3c339&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;145000.00&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, CIMB Clicks transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"7db5f75a-8f41-4266-b4cb-01cd97c3c339"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:58:44"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/cimb-clicks/request?id=7db5f75a-8f41-4266-b4cb-01cd97c3c339"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
     <h3 id="recognizing-transaction-status-3">Recognizing Transaction Status</h3>
 
     <p>For VT-Direct using CIMB Clicks, transaction status will still <code>pending</code> after transaction charge. Transaction status could be recognized after customer has completed the payment in CIMB Clicks website. However, you can recognize the transaction status from following mechanism:</p>

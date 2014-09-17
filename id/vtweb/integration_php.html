@@ -236,7 +236,7 @@
 
         <p>Pada contoh berikut, toko anda menerima sebuah pemesanan dengan ID 7009 senilai Rp. 10.000,00. Contoh kode PHP yang dapat digunakan untuk memperoleh dan mengakses halaman pembayaran VT-Web adalah:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span> 
+<pre><code class="highlight php"><span class="cp">&lt;?php</span> 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="c1">// Use sandbox account
@@ -247,8 +247,8 @@
 
 <span class="c1">// Fill transaction data
 </span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;vtweb&quot;</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">&quot;credit_card_3d_secure&quot;</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
@@ -261,7 +261,8 @@
 <span class="c1">// Redirect 
 </span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
         <p>Contoh kode di atas memanfaatkan library <strong>Veritrans-PHP</strong> yang telah diunduh pada bagian <a title="Langkah Awal" href="getting_started.html">Langkah awal</a>. File <code>Veritrans.php</code> merupakan bagian dari library <strong>Veritrans-PHP</strong>. File ini diasumsikan berada pada direktori yang sama dengan kode sumber.</p>
 
         <p>Pertama-tama, tentukan jenis akun yang akan kita gunakan: akun produksi atau sandbox. Pada contoh, akun yang digunakan adalah sandbox. Oleh karena itu, nilai <code>Veritrans_Config::$isProduction</code> diubah menjadi <code>false</code>.</p>
@@ -284,7 +285,7 @@
 
         <p>Contoh kode PHP yang mengikutsertakan semua data transaksi adalah sebagai berikut:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="c1">// Set our server key
@@ -304,7 +305,7 @@
     <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a1'</span><span class="p">,</span>
     <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">50000</span><span class="p">,</span>
     <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Apel'</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s2">"Apel"</span>
     <span class="p">);</span>
 
 <span class="c1">// Opsional
@@ -312,7 +313,7 @@
     <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a2'</span><span class="p">,</span>
     <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">45000</span><span class="p">,</span>
     <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Jeruk'</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s2">"Jeruk"</span>
     <span class="p">);</span>
 
 <span class="c1">// Opsional
@@ -320,32 +321,32 @@
 
 <span class="c1">// Opsional
 </span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
-    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span>
-    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
-    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;16602&quot;</span><span class="p">,</span>
-    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span><span class="p">,</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">"16602"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span><span class="p">,</span>
     <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
     <span class="p">);</span>
 
 <span class="c1">// Opsional
 </span><span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Obet&quot;</span><span class="p">,</span>
-    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span>
-    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span>
-    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
-    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;16601&quot;</span><span class="p">,</span>
-    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;08113366345&quot;</span><span class="p">,</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Obet"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">"16601"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"08113366345"</span><span class="p">,</span>
     <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
     <span class="p">);</span>
 
 <span class="c1">// Opsional
 </span><span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
-    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span>
-    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span><span class="p">,</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
+    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span><span class="p">,</span>
     <span class="s1">'billing_address'</span>  <span class="o">=&gt;</span> <span class="nv">$billing_address</span><span class="p">,</span>
     <span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span>
     <span class="p">);</span>
@@ -366,7 +367,8 @@
 <span class="c1">// Go to VT-Web page
 </span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
-</pre>        <p>Berikut adalah contoh tampilan halaman pembayaran VT-Web hasil kode di atas. Perlu diperhatikan bahwa field pada <strong>form tagihan sudah otomatis terisi</strong>. Selain itu, informasi terkait <strong>daftar barang</strong> dan <strong>alamat pengiriman</strong> juga ditampilkan pada halaman VT-Web.</p>
+</code></pre>
+        <p>Berikut adalah contoh tampilan halaman pembayaran VT-Web hasil kode di atas. Perlu diperhatikan bahwa field pada <strong>form tagihan sudah otomatis terisi</strong>. Selain itu, informasi terkait <strong>daftar barang</strong> dan <strong>alamat pengiriman</strong> juga ditampilkan pada halaman VT-Web.</p>
 
         <p><img alt="VT-Web Complete" class="img-responsive img-thumbnail" src="../../images/vtweb_complete.png" /></p>
 
@@ -610,41 +612,43 @@
 
         <h3 id="contoh-notifikasi-transaksi-sukses">Contoh Notifikasi Transaksi Sukses</h3>
 
-<pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OK, Credit Card transaction is successful&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d563f026-f46a-4f7d-bc44-226c6e42e12b&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201303121700&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-07-15 12:30:16&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;401111-1112&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;approval_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1405402217483&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100.00&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Credit Card transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"d563f026-f46a-4f7d-bc44-226c6e42e12b"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"201303121700"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-07-15 12:30:16"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"401111-1112"</span><span class="p">,</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1405402217483"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"100.00"</span>
+<span class="p">}</span>
+</code></pre>
+
         <h3 id="contoh-notifikasi-transaksi-gagal">Contoh Notifikasi Transaksi Gagal</h3>
 
-<pre class="highlight json"><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="s2">&quot;status_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deny by Bank [MANDIRI] with code [05] and message [Do not honour]&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f5507d7c-a46f-4a00-97a1-8a0b29d34ab3&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;201303121701&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;payment_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2014-07-15 16:01:30&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;transaction_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deny&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;fraud_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;masked_card&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;431111-1119&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s2">&quot;gross_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100.00&quot;</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre><code class="highlight json">
+<span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"202"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Deny by Bank [MANDIRI] with code [05] and message [Do not honour]"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"f5507d7c-a46f-4a00-97a1-8a0b29d34ab3"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"201303121701"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-07-15 16:01:30"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"deny"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"431111-1119"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"100.00"</span>
+<span class="p">}</span>
 
-</span></pre>        <hr />
+</code></pre>
+        <hr />
 
         <p>Berikut adalah contoh kode untuk menerima HTTP (POST) dan JSON object menggunakan Library <strong>Veritrans-PHP</strong>. File ini adalah file PHP yang akan dieksekusi ketika URL endpoint notifikasi (http://sneekers.com/payment/notification) diakses.</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
 <span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
@@ -653,7 +657,7 @@
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">isVerified</span><span class="p">())</span> <span class="p">{</span>
+
   <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
   <span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
   <span class="nv">$order_id</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">;</span>
@@ -662,33 +666,33 @@
   <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'capture'</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// TODO set payment status in merchant's database to 'Captured'
 </span>    
-    <span class="k">echo</span> <span class="s2">&quot;Transaction order_id: &quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">&quot; successfully captured using &quot;</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">)</span>
+    <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
     <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
 </span>
-    <span class="k">echo</span> <span class="s2">&quot;Transaction order_id: &quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">&quot; successfully transfered using &quot;</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
     <span class="c1">// TODO set payment status in merchant's database to 'Pending'
 </span>
-    <span class="k">echo</span> <span class="s2">&quot;Waiting customer to finish transaction order_id: &quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">&quot; using &quot;</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s2">&quot;credit_card&quot;</span><span class="p">){</span>
-      <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s2">&quot;challenge&quot;</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s2">"credit_card"</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s2">"challenge"</span><span class="p">){</span>
         <span class="c1">// TODO set payment status in merchant's database to 'Denied by FDS'
 </span>        <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
 </span>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="c1">// TODO set payment status in merchant's database to 'Denied by Bank
 </span>      <span class="p">}</span>
-      <span class="k">echo</span> <span class="s2">&quot;Credit card payment for transaction order_id:&quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">&quot; is denied. Fraud status: &quot;</span> <span class="o">.</span> <span class="nv">$fraud</span><span class="p">;</span> 
+      <span class="k">echo</span> <span class="s2">"Credit card payment for transaction order_id:"</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied. Fraud status: "</span> <span class="o">.</span> <span class="nv">$fraud</span><span class="p">;</span> 
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="c1">// TODO set payment status in merchant's database to 'Denied'
 </span>
-      <span class="k">echo</span> <span class="s2">&quot;Payment using &quot;</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">&quot; for transaction order_id: &quot;</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">&quot; is denied.&quot;</span>
+      <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
       </div>
       <!-- end of step 3-->
     </div>

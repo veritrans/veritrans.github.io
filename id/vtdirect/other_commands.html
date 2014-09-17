@@ -194,31 +194,33 @@
 
     <p>Pada situasi tertentu, anda dapat melihat status transaksi menggunakan fungsi <code>Veritrans_Transaction::status</code>. Anda cukup memberikan order ID saat menggunakan fungsi ini. </p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key &gt;&quot;</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-<span class="nv">$order_id</span> <span class="o">=</span> <span class="s2">&quot;&lt;your order id&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$order_id</span> <span class="o">=</span> <span class="s2">"&lt;your order id&gt;"</span><span class="p">;</span>
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order_id</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Struktur dan contoh variabel <code>$result</code> adalah sebagai berikut:</p>
 
-<pre class="highlight php">array(
-    &quot;transaction_id&quot; =&gt; &quot;05dfbd23-b767-4748-8fe9-7e30769e1857&quot;,
-    &quot;order_id&quot; =&gt; &quot;order53&quot;,
-    &quot;gross_amount&quot; =&gt; &quot;100000.00&quot;,
-    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-    &quot;challenge [masked_card]&quot; =&gt; &quot;411111-1111&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-03-27 17:25:12&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-    &quot;status_code&quot; =&gt; &quot;200&quot;,
-    &quot;status_message&quot; =&gt; &quot;OK, Credit Card transaction is successful&quot;
+<pre><code class="highlight php">array(
+    "transaction_id" =&gt; "05dfbd23-b767-4748-8fe9-7e30769e1857",
+    "order_id" =&gt; "order53",
+    "gross_amount" =&gt; "100000.00",
+    "payment_type" =&gt; "credit_card",
+    "challenge [masked_card]" =&gt; "411111-1111",
+    "transaction_time" =&gt; "2014-03-27 17:25:12",
+    "transaction_status" =&gt; "capture",
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "OK, Credit Card transaction is successful"
 );
-</pre>
+</code></pre>
+
   </div>
   <div class="tab-pane" id="approve">
 
@@ -226,32 +228,33 @@
 
     <p>Anda dapat melakukan approve transaksi menggunakan fungsi <code>Veritrans_Transaction::approve()</code>. Approve hanya dapat dilakukan pada transaksi yang memperoleh status challenge dari Fraud Detection System (FDS). Anda cukup memberikan order ID pada saat menggunakan fungsi ini.</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key &gt;&quot;</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-<span class="nv">$order_id</span> <span class="o">=</span> <span class="s2">&quot;&lt;your order id&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$order_id</span> <span class="o">=</span> <span class="s2">"&lt;your order id&gt;"</span><span class="p">;</span>
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">approve</span><span class="p">(</span><span class="nv">$order_id</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Struktur dan contoh variabel <code>$result</code> ketika operasi approve berhasil adalah sebagai berikut:</p>
 
-<pre class="highlight php">array( 
-	&quot;status_code&quot; =&gt; &quot;200&quot;,
-	&quot;status_message&quot; =&gt; &quot;OK, transaction has been approved&quot;,
-	&quot;transaction_id&quot; =&gt; &quot;a9095770-4e7a-4880-9961-11b45d42359b&quot;,
-	&quot;order_id&quot; =&gt; &quot;825524557&quot;,
-	&quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-	&quot;transaction_time&quot; =&gt; &quot;2014-08-15 19:16:55&quot;,
-	&quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-	&quot;fraud_status&quot; =&gt; &quot;accept&quot;,
-	&quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
-	&quot;gross_amount&quot; =&gt;&quot;100000.00&quot;
+<pre><code class="highlight php">array( 
+	"status_code" =&gt; "200",
+	"status_message" =&gt; "OK, transaction has been approved",
+	"transaction_id" =&gt; "a9095770-4e7a-4880-9961-11b45d42359b",
+	"order_id" =&gt; "825524557",
+	"payment_type" =&gt; "credit_card",
+	"transaction_time" =&gt; "2014-08-15 19:16:55",
+	"transaction_status" =&gt; "capture",
+	"fraud_status" =&gt; "accept",
+	"masked_card" =&gt; "481111-1114",
+	"gross_amount" =&gt;"100000.00"
 );
-</pre>
+</code></pre>
   </div>
   <div class="tab-pane" id="cancel">
 
@@ -259,32 +262,33 @@
 
     <p>Anda dapat melakukan perintah cancel transaksi pada VT-Direct menggunakan fungsi <code>Veritrans_Transaction::cancel()</code>. Cancel transaksi hanya dapat dilakukan pada transaksi yang belum melewati status settlement. Anda cukup memberikan order id sebagai parameter dari fungsi ini.</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key &gt;&quot;</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-<span class="nv">$order_id</span> <span class="o">=</span>  <span class="s2">&quot;&lt;your order id&gt;&quot;</span><span class="p">;</span>
+<span class="nv">$order_id</span> <span class="o">=</span>  <span class="s2">"&lt;your order id&gt;"</span><span class="p">;</span>
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">cancel</span><span class="p">(</span><span class="nv">$order_id</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Struktur dan contoh variabel <code>$result</code> ketika operasi cancel berhasil adalah sebagai berikut:</p>
 
-<pre class="highlight php">array(
-	&quot;status_code&quot; =&gt;&quot;200&quot;,
-	&quot;status_message&quot; =&gt; &quot;OK, transaction has been cancelled&quot;,
-	&quot;transaction_id&quot; =&gt; &quot;7c377353-2bf1-4e01-8145-a410c1285047&quot;,
-	&quot;order_id&quot; =&gt; &quot;1539282381&quot;,
-	&quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-	&quot;transaction_time&quot; =&gt; &quot;2014-08-15 09:28:16&quot;,
-	&quot;transaction_status&quot; =&gt; &quot;cancel&quot;,
-	&quot;fraud_status&quot; =&gt; &quot;accept&quot;,
-	&quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
-	&quot;gross_amount&quot; =&gt; &quot;100000.00&quot;, 
+<pre><code class="highlight php">array(
+	"status_code" =&gt;"200",
+	"status_message" =&gt; "OK, transaction has been cancelled",
+	"transaction_id" =&gt; "7c377353-2bf1-4e01-8145-a410c1285047",
+	"order_id" =&gt; "1539282381",
+	"payment_type" =&gt; "credit_card",
+	"transaction_time" =&gt; "2014-08-15 09:28:16",
+	"transaction_status" =&gt; "cancel",
+	"fraud_status" =&gt; "accept",
+	"masked_card" =&gt; "481111-1114",
+	"gross_amount" =&gt; "100000.00", 
 );
-</pre>
+</code></pre>
   </div>
 </div>
 

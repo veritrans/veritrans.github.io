@@ -233,16 +233,19 @@
 
 <p>Pada penjelasan <a href="charge.html#specification">spesifikasi charge transaksi</a> menggunakan Veritrans API, misalnya, anda akan menjumpai penjelasan URL endpoint sebagai berikut:</p>
 
-<pre class="highlight text">URL endpoint : BASE_URL/charge
-</pre>
+<pre><code class="highlight plaintext">URL endpoint : BASE_URL/charge
+</code></pre>
+
 <p>Hal ini berarti URL endpoint charge transaksi adalah</p>
 
-<pre class="highlight text">https://api.sandbox.veritrans.co.id/v2/charge
-</pre>
+<pre><code class="highlight plaintext">https://api.sandbox.veritrans.co.id/v2/charge
+</code></pre>
+
 <p>jika anda menggunakan environment sandbox dan </p>
 
-<pre class="highlight text">https://api.veritrans.co.id/v2/charge
-</pre>
+<pre><code class="highlight plaintext">https://api.veritrans.co.id/v2/charge
+</code></pre>
+
 <p>jika anda menggunakan environment produksi.</p>
 
 <hr />
@@ -253,26 +256,31 @@
 
 <p>BASIC AUTH harus mengikuti format sebagai berikut :</p>
 
-<pre class="highlight text">Username:Password
-</pre>
+<pre><code class="highlight plaintext">Username:Password
+</code></pre>
+
 <p>Karena tidak ada pasword untuk server key, password dapat dibiarkan kosong. Jika anda memiliki server key seperti berikut :</p>
 
-<pre class="highlight text">94960ece-9513-4265-9cf2-67a4da330213
-</pre>
+<pre><code class="highlight plaintext">94960ece-9513-4265-9cf2-67a4da330213
+</code></pre>
+
 <p>Pasangan username dan password BASIC AUTH akan menjadi:</p>
 
-<pre class="highlight text">94960ece-9513-4265-9cf2-67a4da330213:
-</pre>
+<pre><code class="highlight plaintext">94960ece-9513-4265-9cf2-67a4da330213:
+</code></pre>
+
 <p>(Note: pastikan ada karakter “:” setelah server key)</p>
 
 <p>Selanjutnya anda perlu mengubah ke format BASE 64, sehingga hasilnya seperti berikut</p>
 
-<pre class="highlight text">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
-</pre>
+<pre><code class="highlight plaintext">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
+</code></pre>
+
 <p>Berikut adalah contoh header untuk basic auth:</p>
 
-<pre class="highlight text">Authorization: Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
-</pre>
+<pre><code class="highlight plaintext">Authorization: Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
+</code></pre>
+
 <p>Pastikan merchant menaruh string “Basic <space>” sebelum BASE 64 server key.</space></p>
 
 <hr />

@@ -281,11 +281,11 @@
 
     <p>The following is a sample from the file <code>form_vtdirect_mandiri.html</code>:</p>
 
-<pre class="highlight html"><span class="nt">&lt;html&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>VT-Direct Form Example<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   
   <span class="nx">updateInput1</span><span class="p">();</span>
@@ -322,38 +322,39 @@
       <span class="nt">&lt;li&gt;</span>Activate your Mandiri Token<span class="nt">&lt;/li&gt;</span>
       <span class="nt">&lt;li&gt;</span>Insert Mandiri Token password<span class="nt">&lt;/li&gt;</span>
       <span class="nt">&lt;li&gt;</span>Click 3 when Mandiri Token displays APPLI.<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Fill &quot;Input 1&quot;: Last 10 digit of your Mandiri Debit card<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Fill &quot;Input 2&quot;: Transaction Value<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Fill &quot;Input 3&quot;: Request Number<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Fill "Input 1": Last 10 digit of your Mandiri Debit card<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Fill "Input 2": Transaction Value<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Fill "Input 3": Request Number<span class="nt">&lt;/li&gt;</span>
       <span class="nt">&lt;li&gt;</span>Fill your Mandiri Token response into “Challenge Token”<span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;/ll&gt;</span>
 
     <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;checkout_mandiri.php&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">id=</span><span class="s">&quot;payment-form&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_mandiri.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;label&gt;</span>Card Number<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-number&quot;</span> <span class="na">name=</span><span class="s">&quot;card-number&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;4111111111111111&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"card-number"</span> <span class="na">name=</span><span class="s">"card-number"</span> <span class="na">size=</span><span class="s">"20"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"4111111111111111"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
       
       <span class="nt">&lt;label&gt;</span>Input 1<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;input1&quot;</span> <span class="na">name=</span><span class="s">&quot;input1&quot;</span> <span class="na">size=</span><span class="s">&quot;10&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">readonly=</span><span class="s">&quot;readonly&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"input1"</span> <span class="na">name=</span><span class="s">"input1"</span> <span class="na">size=</span><span class="s">"10"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">readonly=</span><span class="s">"readonly"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
 
       <span class="nt">&lt;label&gt;</span>Input 2<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;input2&quot;</span> <span class="na">name=</span><span class="s">&quot;input2&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;200500&quot;</span> <span class="na">readonly=</span><span class="s">&quot;readonly&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"input2"</span> <span class="na">name=</span><span class="s">"input2"</span> <span class="na">size=</span><span class="s">"20"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"200500"</span> <span class="na">readonly=</span><span class="s">"readonly"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
 
       <span class="nt">&lt;label&gt;</span>Input 3<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;input3&quot;</span> <span class="na">name=</span><span class="s">&quot;input3&quot;</span> <span class="na">size=</span><span class="s">&quot;5&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">readonly=</span><span class="s">&quot;readonly&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"input3"</span> <span class="na">name=</span><span class="s">"input3"</span> <span class="na">size=</span><span class="s">"5"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">readonly=</span><span class="s">"readonly"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
 
       <span class="nt">&lt;label&gt;</span>Challenge Token<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;token&quot;</span> <span class="na">name=</span><span class="s">&quot;token&quot;</span> <span class="na">size=</span><span class="s">&quot;10&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;000000&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"token"</span> <span class="na">name=</span><span class="s">"token"</span> <span class="na">size=</span><span class="s">"10"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"000000"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
 
-      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;submit-button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
-</pre>
+</code></pre>
+
     <p>The above form utilise the jQuery library that can be modified as needed. When the form is first shown, <em>field</em> input 2 and 3 are automatically filled. Input 2 is the total transaction value. Input 3 is the 5 digit numeric that is generated randomly by Javascript.</p>
 
     <p>Javascript also allows field input 1 automatically filled when your customer insert their Mandiri Debit card. Customer simply has to use the Mandiri Token to fill the challenge field and these informations will be submitted to <code>checkout_mandiri.php</code>. This file consists of implementations to charge transaction using Mandiri ClickPay.</p>
@@ -387,12 +388,12 @@
 
     <p>To perform transaction charge in Mandiri ClickPay, we can use Veritrans PHP Library. The following is an example of charge transaction implementation in the file <code>checkout_mandiri.php</code>:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key&gt;&quot;</span><span class="p">;</span>
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key&gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="nv">$card_number</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'card-number'</span><span class="p">];</span>
@@ -407,10 +408,10 @@
 <span class="p">);</span>
 
 <span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span> <span class="c1">// Optional
-</span>    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;Andri@Litani.com&quot;</span><span class="p">,</span>
-    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional
+</span>    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">"Andri@Litani.com"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
     <span class="p">);</span>
 
 <span class="c1">// Data that will be sent for charge transaction request with Mandiri ClickPay.
@@ -429,7 +430,8 @@
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>On the above example, we utilise the mandiri Clickpay, transaction, and customer data as the charge transaction parameter. You can add additional data during charge transaction, such as: Customer address, Delivery address, and item information.
 To add this data, you can check <a href="../sandbox/charge.html#specification">API Reference - Charge Transaction</a>.</p>
 
@@ -483,17 +485,18 @@ To add this data, you can check <a href="../sandbox/charge.html#specification">A
 
     <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:</p>
 
-<pre class="highlight php">$result = array(
-    &quot;transaction_id&quot; =&gt; &quot;cddd6c1f-3b03-4c89-b0a8-0ea7dccf5217&quot;,
-    &quot;order_id&quot; =&gt; &quot;201404031721&quot;,
-    &quot;gross_amount&quot; =&gt; &quot;10000&quot;,
-    &quot;payment_type&quot; =&gt; &quot;mandiri_clickpay&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-04-03 17:21:46&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;settlement&quot;,
-    &quot;status_code&quot; =&gt; &quot;200&quot;,
-    &quot;status_message&quot; =&gt; &quot;OK, Mandiri Clickpay transaction is successful&quot;
+<pre><code class="highlight php">$result = array(
+    "transaction_id" =&gt; "cddd6c1f-3b03-4c89-b0a8-0ea7dccf5217",
+    "order_id" =&gt; "201404031721",
+    "gross_amount" =&gt; "10000",
+    "payment_type" =&gt; "mandiri_clickpay",
+    "transaction_time" =&gt; "2014-04-03 17:21:46",
+    "transaction_status" =&gt; "settlement",
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "OK, Mandiri Clickpay transaction is successful"
 );
-</pre>
+</code></pre>
+
     <p>One of the most important information in the JSON response is the transaction status. There are two types of transaction status for Mandiri ClickPay charge transaction response:</p>
 
     <ol>
@@ -503,36 +506,37 @@ To add this data, you can check <a href="../sandbox/charge.html#specification">A
 
     <p>You can add the following PHP code at the last line of the file <code>checkout_mandiri.php</code> to send transaction status to your customer:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="o">...</span>
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;settlement&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"settlement"</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//success
-</span>  <span class="k">echo</span> <span class="s2">&quot;Mandiri ClickPay Transaction Successful. &lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;Transaction status for order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Transaction details:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Mandiri ClickPay Transaction Successful. &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Transaction status for order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Transaction details:&lt;/h3&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;deny&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"deny"</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//deny
-</span>  <span class="k">echo</span> <span class="s2">&quot;Mandiri ClickPay Transaction Failed. &lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;Transaction status for order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Transaction details:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Mandiri ClickPay Transaction Failed. &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Transaction status for order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Transaction details:&lt;/h3&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="c1">//error
-</span>  <span class="k">echo</span> <span class="s2">&quot;Errors occurs on the sent transaction data.&lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Result:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Errors occurs on the sent transaction data.&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Up till here, the payment process of a Mandiri ClickPay transaction is completed. If <code>transaction_status</code> value is <code>200</code>, the transaction value has been settled to your account. In addition to sending the transaction status to the customer, you can also use the code above to update the respective database. Example, to mark if the respective <code>order_id</code> has been paid.</p>
 
     <p>Transaction status can also be found in Merchant Administration Portal (MAP). You have to login to MAP to see the detail of the transaction. The other alternative to check on the transaction status is to use the command <a href="other_commands.html#status">VT-Direct — Acquiring Transaction Status</a>.</p>

@@ -246,37 +246,38 @@
 
     <p>Berikut adalah contoh form pada file <code>form_vtdirect.html</code>:</p>
 
-<pre class="highlight html"><span class="nt">&lt;html&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>Contoh Form VT-Direct<span class="nt">&lt;/title&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;h1&gt;</span>Checkout<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;checkout.php&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">id=</span><span class="s">&quot;payment-form&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;label&gt;</span>Card Number<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-number&quot;</span> <span class="na">size=</span><span class="s">&quot;20&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;4811111111111114&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"card-number"</span> <span class="na">size=</span><span class="s">"20"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"4811111111111114"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
 
       <span class="nt">&lt;label&gt;</span>Expiration (MM/YYYY)<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-expiry-month&quot;</span> <span class="na">size=</span><span class="s">&quot;2&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;01&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"card-expiry-month"</span> <span class="na">size=</span><span class="s">"2"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"01"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;span&gt;</span> / <span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-expiry-year&quot;</span> <span class="na">size=</span><span class="s">&quot;4&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;2020&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"card-expiry-year"</span> <span class="na">size=</span><span class="s">"4"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"2020"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
       
       <span class="nt">&lt;label&gt;</span>CVV<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;card-cvv&quot;</span> <span class="na">size=</span><span class="s">&quot;3&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">value=</span><span class="s">&quot;123&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"card-cvv"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">"123"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
       
       <span class="c">&lt;!-- Additional Field --&gt;</span>
       <span class="nt">&lt;label&gt;</span>Harga<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;price&quot;</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;200500&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"price"</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"200500"</span><span class="nt">/&gt;</span>
 
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;token-id&quot;</span> <span class="na">name=</span><span class="s">&quot;token-id&quot;</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;submit-button&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"token-id"</span> <span class="na">name=</span><span class="s">"token-id"</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</pre>
+</code></pre>
+
     <hr />
 
     <h3 id="javascript">Library Javascript Veritrans</h3>
@@ -285,10 +286,11 @@
 
     <p>Untuk menggunakan library ini, anda cukup menambahkan satu baris kode HTML pada <code>form_vtdirect.html</code> dalam tag <code>&lt;head&gt;</code>.</p>
 
-<pre class="highlight html">
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<pre><code class="highlight html">
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-</pre>
+</code></pre>
+
     <!-- Dan jika anda menggunakan **akun produksi**, tambahkan:
 
 ~~~ html
@@ -298,7 +300,7 @@
 
     <p>Isi awal dari file <code>form_vtdirect.html</code> jika anda menggunakan akun sandbox adalah sebagai berikut:</p>
 
-<pre class="highlight html"><span class="nt">&lt;html&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>Contoh Form VT-Direct<span class="nt">&lt;/title&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -307,20 +309,23 @@
   ...
 
 <span class="nt">&lt;/html&gt;</span>
-</pre>
+</code></pre>
+
     <hr />
 
     <h3 id="script-tambahan">Script Tambahan</h3>
 
     <p>Script tambahan digunakan untuk menghubungkan konten form yang telah kita buat dengan <code>veritrans.min.js</code>. Script pertama yang digunakan adalah <strong>jQuery</strong>. jQuery akan mempermudah akses elemen HTML dan menambahkan event saat form di-submit. Untuk menggunakan jQuery, tambahkan kode berikut pada tag <code>head</code> file <code>form_vtdirect.html</code>:</p>
 
-<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre>
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+
     <p>Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fancybox berperan dalam pembuatan tampilan form konfirmasi 3D secure yang dinamis. Anda dapat mengunduh jQuery fancybox di <a href="https://github.com/fancyapps/fancyBox">sini</a>. Extract library tersebut dan tambahkan kode berikut ke dalam tag <code>head</code> file <code>form_vtdirect.html</code>:</p>
 
-<pre class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;fancybox/jquery.fancybox.pack.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;fancybox/jquery.fancybox.css&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span> <span class="nt">/&gt;</span>
-</pre>
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"fancybox/jquery.fancybox.pack.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"fancybox/jquery.fancybox.css"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">media=</span><span class="s">"screen"</span> <span class="nt">/&gt;</span>
+</code></pre>
+
     <p>Pastikan path file javascript dan CSS fancybox sesuai dengan struktur folder project anda.</p>
 
     <p>Script terakhir digunakan untuk mengintegrasikan semua komponen yang telah kita buat sebelumnya. Pada script ini, anda harus memastikan bahwa <strong>client key</strong> dan <strong>URL API Veritrans</strong> sudah tepat. Client key dapat anda peroleh di halaman <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. URL API Veritrans untuk environment Sandbox adalah:</p>
@@ -331,69 +336,70 @@ https://api.veritrans.co.id/v2/token
 
 Sedangkan URL API Veritrans untuk environment sandbox adalah:
  -->
-<pre class="highlight text">https://api.sandbox.veritrans.co.id/v2/token
-</pre>
+<pre><code class="highlight plaintext">https://api.sandbox.veritrans.co.id/v2/token
+</code></pre>
+
     <p>Untuk meningkatkan keamanan transaksi online, kami sangat menyarankan anda untuk mengaktifkan fitur 3D Secure. Ada 2 informasi yang perlu diberikan agar fitur ini dapat digunakan: acquiring bank (Bank Penerbit Kartu Kredit Merchant) dan nilai transaksi.</p>
 
     <p>Jika anda menggunakan environment sandbox, acquiring bank adalah BNI, dan nilai transaksi adalah Rp 200.000,00, contoh script yang ditambakan ke dalam tag <code>head</code> file <code>form_vtdirect.html</code>:</p>
 
-<pre class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<pre><code class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="c1">// Sandbox API URL. TODO: Change with Production API URL when you're ready to go live.
-</span>  <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.sandbox.veritrans.co.id/v2/token&quot;</span><span class="p">;</span>
+  <span class="c1">// Sandbox API URL. TODO: Change with Production API URL when you're ready to go live.</span>
+  <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/token"</span><span class="p">;</span>
 
-  <span class="c1">// TODO: Change with your actual client key that can be found at Merchant Administration Portal &gt;&gt; Settings &gt;&gt; Access Key
-</span>  <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">client_key</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Client Key&gt;&quot;</span><span class="p">;</span>
+  <span class="c1">// TODO: Change with your actual client key that can be found at Merchant Administration Portal &gt;&gt; Settings &gt;&gt; Access Key</span>
+  <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">client_key</span> <span class="o">=</span> <span class="s2">"&lt; Your Client Key&gt;"</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="s1">'card_number'</span>     <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-number&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_month'</span>  <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-expiry-month&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_year'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-expiry-year&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_cvv'</span>        <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#card-cvv&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_number'</span>     <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_cvv'</span>        <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
 
-      <span class="c1">// Set 'secure', 'bank', and 'gross_amount', if the merchant wants transaction to be processed with 3D Secure
-</span>      <span class="s1">'secure'</span>       <span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span>       <span class="err">:</span> <span class="s1">'bni'</span><span class="p">,</span>
-      <span class="s1">'gross_amount'</span>   <span class="err">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#price&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+      <span class="c1">// Set 'secure', 'bank', and 'gross_amount', if the merchant wants transaction to be processed with 3D Secure</span>
+      <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
     <span class="p">}</span>
   <span class="p">};</span>
 
-  <span class="c1">// handler when user click the 'Pay' button.
-</span>  <span class="nx">$</span><span class="p">(</span><span class="s1">'#submit-button'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+  <span class="c1">// handler when user click the 'Pay' button.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#submit-button'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
     <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="s2">&quot;disabled&quot;</span><span class="p">);</span> 
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">,</span> <span class="s2">"disabled"</span><span class="p">);</span> 
     <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">token</span><span class="p">(</span><span class="nx">card</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
   <span class="p">});</span>
 
   <span class="kd">function</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">redirect_url</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// 3Dsecure transaction. Open 3Dsecure dialog
-</span>      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Open Dialog 3Dsecure'</span><span class="p">);</span>
+      <span class="c1">// 3Dsecure transaction. Open 3Dsecure dialog</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Open Dialog 3Dsecure'</span><span class="p">);</span>
       <span class="nx">openDialog</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">redirect_url</span><span class="p">);</span>
 
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status_code</span> <span class="o">==</span> <span class="s1">'200'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// success 3d secure or success normal
-</span>      <span class="c1">//close 3d secure dialog if any
-</span>      <span class="nx">closeDialog</span><span class="p">();</span>
+      <span class="c1">// success 3d secure or success normal</span>
+      <span class="c1">//close 3d secure dialog if any</span>
+      <span class="nx">closeDialog</span><span class="p">();</span>
 
-      <span class="c1">// store token data in input #token_id and then submit form to merchant server
-</span>      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#token-id&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">token_id</span><span class="p">);</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#payment-form&quot;</span><span class="p">).</span><span class="nx">submit</span><span class="p">();</span>
+      <span class="c1">// store token data in input #token_id and then submit form to merchant server</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">"#token-id"</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">token_id</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">"#payment-form"</span><span class="p">).</span><span class="nx">submit</span><span class="p">();</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">// failed request token
-</span>      <span class="c1">//close 3d secure dialog if any
-</span>      <span class="nx">closeDialog</span><span class="p">();</span>
+      <span class="c1">// failed request token</span>
+      <span class="c1">//close 3d secure dialog if any</span>
+      <span class="nx">closeDialog</span><span class="p">();</span>
       <span class="nx">$</span><span class="p">(</span><span class="s1">'#submit-button'</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">);</span>
-      <span class="c1">// Show status message.
-</span>      <span class="nx">$</span><span class="p">(</span><span class="s1">'#message'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status_message</span><span class="p">);</span>
+      <span class="c1">// Show status message.</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#message'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status_message</span><span class="p">);</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="c1">// Open 3DSecure dialog box
-</span>  <span class="kd">function</span> <span class="nx">openDialog</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Open 3DSecure dialog box</span>
+  <span class="kd">function</span> <span class="nx">openDialog</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">fancybox</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span>
           <span class="na">href</span><span class="p">:</span> <span class="nx">url</span><span class="p">,</span>
           <span class="na">type</span><span class="p">:</span> <span class="s1">'iframe'</span><span class="p">,</span>
@@ -405,13 +411,14 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
       <span class="p">});</span>
   <span class="p">}</span>
 
-  <span class="c1">// Close 3DSecure dialog box
-</span>  <span class="kd">function</span> <span class="nx">closeDialog</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Close 3DSecure dialog box</span>
+  <span class="kd">function</span> <span class="nx">closeDialog</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">.</span><span class="nx">fancybox</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
-</pre>
+</code></pre>
+
     <p>Ketika pelanggan menekan tombol <code>Pay</code>, javascript akan mengumpulkan nilai <em>field</em> <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, <code>cvv</code>,  dan <code>amount</code> dari form HTML. Nilai dari <em>field-field</em> ini kemudian dikirim secara aman ke server Veritrans. Jika nilai <em>field</em> yang dikirimkan valid, server Veritrans akan mengembalikan sebuah token ID yang dapat digunakan untuk melakukan charge transaksi. </p>
 
     <p>Ketika token ID diperoleh, <em>hidden field</em> <code>token_id</code> akan otomatis terisi dan dikirimkan ke server merchant. Perlu diperhatikan bahwa data sensitif pelanggan tidak dikirim ke server merchant (tidak memiliki atribut <code>name</code>). Server anda hanya menerima data <code>amount</code> dan <code>token_id</code>.</p>
@@ -487,18 +494,18 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 
     <p>Contoh isi file <code>checkout.php</code> untuk melakukan charge transaksi (simple transaction data):</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">]))</span> 
 <span class="p">{</span>
-  <span class="k">echo</span> <span class="s2">&quot;Empty token-id.&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Empty token-id."</span><span class="p">;</span>
   <span class="k">exit</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key&gt;&quot;</span><span class="p">;</span>
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key&gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="c1">// token_id merepresentasikan credit card yang akan di-carge.
@@ -523,21 +530,22 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Contoh isi file <code>checkout.php</code> untuk melakukan charge transaksi (full transaction data):</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">]))</span> 
 <span class="p">{</span>
-  <span class="k">echo</span> <span class="s2">&quot;Empty token-id.&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Empty token-id."</span><span class="p">;</span>
   <span class="k">exit</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">&quot;&lt; Your Server Key&gt;&quot;</span><span class="p">;</span>
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key&gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="c1">// token_id merepresentasikan credit card yang akan di-carge.
@@ -571,32 +579,32 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 
 <span class="c1">//Opsional
 </span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
-    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Mangga 20&quot;</span><span class="p">,</span>
-    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
-    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;16602&quot;</span><span class="p">,</span>
-    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span><span class="p">,</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">"16602"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span><span class="p">,</span>
     <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
     <span class="p">);</span>
 
 <span class="c1">// Opsional
 </span><span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Obet&quot;</span><span class="p">,</span>
-    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Supriadi&quot;</span><span class="p">,</span>
-    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">&quot;Manggis 90&quot;</span><span class="p">,</span>
-    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">&quot;Jakarta&quot;</span><span class="p">,</span>
-    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">&quot;16601&quot;</span><span class="p">,</span>
-    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;08113366345&quot;</span><span class="p">,</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Obet"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">"16601"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"08113366345"</span><span class="p">,</span>
     <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
     <span class="p">);</span>
 
 <span class="c1">// Required
 </span><span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">&quot;Andri&quot;</span><span class="p">,</span>
-    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">&quot;Litani&quot;</span><span class="p">,</span>
-    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;andri@litani.com&quot;</span><span class="p">,</span>
-    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">&quot;081122334455&quot;</span><span class="p">,</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
+    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span><span class="p">,</span>
     <span class="s1">'billing_address'</span>  <span class="o">=&gt;</span> <span class="nv">$billing_address</span><span class="p">,</span>
     <span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span>
     <span class="p">);</span>
@@ -617,7 +625,8 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <hr />
 
     <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
@@ -677,34 +686,36 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 
     <h3 id="respon-sukses">Respon Sukses</h3>
 
-<pre class="highlight php">$result = array(
-    &quot;transaction_id&quot; =&gt; &quot;93c6a0ff-b270-4b00-adba-f1738ff90261&quot;,
-    &quot;order_id&quot; =&gt; &quot;201303131610&quot;,
-    &quot;gross_amount&quot; =&gt; 10000.00,
-    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-03-13 16:10:15&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;capture&quot;,
-    &quot;fraud_status&quot; =&gt; &quot;accept&quot;,
-    &quot;masked_card&quot; =&gt; &quot;481111-1114&quot;,
-    &quot;status_code&quot; =&gt; &quot;200&quot;,
-    &quot;status_message&quot; =&gt; &quot;OK, Credit Card transaction is successful&quot;
+<pre><code class="highlight php">$result = array(
+    "transaction_id" =&gt; "93c6a0ff-b270-4b00-adba-f1738ff90261",
+    "order_id" =&gt; "201303131610",
+    "gross_amount" =&gt; 10000.00,
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-03-13 16:10:15",
+    "transaction_status" =&gt; "capture",
+    "fraud_status" =&gt; "accept",
+    "masked_card" =&gt; "481111-1114",
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "OK, Credit Card transaction is successful"
 );
-</pre>
+</code></pre>
+
     <h3 id="respon-gagal">Respon Gagal</h3>
 
-<pre class="highlight php">$result = array(
-    &quot;transaction_id&quot; =&gt; &quot;f5507d7c-a46f-4a00-97a1-8a0b29d34ab3&quot;,
-    &quot;order_id&quot; =&gt; &quot;201303121701&quot;,
-    &quot;payment_type&quot; =&gt; &quot;credit_card&quot;,
-    &quot;transaction_time&quot; =&gt; &quot;2014-07-15 16:01:30&quot;,
-    &quot;transaction_status&quot; =&gt; &quot;deny&quot;,
-    &quot;fraud_status&quot; =&gt; &quot;accept&quot;,
-    &quot;masked_card&quot; =&gt; &quot;491111-1113&quot;,
-    &quot;gross_amount&quot; =&gt; &quot;10000.00&quot;
-    &quot;status_code&quot; =&gt; &quot;202&quot;,
-    &quot;status_message&quot; =&gt; &quot;Deny by Bank [BNI] with code [05] and message [Do not honour]&quot;,
+<pre><code class="highlight php">$result = array(
+    "transaction_id" =&gt; "f5507d7c-a46f-4a00-97a1-8a0b29d34ab3",
+    "order_id" =&gt; "201303121701",
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-07-15 16:01:30",
+    "transaction_status" =&gt; "deny",
+    "fraud_status" =&gt; "accept",
+    "masked_card" =&gt; "491111-1113",
+    "gross_amount" =&gt; "10000.00"
+    "status_code" =&gt; "202",
+    "status_message" =&gt; "Deny by Bank [BNI] with code [05] and message [Do not honour]",
 );
-</pre>
+</code></pre>
+
     <p>Salah satu informasi yang paling penting dalam respon JSON adalah status transaksi. Status transaksi dapat dilihat di atribut <code>transaction_status</code>. Ada 3 macam status transaksi:</p>
 
     <ol>
@@ -715,7 +726,7 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 
     <p>Anda dapat menambahkan kode PHP berikut ke dalam bagian akhir file <code>checkout.php</code> untuk menyampaikan status transaksi pada pelanggan anda:</p>
 
-<pre class="highlight php"><span class="cp">&lt;?php</span>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
@@ -723,41 +734,42 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;capture&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"capture"</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//success
-</span>  <span class="k">echo</span> <span class="s2">&quot;Transaksi berhasil. &lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Detail transaksi:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Transaksi berhasil. &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Status transaksi untuk order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Detail transaksi:&lt;/h3&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;deny&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"deny"</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//deny
-</span>  <span class="k">echo</span> <span class="s2">&quot;Transaksi ditolak. &lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Transaksi ditolak. &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Status transaksi untuk order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
 
-  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Detail transaksi:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Detail transaksi:&lt;/h3&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">&quot;challenge&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"challenge"</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//challenge
-</span>  <span class="k">echo</span> <span class="s2">&quot;Transaksi challenge. &lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;Status transaksi untuk order id &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">&quot;: &quot;</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Transaksi challenge. &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Status transaksi untuk order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
 
-  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Detail transaksi:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Detail transaksi:&lt;/h3&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
   <span class="c1">//error
-</span>  <span class="k">echo</span> <span class="s2">&quot;Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;&quot;</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">&quot;&lt;h3&gt;Result:&lt;/h3&gt;&quot;</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
   <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
-</pre>
+</code></pre>
+
     <p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Jika nilai <code>transaction_status</code> adalah <code>capture</code>, kartu kredit pelanggan anda sudah di-charge ke akun anda. Selain menyampaikan status transaksi ke pelanggan, anda juga dapat menggunakan kode di atas untuk meng-update database terkait, misalnya menandai bahwa transaksi dengan <code>order_id</code> tersebut telah terbayar. </p>
 
     <p>Status transaksi juga dapat anda ketahui di Merchant Administration Portal(MAP). Anda perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut. Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
