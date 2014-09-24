@@ -652,44 +652,42 @@
 
 <span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your server key&gt;'</span><span class="p">;</span>
-
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
 
-  <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
-  <span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
-  <span class="nv">$order_id</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">;</span>
-  <span class="nv">$fraud</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+<span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
+<span class="nv">$order_id</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">;</span>
+<span class="nv">$fraud</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
 
-  <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'capture'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// TODO set payment status in merchant's database to 'Captured'
-</span>    
-    <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'capture'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// For credit card transaction, we need to check whether transaction is challenge by FDS or not
+</span>  <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'credit_card'</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s1">'challenge'</span><span class="p">){</span>
+    <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
+</span>    <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
+</span>
+      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// TODO set payment status in merchant's database to 'Success'
+</span>
+      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+    <span class="p">}</span>
   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
-    <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
+  <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
 </span>
     <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
-    <span class="c1">// TODO set payment status in merchant's database to 'Pending'
+  <span class="c1">// TODO set payment status in merchant's database to 'Pending'
 </span>
     <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s2">"credit_card"</span><span class="p">){</span>
-      <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s2">"challenge"</span><span class="p">){</span>
-        <span class="c1">// TODO set payment status in merchant's database to 'Denied by FDS'
-</span>        <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
-</span>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// TODO set payment status in merchant's database to 'Denied by Bank
-</span>      <span class="p">}</span>
-      <span class="k">echo</span> <span class="s2">"Credit card payment for transaction order_id:"</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied. Fraud status: "</span> <span class="o">.</span> <span class="nv">$fraud</span><span class="p">;</span> 
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">// TODO set payment status in merchant's database to 'Denied'
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
 </span>
-      <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
   <span class="p">}</span>
+<span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre>
 

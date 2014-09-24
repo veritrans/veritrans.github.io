@@ -182,29 +182,29 @@
     <p>Sama dengan charge transaksi VT-Web, output dari fungsi cicilan adalah URL pembayaran. Pelanggan harus anda redirect ke URL pembayaran VT-Web untuk menyelesaikan transaksi. Implementasi fungsi cicilan pada VT-Web sangat sederhana, anda cukup menambahkan atribut <code>payment_options</code> dan <code>installment</code> pada JSON request charge transaksi. Berikut adalah JSON request cicilan pada VT-Web:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"vtweb"</span><span class="p">,</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"credit_card"</span><span class="p">],</span>
-          <span class="s2">"payment_options"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"installment"</span><span class="p">:</span> <span class="p">{</span>
-              <span class="s2">"required"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-              <span class="s2">"installment_terms"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">"bni"</span><span class="p">:</span> <span class="p">[],</span>
-                <span class="s2">"mandiri"</span><span class="p">:[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
-            <span class="p">}</span>
-          <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"vtweb"</span><span class="p">,</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"credit_card"</span><span class="p">],</span>
+		<span class="s2">"payment_options"</span><span class="p">:</span> <span class="p">{</span>
+			<span class="s2">"installment"</span><span class="p">:</span> <span class="p">{</span>
+				<span class="s2">"required"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+				<span class="s2">"installment_terms"</span><span class="p">:</span> <span class="p">{</span>
+					<span class="s2">"bni"</span><span class="p">:</span> <span class="p">[],</span>
+					<span class="s2">"mandiri"</span><span class="p">:[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"K17550"</span><span class="p">,</span>
 		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
 	<span class="p">},</span>
-    <span class="c1">// Optional</span>
-    <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
 		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
 		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
@@ -230,8 +230,8 @@
 		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
 		<span class="p">}</span>
 	<span class="p">},</span>
-    <span class="c1">// Optional</span>
-    <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
 		<span class="p">{</span>
 			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
 			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
@@ -244,7 +244,7 @@
 			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
 			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
 		<span class="p">}</span>
-    <span class="p">]</span>
+	<span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -253,9 +253,9 @@
     <p>Struktur JSON response fungsi cicilan sama dengan <a href="charge.html#vtweb">charge transaksi VT-Web</a>. Contoh JSON response sukses:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do VTWeb transaction, please go to redirect_url"</span><span class="p">,</span>
-    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://vtweb.sandbox.veritrans.co.id/v2/vtweb/550ad19d-e01b-4c8f-945a-67902c7b83da"</span>
+	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do VTWeb transaction, please go to redirect_url"</span><span class="p">,</span>
+	<span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://vtweb.sandbox.veritrans.co.id/v2/vtweb/550ad19d-e01b-4c8f-945a-67902c7b83da"</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -267,26 +267,26 @@
     <p>Setelah token diperoleh, charge transaksi cicilan dapat dilakukan dengan menambahkan atribut <code>installment_term</code> dalam <code>credit_card</code>:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your installment token ID &gt;"</span><span class="p">,</span>
-        <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span>
-    <span class="p">},</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+		<span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your installment token ID &gt;"</span><span class="p">,</span>
+		<span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span>
+	<span class="p">},</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"K17550"</span><span class="p">,</span>
 		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
 	<span class="p">},</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
 		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
 		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
 		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
-    <span class="c1">// Optional</span>
+	<span class="c1">// Optional</span>
 	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
 		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
@@ -295,8 +295,8 @@
 		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
 		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
 		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
-		<span class="p">},</span>
-    <span class="c1">// Optional</span>
+	<span class="p">},</span>
+	<span class="c1">// Optional</span>
 	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
 		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
@@ -304,10 +304,11 @@
 		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
 		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16601"</span><span class="p">,</span>
 		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"08113366345"</span><span class="p">,</span>
-		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>    <span class="p">}</span>
-	    <span class="p">},</span>
-    <span class="c1">// Optional</span>
-    <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
 		<span class="p">{</span>
 			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
 			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
@@ -320,24 +321,24 @@
 			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
 			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
 		<span class="p">}</span>
-    <span class="p">]</span>
+	<span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
 
     <p>Struktur JSON response cicilan sama dengan <a href="charge.html#vtdirect-cc">charge transaksi VT-Direct</a> kartu kredit. Perbedaan hanya terdapat konten <code>status_message</code>. Contoh JSON response transaksi sukses: </p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Credit Card 3D Secure Installment transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"b833d18c-2670-4659-9a01-1d41d0fb3a3d"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"K17550"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-25 09:56:58"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
-    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
-    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1408935419377"</span><span class="p">,</span>
-    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Credit Card 3D Secure Installment transaction is successful"</span><span class="p">,</span>
+	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"b833d18c-2670-4659-9a01-1d41d0fb3a3d"</span><span class="p">,</span>
+	<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"K17550"</span><span class="p">,</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+	<span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-25 09:56:58"</span><span class="p">,</span>
+	<span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+	<span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+	<span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+	<span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1408935419377"</span><span class="p">,</span>
+	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
 <span class="p">}</span>
 </code></pre>
 

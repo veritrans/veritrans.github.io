@@ -184,25 +184,25 @@
     <p>Similar to VT-Web transaction charge, output from BIN Promo function is payment URL. Customer have to be redirected to VT-Web payment URL to complete the transaction proccess. Implementing BIN Promo on VT-Web is very simple, you only need to add  <code>credit_card_bins</code> function on JSON request of transaction charge. The following is JSON request for BIN Promo function on VT-Web:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span>	<span class="s2">"vtweb"</span><span class="p">,</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"vtweb"</span> <span class="p">:</span> <span class="p">{</span>
-    	<span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"credit_card"</span><span class="p">],</span>
-        <span class="s2">"credit_card_bins"</span><span class="p">:</span>	<span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>
-    <span class="p">},</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span>	<span class="s2">"vtweb"</span><span class="p">,</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"vtweb"</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"credit_card"</span><span class="p">],</span>
+		<span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>
+	<span class="p">},</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"M17550"</span><span class="p">,</span>
 		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
 	<span class="p">},</span>
-    <span class="c1">// Optional</span>
-    <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-	    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
-	    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
-	    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
 	<span class="c1">// Optional</span>
 	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
@@ -212,7 +212,7 @@
 		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
 		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
 		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
-	<span class="p">},</span>
+		<span class="p">},</span>
 	<span class="c1">// Optional</span>
 	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
@@ -224,30 +224,30 @@
 		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
 		<span class="p">}</span>
 	<span class="p">},</span>
-    <span class="c1">// Optional</span>
-    <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
 		<span class="p">{</span>
-		<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
-		<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
-		<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-		<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
 		<span class="p">},</span>
 		<span class="p">{</span>
-		<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
-		<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
-		<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
 		<span class="p">}</span>
-    <span class="p">]</span>
+	<span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
 
     <p>JSON response structure on BIN Promo function is the same as <a href="charge.html#vtweb">VT-Web transaction charge</a>. Below is the successful JSON response:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do VTWeb transaction, please go to redirect_url"</span><span class="p">,</span>
-    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://vtweb.sandbox.veritrans.co.id/v2/vtweb/550ad19d-e01b-4c8f-945a-67902c7b83da"</span>
+	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do VTWeb transaction, please go to redirect_url"</span><span class="p">,</span>
+	<span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://vtweb.sandbox.veritrans.co.id/v2/vtweb/550ad19d-e01b-4c8f-945a-67902c7b83da"</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -259,26 +259,26 @@
     <p>After getting the token, BIN Promo transaction charge can be done by adding attribute <code>bins</code> on <code>credit_card</code>:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>
-        <span class="s2">"bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>
-    <span class="p">},</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
-	  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"P17550"</span><span class="p">,</span>
-	  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span>	<span class="s2">"vtweb"</span><span class="p">,</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"vtweb"</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"credit_card"</span><span class="p">],</span>
+		<span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>
 	<span class="p">},</span>
-    <span class="c1">// Required</span>
-    <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
-	    <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-	    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
-	    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
-	    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
-    <span class="c1">// Optional</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"M17550"</span><span class="p">,</span>
+		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+	<span class="c1">// Optional</span>
 	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
 		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
@@ -288,7 +288,7 @@
 		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
 		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
 		<span class="p">},</span>
-    <span class="c1">// Optional</span>
+	<span class="c1">// Optional</span>
 	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
 		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
@@ -299,21 +299,21 @@
 		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
 		<span class="p">}</span>
 	<span class="p">},</span>
-    <span class="c1">// Optional</span>
-    <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
 		<span class="p">{</span>
-		<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
-		<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
-		<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-		<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
 		<span class="p">},</span>
 		<span class="p">{</span>
-		<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
-		<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
-		<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-		<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
 		<span class="p">}</span>
-    <span class="p">]</span>
+	<span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -324,28 +324,28 @@
     <p>The example of success transaction JSON Response as follows:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1a1a66f7-27a7-4844-ba1f-d86dcc16ab27"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"P17550"</span><span class="p">,</span>
-    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:39:22"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
-    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Credit Card 3D Secure transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1408869563148"</span>
+	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1a1a66f7-27a7-4844-ba1f-d86dcc16ab27"</span><span class="p">,</span>
+	<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"P17550"</span><span class="p">,</span>
+	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span><span class="p">,</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+	<span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:39:22"</span><span class="p">,</span>
+	<span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+	<span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+	<span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Credit Card 3D Secure transaction is successful"</span><span class="p">,</span>
+	<span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1408869563148"</span>
 <span class="p">}</span>
 </code></pre>
 
     <p>The example of denied transaction is as follows:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"400"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Validation Error, [credit card number does not match with the list of credit_card.bins]"</span><span class="p">,</span>
-    <span class="s2">"validation_messages"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">"credit card number does not match with the list of credit_card.bins"</span>
-    <span class="p">]</span>
+	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"400"</span><span class="p">,</span>
+	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Validation Error, [credit card number does not match with the list of credit_card.bins]"</span><span class="p">,</span>
+	<span class="s2">"validation_messages"</span><span class="p">:</span> <span class="p">[</span>
+	<span class="s2">"credit card number does not match with the list of credit_card.bins"</span>
+	<span class="p">]</span>
 <span class="p">}</span>
 </code></pre>
 
