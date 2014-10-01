@@ -535,9 +535,9 @@
         </tr>
         <tr>
           <td>order_id</td>
-          <td>String(50)</td>
+          <td>String (50)</td>
           <td>Yes</td>
-          <td>Customer's order id</td>
+          <td>Order id</td>
         </tr>
         <tr>
           <td>gross_amount</td>
@@ -562,25 +562,25 @@
         </tr>
         <tr>
           <td>id</td>
-          <td>String(50)</td>
+          <td>String (50)</td>
           <td>Yes</td>
           <td>Item ID</td>
         </tr>
         <tr>
           <td>price</td>
-          <td>Long</td>
+          <td>Number</td>
           <td>Yes</td>
           <td>Item Price</td>
         </tr>
         <tr>
           <td>quantity</td>
-          <td>Integer</td>
+          <td>Number</td>
           <td>Yes</td>
           <td>Total Item</td>
         </tr>
         <tr>
           <td>name</td>
-          <td>String(50)</td>
+          <td>String (50)</td>
           <td>Yes</td>
           <td>Item Name</td>
         </tr>
@@ -603,25 +603,25 @@
         </tr>
         <tr>
           <td>first_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Yes</td>
           <td>Customer's first name</td>
         </tr>
         <tr>
           <td>last_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>No</td>
           <td>Customer's last name</td>
         </tr>
         <tr>
           <td>email</td>
-          <td>String(45)</td>
+          <td>String (45)</td>
           <td>Yes</td>
           <td>Customer's Email.<br /><strong>Note</strong>: there will be validity check for format of the email address</td>
         </tr>
         <tr>
           <td>phone</td>
-          <td>String(19)</td>
+          <td>String (19)</td>
           <td>Yes</td>
           <td>Customer's phone number.<br /><strong>Note</strong>:<br />Minimum length is 5, &amp; it can only accept numeric and symbols +, -, (space), and (). For the + symbol can only be placed in front.</td>
         </tr>
@@ -656,43 +656,43 @@
         </tr>
         <tr>
           <td>first_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>No</td>
           <td>First name of billing address.<br /><strong>Note</strong> : Not required if it's the same as customer's first_name</td>
         </tr>
         <tr>
           <td>last_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>No</td>
           <td>Last Name of Billing Address</td>
         </tr>
         <tr>
           <td>address</td>
-          <td>String(200)</td>
+          <td>String (200)</td>
           <td>Yes</td>
           <td>Address of Billing address</td>
         </tr>
         <tr>
           <td>city</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Yes</td>
           <td>City of billing address</td>
         </tr>
         <tr>
           <td>postal_code</td>
-          <td>String(10)</td>
+          <td>String (10)</td>
           <td>Yes</td>
           <td>Postal code of billing address <br /><strong>Note</strong> format is alpha-numeric, &amp; it can accept “-” and space</td>
         </tr>
         <tr>
           <td>phone</td>
-          <td>String(19)</td>
+          <td>String (19)</td>
           <td>No</td>
           <td>Phone number of billing address.<br /><strong>Note</strong> :<br />Not required if it's the same as the customer's phone number.<br /> Minimum length is 5, &amp; it can only accept numeric and symbols +, -, (space), and ().<br /> the + symbol can only be placed in front.</td>
         </tr>
         <tr>
           <td>country_code</td>
-          <td>String(10)</td>
+          <td>String (10)</td>
           <td>No</td>
           <td>Country ID (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a></td>
         </tr>
@@ -715,43 +715,43 @@
         </tr>
         <tr>
           <td>first_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>No</td>
           <td>First name of shipping address</td>
         </tr>
         <tr>
           <td>last_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>No</td>
           <td>Last name of shipping address</td>
         </tr>
         <tr>
           <td>address</td>
-          <td>String(200)</td>
+          <td>String (200)</td>
           <td>Yes</td>
           <td>Shipping address</td>
         </tr>
         <tr>
           <td>city</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Yes</td>
           <td>City of shipping address</td>
         </tr>
         <tr>
           <td>postal_code</td>
-          <td>String(10)</td>
+          <td>String (10)</td>
           <td>Yes</td>
           <td>Postal code of shipping address. This attribute is required for payment using credit card. <br /><strong>Note</strong>: format is alpha-numeric, &amp; it can accept “-” and space</td>
         </tr>
         <tr>
           <td>phone</td>
-          <td>String(19)</td>
+          <td>String (19)</td>
           <td>No</td>
           <td>Phone number of billing address.<br /><strong>Note</strong> : Not required if it is the same as customer's phone number.<br /> Minimum length is 5, &amp; it can only accept numeric and symbols +, -, (space), and ().<br /> The + symbol can only be placed in front.</td>
         </tr>
         <tr>
           <td>country_code</td>
-          <td>String(10)</td>
+          <td>String (10)</td>
           <td>No</td>
           <td>Country ID (e.g : IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a></td>
         </tr>
@@ -836,7 +836,7 @@
         <tr>
           <td>status_code</td>
           <td>String</td>
-          <td>Status code result of transaction charge VT-Web. Complete list of status code can be seen [here](/sandbox/status_code/html</td>
+          <td>Status code result of transaction charge VT-Web. Complete list of status code can be seen <a href="/sandbox/status_code/html">here</a></td>
         </tr>
         <tr>
           <td>status_message</td>

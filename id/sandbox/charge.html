@@ -535,13 +535,13 @@
         </tr>
         <tr>
           <td>order_id</td>
-          <td>String(50)</td>
+          <td>String (50)</td>
           <td>Ya</td>
           <td>ID pemesanan pelanggan</td>
         </tr>
         <tr>
           <td>gross_amount</td>
-          <td>Long</td>
+          <td>Number</td>
           <td>Ya</td>
           <td>Nilai transaksi</td>
         </tr>
@@ -562,13 +562,13 @@
         </tr>
         <tr>
           <td>id</td>
-          <td>String(50)</td>
+          <td>String (50)</td>
           <td>Ya</td>
           <td>ID barang</td>
         </tr>
         <tr>
           <td>price</td>
-          <td>Long</td>
+          <td>Number</td>
           <td>Ya</td>
           <td>Harga barang</td>
         </tr>
@@ -580,7 +580,7 @@
         </tr>
         <tr>
           <td>name</td>
-          <td>String(50)</td>
+          <td>String (50)</td>
           <td>Ya</td>
           <td>Nama barang</td>
         </tr>
@@ -603,25 +603,25 @@
         </tr>
         <tr>
           <td>first_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Ya</td>
           <td>Nama depan customer</td>
         </tr>
         <tr>
           <td>last_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Tidak</td>
           <td>Nama belakang customer</td>
         </tr>
         <tr>
           <td>email</td>
-          <td>String(45)</td>
+          <td>String (45)</td>
           <td>Ya</td>
           <td>Email customer.<br /><strong>Note</strong>: terdapat validasi untuk mengecek format email yang valid</td>
         </tr>
         <tr>
           <td>phone</td>
-          <td>String(19)</td>
+          <td>String (19)</td>
           <td>Ya</td>
           <td>Nomor telepon customer.<br /><strong>Note</strong>:<br />Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan ().<br />Simbol + hanya bisa ditempatkan di paling depan.</td>
         </tr>
@@ -656,43 +656,43 @@
         </tr>
         <tr>
           <td>first_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Tidak</td>
           <td>Nama depan billing address.<br /><strong>Note</strong> : Tidak perlu diisi apabila isinya sama dengan customer details - first_name</td>
         </tr>
         <tr>
           <td>last_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Tidak</td>
           <td>Nama belakang billing address</td>
         </tr>
         <tr>
           <td>address</td>
-          <td>String(200)</td>
+          <td>String (200)</td>
           <td>Ya</td>
           <td>Alamat billing address</td>
         </tr>
         <tr>
           <td>city</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Ya</td>
           <td>Kota billing address</td>
         </tr>
         <tr>
           <td>postal_code</td>
-          <td>String(10)</td>
+          <td>String (10)</td>
           <td>Ya</td>
           <td>Kode pos shipping address Note: format alpha-numeric, bisa menerima “-” dan spasi</td>
         </tr>
         <tr>
           <td>phone</td>
-          <td>String(19)</td>
+          <td>String (19)</td>
           <td>Tidak</td>
           <td>Nomor telpon billing address.<br /><strong>Note</strong> :<br />Tidak perlu diisi apabila isinya sama dengan customer details - phone.<br />Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan ().<br />Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
         </tr>
         <tr>
           <td>country_code</td>
-          <td>String(10)</td>
+          <td>String (10)</td>
           <td>Tidak</td>
           <td>ID negara (contoh: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a></td>
         </tr>
@@ -715,43 +715,43 @@
         </tr>
         <tr>
           <td>first_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Tidak</td>
           <td>Nama depan shipping address</td>
         </tr>
         <tr>
           <td>last_name</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Tidak</td>
           <td>Nama belakang shipping address</td>
         </tr>
         <tr>
           <td>address</td>
-          <td>String(200)</td>
+          <td>String (200)</td>
           <td>Ya</td>
           <td>Alamat shipping address</td>
         </tr>
         <tr>
           <td>city</td>
-          <td>String(20)</td>
+          <td>String (20)</td>
           <td>Ya</td>
           <td>Kota shipping address</td>
         </tr>
         <tr>
           <td>postal_code</td>
-          <td>String(10)</td>
+          <td>String (10)</td>
           <td>Ya</td>
           <td>Kode pos shipping address. kecuali untuk tipe pembayaran menggunakan kartu kredit, atribut ini diwajibkan.<br /><strong>Note</strong>: format alpha-numeric, bisa menerima “-” dan spasi</td>
         </tr>
         <tr>
           <td>phone</td>
-          <td>String(19)</td>
+          <td>String (19)</td>
           <td>Tidak</td>
           <td>Nomor telpon billing address.<br /><strong>Note</strong> : Tidak perlu diisi apabila isinya sama dengan customer details - phone.<br />Panjang minimum 5, hanya bisa menerima numeric dan simbol +, -, (spasi), dan ().<br />Untuk simbol + sendiri hanya bisa ditempatkan di paling depan.</td>
         </tr>
         <tr>
           <td>country_code</td>
-          <td>String(10)</td>
+          <td>String (10)</td>
           <td>Tidak</td>
           <td>ID negara (contoh: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a></td>
         </tr>
