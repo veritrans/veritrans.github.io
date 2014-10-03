@@ -433,6 +433,7 @@
   <li class="active"><a href="#testcc" data-toggle="tab">Credit Card</a></li>
   <li><a href="#testmandiri" data-toggle="tab">Mandiri ClickPay</a></li>
   <li><a href="#testcimb" data-toggle="tab">CIMB Clicks</a></li>
+  <li><a href="#virtualacc" data-toggle="tab">Virtual Account</a></li>
 </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
@@ -577,10 +578,44 @@
 
           </div>
           <!-- end of step cimb-->
+          <div class="tab-pane" id="virtualacc">
+            <!-- step Virtual Account -->
 
+            <!-- Virtual Account -->
+
+            <h3 id="transaction-test-1">Transaction test</h3>
+            <p>We will try to perform a Virtual Account transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
+
+            <p><img alt="VT-Web transfer Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test1.png" /></p>
+
+            <p>Click <strong>Confirm Payment</strong> button to display the virtual account number.</p>
+
+            <p><img alt="VT-Web transfer Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test2.png" /></p>
+
+            <p>Until this point, the transaction is stored in MAP with <em>pending</em> status. Transaction status will be changed to <em>success</em> when your customer have finished the payment.</p>
+
+            <p>To facilitate the payment process, we provide the <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">payment simulator</a> for a sandbox Environment. Enter the account number previously obtained to check whether there is a transaction with the virtual account number.</p>
+
+            <p><img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test3.png" /></p>
+
+            <p>If there is a transaction with virtual account numbers you provide, you can do a payment simulation.</p>
+
+            <p><img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test4.png" /></p>
+
+            <p>Successful payment.</p>
+
+            <p><img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test5.png" /></p>
+
+            <p>Transaction status will change in MAP. Here is an example of MAP when the Virtual Account transaction was made.</p>
+
+            <p><img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../images/transfer_status.png" /></p>
+
+            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+
+          </div>
+          <!-- end of step bank transfer-->
         </div>
         <!-- end of tab-content u/ testing-->
-
       </div>
       <!-- end of step 2-->
 

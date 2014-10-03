@@ -435,8 +435,8 @@
   <li class="active"><a href="#testcc" data-toggle="tab">Kartu Kredit</a></li>
   <li><a href="#testmandiri" data-toggle="tab">mandiri Clickpay</a></li>
   <li><a href="#testcimb" data-toggle="tab">CIMB Clicks</a></li>
+  <li><a href="#banktransfer" data-toggle="tab">Bank Transfer</a></li>
 </ul>
-
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
             <!-- step cc-->
@@ -579,6 +579,42 @@
 
           </div>
           <!-- end of step cimb-->
+          <div class="tab-pane" id="banktransfer">
+            <!-- step Bank Transfer-->
+
+            <!-- bank Transfer -->
+
+            <h3 id="tes-transaksi-1">Tes Transaksi</h3>
+            <p>Kita akan mencoba transaksi Bank Transfer. Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:</p>
+
+            <p><img alt="VT-Web transfer Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test1.png" /></p>
+
+            <p>Klik tombol <strong>Confirm Payment</strong> untuk menampilkan nomor rekening virtual account.</p>
+
+            <p><img alt="VT-Web transfer Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test2.png" /></p>
+
+            <p>Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. Status transaksi akan berubah menjadi <em>sukses</em> saat pelanggan anda selesai melakukan pembayaran.</p>
+
+            <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor account yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor virtual account tersebut.</p>
+
+            <p><img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test3.png" /></p>
+
+            <p>Apabila transaksi dengan nomor virtual account tersebut ada, anda dapat melakukan simulasi untuk melakukan pembayaran.</p>
+
+            <p><img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test4.png" /></p>
+
+            <p>Sukses melakukan pembayaran.</p>
+
+            <p><img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test5.png" /></p>
+
+            <p>Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi Bank transfer dilakukan.</p>
+
+            <p><img alt="VT-Web transfer status" class="img-responsive img-thumbnail" src="../../images/transfer_status.png" /></p>
+
+            <p>Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+
+          </div>
+          <!-- end of step bank transfer-->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>

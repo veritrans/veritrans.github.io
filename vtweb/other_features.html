@@ -195,12 +195,13 @@
     <!-- step 1-->
     <!-- One -->
 
-    <p>Currently, there are three methods of payment that can be utilised from VT-Web:</p>
+    <p>Currently, there are four methods of payment that can be utilised from VT-Web:</p>
 
     <ol>
       <li><a href="#credit-card">Credit Card</a></li>
       <li><a href="#mandiri-clickpay">Mandiri ClickPay</a></li>
       <li><a href="#cimb-clicks">CIMB Clicks</a></li>
+      <li><a href="#virtual-account">Virtual Account</a></li>
     </ol>
 
     <p>On section <a href="integration_php.html#step1">VT-Web – Integration</a>, we explained on how to automatically activate all available payments for the merchant. This can be implemented by <strong>not</strong> including the <code>enabled_payments</code> parameter. However, under a certain condition, you need to display only some of the payment methods available. If such circumstances occurred, please follow the steps below.</p>
@@ -312,6 +313,46 @@
     <p>The CIMB Clicks tab will be shown at the VT-Web payment page. Information and procedure to perform CIMB Clicks transaction is displayed on the figure below.</p>
 
     <p><img alt="vtweb_cimb" class="img-responsive img-thumbnail" src="../images/vtweb_cimb.png" /></p>
+
+    <hr />
+
+    <h3 class="virtual-account" id="virtual-account">Virtual Account</h3>
+
+    <p>One of the payment method offered by veritrans is Virtual Account. Currently Veritrans has already integrated with Permata Bank for Virtual Account system. By using this service, your customer will have an option to make a payment via bank transfer to a Permata Bank Virtual Account Number.</p>
+
+    <p>To activate Virtual Account method of payment (automatically active on Sandbox mode), merchant needs to:</p>
+
+    <ol>
+      <li>Sign on Virtual Account method of payment by contacting Veritrans sales representative.</li>
+      <li>Add the <code>bank_transfer</code> parameter on variable <code>enable_payments</code>.</li>
+    </ol>
+
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"bank_transfer"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p>The Bank Transfer tab will be shown at the VT-Web payment page. Information and procedure to perform Virtual Account transaction is displayed on the figure below.</p>
+
+    <p><img alt="vtweb_cimb" class="img-responsive img-thumbnail" src="../images/vtweb_banktransfer.png" /></p>
 
   </div>
   <div class="tab-pane" id="three-D-secure">
