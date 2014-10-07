@@ -170,7 +170,7 @@
 
 <p>Charge transaksi memungkinkan anda menerima pembayaran secara online. Pada bagian ini, fokus pembahasan adalah spesifikasi dan contoh charge transaksi dasar pada produk VT-Web dan VT-Direct. Pembahasan untuk kedua produk dipisah karena karena tujuan charge transaksi yang berbeda. Pada VT-Web, fungsi charge transaksi digunakan untuk memperoleh URL pembayaran, sedangkan pada VT-Direct fungsi ini digunakan untuk melakukan pembayaran.</p>
 
-<p>Penjelasan mengenai charge transaksi akan dibagi menjadi 5 bagian:</p>
+<p>Penjelasan mengenai charge transaksi akan dibagi menjadi 6 bagian:</p>
 
 <ol>
   <li>Spesifikasi HTTP(S) POST</li>
@@ -178,6 +178,7 @@
   <li>Contoh VT-Direct Kartu Kredit</li>
   <li>Contoh VT-Direct Mandiri Clickpay</li>
   <li>Contoh VT-Direct CIMB Clicks</li>
+  <li>Contoh VT-Direct Virtual Account</li>
 </ol>
 
 <p>Sebenarnya, parameter charge transaksi cukup bervariasi. Banyak parameter yang dapat dikonfigurasi untuk mengaktifkan fitur cicilan, BIN Promo, one click, dan two clicks. Agar konten materi tetap sederhana dan sistematis, fitur charge transaksi tersebut akan dibahas pada bab yang terpisah.</p>
@@ -189,6 +190,7 @@
   <li><a href="#vtdirect-cc" data-toggle="tab"><span>Kartu Kredit</span></a></li>
   <li><a href="#vtdirect-mandiri" data-toggle="tab"><span>Mandiri Clickpay</span></a></li>
   <li><a href="#vtdirect-cimb" data-toggle="tab"><span>CIMB Clicks</span></a></li>
+  <li><a href="#vtdirect-va" data-toggle="tab"><span>Virtual Account</span></a></li>
 </ul>
 
 <div class="tab-content">
@@ -233,7 +235,7 @@
           <td>payment_type</td>
           <td>String</td>
           <td>Ya</td>
-          <td>Metode pembayaran yang akan digunakan. <br /> <strong>VT-Direct</strong>: <code>"credit_card"</code>, <code>"mandiri_clickpay"</code>, atau <code>"cimb_clicks"</code> <br /><strong>VT-WEB</strong>: <code>"vtweb"</code></td>
+          <td>Metode pembayaran yang akan digunakan. <br /> <strong>VT-Direct</strong>: <code>"credit_card"</code>, <code>"mandiri_clickpay"</code>, <code>"cimb_clicks"</code>, atau <code>"bank_transfer"</code> <br /><strong>VT-WEB</strong>: <code>"vtweb"</code></td>
         </tr>
         <tr>
           <td>vtweb</td>
@@ -277,6 +279,12 @@
           <td>Kondisional</td>
           <td>Detail charge VT-Direct menggunakan CIMB Clicks<br /><strong>Note</strong>: hanya untuk VT-Direct menggunakan CIMB Clicks</td>
         </tr>
+        <tr>
+          <td>bank_transfer</td>
+          <td>JSON Object</td>
+          <td>Kondisional</td>
+          <td>Detail charge VT-Direct menggunakan Virtual Account<br /><strong>Note</strong>: hanya untuk VT-Direct menggunakan Virtual Account</td>
+        </tr>
       </tbody>
     </table>
 
@@ -296,7 +304,7 @@
           <td>enabled_payments</td>
           <td>JSON Array</td>
           <td>Tidak</td>
-          <td>Daftar metode pembayaran yang dapat digunakan pelanggan<br />String elemen array yang diperbolehkan: <code>"credit_card"</code>, <code>"cimb_clicks"</code>, dan <code>"mandiri_clickpay"</code>.<br /><strong>Note</strong>: Jika atribut ini tidak dipakai, semua metode pembayaran yang merchant miliki akan digunakan.</td>
+          <td>Daftar metode pembayaran yang dapat digunakan pelanggan<br />String elemen array yang diperbolehkan: <code>"credit_card"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, dan <code>"bank_transfer"</code>.<br /><strong>Note</strong>: Jika atribut ini tidak dipakai, semua metode pembayaran yang merchant miliki akan digunakan.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure</td>
@@ -517,6 +525,29 @@
           <td>String</td>
           <td>Ya</td>
           <td>Keterangan yang ditampilkan pada halaman pembayaran CIMB Clicks</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <p>Keterangan Objek <strong>request.</strong><code>bank_transfer</code>:</p>
+
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>bank_transfer</code> digunakan dalam <code>JSON request</code></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Required</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>bank</td>
+          <td>String</td>
+          <td>Ya</td>
+          <td>keterangan bank yang akan digunakan sebagai rekening virtual account</td>
         </tr>
       </tbody>
     </table>
@@ -1492,6 +1523,198 @@
     <ol>
       <li><a href="../vtdirect/integration_cimb.html#transaction-status-cimb">Merchant Administration Portal (MAP)</a></li>
       <li><a href="../vtweb/integration_php.html#step3">Handle Notifikasi</a></li>
+      <li><a href="../vtdirect/other_commands.html#status">Perintah Status</a></li>
+    </ol>
+
+    <p>Silahkan merujuk halaman terkait untuk keterangan lebih lanjut.</p>
+  </div>
+
+  <div class="tab-pane" id="vtdirect-va">
+
+    <p>Pada metode pembayaran Virtual Account, charge transaksi yang berhasil akan menghasilkan nomor rekening virtual account. Anda harus menampilkan nomor rekening virtual account tersebut ke pelanggan anda agar pelanggan anda dapat menyelesaikan proses pembayaran.</p>
+
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi Virtual Account VT-Direct adalah <code>payment_type</code>, <code>bank_transfer</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Virtual Account dengan semua parameter digunakan:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"bank_transfer"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"permata"</span>
+	<span class="p">},</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
+		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="p">},</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"customer_details"</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
+		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16601"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"08113366345"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+		<span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+
+    <hr />
+
+    <h3 id="kesalahan-dalam-charge-transaksi-3">Kesalahan dalam Charge Transaksi</h3>
+
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kode Error</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format atau konten data transaksi tidak valid. Contoh: Salah tipe variabel, metode pembayaran tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Client atau server key tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant tidak memiliki izin menggunakan metode pembayaran tertentu.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID telah digunakan dan dibayar sebelumnya.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Akun merchant tidak aktif dalam waktu lama</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+
+    <hr />
+
+    <h3 id="struktur-dan-contoh-json-response-vt-direct-virtual-account">Struktur dan Contoh JSON Response VT-Direct Virtual Account</h3>
+
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct Virtual Account adalah sebagai berikut:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code hasil charge transaksi. Daftar status code lengkap dapat dilihat di <a href="status_code.html">sini</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Penjelasan hasil charge transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>ID transaksi yang diberikan oleh Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>ID pemesanan yang diberikan oleh pihak merchant</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Metode pembayaran transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Status transaksi. Setelah charge transaksi Virtual Account, nilai yang mungkin adalah<br /><code>pending</code> : menunggu hasil transaksi menggunakan nomor rekening <code>permata_va_number</code></td>
+        </tr>
+        <tr>
+          <td>permata_va_number</td>
+          <td>String</td>
+          <td>nomor rekening virtual account. Pelanggan harus memiliki nomor ini untuk menyelesaikan pembayaran</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>Nilai transaksi</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Dua informasi penting dalam respon JSON adalah <code>transaction_status</code> dan <code>permata_va_number</code>. Jika nilai <code>transaction_status</code> adalah <code>pending</code>, maka transaksi berhasil dicatat pada server Veritrans. Namun, transaksi masih belum selesai dan masih menunggu proses pembayaran pelanggan ke nomor rekening<code>permata_va_number</code>.</p>
+
+    <p>Contoh JSON response saat charge transaksi berhasil: </p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, PERMATA transaction is successful"</span><span class="p">,</span>
+	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"7db5f75a-8f41-4266-b4cb-01cd97c3c339"</span><span class="p">,</span>
+	<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+	<span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:58:44"</span><span class="p">,</span>
+	<span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+	<span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778999933221111"</span><span class="p">,</span>
+	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+    <h3 id="mengetahui-status-transaksi-4">Mengetahui Status Transaksi</h3>
+
+    <p>Pada VT-Direct Virtual Account, status transaksi masih <code>pending</code> setelah proses charge transaksi. Status apakah transaksi berhasil atau tidak baru diketahui setelah pelanggan anda menyelesaikan pembayaran. Anda dapat mengetahui status transaksi melalui mekanisme berikut:</p>
+
+    <ol>
+      <li><a href="../vtdirect/integration_va.html#transaction-status-va">Merchant Administration Portal (MAP)</a></li>
       <li><a href="../vtdirect/other_commands.html#status">Perintah Status</a></li>
     </ol>
 
