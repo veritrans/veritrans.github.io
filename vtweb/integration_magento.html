@@ -76,6 +76,7 @@
                 <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
                 <li><a href="https://www.veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
                 <li><a href="https://www.veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+                <li><a href="https://www.veritrans.co.id/newsletter.html" title="Newsletter">newsletter</a></li>
               </ul>
             </li>
           </ul>
@@ -261,43 +262,44 @@
           <li>Go to <strong>System - Configuration</strong> menu in Magento admin page.</li>
           <li>In <strong>Sales-Payment Methods</strong> option, find Veritrans tab. If Veritrans tab is not present, click <strong>Save Config</strong> beforehand.</li>
           <li>Click general to start configuration.</li>
-          <li>Insert required fields following the figure below and click <strong>Save Config</strong>.</li>
+          <li>
+            <p>Insert required fields following the figure below and click <strong>Save Config</strong>.</p>
+
+            <p><img alt="Magento Config" class="img-responsive img-thumbnail" src="../images/magen01.png" /></p>
+          </li>
+          <li>
+            <p>Login to MAP portal to configure a few options below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your_shop’s_homepage]/vtweb/payment/notification</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><img alt="Magento URL" class="img-responsive img-thumbnail" src="../images/magento00.png" /></p>
+          </li>
         </ol>
-
-        <p><img alt="Magento Config" class="img-responsive img-thumbnail" src="../images/magen01.png" /></p>
-
-        <ol>
-          <li>Login to MAP portal to configure a few options below:</li>
-        </ol>
-
-        <table>
-          <thead>
-            <tr>
-              <th>URL Role</th>
-              <th>Redirect URL</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Payment Notification URL</td>
-              <td>http://[your_shop’s_homepage]/vtweb/payment/notification</td>
-            </tr>
-            <tr>
-              <td>Finish Redirect URL</td>
-              <td>http://[your_shop’s_homepage]/checkout/onepage/success</td>
-            </tr>
-            <tr>
-              <td>Error Redirect URL</td>
-              <td>http://[your_shop’s_homepage]/checkout/onepage/failure</td>
-            </tr>
-            <tr>
-              <td>Unfinish Redirect URL</td>
-              <td>http://[your_shop’s_homepage]</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p><img alt="Magento URL" class="img-responsive img-thumbnail" src="../images/magento00.png" /></p>
 
       </div>
 

@@ -76,6 +76,7 @@
                 <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
                 <li><a href="https://www.veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
                 <li><a href="https://www.veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+                <li><a href="https://www.veritrans.co.id/newsletter.html" title="Newsletter">newsletter</a></li>
               </ul>
             </li>
           </ul>
@@ -262,109 +263,111 @@
           <li>Access your PrestaShop admin page.</li>
           <li>Go to <strong>Modules-modules</strong> menu in PrestaShop admin page.</li>
           <li>In Veritrans module, click <strong>configure</strong> to enter plugin page.</li>
-          <li>Insert required fields following the figure below.</li>
+          <li>
+            <p>Insert required fields following the figure below.</p>
+
+            <p><img alt="Prestashop config" class="img-responsive img-thumbnail" src="../images/presta00.png" /></p>
+          </li>
+          <li>
+            <p>Login to MAP portal to configure a few options below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your_shop’s_homepage]/index.php fc=module&amp;module=veritranspay&amp;controller=notification</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/index.php</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><img alt="Prestashop URL" class="img-responsive img-thumbnail" src="../images/presta01.png" /></p>
+          </li>
         </ol>
-
-        <p><img alt="Prestashop config" class="img-responsive img-thumbnail" src="../images/presta00.png" /></p>
-
-        <ol>
-          <li>Login to MAP portal to configure a few options below:</li>
-        </ol>
-
-        <table>
-          <thead>
-            <tr>
-              <th>URL Role</th>
-              <th>Redirect URL</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Payment Notification URL</td>
-              <td>http://[your_shop’s_homepage]/index.php fc=module&amp;module=veritranspay&amp;controller=notification</td>
-            </tr>
-            <tr>
-              <td>Finish Redirect URL</td>
-              <td>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</td>
-            </tr>
-            <tr>
-              <td>Error Redirect URL</td>
-              <td>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</td>
-            </tr>
-            <tr>
-              <td>Unfinish Redirect URL</td>
-              <td>http://[your_shop’s_homepage]/index.php</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p><img alt="Prestashop URL" class="img-responsive img-thumbnail" src="../images/presta01.png" /></p>
 
       </div>
 
       <div class="tab-pane" id="prestashop-step2">
 
         <ol>
-          <li>Perform successful transaction in your online store by inputing a dummy credit card number as follows (Sandbox Mode):</li>
+          <li>
+            <p>Perform successful transaction in your online store by inputing a dummy credit card number as follows (Sandbox Mode):</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Visa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Card Number</td>
+                  <td>4811 1111 1111 1114</td>
+                </tr>
+                <tr>
+                  <td>CVV</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>Exp. Month</td>
+                  <td>01</td>
+                </tr>
+                <tr>
+                  <td>Exp. Year</td>
+                  <td>2020</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <p>Examine a few points below to ensure plugin is installed and performs properly.</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Check Point</th>
+                  <th>Expected Result</th>
+                  <th>When Unexpected Result Occurs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Check order status in PrestaShop back end</td>
+                  <td>Order status turns into <strong>payment accepted</strong></td>
+                  <td>Check endpoint/payment notification URL setting in MAP</td>
+                </tr>
+                <tr>
+                  <td>Merchant receives email notification</td>
+                  <td>Receive notification</td>
+                  <td>Check MAP menu setting - email notification</td>
+                </tr>
+                <tr>
+                  <td>Customer receives email notification</td>
+                  <td>Receive notification</td>
+                  <td>Check MAP menu setting - email notification</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
         </ol>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Visa</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Card Number</td>
-              <td>4811 1111 1111 1114</td>
-            </tr>
-            <tr>
-              <td>CVV</td>
-              <td>123</td>
-            </tr>
-            <tr>
-              <td>Exp. Month</td>
-              <td>01</td>
-            </tr>
-            <tr>
-              <td>Exp. Year</td>
-              <td>2020</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <ol>
-          <li>Examine a few points below to ensure plugin is installed and performs properly.</li>
-        </ol>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Check Point</th>
-              <th>Expected Result</th>
-              <th>When Unexpected Result Occurs</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Check order status in PrestaShop back end</td>
-              <td>Order status turns into <strong>payment accepted</strong></td>
-              <td>Check endpoint/payment notification URL setting in MAP</td>
-            </tr>
-            <tr>
-              <td>Merchant receives email notification</td>
-              <td>Receive notification</td>
-              <td>Check MAP menu setting - email notification</td>
-            </tr>
-            <tr>
-              <td>Customer receives email notification</td>
-              <td>Receive notification</td>
-              <td>Check MAP menu setting - email notification</td>
-            </tr>
-          </tbody>
-        </table>
 
       </div>
     </div>
