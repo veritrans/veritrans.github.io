@@ -76,6 +76,7 @@
                 <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
                 <li><a href="https://www.veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
                 <li><a href="https://www.veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+                <li><a href="https://www.veritrans.co.id/newsletter.html" title="Newsletter">newsletter</a></li>
               </ul>
             </li>
           </ul>
@@ -272,16 +273,32 @@
           <li>
             <p>Login ke <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration</a> pada MAP untuk mengubah konfigurasi berikut:</p>
 
-            <dl>
-              <dt>Payment Notification URL</dt>
-              <dd>http://{your shop’s homepage}/index.php?route=payment/veritrans/payment_notification</dd>
-              <dt>Finish Redirect URL</dt>
-              <dd>http://{your shop’s homepage}/index.php?route=checkout/success&amp;</dd>
-              <dt>Unfinish Redirect URL</dt>
-              <dd>http://{your shop’s homepage}/index.php</dd>
-              <dt>Error Redirect URL</dt>
-              <dd>http://{your shop’s homepage}/index.php</dd>
-            </dl>
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your shop’s homepage]/index.php?route=payment/veritrans/payment_notification</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your shop’s homepage]/index.php?route=checkout/success&amp;</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your shop’s homepage]/index.php</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your shop’s homepage]/index.php</td>
+                </tr>
+              </tbody>
+            </table>
           </li>
         </ol>
 
