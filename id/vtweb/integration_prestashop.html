@@ -248,7 +248,7 @@
 
         <ol>
           <li>Ekstrak plugin yang sudah di download, rubah nama folder menjadi <strong>veritranspay</strong>. Setelah itu Zip kembali folder tersebut menjadi veritranspay.zip.</li>
-          <li>Masuk ke halaman <em>admnistrator</em> Prestashop anda.</li>
+          <li>Masuk ke halaman <em>administrator</em> Prestashop anda.</li>
           <li>Masuk ke menu <strong>Modules-modules</strong>.</li>
           <li>Pilih <em>Add a new module</em>. Upload file plugin <strong>veritranspay.zip</strong>.</li>
           <li>Cari module Veritrans yang sebelumnya sudah di-upload, klik <strong>install</strong>.</li>
@@ -270,16 +270,32 @@
           <li>
             <p>Login ke portal MAP untuk mengubah beberapa opsi berikut:</p>
 
-            <dl>
-              <dt>Payment Notification URL</dt>
-              <dd>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=notification</dd>
-              <dt>Finish Redirect URL</dt>
-              <dd>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</dd>
-              <dt>Error Redirect URL</dt>
-              <dd>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</dd>
-              <dt>Unfinish Redirect URL</dt>
-              <dd>http://[your_shop’s_homepage]/index.php</dd>
-            </dl>
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your_shop’s_homepage]/index.php fc=module&amp;module=veritranspay&amp;controller=notification</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your_shop’s_homepage]/index.php</td>
+                </tr>
+              </tbody>
+            </table>
 
             <p><img alt="Prestashop URL" class="img-responsive img-thumbnail" src="../../images/presta01.png" /></p>
           </li>
