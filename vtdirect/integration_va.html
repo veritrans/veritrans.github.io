@@ -76,6 +76,7 @@
                 <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
                 <li><a href="https://www.veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
                 <li><a href="https://www.veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+                <li><a href="https://www.veritrans.co.id/newsletter.html" title="Newsletter">newsletter</a></li>
               </ul>
             </li>
           </ul>
@@ -434,11 +435,30 @@
 
     <p>The status on MAP when payment is not yet completed is as follows:</p>
 
-    <p><img alt="CIMB Clicks MAP Pending" class="img-responsive img-thumbnail" src="../images/va-map-pending.png" /></p>
+    <p><img alt="Permata MAP Pending" class="img-responsive img-thumbnail" src="../images/va-map-pending.png" /></p>
 
     <p>The status on MAP when payment has been completed is as follows:</p>
 
-    <p><img alt="CIMB Clicks MAP Sukses" class="img-responsive img-thumbnail" src="../images/va-map-success.png" /></p>
+    <p><img alt="Permata MAP Sukses" class="img-responsive img-thumbnail" src="../images/va-map-success.png" /></p>
+
+    <hr />
+
+    <h3 id="http-response">HTTP Response</h3>
+
+    <p>Veritrans server will return a response to your server when customer has complete the payment. The sample JSON script that is returned by Veritrans is as follows:</p>
+
+<pre><code class="highlight php">{
+    "status_code": "200",
+    "status_message": "Veritrans payment notification",
+    "transaction_id": "93c6a0ff-b270-4b00-adba-f1738ff90261",
+    "order_id": "2014110701",
+    "payment_type": "permata",
+    "transaction_time": "2014-11-07 10:43:17",
+    "transaction_status": "settlement",
+    "signature_key": "4533cbaf612267f5da81a17ff8ab8b86d39de8a1877e6125f39782baac3fe211469532f20e7bf5cc88eb51dfc36eca098578503c3cc5a880a0245e733579afc3",
+    "gross_amount": 145000.00
+}
+</code></pre>
 
     <p>The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction Status</a>.</p>
 
