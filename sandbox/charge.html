@@ -199,6 +199,7 @@
   <li>Example of VT-Direct for Mandiri Clickpay</li>
   <li>Example of VT-Direct for CIMB Clicks</li>
   <li>Example of VT-Direct for Virtual Account</li>
+  <li>Example of VT-Direct for e-Pay BRI</li>
 </ol>
 
 <p>There are various parameters in transaction charge, some parameters need to be configured to activate several features such as: Installment, BIN Promo, one click, and two clicks. Transaction charge features will be described in systematic way in different sections.</p>
@@ -211,6 +212,7 @@
   <li><a href="#vtdirect-mandiri" data-toggle="tab"><span>Mandiri Clickpay</span></a></li>
   <li><a href="#vtdirect-cimb" data-toggle="tab"><span>CIMB Clicks</span></a></li>
   <li><a href="#vtdirect-va" data-toggle="tab"><span>Virtual Account</span></a></li>
+  <li><a href="#vtdirect-bripay" data-toggle="tab"><span>e-Pay BRI</span></a></li>
 </ul>
 
 <div class="tab-content">
@@ -255,7 +257,7 @@
           <td>payment_type</td>
           <td>String</td>
           <td>Yes</td>
-          <td>used payment method. <br /> <strong>VT-Direct</strong>: <code>"credit_card"</code>, <code>"mandiri_clickpay"</code>, <code>"cimb_clicks"</code>, or <code>"bank_transfer"</code> <br /><strong>VT-WEB</strong>: <code>"vtweb"</code></td>
+          <td>used payment method. <br /> <strong>VT-Direct</strong>: <code>"credit_card"</code>, <code>"mandiri_clickpay"</code>, <code>"cimb_clicks"</code>, <code>"bank_transfer"</code> or <code>"bri_epay"</code><br /><strong>VT-WEB</strong>: <code>"vtweb"</code></td>
         </tr>
         <tr>
           <td>vtweb</td>
@@ -324,7 +326,7 @@
           <td>enabled_payments</td>
           <td>JSON Array</td>
           <td>No</td>
-          <td>List of payment method that can be used by customer<br />Array element string that is allowed: <code>"credit_card"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, and <code>"bank_transfer"</code>.<br /><strong>Note</strong>: If this attribute is un used, all  payment methods registered to merchant will automatically used.</td>
+          <td>List of payment method that can be used by customer<br />Array element string that is allowed: <code>"credit_card"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bank_transfer"</code> and <code>"bri_epay"</code>.<br /><strong>Note</strong>: If this attribute is un used, all  payment methods registered to merchant will automatically used.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure</td>
@@ -1568,10 +1570,10 @@
 		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
 		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
 	<span class="p">},</span>
-	<span class="c1">// Required</span>
+	<span class="c1">// Optional</span>
 	<span class="s2">"customer_details"</span> <span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
 		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
 		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
 	<span class="c1">// Optional</span>
@@ -1736,6 +1738,195 @@
 
     <ol>
       <li><a href="../id/vtdirect/integration_cimb.html#transaction-status-cimb">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtdirect/other_commands.html#status">Command Status</a></li>
+    </ol>
+
+    <p>Please refers to the related page for further explanation</p>
+  </div>
+
+  <div class="tab-pane" id="vtdirect-bripay">
+
+    <p>For e-Pay BRI payment method, successful transaction charge will only give payment URL. You have to redirect customer to e-Pay BRI payment URL to complete the transaction process. Further explanation about the flow and description of e-Pay BRI method can be checked on <a title="e-Pay BRI" href="http://e-pay.bri.co.id">e-Pay BRI website</a>.</p>
+
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for e-Pay BRI transaction charge are <code>payment_type</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for e-Pay BRI transaction charge with all parameters:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bri_epay"</span><span class="p">,</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"2014111702"</span><span class="p">,</span>
+		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="p">},</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"customer_details"</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
+		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16601"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"08113366345"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+		<span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+
+    <hr />
+
+    <h3 id="error-on-transaction-charge-4">Error on Transaction Charge</h3>
+
+    <p>On several occassions, e-Pay BRI transaction charge might be denied, Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Error Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Validation Error, merchant send bad request data example; validation error, invalid transaction type, invalid credit card format, etc.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Invalid client key or server key</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant doesn't have access for this payment type</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID has been used before or transaction has been paid.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Merchant account is deactivated or not active for a long period</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Complete list of status codes can be checked on <a href="status_code.html">API Reference - Status Code</a>.</p>
+
+    <hr />
+
+    <h3 id="the-structure-and-example-of-json-response-vt-direct-using-e-pay-bri">The structure and Example of JSON Response VT-Direct using e-Pay BRI</h3>
+
+    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using e-Pay BRI is as follows:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>JSON Attribute</td>
+          <td>Data Type</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code of transaction charge result. Complete list of status code can be checked <a href="status_code.html">here</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Description of transaction charge result</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>Transaction ID given by Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>Order Id given by merchant</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Transaction payment method</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp of transaction</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Transaction status. After charge e-Pay BRI transaction, the possible value is<br /> <code>pending</code> : waiting for the result of transaction on <code>redirect url</code> web page</td>
+        </tr>
+        <tr>
+          <td>redirect url</td>
+          <td>String</td>
+          <td>e-Pay BRI Payment Page URL. Customer have to be redirected to this page for completing the payment process</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>Amount of Transaction</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Two importants information on JSON Response are <code>transaction_status</code> and <code>redirect_url</code>. If <code>transaction_status</code> value is <code>pending</code>, then transaction is successfully stored in Veritrans server. However, transaction has not finished, and still waiting for customer payment process in <code>redirect_url</code> page.</p>
+
+    <p>Example of JSON Response for Successful Transaction :</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, BRI E-Pay transaction is successful"</span><span class="p">,</span>
+	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36"</span><span class="p">,</span>
+	<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"2014111702"</span><span class="p">,</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bri_epay"</span><span class="p">,</span>
+	<span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-11-17 12:27:40"</span><span class="p">,</span>
+	<span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+	<span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/redirect/cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36"</span><span class="p">,</span>
+	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+    <h3 id="recognizing-transaction-status-5">Recognizing Transaction Status</h3>
+
+    <p>For VT-Direct using e-Pay BRI, transaction status will still <code>pending</code> after transaction charge. Transaction status could be recognized after customer has completed the payment in e-Pay BRI website. However, you can recognize the transaction status from following mechanism:</p>
+
+    <ol>
+      <li><a href="../id/vtdirect/integration_bripay.html#transaction-status-bri">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtdirect/integration_bripay.html#transaction-status-bri">Notification Handle</a></li>
       <li><a href="../vtdirect/other_commands.html#status">Command Status</a></li>
     </ol>
 

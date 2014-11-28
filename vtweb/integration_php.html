@@ -454,6 +454,7 @@
   <li><a href="#testmandiri" data-toggle="tab">Mandiri ClickPay</a></li>
   <li><a href="#testcimb" data-toggle="tab">CIMB Clicks</a></li>
   <li><a href="#virtualacc" data-toggle="tab">Virtual Account</a></li>
+  <li><a href="#bripay" data-toggle="tab">ePay BRI</a></li>
 </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
@@ -634,6 +635,33 @@
 
           </div>
           <!-- end of step bank transfer-->
+
+          <div class="tab-pane" id="bripay">
+            <!-- step epay-->
+
+            <!-- BRI -->
+
+            <h3 id="transaction-test-successful-3">Transaction Test Successful</h3>
+            <p>We will try to perform a successful e-Pay BRI transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
+
+            <p><img alt="VT-Web epay Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test1.png" /></p>
+
+            <p>Click Confirm Payment and customer will be redirected to a <em>dummy</em> e-Pay BRI web page.</p>
+
+            <p><img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test2.png" /></p>
+
+            <p>When e-Pay BRI transaction step is completed, select the Pay button confirmation payment page will be displayed.</p>
+
+            <p><img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test3.png" /></p>
+
+            <p>Transaction status on MAP will be updated. The following figure displays the update on MAP when e-Pay BRI transaction is successful.</p>
+
+            <p><img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../images/epay_status.png" /></p>
+
+            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+
+          </div>
+          <!-- end of step epay-->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>
@@ -710,9 +738,7 @@
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
 <span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-
 <span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
@@ -724,28 +750,27 @@
   <span class="c1">// For credit card transaction, we need to check whether transaction is challenge by FDS or not
 </span>  <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'credit_card'</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s1">'challenge'</span><span class="p">){</span>
-    <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
-</span>    <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
-</span>
-      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// TODO set payment status in merchant's database to 'Success'
-</span>
-      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
+</span>      <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
+</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
+      <span class="p">}</span> 
+      <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Success'
+</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+      <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
-</span>
-    <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Pending'
-</span>
-    <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
-</span>
-    <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
   <span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
+</span>  <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> 
+  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Pending'
+</span>  <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> 
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
+</span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre>

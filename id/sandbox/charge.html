@@ -199,6 +199,7 @@
   <li>Contoh VT-Direct Mandiri Clickpay</li>
   <li>Contoh VT-Direct CIMB Clicks</li>
   <li>Contoh VT-Direct Virtual Account</li>
+  <li>Contoh VT-Direct e-Pay BRI</li>
 </ol>
 
 <p>Sebenarnya, parameter charge transaksi cukup bervariasi. Banyak parameter yang dapat dikonfigurasi untuk mengaktifkan fitur cicilan, BIN Promo, one click, dan two clicks. Agar konten materi tetap sederhana dan sistematis, fitur charge transaksi tersebut akan dibahas pada bab yang terpisah.</p>
@@ -211,6 +212,7 @@
   <li><a href="#vtdirect-mandiri" data-toggle="tab"><span>Mandiri Clickpay</span></a></li>
   <li><a href="#vtdirect-cimb" data-toggle="tab"><span>CIMB Clicks</span></a></li>
   <li><a href="#vtdirect-va" data-toggle="tab"><span>Virtual Account</span></a></li>
+  <li><a href="#vtdirect-bripay" data-toggle="tab"><span>e-Pay BRI</span></a></li>
 </ul>
 
 <div class="tab-content">
@@ -255,7 +257,7 @@
           <td>payment_type</td>
           <td>String</td>
           <td>Ya</td>
-          <td>Metode pembayaran yang akan digunakan. <br /> <strong>VT-Direct</strong>: <code>"credit_card"</code>, <code>"mandiri_clickpay"</code>, <code>"cimb_clicks"</code>, atau <code>"bank_transfer"</code> <br /><strong>VT-WEB</strong>: <code>"vtweb"</code></td>
+          <td>Metode pembayaran yang akan digunakan. <br /> <strong>VT-Direct</strong>: <code>"credit_card"</code>, <code>"mandiri_clickpay"</code>, <code>"cimb_clicks"</code>, <code>"bank_transfer"</code>, atau <code>"bri_epay"</code> <br /><strong>VT-WEB</strong>: <code>"vtweb"</code></td>
         </tr>
         <tr>
           <td>vtweb</td>
@@ -324,7 +326,7 @@
           <td>enabled_payments</td>
           <td>JSON Array</td>
           <td>Tidak</td>
-          <td>Daftar metode pembayaran yang dapat digunakan pelanggan<br />String elemen array yang diperbolehkan: <code>"credit_card"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, dan <code>"bank_transfer"</code>.<br /><strong>Note</strong>: Jika atribut ini tidak dipakai, semua metode pembayaran yang merchant miliki akan digunakan.</td>
+          <td>Daftar metode pembayaran yang dapat digunakan pelanggan<br />String elemen array yang diperbolehkan: <code>"credit_card"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bank_transfer"</code>, dan <code>"bri_epay"</code>.<br /><strong>Note</strong>: Jika atribut ini tidak dipakai, semua metode pembayaran yang merchant miliki akan digunakan.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure</td>
@@ -1571,10 +1573,10 @@
 		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
 		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
 	<span class="p">},</span>
-	<span class="c1">// Required</span>
+	<span class="c1">// Optional</span>
 	<span class="s2">"customer_details"</span> <span class="p">:</span> <span class="p">{</span>
 		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
 		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
 		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
 	<span class="c1">// Optional</span>
@@ -1739,6 +1741,195 @@
 
     <ol>
       <li><a href="../vtdirect/integration_va.html#transaction-status-va">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtdirect/other_commands.html#status">Perintah Status</a></li>
+    </ol>
+
+    <p>Silahkan merujuk halaman terkait untuk keterangan lebih lanjut.</p>
+  </div>
+
+  <div class="tab-pane" id="vtdirect-bripay">
+
+    <p>Pada metode pembayaran e-Pay BRI, charge transaksi yang berhasil hanya akan menghasilkan URL pembayaran. Anda harus me-redirect pelanggan ke URL pembayaran e-Pay BRI untuk menyelesaikan proses transaksi. Info lebih lengkap dapat diperoleh di <a title="e-Pay BRI" href="http://e-pay.bri.co.id">website e-Pay BRI</a>.</p>
+
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi e-Pay BRI VT-Direct adalah <code>payment_type</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct e-Pay BRI dengan semua parameter digunakan:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bri_epay"</span><span class="p">,</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"2014111702"</span><span class="p">,</span>
+		<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+	<span class="p">},</span>
+	<span class="c1">// Required</span>
+	<span class="s2">"customer_details"</span> <span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">// Optional</span>
+		<span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16602"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
+		<span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+		<span class="s2">"address"</span><span class="p">:</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+		<span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+		<span class="s2">"postal_code"</span><span class="p">:</span> <span class="s2">"16601"</span><span class="p">,</span>
+		<span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"08113366345"</span><span class="p">,</span>
+		<span class="s2">"country_code"</span><span class="p">:</span> <span class="s2">"IDN"</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+	<span class="c1">// Optional</span>
+	<span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+		<span class="p">},</span>
+		<span class="p">{</span>
+			<span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+			<span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+			<span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+			<span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+		<span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+
+    <hr />
+
+    <h3 id="kesalahan-dalam-charge-transaksi-4">Kesalahan dalam Charge Transaksi</h3>
+
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kode Error</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format atau konten data transaksi tidak valid. Contoh: Salah tipe variabel, metode pembayaran tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Client atau server key tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant tidak memiliki izin menggunakan metode pembayaran tertentu.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID telah digunakan dan dibayar sebelumnya.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Akun merchant tidak aktif dalam waktu lama</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+
+    <hr />
+
+    <h3 id="struktur-dan-contoh-json-response-vt-direct-e-pay-bri">Struktur dan Contoh JSON Response VT-Direct e-Pay BRI</h3>
+
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct CIMB Clicks adalah sebagai berikut:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Atribut JSON</td>
+          <td>Tipe Data</td>
+          <td>Keterangan</td>
+        </tr>
+        <tr>
+          <td>status_code</td>
+          <td>String</td>
+          <td>Status code hasil charge transaksi. Daftar status code lengkap dapat dilihat di <a href="status_code.html">sini</a></td>
+        </tr>
+        <tr>
+          <td>status_message</td>
+          <td>String</td>
+          <td>Penjelasan hasil charge transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_id</td>
+          <td>String</td>
+          <td>ID transaksi yang diberikan oleh Veritrans</td>
+        </tr>
+        <tr>
+          <td>order_id</td>
+          <td>String</td>
+          <td>ID pemesanan yang diberikan oleh pihak merchant</td>
+        </tr>
+        <tr>
+          <td>payment_type</td>
+          <td>String</td>
+          <td>Metode pembayaran transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_time</td>
+          <td>String</td>
+          <td>Timestamp transaksi</td>
+        </tr>
+        <tr>
+          <td>transaction_status</td>
+          <td>String</td>
+          <td>Status transaksi. Setelah charge transaksi e-Pay BRI, nilai yang mungkin adalah<br /><code>pending</code> : menunggu hasil transaksi di halaman <code>redirect_url</code></td>
+        </tr>
+        <tr>
+          <td>redirect_url</td>
+          <td>String</td>
+          <td>URL halaman pembayaran e-Pay BRI. Pelanggan harus diredirect ke halaman ini untuk menyelesaikan pembayaran</td>
+        </tr>
+        <tr>
+          <td>gross_amount</td>
+          <td>String</td>
+          <td>Nilai transaksi</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Dua informasi penting dalam respon JSON adalah <code>transaction_status</code> dan <code>redirect_url</code>. Jika nilai <code>transaction_status</code> adalah <code>pending</code>, maka transaksi berhasil dicatat pada server Veritrans. Namun, transaksi masih belum selesai dan masih menunggu proses pembayaran pelanggan di halaman <code>redirect_url</code>.</p>
+
+    <p>Contoh JSON response saat charge transaksi berhasil: </p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, BRI E-Pay transaction is successful"</span><span class="p">,</span>
+	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36"</span><span class="p">,</span>
+	<span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"2014111702"</span><span class="p">,</span>
+	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bri_epay"</span><span class="p">,</span>
+	<span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-11-17 12:27:40"</span><span class="p">,</span>
+	<span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+	<span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/redirect/cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36"</span><span class="p">,</span>
+	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+    <h3 id="mengetahui-status-transaksi-5">Mengetahui Status Transaksi</h3>
+
+    <p>Pada VT-Direct e-Pay BRI, status transaksi masih <code>pending</code> setelah proses charge transaksi. Status apakah transaksi berhasil atau tidak baru diketahui setelah pelanggan anda menyelesaikan pembayaran di website e-Pay BRI. Anda dapat mengetahui status transaksi melalui mekanisme berikut:</p>
+
+    <ol>
+      <li><a href="../vtdirect/integration_bripay.html#transaction-status-bri">Merchant Administration Portal (MAP)</a></li>
+      <li><a href="../vtdirect/integration_bripay.html#transaction-status-bri">Handle Notifikasi</a></li>
       <li><a href="../vtdirect/other_commands.html#status">Perintah Status</a></li>
     </ol>
 
