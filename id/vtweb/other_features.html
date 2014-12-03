@@ -222,9 +222,10 @@
       <li><a href="#mandiri-clickpay">Mandiri ClickPay</a></li>
       <li><a href="#cimb-clicks">CIMB Clicks</a></li>
       <li><a href="#virtual-account">Virtual Account</a></li>
+      <li><a href="#bri-pay">e-Pay BRI</a></li>
     </ol>
 
-    <p>Pada bagian <a href="integration_php.html#step1">VT-Web &#8211; Integrasi</a>, kami telah menjelaskan bagaimana mengaktifkan semua metode pembayaran yang anda miliki secara otomatis. Hal ini dapat diimplementasikan dengan <strong>tidak</strong> menyertakan parameter <code>enabled_payments</code>. Namun, pada kondisi tertentu anda mungkin perlu menampilkan beberapa metode pembayaran saja pada VT-Web. Jika anda menghadapi kondisi ini, silahkan ikuti petunjuk berikut.</p>
+    <p>Pada bagian <a href="integration_php.html#step1">VT-Web – Integrasi</a>, kami telah menjelaskan bagaimana mengaktifkan semua metode pembayaran yang anda miliki secara otomatis. Hal ini dapat diimplementasikan dengan <strong>tidak</strong> menyertakan parameter <code>enabled_payments</code>. Namun, pada kondisi tertentu anda mungkin perlu menampilkan beberapa metode pembayaran saja pada VT-Web. Jika anda menghadapi kondisi ini, silahkan ikuti petunjuk berikut.</p>
 
     <h3 id="credit-card">Kartu Kredit</h3>
 
@@ -256,7 +257,7 @@
 
     <hr />
 
-    <h3 class="mandiri-clickpay" id="mandiri-clickpay">Mandiri ClickPay</h3>
+    <h3 id="mandiri-clickpay">Mandiri ClickPay</h3>
 
     <p>Mandiri Clickpay merupakan salah satu fitur pembayaran dari mandiri debit. Metode ini memungkinkan pelanggan melakukan transaksi pembayaran dengan memasukkan 16 digit nomor kartu mandiri debit dan Token PIN Mandiri sebagai validasi transaksi.</p>
 
@@ -296,7 +297,7 @@
 
     <hr />
 
-    <h3 class="cimb-clicks" id="cimb-clicks">CIMB Clicks</h3>
+    <h3 id="cimb-clicks">CIMB Clicks</h3>
 
     <p>CIMB Clicks adalah salah satu metode pembayaran internet banking yang disediakan oleh Bank CIMB Niaga. Jika metode ini digunakan, pelanggan akan diarahkan ke halaman pembayaran CIMB Clicks untuk melakukan transaksi. Info lebih lengkap dapat diperoleh di <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">website CIMB Niaga</a>.</p>
 
@@ -336,7 +337,7 @@
 
     <hr />
 
-    <h3 class="virtual-account" id="virtual-account">Virtual Account</h3>
+    <h3 id="virtual-account">Virtual Account</h3>
 
     <p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah virtual account, saat ini Veritrans sudah terintegrasi dengan Bank Permata untuk proses virtual account. Dengan menggunakan layanan ini, pelanggan anda akan memiliki pilihan untuk melakukan pembayaran melalui transfer bank ke rekening virtual account Bank Permata. </p>
 
@@ -373,6 +374,46 @@
     <p>Tab Bank Transfer akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode virtual account ditampilkan secara rinci pada halaman ini.</p>
 
     <p><img alt="vtweb_cimb" class="img-responsive img-thumbnail" src="../../images/vtweb_banktransfer.png" /></p>
+
+    <hr />
+
+    <h3 id="bri-pay">e-Pay BRI</h3>
+
+    <p>BRI Epay adalah salah satu metode pembayaran online melalui internet banking yang dikeluarkan oleh Bank BRI. Dengan menggunakan metode pembayaran BRI Epay, anda akan diarahkan ke halaman pembayaran BRI untuk melakukan pembayaran. Sebelum menggunakan layanan BRI Epay ini, pelanggan anda harus melakukan registrasi terlebih dahulu. Untuk info lebih lengkap silahkan mengunjungi <a title="e-Pay BRI" href="http://e-pay.bri.co.id">website e-Pay BRI</a>.</p>
+
+    <p>Untuk mengaktifkan metode pembayaran e-Pay BRI (otomatis aktif pada mode Sandbox), merchant perlu:</p>
+
+    <ol>
+      <li>Daftarkan metode pembayaran e-Pay BRI dengan menghubungi sales representative Veritrans.</li>
+      <li>Menambahkan parameter <code>bri_epay</code> pada variabel <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"bri_epay"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p>Tab e-Pay BRI akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode e-Pay BRI ditampilkan secara rinci pada halaman ini.</p>
+
+    <p><img alt="vtweb_bripay" class="img-responsive img-thumbnail" src="../../images/vtweb_bripay.png" /></p>
 
   </div>
   <div class="tab-pane" id="three-D-secure">
@@ -575,6 +616,16 @@
 <script src="../../javascripts/dropdown.js" type="text/javascript"></script>
 <script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-32232768-1', 'veritrans.co.id');
+      ga('send', 'pageview');
+
+    </script>
     <script>
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {

@@ -456,6 +456,7 @@
   <li><a href="#testmandiri" data-toggle="tab">mandiri Clickpay</a></li>
   <li><a href="#testcimb" data-toggle="tab">CIMB Clicks</a></li>
   <li><a href="#virtualacc" data-toggle="tab">Virtual Account</a></li>
+  <li><a href="#bripay" data-toggle="tab">ePay BRI</a></li>
 </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
@@ -613,7 +614,13 @@
 
             <p><img alt="VT-Web transfer Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test2.png" /></p>
 
+            <p><strong>Note:</strong> Segera catat nomor va pembayaran anda untuk melakukan pembayaran melalui ATM terdekat atau layanan internet banking.</p>
+
             <p>Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. Status transaksi akan berubah menjadi <em>sukses</em> saat pelanggan anda selesai melakukan pembayaran.</p>
+
+            <hr />
+
+            <h3 id="simulasi-pembayaran">Simulasi Pembayaran</h3>
 
             <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor account yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor virtual account tersebut.</p>
 
@@ -635,6 +642,32 @@
 
           </div>
           <!-- end of step bank transfer-->
+          <div class="tab-pane" id="bripay">
+            <!-- step epay-->
+
+            <!-- BRI -->
+
+            <h3 id="tes-transaksi-sukses-3">Tes Transaksi Sukses</h3>
+            <p>Kita akan mencoba transaksi e-Pay BRI. Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:</p>
+
+            <p><img alt="VT-Web epay Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test1.png" /></p>
+
+            <p>Lakukan konfirmasi pembayaran dan pelanggan anda akan di-redirect menuju halaman e-Pay BRI <em>dummy</em>.</p>
+
+            <p><img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test2.png" /></p>
+
+            <p>Saat langkah transaksi e-pay BRI telah selesai, pilih tombol bayar dan halaman transaksi sukses akan ditampilkan.</p>
+
+            <p><img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test3.png" /></p>
+
+            <p>Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi CIMB Clicks berhasil.</p>
+
+            <p><img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../../images/epay_status.png" /></p>
+
+            <p>Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+
+          </div>
+          <!-- end of step epay-->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>
@@ -670,7 +703,7 @@
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Credit Card transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans Payment Notification"</span><span class="p">,</span>
     <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"d563f026-f46a-4f7d-bc44-226c6e42e12b"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"201303121700"</span><span class="p">,</span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
@@ -680,6 +713,7 @@
     <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"401111-1112"</span><span class="p">,</span>
     <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1405402217483"</span><span class="p">,</span>
     <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"0b063c979a872640b81b1aef2bb4f093388bc6e6b91b164beda58da1b102de277791074dcc10f237f4583864cfa0691799e906ef3ca50ff34b8ecd198e1fa2e4"</span><span class="p">,</span>
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"mandiri"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"100.00"</span>
 <span class="p">}</span>
 </code></pre>
@@ -698,6 +732,7 @@
     <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
     <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"431111-1119"</span><span class="p">,</span>
     <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"0b063c979a872640b81b1aef2bb4f093388bc6e6b91b164beda58da1b102de277791074dcc10f237f4583864cfa0691799e906ef3ca50ff34b8ecd198e1fa2e4"</span><span class="p">,</span>
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"mandiri"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"100.00"</span>
 <span class="p">}</span>
 </code></pre>
@@ -708,9 +743,7 @@
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
 <span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-
 <span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
@@ -722,28 +755,27 @@
   <span class="c1">// For credit card transaction, we need to check whether transaction is challenge by FDS or not
 </span>  <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'credit_card'</span><span class="p">){</span>
     <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s1">'challenge'</span><span class="p">){</span>
-    <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
-</span>    <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
-</span>
-      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// TODO set payment status in merchant's database to 'Success'
-</span>
-      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
+</span>      <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
+</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
+      <span class="p">}</span> 
+      <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Success'
+</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+      <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
-</span>
-    <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Pending'
-</span>
-    <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
-</span>
-    <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
   <span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
+</span>  <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> 
+  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Pending'
+</span>  <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> 
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
+</span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre>
@@ -784,6 +816,16 @@
 <script src="../../javascripts/dropdown.js" type="text/javascript"></script>
 <script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-32232768-1', 'veritrans.co.id');
+      ga('send', 'pageview');
+
+    </script>
     <script>
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {

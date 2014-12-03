@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header navbar navbar-default navbar-fixed-top">
+      <div class="custom-container">
+        <div class="col-md-3 navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="logo"><a href="https://www.veritrans.co.id" title="Home"><span>Veritrans</span></a></h2>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="https://www.veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="https://www.veritrans.co.id/product.html" title="Our Online Payment Products">product</a></li>
+            <li><a href="https://www.veritrans.co.id/pricing.html" title="Check for Our Pricing">pricing</a></li>
+            <li class="dropdown hidden-xs hidden-sm">
+              <a href="https://www.veritrans.co.id/about.html">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.veritrans.co.id/team.html" title="Team">team</a></li>
+                <li><a href="https://www.veritrans.co.id/press.html" title="Press">press</a></li>
+                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+                <li><a href="http://support.veritrans.co.id/" title="FAQ & How To">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown hidden-lg hidden-md">
+              <a href="#">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.veritrans.co.id/about.html" title="Team">about us</a></li>
+                <li><a href="https://www.veritrans.co.id/team.html" title="Team">team</a></li>
+                <li><a href="https://www.veritrans.co.id/press.html" title="Press">press</a></li>
+                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+                <li><a href="http://support.veritrans.co.id/" title="FAQ & How To">FAQ</a></li>
+              </ul>
+            </li>
+            <!-- <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.veritrans.co.id/about.html" title="About Veritrans">about us</a></li>
+                <li><a href="http://support.veritrans.co.id/hc/en-us" title="FAQ & How To">FAQ</a></li>
+                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+              </ul>
+            </li> -->
+            <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+            <li class="dropdown">
+              <a href="#">developer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">community <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+                <li><a href="https://www.veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
+                <li><a href="https://www.veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+                <li><a href="https://www.veritrans.co.id/newsletter.html" title="Newsletter">newsletter</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right register-login">
+            <li class="pull-left"><a href="https://my.sandbox.veritrans.co.id/register" class="register">sign up</a></li>
+            <li class="pull-left"><a href="https://my.veritrans.co.id/login">sign in</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+    <div class="documentation-sidebar">
+        <div class="docs-logo">
+            <span>DOCS</span>
+        </div>
+        <div class="language-toggle"> English / <a href="../id/vtdirect/integration_bripay.html">Bahasa Indonesia</a></div>
+        <ul class="sidebar">
+            
+                <li>
+                    
+                        <a class="parent" href="../welcome/welcome.html">Welcome</a>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a class="parent">VT-Web</a>
+                        <b class="caret"></b>
+                        <ul class="child-menu">
+                            
+                            <li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
+                            
+                            <li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
+                            
+                            <li class=""><a href="../vtweb/integration.html">Integration</a></li>
+                            
+                            <li class=""><a href="../vtweb/other_features.html">Other Features</a></li>
+                            
+                            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a class="parent">VT-Direct</a>
+                        <b class="caret"></b>
+                        <ul class="child-menu">
+                            
+                            <li class=""><a href="introduction.html">Introduction</a></li>
+                            
+                            <li class=""><a href="getting_started.html">Getting Started</a></li>
+                            
+                            <li class="active"><a href="integration.html">Integration</a></li>
+                            
+                            <li class=""><a href="other_features.html">Other Features</a></li>
+                            
+                            <li class=""><a href="other_commands.html">Other Commands</a></li>
+                            
+                            <li class=""><a href="going_live.html">Going Live</a></li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a class="parent">API Reference</a>
+                        <b class="caret"></b>
+                        <ul class="child-menu">
+                            
+                            <li class=""><a href="../sandbox/introduction.html">Introduction</a></li>
+                            
+                            <li class=""><a href="../sandbox/charge.html">Transaction Charge</a></li>
+                            
+                            <li class=""><a href="../sandbox/installment.html">Installment</a></li>
+                            
+                            <li class=""><a href="../sandbox/bin.html">BIN Promo</a></li>
+                            
+                            <li class=""><a href="../sandbox/other_features.html">Other Features</a></li>
+                            
+                            <li class=""><a href="../sandbox/other_commands.html">Other Commands</a></li>
+                            
+                            <li class=""><a href="../sandbox/card_list.html">Testing Card List</a></li>
+                            
+                            <li class=""><a href="../sandbox/status_code.html">Status Code</a></li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li>
+                    
+                        <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+                    
+                </li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="col-xs-12 col-sm-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="vtdirect-integration-bripay">
+            <h2 id="vt-direct-integration-e-pay-bri">VT-Direct Integration (e-Pay BRI)</h2>
+<hr />
+
+<h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-with-e-pay-bri-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct with e-Pay BRI payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
+<hr />
+
+<div class="row">
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_cc.html"><img src="../images/cc_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_mandiri.html"><img src="../images/mc_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_cimb.html"><img src="../images/cic_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_va.html"><img src="../images/va_icon_gray.png" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_bripay.html"><img src="../images/bri_icon.jpg" /></a>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<p>e-Pay BRI is one of the internet banking payment method that is provided by BRI Bank. This method allows customer to perform transaction by redirecting the customer to e-Pay BRI payment page. For more information, please visit <a title="e-Pay BRI" href="http://e-pay.bri.co.id">e-Pay BRI website</a>.</p>
+
+<p>To activate e-Pay BRI payment method (Automatically active on Sandbox mode), you have to contact Veritrans sales representative.</p>
+
+<h3 id="integration-steps-vt-direct-e-pay-bri">Integration Steps VT-Direct e-Pay BRI</h3>
+
+<ol>
+  <li>Create Form</li>
+  <li>Perform Charge Transaction</li>
+  <li>Redirect</li>
+  <li>Check Transaction Status</li>
+</ol>
+
+<p>Unlike the other payment method (Credit Card and Mandiri ClickPay), e-Pay BRI payment process are not executed in your payment page. Customer will be redirected to e-Pay BRI page to complete transaction.</p>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#form-bri" data-toggle="tab"><span>Step 1</span>Create Form</a></li>
+  <li><a href="#charge-transaction-bri" data-toggle="tab"><span>Step 2</span>Perform Charge Transaction</a></li>
+  <li><a href="#redirect-bri" data-toggle="tab"><span>Step 3</span>Redirect</a></li>
+  <li><a href="#transaction-status-bri" data-toggle="tab"><span>Step 4</span>Check Transaction Status</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="form-bri">
+    <!-- step 1-->
+    <!-- satu -->
+
+    <h2 id="create-form">Create Form</h2>
+
+    <p>e-Pay BRI payment form will be made in the file <code>form_vtdirect_bri.php</code>. Because most of the transaction process will be made in e-Pay BRI page, the form that we made will only shows the steps of payment and the payment button of e-Pay BRI.
+When your customer click this payment button, charge transaction process will be carried on the next step.</p>
+
+    <p>The following is a sample from the file <code>form_vtdirect_bri.php</code>:</p>
+
+<pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>VT-Direct e-Pay BRI Form Example<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>e-Pay BRI Transaction<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Please make sure that you have a User ID for BRI e-Pay and have registered for mTOKEN before going through with the payment <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>To obtain a User ID for BRI e-Pay, please register at the nearest BRI ATM.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Please visit the nearest BRI branch office to register the mTOKEN.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Payment via BRI e-Pay will be processed online and your BRI bank account balance will be deducted automatically based on your total amount.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Your transaction will be cancelled if payment is not completed within 2 hours.<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_bri.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+</code></pre>
+  </div>
+  <div class="tab-pane" id="charge-transaction-bri">
+    <!-- step 2-->
+    <!-- two -->
+
+    <h2 id="charge-transaction">Charge Transaction</h2>
+
+    <p>To perform charge transaction using e-Pay BRI, the steps required are as follow:</p>
+
+    <ul>
+      <li><code>payment_type</code> parameter has to be set as <code>bri_epay</code>.</li>
+    </ul>
+
+    <p>This step describes the charge transaction e-Pay BRI in the file <code>checkout_bri.php</code>. To perform charge transaction, we will use Veritrans PHP library. The following is an example of charge transaction implementation in the file <code>checkout_bri.php</code>:</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="mi">145000</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
+    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
+    <span class="p">);</span>
+
+<span class="c1">// Data that will be sent for charge transaction request with CIMB Clicks.
+</span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'bri_epay'</span><span class="p">,</span>
+  <span class="s1">'cimb_clicks'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="s2">"Description example"</span><span class="p">,</span>
+    <span class="p">),</span>
+  <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
+  <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p>On the above example, we utilise the e-Pay BRI, transaction, and customer data as the charge transaction parameter. You can add additional data during charge transaction, such as: Customer address, Delivery address, and item information.
+To add this data, you can check <a href="../sandbox/charge.html">API Reference - Charge Transaction</a>.</p>
+  </div>
+
+  <div class="tab-pane" id="redirect-bri">
+    <!-- step 3-->
+    <!-- three -->
+
+    <h2 id="redirect">Redirect</h2>
+
+    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:</p>
+
+<pre><code class="highlight php">$result = array(
+  "status_code" =&gt; "201",
+  "status_message" =&gt; "Success, BRI E-Pay transaction is successful",
+  "transaction_id" =&gt; "cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36",
+  "order_id" =&gt; "2014111702",
+  "payment_type" =&gt; "bri_epay",
+  "transaction_time" =&gt; "2014-11-17 12:27:40",
+  "transaction_status" =&gt; "pending",
+  "redirect_url" =&gt; "https://api.sandbox.veritrans.co.id/v2/redirect/cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36",
+  "gross_amount" =&gt; "145000"
+);
+</code></pre>
+
+    <p>Two important information in the JSON response is the <code>status_code</code> and <code>redirect_url</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. That being so, you have to redirect your customer to <code>redirect_url</code> to finish the e-Pay BRI transaction. You can add the following PHP code at the last line of the file <code>checkout.php</code> to do so:</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">"201"</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//success
+</span>  <span class="k">echo</span> <span class="s2">"Redirect e-Pay BRI. &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+  <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">redirect_url</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">//error
+</span>  <span class="k">echo</span> <span class="s2">"There is an error on the transaction.&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p>Information that is related to transaction value, order ID and transaction information will be displayed on the redirect URL page. On sandbox environment, the e-Pay BRI payment page is a dummy page. Customer simply has to click the payment button to complete transaction process.</p>
+
+    <p>When the transaction is completed, customer can proceed back to your website. To do this, you have to fill in the callback URL configuration in MAP (Merchant Administration Portal). For more information, please refer to the menu <a href="getting_started.html">Getting Started</a>. The following shows the payment page in sandbox environment:</p>
+
+    <p><img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test2.png" /></p>
+
+    <p>After customer completes his payment, the following page will be displayed:</p>
+
+    <p><img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test3.png" /></p>
+
+    <p>The following is the CIMB Niaga payment page on production environment:</p>
+
+    <p><img alt="ePay BRI 3" class="img-responsive img-thumbnail" src="../images/bri_demo.png" /></p>
+
+    <hr />
+
+    <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
+
+    <p>Under a certain case, charge transaction on VT-Direct can fail. This will prevents you in getting the redirect URL to e-Pay BRI page. Veritrans will return an error message if failure occurred. The reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Error Code</th>
+          <th>Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format or content of the transaction data is invalid; Example: Wrong variable type, invalid payment method.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Invalid client or server key.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant does not have access to utilise a certain method of payment.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID has previously been used and paid.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Merchant account has been inactive for a long period of time.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
+
+    <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_bripay.html#transaction-status-bri">next steps</a>.</p>
+
+  </div>
+  <div class="tab-pane" id="transaction-status-bri">
+    <!-- step 4-->
+    <!-- empat -->
+
+    <h2 id="transaction-status">Transaction Status</h2>
+
+    <p>When charge transaction is successful, the transaction status is still pending. Customer has to complete the transaction in the e-Pay BRI page. When this process is completed, the transaction status will be changed into <code>success</code>. You can check the transaction status change through MAP.</p>
+
+    <p>The status on MAP when payment is not yet completed in e-Pay BRI page is as follows:</p>
+
+    <p><img alt="bripay MAP Pending" class="img-responsive img-thumbnail" src="../images/bri-pay-pending.png" /></p>
+
+    <p>The status on MAP when payment has been completed in e-Pay BRI page is as follows:</p>
+
+    <p><img alt="bripay MAP Sukses" class="img-responsive img-thumbnail" src="../images/bri-pay-success.png" /></p>
+
+    <hr />
+
+    <h3 id="https-post">HTTP(S) POST</h3>
+
+    <p>Veritrans server will return a response to your server when customer has complete the payment. The sample JSON script that is returned by Veritrans is as follows:</p>
+
+<pre><code class="highlight php">{
+    "status_code": "200",
+    "status_message": "Veritrans payment notification",
+    "transaction_id": "68cebcbd-5894-4a09-84e1-b9952b3dcf1d",
+    "order_id": "2014101501",
+    "payment_type": "bri_epay",
+    "transaction_time": "2014-11-25 14:12:06",
+    "transaction_status": "settlement",
+    "signature_key": "4533cbaf612267f5da81a17ff8ab8b86d39de8a1877e6125f39782baac3fe211469532f20e7bf5cc88eb51dfc36eca098578503c3cc5a880a0245e733579afc3",
+    "gross_amount": 145000.00
+}
+</code></pre>
+
+    <p>The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction Status</a>.</p>
+
+  </div>
+</div>
+
+
+			<div class="pagination">
+				<ul><li class="left">« Previous: <a href="getting_started.html">VT-Direct : Getting Started</a></li><li class="right">Next: <a href="other_features.html">VT-Direct : Other Features</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>&copy;2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+          <span class="divider">|</span>
+          <a href="privacy.html" title="Privacy Policy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../javascripts/get-token.js" type="text/javascript"></script>
+<script src="../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../javascripts/tab_custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-32232768-1', 'veritrans.co.id');
+      ga('send', 'pageview');
+
+    </script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>
