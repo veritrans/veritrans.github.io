@@ -227,9 +227,34 @@
   <li>
     <p>Menangani redirect URL</p>
 
-    <p>Tahap terakhir sebelum memulai integrasi adalah menentukan bagaimana pelanggan anda kembali ke website setelah proses pembayaran selesai dilakukan. Setelah pelanggan anda menyelesaikan proses pembayaran, mereka akan dialihkan kembali ke website anda. Kemana pelanggan anda akan dialihkan, dapat diatur melalui MAP pada menu <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration</a>.</p>
+    <p>Tahap terakhir sebelum memulai integrasi adalah menentukan bagaimana pelanggan anda kembali ke website setelah proses pembayaran selesai dilakukan. Setelah pelanggan anda menyelesaikan proses pembayaran, mereka akan dialihkan kembali ke website anda. Kemana pelanggan anda akan dialihkan, dapat diatur melalui MAP ataupun melalui code yang dikirim ke Veritrans.</p>
+
+    <p>Untuk mengatur melalui MAP, bisa dilakukan pada menu <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration</a>.</p>
 
     <p><img alt="vtweb-config" class="img-responsive img-thumbnail" src="../../images/vtweb-config.png" /></p>
+
+    <p>Untuk mengatur melalui code yang dikirim ke Veritrans, bisa menggunakan parameter berikut:</p>
+
+<pre><code class="highlight plaintext"> &lt;?php 
+ ...
+
+ // Fill transaction data
+ $transaction = array(
+ "vtweb" =&gt; array (
+       "credit_card_3d_secure" =&gt; true,
+       'finish_redirect_url' =&gt; 'http://www.example.com',
+       'unfinish_redirect_url' =&gt; 'http://www.example.com',
+       'error_redirect_url' =&gt; 'http://www.example.com'
+     ),
+ 'transaction_details' =&gt; array(
+     'order_id' =&gt; rand(),
+     'gross_amount' =&gt; 10000,
+     )
+ );
+
+ ...
+ ?&gt;
+</code></pre>
 
     <hr />
 
@@ -279,6 +304,16 @@
 <script src="../../javascripts/dropdown.js" type="text/javascript"></script>
 <script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-32232768-1', 'veritrans.co.id');
+      ga('send', 'pageview');
+
+    </script>
     <script>
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
