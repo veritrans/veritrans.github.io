@@ -174,6 +174,12 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
@@ -181,7 +187,7 @@
 		</ul>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -282,7 +288,7 @@
   </div>
   <div class="tab-pane" id="vtdirect">
 
-    <p>Pada VT-Direct, anda harus memperoleh token ID terlebih dahulu. Token ID merepresentasikan informasi kartu kredit pelanggan anda yang telah disimpan di server Veritrans. Untuk memperoleh token, anda dapat mengikuti petunjuk di <a href="../vtdirect/other_features.html#installment">VT-Direct – Mendapatkan Token</a>. Perlu diperhatikan bahwa parameter request token untuk installment berbeda dengan <a href="../vtdirect/integration_cc.html#step1">token transaksi normal</a>. Anda harus menambahkan <code>installment</code> dan <code>installment_term</code> pada parameter. </p>
+    <p>Pada VT-Direct, anda harus memperoleh token ID terlebih dahulu. Token ID merepresentasikan informasi kartu kredit pelanggan anda yang telah disimpan di server Veritrans. Untuk memperoleh token, anda dapat mengikuti petunjuk di <a href="../vtdirect/other_features.html#installment">VT-Direct &#8211; Mendapatkan Token</a>. Perlu diperhatikan bahwa parameter request token untuk installment berbeda dengan <a href="../vtdirect/integration_cc.html#step1">token transaksi normal</a>. Anda harus menambahkan <code>installment</code> dan <code>installment_term</code> pada parameter. </p>
 
     <p>Setelah token diperoleh, charge transaksi cicilan dapat dilakukan dengan menambahkan atribut <code>installment_term</code> dalam <code>credit_card</code>:</p>
 
@@ -408,6 +414,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

@@ -174,6 +174,12 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
@@ -181,7 +187,7 @@
 		</ul>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,41 +197,37 @@
 
 <h5 id="tutorial-berikut-akan-membantu-anda-melakukan-integrasi-ke-veritrans-dengan-vt-web-silahkan-pilih-metode-integrasi-yang-akan-digunakan-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Tutorial berikut akan membantu anda melakukan integrasi ke Veritrans dengan VT-Web, Silahkan pilih metode integrasi yang akan digunakan. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
 		<a href="integration_php.html"><img src="../../images/php.jpg" /></a>
-		<div class="caption">PHP</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
 		<a href="integration_prestashop.html"><img src="../../images/prestashop.jpg" /></a>
-		<div class="caption">Prestashop</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
 		<a href="integration_magento.html"><img src="../../images/magento.jpg" /></a>
-		<div class="caption">Magento</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
 		<a href="integration_opencart.html"><img src="../../images/opencart.jpg" /></a>
-		<div class="caption">Opencart</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
 		<a href="integration_woocommerce.html"><img src="../../images/woocommerce.jpg" /></a>
-		<div class="caption">Woocommerce</div>
 		</div>
 	</div>
 </div>
-
-<p><strong>Note</strong>: Jika anda menggunakan bahasa pemrograman atau framework lain, silahkan kunjungi halaman dokumentasi <a href="../sandbox/introduction.html">Veritrans API</a> kami untuk memulai proses integrasi.</p>
+<p><br />
+<strong>Note</strong>: Jika anda menggunakan bahasa pemrograman atau framework lain, silahkan kunjungi halaman dokumentasi <a href="../sandbox/introduction.html">Veritrans API</a> kami untuk memulai proses integrasi.</p>
 
 
 			<div class="pagination">
@@ -270,6 +272,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

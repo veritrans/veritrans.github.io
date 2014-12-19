@@ -174,6 +174,12 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
@@ -181,7 +187,7 @@
 		</ul>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -201,7 +207,7 @@
   <li>BIN Promo</li>
 </ol>
 
-<p>Fitur transaksi 3D Secure, cicilan, dan BIN Promo merupakan fitur yang tersedia untuk metode pembayaran melalui <strong>kartu kredit</strong>. Berikut adalah tutorial untuk melakukan integrasi menggunakan fitur - fitur sesuai dengan kebutuhan anda.</p>
+<p>Fitur transaksi 3D Secure, cicilan, dan BIN Promo merupakan fitur yang tersedia untuk metode pembayaran melalui <strong>kartu kredit</strong>. Berikut adalah tutorial untuk melakukan integrasi menggunakan fitur - fitur sesuai dengan kebutuhan anda.<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -225,11 +231,11 @@
       <li><a href="#bri-pay">e-Pay BRI</a></li>
     </ol>
 
-    <p>Pada bagian <a href="integration_php.html#step1">VT-Web – Integrasi</a>, kami telah menjelaskan bagaimana mengaktifkan semua metode pembayaran yang anda miliki secara otomatis. Hal ini dapat diimplementasikan dengan <strong>tidak</strong> menyertakan parameter <code>enabled_payments</code>. Namun, pada kondisi tertentu anda mungkin perlu menampilkan beberapa metode pembayaran saja pada VT-Web. Jika anda menghadapi kondisi ini, silahkan ikuti petunjuk berikut.</p>
+    <p>Pada bagian <a href="integration_php.html#step1">VT-Web &#8211; Integrasi</a>, kami telah menjelaskan bagaimana mengaktifkan semua metode pembayaran yang anda miliki secara otomatis. Hal ini dapat diimplementasikan dengan <strong>tidak</strong> menyertakan parameter <code>enabled_payments</code>. Namun, pada kondisi tertentu anda mungkin perlu menampilkan beberapa metode pembayaran saja pada VT-Web. Jika anda menghadapi kondisi ini, silahkan ikuti petunjuk berikut.</p>
 
     <h3 id="credit-card">Kartu Kredit</h3>
 
-    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:</p>
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -268,7 +274,7 @@
       <li>Menambahkan parameter <code>mandiri_clickpay</code> pada variabel <code>enabled_payments</code>.</li>
     </ol>
 
-    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:</p>
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -291,9 +297,10 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Tab Mandiri Clickpay dapat digunakan oleh pelanggan untuk melakukan transaksi. Form beserta petunjuk pembayaran menggunakan Mandiri Clickpay akan ditampilkan pada halaman ini.</p>
-
-    <p><img alt="vtweb_mandiri" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri.png" /></p>
+    <p><br />
+Tab Mandiri Clickpay dapat digunakan oleh pelanggan untuk melakukan transaksi. Form beserta petunjuk pembayaran menggunakan Mandiri Clickpay akan ditampilkan pada halaman ini.
+<br /><br />
+<img alt="vtweb_mandiri" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri.png" /></p>
 
     <hr />
 
@@ -308,7 +315,7 @@
       <li>Menambahkan parameter <code>cimb_clicks</code> pada variabel <code>enabled_payments</code>.</li>
     </ol>
 
-    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:</p>
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -331,9 +338,10 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Tab CIMB Clicks akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode CIMB Clicks ditampilkan secara rinci pada halaman ini.</p>
-
-    <p><img alt="vtweb_cimb" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb.png" /></p>
+    <p><br />
+Tab CIMB Clicks akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode CIMB Clicks ditampilkan secara rinci pada halaman ini.
+<br /><br />
+<img alt="vtweb_cimb" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb.png" /></p>
 
     <hr />
 
@@ -348,7 +356,7 @@
       <li>Menambahkan parameter <code>bank_transfer</code> pada variabel <code>enabled_payments</code>.</li>
     </ol>
 
-    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:</p>
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -371,9 +379,10 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Tab Bank Transfer akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode virtual account ditampilkan secara rinci pada halaman ini.</p>
-
-    <p><img alt="vtweb_cimb" class="img-responsive img-thumbnail" src="../../images/vtweb_banktransfer.png" /></p>
+    <p><br />
+Tab Bank Transfer akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode virtual account ditampilkan secara rinci pada halaman ini.
+<br /><br />
+<img alt="vtweb_cimb" class="img-responsive img-thumbnail" src="../../images/vtweb_banktransfer.png" /></p>
 
     <hr />
 
@@ -388,7 +397,7 @@
       <li>Menambahkan parameter <code>bri_epay</code> pada variabel <code>enabled_payments</code>.</li>
     </ol>
 
-    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:</p>
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -411,9 +420,10 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Tab e-Pay BRI akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode e-Pay BRI ditampilkan secara rinci pada halaman ini.</p>
-
-    <p><img alt="vtweb_bripay" class="img-responsive img-thumbnail" src="../../images/vtweb_bripay.png" /></p>
+    <p><br />
+Tab e-Pay BRI akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode e-Pay BRI ditampilkan secara rinci pada halaman ini.
+<br /><br />
+<img alt="vtweb_bripay" class="img-responsive img-thumbnail" src="../../images/vtweb_bripay.png" /></p>
 
   </div>
   <div class="tab-pane" id="three-D-secure">
@@ -421,7 +431,7 @@
 
     <p>Kami sangat menyarankan agar fitur 3D secure digunakan pada transaksi kartu kredit anda. Penggunaan 3D Secure merupakan standar keamanan transaksi kartu kredit. 3D Secure mampu menambah lapisan keamanan transaksi kartu kredit melalui tambahan proses autentikasi pihak bank dan pelanggan anda. Jika pada kasus tertentu anda terpaksa untuk menon-aktifkan fitur 3D Secure, anda cukup menambahkan parameter <code>"credit_card_3d_secure" =&gt; false</code> saat request URL VT-Web.</p>
 
-    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:   </p>
+    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -452,7 +462,7 @@
 
     <p>Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant cukup menambahkan parameter transaksi <code>installment</code> saat request URL VT-Web. </p>
 
-    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:</p>
+    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -486,7 +496,8 @@
 
 </code></pre>
 
-    <p>Fitur cicilan pada VT-Web memiliki beberapa pilihan parameter. Deskripsi parameter yang dapat digunakan:</p>
+    <p><br />
+Fitur cicilan pada VT-Web memiliki beberapa pilihan parameter. Deskripsi parameter yang dapat digunakan:<br /></p>
 
     <table>
       <tbody>
@@ -511,7 +522,8 @@
       </tbody>
     </table>
 
-    <p>Deskripsi setiap objek yang ada pada <code>installment_terms</code>:</p>
+    <p><br />
+Deskripsi setiap objek yang ada pada <code>installment_terms</code>:<br /></p>
 
     <table>
       <tbody>
@@ -522,25 +534,25 @@
           <td>Keterangan</td>
         </tr>
         <tr>
-          <td><code>bni</code></td>
-          <td>JSON Array</td>
-          <td>Tidak</td>
-          <td>Daftar masa cicilan menggunakan Bank BNI<br /><strong>Note</strong>: Pada sandbox, elemen array yang valid adalah <code>6</code> dan <code>12</code></td>
+          <td><code>bank</code></td>
+          <td>String(50)</td>
+          <td>Ya</td>
+          <td>bank yang menyediakan cicilan. Pada sandbox, parameter yang bisa digunakan adalah <code>bni</code> atau <code>mandiri</code></td>
         </tr>
         <tr>
-          <td><code>mandiri</code></td>
-          <td>JSON Array</td>
-          <td>Tidak</td>
-          <td>Daftar masa cicilan menggunakan Bank Mandiri<br /><strong>Note</strong>: Pada sandbox, elemen array yang valid adalah <code>6</code> dan <code>12</code></td>
+          <td><code>term</code></td>
+          <td>Array Integer</td>
+          <td>Ya</td>
+          <td>Daftar masa cicilan. Pada sandbox, elemen array yang valid adalah <code>6</code> dan <code>12</code></td>
         </tr>
       </tbody>
     </table>
 
-    <p><strong>Note</strong>: Minimal satu bank dan satu masa berlaku harus ada pada objek <code>installment_terms</code></p>
+    <p><strong>Note</strong>: Minimal satu bank dan satu masa cicilan berlaku harus ada pada objek <code>installment_terms</code>.</p>
 
-    <p>Berikut adalah contoh tampilan halaman VT-Web dengan fitur cicilan:</p>
-
-    <p><img alt="VT-Web Installment" class="img-responsive" src="../../images/vtweb_installment.png" /></p>
+    <p>Berikut adalah contoh tampilan halaman VT-Web dengan fitur cicilan:
+<br /><br />
+<img alt="VT-Web Installment" class="img-responsive img-thumbnail" src="../../images/vtweb_installment.png" /></p>
 
   </div>
   <div class="tab-pane" id="bin-promo">
@@ -551,7 +563,7 @@
 
     <p>Untuk menggunakan fitur ini, anda terlebih dahulu mengumpulkan daftar BIN yang menerima promo. Daftar BIN tersebut menjadi parameter transaksi <code>credit_card_bins</code>, transaksi hanya dapat dilakukan oleh kartu kredit yang termasuk dalam daftar BIN.  Gunakan daftar BIN yang anda miliki sebagai nilai dari atribut <code>credit_card_bins</code> saat charge transaksi.</p>
 
-    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:</p>
+    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -578,13 +590,12 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, transaksi akan ditolak dengan pesan error sebagai berikut:</p>
-
-    <p><img alt="VT-Web BIN Error" class="img-responsive" src="../../images/vtweb_bin.png" /></p>
+    <p><br />
+Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, transaksi akan ditolak dengan pesan error sebagai berikut:
+<br /><br />
+<img alt="VT-Web BIN Error" class="img-responsive img-thumbnail" src="../../images/vtweb_bin.png" /></p>
 
   </div>
-
-  <hr />
 </div>
 
 
@@ -630,6 +641,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

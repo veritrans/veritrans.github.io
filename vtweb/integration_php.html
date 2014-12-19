@@ -174,6 +174,12 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
@@ -181,40 +187,35 @@
         </ul>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtweb-integration-php">
             <div class="row">
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_php.html"><img src="../images/php.jpg" /></a>
-    <div class="caption">PHP</div>
+    <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
+      <a href="integration_php.html"><img src="../images/php.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_prestashop.html"><img src="../images/prestashop_gray.jpg" /></a>
-    <div class="caption">Prestashop</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
+      <a href="integration_prestashop.html"><img src="../images/prestashop_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_magento.html"><img src="../images/magento_gray.jpg" /></a>
-    <div class="caption">Magento</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
+      <a href="integration_magento.html"><img src="../images/magento_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_opencart.html"><img src="../images/opencart_gray.jpg" /></a>
-    <div class="caption">Opencart</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
+      <a href="integration_opencart.html"><img src="../images/opencart_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_woocommerce.html"><img src="../images/woocommerce_gray.jpg" /></a>
-    <div class="caption">Woocommerce</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
+      <a href="integration_woocommerce.html"><img src="../images/woocommerce_gray.jpg" /></a>
     </div>
   </div>
 </div>
@@ -252,7 +253,7 @@
           <li>Transaction Total Nominal</li>
         </ol>
 
-        <p>The example below shows an order with with a random Transaction ID with a total nominal of Rp. 10.000,00. Sample PHP code that can be used to obtain and access VT-Web payment page:</p>
+        <p>The example below shows an order with with a random Transaction ID with a total nominal of Rp. 10.000,00. Sample PHP code that can be used to obtain and access VT-Web payment page:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span> 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -280,8 +281,8 @@
 </span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
-
-        <p>The sample code above utilise the <strong>Veritrans-PHP</strong> library that have been downloaded during <a href="getting_started.html">Getting Started</a>. <code>Veritrans.php</code> file can be found in the <strong>Veritrans-PHP</strong> library. This file is assumed to be located in the same directory with the source code.</p>
+        <p><br />
+The sample code above utilise the <strong>Veritrans-PHP</strong> library that have been downloaded during <a href="getting_started.html">Getting Started</a>. <code>Veritrans.php</code> file can be found in the <strong>Veritrans-PHP</strong> library. This file is assumed to be located in the same directory with the source code.</p>
 
         <p>To begin with, decide the account type that we are using: Production or Sandbox account. The example above utilise the Sandbox account. Therefore, the flag <code>Veritrans_Config::$isProduction</code> is set to <code>false</code>.</p>
 
@@ -289,9 +290,10 @@
 
         <p>VT-Web payment page URL can be obtained by calling <code>Veritrans_Vtweb::getRedirectionUrl</code> function where transaction data is the input. When this process is successful, customer will be redirected to the respective URL.</p>
 
-        <p>The following is the VT-Web display page for the code above:</p>
-
-        <p><img alt="VT-Web Simple" class="img-responsive img-thumbnail" src="../images/vtweb_simple.png" /></p>
+        <p>The following is the VT-Web display page for the code above:
+<br /><br />
+<img alt="VT-Web Simple" class="img-responsive img-thumbnail" src="../images/vtweb_simple.png" />
+<br /><br /></p>
 
         <hr />
 
@@ -301,7 +303,7 @@
 
         <p>Most fields on VT-Web form page will be filled automatically and information related to order item and delivery address will be displayed. Details and complete transaction data structure in the form of JSON can be found <a href="../sandbox/charge.html#specification">here</a>.</p>
 
-        <p>PHP sample code that includes all transaction data is shown as follow:</p>
+        <p>PHP sample code that includes all transaction data is shown as follow:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -386,15 +388,17 @@
 </span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
-        <p>The following figure displays the VT-Web payment page as a result from the code above. Do note that the fields on the <strong>Shopping Details is automatically filled</strong>. Information related to <strong>Purchased Product</strong> and <strong>Shipping Details</strong> is also displayed on the VT_Web page.</p>
+        <p><br />
+The following figure displays the VT-Web payment page as a result from the code above. Do note that the fields on the <strong>Shopping Details is automatically filled</strong>. Information related to <strong>Purchased Product</strong> and <strong>Shipping Details</strong> is also displayed on the VT_Web page.<br /><br /></p>
 
-        <p><img alt="VT-Web Complete" class="img-responsive img-thumbnail" src="../images/vtweb_complete.png" /></p>
+        <p><img alt="VT-Web Complete" class="img-responsive img-thumbnail" src="../images/vtweb_complete.png" />
+<br /><br /></p>
 
         <hr />
 
         <h2 id="error-on-vt-web-url-request">Error On VT-Web URL Request</h2>
 
-        <p>Under a few conditions, VT-Web payment URL request can be unsuccessful. The reason of the failure can be inspected from the status code. The status code that occurs in general is:</p>
+        <p>Under a few conditions, VT-Web payment URL request can be unsuccessful. The reason of the failure can be inspected from the status code. The status code that occurs in general is:<br /></p>
 
         <table>
           <thead>
@@ -427,7 +431,8 @@
           </tbody>
         </table>
 
-        <p>The list of status codes can be found in <a href="sandbox/status_code.html">Reference - Status Code</a>. For any inquiries, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
+        <p><br />
+The list of status codes can be found in <a href="sandbox/status_code.html">Reference - Status Code</a>. For any inquiries, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
 
       </div>
       <!-- end of step 1-->
@@ -462,7 +467,7 @@
             <!-- CC -->
 
             <h3 id="transaction-test-successful">Transaction Test Successful</h3>
-            <p>We will try to perform a successful 3D Secure Credit Card transaction. According to <a href="../sandbox/card_list.html">Reference - List of test credit cards</a>, the credit card that can be used is:</p>
+            <p>We will try to perform a successful 3D Secure Credit Card transaction. According to <a href="../sandbox/card_list.html">Reference - List of test credit cards</a>, the credit card that can be used is:<br /></p>
 
             <table>
               <thead>
@@ -491,21 +496,23 @@
               </tbody>
             </table>
 
-            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
-
-            <p><img alt="vtweb_test1" class="img-responsive img-thumbnail" src="../images/vtweb_test.png" /></p>
-
-            <p>Click Confirm Payment and VT-Web confirmation payment page will be displayed.</p>
-
-            <p><img alt="vtweb_test2" class="img-responsive img-thumbnail" src="../images/vtweb_test2.png" /></p>
-
-            <p>Click <strong>Pay</strong> and you will be redirected to 3D Secure page. Authentication page will pop out and customer simply has to click Authenticate. The following figure displays the 3D Secure authentication page on sandbox.</p>
-
-            <p><img alt="VT-Web 3D Secure" width="784" class="img-responsive img-thumbnail" src="../images/vtweb_3ds.png" /></p>
-
-            <p>After authentication process is completed, payment status will be displayed.</p>
-
-            <p><img alt="vtweb_test3" width="784" class="img-responsive img-thumbnail" src="../images/vtweb_test3.png" /></p>
+            <p><br />
+Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:
+<br /><br />
+<img alt="vtweb_test1" class="img-responsive img-thumbnail" src="../images/vtweb_test.png" />
+<br /><br />
+Click Confirm Payment and VT-Web confirmation payment page will be displayed.
+<br /><br />
+<img alt="vtweb_test2" class="img-responsive img-thumbnail" src="../images/vtweb_test2.png" />
+<br /><br />
+Click <strong>Pay</strong> and you will be redirected to 3D Secure page. Authentication page will pop out and customer simply has to click Authenticate. The following figure displays the 3D Secure authentication page on sandbox.
+<br /><br />
+<img alt="VT-Web 3D Secure" width="784" class="img-responsive img-thumbnail" src="../images/vtweb_3ds.png" />
+<br /><br />
+After authentication process is completed, payment status will be displayed.
+<br /><br />
+<img alt="vtweb_test3" width="784" class="img-responsive img-thumbnail" src="../images/vtweb_test3.png" />
+<br /></p>
 
             <hr />
 
@@ -522,15 +529,15 @@
 
             <h4 id="transaction-status-from-map">Transaction Status From MAP</h4>
 
-            <p>First, merchant has to log in MAP <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> beforehand. Merchant will notice the list of transaction with the respective status by selecting <a href="https://my.sandbox.veritrans.co.id/payments">Transactions</a> menu on MAP.</p>
-
-            <p><img alt="map_transaction" class="img-responsive img-thumbnail" src="../images/map_transaction.png" /></p>
-
-            <p>Merchant is able to check the transaction status by selecting the <code>Order ID</code> of a transaction item.</p>
-
-            <p><img alt="map_detail_transaction" class="img-responsive img-thumbnail" src="../images/map_detail_transaction.png" /></p>
-
-            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+            <p>First, merchant has to log in MAP <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> beforehand. Merchant will notice the list of transaction with the respective status by selecting <a href="https://my.sandbox.veritrans.co.id/payments">Transactions</a> menu on MAP.
+<br /><br />
+<img alt="map_transaction" class="img-responsive img-thumbnail" src="../images/map_transaction.png" />
+<br /><br />
+Merchant is able to check the transaction status by selecting the <code>Order ID</code> of a transaction item.
+<br /><br />
+<img alt="map_detail_transaction" class="img-responsive img-thumbnail" src="../images/map_detail_transaction.png" />
+<br /><br />
+Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
 
           </div>
           <!-- end of step cc-->
@@ -541,7 +548,8 @@
             <!-- Mandiri -->
 
             <h3 id="transaction-test-successful-1">Transaction Test Successful</h3>
-            <p>We will try to perform a successful Mandiri ClickPay transaction. According to <a href="../sandbox/card_list.html">Reference - List of test cards</a>, the card number and token that can be used is:</p>
+            <p>We will try to perform a successful Mandiri ClickPay transaction. According to <a href="../sandbox/card_list.html">Reference - List of test cards</a>, the card number and token that can be used is:
+<br /></p>
 
             <table>
               <tbody>
@@ -556,19 +564,19 @@
               </tbody>
             </table>
 
-            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
-
-            <p><img alt="VT-Web Mandiri Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_mandiri_test1.png" /></p>
-
-            <p>Click Confirm Payment and VT-Web confirmation payment page will be displayed.</p>
-
-            <p><img alt="VT-Web Mandiri Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_mandiri_test2.png" /></p>
-
-            <p>After authentication process is completed,the status will also be updated in MAP. The following figure displays the update on MAP when Mandiri ClickPay transaction is successful.</p>
-
-            <p><img alt="VT-Web Mandiri Test 3" class="img-responsive img-thumbnail" src="../images/mandiri_status.png" /></p>
-
-            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:
+<br /><br />
+<img alt="VT-Web Mandiri Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_mandiri_test1.png" />
+<br /><br />
+Click Confirm Payment and VT-Web confirmation payment page will be displayed.
+<br /><br />
+<img alt="VT-Web Mandiri Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_mandiri_test2.png" />
+<br /><br />
+After authentication process is completed,the status will also be updated in MAP. The following figure displays the update on MAP when Mandiri ClickPay transaction is successful.
+<br /><br />
+<img alt="VT-Web Mandiri Test 3" class="img-responsive img-thumbnail" src="../images/mandiri_status.png" />
+<br /><br />
+Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
 
           </div>
           <!-- end of step mandiri-->
@@ -579,23 +587,23 @@
             <!-- cimb -->
 
             <h3 id="transaction-test-successful-2">Transaction Test Successful</h3>
-            <p>We will try to perform a successful CIMB Clicks transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
-
-            <p><img alt="VT-Web CIMB Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test1.png" /></p>
-
-            <p>Click Confirm Payment and customer will be redirected to a <em>dummy</em> CIMB Clicks web page.</p>
-
-            <p><img alt="VT-Web CIMB Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test2.png" /></p>
-
-            <p>When CIMB Clicks transaction step is completed, select the Pay button confirmation payment page will be displayed.</p>
-
-            <p><img alt="VT-Web CIMB Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test3.png" /></p>
-
-            <p>Transaction status on MAP will be updated. The following figure displays the update on MAP when CIMB Clicks transaction is successful.</p>
-
-            <p><img alt="VT-Web CIMB Test 4" class="img-responsive img-thumbnail" src="../images/cimb_status.png" /></p>
-
-            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+            <p>We will try to perform a successful CIMB Clicks transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:
+<br /><br />
+<img alt="VT-Web CIMB Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test1.png" />
+<br /><br />
+Click Confirm Payment and customer will be redirected to a <em>dummy</em> CIMB Clicks web page.
+<br /><br />
+<img alt="VT-Web CIMB Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test2.png" />
+<br /><br />
+When CIMB Clicks transaction step is completed, select the Pay button confirmation payment page will be displayed.
+<br /><br />
+<img alt="VT-Web CIMB Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_cimb_test3.png" />
+<br /><br />
+Transaction status on MAP will be updated. The following figure displays the update on MAP when CIMB Clicks transaction is successful.
+<br /><br />
+<img alt="VT-Web CIMB Test 4" class="img-responsive img-thumbnail" src="../images/cimb_status.png" />
+<br /><br />
+Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
 
           </div>
           <!-- end of step cimb-->
@@ -605,33 +613,39 @@
             <!-- Virtual Account -->
 
             <h3 id="transaction-test-1">Transaction test</h3>
-            <p>We will try to perform a Virtual Account transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
-
-            <p><img alt="VT-Web transfer Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test1.png" /></p>
-
-            <p>Click <strong>Confirm Payment</strong> button to display the virtual account number.</p>
-
-            <p><img alt="VT-Web transfer Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test2.png" /></p>
+            <p>We will try to perform a Virtual Account transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:
+<br /><br />
+<img alt="VT-Web transfer Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test1.png" />
+<br /><br />
+Click <strong>Confirm Payment</strong> button to display the virtual account number.
+<br /><br />
+<img alt="VT-Web transfer Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test2.png" />
+<br /><br />
+<strong>Note:</strong> write your VA number and make payment on internet banking or nearest ATM.</p>
 
             <p>Until this point, the transaction is stored in MAP with <em>pending</em> status. Transaction status will be changed to <em>success</em> when your customer have finished the payment.</p>
 
-            <p>To facilitate the payment process, we provide the <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">payment simulator</a> for a sandbox Environment. Enter the account number previously obtained to check whether there is a transaction with the virtual account number.</p>
+            <hr />
 
-            <p><img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test3.png" /></p>
+            <h3 id="payment-simulation">Payment Simulation</h3>
 
-            <p>If there is a transaction with virtual account numbers you provide, you can do a payment simulation.</p>
-
-            <p><img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test4.png" /></p>
-
-            <p>Successful payment.</p>
-
-            <p><img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test5.png" /></p>
-
-            <p>Transaction status will change in MAP. Here is an example of MAP when the Virtual Account transaction was made.</p>
-
-            <p><img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../images/transfer_status.png" /></p>
-
-            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+            <p>To facilitate the payment process, we provide the <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">payment simulator</a> for a sandbox Environment. Enter the account number previously obtained to check whether there is a transaction with the virtual account number.
+<br /><br />
+<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test3.png" />
+<br /><br />
+If there is a transaction with virtual account numbers you provide, you can do a payment simulation.
+<br /><br />
+<img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test4.png" />
+<br /><br />
+Successful payment.
+<br /><br />
+<img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test5.png" />
+<br /><br />
+Transaction status will change in MAP. Here is an example of MAP when the Virtual Account transaction was made.
+<br /><br />
+<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../images/transfer_status.png" />
+<br /><br />
+Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
 
           </div>
           <!-- end of step bank transfer-->
@@ -642,23 +656,23 @@
             <!-- BRI -->
 
             <h3 id="transaction-test-successful-3">Transaction Test Successful</h3>
-            <p>We will try to perform a successful e-Pay BRI transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:</p>
-
-            <p><img alt="VT-Web epay Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test1.png" /></p>
-
-            <p>Click Confirm Payment and customer will be redirected to a <em>dummy</em> e-Pay BRI web page.</p>
-
-            <p><img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test2.png" /></p>
-
-            <p>When e-Pay BRI transaction step is completed, select the Pay button confirmation payment page will be displayed.</p>
-
-            <p><img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test3.png" /></p>
-
-            <p>Transaction status on MAP will be updated. The following figure displays the update on MAP when e-Pay BRI transaction is successful.</p>
-
-            <p><img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../images/epay_status.png" /></p>
-
-            <p>Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+            <p>We will try to perform a successful e-Pay BRI transaction. Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is as follows:
+<br /><br />
+<img alt="VT-Web epay Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test1.png" />
+<br /><br />
+Click Confirm Payment and customer will be redirected to a <em>dummy</em> e-Pay BRI web page.
+<br /><br />
+<img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test2.png" />
+<br /><br />
+When e-Pay BRI transaction step is completed, select the Pay button confirmation payment page will be displayed.
+<br /><br />
+<img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test3.png" />
+<br /><br />
+Transaction status on MAP will be updated. The following figure displays the update on MAP when e-Pay BRI transaction is successful.
+<br /><br />
+<img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../images/epay_status.png" />
+<br /><br />
+Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to be integrated with the merchant’s information system. To tackle this issue, merchant can use <strong>Transaction Notification</strong> method. The description on how to use transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
 
           </div>
           <!-- end of step epay-->
@@ -679,18 +693,19 @@
         <h3 id="notification-through-email">1. Notification through email</h3>
         <p>Notification through email will be send both to the email address of the customer who performs payment, as well as the merchant who accepts the payment. You can configure the email notification setting at <a href="https://my.sandbox.veritrans.co.id/settings/email_notifications">Settings - email notification</a> in MAP.</p>
 
-        <p><strong>Note:</strong> For multiple emails, please use comma as a separator. Example : Andri@myemail.com, litani@myemail.com </p>
-
-        <p><img alt="config_payment" class="img-responsive img-thumbnail" src="../images/vtweb-emailnotif.png" /></p>
+        <p><strong>Note:</strong> For multiple emails, please use comma as a separator. Example : Andri@myemail.com, litani@myemail.com 
+<br /><br />
+<img alt="config_payment" class="img-responsive img-thumbnail" src="../images/vtweb-emailnotif.png" />
+<br /><br /></p>
 
         <h3 id="notification-through-https-post">2. Notification through HTTP(S) POST</h3>
         <p>Notification through HTTP(S) POST will also be send to the merchant’s server. You can take advantage of the <em>HTTP(S) POST notification</em> to update a payment status from a transaction (order) in real time. This can be done because Veritrans sends this notification the moment customer completes payment process.</p>
 
-        <p>To make use of this facility, you have to provide the <em>endpoint</em> that receives HTTP(S) POST notification. The endpoint can be set in MAP, at <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration/">Settings - Configuration</a>.</p>
-
-        <p><img alt="config_payment" class="img-responsive img-thumbnail" src="../images/vtweb-httpnotif.png" /></p>
-
-        <p><strong>Note:</strong> Make sure the HTTP(S) POST notification address is not the same as your localhost address.  </p>
+        <p>To make use of this facility, you have to provide the <em>endpoint</em> that receives HTTP(S) POST notification. The endpoint can be set in MAP, at <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration/">Settings - Configuration</a>.
+<br /><br />
+<img alt="config_payment" class="img-responsive img-thumbnail" src="../images/vtweb-httpnotif.png" />
+<br />
+<strong>Note:</strong> Make sure the HTTP(S) POST notification address is not the same as your localhost address.  </p>
 
         <p>The content of the HTTP(S) POST notification consists of JSON object. A sample notification is described as follows:</p>
 
@@ -733,7 +748,7 @@
 </code></pre>
         <hr />
 
-        <p>The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilising <strong>Veritrans-PHP</strong> library. This PHP code is executed when when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.</p>
+        <p>The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilising <strong>Veritrans-PHP</strong> library. This PHP code is executed when when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
@@ -827,6 +842,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

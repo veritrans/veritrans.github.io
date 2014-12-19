@@ -174,6 +174,12 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
@@ -181,7 +187,7 @@
         </ul>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,42 +197,36 @@
 
 <h5 id="the-tutorial-below-will-assist-you-in-integrating-with-vt-web-please-choose-your-desired-integration-method-if-further-assistance-is-required-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our-support-pagehttpsupportveritranscoid-veritrans-support"><em>The tutorial below will assist you in integrating with VT-Web. Please choose your desired integration method. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our <a title="Veritrans Support" href="http://support.veritrans.co.id">support page</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_php.html"><img src="../images/php.jpg" /></a>
-    <div class="caption">PHP</div>
+    <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
+      <a href="integration_php.html"><img src="../images/php.jpg" /></a>    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
+      <a href="integration_prestashop.html"><img src="../images/prestashop.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_prestashop.html"><img src="../images/prestashop.jpg" /></a>
-    <div class="caption">Prestashop</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
+      <a href="integration_magento.html"><img src="../images/magento.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_magento.html"><img src="../images/magento.jpg" /></a>
-    <div class="caption">Magento</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
+      <a href="integration_opencart.html"><img src="../images/opencart.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_opencart.html"><img src="../images/opencart.jpg" /></a>
-    <div class="caption">Opencart</div>
-    </div>
-  </div>
-  <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_woocommerce.html"><img src="../images/woocommerce.jpg" /></a>
-    <div class="caption">Woocommerce</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
+      <a href="integration_woocommerce.html"><img src="../images/woocommerce.jpg" /></a>
     </div>
   </div>
 </div>
-
-<p><strong>Note</strong>: If you are using different programming language or framework, please visit our <a href="../sandbox/introduction.html">Veritrans API</a> documentation page to start integration process.</p>
-
+<p><br />
+<strong>Note</strong>: If you are using different programming language or framework, please visit our <a href="../sandbox/introduction.html">Veritrans API</a> documentation page to start integration process.</p>
 
 
 			<div class="pagination">
@@ -271,6 +271,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

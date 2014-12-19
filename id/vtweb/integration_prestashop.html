@@ -174,6 +174,12 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
@@ -181,40 +187,35 @@
 		</ul>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="id-vtweb-integration-prestashop">
             <div class="row">
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
 		<a href="integration_php.html"><img src="../../images/php_gray.jpg" /></a>
-		<div class="caption">PHP</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
 		<a href="integration_prestashop.html"><img src="../../images/prestashop.jpg" /></a>
-		<div class="caption">Prestashop</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
 		<a href="integration_magento.html"><img src="../../images/magento_gray.jpg" /></a>
-		<div class="caption">Magento</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
 		<a href="integration_opencart.html"><img src="../../images/opencart_gray.jpg" /></a>
-		<div class="caption">Opencart</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
 		<a href="integration_woocommerce.html"><img src="../../images/woocommerce_gray.jpg" /></a>
-		<div class="caption">Woocommerce</div>
 		</div>
 	</div>
 </div>
@@ -263,11 +264,10 @@
           <li>Masuk ke halaman admin Prestashop anda.</li>
           <li>Buka menu <em>Modules-modules</em> pada halaman administrasi Prestashop.</li>
           <li>Pada modul Veritrans klik <strong>configure</strong> untuk masuk ke halaman plugin.</li>
-          <li>
-            <p>Masukkan data-data yang diperlukan seperti di bawah ini.</p>
-
-            <p><img alt="Prestashop config" class="img-responsive img-thumbnail" src="../../images/presta00.png" /></p>
-          </li>
+          <li>Masukkan data-data yang diperlukan seperti di bawah ini.
+<br /><br />
+ <img alt="Prestashop config" class="img-responsive img-thumbnail" src="../../images/presta00.png" />
+<br /><br /></li>
           <li>
             <p>Login ke portal MAP untuk mengubah beberapa opsi berikut:</p>
 
@@ -305,6 +305,7 @@
       </div>
 
       <div class="tab-pane" id="prestashop-step2">
+        <p><br /></p>
 
         <ol>
           <li>
@@ -336,6 +337,8 @@
                 </tr>
               </tbody>
             </table>
+
+            <p><br /></p>
           </li>
           <li>
             <p>Cek beberapa poin berikut untuk memastikan plugin sudah ter-install dan bekerja dengan baik.</p>
@@ -417,6 +420,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

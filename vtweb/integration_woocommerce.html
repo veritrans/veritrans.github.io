@@ -174,6 +174,12 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
@@ -181,40 +187,35 @@
         </ul>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtweb-integration-woocommerce">
             <div class="row">
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_php.html"><img src="../images/php_gray.jpg" /></a>
-    <div class="caption">PHP</div>
+    <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
+      <a href="integration_php.html"><img src="../images/php_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_prestashop.html"><img src="../images/prestashop_gray.jpg" /></a>
-    <div class="caption">Prestashop</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
+      <a href="integration_prestashop.html"><img src="../images/prestashop_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_magento.html"><img src="../images/magento_gray.jpg" /></a>
-    <div class="caption">Magento</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
+     <a href="integration_magento.html"><img src="../images/magento_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_opencart.html"><img src="../images/opencart_gray.jpg" /></a>
-    <div class="caption">Opencart</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
+      <a href="integration_opencart.html"><img src="../images/opencart_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
-    <a href="integration_woocommerce.html"><img src="../images/woocommerce.jpg" /></a>
-    <div class="caption">Woocommerce</div>
+    <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
+      <a href="integration_woocommerce.html"><img src="../images/woocommerce.jpg" /></a>
     </div>
   </div>
 </div>
@@ -243,7 +244,8 @@
         <ol>
           <li>An online store with WordPress and WooCommerce infrastructure. This plugin is tested with WordPress Version 3.9.1 and WooCommerce Version 2.1.11.</li>
           <li>PHP minimum version 5.3</li>
-          <li>Veritrans plugin for WooCommerce [ <a href="https://github.com/veritrans/veritrans-woocommerce">Github</a> | <a href="https://github.com/veritrans/veritrans-woocommerce/archive/master.zip">Zip</a> ].</li>
+          <li>Veritrans plugin for WooCommerce [ <a href="https://github.com/veritrans/veritrans-woocommerce">Github</a> | <a href="https://github.com/veritrans/veritrans-woocommerce/archive/master.zip">Zip</a> ].
+<br /></li>
         </ol>
 
         <h4 id="installation-process">Installation Process</h4>
@@ -253,7 +255,8 @@
           <li>Upload the .zip extraction folder into WordPress installation directory <code>wp-content/plugins/</code></li>
           <li>Activate Veritrans plugin from Plugin menu in your WordPress admin page.</li>
           <li>Insert <code>http://[your web]/?wc-api=WC_Gateway_Veritrans</code> link as Payment Notification URL in your MAP configuration.</li>
-          <li>Insert <code>http://[your web]</code> link as Finish/Unfinish/Error Redirect URL in your MAP configuration.</li>
+          <li>Insert <code>http://[your web]</code> link as Finish/Unfinish/Error Redirect URL in your MAP configuration.
+<br /></li>
         </ol>
 
         <h4 id="plugin-configuration">Plugin Configuration</h4>
@@ -264,19 +267,17 @@
           <li>Access your WordPress admin page.</li>
           <li>Go to <strong>WooCommerce - Settings - Checkout</strong> menu in WordPress admin page.</li>
           <li>In Payment Gateway option, pick Veritrans then click <strong>settings</strong>.</li>
-          <li>
-            <p>Insert required fields following the figure below.</p>
-
-            <p><img alt="WooCommerce Setting" class="img-responsive img-thumbnail" src="../images/woocomm00.png" /></p>
-          </li>
+          <li>Insert required fields following the figure below.
+<br /><br />
+ <img alt="WooCommerce Setting" class="img-responsive img-thumbnail" src="../images/woocomm00.png" />
+<br /><br /></li>
         </ol>
-
       </div>
+
       <div class="tab-pane" id="woo-step2">
 
-        <ol>
-          <li>Perform successful transaction in your online store by inputing a dummy credit card number as follows (Sandbox Mode):</li>
-        </ol>
+        <p><br />
+1. Perform successful transaction in your online store by inputing a dummy credit card number as follows (Sandbox Mode):</p>
 
         <table>
           <thead>
@@ -305,9 +306,8 @@
           </tbody>
         </table>
 
-        <ol>
-          <li>Examine a few points below to ensure plugin is installed and performs properly.</li>
-        </ol>
+        <p><br />
+2. Examine a few points below to ensure plugin is installed and performs properly.</p>
 
         <table>
           <thead>
@@ -384,6 +384,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

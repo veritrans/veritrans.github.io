@@ -174,6 +174,12 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
@@ -181,7 +187,7 @@
         </ul>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -201,9 +207,10 @@
     <p>Utilized for development. Data and transaction made on this account is <em>dummy</em> in nature. During development period, merchant has to use <em>sandbox</em> account. <em>Sandbox</em> account can be created <a href="https://my.sandbox.veritrans.co.id/register">here</a>.</p>
   </li>
   <li>
-    <p>Fill in your basic information in MAP (Merchant Administration Portal). Can be found in menu <a title="General Settings" href="https://my.sandbox.veritrans.co.id/settings/general_info">Settings - General Settings</a>.</p>
+    <p>Fill in your basic information in MAP (Merchant Administration Portal). Can be found in menu <a title="General Settings" href="https://my.sandbox.veritrans.co.id/settings/general_info">Settings - General Settings</a>.<br /><br /></p>
 
-    <p><img alt="General Setting" class="img-responsive img-thumbnail" src="../images/gen_set.png" /></p>
+    <p><img alt="General Setting" class="img-responsive img-thumbnail" src="../images/gen_set.png" />
+<br /><br /></p>
   </li>
   <li>
     <p>Download <code>Veritrans-PHP</code> library [ <a href="https://github.com/veritrans/veritrans-php">Github</a> | <a href="https://github.com/veritrans/veritrans-php/archive/master.zip">Zip</a> ]</p>
@@ -213,15 +220,12 @@
       <li>
         <p>Login <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> MAP (Merchant Administration Portal).</p>
       </li>
-      <li>
-        <p>Choose menu <strong>Settings</strong> and <strong>Access keys</strong> </p>
-      </li>
-    </ul>
-
-    <p><img alt="Access Keys" class="img-responsive img-thumbnail" src="../images/access_key.png" /></p>
-
-    <ul>
-      <li><strong><font color="#F50000">Caution!!!</font></strong> Be discreet on your <code>server key</code>.</li>
+      <li>Choose menu <strong>Settings</strong> and <strong>Access keys</strong> 
+<br /><br />
+ <img alt="Access Keys" class="img-responsive img-thumbnail" src="../images/access_key.png" />
+<br /><br /></li>
+      <li><strong><font color="#F50000">Caution!!!</font></strong> Be discreet on your <code>server key</code>.
+<br /><br /></li>
     </ul>
   </li>
   <li>
@@ -229,11 +233,11 @@
 
     <p>The last step is to decide on how your customer will return to your website after payment process is completed. The website page where customer will be redirected can be configured in MAP or code.</p>
 
-    <p>To set through MAP, you can go to <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration menu</a> on MAP.</p>
-
-    <p><img alt="vtweb-config" class="img-responsive img-thumbnail" src="../images/vtweb-config.png" /></p>
-
-    <p>To set through code, use the following parameters:</p>
+    <p>To set through MAP, you can go to <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration menu</a> on MAP.
+<br /><br />
+ <img alt="vtweb-config" class="img-responsive img-thumbnail" src="../images/vtweb-config.png" />
+<br /><br />
+ To set through code, use the following parameters:<br /><br /></p>
 
 <pre><code class="highlight plaintext"> &lt;?php 
  ...
@@ -263,10 +267,11 @@
     <p><img alt="vtweb-diagram" class="img-responsive img-thumbnail" src="../images/vtweb-diagram.png" /></p>
 
     <ol>
-   <li>Finish Redirect URL</li>
+   <b><li>Finish Redirect URL</li></b>
   URL address where customer will be redirected if payment process is successful
-   <li>Error Redirect URL</li>
-  URL address where customer will be redirected if payment process is unsuccessful	  <li>Unfinish Redirect URL</li>
+   <b><li>Error Redirect URL</li></b>
+  URL address where customer will be redirected if payment process is unsuccessful.
+  <b> <li>Unfinish Redirect URL</li></b>
   URL address where customer will be redirected when clicking "Back to Merchant Website" (Payment process cancelled).
  </ol>
   </li>
@@ -317,6 +322,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>
