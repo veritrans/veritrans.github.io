@@ -200,9 +200,8 @@
 
 <p>VT-Direct is one of Veritrans products that facilitates you to add payment feature for your online store. By using VT-Direct, your customer is able to process payment in their own website page without redirection.</p>
 
-<p>VT-Direct will request a script from Veritrans server which will send the credit card information directly from the customer browser to Veritrans server without the data being saved in the merchant server.</p>
-
-<hr />
+<p>VT-Direct will request a script from Veritrans server which will send the credit card information directly from the customer browser to Veritrans server without the data being saved in the merchant server.
+<br /><br /></p>
 
 <h3 id="how-vt-direct-operates">How VT-Direct Operates</h3>
 
@@ -216,11 +215,12 @@
     <p><strong>Send Card Data</strong>: When the customer click the pay button, a script called <code>Veritrans.min.js</code> is requested from Veritrans server and will combine the sensitive credit card information with the <em>public-key</em>. The combination of the data is then sent to Veritrans server to be exchanged with the <em>onetime-token</em> ("Token").</p>
   </li>
   <li>
-    <p><strong>Get Token</strong>: Veritrans will return the Token to the customer’s browser page. The token will be valid for <strong>3 minutes</strong> during a standard credit card transaction and <strong>10 minutes</strong> if a 3D Secure feature is utilised. Token will expire after exceeding the respective time.</p>
+    <p><strong>Get Token</strong>: Veritrans will return the Token to the customer’s browser page. The token will be valid for <strong>3 minutes</strong> during a standard credit card transaction and <strong>10 minutes</strong> if a 3D Secure feature is utilised. Token will expire after exceeding the respective time.
+<br /><br />
+ <img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_1.png" /></p>
 
-    <p><img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_1.png" /></p>
-
-    <p><em>VT-Direct Process (Step 1 - 3)</em></p>
+    <p><em>VT-Direct Process (Step 1 - 3)</em>
+<br /><br /></p>
   </li>
   <li>
     <p><strong>Send Token</strong>: Token is then sent to the merchant server, Do note that the merchant will only receive Token as a substitution for the credit card details. <strong>Merchant will not save or process any credit card information.</strong> Therefore, merchant does not have to encounter any PCI DSS security issue.</p>
@@ -233,10 +233,10 @@
 
     <ul>
       <li>Capture</li>
-      <li>Settlement</li>
+      <li>Settlement
+<br /><br />
+ <img alt="vtdirect_intro2" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_2.png" /></li>
     </ul>
-
-    <p><img alt="vtdirect_intro2" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_2.png" /></p>
 
     <p><em>VT-Direct Process (Step 4 - 6)</em></p>
   </li>

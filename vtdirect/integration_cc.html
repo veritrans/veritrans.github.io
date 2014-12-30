@@ -197,6 +197,7 @@
 
 <h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-with-credit-card-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct with credit card payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
   <div class="col-sm-2 col-xs-12">
@@ -226,13 +227,15 @@
   </div>
 </div>
 <hr />
+<p><br /></p>
 
 <h3 id="integration-steps-vt-direct-credit-card">Integration Steps VT-Direct Credit Card</h3>
 
 <ol>
   <li>Acquire Token</li>
   <li>Perform Charge Transaction</li>
-  <li>Check Transaction Status</li>
+  <li>Check Transaction Status
+<br /><br /></li>
 </ol>
 
 <!-- Nav tabs -->
@@ -246,14 +249,15 @@
   <div class="tab-pane active" id="step1">
     <!-- step 1-->
     <!-- One -->
+    <p><br /></p>
 
     <h2 id="acquire-token">Acquire Token</h2>
 
     <p><img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_1.png" /></p>
 
-    <p><em>VT-Direct Process (Step 1 - 3)</em></p>
-
-    <p>This phase comprises of step 1-3 of VT-Direct Process diagram. On this step, we will try to acquire token ID for a transaction. Token ID is a unique value that is associated with the customer payment information (credit card number, expiry date, CVV) during a transaction. You need token ID to perform charge transaction on the next step.</p>
+    <p><em>VT-Direct Process (Step 1 - 3)</em>
+<br /><br />
+This phase comprises of step 1-3 of VT-Direct Process diagram. On this step, we will try to acquire token ID for a transaction. Token ID is a unique value that is associated with the customer payment information (credit card number, expiry date, CVV) during a transaction. You need token ID to perform charge transaction on the next step.</p>
 
     <p>To acquire token, there are three components that need to be prepared:</p>
 
@@ -263,9 +267,7 @@
       <li><a href="#additional-script">Additional Script</a></li>
     </ol>
 
-    <!-- At this moment, there are three method of payments that are provided by VT-Direct: Credit Card, Mandiri ClickPay, dan CIMB Clicks. Every method of payments has a different step of integration. The objective of this document is to perform VT-Direct integration with credit card method of payment. For integration with other method of payment, please refer to the respective documentation page. -->
-
-    <hr />
+    <p><br /></p>
 
     <h3 id="payment-form">Payment Form</h3>
 
@@ -280,7 +282,8 @@
       <li>CVV (Card Verification Value)</li>
     </ol>
 
-    <p>The following is a sample from the file <code>form_vtdirect.html</code>:</p>
+    <p>The following is a sample from the file <code>form_vtdirect.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -314,27 +317,23 @@
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="javascript">Veritrans Javascript Library</h3>
 
     <p>This library allows customer credit card to be securely send to Veritrans server. After the credit card information is sent, Veritrans server will send back a token ID. For security purposes, we forbid the merchant to implement their own Javascript. If more feature needs to be added in Javascript library, please contact <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">Veritrans support</a>.</p>
 
-    <p>To utilise this library, you just need to add a line of HTML code at <code>form_vtdirect.html</code> with the tag <code>&lt;head&gt;</code>.</p>
+    <p>To utilise this library, you just need to add a line of HTML code at <code>form_vtdirect.html</code> with the tag <code>&lt;head&gt;</code>.
+<br /><br /></p>
 
 <pre><code class="highlight html">
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 </code></pre>
 
-    <!-- If you are using **production account**, please add:
-
-~~~ html
-
-<script src="https://api.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
-~~~ -->
-
-    <p>If you are using sandbox account, please fill the <code>form_vtdirect.html</code> file as follows:</p>
+    <p><br />
+If you are using sandbox account, please fill the <code>form_vtdirect.html</code> file as follows:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -346,32 +345,38 @@
 
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
-
-    <hr />
+    <p><br /></p>
 
     <h3 id="additional-script">Additional Script</h3>
 
-    <p>Additional script is used to connect the content form with <code>veritrans.min.js</code>. The first script that is used is <strong>jQuery</strong>. jQuery will ease the HTML access and event addition when the form is submitted. To utilise jQuery, the code that needs to be added at the tag <code>head</code> on the file <code>form_vtdirect.html</code>:</p>
+    <p>Additional script is used to connect the content form with <code>veritrans.min.js</code>. The first script that is used is <strong>jQuery</strong>. jQuery will ease the HTML access and event addition when the form is submitted. To utilise jQuery, the code that needs to be added at the tag <code>head</code> on the file <code>form_vtdirect.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
 
-    <p>The second script that is used is <strong>jQuery fancybox</strong>. jQuery fancybox helps in making a dynamic 3D secure confirmation form. You can download jQuery fancy box <a href="https://github.com/fancyapps/fancyBox">here</a>. Extract the library and add the following code at the tag <code>head</code> on the file <code>form_vtdirect.html</code>:</p>
+    <p><br />
+The second script that is used is <strong>jQuery fancybox</strong>. jQuery fancybox helps in making a dynamic 3D secure confirmation form. You can download jQuery fancy box <a href="https://github.com/fancyapps/fancyBox">here</a>. Extract the library and add the following code at the tag <code>head</code> on the file <code>form_vtdirect.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"fancybox/jquery.fancybox.pack.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"fancybox/jquery.fancybox.css"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">media=</span><span class="s">"screen"</span> <span class="nt">/&gt;</span>
 </code></pre>
 
-    <p>Make sure the javascript file path and CSS fancy box is according to your project folder structure.</p>
+    <p><br />
+Make sure the javascript file path and CSS fancy box is according to your project folder structure.</p>
 
-    <p>The last script is used to integrate all the previous components that we created. On this script, we have to make sure that <strong>client key</strong> and <strong>Veritrans API URL</strong> is accurate. You can acquire the client key from <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Veritrans API URL for Sandbox environment is:</p>
+    <p>The last script is used to integrate all the previous components that we created. On this script, we have to make sure that <strong>client key</strong> and <strong>Veritrans API URL</strong> is accurate. You can acquire the client key from <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Veritrans API URL for Sandbox environment is:
+<br /><br /></p>
 
 <pre><code class="highlight plaintext">https://api.sandbox.veritrans.co.id/v2/token
 </code></pre>
 
-    <p>To improve the security of online transaction, we recommend you to activate the 3D Secure feature. There are 2 informations that need to be added for this feature to be utilised: acquiring bank (Merchant’s Bank) and transaction value.</p>
+    <p><br />
+To improve the security of online transaction, we recommend you to activate the 3D Secure feature. There are 2 informations that need to be added for this feature to be utilised: acquiring bank (Merchant’s Bank) and transaction value.</p>
 
-    <p>If you are using sandbox environment, the acquiring bank is BNI and the transaction value is Rp 200.000,00. The sample script that we add in the tag <code>head</code> at the file <code>form_vtdirect.html</code>:</p>
+    <p>If you are using sandbox environment, the acquiring bank is BNI and the transaction value is Rp 200.000,00. The sample script that we add in the tag <code>head</code> at the file <code>form_vtdirect.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
@@ -449,13 +454,15 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-    <p>When the customer click <code>Pay</code>, javascript will accumulate the field <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, <code>cvv</code>,  and <code>amount</code> from HTML form. These <em>fields</em> will then be sent securely to Veritrans server. If the <em>field</em> values are valid, Veritrans server will return a token ID that can be used to perform charge transaction.</p>
+    <p><br />
+When the customer click <code>Pay</code>, javascript will accumulate the field <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, <code>cvv</code>,  and <code>amount</code> from HTML form. These <em>fields</em> will then be sent securely to Veritrans server. If the <em>field</em> values are valid, Veritrans server will return a token ID that can be used to perform charge transaction.</p>
 
     <p>When the token ID is acquired, <em>hidden field</em> <code>token_id</code> will be automatically filled and sent to the merchant’s server. Do note that sensitive data from the customer will not be sent to the merchant’s server (Attribute <code>name</code> not included). Merchant’s server will only receive data <code>amount</code> and <code>token_id</code>.</p>
 
     <p>JQuery and jQuery fancy box usage is optional. You can use other javascript framework or your own script to display 3D Secure dialog.</p>
 
-    <p>The sample credit card that can be used for 3DS transaction is:</p>
+    <p>The sample credit card that can be used for 3DS transaction is:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -484,6 +491,8 @@
       </tbody>
     </table>
 
+    <p><br /></p>
+
     <p>Information about cards that can be used for testing can be found in <a href="../sandbox/card_list.html">API Reference - Testing Card List</a>.</p>
 
   </div>
@@ -493,14 +502,15 @@
     <!-- step 2-->
 
     <!-- Two -->
+    <p><br /></p>
 
     <h2 id="charge-transaction">Charge Transaction</h2>
 
     <p><img alt="vtdirect_intro2" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_2.png" /></p>
 
-    <p><em>VT-Direct Process (Step 4 - 6)</em></p>
-
-    <p>This step explains how charge transaction occurs in VT-Direct. Charge transaction implementation is assumed at the PHP file named <code>checkout.php</code>. In <code>checkout.php</code>, <code>token_id</code> and <code>price</code> attribute can be accessed charge transaction. These two attributes will be will be sent by <code>form_checkout.html</code> during <strong>Acquire Token</strong>.</p>
+    <p><em>VT-Direct Process (Step 4 - 6)</em>
+<br /><br />
+This step explains how charge transaction occurs in VT-Direct. Charge transaction implementation is assumed at the PHP file named <code>checkout.php</code>. In <code>checkout.php</code>, <code>token_id</code> and <code>price</code> attribute can be accessed charge transaction. These two attributes will be will be sent by <code>form_checkout.html</code> during <strong>Acquire Token</strong>.</p>
 
     <p>To perform charge transaction, there are six components that need to be prepared:</p>
 
@@ -518,11 +528,13 @@
       </li>
     </ol>
 
-    <p>The first three components can be obtained from <em>field</em> in <code>form_checkout.html</code>. Server key can be obtained at <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Order ID is an unique value of a transaction which can be set by the merchant.</p>
+    <p><br />
+The first three components can be obtained from <em>field</em> in <code>form_checkout.html</code>. Server key can be obtained at <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Order ID is an unique value of a transaction which can be set by the merchant.</p>
 
     <p>Transaction data consists of information about purchased item and customer information. Transaction data will be stored in Veritrans server and can be obtained anytime. This data is optional in nature. In general, transaction data can be obtained by adding the fields in <code>form_checkout.html</code>. Details about structure and transaction data information can be found <a href="../sandbox/charge.html#specification">here</a>.</p>
 
-    <p>Sample script <code>checkout.php</code> to perform charge transaction (simple transaction data):</p>
+    <p>Sample script <code>checkout.php</code> to perform charge transaction (simple transaction data):
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
@@ -563,7 +575,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Sample script <code>checkout.php</code> to perform charge transaction (full transaction data):</p>
+    <p><br />
+Sample script <code>checkout.php</code> to perform charge transaction (full transaction data):
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
@@ -658,11 +672,12 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
 
-    <p>Under a certain case, charge transaction on VT-Direct can fail. Veritrans will return error message if failure occurred. The reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:</p>
+    <p>Under a certain case, charge transaction on VT-Direct can fail. Veritrans will return error message if failure occurred. The reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -699,7 +714,8 @@
       </tbody>
     </table>
 
-    <p>The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
+    <p><br />
+The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
 
     <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_cc.html#step3">next steps</a>.</p>
 
@@ -710,10 +726,12 @@
     <!-- step 3-->
 
     <!-- three -->
+    <p><br /></p>
 
     <h2 id="transaction-status">Transaction Status</h2>
 
-    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:</p>
+    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:
+<br /><br /></p>
 
     <h3 id="success-response">Success Response</h3>
 
@@ -732,6 +750,7 @@
     "status_message" =&gt; "Success, Credit Card transaction is successful"
 );
 </code></pre>
+    <p><br /></p>
 
     <h3 id="failure-response">Failure Response</h3>
 
@@ -750,7 +769,8 @@
 );
 </code></pre>
 
-    <p>One of the most important information in the JSON response is the transaction status, which can be found in <code>transaction_status</code> attribute. There are three types of transaction status:</p>
+    <p><br />
+One of the most important information in the JSON response is the transaction status, which can be found in <code>transaction_status</code> attribute. There are three types of transaction status:</p>
 
     <ol>
       <li><strong>Capture</strong>: Transaction successful.</li>
@@ -758,7 +778,8 @@
       <li><strong>Challenge</strong>: Transaction rejected by FDS. You have to make a confirmation at Merchant Administration Portal (MAP).</li>
     </ol>
 
-    <p>You can add the following PHP code at the last line of the file <code>checkout.php</code> to send transaction status to your customer:</p>
+    <p>You can add the following PHP code at the last line of the file <code>checkout.php</code> to send transaction status to your customer:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
@@ -803,6 +824,7 @@
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre>
+    <p><br /></p>
 
     <p>Up till here, the payment process of a transaction is completed. If the <code>transaction_status</code> value is <code>capture</code>, the customer’s credit card has been charged to your account. In addition to sending the transaction status to the customer, you can also use the code above to update the respective database. Example, to mark if the respective <code>order_id</code> has been paid.</p>
 

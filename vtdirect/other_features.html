@@ -198,7 +198,8 @@
 <h5 id="the-tutorial-below-will-assist-you-in-implementing-other-features-on-vt-direct-if-further-assistance-is-required-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our-support-pagehttpsupportveritranscoid-veritrans-support"><em>The tutorial below will assist you in implementing other features on VT-Direct. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our <a title="Veritrans Support" href="http://support.veritrans.co.id">support page</a>.</em></h5>
 <hr />
 
-<p>Currently, VT-Direct has additional features for credit card payment method, which is:</p>
+<p><br />
+Currently, VT-Direct has additional features for credit card payment method, which is:</p>
 
 <ol>
   <li>Pre-Authorization &amp; Capture</li>
@@ -208,7 +209,8 @@
   <li>Two Clicks</li>
 </ol>
 
-<p>The following is a tutorial to utilise these features as needed.</p>
+<p>The following is a tutorial to utilise these features as needed.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -221,18 +223,21 @@
 <div class="tab-content">
   <div class="tab-pane active" id="pre-authorization">
     <!-- step 1-->
+    <p><br /></p>
 
     <h2 id="pre-authorization--capture">Pre-Authorization &amp; Capture</h2>
 
     <p>Pre-authorization is useful to check if a credit card is allowed to make a transaction for a certain value. When pre-authorization is completed, you can check the credit card status and transaction has <strong>not occured</strong> yet. Transaction occurs when capture operation is issued. Capture can only be completed when pre-authorization process is successful.</p>
 
-    <p>By default, operation <a href="integration_cc.html#step2">charge transaction</a> in Veritrans is a combination of pre-authorization and capture. If you wish to do these separately, please follow the following step. </p>
+    <p>By default, operation <a href="integration_cc.html#step2">charge transaction</a> in Veritrans is a combination of pre-authorization and capture. If you wish to do these separately, please follow the following step. 
+<br /><br /></p>
 
     <h3 id="pre-authorization-transaction">Pre-Authorization Transaction</h3>
 
     <p>Generally, pre-authorization process is similar to <a href="integration_cc.html#step2">charge transaction</a>. The difference lies on the request token parameter and charge transaction. You have to add the <code>'type'</code> attribute with the value <code>'authorize'</code> on both of the processes.</p>
 
-    <p>Following the same example as <a href="integration.html">charge transaction</a>, additional script on request token is as follows:</p>
+    <p>Following the same example as <a href="integration.html">charge transaction</a>, additional script on request token is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -260,7 +265,9 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-    <p>The acquired token can be saved and used to perform pre-authorization during charge transaction. Parameters that is modified during charge transaction is as follows:</p>
+    <p><br />
+The acquired token can be saved and used to perform pre-authorization during charge transaction. Parameters that is modified during charge transaction is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -285,7 +292,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>On the above example, pre-authorization response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when pre-authorization process is successful is as follows:</p>
+    <p><br />
+On the above example, pre-authorization response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when pre-authorization process is successful is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
     "status_code" =&gt; "200",
@@ -302,15 +311,17 @@
 );
 </code></pre>
 
-    <p>The important attribute on pre-authorization response is <code>transaction_id</code>. You need to use this attribute value to perform capture transaction.</p>
+    <p><br />
+The important attribute on pre-authorization response is <code>transaction_id</code>. You need to use this attribute value to perform capture transaction.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="capture-transaction">Capture Transaction</h3>
 
     <p>To perform capture transaction, you simply have to prepare the attribute <code>transaction_id</code> and <code>gross_amount</code>. Both these attributes is related to the previous pre-authorization process. The <code>gross_amount</code> value cannot exceed the <code>gross_amount</code> on pre-authorization. If <code>gross_amount</code> attribute is not given during capture, the <code>gross_amount</code> value on pre-authorization will be used.</p>
 
-    <p>The following is the sample PHP code to perform capture transaction:</p>
+    <p>The following is the sample PHP code to perform capture transaction:
+<br /><br /></p>
 
 <pre><code class="highlight php">
 <span class="cp">&lt;?php</span>
@@ -328,7 +339,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>On the above example, the capture response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when pre-authorization process is successful is as follows:</p>
+    <p><br />
+On the above example, the capture response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when pre-authorization process is successful is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
     "status_code" =&gt; "200",
@@ -348,12 +361,14 @@
   </div>
   <div class="tab-pane" id="installment">
     <!-- step 2-->
+    <p><br /></p>
 
     <h2 id="installment">Installment</h2>
 
     <p>To activate instalment feature, merchant has to make an agreement with the acquiring bank. Merchant also need to inquire Veritrans sales representative if the MID for installment is ready. The installment feature can be performed with normal token or 3DS token.</p>
 
-    <p>Installment feature implementation is similar to <a href="integration_cc.html#step2">charge transaksi</a>. The difference lies on the request token and charge transaction. You have to add <code>'Installment’</code> attribute and <code>installment_term</code>. The installment attribute with the respective value which can be used in Sandbox environment:</p>
+    <p>Installment feature implementation is similar to <a href="integration_cc.html#step2">charge transaksi</a>. The difference lies on the request token and charge transaction. You have to add <code>'Installment’</code> attribute and <code>installment_term</code>. The installment attribute with the respective value which can be used in Sandbox environment:
+<br /><br /></p>
 
     <table>
       <tbody>
@@ -378,7 +393,9 @@
       </tbody>
     </table>
 
-    <p>Using the same example in <a href="integration_cc.html#step2">charge transaction</a>, script that is modified during request token is as follows:</p>
+    <p><br />
+Using the same example in <a href="integration_cc.html#step2">charge transaction</a>, script that is modified during request token is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -408,7 +425,9 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-    <p>The acquired token can be saved and used to perform charge transaction. Attribute that has to be added to perform installment is <code>installment_term</code>. Parameters that is modified during charge transaction is as follows:</p>
+    <p><br />
+The acquired token can be saved and used to perform charge transaction. Attribute that has to be added to perform installment is <code>installment_term</code>. Parameters that is modified during charge transaction is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -433,7 +452,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>On the above example, the installment response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when installment process is successful is as follows:</p>
+    <p><br />
+On the above example, the installment response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when installment process is successful is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
     "status_code" =&gt; "200",
@@ -453,6 +474,7 @@
   </div>
   <div class="tab-pane" id="bin-promo">
     <!-- step 3-->
+    <p><br /></p>
 
     <h2 id="bin-promo">BIN Promo</h2>
 
@@ -460,7 +482,8 @@
 
     <p>To use this feature, you have to first list out the BIN that is having a promotion. The BIN list will become the transaction parameter <code>bins</code>. Transaction can only be performed by credit cards that is included in the BIN list. Use the BIN list as a value from the attribute <code>bins</code> during charge transaction.</p>
 
-    <p>Following the same transaction in <a href="integration_cc.html#step2">integration</a>, the sample PHP script that can be used is as follows:</p>
+    <p>Following the same transaction in <a href="integration_cc.html#step2">integration</a>, the sample PHP script that can be used is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -486,11 +509,13 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>On the above example, the BIN that is listed is <code>48111111</code>, <code>3111</code>, and <code>5</code>. If a card with the BIN "411111" is used, charge transaction will fail.</p>
+    <p><br />
+On the above example, the BIN that is listed is <code>48111111</code>, <code>3111</code>, and <code>5</code>. If a card with the BIN "411111" is used, charge transaction will fail.</p>
 
   </div>
   <div class="tab-pane" id="one-click">
     <!-- step 4-->
+    <p><br /></p>
 
     <h2 id="one-click">One Click</h2>
 
@@ -518,9 +543,12 @@
       </li>
     </ol>
 
+    <p><br /></p>
+
     <h3 id="initial-transaction">Initial Transaction</h3>
 
-    <p>To implement one click, you simply add the attribute <code>save_token_id</code> on initial transaction. Following the example on <a href="integration_cc.html#step2">charge transaction</a>, the modified PHP script during charge transaction is as follows:</p>
+    <p>To implement one click, you simply add the attribute <code>save_token_id</code> on initial transaction. Following the example on <a href="integration_cc.html#step2">charge transaction</a>, the modified PHP script during charge transaction is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -545,7 +573,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>On the above example, one click response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when one click process is successful is as follows:</p>
+    <p><br />
+On the above example, one click response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when one click process is successful is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
   "transaction_id" =&gt; "ca5e0ff5-4297-48ef-aa25-b3ab018d4ead",
@@ -564,15 +594,17 @@
 );
 </code></pre>
 
-    <p>Two important attributes for a successful one click response is <code>saved_token_id</code> and <code>saved_token_id_expired</code>. <code>saved_token_id</code> is the token that you save when the customer make a following transaction. This attribute is what we referred as <code>saved_token</code> on the previous explanation. The value from <code>saved_token</code> can be used repeatedly until <code>saved_token_id_expired</code>.</p>
+    <p><br />
+Two important attributes for a successful one click response is <code>saved_token_id</code> and <code>saved_token_id_expired</code>. <code>saved_token_id</code> is the token that you save when the customer make a following transaction. This attribute is what we referred as <code>saved_token</code> on the previous explanation. The value from <code>saved_token</code> can be used repeatedly until <code>saved_token_id_expired</code>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="following-transaction">Following Transaction</h3>
 
     <p>On the following transaction, customer does not have to fill in credit card information anymore and charge transaction process can be performed using <code>saved token</code>.</p>
 
-    <p>The following example is charge following transaction using <code>saved_token_id</code>:</p>
+    <p>The following example is charge following transaction using <code>saved_token_id</code>:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -599,7 +631,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Structure and example of <em>state</em> <code>$result</code> is the same with the standard <a href="integration_cc.html#step2">charge transaction process</a>.</p>
+    <p><br />
+Structure and example of <em>state</em> <code>$result</code> is the same with the standard <a href="integration_cc.html#step2">charge transaction process</a>.
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
     "transaction_id" =&gt; "05dfbd23-b767-4748-8fe9-7e30769e1857",
@@ -616,6 +650,7 @@
 
   </div>
   <div class="tab-pane" id="two-click">
+    <p><br /></p>
 
     <h2 id="two-clicks">Two Clicks</h2>
 
@@ -644,9 +679,12 @@
       </li>
     </ol>
 
+    <p><br /></p>
+
     <h3 id="initial-transaction-1">Initial Transaction</h3>
 
-    <p>Initial transaction implementation is similar to standard <a href="integration_cc.html#step2">charge transaction</a>. You simply have to add the attribute <code>saved_token_id</code> during charge transaction. When transaction is successful, the token is saved for the following transaction.</p>
+    <p>Initial transaction implementation is similar to standard <a href="integration_cc.html#step2">charge transaction</a>. You simply have to add the attribute <code>saved_token_id</code> during charge transaction. When transaction is successful, the token is saved for the following transaction.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -675,7 +713,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>On the above example, two clicks response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when two clicks process is successful is as follows:</p>
+    <p><br />
+On the above example, two clicks response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when two clicks process is successful is as follows:
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
   "transaction_id" =&gt; "ca5e0ff5-4297-48ef-aa25-b3ab018d4ead",
@@ -694,9 +734,10 @@
 );
 </code></pre>
 
-    <p>Two important attributes for a successful two clicks response is <code>saved_token_id</code> and <code>saved_token_id_expired</code>. <code>saved_token_id</code> is the token that you save when the customer make a following transaction. This attribute is what we referred as <code>saved_token</code> on two clicks step. The value from <code>saved_token</code> can be used repeatedly until <code>saved_token_id_expired</code>.</p>
+    <p><br />
+Two important attributes for a successful two clicks response is <code>saved_token_id</code> and <code>saved_token_id_expired</code>. <code>saved_token_id</code> is the token that you save when the customer make a following transaction. This attribute is what we referred as <code>saved_token</code> on two clicks step. The value from <code>saved_token</code> can be used repeatedly until <code>saved_token_id_expired</code>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="following-transaction-1">Following Transaction</h3>
 
@@ -704,7 +745,8 @@
 
     <p>Do note that you <strong>do not</strong> use <code>saved_token</code> to perform charge transaction. You use <code>saved_token</code> as one of the condition to acquire new token. You <strong>do not</strong> save new token from the customer to the database.</p>
 
-    <p>Field number and expiry date in the form can be removed because the customer simply need to fill the CVV and perform 3D Secure authentication. Using the same example in <a href="integration_cc.html#step2">charge transaction</a>, the following example is the new request token using the <code>saved_token</code> and CVV from the customer:</p>
+    <p>Field number and expiry date in the form can be removed because the customer simply need to fill the CVV and perform 3D Secure authentication. Using the same example in <a href="integration_cc.html#step2">charge transaction</a>, the following example is the new request token using the <code>saved_token</code> and CVV from the customer:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -730,7 +772,9 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-    <p>The following charge transaction on two steps is the same with the standard process <a href="integration_cc.html#step2">charge transaction</a>. You simply use the new token as the token_id.</p>
+    <p><br />
+The following charge transaction on two steps is the same with the standard process <a href="integration_cc.html#step2">charge transaction</a>. You simply use the new token as the token_id.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -756,7 +800,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Structure and example of <em>state</em> <code>$result</code> is the same with the standard <a href="integration_cc.html#step2">charge transaction process</a>.</p>
+    <p><br />
+Structure and example of <em>state</em> <code>$result</code> is the same with the standard <a href="integration_cc.html#step2">charge transaction process</a>.
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
     "transaction_id" =&gt; "05dfbd23-b767-4748-8fe9-7e30769e1857",

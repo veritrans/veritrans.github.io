@@ -196,7 +196,8 @@
 
 <p>BIN (Bank Identification Number) merupakan <strong>6 digit</strong> pertama dari nomor kartu kredit. Bank penerbit kartu kredit dapat ditentukan dengan menggunakan BIN, BIN promo memungkinkan charge transaksi hanya dapat dilakukan oleh kartu kredit tertentu. Setiap BIN yang anda gunakan dapat direpresentasikan oleh <strong>1 hingga 8 digit</strong> pertama nomor kartu kredit.</p>
 
-<p>Spesifikasi fungsi BIN Promo sama dengan <a href="charge.html#specification">spesifikasi charge transaksi</a>. Karena petunjuk implementasi BIN Promo pada VT-Web dan VT-Direct berbeda, pembahasan akan dilakukan secara terpisah.</p>
+<p>Spesifikasi fungsi BIN Promo sama dengan <a href="charge.html#specification">spesifikasi charge transaksi</a>. Karena petunjuk implementasi BIN Promo pada VT-Web dan VT-Direct berbeda, pembahasan akan dilakukan secara terpisah.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -206,8 +207,10 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="vtweb">
+    <p><br /></p>
 
-    <p>Sama dengan charge transaksi VT-Web, output dari fungsi BIN promo adalah URL pembayaran. Pelanggan harus anda redirect ke URL pembayaran VT-Web untuk menyelesaikan transaksi. Implementasi BIN Promo pada VT-Web sangat sederhana. Anda cukup menambahkan atribut <code>credit_card_bins</code> pada JSON request charge transaksi. Berikut adalah JSON request BIN Promo pada VT-Web:</p>
+    <p>Sama dengan charge transaksi VT-Web, output dari fungsi BIN promo adalah URL pembayaran. Pelanggan harus anda redirect ke URL pembayaran VT-Web untuk menyelesaikan transaksi. Implementasi BIN Promo pada VT-Web sangat sederhana. Anda cukup menambahkan atribut <code>credit_card_bins</code> pada JSON request charge transaksi. Berikut adalah JSON request BIN Promo pada VT-Web:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -268,7 +271,9 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Struktur JSON response fungsi BIN Promo sama dengan <a href="charge.html#vtweb">charge transaksi VT-Web</a>. Contoh JSON response sukses:</p>
+    <p><br />
+Struktur JSON response fungsi BIN Promo sama dengan <a href="charge.html#vtweb">charge transaksi VT-Web</a>. Contoh JSON response sukses:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -279,10 +284,12 @@
 
   </div>
   <div class="tab-pane" id="vtdirect">
+    <p><br /></p>
 
     <p>Pada VT-Direct, anda harus memperoleh token ID terlebih dahulu. Token ID merepresentasikan informasi kartu kredit pelanggan anda yang telah disimpan di server Veritrans. Cara memperoleh Token ID pada BIN Promo sama dengan <a href="../vtdirect/integration_cc.html#step1">charge transaksi normal</a>.</p>
 
-    <p>Setelah token diperoleh, charge transaksi BIN Promo dapat dilakukan dengan menambahkan atribut <code>bins</code> dalam <code>credit_card</code>:</p>
+    <p>Setelah token diperoleh, charge transaksi BIN Promo dapat dilakukan dengan menambahkan atribut <code>bins</code> dalam <code>credit_card</code>:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -343,7 +350,8 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, charge transaksi akan gagal.</p>
+    <p><br />
+Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, charge transaksi akan gagal.</p>
 
     <p>Struktur JSON response BIN Promo sama dengan <a href="charge.html#vtdirect-cc">charge transaksi VT-Direct</a> kartu kredit. Perbedaan hanya terdapat konten <code>status_message</code>. Contoh JSON response transaksi sukses: </p>
 
@@ -362,7 +370,8 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Contoh JSON response transaksi gagal:</p>
+    <p><br />
+Contoh JSON response transaksi gagal:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"400"</span><span class="p">,</span>

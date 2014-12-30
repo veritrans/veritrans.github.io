@@ -202,7 +202,8 @@
   <li>Two Clicks</li>
 </ol>
 
-<p>Berikut adalah tutorial untuk melakukan integrasi menggunakan fitur - fitur sesuai dengan kebutuhan anda.</p>
+<p>Berikut adalah tutorial untuk melakukan integrasi menggunakan fitur - fitur sesuai dengan kebutuhan anda.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -213,6 +214,7 @@
 <div class="tab-content">
   <div class="tab-pane active" id="pre-authorization">
     <!-- step 1-->
+    <p><br /></p>
 
     <h2 id="pre-authorization--capture">Pre-Authorization &amp; Capture</h2>
 
@@ -222,7 +224,8 @@
 
     <p>Pada VT-Direct, anda harus memperoleh <a href="../vtdirect/other_features.html#pre-authorization">token ID authorization</a> terlebih dahulu. Perlu diperhatikan bahwa parameter request token untuk pre-authorization berbeda dengan <a href="../vtdirect/integration_cc.html#step1">token transaksi normal</a>. Anda harus menambahkan atribut <code>type</code> pada parameter request token.</p>
 
-    <p>Setelah token pre-authorization diperoleh, tambahkan atribut <code>type</code> dalam <code>credit_card</code> saat charge. Spesifikasi fungsi pre-authorization sama dengan <a href="charge.html#specification">charge transaksi kartu kredit</a>.</p>
+    <p>Setelah token pre-authorization diperoleh, tambahkan atribut <code>type</code> dalam <code>credit_card</code> saat charge. Spesifikasi fungsi pre-authorization sama dengan <a href="charge.html#specification">charge transaksi kartu kredit</a>.
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
@@ -283,7 +286,9 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Struktur JSON response pre-authorization sama dengan <a href="charge.html#vtdirect-cc">charge transaksi kartu kredit</a>. Ketika proses berhasil, <code>transaction_status</code> akan bernilai <code>authorize</code>. Perlu diperhatikan bahwa transaksi <strong>belum</strong> terjadi. Transaksi baru terjadi saat fungsi capture dilakukan. Contoh JSON response pre-authorization sukses: </p>
+    <p><br />
+Struktur JSON response pre-authorization sama dengan <a href="charge.html#vtdirect-cc">charge transaksi kartu kredit</a>. Ketika proses berhasil, <code>transaction_status</code> akan bernilai <code>authorize</code>. Perlu diperhatikan bahwa transaksi <strong>belum</strong> terjadi. Transaksi baru terjadi saat fungsi capture dilakukan. Contoh JSON response pre-authorization sukses: 
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -301,20 +306,23 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="capture">Capture</h3>
 
-    <p>Setelah pre-authorization berhasil, charge transaksi dapat dilakukan dengan fungsi capture. Anda perlu mencatat <code>transaction_id</code> pre-authorization dan menggunakannya sebagai salah satu atribut JSON request capture. </p>
+    <p>Setelah pre-authorization berhasil, charge transaksi dapat dilakukan dengan fungsi capture. Anda perlu mencatat <code>transaction_id</code> pre-authorization dan menggunakannya sebagai salah satu atribut JSON request capture. 
+<br /><br /></p>
 
     <h4 id="spesifikasi">Spesifikasi</h4>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Deskripsi</td>
-          <td>Charge transaksi yang telah lolos pre-authorization</td>
+          <th>Deskripsi</th>
+          <th>Charge transaksi yang telah lolos pre-authorization</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>Endpoint</td>
           <td><a href="introduction.html#url-endpoint">BASE_URL</a>/capture</td>
@@ -330,18 +338,22 @@
       </tbody>
     </table>
 
+    <p><br /></p>
+
     <h4 id="json-request">JSON Request</h4>
 
     <p>Keterangan objek <code>JSON request</code> capture transaksi:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>transaction_id</td>
           <td>String</td>
@@ -357,7 +369,8 @@
       </tbody>
     </table>
 
-    <p>Contoh JSON request capture:</p>
+    <p><br />
+Contoh JSON request capture:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"transaction_id"</span> <span class="p">:</span> <span class="s2">"1ac1a089d-a587-40f1-a936-a7770667d6dd"</span><span class="p">,</span>
@@ -367,9 +380,12 @@
 
     <p>Perlu diperhatikan bahwa nilai transaksi pada contoh di atas lebih kecil dari nilai transaksi saat pre-authorization.</p>
 
+    <p><br /></p>
+
     <h4 id="json-response">JSON Response</h4>
 
-    <p>Keterangan JSON Response sama dengan <a href="charge.html#vtdirect-cc">charge transaksi normal</a>. Contoh JSON response capture sukses:</p>
+    <p>Keterangan JSON Response sama dengan <a href="charge.html#vtdirect-cc">charge transaksi normal</a>. Contoh JSON response capture sukses:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -390,6 +406,7 @@
   </div>
   <div class="tab-pane" id="one-click">
     <!-- step 2-->
+    <p><br /></p>
 
     <h2 id="one-click">One Click</h2>
 
@@ -414,11 +431,12 @@
       </li>
     </ol>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="first-charge">Charge Transaksi Pertama</h3>
 
-    <p>Spesifikasi fungsi charge transaksi one click sama dengan <a href="charge.html#specification">charge transaksi kartu kredit</a>. Anda cukup menambahkan atribut <code>save_token_id</code> pada <code>credit_card</code> JSON request.</p>
+    <p>Spesifikasi fungsi charge transaksi one click sama dengan <a href="charge.html#specification">charge transaksi kartu kredit</a>. Anda cukup menambahkan atribut <code>save_token_id</code> pada <code>credit_card</code> JSON request.
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
@@ -478,7 +496,9 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Response yang akan dikembalikan jika transaksi sukses:</p>
+    <p><br />
+Response yang akan dikembalikan jika transaksi sukses:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -498,13 +518,15 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Dari response di atas, hasil <code>save_token_id</code> perlu disimpan oleh merchant, misalnya di database, sehingga dapat digunakan untuk pembayaran berikutnya.</p>
+    <p><br />
+Dari response di atas, hasil <code>save_token_id</code> perlu disimpan oleh merchant, misalnya di database, sehingga dapat digunakan untuk pembayaran berikutnya.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="charge-request-berikutnya">Charge Request Berikutnya</h3>
 
-    <p>Untuk charge request berikutnya, anda harus menggunakan token id yang didapat dari response yang pertama, <code>"saved_token_id"</code>. Token id tersebut diletakkan di bagian <code>"credit_card"</code>. Spesifikasi fungsi charge transaksi one click sama dengan <a href="charge.html#specification">charge transaksi kartu kredit</a>.</p>
+    <p>Untuk charge request berikutnya, anda harus menggunakan token id yang didapat dari response yang pertama, <code>"saved_token_id"</code>. Token id tersebut diletakkan di bagian <code>"credit_card"</code>. Spesifikasi fungsi charge transaksi one click sama dengan <a href="charge.html#specification">charge transaksi kartu kredit</a>.
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
@@ -564,7 +586,9 @@
 
 </code></pre>
 
-    <p>Jika response sukses akan mendapatkan hasil sebagai berikut:</p>
+    <p><br />
+Jika response sukses akan mendapatkan hasil sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -582,6 +606,7 @@
 
   </div>
   <div class="tab-pane" id="two-click">
+    <p><br /></p>
 
     <h2 id="two-clicks">Two Clicks</h2>
 
@@ -612,9 +637,12 @@
       </li>
     </ol>
 
+    <p><br /></p>
+
     <h3 id="charge-transaksi-pertama">Charge Transaksi Pertama</h3>
 
-    <p>Charge transaksi pertama untuk two clicks mempunyai format yang sama dengan <a href="/id/sandbox/one_click.html#first-charge">charge transaksi pertama one click</a>. Pada charge transaksi pertama, <code>"save_token_id"</code> harus di masukan di JSON request dalam bagian <code>"credit_card"</code>. Dengan demikian, token akan disimpan untuk pembayaran berikutnya.</p>
+    <p>Charge transaksi pertama untuk two clicks mempunyai format yang sama dengan <a href="/id/sandbox/one_click.html#first-charge">charge transaksi pertama one click</a>. Pada charge transaksi pertama, <code>"save_token_id"</code> harus di masukan di JSON request dalam bagian <code>"credit_card"</code>. Dengan demikian, token akan disimpan untuk pembayaran berikutnya.
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
@@ -674,7 +702,9 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Response yang akan dikembalikan jika transaksi sukses:</p>
+    <p><br />
+Response yang akan dikembalikan jika transaksi sukses:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -694,17 +724,19 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Dari response di atas, hasil <code>saved_token_id</code> perlu disimpan oleh merchant, misalnya di database, sehingga dapat digunakan untuk pembayaran berikutnya.</p>
+    <p><br />
+Dari response di atas, hasil <code>saved_token_id</code> perlu disimpan oleh merchant, misalnya di database, sehingga dapat digunakan untuk pembayaran berikutnya.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="charge-request-berikutnya-1">Charge Request Berikutnya</h3>
 
-    <p>Pada transaksi selanjutnya, kita menggunakan <code>saved_token_id</code>, CVV, dan autentikasi 3DS (jika diaktifkan) yang dimasukkan oleh pelanggan untuk mendapatkan token baru. Atribut <code>two_click</code> juga perlu ditambahkan saat request token baru dilakukan. Token baru kemudian anda gunakan untuk melakukan charge transaksi berikutnya. Nilai token baru otomatis akan dimasukkan ke dalam <code>&lt;input id="token-id" name="token-id" type="hidden" /&gt;</code> oleh <code>veritrans.min.js</code>.</p>
-
-    <p>Perlu diperhatikan bahwa anda <strong>tidak</strong> menggunakan <code>saved_token</code> untuk melakukan charge transaksi. Anda menggunakan <code>saved_token</code> sebagai salah satu syarat untuk memperoleh token baru. Anda <strong>tidak</strong> menyimpan token baru dari pelanggan tersebut ke database.</p>
-
-    <p>Field nomor dan expiry date pada form dapat dihilangkan karena pelanggan anda cukup mengisi CVV dan melakukan autentikasi 3D Secure saja. Menggunakan kasus yang sama dengan <a href="../vtdirect/integration_cc.html#step2">charge transaksi</a>, Berikut adalah contoh request token baru menggunakan atribut <code>saved_token</code> dan CVV yang dimasukkan pelanggan:</p>
+    <p>Pada transaksi selanjutnya, kita menggunakan <code>saved_token_id</code>, CVV, dan autentikasi 3DS (jika diaktifkan) yang dimasukkan oleh pelanggan untuk mendapatkan token baru. Atribut <code>two_click</code> juga perlu ditambahkan saat request token baru dilakukan. Token baru kemudian anda gunakan untuk melakukan charge transaksi berikutnya. Nilai token baru otomatis akan dimasukkan ke dalam <code>&lt;input id="token-id" name="token-id" type="hidden" /&gt;</code> oleh <code>veritrans.min.js</code>.
+<br /><br />
+Perlu diperhatikan bahwa anda <strong>tidak</strong> menggunakan <code>saved_token</code> untuk melakukan charge transaksi. Anda menggunakan <code>saved_token</code> sebagai salah satu syarat untuk memperoleh token baru. Anda <strong>tidak</strong> menyimpan token baru dari pelanggan tersebut ke database.
+<br /><br />
+Field nomor dan expiry date pada form dapat dihilangkan karena pelanggan anda cukup mengisi CVV dan melakukan autentikasi 3D Secure saja. Menggunakan kasus yang sama dengan <a href="../vtdirect/integration_cc.html#step2">charge transaksi</a>, Berikut adalah contoh request token baru menggunakan atribut <code>saved_token</code> dan CVV yang dimasukkan pelanggan:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -730,7 +762,9 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-    <p>Saat token baru sudah diperoleh, anda dapat menggunakan token tersebut untuk melakukan charge transaksi seperti biasa. Spesifikasi fungsi charge transaksi two clicks sama dengan <a href="charge.html#specification">charge transaksi kartu kredit</a>.</p>
+    <p><br />
+Saat token baru sudah diperoleh, anda dapat menggunakan token tersebut untuk melakukan charge transaksi seperti biasa. Spesifikasi fungsi charge transaksi two clicks sama dengan <a href="charge.html#specification">charge transaksi kartu kredit</a>.
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
@@ -791,7 +825,9 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Contoh response yang akan dikembalikan jika transaksi sukses:</p>
+    <p><br />
+Contoh response yang akan dikembalikan jika transaksi sukses:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>

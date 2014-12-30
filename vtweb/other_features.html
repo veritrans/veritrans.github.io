@@ -207,7 +207,7 @@
   <li>BIN Promo</li>
 </ol>
 
-<p>3D Secure, installment, and BIN Promo feature are exclusively available for <strong>credit card</strong> payment method. The following tabs provide tutorial to integrate with these feature.<br /><br /></p>
+<p>3D Secure, installment, and BIN Promo feature are exclusively available for the <strong>credit card</strong> payment method. The following tabs provide tutorials to integrate with these feature.<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -231,11 +231,11 @@
       <li><a href="#bri-pay">e-Pay BRI</a></li>
     </ol>
 
-    <p>On section <a href="integration_php.html#step1">VT-Web – Integration</a>, we explained on how to automatically activate all available payments for the merchant. This can be implemented by <strong>not</strong> including the <code>enabled_payments</code> parameter. However, under a certain condition, you need to display only some of the payment methods available. If such circumstances occurred, please follow the steps below.</p>
+    <p>On section <a href="integration_php.html#step1">VT-Web – Integration</a>, we explained on how to automatically activate all available payments for the merchant. This can be implemented by <strong>not</strong> including the <code>enabled_payments</code> parameter. However, under a certain condition, you need to display only some of the payment methods available. If such circumstances occurr, please follow the steps below.</p>
 
     <h3 id="credit-card">Credit Card</h3>
 
-    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a> section, the sample PHP code that we can make use of is:<br /><br /></p>
+    <p>Following the test transaction on the <a href="integration_php.html#step1">integration</a> section, the sample PHP code that we can make use of is as followed:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -265,7 +265,7 @@
 
     <h3 id="mandiri-clickpay">Mandiri ClickPay</h3>
 
-    <p>Mandiri ClickPay is one of the payment feature from Mandiri Debit. This method allows customer to perform a transaction by inserting the 16 digits Mandiri Debit Card and PIN Token for transaction validation.</p>
+    <p>Mandiri ClickPay is one of the payment features from Mandiri Debit. This method allows customer to perform a transaction by inserting the 16 digits Mandiri Debit Card and PIN Token for transaction validation.</p>
 
     <p>To activate Mandiri ClickPay method of payment (automatically active on Sandbox mode), merchant needs to:</p>
 
@@ -306,7 +306,7 @@ The Mandiri ClickPay tab will be shown at the VT-Web payment page. Information a
 
     <h3 id="cimb-clicks">CIMB Clicks</h3>
 
-    <p>CIMB Clicks is one of the payment feature from CIMB Niaga Bank. When this method is utilised, customer will be redirected to CIMB Clicks payment page to perform transaction. More information about CIMB Clicks can be found at <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">CIMB Niaga website</a>.</p>
+    <p>CIMB Clicks is one of the payment features from CIMB Niaga Bank. When this method is utilised, customer will be redirected to CIMB Clicks payment page to perform transaction. More information about CIMB Clicks can be found at <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">CIMB Niaga website</a>.</p>
 
     <p>To activate CIMB Clicks method of payment (automatically active on Sandbox mode), merchant needs to:</p>
 
@@ -347,7 +347,7 @@ The CIMB Clicks tab will be shown at the VT-Web payment page. Information and pr
 
     <h3 id="virtual-account">Virtual Account</h3>
 
-    <p>One of the payment method offered by veritrans is Virtual Account. Currently Veritrans has already integrated with Permata Bank for Virtual Account system. By using this service, your customer will have an option to make a payment via bank transfer to a Permata Bank Virtual Account Number.</p>
+    <p>One of the payment method offered by Veritrans is Virtual Account. Currently Veritrans has already integrated with Permata Bank for the Virtual Account system. By using this service, your customer will have an option to make a payment via bank transfer to a Permata Bank Virtual Account Number.</p>
 
     <p>To activate Virtual Account method of payment (automatically active on Sandbox mode), merchant needs to:</p>
 
@@ -388,7 +388,7 @@ The Bank Transfer tab will be shown at the VT-Web payment page. Information and 
 
     <h3 id="bri-pay">e-Pay BRI</h3>
 
-    <p>e-Pay BRI is one of the payment feature from BRI Bank. When this method is utilised, customer will be redirected to e-Pay BRI payment page to perform transaction. More information about e-Pay BRI can be found at <a title="e-Pay BRI" href="http://e-pay.bri.co.id">e-Pay BRI website</a>.</p>
+    <p>e-Pay BRI is one of the payment feature from BRI Bank. When this method is utilized, the customer will be redirected to e-Pay BRI payment page to perform a transaction. More information about e-Pay BRI can be found at <a title="e-Pay BRI" href="http://e-pay.bri.co.id">e-Pay BRI website</a>.</p>
 
     <p>To activate e-Pay BRI method of payment (automatically active on Sandbox mode), merchant needs to:</p>
 
@@ -429,7 +429,7 @@ The e-Pay BRI tab will be shown at the VT-Web payment page. Information and proc
   <div class="tab-pane" id="three-D-secure">
     <h3 id="inactivate-3d-secure">Inactivate 3D Secure</h3>
 
-    <p>It is highly advisable to activate 3D Secure feature on your credit card transaction. Implementing 3D Secure is a standard security practice for credit card transaction. 3D Secure improves credit card transaction security by adding an authentication process between the customer and their issuing bank. Under certain cases where merchant unfortunately needs to inactivate 3D Secure feature, you just have to add the parameter <code>"credit_card_3d_secure" =&gt; false</code> during redirect VT-Web URL request.</p>
+    <p>It is highly advisable to activate 3D Secure feature on your credit card transaction. Implementing 3D Secure is a standard security practice for a credit card transaction. 3D Secure improves credit card transaction security by adding an authentication process between the customer and their issuing bank. Under certain cases where merchant unfortunately needs to deactivate the 3D Secure feature, you just have to add the parameter <code>"credit_card_3d_secure" =&gt; false</code> during redirect VT-Web URL request.</p>
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
 
@@ -460,7 +460,7 @@ The e-Pay BRI tab will be shown at the VT-Web payment page. Information and proc
 
     <h3 id="installment">Installment</h3>
 
-    <p>To activate instalment feature, merchant has to make an agreement with the acquiring bank. Merchant also needs to inquire Veritrans sales representative if the MID for instalment is ready. If MID is ready, merchant simply has to add the parameter <code>installment</code> during redirect VT-Web URL request.</p>
+    <p>To activate installment feature, merchant has to make an agreement with the acquiring bank. The merchant also needs to contact a Veritrans sales representative if the MID for instalment is ready. If MID is ready, merchant simply has to add the parameter <code>installment</code> during redirect VT-Web URL request.</p>
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
 
@@ -497,7 +497,7 @@ The e-Pay BRI tab will be shown at the VT-Web payment page. Information and proc
 </code></pre>
 
     <p><br />
-The instalment feature on VT-Web consists of a few parameter. The description of the parameter that can be used:<br /></p>
+The instalment feature on VT-Web consists of a few parameters. The description of the parameters that could be used are:<br /></p>
 
     <table>
       <tbody>
@@ -559,7 +559,7 @@ Description of every object under <code>installment_terms</code>:<br /></p>
 
     <h3 id="bin-promo">BIN Promo</h3>
 
-    <p>BIN (Bank Identification Number) is the <strong>first 1-8 digit</strong> of a credit card, which identifies the bank that issues the card. A bank generally has more than one BIN. BIN promo is a feature that allows merchant to advertise bank promotion according to the credit card issued by bank.   </p>
+    <p>BIN (Bank Identification Number) is the <strong>first 1-8 digit</strong> of a credit card, which identifies the bank that issues the card. A bank generally has more than one BIN. BIN promo is a feature that allows merchant to advertise bank a promotion according to the credit card issued by the bank.   </p>
 
     <p>To use this feature, merchant needs to accumulate the list of BIN that currently receives promotion. This list of BIN will then become a transaction parameter <code>credit_card_bins</code>. This transaction can only be performed exclusively by the credit card that is included in the BIN list.</p>
 
@@ -591,7 +591,7 @@ Description of every object under <code>installment_terms</code>:<br /></p>
 </code></pre>
 
     <p><br />
-The example above adds BIN number <code>48111111</code>, <code>3111</code>, and <code>5</code> to the BIN list. If credit card with BIN number “411111” is used, transaction will be denied with an error message as follows:
+The example above adds BIN number <code>48111111</code>, <code>3111</code>, and <code>5</code> to the BIN list. If credit card with BIN number “411111” is used, transaction will be denied with an error message as followed:
 <br /><br />
 <img alt="VT-Web BIN Error" class="img-responsive img-thumbnail" src="../images/vtweb_bin.png" /></p>
 

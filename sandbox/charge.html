@@ -208,7 +208,8 @@
   <li>Example of VT-Direct for e-Pay BRI</li>
 </ol>
 
-<p>There are various parameters in transaction charge, some parameters need to be configured to activate several features such as: Installment, BIN Promo, one click, and two clicks. Transaction charge features will be described in systematic way in different sections.</p>
+<p>There are various parameters in transaction charge, some parameters need to be configured to activate several features such as: Installment, BIN Promo, one click, and two clicks. Transaction charge features will be described in systematic way in different sections.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -223,15 +224,18 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="specification">
+    <p><br /></p>
 
     <h3 id="https-post-specification">HTTP(S) POST Specification</h3>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Description</td>
-          <td>Do charge transaction</td>
+          <th>Description</th>
+          <th>Do charge transaction</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>Endpoint</td>
           <td><a href="introduction.html#url-endpoint">BASE_URL</a>/charge</td>
@@ -247,18 +251,22 @@
       </tbody>
     </table>
 
+    <p><br /></p>
+
     <h3 id="json-request">JSON Request</h3>
 
     <p>Description of <code>JSON request</code> transaction charge:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>payment_type</td>
           <td>String</td>
@@ -316,18 +324,20 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>vtweb</code> object description.</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>enabled_payments</td>
           <td>JSON Array</td>
@@ -355,20 +365,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>installment</code> object description.</p>
 
     <p><strong>Note</strong>: Required status is only applied if <code>installment</code> object is used in <code>payment_options</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td><code>required</code></td>
           <td>Boolean</td>
@@ -384,20 +396,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.installment.</strong><code>installment_terms</code> Object Description.</p>
 
     <p><strong>Note</strong>: At least one bank and one installment period have to be exists on <code>installment_terms</code> object</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td><code>bni</code></td>
           <td>JSON Array</td>
@@ -413,18 +427,20 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>payment_options</code> object description:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>installment</td>
           <td>JSON Object</td>
@@ -434,20 +450,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>credit_card</code> object description.</p>
 
     <p><strong>Note</strong>: required status only applied if <code>credit card</code> object is used in <code>JSON request</code> </p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>token_id</td>
           <td>String</td>
@@ -487,20 +505,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>mandiri_clickpay</code> Object Description.</p>
 
     <p><strong>Note</strong>: required Status only applied if <code>mandiri_clickpay</code> object is used in <code>JSON request</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>card_number</td>
           <td>String</td>
@@ -534,20 +554,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>cimb_clicks</code> Object Description.</p>
 
     <p><strong>Note</strong>: required status only applied if <code>cimb_clicks</code> object is used in <code>JSON request</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>description</td>
           <td>String</td>
@@ -557,20 +579,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>bank_transfer</code> Object Description.</p>
 
     <p><strong>Note</strong>: required status only applied if <code>bank_transfer</code> object is used in <code>JSON request</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>description</td>
           <td>String</td>
@@ -580,18 +604,20 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>transaction_details</code> Object Description:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>order_id</td>
           <td>String (50)</td>
@@ -607,18 +633,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>item_details</code> Element Object Description:</p>
 
+    <p><strong>Note</strong>: Required status only applied if <code>item_details</code> object is used in <code>JSON request</code></p>
+
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>id</td>
           <td>String (50)</td>
@@ -646,20 +676,20 @@
       </tbody>
     </table>
 
-    <p><strong>Note</strong>: Required status only applied if <code>item_details</code> object is used in <code>JSON request</code></p>
-
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.</strong><code>customer_details</code> Object Description:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>first_name</td>
           <td>String (20)</td>
@@ -699,20 +729,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.customer_details.</strong><code>billing_address</code> Object Description.</p>
 
     <p><strong>Note</strong>: Required status only applied if <code>billing_address</code> object is used in <code>customer_details</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>first_name</td>
           <td>String (20)</td>
@@ -758,20 +790,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p><strong>request.customer_details.</strong><code>shipping_address</code> Object Description. </p>
 
     <p><strong>Note</strong>: Required status only applied if <code>shipping_address</code> object is used in <code>customer_details</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Required</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Required</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>first_name</td>
           <td>String (20)</td>
@@ -819,10 +853,12 @@
 
   </div>
   <div class="tab-pane" id="vtweb">
+    <p><br /></p>
 
     <p>Below is example of JSON request on VT-Web. Transaction charge function is used to obtained payment URL on VT-Web. Transaction charge process only happens after your customer complete the payment in VT-Web's URL. Further explanation about the description and the flow of VT-Web payment can be seen on <a href="../vtweb/integration_php.html">VT-Web – Integration</a>.</p>
 
-    <p>Based on the description in <a href="#specification">specification</a> section, the important attributes on VT-Web JSON request are <code>payment_type</code>, <code>vtweb</code>, and <code>transaction_details</code>. The following example is to obtain VT-Web payment URL when all parameter is used and 3D Secure feature is activated</p>
+    <p>Based on the description in <a href="#specification">specification</a> section, the important attributes on VT-Web JSON request are <code>payment_type</code>, <code>vtweb</code>, and <code>transaction_details</code>. The following example is to obtain VT-Web payment URL when all parameter is used and 3D Secure feature is activated
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -881,17 +917,21 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>To be concerned that <code>enabled_payments</code> attribute is not used on <code>vtweb</code>. As described on section <a href="charge.html#specification">specification</a>, all valid payment method will be displayed on VT-Web payment page</p>
+    <p><br />
+To be concerned that <code>enabled_payments</code> attribute is not used on <code>vtweb</code>. As described on section <a href="charge.html#specification">specification</a>, all valid payment method will be displayed on VT-Web payment page
+<br /><br /></p>
 
     <h3 id="structure-and-example-of-vt-web-json-response">Structure and Example of VT-Web JSON Response</h3>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -910,7 +950,8 @@
       </tbody>
     </table>
 
-    <p>Example of successful Response:</p>
+    <p><br />
+Example of successful Response:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -919,13 +960,16 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Example of Deny Response:</p>
+    <p><br />
+Example of Deny Response:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"406"</span><span class="p">,</span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Merchant charges the same order id more than once or transaction has been paid"</span>
 <span class="p">}</span>
 </code></pre>
+
+    <p><br /></p>
 
     <h3 id="recognizing-transaction-status">Recognizing Transaction Status</h3>
 
@@ -940,10 +984,12 @@
     <p>Please refers to the related page for further explanation</p>
   </div>
   <div class="tab-pane" id="vtdirect-cc">
+    <p><br /></p>
 
     <p>For credit card payment method, you have to obtain the token ID first. Token Id represents customer credit card information that is stored in Veritrans server. To obtain the token, you can follow the tutorial in <a href="../vtdirect/integration_cc.html#step1">VT-Direct – Obtain token </a>.</p>
 
-    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for credit card transaction charge are <code>payment_type</code>, <code>credit_card</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is example of VT-Direct for credit card transaction charge with all used parameter:</p>
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for credit card transaction charge are <code>payment_type</code>, <code>credit_card</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is example of VT-Direct for credit card transaction charge with all used parameter:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
@@ -996,13 +1042,15 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>To be concerned that JSON request structure is same regardless 3D secure is activated or not. The above JSON request can be used for both transaction. However, the difference happens while requesting token ID.</p>
+    <p><br />
+To be concerned that JSON request structure is same regardless 3D secure is activated or not. The above JSON request can be used for both transaction. However, the difference happens while requesting token ID.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="error-on-transaction-charge">Error on Transaction Charge</h3>
 
-    <p>On several occasions, VT-Direct transaction charge might be denied. Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+    <p>On several occasions, VT-Direct transaction charge might be denied. Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1041,19 +1089,22 @@
 
     <p>Complete list of status codes can be checked on <a href="status_code.html">API Reference - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="the-structure-and-example-of-json-response-vt-direct-using-credit-card">The structure and Example of JSON Response VT-Direct using Credit Card</h3>
 
-    <p>If transaction charge has no errors, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using credit card is as follows:</p>
+    <p>If transaction charge has no errors, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using credit card is as follows:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>transaction_id</td>
           <td>String</td>
@@ -1112,7 +1163,8 @@
       </tbody>
     </table>
 
-    <p>JSON response for successful transaction: </p>
+    <p><br />
+JSON response for successful transaction: </p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1a1a66f7-27a7-4844-ba1f-d86dcc16ab27"</span><span class="p">,</span>
@@ -1129,7 +1181,8 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Denied Transaction JSON Response:</p>
+    <p><br />
+Denied Transaction JSON Response:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"b98fafec-fc2b-436f-bc6d-87853291cb35"</span><span class="p">,</span>
@@ -1145,6 +1198,8 @@
 <span class="p">}</span>
 </code></pre>
 
+    <p><br /></p>
+
     <h3 id="recognizing-transaction-status-1">Recognizing Transaction Status</h3>
 
     <p>Transaction status on VT-Direct using credit card can be recognize after transaction charge is finished. However, There are several ways to recognize the transaction status, for instance:</p>
@@ -1159,10 +1214,12 @@
 
   </div>
   <div class="tab-pane" id="vtdirect-mandiri">
+    <p><br /></p>
 
     <p>For Mandiri Clickpay payment method, you have to insert the input and output of Mandiri Clickpay token machine. Input token consists of <code>input 1</code>, <code>input 2</code>, and <code>input 3</code>. The token output is 6-digit of numeric value that is obtained from those three parameter inputs. Further explanation about the flow and description of Mandiri Clickpay method can be checked on <a href="../vtdirect/integration_mandiri.html">VT-Direct – Mandiri Clickpay</a>.</p>
 
-    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for Mandiri Clickpay transaction charge are <code>payment_type</code>, <code>mandiri_clickpay</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for Mandiri Clickpay transaction charge with all parameters:</p>
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for Mandiri Clickpay transaction charge are <code>payment_type</code>, <code>mandiri_clickpay</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for Mandiri Clickpay transaction charge with all parameters:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -1225,11 +1282,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="error-on-transaction-charge-1">Error on Transaction Charge</h3>
 
-    <p>On several occassions, Mandiri Clickpay transaction charge might be denied. Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+    <p>On several occassions, Mandiri Clickpay transaction charge might be denied. Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1264,19 +1322,22 @@
 
     <p>Complete list of status codes can be seen on <a href="status_code.html">API Reference - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="the-structure-and-example-of-json-response-vt-direct-using-mandiri-clickpay">The structure and Example of JSON Response VT-Direct using Mandiri Clickpay</h3>
 
-    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using Mandiri Clickpay is as follows:</p>
+    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using Mandiri Clickpay is as follows:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -1320,7 +1381,8 @@
       </tbody>
     </table>
 
-    <p>Example of JSON Response for Successful Transaction :</p>
+    <p><br />
+Example of JSON Response for Successful Transaction :</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -1336,7 +1398,8 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Example of JSON Response for Denied Transaction :</p>
+    <p><br />
+Example of JSON Response for Denied Transaction :</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"202"</span><span class="p">,</span>
@@ -1352,6 +1415,8 @@
 <span class="p">}</span>
 </code></pre>
 
+    <p><br /></p>
+
     <h3 id="recognizing-transaction-status-2">Recognizing Transaction Status</h3>
 
     <p>For VT-Direct using Mandiri Clickpay, transaction status can be recognize after transaction charge is finished. However, There are several ways to recognize the transaction status, for instance:</p>
@@ -1366,10 +1431,12 @@
 
   </div>
   <div class="tab-pane" id="vtdirect-cimb">
+    <p><br /></p>
 
     <p>For CIMB Clicks payment method, successful transaction charge will only give payment URL. You have to redirect customer to CIMB Clicks payment URL to complete the transaction process. Further explanation about the flow and description of CIMB Clicks method can be checked on <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">CIMB Niaga website</a></p>
 
-    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for CIMB Clicks transaction charge are <code>payment_type</code>, <code>cimb_clicks</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for CIMB Clicks transaction charge with all parameters:</p>
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for CIMB Clicks transaction charge are <code>payment_type</code>, <code>cimb_clicks</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for CIMB Clicks transaction charge with all parameters:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -1428,11 +1495,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="error-on-transaction-charge-2">Error on Transaction Charge</h3>
 
-    <p>On several occassions, CIMB Clicks transaction charge might be denied, Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+    <p>On several occassions, CIMB Clicks transaction charge might be denied, Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1467,19 +1535,22 @@
 
     <p>Complete list of status codes can be checked on <a href="status_code.html">API Reference - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="the-structure-and-example-of-json-response-vt-direct-using-cimb-clicks">The structure and Example of JSON Response VT-Direct using CIMB Clicks</h3>
 
-    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using CIMB Clicks is as follows:</p>
+    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using CIMB Clicks is as follows:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -1530,7 +1601,8 @@
 
     <p>Two importants information on JSON Response are <code>transaction_status</code> and <code>redirect_url</code>. If <code>transaction_status</code> value is <code>pending</code>, then transaction is successfully stored in Veritrans server. However, transaction has not finished, and still waiting for customer payment process in <code>redirect_url</code> page.</p>
 
-    <p>Example of JSON Response for Successful Transaction :</p>
+    <p><br />
+Example of JSON Response for Successful Transaction :</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -1544,6 +1616,8 @@
 	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
 <span class="p">}</span>
 </code></pre>
+
+    <p><br /></p>
 
     <h3 id="recognizing-transaction-status-3">Recognizing Transaction Status</h3>
 
@@ -1559,10 +1633,12 @@
   </div>
 
   <div class="tab-pane" id="vtdirect-va">
+    <p><br /></p>
 
     <p>For Virtual Account payment method, successful transaction charge will only give virtual account number. You have to show the virtual account number to customer so your customer can complete the transaction process. </p>
 
-    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for Virtual Account transaction charge are <code>payment_type</code>, <code>bank_transfer</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for Virtual Account transaction charge with all parameters:</p>
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for Virtual Account transaction charge are <code>payment_type</code>, <code>bank_transfer</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for Virtual Account transaction charge with all parameters:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -1621,11 +1697,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="error-on-transaction-charge-3">Error on Transaction Charge</h3>
 
-    <p>On several occassions, CIMB Clicks transaction charge might be denied, Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+    <p>On several occassions, CIMB Clicks transaction charge might be denied, Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1660,19 +1737,22 @@
 
     <p>Complete list of status codes can be checked on <a href="status_code.html">API Reference - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="the-structure-and-example-of-json-response-vt-direct-using-virtual-account">The structure and Example of JSON Response VT-Direct using Virtual Account</h3>
 
-    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using Virtual Account is as follows:</p>
+    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using Virtual Account is as follows:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -1723,7 +1803,8 @@
 
     <p>Two importants information on JSON Response are <code>transaction_status</code> and <code>permata_va_number</code>. If <code>transaction_status</code> value is <code>pending</code>, then transaction is successfully stored in Veritrans server. However, transaction has not finished, and still waiting for customer pay to <code>permata_va_number</code> .</p>
 
-    <p>Example of JSON Response for Successful Transaction :</p>
+    <p><br />
+Example of JSON Response for Successful Transaction :</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -1738,6 +1819,8 @@
 <span class="p">}</span>
 </code></pre>
 
+    <p><br /></p>
+
     <h3 id="recognizing-transaction-status-4">Recognizing Transaction Status</h3>
 
     <p>For VT-Direct using Virtual Account, transaction status will still <code>pending</code> after transaction charge. Transaction status could be recognized after customer has completed the payment. However, you can recognize the transaction status from following mechanism:</p>
@@ -1751,10 +1834,12 @@
   </div>
 
   <div class="tab-pane" id="vtdirect-bripay">
+    <p><br /></p>
 
     <p>For e-Pay BRI payment method, successful transaction charge will only give payment URL. You have to redirect customer to e-Pay BRI payment URL to complete the transaction process. Further explanation about the flow and description of e-Pay BRI method can be checked on <a title="e-Pay BRI" href="http://e-pay.bri.co.id">e-Pay BRI website</a>.</p>
 
-    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for e-Pay BRI transaction charge are <code>payment_type</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for e-Pay BRI transaction charge with all parameters:</p>
+    <p>Based on <a href="#specification">specification</a> section, important attributes of VT-Direct for e-Pay BRI transaction charge are <code>payment_type</code>, <code>transaction_details</code> and <code>customer_detail</code>. The following is the example of VT-Direct for e-Pay BRI transaction charge with all parameters:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -1809,11 +1894,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="error-on-transaction-charge-4">Error on Transaction Charge</h3>
 
-    <p>On several occassions, e-Pay BRI transaction charge might be denied, Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:</p>
+    <p>On several occassions, e-Pay BRI transaction charge might be denied, Veritrans will send back the error message when it happened. The reason of the failure can be checked from status code inside error message, status code that usually occur is:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1848,19 +1934,22 @@
 
     <p>Complete list of status codes can be checked on <a href="status_code.html">API Reference - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="the-structure-and-example-of-json-response-vt-direct-using-e-pay-bri">The structure and Example of JSON Response VT-Direct using e-Pay BRI</h3>
 
-    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using e-Pay BRI is as follows:</p>
+    <p>If transaction charge has no error, Veritrans server will send JSON response. The Structure of JSON Response VT-Direct using e-Pay BRI is as follows:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>JSON Attribute</td>
-          <td>Data Type</td>
-          <td>Description</td>
+          <th>JSON Attribute</th>
+          <th>Data Type</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -1911,7 +2000,8 @@
 
     <p>Two importants information on JSON Response are <code>transaction_status</code> and <code>redirect_url</code>. If <code>transaction_status</code> value is <code>pending</code>, then transaction is successfully stored in Veritrans server. However, transaction has not finished, and still waiting for customer payment process in <code>redirect_url</code> page.</p>
 
-    <p>Example of JSON Response for Successful Transaction :</p>
+    <p><br />
+Example of JSON Response for Successful Transaction :</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -1925,6 +2015,8 @@
 	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
 <span class="p">}</span>
 </code></pre>
+
+    <p><br /></p>
 
     <h3 id="recognizing-transaction-status-5">Recognizing Transaction Status</h3>
 

@@ -197,12 +197,14 @@
 
 <h5 id="this-tutorial-will-help-you-understand-the-basic-of-veritrans-api-and-its-implementation-if-you-find-any-difficulties-please-dont-hesitate-to-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our-official-support-pagehttpsupportveritranscoid-veritrans-support"><em>This tutorial will help you understand the basic of Veritrans API and its implementation. If you find any difficulties, please don't hesitate to contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit <a title="Veritrans Support" href="http://support.veritrans.co.id">our official support page</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <p>Veritrans API is a RESTful Web Service developed by Veritrans Indonesia as a communication bridge between you and payment providers. You can utilize Veritrans API to access various Veritrans services and products for your online payment.</p>
 
 <p>Veritrans API uses <strong>One Message</strong> concept, whereby the message format is similar to many other types of payment transactions. Veritrans API utilize uses JSON (JavaScript Object Notation) format to communicate between merchant and Veritrans. JSON is sent by HTTP(S) POST.</p>
 
-<p>We have already provided several <a href="../welcome/welcome.html">eCommerce plugins and PHP libraries</a>. Make sure you check the available plugins and libraries before implementing Veritrans API to speed up the integration process.</p>
+<p>We have already provided several <a href="../welcome/welcome.html">eCommerce plugins and PHP libraries</a>. Make sure you check the available plugins and libraries before implementing Veritrans API to speed up the integration process.
+<br /><br /></p>
 
 <h3 id="payment-type">Payment Type</h3>
 
@@ -234,6 +236,8 @@
   </li>
 </ul>
 
+<p><br /></p>
+
 <h3 id="veritrans-api-request-and-response">Veritrans API Request and Response</h3>
 
 <p>As Stated Above, communication with Veritrans API is sent by HTTP(S). Veritrans API request and response contents use JSON format. This section explains in detail the format of HTTP(S) request and response used in Veritrans API.</p>
@@ -243,7 +247,8 @@
 <ol>
   <li>URL Endpoint</li>
   <li>Header Authorization</li>
-  <li>Header Accept and Content-Type</li>
+  <li>Header Accept and Content-Type
+<br /><br /></li>
 </ol>
 
 <h3 id="url-endpoint">API URL Endpoint</h3>
@@ -262,17 +267,19 @@
 <pre><code class="highlight plaintext">URL endpoint : BASE_URL/charge
 </code></pre>
 
-<p>Hence URL endpoint for transaction charge in Sandbox is</p>
+<p><br />
+Hence URL endpoint for transaction charge in Sandbox is:</p>
 
 <pre><code class="highlight plaintext">https://api.sandbox.veritrans.co.id/v2/charge
 </code></pre>
 
-<p>URL endpoint for transaction charge in Production is</p>
+<p><br />
+And URL endpoint for transaction charge in Production is:</p>
 
 <pre><code class="highlight plaintext">https://api.veritrans.co.id/v2/charge
 </code></pre>
 
-<hr />
+<p><br /></p>
 
 <h3 id="header-authorization">Header Authorization</h3>
 
@@ -283,31 +290,34 @@
 <pre><code class="highlight plaintext">Username:Password
 </code></pre>
 
-<p>Since there is no password for the server key, we will leave the password field blank. Therefore, if our server key is:</p>
+<p><br />
+Since there is no password for the server key, we will leave the password field blank. Therefore, if our server key is:</p>
 
 <pre><code class="highlight plaintext">94960ece-9513-4265-9cf2-67a4da330213
 </code></pre>
 
-<p>BASIC AUTH Username and password will become:</p>
+<p><br />
+BASIC AUTH Username and password will become:</p>
 
 <pre><code class="highlight plaintext">94960ece-9513-4265-9cf2-67a4da330213:
 </code></pre>
 
-<p>(Note: make sure there is ":" character in place after server key)</p>
-
-<p>Afterward you need to convert it into BASE 64 format, hence the result is:</p>
+<p>(Note: make sure there is ":" character in place after server key)
+<br /><br />
+Afterward you need to convert it into BASE 64 format, hence the result is:</p>
 
 <pre><code class="highlight plaintext">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
 </code></pre>
 
-<p>The following is header example of BASIC AUTH:</p>
+<p><br />
+The following is header example of BASIC AUTH:</p>
 
 <pre><code class="highlight plaintext">Authorization: Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
 </code></pre>
 
 <p>Make sure the merchant put "Basic <space>" before BASE 64 server key</space></p>
 
-<hr />
+<p><br /></p>
 
 <h3 id="header-accept-and-content-type">Header Accept and Content-Type</h3>
 
@@ -315,18 +325,22 @@
 
 <p><code>Content-type: application/json</code></p>
 
-<p>If RESTful API function has JSON output parameter, you need to add HTTP(S) header as follows:</p>
+<p><br />
+If RESTful API function has JSON output parameter, you need to add HTTP(S) header as follows:</p>
 
 <p><code>Accept: application/json</code></p>
 
-<p>Below is the summary of required header for HTTP(S) request of Veritrans API:</p>
+<p><br />
+Below is the summary of required header for HTTP(S) request of Veritrans API:</p>
 
 <table>
-  <tbody>
+  <thead>
     <tr>
-      <td>Header</td>
-      <td>Value</td>
+      <th>Header</th>
+      <th>Value</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><strong>Accept</strong></td>
       <td>application/json</td>

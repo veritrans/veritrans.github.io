@@ -197,6 +197,7 @@
 
 <h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-cimb-clicks-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran CIMB Clicks. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
   <div class="col-sm-2 col-xs-12">
@@ -228,7 +229,8 @@
 
 <hr />
 
-<p>CIMB Clicks adalah salah satu metode pembayaran internet banking yang disediakan oleh Bank CIMB Niaga. Jika metode ini digunakan, pelanggan akan diarahkan ke halaman pembayaran CIMB Clicks untuk melakukan transaksi. Info lebih lengkap dapat diperoleh di <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">website CIMB Niaga</a>.</p>
+<p><br />
+CIMB Clicks adalah salah satu metode pembayaran internet banking yang disediakan oleh Bank CIMB Niaga. Jika metode ini digunakan, pelanggan akan diarahkan ke halaman pembayaran CIMB Clicks untuk melakukan transaksi. Info lebih lengkap dapat diperoleh di <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">website CIMB Niaga</a>.</p>
 
 <p>Untuk mengaktifkan metode pembayaran CIMB Clicks (otomatis aktif pada mode Sandbox), anda perlu menghubungi sales representative Veritrans.</p>
 
@@ -241,7 +243,8 @@
   <li>Status Transaksi</li>
 </ol>
 
-<p>Berbeda dengan metode pembayaran lain (kartu kredit dan Mandiri Clickpay), proses utama pembayaran CIMB Clicks tidak dilakukan di halaman anda. Pelanggan akan di redirect ke halaman CIMB Clicks untuk menyelesaikan transaksi.</p>
+<p>Berbeda dengan metode pembayaran lain (kartu kredit dan Mandiri Clickpay), proses utama pembayaran CIMB Clicks tidak dilakukan di halaman anda. Pelanggan akan di redirect ke halaman CIMB Clicks untuk menyelesaikan transaksi.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -256,11 +259,14 @@
     <!-- step 1-->
     <!-- satu -->
 
+    <p><br /></p>
+
     <h2 id="membuat-form">Membuat Form</h2>
 
     <p>Form pembayaran CIMB Niaga akan kita buat di file <code>form_vtdirect_cimb.php</code>. Karena sebagian besar proses transaksi akan dilakukan di halaman CIMB Clicks, form yang akan kita buat hanya berisi petunjuk pembayaran dan tombol bayar menggunakan CIMB Clicks. Ketika pelanggan anda menekan tombol ini, proses charge transaksi dilakukan pada tahap selanjutnya.</p>
 
-    <p>Berikut adalah contoh form pada file <code>form_vtdirect_cimb.php</code>:</p>
+    <p>Berikut adalah contoh form pada file <code>form_vtdirect_cimb.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -284,6 +290,7 @@
   <div class="tab-pane" id="charge-transaction-cimb">
     <!-- step 2-->
     <!-- dua -->
+    <p><br /></p>
 
     <h2 id="charge-transaksi">Charge Transaksi</h2>
 
@@ -300,7 +307,8 @@
       </li>
     </ul>
 
-    <p>Tahap ini membahas cara charge transaksi CIMB Clicks di file <code>checkout_cimb.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_cimb.php</code>:</p>
+    <p>Tahap ini membahas cara charge transaksi CIMB Clicks di file <code>checkout_cimb.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_cimb.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -335,16 +343,19 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, kita menggunakan data CIMB Clicks, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
+    <p><br />
+Pada contoh di atas, kita menggunakan data CIMB Clicks, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
   </div>
 
   <div class="tab-pane" id="redirect-cimb">
     <!-- step 3-->
     <!-- tiga -->
+    <p><br /></p>
 
     <h2 id="redirect">Redirect</h2>
 
-    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:</p>
+    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
@@ -359,7 +370,9 @@
 );
 </code></pre>
 
-    <p>Dua informasi penting dalam respon JSON adalah <code>status_code</code> dan <code>redirect_url</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus me-redirect pelanggan anda ke <code>redirect_url</code> untuk menyelesaikan transaksi CIMB Clicks. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_cimb.php</code>:</p>
+    <p><br />
+Dua informasi penting dalam respon JSON adalah <code>status_code</code> dan <code>redirect_url</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus me-redirect pelanggan anda ke <code>redirect_url</code> untuk menyelesaikan transaksi CIMB Clicks. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_cimb.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -383,25 +396,26 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Informasi terkait nilai transaksi, order ID, dan keterangan transaksi akan ditampilkan pada halaman redirect URL. Pada environment sandbox, halaman pembayaran CIMB Clicks bersifat dummy. Pelanggan anda cukup menekan tombol bayar untuk menyelesaikan proses transaksi. </p>
+    <p><br />
+Informasi terkait nilai transaksi, order ID, dan keterangan transaksi akan ditampilkan pada halaman redirect URL. Pada environment sandbox, halaman pembayaran CIMB Clicks bersifat dummy. Pelanggan anda cukup menekan tombol bayar untuk menyelesaikan proses transaksi. </p>
 
-    <p>Ketika transaksi selesai, pelanggan anda dapat kembali ke website anda. Untuk melakukan hal ini, anda perlu mengisi konfigurasi callback URL di MAP (Merchant Administration Portal), silahkan melihat menu <a href="getting_started.html">langkah awal</a> untuk informasi lebih lengkap. Berikut adalah tampilan halaman pembayaran environment sandbox:</p>
-
-    <p><img alt="CIMB Clicks" class="img-responsive img-thumbnail" src="../../images/vtdirect_cimb_clicks.png" /></p>
-
-    <p>Setelah customer melakukan pembayaran, halaman berikut akan ditampilkan:</p>
-
-    <p><img alt="CIMB Clicks 2" class="img-responsive img-thumbnail" src="../../images/vtdirect_cimb_clicks_2.png" /></p>
-
-    <p>Berikut adalah tampilan halaman pembayaran CIMB Niaga environment produksi:</p>
-
-    <p><img alt="CIMB Clicks 3" class="img-responsive img-thumbnail" src="../../images/cimb_demo.png" /></p>
-
-    <hr />
+    <p>Ketika transaksi selesai, pelanggan anda dapat kembali ke website anda. Untuk melakukan hal ini, anda perlu mengisi konfigurasi callback URL di MAP (Merchant Administration Portal), silahkan melihat menu <a href="getting_started.html">langkah awal</a> untuk informasi lebih lengkap. Berikut adalah tampilan halaman pembayaran environment sandbox:
+<br /><br />
+<img alt="CIMB Clicks" class="img-responsive img-thumbnail" src="../../images/vtdirect_cimb_clicks.png" />
+<br /><br />
+Setelah customer melakukan pembayaran, halaman berikut akan ditampilkan:
+<br /><br />
+<img alt="CIMB Clicks 2" class="img-responsive img-thumbnail" src="../../images/vtdirect_cimb_clicks_2.png" />
+<br /><br />
+Berikut adalah tampilan halaman pembayaran CIMB Niaga environment produksi:
+<br /><br />
+<img alt="CIMB Clicks 3" class="img-responsive img-thumbnail" src="../../images/cimb_demo.png" />
+<br /><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan redirect url ke halaman CIMB Clicks. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan redirect url ke halaman CIMB Clicks. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -434,7 +448,8 @@
       </tbody>
     </table>
 
-    <p>Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+    <p><br />
+Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
 
     <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi CIMB Clicks akan dibahas pada <a href="integration_cimb.html#transaction-status-cimb">bagian selanjutnya</a>.</p>
 
@@ -442,24 +457,25 @@
   <div class="tab-pane" id="transaction-status-cimb">
     <!-- step 4-->
     <!-- empat -->
+    <p><br /></p>
 
     <h2 id="status-transaksi">Status Transaksi</h2>
 
     <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih pending. Pelanggan anda harus menyelesaikan pembayaran di ATM terdekat atau melalui internet banking. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>success</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
 
-    <p>Status pada MAP saat pembayaran belum selesai dilakukan di halaman CIMB Clicks adalah seperti gambar berikut:</p>
-
-    <p><img alt="CIMB Clicks MAP Pending" class="img-responsive img-thumbnail" src="../../images/cimb-map-pending.png" /></p>
-
-    <p>Status pada MAP saat pembayaran sudah selesai dilakukan di halaman CIMB Clicks adalah seperti gambar berikut:</p>
-
-    <p><img alt="CIMB Clicks MAP Sukses" class="img-responsive img-thumbnail" src="../../images/cimb-map-success.png" /></p>
-
-    <hr />
+    <p>Status pada MAP saat pembayaran belum selesai dilakukan di halaman CIMB Clicks adalah seperti gambar berikut:
+<br /><br />
+  <img alt="CIMB Clicks MAP Pending" class="img-responsive img-thumbnail" src="../../images/cimb-map-pending.png" />
+<br /><br />
+Status pada MAP saat pembayaran sudah selesai dilakukan di halaman CIMB Clicks adalah seperti gambar berikut:
+<br /><br />
+  <img alt="CIMB Clicks MAP Sukses" class="img-responsive img-thumbnail" src="../../images/cimb-map-success.png" />
+<br /><br /></p>
 
     <h3 id="https-post">HTTP(S) POST</h3>
 
-    <p>Server Veritrans akan memberikan respon kepada server anda saat pelanggan anda telah melakukan pembayaran. Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:</p>
+    <p>Server Veritrans akan memberikan respon kepada server anda saat pelanggan anda telah melakukan pembayaran. Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">{
     "status_code": "200",
@@ -474,7 +490,8 @@
 }
 </code></pre>
 
-    <p>Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
+    <p><br />
+Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
 
   </div>
 </div>
