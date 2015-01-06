@@ -229,9 +229,9 @@
 <hr />
 
 <p><br />
-Mandiri ClickPay is one of the internet banking payment method that is provided by Mandiri Bank. This method allows customer to perform transaction by filling his 16 digits Mandiri Debit Card number and Mandiri PIN Token to validate transaction.</p>
+Mandiri ClickPay is one of the internet banking payment method that is provided by Mandiri Bank. This method allows customer to perform transaction by filling in his 16 digits Mandiri Debit Card number and Mandiri PIN Token to validate transaction.</p>
 
-<p>To activate Mandiri ClickPay payment method (Automatically active on Sandbox mode), you have to contact Veritrans sales representative.
+<p>To activate Mandiri ClickPay payment method (Automatically active on Sandbox mode), you have to contact a Veritrans sales representative.
 <br /><br /></p>
 
 <h3 id="transaction-process-flows">Transaction Process Flows</h3>
@@ -263,7 +263,7 @@ Mandiri ClickPay is one of the internet banking payment method that is provided 
 
     <h2 id="create-form">Create Form</h2>
 
-    <p>On this step, we will try to create Mandiri ClickPay transaction form at the file <code>form_vtdirect_mandiri.html</code>. We have prepared some picture assets to ease your form creation, which can be downloaded <a href="../images/payment_methods.png">here</a>. Mandiri ClickPay form is required to have <em>fields</em> as follow:
+    <p>On this step, we will try to create Mandiri ClickPay transaction form at the file <code>form_vtdirect_mandiri.html</code>. We have prepared some pictures to assist you to create the form, which can be downloaded <a href="../images/payment_methods.png">here</a>. Mandiri ClickPay form is required to have <em>fields</em> as followed:
 <br /><br />
   <img alt="Mandiri Form" class="img-responsive img-thumbnail" src="../images/mandiri_form.png" />
 <br /><br /></p>
@@ -390,11 +390,11 @@ The following is a sample from the file <code>form_vtdirect_mandiri.html</code>:
 </code></pre>
 
     <p><br />
-The above form utilise the jQuery library that can be modified as needed. When the form is first shown, <em>field</em> input 2 and 3 are automatically filled. Input 2 is the total transaction value. Input 3 is the 5 digit numeric that is generated randomly by Javascript.</p>
+The above form utilizes the jQuery library that can be modified as needed. When the form is first shown, <em>field</em> input 2 and 3 are automatically filled. Input 2 is the total transaction value. Input 3 is the 5 digit numeric that is generated randomly by Javascript.</p>
 
-    <p>Javascript also allows field input 1 automatically filled when your customer insert their Mandiri Debit card. Customer simply has to use the Mandiri Token to fill the challenge field and these informations will be submitted to <code>checkout_mandiri.php</code>. This file consists of implementations to charge transaction using Mandiri ClickPay.</p>
+    <p>Javascript also allows field input 1 to automatically be filled when your customer insert their Mandiri Debit card. Customer simply has to use the Mandiri Token to fill the challenge field and this information will be submitted to <code>checkout_mandiri.php</code>. This file provides the implementations of charging a transaction using Mandiri ClickPay.</p>
 
-    <p>To ease the transaction process, we recommend that the Mandiri ClickPay transaction detail is filled comprehensively in the form page.</p>
+    <p>To ease the transaction process, we recommend that the Mandiri ClickPay transaction details is filled comprehensively in the form page.</p>
   </div>
   <div class="tab-pane" id="charge-transaction-mandiri">
     <!-- step 2-->
@@ -403,12 +403,12 @@ The above form utilise the jQuery library that can be modified as needed. When t
 
     <h2 id="perform-charge-transaction">Perform Charge Transaction</h2>
 
-    <p>To perform charge transaction using Mandiri ClickPay, the steps required are as follows:</p>
+    <p>To perform charge transaction using Mandiri ClickPay, the steps required are as followed:</p>
 
     <ul>
       <li><code>payment_type</code> parameter has to be set as <code>mandiri_clickpay</code>.</li>
       <li>
-        <p>New JSON object has to be added, with the name <code>mandiri_clickpay</code>, and has the pairing name/value as follows:</p>
+        <p>New JSON object has to be added, with the name <code>mandiri_clickpay</code>, and has the pairing name/value as followed:</p>
 
         <ul>
           <li>"card_number" → debit card number</li>
@@ -420,7 +420,7 @@ The above form utilise the jQuery library that can be modified as needed. When t
       </li>
     </ul>
 
-    <p>A few informations that can be accessed from the file <code>form_vtdirect_mandiri.html</code> are: Mandiri Debit card number, input 1, input 2, input 3, and token challenge.</p>
+    <p>Information that can be accessed from the file <code>form_vtdirect_mandiri.html</code> are: Mandiri Debit card number, input 1, input 2, input 3, and token challenge.</p>
 
     <p>To perform transaction charge in Mandiri ClickPay, we can use Veritrans PHP Library. The following is an example of charge transaction implementation in the file <code>checkout_mandiri.php</code>:
 <br /><br /></p>
@@ -470,7 +470,7 @@ The above form utilise the jQuery library that can be modified as needed. When t
 </code></pre>
 
     <p><br />
-On the above example, we utilise the mandiri Clickpay, transaction, and customer data as the charge transaction parameter. You can add additional data during charge transaction, such as: Customer address, Delivery address, and item information.
+On the above example, we utilize the mandiri Clickpay, transaction, and customer data as the charge transaction parameter. You can add additional data during the charge transaction, such as: Customer address, Delivery address, and item information.
 To add this data, you can check <a href="../sandbox/charge.html#specification">API Reference - Charge Transaction</a>.</p>
 
     <p>When the transaction is completed, customer can proceed back to your website. To do this, you have to fill in the callback URL configuration in MAP (Merchant Administration Portal). For more information, please refer to the menu <a href="getting_started.html">Getting Started</a>.
@@ -478,7 +478,7 @@ To add this data, you can check <a href="../sandbox/charge.html#specification">A
 
     <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
 
-    <p>Under a certain case, charge transaction on VT-Direct can fail. Veritrans will return an error message if failure occurred, the reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:</p>
+    <p>Under a certain case, charge transaction on VT-Direct may fail. Veritrans will return an error message if failure occurrs, the reason for failure can be inspected from the status code displayed on the error message. The status codes that generally occur are:</p>
 
     <table>
       <thead>
@@ -524,7 +524,7 @@ The complete list of status code can be found at <a href="../sandbox/status_code
 
     <h2 id="transaction-status">Transaction Status</h2>
 
-    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:
+    <p>Veritrans server will return a response for every charged transaction in JSON form. Veritrans PHP Library will convert JSON into a PHP object automatically. The sample JSON script that is returned by Veritrans is as followed:
 <br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
@@ -584,9 +584,9 @@ One of the most important information in the JSON response is the transaction st
 </code></pre>
 
     <p><br />
-Up till here, the payment process of a Mandiri ClickPay transaction is completed. If <code>transaction_status</code> value is <code>200</code>, the transaction value has been settled to your account. In addition to sending the transaction status to the customer, you can also use the code above to update the respective database. Example, to mark if the respective <code>order_id</code> has been paid.</p>
+At this point, the payment process of a Mandiri ClickPay transaction is completed. If <code>transaction_status</code> value is <code>200</code>, the transaction value has been settled to your account. In addition to sending the transaction status to the customer, you may also use the code above to update the respective database. Example, to mark if the respective <code>order_id</code> has been paid.</p>
 
-    <p>Transaction status can also be found in Merchant Administration Portal (MAP). You have to login to MAP to see the detail of the transaction. The other alternative to check on the transaction status is to use the command <a href="other_commands.html#status">VT-Direct — Acquiring Transaction Status</a>.</p>
+    <p>Transaction status can also be found in Merchant Administration Portal (MAP). You have to login to MAP to see the details of the transaction. The other alternative to check on the transaction status is to use the command <a href="other_commands.html#status">VT-Direct — Acquiring Transaction Status</a>.</p>
 
   </div>
 </div>

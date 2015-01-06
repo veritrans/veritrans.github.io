@@ -230,9 +230,9 @@
 <hr />
 <p><br /></p>
 
-<p>e-Pay BRI is one of the internet banking payment method that is provided by BRI Bank. This method allows customer to perform transaction by redirecting the customer to e-Pay BRI payment page. For more information, please visit <a title="e-Pay BRI" href="http://e-pay.bri.co.id">e-Pay BRI website</a>.</p>
+<p>e-Pay BRI is one of the internet banking payment method that is provided by BRI Bank. This method allows customer to perform transaction by redirecting the customer to the e-Pay BRI payment page. For more information, please visit <a title="e-Pay BRI" href="http://e-pay.bri.co.id">e-Pay BRI website</a>.</p>
 
-<p>To activate e-Pay BRI payment method (Automatically active on Sandbox mode), you have to contact Veritrans sales representative.</p>
+<p>To activate e-Pay BRI payment method (Automatically active on Sandbox mode), you have to contact a Veritrans sales representative.</p>
 
 <h3 id="integration-steps-vt-direct-e-pay-bri">Integration Steps VT-Direct e-Pay BRI</h3>
 
@@ -243,7 +243,7 @@
   <li>Check Transaction Status</li>
 </ol>
 
-<p>Unlike the other payment method (Credit Card and Mandiri ClickPay), e-Pay BRI payment process are not executed in your payment page. Customer will be redirected to e-Pay BRI page to complete transaction.
+<p>Unlike the other payment method (Credit Card and Mandiri ClickPay), e-Pay BRI payment process are not executed in your payment page. Customer will be redirected to e-Pay BRI page to complete the transaction.
 <br /><br /></p>
 
 <!-- Nav tabs -->
@@ -263,7 +263,7 @@
     <h2 id="create-form">Create Form</h2>
 
     <p>e-Pay BRI payment form will be made in the file <code>form_vtdirect_bri.php</code>. Because most of the transaction process will be made in e-Pay BRI page, the form that we made will only shows the steps of payment and the payment button of e-Pay BRI.
-When your customer click this payment button, charge transaction process will be carried on the next step.</p>
+When your customer click this payment button, charge transaction process will be carried to the next step.</p>
 
     <p>The following is a sample from the file <code>form_vtdirect_bri.php</code>:
 <br /><br /></p>
@@ -294,13 +294,13 @@ When your customer click this payment button, charge transaction process will be
 
     <h2 id="charge-transaction">Charge Transaction</h2>
 
-    <p>To perform charge transaction using e-Pay BRI, the steps required are as follow:</p>
+    <p>To perform the charge transaction using e-Pay BRI, the steps required are as followed:</p>
 
     <ul>
       <li><code>payment_type</code> parameter has to be set as <code>bri_epay</code>.</li>
     </ul>
 
-    <p>This step describes the charge transaction e-Pay BRI in the file <code>checkout_bri.php</code>. To perform charge transaction, we will use Veritrans PHP library. The following is an example of charge transaction implementation in the file <code>checkout_bri.php</code>:
+    <p>This step describes the charge transaction e-Pay BRI in the file <code>checkout_bri.php</code>. To perform the charge transaction, we will use Veritrans' PHP library. The following is an example of charge transaction implementation in the file <code>checkout_bri.php</code>:
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
@@ -334,7 +334,7 @@ When your customer click this payment button, charge transaction process will be
 </code></pre>
 
     <p><br />
-On the above example, we utilise the e-Pay BRI, transaction, and customer data as the charge transaction parameter. You can add additional data during charge transaction, such as: Customer address, Delivery address, and item information.
+On the above example, we utilize the e-Pay BRI, transaction, and customer data as the charge transaction parameter. You can add additional data during charge transaction such as customer address, delivery address, and item information.
 To add this data, you can check <a href="../sandbox/charge.html">API Reference - Charge Transaction</a>.</p>
   </div>
 
@@ -345,7 +345,7 @@ To add this data, you can check <a href="../sandbox/charge.html">API Reference -
 
     <h2 id="redirect">Redirect</h2>
 
-    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:
+    <p>Veritrans' server will return a response for every charge transaction in JSON form. Veritrans' PHP Library will convert JSON into a PHP object automatically. The sample JSON script that is returned by Veritrans is as followed:
 <br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
@@ -362,7 +362,7 @@ To add this data, you can check <a href="../sandbox/charge.html">API Reference -
 </code></pre>
 
     <p><br />
-Two important information in the JSON response is the <code>status_code</code> and <code>redirect_url</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. That being so, you have to redirect your customer to <code>redirect_url</code> to finish the e-Pay BRI transaction. You can add the following PHP code at the last line of the file <code>checkout.php</code> to do so:
+Two important information details in the JSON response are the <code>status_code</code> and <code>redirect_url</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. That being so, you have to redirect your customer to <code>redirect_url</code> to finish the e-Pay BRI transaction. You can add the following PHP code at the last line of the file <code>checkout.php</code> to do so:
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
@@ -388,7 +388,7 @@ Two important information in the JSON response is the <code>status_code</code> a
 </code></pre>
 
     <p><br />
-Information that is related to transaction value, order ID and transaction information will be displayed on the redirect URL page. On sandbox environment, the e-Pay BRI payment page is a dummy page. Customer simply has to click the payment button to complete transaction process.</p>
+Information that is related to transaction value, order ID and transaction information will be displayed on the redirected URL page. In the sandbox environment, the e-Pay BRI payment page is a dummy page. Customer simply has to click the payment button to complete the transaction.</p>
 
     <p>When the transaction is completed, customer can proceed back to your website. To do this, you have to fill in the callback URL configuration in MAP (Merchant Administration Portal). For more information, please refer to the menu <a href="getting_started.html">Getting Started</a>. The following shows the payment page in sandbox environment:
 <br /><br />
@@ -405,7 +405,7 @@ The following is the e-Pay BRI payment page on production environment:
 
     <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
 
-    <p>Under a certain case, charge transaction on VT-Direct can fail. This will prevents you in getting the redirect URL to e-Pay BRI page. Veritrans will return an error message if failure occurred. The reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:
+    <p>Under a certain case, charge transaction on VT-Direct may fail. This will prevent you from getting the redirected URL to e-Pay BRI page. Veritrans will return an error message if failure occurrs. The reason of failure can be inspected from the status code displayed on the error message. The status codes that generally occur are:
 <br /><br /></p>
 
     <table>
@@ -452,20 +452,20 @@ The complete list of status code can be found at <a href="../sandbox/status_code
 
     <h2 id="transaction-status">Transaction Status</h2>
 
-    <p>When charge transaction is successful, the transaction status is still pending. Customer has to complete the transaction in the e-Pay BRI page. When this process is completed, the transaction status will be changed into <code>success</code>. You can check the transaction status change through MAP.</p>
+    <p>When charge transaction is successful, the transaction status will still be pending. Customer has to complete the transaction in the e-Pay BRI page. When this process is completed, the transaction status will be changed into <code>success</code>. You can check the transaction status change through MAP.</p>
 
-    <p>The status on MAP when payment is not yet completed in e-Pay BRI page is as follows:
+    <p>The status on MAP when payment is not yet completed in e-Pay BRI page is as followed:
 <br /><br />
   <img alt="bripay MAP Pending" class="img-responsive img-thumbnail" src="../images/bri-pay-pending.png" />
 <br /><br />
-The status on MAP when payment has been completed in e-Pay BRI page is as follows:
+The status on MAP when payment has been completed in e-Pay BRI page is as followed:
 <br /><br />
   <img alt="bripay MAP Sukses" class="img-responsive img-thumbnail" src="../images/bri-pay-success.png" />
 <br /><br /></p>
 
     <h3 id="https-post">HTTP(S) POST</h3>
 
-    <p>Veritrans server will return a response to your server when customer has complete the payment. The sample JSON script that is returned by Veritrans is as follows:
+    <p>Veritrans' server will return a response to your server when customer has completed the payment. The sample JSON script that is returned by Veritrans is as followed:
 <br /><br /></p>
 
 <pre><code class="highlight php">{

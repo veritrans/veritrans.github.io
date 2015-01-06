@@ -198,9 +198,9 @@
 <h5 id="target-merchant-understands-about-vt-direct-and-how-vt-direct-works"><strong><em>Target:</em></strong> <em>Merchant understands about VT-Direct and how VT-Direct works</em></h5>
 <hr />
 
-<p>VT-Direct is one of Veritrans products that facilitates you to add payment feature for your online store. By using VT-Direct, your customer is able to process payment in their own website page without redirection.</p>
+<p>VT-Direct is one of Veritrans products that facilitates you to add payment feature for your online store. By using VT-Direct, your customer is able to process payments in your own website page without redirection.</p>
 
-<p>VT-Direct will request a script from Veritrans server which will send the credit card information directly from the customer browser to Veritrans server without the data being saved in the merchant server.
+<p>VT-Direct will request a script from the Veritrans server which will send the credit card information directly from the customer's browser to our server without the data ever being saved to the merchant server.
 <br /><br /></p>
 
 <h3 id="how-vt-direct-operates">How VT-Direct Operates</h3>
@@ -209,13 +209,13 @@
 
 <ol>
   <li>
-    <p><strong>Click Pay</strong>: Customer will fill the credit card details into the merchant website, and click <code>Pay</code> to complete payment.</p>
+    <p><strong>Click Pay</strong>: Customer will fill the credit card information on the merchant's website, and click <code>Pay</code> to complete payment.</p>
   </li>
   <li>
     <p><strong>Send Card Data</strong>: When the customer click the pay button, a script called <code>Veritrans.min.js</code> is requested from Veritrans server and will combine the sensitive credit card information with the <em>public-key</em>. The combination of the data is then sent to Veritrans server to be exchanged with the <em>onetime-token</em> ("Token").</p>
   </li>
   <li>
-    <p><strong>Get Token</strong>: Veritrans will return the Token to the customer’s browser page. The token will be valid for <strong>3 minutes</strong> during a standard credit card transaction and <strong>10 minutes</strong> if a 3D Secure feature is utilised. Token will expire after exceeding the respective time.
+    <p><strong>Get Token</strong>: Veritrans will return the Token to the customer’s browser page. The token will be valid for <strong>3 minutes</strong> during a standard credit card transaction and <strong>10 minutes</strong> if a 3D Secure feature is utilized. Token will expire after exceeding the respective time.
 <br /><br />
  <img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../images/vtdirect_introduction_1.png" /></p>
 
@@ -223,7 +223,7 @@
 <br /><br /></p>
   </li>
   <li>
-    <p><strong>Send Token</strong>: Token is then sent to the merchant server, Do note that the merchant will only receive Token as a substitution for the credit card details. <strong>Merchant will not save or process any credit card information.</strong> Therefore, merchant does not have to encounter any PCI DSS security issue.</p>
+    <p><strong>Send Token</strong>: Token is then sent to the merchant server. Do note that the merchant will only receive Token as a substitution for the credit card details. <strong>Merchant will not save or process any credit card information.</strong> Therefore, merchant does not have to encounter any PCI DSS security issue.</p>
   </li>
   <li>
     <p><strong>Request Charge</strong>: Merchant will perform charge transaction with the Token, with addition of a few other information (Example: Customer details, product details, address, etc).</p>

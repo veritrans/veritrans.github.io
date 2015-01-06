@@ -194,7 +194,7 @@
           <div class="sandbox-installment">
             <h3 id="installment">Installment</h3>
 
-<p>Installment is a type of transaction charge that allows payment transaction to be conducted regularly in certain period of time. Installment is only applicable for transaction using <strong>credit card</strong>. Installment function specification is the same as <a href="charge.html">specification of transaction charge</a>. Since the tutorial of implementing installment on VT-web and VT-Direct are quite different, the tutorial will be explained separately.
+<p>Installment is a type of transaction charge that allows a payment transaction to be conducted regularly in a certain period of time. Installment is only applicable for transactions using a <strong>credit card</strong>. The installment function specification is the same as the <a href="charge.html">specification of transaction charge</a>. Since the tutorial for implementing installment on VT-Web and VT-Direct are quite different, the tutorial will be explained separately.
 <br /><br /></p>
 
 <!-- Nav tabs -->
@@ -207,7 +207,7 @@
   <div class="tab-pane active" id="vtweb">
     <p><br /></p>
 
-    <p>Similar to VT-Web transaction charge, output from installment function is payment URL. Customer have to be redirected to VT-Web payment URL to complete the transaction proccess. Implementing installment function on VT-Web is very simple, you only need to add  <code>payment_options</code> and <code>installment</code> function on JSON request of transaction charge. The following is JSON request for installment function on VT-Web:
+    <p>Similar to a VT-Web transaction charge, output from the installment function is payment URL. Customer has to be redirected to the VT-Web payment URL to complete the transaction proccess. Implementing the installment function on VT-Web is very simple, you only need to add the <code>payment_options</code> and <code>installment</code> function on the JSON request of the transaction charge. The following is the JSON request for the installment function on VT-Web:
 <br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
@@ -278,9 +278,9 @@
 </code></pre>
 
     <p><br />
-Take note that when the installment term of BNI bank is an empty array, as specified on <a href="charge.html#specification">specification</a>, all valid installment term will be displayed on VT-Web.</p>
+Take note that when the installment term of BNI bank is an empty array, as found in <a href="charge.html#specification">specification</a>, all valid installment terms will be displayed on VT-Web.</p>
 
-    <p>JSON response structure on installment function is the same as <a href="charge.html#vtweb">VT-Web transaction charge</a>. Below is the successful JSON response:
+    <p>The JSON response structure in installment function is the same as that of the <a href="charge.html#vtweb">VT-Web transaction charge</a>. Below is the a successful JSON response:
 <br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
@@ -294,9 +294,9 @@ Take note that when the installment term of BNI bank is an empty array, as speci
   <div class="tab-pane" id="vtdirect">
     <p><br /></p>
 
-    <p>For VT-Direct you have to get token ID, Token ID represents customer's credit card information that has been stored inside Veritrans server. To get the token, you should follow the tutorial on <a href="../vtdirect/other_features.html#installment">VT-Direct &#8211; get the Token</a>. It has to be concerned that parameter request token for installment is different with <a href="../vtdirect/integration_cc.html#step1">normal transaction token</a>. You should add <code>installment</code> and <code>installment_term</code> on the parameter.</p>
+    <p>For VT-Direct you have to acquire a token ID. Token ID represents customer's credit card information that has been stored inside Veritrans server. To get the token, you should follow the tutorial on <a href="../vtdirect/other_features.html#installment">VT-Direct &#8211; get the Token</a>. With some concerns, the parameter request token for installment is different than a <a href="../vtdirect/integration_cc.html#step1">normal transaction token</a>. You should add <code>installment</code> and <code>installment_term</code> on the parameter.</p>
 
-    <p>After you gain the token, installment transaction charge can be done by adding <code>installment_term</code> attribute on <code>credit_card</code>:
+    <p>After you obtain the token, installment transaction charge can be done by adding the <code>installment_term</code> attribute on <code>credit_card</code>:
 <br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
@@ -359,7 +359,7 @@ Take note that when the installment term of BNI bank is an empty array, as speci
 </code></pre>
 
     <p><br />
-JSON response structure for installment is the same as <a href="charge.html#vtdirect-cc">transaction charge of VT-Direct</a> with credit card. The only difference is on VT-Direct JSON response <code>status_message</code>.</p>
+The JSON response structure for installment is the same as that of the <a href="charge.html#vtdirect-cc">transaction charge of VT-Direct</a> with credit card. The only difference is on the VT-Direct JSON response <code>status_message</code>.</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
