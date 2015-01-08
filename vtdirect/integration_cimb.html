@@ -174,14 +174,24 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,6 +201,7 @@
 
 <h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-with-cimb-clicks-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct with CIMB Clicks payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
   <div class="col-sm-2 col-xs-12">
@@ -222,9 +233,10 @@
 
 <hr />
 
-<p>CIMB Clicks is one of the internet banking payment method that is provided by CIMB Niaga Bank. This method allows customer to perform transaction by redirecting the customer to CIMB Clicks payment page. For more information, please visit <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">CIMB Niaga website</a>.</p>
+<p><br />
+CIMB Clicks is one of the internet banking payment methods that is provided by CIMB Niaga Bank. This method allows the customer to perform a transaction by redirecting the customer to the CIMB Clicks payment page. For more information, please visit <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">CIMB Niaga website</a>.</p>
 
-<p>To activate CIMB Clicks payment method (Automatically active on Sandbox mode), you have to contact Veritrans sales representative.</p>
+<p>To activate CIMB Clicks payment method (Automatically active on Sandbox mode), you have to contact a Veritrans sales representative.</p>
 
 <h3 id="integration-steps-vt-direct-cimb-clicks">Integration Steps VT-Direct CIMB Clicks</h3>
 
@@ -235,7 +247,8 @@
   <li>Check Transaction Status</li>
 </ol>
 
-<p>Unlike the other payment method (Credit Card and Mandiri ClickPay), CIMB Clicks payment process are not executed in your payment page. Customer will be redirected to CIMB Clicks page to complete transaction.</p>
+<p>Unlike the other payment method (Credit Card and Mandiri ClickPay), CIMB Clicks payment process are not executed in your payment page. Customer will be redirected to CIMB Clicks page to complete the transaction.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -250,12 +263,15 @@
     <!-- step 1-->
     <!-- satu -->
 
+    <p><br /></p>
+
     <h2 id="create-form">Create Form</h2>
 
-    <p>CIMB Niaga payment form will be made in the file <code>form_vtdirect_cimb.php</code>. Because most of the transaction process will be made in CIMB Clicks page, the form that we made will only shows the steps of payment and the payment button of CIMB Clicks.
-When your customer click this payment button, charge transaction process will be carried on the next step.</p>
+    <p>CIMB Niaga payment form will be made in the file <code>form_vtdirect_cimb.php</code>. Because most of the transaction process will be made in CIMB Clicks page, the form that we made will only show the steps of payment and the payment button of CIMB Clicks.
+When your customer clicks this payment button, charge transaction process will be carried on the next step.</p>
 
-    <p>The following is a sample from the file <code>form_vtdirect_cimb.php</code>:</p>
+    <p>The following is a sample from the file <code>form_vtdirect_cimb.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -279,6 +295,7 @@ When your customer click this payment button, charge transaction process will be
   <div class="tab-pane" id="charge-transaction-cimb">
     <!-- step 2-->
     <!-- two -->
+    <p><br /></p>
 
     <h2 id="charge-transaction">Charge Transaction</h2>
 
@@ -287,7 +304,7 @@ When your customer click this payment button, charge transaction process will be
     <ul>
       <li><code>payment_type</code> parameter has to be set as <code>cimb_clicks</code>.</li>
       <li>
-        <p>New JSON object has to be added, with the name “cimb_clicks”, and has the pairing name/value as follows:</p>
+        <p>New JSON object has to be added, with the name “cimb_clicks”, and has the pairing name/value as followed:</p>
 
         <ul>
           <li>"description" → transaction information</li>
@@ -295,7 +312,8 @@ When your customer click this payment button, charge transaction process will be
       </li>
     </ul>
 
-    <p>This step describes the charge transaction CIMB Clicks in the file <code>checkout_cimb.php</code>. To perform charge transaction, we will use Veritrans PHP library. The following is an example of charge transaction implementation in the file <code>checkout_cimb.php</code>:</p>
+    <p>This step describes the charge transaction CIMB Clicks in the file <code>checkout_cimb.php</code>. To perform charge transaction, we will use Veritrans' PHP library. The following is an example of charge transaction implementation in the file <code>checkout_cimb.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -330,17 +348,20 @@ When your customer click this payment button, charge transaction process will be
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>On the above example, we utilise the CIMB Clicks, transaction, and customer data as the charge transaction parameter. You can add additional data during charge transaction, such as: Customer address, Delivery address, and item information.
+    <p><br />
+On the above example, we utilize the CIMB Clicks, transaction, and customer data as the charge transaction parameter. You can add additional data during the charge transaction, such as: Customer address, Delivery address, and item information.
 To add this data, you can check <a href="../sandbox/charge.html">API Reference - Charge Transaction</a>.</p>
   </div>
 
   <div class="tab-pane" id="redirect-cimb">
     <!-- step 3-->
     <!-- three -->
+    <p><br /></p>
 
     <h2 id="redirect">Redirect</h2>
 
-    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:</p>
+    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into a PHP object automatically. The sample JSON script that is returned by Veritrans is as followed:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
@@ -355,7 +376,9 @@ To add this data, you can check <a href="../sandbox/charge.html">API Reference -
 );
 </code></pre>
 
-    <p>Two important information in the JSON response is the <code>status_code</code> and <code>redirect_url</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. That being so, you have to redirect your customer to <code>redirect_url</code> to finish the CIMB Clicks transaction. You can add the following PHP code at the last line of the file <code>checkout.php</code> to do so:</p>
+    <p><br />
+Two important information details in the JSON response are the <code>status_code</code> and <code>redirect_url</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. That being so, you have to redirect your customer to <code>redirect_url</code> to finish the CIMB Clicks transaction. You can add the following PHP code at the last line of the file <code>checkout.php</code> to do so:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -379,25 +402,26 @@ To add this data, you can check <a href="../sandbox/charge.html">API Reference -
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Information that is related to transaction value, order ID and transaction information will be displayed on the redirect URL page. On sandbox environment, the CIMB Clicks payment page is a dummy page. Customer simply has to click the payment button to complete transaction process.</p>
+    <p><br />
+Information that is related to transaction value, order ID and transaction information will be displayed on the redirected URL page. On sandbox environment, the CIMB Clicks payment page is a dummy page. Customer simply has to click the payment button to complete the transaction process.</p>
 
-    <p>When the transaction is completed, customer can proceed back to your website. To do this, you have to fill in the callback URL configuration in MAP (Merchant Administration Portal). For more information, please refer to the menu <a href="getting_started.html">Getting Started</a>. The following shows the payment page in sandbox environment:</p>
-
-    <p><img alt="CIMB Clicks" class="img-responsive img-thumbnail" src="../images/vtdirect_cimb_clicks.png" /></p>
-
-    <p>After customer completes his payment, the following page will be displayed:</p>
-
-    <p><img alt="CIMB Clicks 2" class="img-responsive img-thumbnail" src="../images/vtdirect_cimb_clicks_2.png" /></p>
-
-    <p>The following is the CIMB Niaga payment page on production environment:</p>
-
-    <p><img alt="CIMB Clicks 3" class="img-responsive img-thumbnail" src="../images/cimb_demo.png" /></p>
-
-    <hr />
+    <p>When the transaction is completed, customer can proceed back to your website. To do this, you have to fill in the callback URL configuration in MAP (Merchant Administration Portal). For more information, please refer to the menu <a href="getting_started.html">Getting Started</a>. The following shows the payment page in the sandbox environment:
+<br /><br />
+<img alt="CIMB Clicks" class="img-responsive img-thumbnail" src="../images/vtdirect_cimb_clicks.png" />
+<br /><br />
+After customer completes his payment, the following page will be displayed:
+<br /><br />
+<img alt="CIMB Clicks 2" class="img-responsive img-thumbnail" src="../images/vtdirect_cimb_clicks_2.png" />
+<br /><br />
+The following is the CIMB Niaga payment page on production environment:
+<br /><br />
+<img alt="CIMB Clicks 3" class="img-responsive img-thumbnail" src="../images/cimb_demo.png" />
+<br /><br /></p>
 
     <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
 
-    <p>Under a certain case, charge transaction on VT-Direct can fail. This will prevents you in getting the redirect URL to CIMB Clicks page. Veritrans will return an error message if failure occurred. The reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:</p>
+    <p>Under a certain case, charge transaction on VT-Direct may fail. This will prevents you from getting to the redirect URL to CIMB Clicks page. Veritrans will return an error message if failure occurrs. The reason of failure can be inspected from the status code displayed on the error message. The status codes that generally occur are:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -430,7 +454,8 @@ To add this data, you can check <a href="../sandbox/charge.html">API Reference -
       </tbody>
     </table>
 
-    <p>The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
+    <p><br />
+The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
 
     <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_cimb.html#transaction-status-cimb">next steps</a>.</p>
 
@@ -438,24 +463,25 @@ To add this data, you can check <a href="../sandbox/charge.html">API Reference -
   <div class="tab-pane" id="transaction-status-cimb">
     <!-- step 4-->
     <!-- empat -->
+    <p><br /></p>
 
     <h2 id="transaction-status">Transaction Status</h2>
 
     <p>When charge transaction is successful, the transaction status is still pending. Customer has to complete the transaction in the CIMB Clicks page. When this process is completed, the transaction status will be changed into <code>settlement</code> or <code>deny</code>. You can check the transaction status change through MAP.</p>
 
-    <p>The status on MAP when payment is not yet completed in CIMB Clicks page is as follows:</p>
-
-    <p><img alt="CIMB Clicks MAP Pending" class="img-responsive img-thumbnail" src="../images/cimb-map-pending.png" /></p>
-
-    <p>The status on MAP when payment has been completed in CIMB Clicks page is as follows:</p>
-
-    <p><img alt="CIMB Clicks MAP Sukses" class="img-responsive img-thumbnail" src="../images/cimb-map-success.png" /></p>
-
-    <hr />
+    <p>The status on MAP when payment is not yet completed in CIMB Clicks page is as followed:
+<br /><br />
+  <img alt="CIMB Clicks MAP Pending" class="img-responsive img-thumbnail" src="../images/cimb-map-pending.png" />
+<br /><br />
+The status on MAP when payment has been completed in CIMB Clicks page is as followed:
+<br /><br />
+  <img alt="CIMB Clicks MAP Sukses" class="img-responsive img-thumbnail" src="../images/cimb-map-success.png" />
+<br /><br /></p>
 
     <h3 id="http-response">HTTP Response</h3>
 
-    <p>Veritrans server will return a response to your server when customer has complete the payment. The sample JSON script that is returned by Veritrans is as follows:</p>
+    <p>Veritrans server will return a response to your server when the customer has completed the payment. The sample JSON script that is returned by Veritrans is as followed:
+<br /><br /></p>
 
 <pre><code class="highlight php">{
     "status_code": "200",
@@ -470,7 +496,8 @@ To add this data, you can check <a href="../sandbox/charge.html">API Reference -
 }
 </code></pre>
 
-    <p>The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction Status</a>.</p>
+    <p><br />
+The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction Status</a>.</p>
 
   </div>
 </div>
@@ -518,6 +545,9 @@ To add this data, you can check <a href="../sandbox/charge.html">API Reference -
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

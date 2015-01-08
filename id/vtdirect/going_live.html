@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,8 +201,9 @@
 
 <h5 id="tutorial-berikut-akan-membantu-anda-melakukan-perubahan-konfigurasi-dari-sandbox-ke-mode-production-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Tutorial berikut akan membantu anda melakukan perubahan konfigurasi dari Sandbox ke mode Production. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
-<p>Jika Anda sudah selesai melakukan testing di Sandbox dan sudah siap untuk go live di Production Environment, ada beberapa hal yang perlu dipastikan:</p>
+<p>Jika Anda sudah selesai melakukan testing di Sandbox dan sudah siap untuk go live di Production Environment, ada beberapa hal yang perlu dipastikan:<br /><br /></p>
 
 <ol>
   <li>Register akun baru di <a href="https://my.veritrans.co.id">sini</a> untuk mendapat akses ke MAP Production.</li>
@@ -224,14 +235,16 @@
       </li>
     </ul>
   </li>
+  <li>
+    <p>Gunakan library javascript veritrans production:</p>
+
+<pre><code class="highlight plaintext">     &lt;script src=”https://api.veritrans.co.id/v2/assets/js/veritrans.min.js”&gt;&lt;/script&gt;
+</code></pre>
+  </li>
 </ol>
 
-<p>4 Gunakan library javascript veritrans production:</p>
-
-<pre><code class="highlight plaintext">&lt;script src=”https://api.veritrans.co.id/v2/assets/js/veritrans.min.js”&gt;&lt;/script&gt;
-</code></pre>
-
-<p><strong>Catatan:</strong> Pada production environment, jumlah minimum transaksi adalah Rp 10.000.</p>
+<p><br />
+<strong>Catatan:</strong> Pada production environment, jumlah minimum transaksi adalah Rp 10.000.</p>
 
 <p>Selamat bertransaksi menggunakan Veritrans!</p>
 
@@ -278,6 +291,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

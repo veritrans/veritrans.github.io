@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,12 +201,14 @@
 
 <h5 id="tutorial-berikut-akan-membantu-anda-memahami-apa-itu-veritrans-api-beserta-dasar-dasar-implementasinya-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Tutorial berikut akan membantu anda memahami apa itu Veritrans API beserta dasar-dasar implementasinya. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <p>Veritrans API adalah sebuah RESTful Web Service yang dikembangkan oleh Veritrans Indonesia sebagai jembatan komunikasi antara anda dengan payment provider. Anda dapat menggunakan Veritrans API untuk mengakses berbagai service dan produk yang Veritrans sediakan untuk melakukan pembayaran online. </p>
 
 <p>Veritrans API mengusung konsep <strong>One Message</strong>, dimana format pesan yang digunakan untuk transaksi pembayaran apapun menggunakan format yang sama. Veritrans API menggunakan format JSON (JavaScript Object Notation) sebagai format komunikasi antara merchant dan Veritrans. JSON dikirim menggunakan HTTP(S) POST.</p>
 
-<p>Kami telah menyediakan beberapa <a href="../welcome/welcome.html">plugin eCommerce dan library PHP</a>. Pastikan anda mengecek pilihan plugin dan library yang tersedia sebelum menggunakan API ini untuk mempercepat proses integrasi.</p>
+<p>Kami telah menyediakan beberapa <a href="../plugin/plugin.html">plugin eCommerce dan library PHP</a>. Pastikan anda mengecek pilihan plugin dan library yang tersedia sebelum menggunakan API ini untuk mempercepat proses integrasi.
+<br /><br /></p>
 
 <h3 id="jenis-pembayaran">Jenis pembayaran</h3>
 
@@ -228,6 +240,8 @@
   </li>
 </ul>
 
+<p><br /></p>
+
 <h3 id="request-dan-response-veritrans-api">Request dan Response Veritrans API</h3>
 
 <p>Seperti yang telah disampaikan sebelumnya, komunikasi dengan Veritrans API dikirimkan menggunakan HTTP(S). Konten request dan response Veritrans API memiliki format JSON. Bagian ini menjelaskan secara rinci format HTTP(S) request dan response yang digunakan dalam Veritrans API.</p>
@@ -237,7 +251,8 @@
 <ol>
   <li>URL Endpoint</li>
   <li>Header Authorization</li>
-  <li>Header Accept dan Content-Type</li>
+  <li>Header Accept dan Content-Type
+<br /><br /></li>
 </ol>
 
 <h3 id="url-endpoint">API URL Endpoint</h3>
@@ -251,24 +266,24 @@
 
 <p>Environment sandbox digunakan ketika anda sedang dalam proses integrasi dan testing. Semua aktivitas dan transaksi yang dilakukan dalam environment sandbox merupakan data dummy. Jika anda sudah siap untuk melakukan transaksi sebenarnya, gunakan URL endpoint environment produksi.</p>
 
-<p>Pada penjelasan <a href="charge.html#specification">spesifikasi charge transaksi</a> menggunakan Veritrans API, misalnya, anda akan menjumpai penjelasan URL endpoint sebagai berikut:</p>
+<p>Pada penjelasan <a href="charge.html#specification">spesifikasi charge transaksi</a> menggunakan Veritrans API, anda akan menjumpai penjelasan URL endpoint sebagai berikut:</p>
 
 <pre><code class="highlight plaintext">URL endpoint : BASE_URL/charge
 </code></pre>
 
-<p>Hal ini berarti URL endpoint charge transaksi adalah</p>
+<p><br />
+Hal ini berarti URL endpoint charge transaksi pada mode sandbox adalah:</p>
 
 <pre><code class="highlight plaintext">https://api.sandbox.veritrans.co.id/v2/charge
 </code></pre>
 
-<p>jika anda menggunakan environment sandbox dan </p>
+<p><br />
+Dan URL endpoint charge transaksi pada mode production adalah: </p>
 
 <pre><code class="highlight plaintext">https://api.veritrans.co.id/v2/charge
 </code></pre>
 
-<p>jika anda menggunakan environment produksi.</p>
-
-<hr />
+<p><br /></p>
 
 <h3 id="header-authorization">Header Authorization</h3>
 
@@ -279,31 +294,34 @@
 <pre><code class="highlight plaintext">Username:Password
 </code></pre>
 
-<p>Karena tidak ada pasword untuk server key, password dapat dibiarkan kosong. Jika anda memiliki server key seperti berikut :</p>
+<p><br />
+Karena tidak ada pasword untuk server key, password dapat dibiarkan kosong. Jika anda memiliki server key seperti berikut :</p>
 
 <pre><code class="highlight plaintext">94960ece-9513-4265-9cf2-67a4da330213
 </code></pre>
 
-<p>Pasangan username dan password BASIC AUTH akan menjadi:</p>
+<p><br />
+Pasangan username dan password BASIC AUTH akan menjadi:</p>
 
 <pre><code class="highlight plaintext">94960ece-9513-4265-9cf2-67a4da330213:
 </code></pre>
 
-<p>(Note: pastikan ada karakter “:” setelah server key)</p>
-
-<p>Selanjutnya anda perlu mengubah ke format BASE 64, sehingga hasilnya seperti berikut</p>
+<p>(Note: pastikan ada karakter “:” setelah server key)
+<br /><br />
+Selanjutnya anda perlu mengubah ke format BASE 64, sehingga hasilnya seperti berikut</p>
 
 <pre><code class="highlight plaintext">OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
 </code></pre>
 
-<p>Berikut adalah contoh header untuk basic auth:</p>
+<p><br />
+Berikut adalah contoh header untuk basic auth:</p>
 
 <pre><code class="highlight plaintext">Authorization: Basic OTQ5NjBlY2UtOTUxMy00MjY1LTljZjItNjdhNGRhMzMwMjEzOg==
 </code></pre>
 
 <p>Pastikan merchant menaruh string “Basic <space>” sebelum BASE 64 server key.</space></p>
 
-<hr />
+<p><br /></p>
 
 <h3 id="header-accept-dan-content-type">Header Accept dan Content-Type</h3>
 
@@ -311,18 +329,22 @@
 
 <p><code>Content-Type: application/json</code></p>
 
-<p>Jika fungsi RESTful API memiliki output parameter JSON, tambahkan header HTTP(S):</p>
+<p><br />
+Jika fungsi RESTful API memiliki output parameter JSON, tambahkan header HTTP(S):</p>
 
 <p><code>Accept: application/json</code></p>
 
-<p>Berikut adalah rangkuman header HTTP(S) request Veritrans API:</p>
+<p><br />
+Berikut adalah rangkuman header HTTP(S) request Veritrans API:</p>
 
 <table>
-  <tbody>
+  <thead>
     <tr>
-      <td>Header</td>
-      <td>Value</td>
+      <th>Header</th>
+      <th>Value</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><strong>Accept</strong></td>
       <td>application/json</td>
@@ -381,6 +403,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

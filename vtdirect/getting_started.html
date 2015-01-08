@@ -174,14 +174,24 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -193,48 +203,43 @@
 
 <hr />
 
-<p>There are a few stuffs need to be prepared before integrating with VT-Direct:</p>
+<p>There are a few things that need to be prepared before integrating with VT-Direct:</p>
 
 <ol>
   <li>
-    <p>Create Veritrans <em>Sandbox</em> account.</p>
+    <p>Create a Veritrans <em>Sandbox</em> account.</p>
 
-    <p>Utilized for development. Data and transaction made on this account is <em>dummy</em> in nature. During development period, merchant has to use <em>sandbox</em> account. <em>Sandbox</em> account can be created <a href="https://my.sandbox.veritrans.co.id/register">here</a>.</p>
+    <p>Utilized for development. Data and transaction made on this account is <em>dummy</em> in nature. During the development period, merchant has to use <em>sandbox</em> account. <em>Sandbox</em> account can be created <a href="https://my.sandbox.veritrans.co.id/register">here</a>.</p>
   </li>
-  <li>
-    <p>Fill in your basic information in MAP (Merchant Administration Portal). Can be found in menu <a title="General Settings" href="https://my.sandbox.veritrans.co.id/settings/general_info">Settings - General Settings</a>.</p>
-
-    <p><img alt="General Setting" class="img-responsive img-thumbnail" src="../images/gen_set.png" /></p>
-  </li>
+  <li>Fill in your basic information in MAP (Merchant Administration Portal). This can be found in menu <a title="General Settings" href="https://my.sandbox.veritrans.co.id/settings/general_info">Settings - General Settings</a>.
+<br /><br />
+ <img alt="General Setting" class="img-responsive img-thumbnail" src="../images/gen_set.png" />
+<br /><br /></li>
   <li>
     <p>Download <code>Veritrans-PHP</code> library [ <a href="https://github.com/veritrans/veritrans-php">Github</a> | <a href="https://github.com/veritrans/veritrans-php/archive/master.zip">Zip</a> ]</p>
   </li>
-  <li>Take note the <code>server key</code> and <code>client key</code> of your account. Both keys can be obtained by
+  <li>Take note of the <code>server key</code> and <code>client key</code> of your account. Both keys can be obtained by
     <ul>
       <li>
         <p>Login <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> MAP (Merchant Administration Portal).</p>
       </li>
-      <li>
-        <p>Choose menu <strong>Settings</strong> and <strong>Access keys</strong> </p>
-      </li>
-    </ul>
-
-    <p><img alt="Access Keys" class="img-responsive img-thumbnail" src="../images/access_key.png" /></p>
-
-    <ul>
+      <li>Choose menu <strong>Settings</strong> and <strong>Access keys</strong> 
+<br /><br />
+ <img alt="Access Keys" class="img-responsive img-thumbnail" src="../images/access_key.png" />
+<br /><br /></li>
       <li><strong><font color="#F50000">Caution!!!</font></strong> Be discreet on your <code>server key</code>.</li>
     </ul>
   </li>
   <li>
-    <p>Manage redirect URL</p>
+    <p>Manage redirected URL</p>
 
-    <p>The last step is to decide on how your customer will return to your website by configuring <strong>Finish URL</strong>, <strong>Unfinish URL</strong>, and <strong>Error URL</strong>. On VT-Direct, the most important field is finish URL. Customer will be redirected to finish URL when transaction is successful. This step is exclusively applicable for CIMB Clicks payment method.</p>
+    <p>The last step is to decide on how your customer will return to your website by configuring <strong>Finish URL</strong>, <strong>Unfinish URL</strong>, and <strong>Error URL</strong>. On VT-Direct, the most important field is finish URL. Customer will be redirected to finish URL when transaction is successful. This step is exclusively for the CIMB Clicks payment method.</p>
 
-    <p>Unfinish URL and Error URL are the fields that are applicable on VT-Web products and not relevant for VT-Direct. However, because all fields must be filled, please use your website address for Unfinish URL and Error URL. You can configure these URL in <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">MAP</a>.</p>
-
-    <p><img alt="vtweb-config" class="img-responsive img-thumbnail" src="../images/callback_url.png" /></p>
-
-    <p>Explanation :</p>
+    <p>Unfinish URL and Error URL are the fields that are more applicable on VT-Web than VT-Direct. However, because all fields must be filled, please use your website address for Unfinish URL and Error URL. You can configure these URL in <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">MAP</a>.
+<br /><br />
+ <img alt="vtweb-config" class="img-responsive img-thumbnail" src="../images/callback_url.png" />
+<br /><br />
+ Explanation :</p>
 
     <ul>
       <li>Fill <code>Finish Redirect URL</code> <em>field</em> with the callback URL.</li>
@@ -243,7 +248,7 @@
   </li>
 </ol>
 
-<p>When all of the above step is completed, VT-Direct integration can be started.</p>
+<p>When all steps above are completed, VT-Direct integration can be started.</p>
 
 
 			<div class="pagination">
@@ -288,6 +293,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

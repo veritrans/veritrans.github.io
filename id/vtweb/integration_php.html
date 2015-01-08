@@ -174,47 +174,52 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="id-vtweb-integration-php">
             <div class="row">
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
 		<a href="integration_php.html"><img src="../../images/php.jpg" /></a>
-		<div class="caption">PHP</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
 		<a href="integration_prestashop.html"><img src="../../images/prestashop_gray.jpg" /></a>
-		<div class="caption">Prestashop</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
 		<a href="integration_magento.html"><img src="../../images/magento_gray.jpg" /></a>
-		<div class="caption">Magento</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
 		<a href="integration_opencart.html"><img src="../../images/opencart_gray.jpg" /></a>
-		<div class="caption">Opencart</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
 		<a href="integration_woocommerce.html"><img src="../../images/woocommerce_gray.jpg" /></a>
-		<div class="caption">Woocommerce</div>
 		</div>
 	</div>
 </div>
@@ -254,7 +259,7 @@
           <li>Nominal transaksi</li>
         </ol>
 
-        <p>Pada contoh berikut, toko anda menerima sebuah pemesanan dengan ID 7009 senilai Rp. 10.000,00. Contoh kode PHP yang dapat digunakan untuk memperoleh dan mengakses halaman pembayaran VT-Web adalah:</p>
+        <p>Pada contoh berikut, toko anda menerima sebuah pemesanan dengan ID 7009 senilai Rp. 10.000,00. Contoh kode PHP yang dapat digunakan untuk memperoleh dan mengakses halaman pembayaran VT-Web adalah:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span> 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -282,8 +287,8 @@
 </span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
-
-        <p>Contoh kode di atas memanfaatkan library <strong>Veritrans-PHP</strong> yang telah diunduh pada bagian <a title="Langkah Awal" href="getting_started.html">Langkah awal</a>. File <code>Veritrans.php</code> merupakan bagian dari library <strong>Veritrans-PHP</strong>. File ini diasumsikan berada pada direktori yang sama dengan kode sumber.</p>
+        <p><br />
+Contoh kode di atas memanfaatkan library <strong>Veritrans-PHP</strong> yang telah diunduh pada bagian <a title="Langkah Awal" href="getting_started.html">Langkah awal</a>. File <code>Veritrans.php</code> merupakan bagian dari library <strong>Veritrans-PHP</strong>. File ini diasumsikan berada pada direktori yang sama dengan kode sumber.</p>
 
         <p>Pertama-tama, tentukan jenis akun yang akan kita gunakan: akun produksi atau sandbox. Pada contoh, akun yang digunakan adalah sandbox. Oleh karena itu, nilai <code>Veritrans_Config::$isProduction</code> diubah menjadi <code>false</code>.</p>
 
@@ -291,9 +296,10 @@
 
         <p>URL Halaman Pembayaran VT-Web dapat diperoleh dengan memanggil fungsi <code>Veritrans_Vtweb::getRedirectionUrl</code> dimana data transaksi adalah argumennya. Jika proses ini berhasil, pembeli akan di-redirect menuju URL tersebut.</p>
 
-        <p>Berikut adalah contoh tampilan halaman pembayaran VT-Web hasil kode di atas:</p>
-
-        <p><img alt="VT-Web Simple" class="img-responsive img-thumbnail" src="../../images/vtweb_simple.png" /></p>
+        <p>Berikut adalah contoh tampilan halaman pembayaran VT-Web hasil kode di atas:
+<br /><br />
+<img alt="VT-Web Simple" class="img-responsive img-thumbnail" src="../../images/vtweb_simple.png" />
+<br /><br /></p>
 
         <hr />
 
@@ -303,7 +309,7 @@
 
         <p>Sebagian besar field pada form halaman VT-Web akan otomatis terisi dan Informasi terkait daftar barang serta lokasi pengiriman akan ditampilkan. Keterangan dan struktur lengkap data transaksi dalam bentuk JSON dapat dilihat di <a href="../sandbox/charge.html#specification">sini</a>.</p>
 
-        <p>Contoh kode PHP yang mengikutsertakan semua data transaksi adalah sebagai berikut:</p>
+        <p>Contoh kode PHP yang mengikutsertakan semua data transaksi adalah sebagai berikut:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -388,15 +394,17 @@
 </span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
-        <p>Berikut adalah contoh tampilan halaman pembayaran VT-Web hasil kode di atas. Perlu diperhatikan bahwa field pada <strong>form tagihan sudah otomatis terisi</strong>. Selain itu, informasi terkait <strong>daftar barang</strong> dan <strong>alamat pengiriman</strong> juga ditampilkan pada halaman VT-Web.</p>
+        <p><br />
+Berikut adalah contoh tampilan halaman pembayaran VT-Web hasil kode di atas. Perlu diperhatikan bahwa field pada <strong>form tagihan sudah otomatis terisi</strong>. Selain itu, informasi terkait <strong>daftar barang</strong> dan <strong>alamat pengiriman</strong> juga ditampilkan pada halaman VT-Web.<br /><br /></p>
 
-        <p><img alt="VT-Web Complete" class="img-responsive img-thumbnail" src="../../images/vtweb_complete.png" /></p>
+        <p><img alt="VT-Web Complete" class="img-responsive img-thumbnail" src="../../images/vtweb_complete.png" />
+<br /><br /></p>
 
         <hr />
 
         <h2 id="error-saat-request-url-vt-web">Error saat Request URL VT-Web</h2>
 
-        <p>Pada beberapa kondisi, request URL pembayaran VT-Web bisa gagal. Penyebab gagalnya request URL VT-Web dapat dilihat dari status code. Status code yang umumnya muncul adalah:</p>
+        <p>Pada beberapa kondisi, request URL pembayaran VT-Web bisa gagal. Penyebab gagalnya request URL VT-Web dapat dilihat dari status code. Status code yang umumnya muncul adalah:<br /></p>
 
         <table>
           <thead>
@@ -429,7 +437,8 @@
           </tbody>
         </table>
 
-        <p>Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+        <p><br />
+Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
 
       </div>
       <!-- end of step 1-->
@@ -447,7 +456,8 @@
 
         <ol>
           <li>Memahami flow pembayaran VT-Web</li>
-          <li>Mengetahui status pembayaran melalui MAP (Merchant Administration Portal) dan notifikasi</li>
+          <li>Mengetahui status pembayaran melalui MAP (Merchant Administration Portal) dan notifikasi.
+<br /><br /></li>
         </ol>
 
         <!-- Nav tabs -->
@@ -464,7 +474,7 @@
             <!-- CC -->
 
             <h3 id="tes-transaksi-sukses">Tes Transaksi Sukses</h3>
-            <p>Kita akan mencoba transaksi kartu kredit 3D Secure yang berhasil. Berdasarkan <a href="../sandbox/card_list.html">Referensi - Daftar Kartu Uji Coba</a>, kartu kredit yang dapat digunakan adalah</p>
+            <p>Kita akan mencoba transaksi kartu kredit 3D Secure yang berhasil. Berdasarkan <a href="../sandbox/card_list.html">Referensi - Daftar Kartu Uji Coba</a>, kartu kredit yang dapat digunakan adalah:<br /></p>
 
             <table>
               <thead>
@@ -493,21 +503,23 @@
               </tbody>
             </table>
 
-            <p>Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:</p>
-
-            <p><img alt="vtweb_test1" class="img-responsive img-thumbnail" src="../../images/vtweb_test.png" /></p>
-
-            <p>Tekan tombol konfirmasi dan halaman konfirmasi pembayaran VT-Web akan ditampilkan.</p>
-
-            <p><img alt="vtweb_test2" class="img-responsive img-thumbnail" src="../../images/vtweb_test2.png" /></p>
-
-            <p>Tekan tombol <strong>Pay</strong>, lalu anda akan dialihkan ke halaman 3D secure. Halaman autentikasi akan muncul, pelanggan cukup menekan tombol autentikasi. Berikut adalah contoh tampilan halaman autentikasi 3D secure pada sandbox.</p>
-
-            <p><img alt="VT-Web 3D Secure" width="784" class="img-responsive img-thumbnail" src="../../images/vtweb_3ds.png" /></p>
-
-            <p>Setelah proses autentikasi selesai dilakukan, hasil pembayaran akan muncul.</p>
-
-            <p><img alt="vtweb_test3" width="784" class="img-responsive img-thumbnail" src="../../images/vtweb_test3.png" /></p>
+            <p><br />
+Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:
+<br /><br />
+<img alt="vtweb_test1" class="img-responsive img-thumbnail" src="../../images/vtweb_test.png" />
+<br /><br />
+Tekan tombol konfirmasi dan halaman konfirmasi pembayaran VT-Web akan ditampilkan.
+<br /><br />
+<img alt="vtweb_test2" class="img-responsive img-thumbnail" src="../../images/vtweb_test2.png" />
+<br /><br />
+Tekan tombol <strong>Pay</strong>, lalu anda akan dialihkan ke halaman 3D secure. Halaman autentikasi akan muncul, pelanggan cukup menekan tombol autentikasi. Berikut adalah contoh tampilan halaman autentikasi 3D secure pada sandbox.
+<br /><br />
+<img alt="VT-Web 3D Secure" width="784" class="img-responsive img-thumbnail" src="../../images/vtweb_3ds.png" />
+<br /><br />
+Setelah proses autentikasi selesai dilakukan, hasil pembayaran akan muncul.
+<br /><br />
+<img alt="vtweb_test3" width="784" class="img-responsive img-thumbnail" src="../../images/vtweb_test3.png" />
+<br /></p>
 
             <hr />
 
@@ -524,15 +536,15 @@
 
             <h4 id="status-transaksi-melalui-map">Status transaksi melalui MAP</h4>
 
-            <p>Pertama-tama, merchant harus melakukan login MAP <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> terlebih dahulu. Merchant dapat melihat daftar transaksi beserta ringkasan status transaksi dengan memilih menu <a href="https://my.sandbox.veritrans.co.id/payments">Transaksi</a> pada MAP.</p>
-
-            <p><img alt="map_transaction" class="img-responsive img-thumbnail" src="../../images/map_transaction.png" /></p>
-
-            <p>Merchant dapat melihat rincian status transaksi dengan memilih <code>Order ID</code> salah satu item transaksi.</p>
-
-            <p><img alt="map_detail_transaction" class="img-responsive img-thumbnail" src="../../images/map_detail_transaction.png" /></p>
-
-            <p>Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+            <p>Pertama-tama, merchant harus melakukan login MAP <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> terlebih dahulu. Merchant dapat melihat daftar transaksi beserta ringkasan status transaksi dengan memilih menu <a href="https://my.sandbox.veritrans.co.id/payments">Transaksi</a> pada MAP.
+<br /><br />
+<img alt="map_transaction" class="img-responsive img-thumbnail" src="../../images/map_transaction.png" />
+<br /><br />
+Merchant dapat melihat rincian status transaksi dengan memilih <code>Order ID</code> salah satu item transaksi.
+<br /><br />
+<img alt="map_detail_transaction" class="img-responsive img-thumbnail" src="../../images/map_detail_transaction.png" />
+<br /><br />
+Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
 
           </div>
           <!-- end of step cc-->
@@ -543,7 +555,8 @@
             <!-- mandiri -->
 
             <h3 id="tes-transaksi-sukses-1">Tes Transaksi Sukses</h3>
-            <p>Kita akan mencoba transaksi Mandiri Clickpay yang berhasil. Berdasarkan <a href="../sandbox/card_list.html">Referensi - Daftar Kartu Uji Coba</a>, Nomor kartu dan Token yang dapat digunakan adalah:</p>
+            <p>Kita akan mencoba transaksi Mandiri Clickpay yang berhasil. Berdasarkan <a href="../sandbox/card_list.html">Referensi - Daftar Kartu Uji Coba</a>, Nomor kartu dan Token yang dapat digunakan adalah:
+<br /></p>
 
             <table>
               <tbody>
@@ -558,19 +571,19 @@
               </tbody>
             </table>
 
-            <p>Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:</p>
-
-            <p><img alt="VT-Web Mandiri Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_test1.png" /></p>
-
-            <p>Lakukan konfirmasi pembayaran dan halaman transaksi sukses akan ditampilkan.</p>
-
-            <p><img alt="VT-Web Mandiri Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_test2.png" /></p>
-
-            <p>Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi Mandiri Clickpay berhasil.</p>
-
-            <p><img alt="VT-Web Mandiri Test 3" class="img-responsive img-thumbnail" src="../../images/mandiri_status.png" /></p>
-
-            <p>Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+            <p>Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:
+<br /><br />
+<img alt="VT-Web Mandiri Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_test1.png" />
+<br /><br />
+Lakukan konfirmasi pembayaran dan halaman transaksi sukses akan ditampilkan.
+<br /><br />
+<img alt="VT-Web Mandiri Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_test2.png" />
+<br /><br />
+Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi Mandiri Clickpay berhasil.
+<br /><br />
+<img alt="VT-Web Mandiri Test 3" class="img-responsive img-thumbnail" src="../../images/mandiri_status.png" />
+<br /><br />
+Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
 
           </div>
           <!-- end of step mandiri-->
@@ -580,23 +593,23 @@
             <!-- cimb -->
 
             <h3 id="tes-transaksi-sukses-2">Tes Transaksi Sukses</h3>
-            <p>Kita akan mencoba transaksi CIMB Clicks. Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:</p>
-
-            <p><img alt="VT-Web CIMB Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb_test1.png" /></p>
-
-            <p>Lakukan konfirmasi pembayaran dan pelanggan anda akan di-redirect menuju halaman CIMB Clicks <em>dummy</em>.</p>
-
-            <p><img alt="VT-Web CIMB Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb_test2.png" /></p>
-
-            <p>Saat langkah transaksi CIMB Clicks telah selesai, pilih tombol bayar dan halaman transaksi sukses akan ditampilkan.</p>
-
-            <p><img alt="VT-Web CIMB Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb_test3.png" /></p>
-
-            <p>Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi CIMB Clicks berhasil.</p>
-
-            <p><img alt="VT-Web CIMB Test 4" class="img-responsive img-thumbnail" src="../../images/cimb_status.png" /></p>
-
-            <p>Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+            <p>Kita akan mencoba transaksi CIMB Clicks. Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:
+<br /><br />
+<img alt="VT-Web CIMB Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb_test1.png" />
+<br /><br />
+Lakukan konfirmasi pembayaran dan pelanggan anda akan di-redirect menuju halaman CIMB Clicks <em>dummy</em>.
+<br /><br />
+<img alt="VT-Web CIMB Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb_test2.png" />
+<br /><br />
+Saat langkah transaksi CIMB Clicks telah selesai, pilih tombol bayar dan halaman transaksi sukses akan ditampilkan.
+<br /><br />
+<img alt="VT-Web CIMB Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb_test3.png" />
+<br /><br />
+Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi CIMB Clicks berhasil.
+<br /><br />
+<img alt="VT-Web CIMB Test 4" class="img-responsive img-thumbnail" src="../../images/cimb_status.png" />
+<br /><br />
+Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
 
           </div>
           <!-- end of step cimb-->
@@ -606,15 +619,15 @@
             <!-- Virtual Account -->
 
             <h3 id="tes-transaksi-1">Tes Transaksi</h3>
-            <p>Kita akan mencoba transaksi Virtual Account. Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:</p>
-
-            <p><img alt="VT-Web transfer Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test1.png" /></p>
-
-            <p>Klik tombol <strong>Confirm Payment</strong> untuk menampilkan nomor rekening virtual account.</p>
-
-            <p><img alt="VT-Web transfer Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test2.png" /></p>
-
-            <p><strong>Note:</strong> Segera catat nomor va pembayaran anda untuk melakukan pembayaran melalui ATM terdekat atau layanan internet banking.</p>
+            <p>Kita akan mencoba transaksi Virtual Account. Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:
+<br /><br />
+<img alt="VT-Web transfer Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test1.png" />
+<br /><br />
+Klik tombol <strong>Confirm Payment</strong> untuk menampilkan nomor rekening virtual account.
+<br /><br />
+<img alt="VT-Web transfer Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test2.png" />
+<br /><br />
+<strong>Note:</strong> Segera catat nomor va pembayaran anda untuk melakukan pembayaran melalui ATM terdekat atau layanan internet banking.</p>
 
             <p>Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. Status transaksi akan berubah menjadi <em>sukses</em> saat pelanggan anda selesai melakukan pembayaran.</p>
 
@@ -622,23 +635,23 @@
 
             <h3 id="simulasi-pembayaran">Simulasi Pembayaran</h3>
 
-            <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor account yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor virtual account tersebut.</p>
-
-            <p><img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test3.png" /></p>
-
-            <p>Apabila transaksi dengan nomor virtual account tersebut ada, anda dapat melakukan simulasi untuk melakukan pembayaran.</p>
-
-            <p><img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test4.png" /></p>
-
-            <p>Sukses melakukan pembayaran.</p>
-
-            <p><img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test5.png" /></p>
-
-            <p>Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi Virtual Account dilakukan.</p>
-
-            <p><img alt="VT-Web transfer status" class="img-responsive img-thumbnail" src="../../images/transfer_status.png" /></p>
-
-            <p>Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+            <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor account yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor virtual account tersebut.
+<br /><br />
+<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test3.png" />
+<br /><br />
+Apabila transaksi dengan nomor virtual account tersebut ada, anda dapat melakukan simulasi untuk melakukan pembayaran.
+<br /><br />
+<img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test4.png" />
+<br /><br />
+Sukses melakukan pembayaran.
+<br /><br />
+<img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test5.png" />
+<br /><br />
+Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi Virtual Account dilakukan.
+<br /><br />
+<img alt="VT-Web transfer status" class="img-responsive img-thumbnail" src="../../images/transfer_status.png" />
+<br /><br />
+Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
 
           </div>
           <!-- end of step bank transfer-->
@@ -648,23 +661,23 @@
             <!-- BRI -->
 
             <h3 id="tes-transaksi-sukses-3">Tes Transaksi Sukses</h3>
-            <p>Kita akan mencoba transaksi e-Pay BRI. Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:</p>
-
-            <p><img alt="VT-Web epay Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test1.png" /></p>
-
-            <p>Lakukan konfirmasi pembayaran dan pelanggan anda akan di-redirect menuju halaman e-Pay BRI <em>dummy</em>.</p>
-
-            <p><img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test2.png" /></p>
-
-            <p>Saat langkah transaksi e-pay BRI telah selesai, pilih tombol bayar dan halaman transaksi sukses akan ditampilkan.</p>
-
-            <p><img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test3.png" /></p>
-
-            <p>Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi CIMB Clicks berhasil.</p>
-
-            <p><img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../../images/epay_status.png" /></p>
-
-            <p>Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+            <p>Kita akan mencoba transaksi e-Pay BRI. Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:
+<br /><br />
+<img alt="VT-Web epay Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test1.png" />
+<br /><br />
+Lakukan konfirmasi pembayaran dan pelanggan anda akan di-redirect menuju halaman e-Pay BRI <em>dummy</em>.
+<br /><br />
+<img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test2.png" />
+<br /><br />
+Saat langkah transaksi e-pay BRI telah selesai, pilih tombol bayar dan halaman transaksi sukses akan ditampilkan.
+<br /><br />
+<img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test3.png" />
+<br /><br />
+Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi e-Pay BRI berhasil.
+<br /><br />
+<img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../../images/epay_status.png" />
+<br /><br />
+Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
 
           </div>
           <!-- end of step epay-->
@@ -684,18 +697,19 @@
         <h3 id="notifikasi-berupa-email">1. Notifikasi berupa email</h3>
         <p>Notifikasi berupa email di kirim ke alamat email pelanggan anda yang melakukan pembayaran, serta ke alamat email anda sebagai penerima pembayaran. Anda dapat melakukan setting seputar email notifikasi pada menu <a href="https://my.sandbox.veritrans.co.id/settings/email_notifications">Settings - email notification</a> di dalam MAP.</p>
 
-        <p><strong>Note:</strong> Untuk multiple emails, mohon gunakan tanda koma sebagai separator. Contoh : Andri@myemail.com, litani@myemail.com </p>
-
-        <p><img alt="config_payment" class="img-responsive img-thumbnail" src="../../images/vtweb-emailnotif.png" /></p>
+        <p><strong>Note:</strong> Untuk multiple emails, mohon gunakan tanda koma sebagai separator. Contoh : Andri@myemail.com, litani@myemail.com 
+<br /><br />
+<img alt="config_payment" class="img-responsive img-thumbnail" src="../../images/vtweb-emailnotif.png" />
+<br /></p>
 
         <h3 id="notifikasi-berupa-https-post">2. Notifikasi berupa HTTP(S) POST</h3>
         <p>Notifikasi berupa HTTP(S) POST dikirim oleh Veritrans ke server anda. Anda dapat memanfaatkan <em>HTTP(S) POST notification</em> ini untuk mengupdate status pembayaran dari suatu transaksi (order) secara real time. Hal ini bisa dilakukan karena Veritrans mengirim notifikasi ini seketika setelah pelanggan menyelesaikan proses pembayaran.</p>
 
-        <p>Untuk memanfaat fasilitas ini, anda harus menyediakan <em>endpoint</em> untuk menerima notifikasi. Endpoint notifikasi bisa di-set melalui MAP, di halaman <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration/">Settings - Configuration</a> pada MAP.</p>
-
-        <p><img alt="config_payment" class="img-responsive img-thumbnail" src="../../images/vtweb-httpnotif.png" /></p>
-
-        <p><strong>Note:</strong> Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat localhost.  </p>
+        <p>Untuk memanfaat fasilitas ini, anda harus menyediakan <em>endpoint</em> untuk menerima notifikasi. Endpoint notifikasi bisa di-set melalui MAP, di halaman <a title="Veritrans VT-Web configuration page" href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration/">Settings - Configuration</a> pada MAP.
+<br /><br />
+<img alt="config_payment" class="img-responsive img-thumbnail" src="../../images/vtweb-httpnotif.png" />
+<br />
+<strong>Note:</strong> Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat localhost.  </p>
 
         <p>Isi dari notifikasi tersebut berupa JSON object sebagai berikut:</p>
 
@@ -738,7 +752,7 @@
 </code></pre>
         <hr />
 
-        <p>Berikut adalah contoh kode untuk menerima HTTP (POST) dan JSON object menggunakan Library <strong>Veritrans-PHP</strong>. File ini adalah file PHP yang akan dieksekusi ketika URL endpoint notifikasi (http://sneekers.com/payment/notification) diakses.</p>
+        <p>Berikut adalah contoh kode untuk menerima HTTP (POST) dan JSON object menggunakan Library <strong>Veritrans-PHP</strong>. File ini adalah file PHP yang akan dieksekusi ketika URL endpoint notifikasi (http://sneekers.com/payment/notification) diakses.<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
@@ -830,6 +844,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

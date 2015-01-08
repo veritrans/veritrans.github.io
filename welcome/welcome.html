@@ -174,67 +174,79 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="welcome-welcome">
             <h2 id="welcome">Welcome</h2>
 
-<p>Integration of online payment using Veritrans is easy. You can immediately accept different online payment methods from your customers immediately. Please select the products and methods you'll use: 11</p>
+<p>The integration of online payments through Veritrans is easy. You can immediately accept different online payment methods from your customers. Please see the available products and methods below:</p>
 
 <ol>
   <li>
     <h3 id="vt-web">VT-Web</h3>
 
-    <p>A payment portal that allows merchant to use Veritrans payment system, by redirecting customer to Veritrans payment page. Setup is easy and there is no monthly fees, suitable for small and medium scale enterprises. <a href="../vtweb/introduction.html">More »</a> </p>
+    <p>A payment portal that allows merchant to use Veritrans payment system, by redirecting the customer to the Veritrans payment page. Setup is easy and there is no monthly fees, suitable for small and medium scale businesses. <a href="../vtweb/introduction.html">More »</a> </p>
 
     <ul>
       <li>Are you using e-Commerce Framework for your Online store ? We have developed a variety of plugins to make your integration process easy.</li>
     </ul>
 
+    <p><br /></p>
+
     <div class="row">
    <div class="col-sm-2 col-xs-12">
-     <div class="thumbnail">
+     <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
      <a href="../vtweb/integration_prestashop.html"><img src="../images/prestashop.jpg" /></a>
-     <div class="caption">Prestashop</div>
      </div>
    </div>
    <div class="col-sm-2 col-xs-12">
-     <div class="thumbnail">
+     <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
      <a href="../vtweb/integration_magento.html"><img src="../images/magento.jpg" /></a>
-     <div class="caption">Magento</div>
      </div>
    </div>
    <div class="col-sm-2 col-xs-12">
-     <div class="thumbnail">
+     <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
      <a href="../vtweb/integration_opencart.html"><img src="../images/opencart.jpg" /></a>
-     <div class="caption">Opencart</div>
      </div>
    </div>
    <div class="col-sm-2 col-xs-12">
-     <div class="thumbnail">
+     <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
      <a href="../vtweb/integration_woocommerce.html"><img src="../images/woocommerce.jpg" /></a>
-     <div class="caption">Woocommerce</div>
      </div>
    </div>
  </div>
 
+    <p><br /></p>
+
     <ul>
-      <li>If you don't use e-commerce framework, the integration of VT-Web is not complicated with our PHP Library <a href="../vtweb/getting_started.html">Integration PHP »</a></li>
+      <li>If you don't use an e-commerce framework, the integration of VT-Web is not complicated and made simple with our PHP Library <a href="../vtweb/getting_started.html">Integration PHP »</a></li>
     </ul>
+
+    <p><br /></p>
   </li>
   <li>
     <h3 id="vt-direct">VT-Direct</h3>
 
-    <p>VT-Direct is Veritrans product that allows you to use our payment system directly in your website. Setup is easy with monthly fees, Suitable for medium-scale enterprises. <a href="../vtdirect/introduction.html">More »</a></p>
+    <p>VT-Direct is Veritrans product that allows you to use our payment system directly on your website. Setup is easy and available for a minimum monthly fees, suitable for medium-scale enterprises. <a href="../vtdirect/introduction.html">More »</a></p>
 
     <ul>
       <li>VT-Direct integration is not complicated with our PHP Library. Enjoy the many features we've specially formulated for your. <a href="../vtdirect/getting_started.html">Integration PHP »</a> </li>
@@ -242,7 +254,8 @@
   </li>
 </ol>
 
-<p><strong>Note</strong>: If you are using different programming language or framework, please visit our <a href="../sandbox/introduction.html">Veritrans API</a> documentation page to start integration process.</p>
+<p><br />
+<strong>Note</strong>: If you are using a different programming language or framework, please visit the <a href="../sandbox/introduction.html">Veritrans API</a> documentation page to start the integration process.</p>
 
 
 			<div class="pagination">
@@ -287,6 +300,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

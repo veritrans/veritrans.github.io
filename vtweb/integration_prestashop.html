@@ -174,47 +174,52 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="vtweb-integration-prestashop">
             <div class="row">
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
+    <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
     <a href="integration_php.html"><img src="../images/php_gray.jpg" /></a>
-    <div class="caption">PHP</div>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
+    <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
     <a href="integration_prestashop.html"><img src="../images/prestashop.jpg" /></a>
-    <div class="caption">Prestashop</div>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
+    <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
     <a href="integration_magento.html"><img src="../images/magento_gray.jpg" /></a>
-    <div class="caption">Magento</div>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
+    <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
     <a href="integration_opencart.html"><img src="../images/opencart_gray.jpg" /></a>
-    <div class="caption">Opencart</div>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-    <div class="thumbnail">
+    <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
     <a href="integration_woocommerce.html"><img src="../images/woocommerce_gray.jpg" /></a>
-    <div class="caption">Woocommerce</div>
     </div>
   </div>
 </div>
@@ -248,7 +253,7 @@
         <h4 id="installation-process">Installation Process</h4>
 
         <ol>
-          <li>Extract the plugin you have previously downloaded and rename folder into <strong>veritranspay</strong>. Then Zip the folder back into veritranspay.zip.</li>
+          <li>Extract the plugin you have previously downloaded and rename folder as <strong>veritranspay</strong>. Then Zip the folder back into veritranspay.zip.</li>
           <li>Access your PrestaShop <em>administrator</em> page.</li>
           <li>Go to menu <strong>Modules-modules</strong>.</li>
           <li>Choose <em>Add a new module</em>. Upload plugin file <strong>veritranspay.zip</strong>.</li>
@@ -308,7 +313,7 @@
 
         <ol>
           <li>
-            <p>Perform successful transaction in your online store by inputing a dummy credit card number as follows (Sandbox Mode):</p>
+            <p>Perform successful transaction in your online store by inputing a dummy credit card number as followed (Sandbox Mode):</p>
 
             <table>
               <thead>
@@ -417,6 +422,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

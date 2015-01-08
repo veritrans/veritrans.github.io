@@ -174,14 +174,24 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -189,10 +199,11 @@
             <h2 id="integration">Integration</h2>
 <hr />
 
-<h5 id="the-tutorial-below-will-assist-you-in-integrating-with-vt-direct-please-choose-your-desired-payment-method-if-further-assistance-is-required-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our-support-pagehttpsupportveritranscoid-veritrans-support"><em>The tutorial below will assist you in integrating with VT-Direct. Please choose your desired payment method. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our <a title="Veritrans Support" href="http://support.veritrans.co.id">support page</a>.</em></h5>
+<h5 id="the-tutorial-below-will-assist-you-in-integrating-vt-direct-please-choose-your-desired-payment-method-if-further-assistance-is-required-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our-support-pagehttpsupportveritranscoid-veritrans-support"><em>The tutorial below will assist you in integrating VT-Direct. Please choose your desired payment method. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our <a title="Veritrans Support" href="http://support.veritrans.co.id">support page</a>.</em></h5>
 <hr />
 
-<p>Please choose the payment method that you wish to integrate with:</p>
+<p>Please choose the payment method that you wish to integrate with:
+<br /><br /></p>
 
 <div class="row">
 	<div class="col-sm-2 col-xs-12">
@@ -265,6 +276,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

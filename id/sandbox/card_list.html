@@ -174,25 +174,33 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="id-sandbox-card-list">
             <h2 id="kartu-kredit-test">Kartu Kredit test</h2>
-<hr />
+<p><br /></p>
 
-<h5 id="anda-dapat-menggunakan-nomor-kartu-di-halaman-ini-untuk-dummy-test-transaksi-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Anda dapat menggunakan nomor kartu di halaman ini untuk dummy test transaksi. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
-<hr />
-
-<p>Berikut ini adalah daftar nomor kartu kredit khusus yang dapat digunakan untuk melakukan transaksi di Sandbox Environment, baik melalui halaman pembayaran VT-Web maupun charge request melaluiVT-Direct.</p>
+<p>Berikut ini adalah daftar nomor kartu kredit khusus yang dapat digunakan untuk melakukan transaksi di Sandbox Environment, baik melalui halaman pembayaran VT-Web maupun charge request melalui VT-Direct.
+<br /><br /></p>
 
 <h3 id="kartu-kredit">Kartu Kredit</h3>
 
@@ -305,11 +313,11 @@
     <p>Pemegang kartu tidak terdaftar untuk otentikasi, tetapi merchant mengirimkan permintaan otentikasi.<br /></p>
   </li>
   <li>
-    <p>Untuk transaksi 3DS yang sukses, transaksi tersebut sudah diverifikasi sebagai aman oleh asosiasi kartu kredit (Visa/Mastercard).<br /></p>
+    <p>Untuk transaksi 3DS yang sukses, transaksi tersebut sudah diverifikasi sebagai aman oleh asosiasi kartu kredit (Visa/Mastercard).</p>
   </li>
 </ol>
 
-<hr />
+<p><br /></p>
 
 <h3 id="mandiri-clickpay">Mandiri Clickpay</h3>
 
@@ -329,6 +337,8 @@
     </tr>
   </tbody>
 </table>
+
+<p><br /></p>
 
 
 			<div class="pagination">
@@ -373,6 +383,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

@@ -174,21 +174,33 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="sandbox-card-list">
             <h2 id="credit-card-number-for-testing">Credit card number for testing</h2>
+<p><br /></p>
 
-<p>Here is a list of dummy credit card numbers that can be used for transaction in the Sandbox Environment. It can be used both for VT-Web payment page as well as charge request through VT-Direct.</p>
+<p>Here is a list of dummy credit card numbers that can be used for transaction in the Sandbox Environment. It can be used for both for VT-Web payment page as well as charge request through VT-Direct.
+<br /><br /></p>
 
 <h3 id="credit-card">Credit Card</h3>
 
@@ -295,17 +307,17 @@
 
 <ol>
   <li>
-    <p>Cardholders and merchants are ready with 3DS, 3D card authentication is successful.<br /></p>
+    <p>Cardholders and merchants are ready with 3DS. 3DS card authentication is successful.<br /></p>
   </li>
   <li>
     <p>Cardholder is not enrolled for authentication, but the merchant sends an authentication request.<br /></p>
   </li>
   <li>
-    <p>For a successful 3DS transaction, the transaction has been verified as safe by credit card associations (Visa / Mastercard).<br /></p>
+    <p>For a successful 3DS transaction, the transaction has been verified as safe by credit card association (Visa / Mastercard).<br /></p>
   </li>
 </ol>
 
-<hr />
+<p><br /></p>
 
 <h3 id="mandiri-clickpay">Mandiri Clickpay</h3>
 
@@ -325,6 +337,8 @@
     </tr>
   </tbody>
 </table>
+
+<p><br /></p>
 
 
 			<div class="pagination">
@@ -369,6 +383,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

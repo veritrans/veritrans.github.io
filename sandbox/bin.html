@@ -174,23 +174,34 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="sandbox-bin">
             <h3 id="bin-promo">BIN Promo</h3>
 
-<p>BIN (Bank Identification Number) is the first <strong>6-digits</strong> of a credit card number. Credit Card issuer bank can be recognized from its BIN. BIN promo enables transaction charge to be done only by specified credit card, every BIN you used can be represented by first <strong>1 to 8 digits</strong> of your credit card number.</p>
+<p>BIN (Bank Identification Number) is the first <strong>6 digits</strong> of a credit card number. The credit card issuing bank can be recognized from its BIN. BIN promo enables a transaction charge to be done only by the specified credit card. Every BIN can be represented by first <strong>1 to 8 digits</strong> of your credit card number.</p>
 
-<p>Specification of BIN Promo is similar to <a href="charge.html#specification">transaction charge specification</a>. Since the tutorial of implementing Bin Promo on VT-web and VT-Direct are quite different, the tutorial will be explained separately.</p>
+<p>Specification of BIN Promo is similar to the <a href="charge.html#specification">transaction charge specification</a>. Since the tutorial of implementing Bin Promo on VT-web and VT-Direct are quite different, the tutorial will be explained separately.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -200,8 +211,10 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="vtweb">
+    <p><br /></p>
 
-    <p>Similar to VT-Web transaction charge, output from BIN Promo function is payment URL. Customer have to be redirected to VT-Web payment URL to complete the transaction proccess. Implementing BIN Promo on VT-Web is very simple, you only need to add  <code>credit_card_bins</code> function on JSON request of transaction charge. The following is JSON request for BIN Promo function on VT-Web:</p>
+    <p>Similar to the VT-Web transaction charge, output from BIN Promo function is payment URL. Customers have to be redirected to the VT-Web payment URL to complete the transaction proccess. Implementing BIN Promo on VT-Web is very simple, you only need to add the <code>credit_card_bins</code> function on the JSON request of the transaction charge. The following is a JSON request for the BIN Promo function on VT-Web:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -262,7 +275,9 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>JSON response structure on BIN Promo function is the same as <a href="charge.html#vtweb">VT-Web transaction charge</a>. Below is the successful JSON response:</p>
+    <p><br />
+The JSON response structure on the BIN Promo function is the same as <a href="charge.html#vtweb">VT-Web transaction charge</a>. Below is the successful JSON response:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -273,10 +288,12 @@
 
   </div>
   <div class="tab-pane" id="vtdirect">
+    <p><br /></p>
 
-    <p>For VT-Direct you have to get token ID, Token ID represents customer's credit card information that has been stored inside Veritrans server. To get the token, is similiar to <a href="../vtdirect/integration_cc.html#step1">normal transaction token</a>. </p>
+    <p>For VT-Direct you have to get token ID. Token ID represents customer's credit card information that has been stored inside Veritrans server. The acqusition of the token is similiar to that of a <a href="../vtdirect/integration_cc.html#step1">normal transaction token</a>. </p>
 
-    <p>After getting the token, BIN Promo transaction charge can be done by adding attribute <code>bins</code> on <code>credit_card</code>:</p>
+    <p>After getting the token, the BIN Promo transaction charge can be done by adding attribute <code>bins</code> on <code>credit_card</code>:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -337,11 +354,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>On above example, the registered BINs are <code>48111111</code>, <code>3111</code>, dan <code>5</code>. If credit card with <code>411111</code> is used, transaction charge will be denied.</p>
+    <p><br />
+In above example, the registered BINs are <code>48111111</code>, <code>3111</code>, and <code>5</code>. If credit card with <code>411111</code> is used, transaction charge will be denied.</p>
 
-    <p>Installment JSON Response structure is similar to <a href="charge.html#vtdirect-cc">transaction charge VT-Direct</a> using credit card. The only difference is on the <code>status_message</code> content. </p>
+    <p>The installment JSON Response structure is similar to that of the <a href="charge.html#vtdirect-cc">transaction charge VT-Direct</a> using credit card. The only difference is on the <code>status_message</code> content. </p>
 
-    <p>The example of success transaction JSON Response as follows:</p>
+    <p>An example of a successful transaction JSON Response is as followed:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1a1a66f7-27a7-4844-ba1f-d86dcc16ab27"</span><span class="p">,</span>
@@ -358,7 +376,8 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>The example of denied transaction is as follows:</p>
+    <p><br />
+An example of a denied transaction is as followed:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"400"</span><span class="p">,</span>
@@ -415,6 +434,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

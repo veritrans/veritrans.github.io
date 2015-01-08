@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,8 +201,10 @@
 
 <h5 id="tujuan-anda-memahami-kode-status-yang-digunakan-oleh-veritrans-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Tujuan: Anda memahami kode status yang digunakan oleh Veritrans. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
-<p>Status code di Veritrans API terbagi menjadi beberapa bagian, yaitu 2xx, 3xx, 4xx dan 5xx.</p>
+<p>Status code di Veritrans API terbagi menjadi beberapa bagian, yaitu 2xx, 3xx, 4xx dan 5xx.
+<br /></p>
 
 <h3 id="kode-2xx">Kode 2xx</h3>
 
@@ -206,7 +218,7 @@
   <tbody>
     <tr>
       <td>200</td>
-      <td>OK, request is success, and transaction is success (authorize, capture, settlement, cancel, refund, get order, approve challenge transactions), accepted by Veritrans and bank.</td>
+      <td>OK, request is success, and transaction is success (authorize, capture, settlement, cancel, get order, approve challenge transactions), accepted by Veritrans and bank.</td>
     </tr>
     <tr>
       <td>201</td>
@@ -218,6 +230,8 @@
     </tr>
   </tbody>
 </table>
+
+<p><br /></p>
 
 <h3 id="kode-3xx">Kode 3xx</h3>
 
@@ -235,6 +249,8 @@
     </tr>
   </tbody>
 </table>
+
+<p><br /></p>
 
 <h3 id="kode-4xx">Kode 4xx</h3>
 
@@ -305,6 +321,8 @@
   </tbody>
 </table>
 
+<p><br /></p>
+
 <h3 id="kode-5xx">Kode 5xx</h3>
 
 <table>
@@ -340,7 +358,7 @@
 
 
 			<div class="pagination">
-				<ul><li class="left">« Sebelumnya: <a href="card_list.html">Referensi API : Daftar Kartu Uji Coba</a></li><li class="right">Selanjutnya: <a href="/idhttp://support.veritrans.co.id">FAQ : FAQ</a> »</li></ul>
+				<ul><li class="left">« Sebelumnya: <a href="card_list.html">Referensi API : Daftar Kartu Uji Coba</a></li><li class="right">Selanjutnya: <a href="../plugin/plugin.html">Plugin : Plugin</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->
@@ -381,6 +399,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

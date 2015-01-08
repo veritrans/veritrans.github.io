@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -200,36 +210,38 @@
       <li>Toko online anda menggunakan e-Commerce Framework? Kami telah mengembangkan berbagai plugins untuk mempermudah integrasi.</li>
     </ul>
 
+    <p><br /></p>
+
     <div class="row">
    <div class="col-sm-2 col-xs-12">
-     <div class="thumbnail">
-     <a href="../../vtweb/integration_prestashop.html"><img src="../../images/prestashop.jpg" /></a>
-     <div class="caption">Prestashop</div>
+     <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
+     	<a href="../../vtweb/integration_prestashop.html"><img src="../../images/prestashop.jpg" /></a>
      </div>
    </div>
    <div class="col-sm-2 col-xs-12">
-     <div class="thumbnail">
-     <a href="../../vtweb/integration_magento.html"><img src="../../images/magento.jpg" /></a>
-     <div class="caption">Magento</div>
+     <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
+     	<a href="../../vtweb/integration_magento.html"><img src="../../images/magento.jpg" /></a>
      </div>
    </div>
    <div class="col-sm-2 col-xs-12">
-     <div class="thumbnail">
-     <a href="../../vtweb/integration_opencart.html"><img src="../../images/opencart.jpg" /></a>
-     <div class="caption">Opencart</div>
+     <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
+     	<a href="../../vtweb/integration_opencart.html"><img src="../../images/opencart.jpg" /></a>
      </div>
    </div>
    <div class="col-sm-2 col-xs-12">
-     <div class="thumbnail">
-     <a href="../../vtweb/integration_woocommerce.html"><img src="../../images/woocommerce.jpg" /></a>
-     <div class="caption">Woocommerce</div>
+     <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
+     	<a href="../../vtweb/integration_woocommerce.html"><img src="../../images/woocommerce.jpg" /></a>
      </div>
    </div>
  </div>
 
+    <p><br /></p>
+
     <ul>
       <li>Apabila anda tidak menggunakan e-commerce framework, integrasi VT-Web bukanlah hal rumit dengan menggunakan Library PHP kami. <a href="../vtweb/getting_started.html">Integrasi PHP »</a></li>
     </ul>
+
+    <p><br /></p>
   </li>
   <li>
     <h3 id="vt-direct">VT-Direct</h3>
@@ -242,7 +254,8 @@
   </li>
 </ol>
 
-<p><strong>Note</strong>: Jika anda menggunakan bahasa pemrograman atau framework lain, silahkan kunjungi halaman dokumentasi <a href="../sandbox/introduction.html">Veritrans API</a> kami untuk memulai proses integrasi.</p>
+<p><br />
+<strong>Note</strong>: Jika anda menggunakan bahasa pemrograman atau framework lain, silahkan kunjungi halaman dokumentasi <a href="../sandbox/introduction.html">Veritrans API</a> kami untuk memulai proses integrasi.</p>
 
 
 			<div class="pagination">
@@ -287,6 +300,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

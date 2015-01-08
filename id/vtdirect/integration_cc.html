@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,6 +201,7 @@
 
 <h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-kartu-kredit-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran kartu kredit. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
   <div class="col-sm-2 col-xs-12">
@@ -220,13 +231,15 @@
   </div>
 </div>
 <hr />
+<p><br /></p>
 
 <h3 id="tahapan-integrasi-vt-direct-kartu-kredit">Tahapan Integrasi VT-Direct Kartu Kredit</h3>
 
 <ol>
   <li>Mendapatkan Token</li>
   <li>Melakukan Charge Transaksi</li>
-  <li>Status Transaksi</li>
+  <li>Status Transaksi
+<br /><br /></li>
 </ol>
 
 <!-- Nav tabs -->
@@ -240,14 +253,15 @@
   <div class="tab-pane active" id="step1">
     <!-- step 1-->
     <!-- satu -->
+    <p><br /></p>
 
     <h2 id="mendapatkan-token">Mendapatkan Token</h2>
 
     <p><img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../../images/vtdirect_introduction_1.png" /></p>
 
-    <p><em>Proses VT-Direct (langkah 1 - 3)</em></p>
-
-    <p>Tahap ini mencakup langkah 1-3 dari diagram alur proses VT-Direct. Pada tahap ini, kita akan mencoba memperoleh token ID untuk suatu transaksi. Token ID adalah nilai unik yang berelasi dengan informasi pembayaran pelanggan (nomor kartu kredit, expiry date, CVV) pada suatu transaksi. Anda memerlukan token ID untuk melakukan charge transaksi pada tahap selanjutnya.</p>
+    <p><em>Proses VT-Direct (langkah 1 - 3)</em>
+<br /><br />
+Tahap ini mencakup langkah 1-3 dari diagram alur proses VT-Direct. Pada tahap ini, kita akan mencoba memperoleh token ID untuk suatu transaksi. Token ID adalah nilai unik yang berelasi dengan informasi pembayaran pelanggan (nomor kartu kredit, expiry date, CVV) pada suatu transaksi. Anda memerlukan token ID untuk melakukan charge transaksi pada tahap selanjutnya.</p>
 
     <p>Untuk mendapatkan token, ada tiga komponen yang harus dipersiapkan:</p>
 
@@ -257,9 +271,7 @@
       <li><a href="#script-tambahan">Script Tambahan</a></li>
     </ol>
 
-    <!-- Saat ini, ada tiga metode pembayaran yang disediakan oleh VT-Direct: kartu kredit, Mandiri Clickpay, dan CIMB Clicks. Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk melakukan integrasi VT-Direct dengan metode pembayaran kartu kredit. Untuk integrasi metode pembayaran lain, silahkan melihat halaman dokumentasi yang sesuai. -->
-
-    <hr />
+    <p><br /></p>
 
     <h3 id="form-pembayaran">Form Pembayaran</h3>
 
@@ -274,7 +286,8 @@
       <li>CVV (Card Verification Value)</li>
     </ol>
 
-    <p>Berikut adalah contoh form pada file <code>form_vtdirect.html</code>:</p>
+    <p>Berikut adalah contoh form pada file <code>form_vtdirect.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -307,28 +320,23 @@
   <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
-
-    <hr />
+    <p><br /></p>
 
     <h3 id="javascript">Library Javascript Veritrans</h3>
 
     <p>Library ini memungkinkan informasi kartu kredit pelanggan anda dikirimkan ke server Veritrans dengan aman. Setelah informasi kartu kredit dikirimkan, Server Veritrans akan mengembalikan sebuah token ID. Demi alasan keamanan, kami melarang pihak merchant untuk mengimplementasikan Javascript sendiri. Jika ada fitur tambahan yang ingin ditambahkan ke dalam library Javascript, harap hubungi <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">Veritrans support</a>.</p>
 
-    <p>Untuk menggunakan library ini, anda cukup menambahkan satu baris kode HTML pada <code>form_vtdirect.html</code> dalam tag <code>&lt;head&gt;</code>.</p>
+    <p>Untuk menggunakan library ini, anda cukup menambahkan satu baris kode HTML pada <code>form_vtdirect.html</code> dalam tag <code>&lt;head&gt;</code>.
+<br /><br /></p>
 
 <pre><code class="highlight html">
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 </code></pre>
 
-    <!-- Dan jika anda menggunakan **akun produksi**, tambahkan:
-
-~~~ html
-
-<script src="https://api.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
-~~~ -->
-
-    <p>Isi awal dari file <code>form_vtdirect.html</code> jika anda menggunakan akun sandbox adalah sebagai berikut:</p>
+    <p><br />
+Isi awal dari file <code>form_vtdirect.html</code> jika anda menggunakan akun sandbox adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -340,38 +348,37 @@
 
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
-
-    <hr />
+    <p><br /></p>
 
     <h3 id="script-tambahan">Script Tambahan</h3>
 
-    <p>Script tambahan digunakan untuk menghubungkan konten form yang telah kita buat dengan <code>veritrans.min.js</code>. Script pertama yang digunakan adalah <strong>jQuery</strong>. jQuery akan mempermudah akses elemen HTML dan menambahkan event saat form di-submit. Untuk menggunakan jQuery, tambahkan kode berikut pada tag <code>head</code> file <code>form_vtdirect.html</code>:</p>
+    <p>Script tambahan digunakan untuk menghubungkan konten form yang telah kita buat dengan <code>veritrans.min.js</code>. Script pertama yang digunakan adalah <strong>jQuery</strong>. jQuery akan mempermudah akses elemen HTML dan menambahkan event saat form di-submit. Untuk menggunakan jQuery, tambahkan kode berikut pada tag <code>head</code> file <code>form_vtdirect.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
-
-    <p>Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fancybox berperan dalam pembuatan tampilan form konfirmasi 3D secure yang dinamis. Anda dapat mengunduh jQuery fancybox di <a href="https://github.com/fancyapps/fancyBox">sini</a>. Extract library tersebut dan tambahkan kode berikut ke dalam tag <code>head</code> file <code>form_vtdirect.html</code>:</p>
+    <p><br />
+Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fancybox berperan dalam pembuatan tampilan form konfirmasi 3D secure yang dinamis. Anda dapat mengunduh jQuery fancybox di <a href="https://github.com/fancyapps/fancyBox">sini</a>. Extract library tersebut dan tambahkan kode berikut ke dalam tag <code>head</code> file <code>form_vtdirect.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"fancybox/jquery.fancybox.pack.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"fancybox/jquery.fancybox.css"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">media=</span><span class="s">"screen"</span> <span class="nt">/&gt;</span>
 </code></pre>
+    <p><br /></p>
 
     <p>Pastikan path file javascript dan CSS fancybox sesuai dengan struktur folder project anda.</p>
 
-    <p>Script terakhir digunakan untuk mengintegrasikan semua komponen yang telah kita buat sebelumnya. Pada script ini, anda harus memastikan bahwa <strong>client key</strong> dan <strong>URL API Veritrans</strong> sudah tepat. Client key dapat anda peroleh di halaman <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. URL API Veritrans untuk environment Sandbox adalah:</p>
+    <p>Script terakhir digunakan untuk mengintegrasikan semua komponen yang telah kita buat sebelumnya. Pada script ini, anda harus memastikan bahwa <strong>client key</strong> dan <strong>URL API Veritrans</strong> sudah tepat. Client key dapat anda peroleh di halaman <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. URL API Veritrans untuk environment Sandbox adalah:
+<br /><br /></p>
 
-    <!-- ~~~
-https://api.veritrans.co.id/v2/token
-~~~
-
-Sedangkan URL API Veritrans untuk environment sandbox adalah:
- -->
 <pre><code class="highlight plaintext">https://api.sandbox.veritrans.co.id/v2/token
 </code></pre>
+    <p><br /></p>
 
     <p>Untuk meningkatkan keamanan transaksi online, kami sangat menyarankan anda untuk mengaktifkan fitur 3D Secure. Ada 2 informasi yang perlu diberikan agar fitur ini dapat digunakan: acquiring bank (Bank Penerbit Kartu Kredit Merchant) dan nilai transaksi.</p>
 
-    <p>Jika anda menggunakan environment sandbox, acquiring bank adalah BNI, dan nilai transaksi adalah Rp 200.000,00, contoh script yang ditambakan ke dalam tag <code>head</code> file <code>form_vtdirect.html</code>:</p>
+    <p>Jika anda menggunakan environment sandbox, acquiring bank adalah BNI, dan nilai transaksi adalah Rp 200.000,00, contoh script yang ditambakan ke dalam tag <code>head</code> file <code>form_vtdirect.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
@@ -448,6 +455,7 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
+    <p><br /></p>
 
     <p>Ketika pelanggan menekan tombol <code>Pay</code>, javascript akan mengumpulkan nilai <em>field</em> <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, <code>cvv</code>,  dan <code>amount</code> dari form HTML. Nilai dari <em>field-field</em> ini kemudian dikirim secara aman ke server Veritrans. Jika nilai <em>field</em> yang dikirimkan valid, server Veritrans akan mengembalikan sebuah token ID yang dapat digunakan untuk melakukan charge transaksi. </p>
 
@@ -455,7 +463,8 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 
     <p>Penggunaan jQuery dan jQuery fancybox bersifat opsional. Anda dapat menggunakan framework javascript lain atau menggunakan script sendiri untuk menampilkan dialog 3D Secure.</p>
 
-    <p>Contoh akun kartu kredit yang dapat digunakan untuk transaksi 3DS adalah:</p>
+    <p>Contoh akun kartu kredit yang dapat digunakan untuk transaksi 3DS adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -484,6 +493,8 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
       </tbody>
     </table>
 
+    <p><br /></p>
+
     <p>Informasi lebih lengkap terkait akun yang dapat digunakan untuk testing dapat dilihat di <a href="../sandbox/card_list.html">Referensi API - Daftar kartu uji coba</a>.</p>
 
   </div>
@@ -493,14 +504,15 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
     <!-- step 2-->
 
     <!-- dua -->
+    <p><br /></p>
 
     <h2 id="melakukan-charge-transaksi">Melakukan Charge Transaksi</h2>
 
     <p><img alt="vtdirect_intro2" class="img-responsive img-thumbnail" src="../../images/vtdirect_introduction_2.png" /></p>
 
-    <p><em>Proses VT-Direct (Langkah 4 - 6)</em></p>
-
-    <p>Tahap ini membahas cara charge transaksi menggunakan VT-Direct, implementasi charge transaksi diasumsikan ada di file PHP bernama <code>checkout.php</code>. Pada <code>checkout.php</code>, atribut <code>token_id</code> dan <code>price</code> dapat diakses untuk melakukan charge transaksi. Kedua atribut ini dikirim oleh form file <code>form_checkout.html</code> yang ada pada bagian <strong>Mendapatkan Token</strong>.</p>
+    <p><em>Proses VT-Direct (Langkah 4 - 6)</em>
+<br /><br />
+Tahap ini membahas cara charge transaksi menggunakan VT-Direct, implementasi charge transaksi diasumsikan ada di file PHP bernama <code>checkout.php</code>. Pada <code>checkout.php</code>, atribut <code>token_id</code> dan <code>price</code> dapat diakses untuk melakukan charge transaksi. Kedua atribut ini dikirim oleh form file <code>form_checkout.html</code> yang ada pada bagian <strong>Mendapatkan Token</strong>.</p>
 
     <p>Untuk melakukan charge transaksi, ada beberapa hal yang harus dipersiapkan:</p>
 
@@ -518,11 +530,13 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
       </li>
     </ol>
 
-    <p>Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada <code>form_checkout.html</code>. Server key dapat anda peroleh di halaman <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Order ID adalah nilai unik dari suatu transaksi yang bebas anda ditentukan. </p>
+    <p><br />
+Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada <code>form_checkout.html</code>. Server key dapat anda peroleh di halaman <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Order ID adalah nilai unik dari suatu transaksi yang bebas anda ditentukan. </p>
 
     <p>Data transaksi dapat berisi informasi tentang barang dan pelanggan anda. Data transaksi akan disimpan di dalam server Veritrans dan dapat anda ambil sewaktu-waktu. Data ini bersifat opsional.  Umumnya, data transaksi diperoleh dengan menambahkan field yang ada di <code>form_checkout.html</code>. Detail struktur dan keterangan data transaksi dapat dilihat di <a href="../sandbox/charge.html#specification">sini</a>.</p>
 
-    <p>Contoh isi file <code>checkout.php</code> untuk melakukan charge transaksi (simple transaction data):</p>
+    <p>Contoh isi file <code>checkout.php</code> untuk melakukan charge transaksi (simple transaction data):
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
@@ -561,8 +575,10 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 
 <span class="cp">?&gt;</span>
 </code></pre>
+    <p><br /></p>
 
-    <p>Contoh isi file <code>checkout.php</code> untuk melakukan charge transaksi (full transaction data):</p>
+    <p>Contoh isi file <code>checkout.php</code> untuk melakukan charge transaksi (full transaction data):
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
@@ -656,12 +672,12 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 
 <span class="cp">?&gt;</span>
 </code></pre>
-
-    <hr />
+    <p><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -698,7 +714,8 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
       </tbody>
     </table>
 
-    <p>Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+    <p><br />
+Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
 
     <p>Ketika proses charge transaksi berhasil dilakukan, anda dapat melihat status transaksi. Cara melihat status transaksi akan dibahas pada <a href="integration_cc.html#step3">langkah selanjutnya</a>.</p>
 
@@ -709,10 +726,12 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
     <!-- step 3-->
 
     <!-- tiga -->
+    <p><br /></p>
 
     <h2 id="status-transaksi">Status Transaksi</h2>
 
-    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis, contoh respon JSON yang dikembalikan oleh Veritrans adalah sebagai berikut:</p>
+    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis, contoh respon JSON yang dikembalikan oleh Veritrans adalah sebagai berikut:
+<br /><br /></p>
 
     <h3 id="respon-sukses">Respon Sukses</h3>
 
@@ -731,6 +750,7 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
     "status_message" =&gt; "Success, Credit Card transaction is successful"
 );
 </code></pre>
+    <p><br /></p>
 
     <h3 id="respon-gagal">Respon Gagal</h3>
 
@@ -749,7 +769,8 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 );
 </code></pre>
 
-    <p>Salah satu informasi yang paling penting dalam respon JSON adalah status transaksi. Status transaksi dapat dilihat di atribut <code>transaction_status</code>. Ada 3 macam status transaksi:</p>
+    <p><br />
+Salah satu informasi yang paling penting dalam respon JSON adalah status transaksi. Status transaksi dapat dilihat di atribut <code>transaction_status</code>. Ada 3 macam status transaksi:</p>
 
     <ol>
       <li><strong>Capture</strong>: Transaksi berhasil.</li>
@@ -757,7 +778,8 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
       <li><strong>Challenge</strong>: Transaksi ditolak oleh FDS. Anda harus melakukan konfirmasi di Merchant Administration Portal (MAP).</li>
     </ol>
 
-    <p>Anda dapat menambahkan kode PHP berikut ke dalam bagian akhir file <code>checkout.php</code> untuk menyampaikan status transaksi pada pelanggan anda:</p>
+    <p>Anda dapat menambahkan kode PHP berikut ke dalam bagian akhir file <code>checkout.php</code> untuk menyampaikan status transaksi pada pelanggan anda:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
@@ -802,6 +824,7 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 </code></pre>
+    <p><br /></p>
 
     <p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Jika nilai <code>transaction_status</code> adalah <code>capture</code>, kartu kredit pelanggan anda sudah di-charge ke akun anda. Selain menyampaikan status transaksi ke pelanggan, anda juga dapat menggunakan kode di atas untuk meng-update database terkait, misalnya menandai bahwa transaksi dengan <code>order_id</code> tersebut telah terbayar. </p>
 
@@ -856,6 +879,9 @@ Sedangkan URL API Veritrans untuk environment sandbox adalah:
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

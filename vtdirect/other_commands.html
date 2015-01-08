@@ -174,14 +174,24 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -189,8 +199,9 @@
             <h2 id="other-command">Other Command</h2>
 <hr />
 
-<h5 id="the-following-tutorial-will-help-you-get-to-know-the-commands-that-can-be-used-in-the-vt-direct-if-further-assistance-is-required-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our-support-pagehttpsupportveritranscoid-veritrans-support"><em>The following tutorial will help you get to know the commands that can be used in the VT-Direct. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our <a title="Veritrans Support" href="http://support.veritrans.co.id">support page</a>.</em></h5>
+<h5 id="the-following-tutorial-will-help-you-get-familiarized-with-the-commands-that-can-be-used-in-the-vt-direct-if-further-assistance-is-required-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our-support-pagehttpsupportveritranscoid-veritrans-support"><em>The following tutorial will help you get familiarized with the commands that can be used in the VT-Direct. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our <a title="Veritrans Support" href="http://support.veritrans.co.id">support page</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <p>In the integration process, we have explained how to charge a transaction using VT-Direct. In addition to the charge operation, there are other operations related to the transaction you can do:</p>
 
@@ -199,6 +210,8 @@
   <li>Approve transaction</li>
   <li>Cancel transaction</li>
 </ol>
+
+<p><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -212,7 +225,8 @@
 
     <h2 id="status-transaction">Status transaction</h2>
 
-    <p>In certain situations, you can see the status of the transaction using the function <code>Veritrans_Transaction::status</code>. You simply give the order ID when using this function.</p>
+    <p>In certain situations, you can see the status of the transaction using the function <code>Veritrans_Transaction::status</code>. You simply give the order ID when using this function.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -226,7 +240,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Structure and instance variables <code>$result</code> are as follows:</p>
+    <p><br />
+Structure and instance variables <code>$result</code> are shown as followed:
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
     "status_code" =&gt; "200",
@@ -250,7 +266,8 @@
 
     <h2 id="approve-transaction">Approve transaction</h2>
 
-    <p>You can approve the transaction using the function <code>Veritrans_Transaction::approve ()</code>. Approve only be performed on the transaction who have <code>challenge</code> status from Fraud Detection System (FDS). You simply give the order ID when using this function.</p>
+    <p>You can approve the transaction using the function <code>Veritrans_Transaction::approve ()</code>. Approval can only be performed on transactions that have a <code>challenge</code> status from the Fraud Detection System (FDS). You simply give the order ID when using this function.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -264,7 +281,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Structure and instance variables <code>$result</code> are as follows:</p>
+    <p><br />
+Structure and instance variables <code>$result</code> are as followed:
+<br /><br /></p>
 
 <pre><code class="highlight php">array( 
     "status_code" =&gt; "200",
@@ -283,10 +302,12 @@
 </code></pre>
   </div>
   <div class="tab-pane" id="cancel">
+    <p><br /></p>
 
     <h2 id="cancel-transaction">Cancel transaction</h2>
 
-    <p>You can do cancel transaction in VT-Direct using <code>Veritrans_Transaction::cancel()</code> function. Cancel the transaction can only be done on a transaction that has not settlement yet. You simply give the order ID when using this function.</p>
+    <p>You can do cancel transaction in VT-Direct using <code>Veritrans_Transaction::cancel()</code> function. Cancellation can only be done on a transactions that have not settlement yet. You simply give the order ID when using this function.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -300,7 +321,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Structure and instance variables <code>$result</code> are as follows:</p>
+    <p><br />
+Structure and instance variables <code>$result</code> are as followed:
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
     "status_code" =&gt; "200",
@@ -362,6 +385,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

@@ -174,47 +174,52 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="id-vtweb-integration-magento">
             <div class="row">
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
 		<a href="integration_php.html"><img src="../../images/php_gray.jpg" /></a>
-		<div class="caption">PHP</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
 		<a href="integration_prestashop.html"><img src="../../images/prestashop_gray.jpg" /></a>
-		<div class="caption">Prestashop</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
 		<a href="integration_magento.html"><img src="../../images/magento.jpg" /></a>
-		<div class="caption">Magento</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
 		<a href="integration_opencart.html"><img src="../../images/opencart_gray.jpg" /></a>
-		<div class="caption">Opencart</div>
 		</div>
 	</div>
 	<div class="col-sm-2 col-xs-12">
-		<div class="thumbnail">
+		<div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
 		<a href="integration_woocommerce.html"><img src="../../images/woocommerce_gray.jpg" /></a>
-		<div class="caption">Woocommerce</div>
 		</div>
 	</div>
 </div>
@@ -227,7 +232,6 @@
   <li>Tes Transaksi</li>
   <li>Cicilan (Opsional)</li>
 </ol>
-
     <p><br /></p>
 
     <!-- Nav tabs -->
@@ -264,11 +268,10 @@
           <li>Buka menu <strong>System - Configuration</strong> pada halaman administrasi Magento.</li>
           <li>Pada bagian <strong>Sales-Payment Methods</strong> cari tab Veritrans. Bila tab Veritrans belum ada, klik <strong>Save Config</strong> terlebih dahulu.</li>
           <li>Klik general untuk memulai konfigurasi.</li>
-          <li>
-            <p>Masukkan data-data yang diperlukan seperti di bawah ini kemudian klik <strong>Save Config</strong>.</p>
-
-            <p><img alt="Magento Config" class="img-responsive img-thumbnail" src="../../images/magen01.png" /></p>
-          </li>
+          <li>Masukkan data-data yang diperlukan seperti di bawah ini kemudian klik <strong>Save Config</strong>.
+ <br /><br />
+ <img alt="Magento Config" class="img-responsive img-thumbnail" src="../../images/magen01.png" />
+<br /><br /></li>
           <li>
             <p>Login ke portal MAP untuk mengubah isi pada beberapa opsi berikut:</p>
 
@@ -306,6 +309,7 @@
       </div>
 
       <div class="tab-pane" id="magento-step2">
+        <p><br /></p>
 
         <p>Di tahap ini, kita akan mencoba melakukan tes transaksi. Jika anda menggunakan akun sandbox, berbagai macam skenario transaksi dapat diuji coba, daftar skenario beserta informasi akun yang tersedia untuk uji coba dapat dilihat di <a href="../sandbox/card_list.html">sini</a>.</p>
 
@@ -345,9 +349,10 @@
           </tbody>
         </table>
 
-        <p>Bila Setting plugin sudah benar, maka akan tampil halaman pembayaran VT-Web.</p>
-
-        <p><img alt="VT-Web Complete" class="img-responsive img-thumbnail" src="../../images/vtweb_complete.png" /></p>
+        <p><br />
+Bila Setting plugin sudah benar, maka akan tampil halaman pembayaran VT-Web.
+<br /><br />
+<img alt="VT-Web Complete" class="img-responsive img-thumbnail" src="../../images/vtweb_complete.png" /></p>
 
         <hr />
 
@@ -382,9 +387,12 @@
 
       </div>
 
-      <div class="tab-pane active" id="magento-step3">
+      <div class="tab-pane" id="magento-step3">
 
-        <p>Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant harus melakukan beberapa perubahan di plugin.</p>
+        <p><br />
+Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant harus melakukan beberapa perubahan di plugin.</p>
+
+        <p><br /></p>
 
         <h4 id="konfigurasi-cicilan-untuk-semua-produk">1. Konfigurasi Cicilan untuk semua produk</h4>
 
@@ -401,11 +409,9 @@
           <li>Ubah nilai <strong>Enable Installment BNI</strong> atau <strong>Enable Installment Mandiri</strong> menjadi <code>YES</code>, bila Anda ingin menggunakan bank tersebut dalam fitur Installment,</li>
           <li>Pilih nilai-nilai pada <strong>Installment BNI Term</strong> atau <strong>Installment Mandiri Term</strong> sesuai kesepakatan dengan bank terkait, </li>
           <li>Untuk memilih <strong>Installment Term</strong> lebih dari satu silahkan masukan term yang sudah disepakati dengan bank dipisahkan dengan tanda koma (,).</li>
-          <li>
-            <p>Klik tombol <strong>Save Config</strong> pada bagian atas (pojok kanan) untuk menyimpan konfigurasi yang telah diubah.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/installment_magento.png" /></p>
-          </li>
+          <li>Klik tombol <strong>Save Config</strong> pada bagian atas (pojok kanan) untuk menyimpan konfigurasi yang telah diubah.
+<br /><br />
+ <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/installment_magento.png" /></li>
         </ol>
 
         <hr />
@@ -430,11 +436,10 @@
           <li>Pada bagian <strong>Sales - Payment Methods</strong> cari tab Veritrans.</li>
           <li>Tab Veritrans terdiri dari 4 bagian: General, Internet Banking, Bank Transfer dan Installment. Untuk proses integrasi installment, silahkan pilih <strong>Installment</strong>.</li>
           <li>Ubah bagian <strong>Enable Installment</strong> menjadi <code>Certain Products</code>.</li>
-          <li>
-            <p>Ubah nilai <strong><em>Enable Installment BNI</em></strong> atau <strong><em>Enable Installment Mandiri</em></strong> menjadi <code>YES</code> bila Anda ingin menggunakan bank tersebut dalam fitur Installment. Sebelumnya, pastikan bahwa Anda telah melakukan kesepakatan dengan pihak bank terkait.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/installment_magento2.png" /></p>
-          </li>
+          <li>Ubah nilai <strong><em>Enable Installment BNI</em></strong> atau <strong><em>Enable Installment Mandiri</em></strong> menjadi <code>YES</code> bila Anda ingin menggunakan bank tersebut dalam fitur Installment. Sebelumnya, pastikan bahwa Anda telah melakukan kesepakatan dengan pihak bank terkait.
+<br /><br />
+ <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/installment_magento2.png" />
+<br /><br /></li>
         </ol>
 
         <p><strong>B. Penambahan Atribut Installment pada Produk-Produk</strong></p>
@@ -444,11 +449,10 @@
         <ol>
           <li>Buka halaman admin Magento,</li>
           <li>Buka menu <strong><em>Catalog - Attributes - Manage Attribute</em></strong>.</li>
-          <li>
-            <p>Klik tombol <strong><em>Add New Attribute</em></strong>  untuk membuat atribut baru.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain1.png" /></p>
-          </li>
+          <li>Klik tombol <strong><em>Add New Attribute</em></strong>  untuk membuat atribut baru.
+<br /><br />
+ <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain1.png" />
+<br /><br /></li>
           <li>
             <p>Setelah masuk ke halaman <strong><em>New Attribute</em></strong>, ada beberapa nilai penting yang perlu diubah sesuai ketentuan berikut :</p>
 
@@ -483,7 +487,8 @@
               </tbody>
             </table>
 
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain2.png" /></p>
+            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain2.png" />
+<br /><br /></p>
           </li>
           <li>Setelah selesai melakukan konfigurasi klik tombol <strong><em>Save Attribute</em></strong></li>
           <li>Pada halaman <strong><em>Manage Label / Options</em></strong> pada bagian <strong><em>vManage Titles (Size, Color, etc)</em></strong>, silahkan ubah nilai <code>Admin</code> dengan <code>Payment</code>.</li>
@@ -518,28 +523,27 @@ Berikut adalah penjelasan detail dari format yang berlaku :</p>
               <p><strong>Note:</strong> untuk tes pada sandbox hanya dapat menggunakan cicilan BNI 6 bulan, BNI 12 bulan, Mandiri 6 bulan, dan Mandiri 12 bulan.</p>
             </blockquote>
 
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain3.png" /></p>
+            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain3.png" />
+<br /><br /></p>
           </li>
           <li>Klik <strong><em>Save Attribute</em></strong> setelah selesai melakukan konfigurasi.</li>
-          <li>
-            <p>Berikutnya yang harus dilakukan adalah membuat <strong><em>Attribute Sets</em></strong>. Langkah pertama, silahkan buka menu <strong><em>Catalog » Attributes » Manage Attribute Sets</em></strong>.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain4.png" /></p>
-          </li>
+          <li>Berikutnya yang harus dilakukan adalah membuat <strong><em>Attribute Sets</em></strong>. Langkah pertama, silahkan buka menu <strong><em>Catalog » Attributes » Manage Attribute Sets</em></strong>.
+<br /><br />
+ <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain4.png" />
+<br /><br /></li>
           <li>Klik <em>attribute set name</em> yang Anda ingin tambahkan fitur <em>installment</em>-nya. Sebagai contoh : misalkan Anda akan menambahkan fitur installment pada produk handphone, maka dari itu Anda harus memilih attribute set “<strong>cell phone</strong>”.
 Pada contoh ini, akan digunakan attribute set <strong>DEFAULT</strong>.</li>
           <li>Berikutnya adalah masuk ke halaman <strong><em>Edit New Attribute Sets</em></strong>. Pada bagian ini buatlah sebuah grup dengan melakukan klik pada tombol <strong><em>Add New</em></strong> di bagian <strong><em>Groups</em></strong>. </li>
-          <li>
-            <p>Akan muncul pop-up untuk memberikan nama pada <strong><em>Groups</em></strong> baru. Isikan dengan nama <strong><em>Payment Method</em></strong>, lalu klik <strong><em>OK</em></strong>.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain5.png" /></p>
-          </li>
-          <li>
-            <p>Carilah attribute <strong><em>Payment</em></strong> pada bagian <strong><em>Unassigned Attribute</em></strong> dan grup <strong><em>Payment Method</em></strong> pada bagian <strong><em>Groups</em></strong>. Drag atribut <strong><em>Payment</em></strong> ke grup <strong><em>Payment Method</em></strong>. Sehingga grup <strong><em>Payment Method</em></strong> kini memiliki atribut <strong><em>Payment</em></strong>.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain6.png" /></p>
-          </li>
-          <li>Klik <strong><em>Save Attribute Sets</em></strong> setelah selesai melakukan pemindahan tersebut</li>
+          <li>Akan muncul pop-up untuk memberikan nama pada <strong><em>Groups</em></strong> baru. Isikan dengan nama <strong><em>Payment Method</em></strong>, lalu klik <strong><em>OK</em></strong>.
+<br /><br />
+<img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain5.png" />
+<br /><br /></li>
+          <li>Carilah attribute <strong><em>Payment</em></strong> pada bagian <strong><em>Unassigned Attribute</em></strong> dan grup <strong><em>Payment Method</em></strong> pada bagian <strong><em>Groups</em></strong>. Drag atribut <strong><em>Payment</em></strong> ke grup <strong><em>Payment Method</em></strong>. Sehingga grup <strong><em>Payment Method</em></strong> kini memiliki atribut <strong><em>Payment</em></strong>.
+<br /><br />
+<img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain6.png" />
+<br /><br /></li>
+          <li>Klik <strong><em>Save Attribute Sets</em></strong> setelah selesai melakukan pemindahan tersebut
+<br /></li>
         </ol>
 
         <p><strong>C. Membuat Produk Cicilan</strong></p>
@@ -552,17 +556,15 @@ Pada contoh ini, akan digunakan attribute set <strong>DEFAULT</strong>.</li>
           <li>Buka halaman admin Magento.</li>
           <li>Buka menu <strong><em>Catalog - Manage Products</em></strong>.</li>
           <li>Klik tombol <strong><em>Add Product</em></strong>.</li>
-          <li>
-            <p>Pada halaman <strong><em>Settings - New Product</em></strong>, pilih <strong><em>Attribute Set</em></strong> sesuai dengan Attribute set yang sudah ditambahkan pada <strong><em>attribute  payment</em></strong>. Sedangkan untuk <strong><em>Product Type</em></strong>, silahkan pilih <strong><em>Configurable Product</em></strong>.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain7.png" /></p>
-          </li>
+          <li>Pada halaman <strong><em>Settings - New Product</em></strong>, pilih <strong><em>Attribute Set</em></strong> sesuai dengan Attribute set yang sudah ditambahkan pada <strong><em>attribute  payment</em></strong>. Sedangkan untuk <strong><em>Product Type</em></strong>, silahkan pilih <strong><em>Configurable Product</em></strong>.
+<br /><br />
+ <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain7.png" />
+<br /><br /></li>
           <li>Klik tombol <strong><em>continue</em></strong> setelah selesai melakukan konfigurasi.</li>
-          <li>
-            <p>Halaman selanjutnya merupakan halaman untuk memilih jenis kombinasi yang ada pada masing-masing produk. Pilihlah sesuai dengan kriteria kombinasi yang ada.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain8.png" /></p>
-          </li>
+          <li>Halaman selanjutnya merupakan halaman untuk memilih jenis kombinasi yang ada pada masing-masing produk. Pilihlah sesuai dengan kriteria kombinasi yang ada.
+<br /><br />
+ <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain8.png" />
+<br /><br /></li>
           <li>Klik tombol <strong><em>continue</em></strong> setelah selesai melakukan konfigurasi.</li>
           <li>
             <p>Selanjutnya, maka akan masuk ke halaman <strong><em>New Product Information</em></strong>. Pada halaman ini, isilah bagian-bagian yang diperlukan sesuai dengan keinginan Anda. Akan tetapi, ada beberapa bagian yang bersifat mandatory (wajib untuk diisi), yaitu:</p>
@@ -599,13 +601,13 @@ Pada contoh ini, akan digunakan attribute set <strong>DEFAULT</strong>.</li>
               </tbody>
             </table>
 
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain9.png" /></p>
+            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain9.png" />
+<br /><br /></p>
           </li>
-          <li>
-            <p>Masih pada halaman yang sama, silahkan lihat di bagian <strong><em>Associated Products</em></strong> untuk membuat <strong><em>Simple Product</em></strong> yang nantinya akan disambungkan dengan <strong><em>Configurable Product</em></strong>.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain10.png" /></p>
-          </li>
+          <li>Masih pada halaman yang sama, silahkan lihat di bagian <strong><em>Associated Products</em></strong> untuk membuat <strong><em>Simple Product</em></strong> yang nantinya akan disambungkan dengan <strong><em>Configurable Product</em></strong>.
+<br /><br />
+ <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain10.png" />
+<br /><br /></li>
           <li>
             <p>Akan muncul pop-up window halaman <strong><em>New Product Information</em></strong>. Selanjutnya, silahkan lakukan pengisian pada bagian-bagian yang diperlukan sesuai dengan keinginan Anda. Akan tetapi, ada beberapa bagian yang bersifat mandatory (wajib untuk diisi), yaitu:</p>
 
@@ -648,21 +650,20 @@ Pada contoh ini, akan digunakan attribute set <strong>DEFAULT</strong>.</li>
 
             <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain11.png" /></p>
 
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain12.png" /></p>
+            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain12.png" />
+<br /><br /></p>
           </li>
           <li>Setelah selesai melakukan pengisian pada <strong><em>Product Information</em></strong>,  klik <strong><em>save</em></strong>.</li>
           <li>Ulangi langkah-langkah pada pembuatan produk sebanyak kombinasi produk yang Anda inginkan. Contoh : misalkan, produk yang Anda jual memiliki 3 variasi warna dan memiliki 2 jenis cicilan, maka akan diperlukan untuk membuat 6 kombinasi produk,</li>
           <li>Setelah Anda selesai menambahkan <strong><em>Simple Product</em></strong>, maka pada halaman <strong><em>Associated Product</em></strong> akan tampil produk-produk yang tersambung dengan <strong><em>Configurable Product</em></strong>.</li>
-          <li>
-            <p>Jika Anda lihat sudah sesuai dengan yang diinginkan, silahkan klik tombol <strong><em>save</em></strong>.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain13.png" /></p>
-          </li>
-          <li>
-            <p>Item dapat ditemukan pada kolom/field SEARCH di halaman web Anda, atau sesuai pada posisi Anda menempatkan produk tersebut. Pada tampilan add to cart akan tampil <em>dropdown</em> menu Payment, yang berisikan beberapa simple item.</p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain14.png" /></p>
-          </li>
+          <li>Jika Anda lihat sudah sesuai dengan yang diinginkan, silahkan klik tombol <strong><em>save</em></strong>.
+<br /><br />
+<img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain13.png" />
+<br /><br /></li>
+          <li>Item dapat ditemukan pada kolom/field SEARCH di halaman web Anda, atau sesuai pada posisi Anda menempatkan produk tersebut. Pada tampilan add to cart akan tampil <em>dropdown</em> menu Payment, yang berisikan beberapa simple item.
+<br /><br />
+<img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain14.png" />
+<br /><br /></li>
         </ol>
 
       </div>
@@ -713,6 +714,9 @@ Pada contoh ini, akan digunakan attribute set <strong>DEFAULT</strong>.</li>
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

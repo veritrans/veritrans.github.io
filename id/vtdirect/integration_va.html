@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,6 +201,7 @@
 
 <h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-virtual-account-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran Virtual Account. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
   <div class="col-sm-2 col-xs-12">
@@ -221,6 +232,7 @@
 </div>
 
 <hr />
+<p><br /></p>
 
 <p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah virtual account, saat ini Veritrans sudah terintegrasi dengan Bank Permata untuk proses virtual account. Dengan menggunakan layanan ini, pelanggan anda akan memiliki pilihan untuk melakukan pembayaran melalui transfer bank ke rekening virtual account Bank Permata. </p>
 
@@ -235,7 +247,8 @@
   <li>Status Transaksi</li>
 </ol>
 
-<p>Berbeda dengan metode pembayaran lain (kartu kredit, Mandiri Clickpay dan CIMB Clicks), proses utama pembayaran Virtual Account tidak dilakukan di halaman anda. Pelanggan melakukan pembayaran melalui transfer di ATM terdekat, Internet Banking dll.</p>
+<p>Berbeda dengan metode pembayaran lain (kartu kredit, Mandiri Clickpay dan CIMB Clicks), proses utama pembayaran Virtual Account tidak dilakukan di halaman anda. Pelanggan melakukan pembayaran melalui transfer di ATM terdekat, Internet Banking dll.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -249,12 +262,14 @@
   <div class="tab-pane active" id="form-va">
     <!-- step 1-->
     <!-- satu -->
+    <p><br /></p>
 
     <h2 id="membuat-form">Membuat Form</h2>
 
     <p>Form pembayaran Virtual Account akan kita buat di file <code>form_vtdirect_va.html</code>. Karena sebagian besar proses pembayaran tidak dilakukan di halaman merchant, form yang akan kita buat hanya berisi petunjuk pembayaran dan tombol bayar menggunakan Virtual Account. Ketika pelanggan anda menekan tombol ini, proses charge transaksi dilakukan pada tahap selanjutnya.</p>
 
-    <p>Berikut adalah contoh form pada file <code>form_vtdirect_va.html</code>:</p>
+    <p>Berikut adalah contoh form pada file <code>form_vtdirect_va.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;head&gt;</span>
 	<span class="nt">&lt;title&gt;</span>Bank Transfer<span class="nt">&lt;/title&gt;</span>
@@ -271,6 +286,7 @@
   <div class="tab-pane" id="charge-transaction-va">
     <!-- step 2-->
     <!-- dua -->
+    <p><br /></p>
 
     <h2 id="charge-transaksi">Charge Transaksi</h2>
 
@@ -287,7 +303,8 @@
       </li>
     </ul>
 
-    <p>Tahap ini membahas cara charge transaksi Virtual Account di file <code>checkout_va.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_va.php</code>:</p>
+    <p>Tahap ini membahas cara charge transaksi Virtual Account di file <code>checkout_va.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_va.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -322,16 +339,19 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, kita menggunakan data Virtual Account, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
+    <p><br />
+Pada contoh di atas, kita menggunakan data Virtual Account, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
 
   </div>
   <div class="tab-pane" id="response-transaction-va">
     <!-- step 3-->
     <!-- tiga -->
+    <p><br /></p>
 
     <h2 id="menampilkan-virtual-account">Menampilkan Virtual Account</h2>
 
-    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:</p>
+    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
@@ -346,7 +366,9 @@
 );
 </code></pre>
 
-    <p>Dua informasi penting dalam respon JSON diatas adalah <code>status_code</code> dan <code>permata_va_number</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus menampilkan <code>permata_va_number</code> ke pelanggan anda, agar pelanggan anda dapat melakukan pembayaran. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_va.php</code>:</p>
+    <p><br />
+Dua informasi penting dalam respon JSON diatas adalah <code>status_code</code> dan <code>permata_va_number</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus menampilkan <code>permata_va_number</code> ke pelanggan anda, agar pelanggan anda dapat melakukan pembayaran. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_va.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -373,25 +395,26 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. Status transaksi akan berubah menjadi <em>sukses</em> saat pelanggan anda selesai melakukan pembayaran.</p>
+    <p><br />
+Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. Status transaksi akan berubah menjadi <em>sukses</em> saat pelanggan anda selesai melakukan pembayaran.</p>
 
-    <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor account yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor virtual account tersebut.</p>
-
-    <p><img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test3.png" /></p>
-
-    <p>Apabila transaksi dengan nomor virtual account tersebut ada, anda dapat melakukan simulasi untuk melakukan pembayaran.</p>
-
-    <p><img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test4.png" /></p>
-
-    <p>Sukses melakukan pembayaran.</p>
-
-    <p><img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test5.png" /></p>
-
-    <hr />
+    <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor account yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor virtual account tersebut.
+<br /><br />
+<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test3.png" />
+<br /><br />
+Apabila transaksi dengan nomor virtual account tersebut ada, anda dapat melakukan simulasi untuk melakukan pembayaran.
+<br /><br />
+<img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test4.png" />
+<br /><br />
+Sukses melakukan pembayaran.
+<br /><br />
+<img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test5.png" />
+<br /><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan nomor virtual account. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan nomor virtual account. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -424,7 +447,8 @@
       </tbody>
     </table>
 
-    <p>Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+    <p><br />
+Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
 
     <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi Virtual Account akan dibahas pada <a href="integration_va.html#transaction-status-va">bagian selanjutnya</a>.</p>
 
@@ -432,24 +456,25 @@
   <div class="tab-pane" id="transaction-status-va">
     <!-- step 4-->
     <!-- empat -->
+    <p><br /></p>
 
     <h2 id="status-transaksi">Status Transaksi</h2>
 
     <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih pending. Pelanggan anda harus menyelesaikan transaksi dalam waktu maksimal 24 jam. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>success</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
 
-    <p>Status pada MAP saat pembayaran belum selesai dilakukan adalah seperti gambar berikut:</p>
-
-    <p><img alt="Permata MAP Pending" class="img-responsive img-thumbnail" src="../../images/va-map-pending.png" /></p>
-
-    <p>Status pada MAP saat pembayaran sudah selesai dilakukan adalah seperti gambar berikut:</p>
-
-    <p><img alt="Permata MAP Sukses" class="img-responsive img-thumbnail" src="../../images/va-map-success.png" /></p>
-
-    <hr />
+    <p>Status pada MAP saat pembayaran belum selesai dilakukan adalah seperti gambar berikut:
+<br /><br />
+  <img alt="Permata MAP Pending" class="img-responsive img-thumbnail" src="../../images/va-map-pending.png" />
+<br /><br />
+Status pada MAP saat pembayaran sudah selesai dilakukan adalah seperti gambar berikut:
+<br /><br />
+  <img alt="Permata MAP Sukses" class="img-responsive img-thumbnail" src="../../images/va-map-success.png" />
+<br /><br /></p>
 
     <h3 id="https-post">HTTP(S) POST</h3>
 
-    <p>Server Veritrans akan memberikan respon kepada server anda saat pelanggan anda telah melakukan pembayaran. Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:</p>
+    <p>Server Veritrans akan memberikan respon kepada server anda saat pelanggan anda telah melakukan pembayaran. Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">{
     "status_code": "200",
@@ -464,7 +489,8 @@
 }
 </code></pre>
 
-    <p>Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
+    <p><br />
+Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
 
   </div>
 </div>
@@ -512,6 +538,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

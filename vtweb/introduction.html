@@ -174,14 +174,24 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -189,12 +199,12 @@
             <h2 id="introduction-vt-web">Introduction VT-Web</h2>
 <hr />
 
-<h5 id="target-merchant-understands-about-vt-web-dan-how-vt-web-works"><strong><em>Target:</em></strong> <em>Merchant understands about VT-Web dan how VT-Web works</em></h5>
+<h5 id="target-merchant-understands-vt-web-dan-and-its-functions"><strong><em>Target:</em></strong> <em>Merchant understands VT-Web dan and its functions</em></h5>
 <hr />
 
-<p>VT-Web is one of Veritrans products that facilitates you to add payment feature for your online store. By using VT-Web, your customer is redirected from your online store to Veritrans payment page to process payment.</p>
+<p>VT-Web facilitates a payment feature for your online store. By using VT-Web, your customer is redirected from the online store to the Veritrans payment page for processing.</p>
 
-<p>Veritrans payment page will assist your customer to complete his payment with various payment methods such as credit cards, Mandiri ClickPay, and CIMB Clicks in a secure environment and at the same time, reduce the labour of your technical team to integrate with Veritrans system.</p>
+<p>Veritrans payment page will assist your customer to complete his transaction with various payment methods such as credit cards, Mandiri ClickPay, and CIMB Clicks in a secure environment. At the same, we will help you reduce the labour of your technical team in the integration of the Veritrans system.</p>
 
 <h3 id="how-vt-web-operates">How VT-Web Operates</h3>
 
@@ -243,6 +253,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

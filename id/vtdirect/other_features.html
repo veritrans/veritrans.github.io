@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -192,7 +202,8 @@
 <h5 id="tutorial-berikut-akan-membantu-anda-meng-implementasikan-fitur-tambahan-di-vt-direct-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Tutorial berikut akan membantu anda meng-implementasikan fitur tambahan di VT-Direct. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
 
-<p>Saat ini VT-Direct memiliki fitur tambahan untuk metode pembayaran dengan kartu kredit, yaitu:</p>
+<p><br />
+Saat ini VT-Direct memiliki fitur tambahan untuk metode pembayaran dengan kartu kredit, yaitu:</p>
 
 <ol>
   <li>Pre-Authorization &amp; Capture</li>
@@ -202,7 +213,8 @@
   <li>Two Clicks</li>
 </ol>
 
-<p>Berikut adalah tutorial untuk melakukan integrasi menggunakan fitur - fitur sesuai dengan kebutuhan anda.</p>
+<p>Berikut adalah tutorial untuk melakukan integrasi menggunakan fitur - fitur sesuai dengan kebutuhan anda.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -215,18 +227,21 @@
 <div class="tab-content">
   <div class="tab-pane active" id="pre-authorization">
     <!-- step 1-->
+    <p><br /></p>
 
     <h2 id="pre-authorization--capture">Pre-Authorization &amp; Capture</h2>
 
     <p>Pre-authorization berfungsi untuk mengecek apakah suatu kartu kredit mampu melakukan transaksi dengan nilai tertentu. Saat pre-authorization selesai dilakukan, anda dapat mengetahui status kartu kredit dan transaksi <strong>belum</strong> terjadi. Transaksi baru terjadi ketika operasi capture dilakukan. Capture hanya dapat dilakukan setelah proses pre-authorization berhasil.</p>
 
-    <p>Secara default, operasi <a href="integration_cc.html#step2">charge transaksi</a> yang Veritrans lakukan adalah kombinasi pre-authorization &amp; capture. Jika anda ingin melakukan kedua hal ini secara terpisah, silahkan ikuti petunjuk berikut.</p>
+    <p>Secara default, operasi <a href="integration_cc.html#step2">charge transaksi</a> yang Veritrans lakukan adalah kombinasi pre-authorization &amp; capture. Jika anda ingin melakukan kedua hal ini secara terpisah, silahkan ikuti petunjuk berikut.
+<br /><br /></p>
 
     <h3 id="pre-authorization-transaction">Pre-Authorization Transaction</h3>
 
     <p>Secara umum, proses pre-authorization mirip dengan <a href="integration_cc.html#step2">charge transaksi</a>. Perbedaannya ada pada parameter request token dan charge transaksi. Anda perlu menambahkan atribut <code>'type'</code> dengan nilai <code>'authorize'</code> pada kedua proses tersebut.</p>
 
-    <p>Menggunakan contoh yang sama dengan <a href="integration.html">charge transaksi</a>, modifikasi script tambahan saat request token adalah sebagai berikut:</p>
+    <p>Menggunakan contoh yang sama dengan <a href="integration.html">charge transaksi</a>, modifikasi script tambahan saat request token adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -254,7 +269,9 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-    <p>Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan pre-authorization saat charge transaksi. Modifikasi parameter pada saat charge transaksi adalah sebagai berikut:</p>
+    <p><br />
+Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan pre-authorization saat charge transaksi. Modifikasi parameter pada saat charge transaksi adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -279,7 +296,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, pre-authorization response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses pre-authorization berhasil adalah sebagai berikut:</p>
+    <p><br />
+Pada contoh di atas, pre-authorization response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses pre-authorization berhasil adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
     "status_code" =&gt; "200",
@@ -296,15 +315,17 @@
 );
 </code></pre>
 
-    <p>Atribut penting pada respon pre-authorization adalah <code>transaction_id</code>. Anda perlu menggunakan nilai atribut ini untuk melakukan capture transaksi.</p>
+    <p><br />
+Atribut penting pada respon pre-authorization adalah <code>transaction_id</code>. Anda perlu menggunakan nilai atribut ini untuk melakukan capture transaksi.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="capture-transaction">Capture Transaction</h3>
 
     <p>Untuk melakukan capture transaksi, anda cukup mempersiapkan atribut <code>transaction_id</code> dan <code>gross_amount</code>. Kedua nilai atribut berelasi dengan proses pre-authorization yang telah dilakukan sebelumnya. Nilai <code>gross_amount</code> tidak boleh melebihi nilai <code>gross_amount</code> saat pre-authorization. Jika atribut <code>gross_amount</code> tidak diberikan saat capture, nilai <code>gross_amoount</code> saat pre-authorization akan digunakan.</p>
 
-    <p>Berikut adalah contoh kode PHP untuk melakukan capture transaksi:</p>
+    <p>Berikut adalah contoh kode PHP untuk melakukan capture transaksi:
+<br /><br /></p>
 
 <pre><code class="highlight php">
 <span class="cp">&lt;?php</span>
@@ -322,7 +343,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, capture response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses capture berhasil adalah sebagai berikut:</p>
+    <p><br />
+Pada contoh di atas, capture response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses capture berhasil adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
     "status_code" =&gt; "200",
@@ -342,12 +365,14 @@
   </div>
   <div class="tab-pane" id="installment">
     <!-- step 2-->
+    <p><br /></p>
 
     <h2 id="cicilaninstallment">Cicilan/Installment</h2>
 
     <p>Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Fitur cicilan/installment dapat dilakukan menggunakan token biasa atau token 3DS. </p>
 
-    <p>Implementasi fitur cicilan mirip dengan <a href="integration_cc.html#step2">charge transaksi</a>. Perbedaan ada pada parameter request token dan charge transaksi. Pada saat melakukan request token, anda perlu menambahkan atribut <code>installment</code> dan <code>installment_term</code>. Deskripsi atribut installment beserta nilai yang dapat digunakan pada environment Sandbox:</p>
+    <p>Implementasi fitur cicilan mirip dengan <a href="integration_cc.html#step2">charge transaksi</a>. Perbedaan ada pada parameter request token dan charge transaksi. Pada saat melakukan request token, anda perlu menambahkan atribut <code>installment</code> dan <code>installment_term</code>. Deskripsi atribut installment beserta nilai yang dapat digunakan pada environment Sandbox:
+<br /><br /></p>
 
     <table>
       <tbody>
@@ -372,7 +397,9 @@
       </tbody>
     </table>
 
-    <p>Menggunakan contoh yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, modifikasi script tambahan saat request token adalah sebagai berikut:</p>
+    <p><br />
+Menggunakan contoh yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, modifikasi script tambahan saat request token adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -402,7 +429,9 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-    <p>Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan charge transaksi. Atribut yang harus ditambahkan untuk melakukan installment adalah <code>installment_term</code>. Modifikasi parameter pada saat charge transaksi adalah sebagai berikut:</p>
+    <p><br />
+Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan charge transaksi. Atribut yang harus ditambahkan untuk melakukan installment adalah <code>installment_term</code>. Modifikasi parameter pada saat charge transaksi adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -427,7 +456,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, installment response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses installment berhasil adalah sebagai berikut:</p>
+    <p><br />
+Pada contoh di atas, installment response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses installment berhasil adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
     "status_code" =&gt; "200",
@@ -447,6 +478,7 @@
   </div>
   <div class="tab-pane" id="bin-promo">
     <!-- step 3-->
+    <p><br /></p>
 
     <h2 id="bin-promo">BIN Promo</h2>
 
@@ -454,7 +486,8 @@
 
     <p>Untuk menggunakan fitur ini, anda terlebih dahulu mengumpulkan daftar BIN yang menerima promo. Daftar BIN tersebut menjadi parameter transaksi <code>bins</code>, transaksi hanya dapat dilakukan oleh kartu kredit yang termasuk dalam daftar BIN.  Gunakan daftar BIN yang anda miliki sebagai nilai dari atribut <code>bins</code> saat charge transaksi.</p>
 
-    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_cc.html#step2">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:</p>
+    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_cc.html#step2">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -482,11 +515,13 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, charge transaksi akan gagal dan terjadi <em>exception</em>.</p>
+    <p><br />
+Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, charge transaksi akan gagal dan terjadi <em>exception</em>.</p>
 
   </div>
   <div class="tab-pane" id="one-click">
     <!-- step 4-->
+    <p><br /></p>
 
     <h2 id="one-click">One Click</h2>
 
@@ -513,9 +548,12 @@
       </li>
     </ol>
 
+    <p><br /></p>
+
     <h3 id="transaksi-pertama">Transaksi Pertama</h3>
 
-    <p>Untuk mengimplementasikan one click, anda hanya perlu menambahkan atribut <code>save_token_id</code> pada saat charge transaksi pertama dilakukan. Menggunakan contoh yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, modifikasi script PHP saat charge transaksi dilakukan adalah sebagai berikut:</p>
+    <p>Untuk mengimplementasikan one click, anda hanya perlu menambahkan atribut <code>save_token_id</code> pada saat charge transaksi pertama dilakukan. Menggunakan contoh yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, modifikasi script PHP saat charge transaksi dilakukan adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -540,7 +578,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, one click response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses one click berhasil adalah sebagai berikut:</p>
+    <p><br />
+Pada contoh di atas, one click response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses one click berhasil adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
   "transaction_id" =&gt; "ca5e0ff5-4297-48ef-aa25-b3ab018d4ead",
@@ -559,15 +599,17 @@
 );
 </code></pre>
 
-    <p>Dua atribut penting pada one click response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired</code>. Atribut <code>saved_token_id</code> adalah token yang dapat anda simpan jika pelanggan anda melakukan transaksi lagi. Atribut ini kita sebut sebagai <code>saved_token</code> pada penjelasan tahapan one click sebelumnya. Nilai dari <code>saved_token</code> dapat terus digunakan hingga <code>saved_token_id_expired</code>.</p>
+    <p><br />
+Dua atribut penting pada one click response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired</code>. Atribut <code>saved_token_id</code> adalah token yang dapat anda simpan jika pelanggan anda melakukan transaksi lagi. Atribut ini kita sebut sebagai <code>saved_token</code> pada penjelasan tahapan one click sebelumnya. Nilai dari <code>saved_token</code> dapat terus digunakan hingga <code>saved_token_id_expired</code>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="transaksi-selanjutnya">Transaksi Selanjutnya</h3>
 
     <p>Pada transaksi selanjutnya, pelanggan anda tidak perlu mengisi informasi kartu kredit lagi dan proses charge transaksi dapat langsung dilakukan menggunakan <code>saved token</code>.</p>
 
-    <p>Berikut adalah contoh charge transaksi selanjutnya menggunakan <code>saved_token_id</code>.</p>
+    <p>Berikut adalah contoh charge transaksi selanjutnya menggunakan <code>saved_token_id</code>.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -594,7 +636,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Struktur dan contoh state <code>$result</code> sama dengan dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa.</p>
+    <p><br />
+Struktur dan contoh state <code>$result</code> sama dengan dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa.
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
     "transaction_id" =&gt; "05dfbd23-b767-4748-8fe9-7e30769e1857",
@@ -611,6 +655,7 @@
 
   </div>
   <div class="tab-pane" id="two-click">
+    <p><br /></p>
 
     <h2 id="two-clicks">Two Clicks</h2>
 
@@ -641,9 +686,12 @@
       </li>
     </ol>
 
+    <p><br /></p>
+
     <h3 id="transaksi-pertama-1">Transaksi Pertama</h3>
 
-    <p>Implementasi transaksi pertama mirip dengan <a href="integration_cc.html#step2">charge transaksi</a> biasa. Anda cukup menambahkan atribut <code>saved_token_id</code> saat charge transaksi. Jika transaksi berhasil, token dapat disimpan untuk transaksi pelanggan tersebut selanjutnya.</p>
+    <p>Implementasi transaksi pertama mirip dengan <a href="integration_cc.html#step2">charge transaksi</a> biasa. Anda cukup menambahkan atribut <code>saved_token_id</code> saat charge transaksi. Jika transaksi berhasil, token dapat disimpan untuk transaksi pelanggan tersebut selanjutnya.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -672,7 +720,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, two clicks response disimpan pada <em>variable</em> <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses two clicks berhasil adalah sebagai berikut:</p>
+    <p><br />
+Pada contoh di atas, two clicks response disimpan pada <em>variable</em> <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses two clicks berhasil adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
   "transaction_id" =&gt; "ca5e0ff5-4297-48ef-aa25-b3ab018d4ead",
@@ -691,9 +741,10 @@
 );
 </code></pre>
 
-    <p>Dua atribut penting pada two clicks response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired</code>. Atribut <code>saved_token_id</code> adalah yang kita sebut sebagai <code>saved_token</code> pada bagian tahapan two clicks. Nilai <code>saved_token</code> ini dapat terus digunakan hingga <code>saved_token_id_expired</code>.</p>
+    <p><br />
+Dua atribut penting pada two clicks response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired</code>. Atribut <code>saved_token_id</code> adalah yang kita sebut sebagai <code>saved_token</code> pada bagian tahapan two clicks. Nilai <code>saved_token</code> ini dapat terus digunakan hingga <code>saved_token_id_expired</code>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="transaksi-selanjutnya-1">Transaksi Selanjutnya</h3>
 
@@ -701,7 +752,8 @@
 
     <p>Perlu diperhatikan bahwa anda <strong>tidak</strong> menggunakan <code>saved_token</code> untuk melakukan charge transaksi. Anda menggunakan <code>saved_token</code> sebagai salah satu syarat untuk memperoleh token baru. Anda <strong>tidak</strong> menyimpan token baru dari pelanggan tersebut ke database.</p>
 
-    <p>Field nomor dan expiry date pada form dapat dihilangkan karena pelanggan anda cukup mengisi CVV dan melakukan autentikasi 3D Secure saja. Menggunakan kasus yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, Berikut adalah contoh request token baru menggunakan atribut <code>saved_token</code> dan CVV yang dimasukkan pelanggan:</p>
+    <p>Field nomor dan expiry date pada form dapat dihilangkan karena pelanggan anda cukup mengisi CVV dan melakukan autentikasi 3D Secure saja. Menggunakan kasus yang sama dengan <a href="integration_cc.html#step2">charge transaksi</a>, Berikut adalah contoh request token baru menggunakan atribut <code>saved_token</code> dan CVV yang dimasukkan pelanggan:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -727,7 +779,9 @@
 <span class="nt">&lt;/script&gt;</span>
 </code></pre>
 
-    <p>Tahap charge transaksi kedua dan selanjutnya pada two clicks sama dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa. Anda cukup menggunakan token baru sebagai token_id.</p>
+    <p><br />
+Tahap charge transaksi kedua dan selanjutnya pada two clicks sama dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa. Anda cukup menggunakan token baru sebagai token_id.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -753,7 +807,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa.</p>
+    <p><br />
+Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan proses <a href="integration_cc.html#step2">charge transaksi</a> biasa.
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
     "transaction_id" =&gt; "05dfbd23-b767-4748-8fe9-7e30769e1857",
@@ -814,6 +870,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

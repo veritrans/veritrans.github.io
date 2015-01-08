@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,6 +201,7 @@
 
 <h5 id="tutorial-berikut-akan-membantu-anda-mengenal-perintah-perintah-yang-dapat-digunakan-pada-vt-direct-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Tutorial berikut akan membantu anda mengenal perintah-perintah yang dapat digunakan pada VT-Direct. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <p>Pada proses integrasi, kami telah menjelaskan cara charge transaksi menggunakan VT-Direct. Di samping operasi charge, ada operasi lain terkait transaksi yang dapat anda lakukan:</p>
 
@@ -199,6 +210,8 @@
   <li>Approve transaksi</li>
   <li>Cancel transaksi</li>
 </ol>
+
+<p><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -209,10 +222,12 @@
 <div class="tab-content">
   <div class="tab-pane active" id="status">
     <!-- step 1-->
+    <p><br /></p>
 
     <h2 id="status-transaksi">Status transaksi</h2>
 
-    <p>Pada situasi tertentu, anda dapat melihat status transaksi menggunakan fungsi <code>Veritrans_Transaction::status</code>. Anda cukup memberikan order ID saat menggunakan fungsi ini. </p>
+    <p>Pada situasi tertentu, anda dapat melihat status transaksi menggunakan fungsi <code>Veritrans_Transaction::status</code>. Anda cukup memberikan order ID saat menggunakan fungsi ini. 
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -226,7 +241,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Struktur dan contoh variabel <code>$result</code> adalah sebagai berikut:</p>
+    <p><br />
+Struktur dan contoh variabel <code>$result</code> adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
 	"status_code" =&gt; "200",
@@ -247,10 +264,12 @@
 
   </div>
   <div class="tab-pane" id="approve">
+    <p><br /></p>
 
     <h2 id="approve-transaksi">Approve transaksi</h2>
 
-    <p>Anda dapat melakukan approve transaksi menggunakan fungsi <code>Veritrans_Transaction::approve()</code>. Approve hanya dapat dilakukan pada transaksi yang memperoleh status challenge dari Fraud Detection System (FDS). Anda cukup memberikan order ID pada saat menggunakan fungsi ini.</p>
+    <p>Anda dapat melakukan approve transaksi menggunakan fungsi <code>Veritrans_Transaction::approve()</code>. Approve hanya dapat dilakukan pada transaksi yang memperoleh status challenge dari Fraud Detection System (FDS). Anda cukup memberikan order ID pada saat menggunakan fungsi ini.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -264,7 +283,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Struktur dan contoh variabel <code>$result</code> ketika operasi approve berhasil adalah sebagai berikut:</p>
+    <p><br />
+Struktur dan contoh variabel <code>$result</code> ketika operasi approve berhasil adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">array( 
 	"status_code" =&gt; "200",
@@ -283,10 +304,12 @@
 </code></pre>
   </div>
   <div class="tab-pane" id="cancel">
+    <p><br /></p>
 
     <h2 id="cancel-transaksi">Cancel transaksi</h2>
 
-    <p>Anda dapat melakukan perintah cancel transaksi pada VT-Direct menggunakan fungsi <code>Veritrans_Transaction::cancel()</code>. Cancel transaksi hanya dapat dilakukan pada transaksi yang belum melewati status settlement. Anda cukup memberikan order id sebagai parameter dari fungsi ini.</p>
+    <p>Anda dapat melakukan perintah cancel transaksi pada VT-Direct menggunakan fungsi <code>Veritrans_Transaction::cancel()</code>. Cancel transaksi hanya dapat dilakukan pada transaksi yang belum melewati status settlement. Anda cukup memberikan order id sebagai parameter dari fungsi ini.
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -300,7 +323,9 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Struktur dan contoh variabel <code>$result</code> ketika operasi cancel berhasil adalah sebagai berikut:</p>
+    <p><br />
+Struktur dan contoh variabel <code>$result</code> ketika operasi cancel berhasil adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">array(
 	"status_code" =&gt; "200",
@@ -362,6 +387,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

@@ -174,21 +174,32 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
           <div class="id-sandbox-installment">
             <h3 id="cicilan">Cicilan</h3>
 
-<p>Cicilan merupakan salah satu varian dari charge transaksi yang memungkinkan pembayaran dilakukan secara berkala dalam jangka waktu tertentu. Cicilan hanya berlaku untuk transaksi melalui <strong>kartu kredit</strong>. Spesifikasi fungsi cicilan sama dengan <a href="charge.html">spesifikasi charge transaksi</a>. Karena petunjuk implementasi cicilan pada VT-Web dan VT-Direct berbeda, pembahasan akan dilakukan secara terpisah.</p>
+<p>Cicilan merupakan salah satu varian dari charge transaksi yang memungkinkan pembayaran dilakukan secara berkala dalam jangka waktu tertentu. Cicilan hanya berlaku untuk transaksi melalui <strong>kartu kredit</strong>. Spesifikasi fungsi cicilan sama dengan <a href="charge.html">spesifikasi charge transaksi</a>. Karena petunjuk implementasi cicilan pada VT-Web dan VT-Direct berbeda, pembahasan akan dilakukan secara terpisah.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -198,8 +209,10 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="vtweb">
+    <p><br /></p>
 
-    <p>Sama dengan charge transaksi VT-Web, output dari fungsi cicilan adalah URL pembayaran. Pelanggan harus anda redirect ke URL pembayaran VT-Web untuk menyelesaikan transaksi. Implementasi fungsi cicilan pada VT-Web sangat sederhana, anda cukup menambahkan atribut <code>payment_options</code> dan <code>installment</code> pada JSON request charge transaksi. Berikut adalah JSON request cicilan pada VT-Web:</p>
+    <p>Sama dengan charge transaksi VT-Web, output dari fungsi cicilan adalah URL pembayaran. Pelanggan harus anda redirect ke URL pembayaran VT-Web untuk menyelesaikan transaksi. Implementasi fungsi cicilan pada VT-Web sangat sederhana, anda cukup menambahkan atribut <code>payment_options</code> dan <code>installment</code> pada JSON request charge transaksi. Berikut adalah JSON request cicilan pada VT-Web:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -268,9 +281,11 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Perlu diperhatikan jika masa cicilan pada bank BNI adalah array kosong, sesuai keterangan pada bagian <a href="charge.html#specification">spesifikasi</a>, semua masa cicilan yang valid akan ditampilkan pada VT-Web.</p>
+    <p><br />
+Perlu diperhatikan jika masa cicilan pada bank BNI adalah array kosong, sesuai keterangan pada bagian <a href="charge.html#specification">spesifikasi</a>, semua masa cicilan yang valid akan ditampilkan pada VT-Web.</p>
 
-    <p>Struktur JSON response fungsi cicilan sama dengan <a href="charge.html#vtweb">charge transaksi VT-Web</a>. Contoh JSON response sukses:</p>
+    <p>Struktur JSON response fungsi cicilan sama dengan <a href="charge.html#vtweb">charge transaksi VT-Web</a>. Contoh JSON response sukses:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -281,10 +296,12 @@
 
   </div>
   <div class="tab-pane" id="vtdirect">
+    <p><br /></p>
 
     <p>Pada VT-Direct, anda harus memperoleh token ID terlebih dahulu. Token ID merepresentasikan informasi kartu kredit pelanggan anda yang telah disimpan di server Veritrans. Untuk memperoleh token, anda dapat mengikuti petunjuk di <a href="../vtdirect/other_features.html#installment">VT-Direct – Mendapatkan Token</a>. Perlu diperhatikan bahwa parameter request token untuk installment berbeda dengan <a href="../vtdirect/integration_cc.html#step1">token transaksi normal</a>. Anda harus menambahkan <code>installment</code> dan <code>installment_term</code> pada parameter. </p>
 
-    <p>Setelah token diperoleh, charge transaksi cicilan dapat dilakukan dengan menambahkan atribut <code>installment_term</code> dalam <code>credit_card</code>:</p>
+    <p>Setelah token diperoleh, charge transaksi cicilan dapat dilakukan dengan menambahkan atribut <code>installment_term</code> dalam <code>credit_card</code>:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -345,7 +362,9 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Struktur JSON response cicilan sama dengan <a href="charge.html#vtdirect-cc">charge transaksi VT-Direct</a> kartu kredit. Perbedaan hanya terdapat konten <code>status_message</code>. Contoh JSON response transaksi sukses: </p>
+    <p><br />
+Struktur JSON response cicilan sama dengan <a href="charge.html#vtdirect-cc">charge transaksi VT-Direct</a> kartu kredit. Perbedaan hanya terdapat konten <code>status_message</code>. Contoh JSON response transaksi sukses: 
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -408,6 +427,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

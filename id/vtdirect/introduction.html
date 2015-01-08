@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -194,9 +204,8 @@
 
 <p>VT-Direct adalah salah satu produk Veritrans yang memungkinkan anda untuk menggunakan sistem pembayaran Veritrans langsung di website anda. VT-Direct memungkinkan pelanggan anda untuk menyelesaikan proses pembayaran tanpa perlu dialihkan (di-redirect) ke halaman Veritrans.</p>
 
-<p>VT-Direct akan memanggil script dari server Veritrans untuk kemudian mengirim data kartu kredit secara langsung dari browser pelanggan ke server Veritrans tanpa terlebih dahulu disimpan di server anda. </p>
-
-<hr />
+<p>VT-Direct akan memanggil script dari server Veritrans untuk kemudian mengirim data kartu kredit secara langsung dari browser pelanggan ke server Veritrans tanpa terlebih dahulu disimpan di server anda. 
+<br /><br /></p>
 
 <h3 id="bagaimana-vt-direct-bekerja">Bagaimana VT-Direct Bekerja</h3>
 
@@ -210,11 +219,12 @@
     <p><strong>Send Card Data</strong>: ketika pelanggan anda menekan tombol bayar, Sebuah script bernama <code>Veritrans.min.js</code> dipanggil dari server Veritrans dan akan menggabungkan informasi kartu kredit yang sensitif dengan <em>public-key</em>. Gabungan data tersebut dikirimkan ke server Veritrans untuk ditukar dengan <em>onetime-token</em> ("Token").</p>
   </li>
   <li>
-    <p><strong>Get Token</strong>: Veritrans akan mengembalikan Token ke browser pelanggan anda. Token akan valid selama <strong>3 menit</strong> pada transaksi kartu kredit biasa dan <strong>10 menit</strong> jika fitur 3D Secure digunakan. Token tidak bisa digunakan lagi jika melewati durasi waktu tersebut.</p>
+    <p><strong>Get Token</strong>: Veritrans akan mengembalikan Token ke browser pelanggan anda. Token akan valid selama <strong>3 menit</strong> pada transaksi kartu kredit biasa dan <strong>10 menit</strong> jika fitur 3D Secure digunakan. Token tidak bisa digunakan lagi jika melewati durasi waktu tersebut.
+<br /><br />
+ <img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../../images/vtdirect_introduction_1.png" /></p>
 
-    <p><img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../../images/vtdirect_introduction_1.png" /></p>
-
-    <p><em>Proses VT-Direct (langkah 1 - 3)</em></p>
+    <p><em>Proses VT-Direct (langkah 1 - 3)</em>
+<br /><br /></p>
   </li>
   <li>
     <p><strong>Send Token</strong>: Token kemudian dikirimkan ke server anda. Harap di perhatikan, anda hanya akan menerima Token sebagai pengganti detail dari kartu kredit. <strong>Anda tidak akan menyimpan ataupun memproses informasi dari kartu kredit.</strong> Karena hal tersebut, anda tidak perlu berurusan dengan PCI DSS compliance.</p>
@@ -227,10 +237,10 @@
 
     <ul>
       <li>Capture</li>
-      <li>Settlement</li>
+      <li>Settlement
+<br /><br />
+ <img alt="vtdirect_intro2" class="img-responsive img-thumbnail" src="../../images/vtdirect_introduction_2.png" /></li>
     </ul>
-
-    <p><img alt="vtdirect_intro2" class="img-responsive img-thumbnail" src="../../images/vtdirect_introduction_2.png" /></p>
 
     <p><em>Proses VT-Direct (Langkah 4 - 6)</em></p>
   </li>
@@ -279,6 +289,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

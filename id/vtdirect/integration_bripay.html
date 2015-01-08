@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,6 +201,7 @@
 
 <h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-e-pay-bri-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran e-Pay BRI. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
   <div class="col-sm-2 col-xs-12">
@@ -221,6 +232,7 @@
 </div>
 
 <hr />
+<p><br /></p>
 
 <p>e-Pay BRI adalah salah satu metode pembayaran internet banking yang disediakan oleh Bank BRI. Jika metode ini digunakan, pelanggan akan diarahkan ke halaman pembayaran e-Pay BRI untuk melakukan transaksi. Sebelum menggunakan layanan BRI Epay ini, pelanggan anda harus melakukan registrasi terlebih dahulu. Untuk info lebih lengkap silahkan mengunjungi <a title="e-Pay BRI" href="http://e-pay.bri.co.id">website e-Pay BRI</a>.</p>
 
@@ -235,7 +247,8 @@
   <li>Status Transaksi</li>
 </ol>
 
-<p>Berbeda dengan metode pembayaran lain (kartu kredit dan Mandiri Clickpay), proses utama pembayaran e-Pay BRI tidak dilakukan di halaman anda. Pelanggan akan di redirect ke halaman e-Pay BRI untuk menyelesaikan transaksi.</p>
+<p>Berbeda dengan metode pembayaran lain (kartu kredit dan Mandiri Clickpay), proses utama pembayaran e-Pay BRI tidak dilakukan di halaman anda. Pelanggan akan di redirect ke halaman e-Pay BRI untuk menyelesaikan transaksi.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -249,12 +262,14 @@
   <div class="tab-pane active" id="form-bri">
     <!-- step 1-->
     <!-- satu -->
+    <p><br /></p>
 
     <h2 id="membuat-form">Membuat Form</h2>
 
     <p>Form pembayaran e-Pay BRI akan kita buat di file <code>form_vtdirect_bri.php</code>. Karena sebagian besar proses transaksi akan dilakukan di halaman e-Pay BRI, form yang akan kita buat hanya berisi petunjuk pembayaran dan tombol bayar menggunakan e-Pay BRI. Ketika pelanggan anda menekan tombol ini, proses charge transaksi dilakukan pada tahap selanjutnya.</p>
 
-    <p>Berikut adalah contoh form pada file <code>form_vtdirect_bri.php</code>:</p>
+    <p>Berikut adalah contoh form pada file <code>form_vtdirect_bri.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
@@ -278,6 +293,7 @@
   <div class="tab-pane" id="charge-transaction-bri">
     <!-- step 2-->
     <!-- dua -->
+    <p><br /></p>
 
     <h2 id="charge-transaksi">Charge Transaksi</h2>
 
@@ -287,7 +303,8 @@
       <li><code>payment_type</code> harus di-set menjadi <code>bri_epay</code>.</li>
     </ul>
 
-    <p>Tahap ini membahas cara charge transaksi e-Pay BRI di file <code>checkout_bri.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_bri.php</code>:</p>
+    <p>Tahap ini membahas cara charge transaksi e-Pay BRI di file <code>checkout_bri.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_bri.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -308,7 +325,7 @@
     <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
     <span class="p">);</span>
 
-<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
+<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan e-Pay BRI.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'bri_epay'</span><span class="p">,</span>
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -319,16 +336,19 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Pada contoh di atas, kita menggunakan data e-Pay BRI, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
+    <p><br />
+Pada contoh di atas, kita menggunakan data e-Pay BRI, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
   </div>
 
   <div class="tab-pane" id="redirect-bri">
     <!-- step 3-->
     <!-- tiga -->
+    <p><br /></p>
 
     <h2 id="redirect">Redirect</h2>
 
-    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:</p>
+    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
@@ -343,7 +363,9 @@
 );
 </code></pre>
 
-    <p>Dua informasi penting dalam respon JSON adalah <code>status_code</code> dan <code>redirect_url</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus me-redirect pelanggan anda ke <code>redirect_url</code> untuk menyelesaikan transaksi e-Pay BRI. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_bri.php</code>:</p>
+    <p><br />
+Dua informasi penting dalam respon JSON adalah <code>status_code</code> dan <code>redirect_url</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus me-redirect pelanggan anda ke <code>redirect_url</code> untuk menyelesaikan transaksi e-Pay BRI. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_bri.php</code>:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -367,25 +389,26 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Informasi terkait nilai transaksi, order ID, dan keterangan transaksi akan ditampilkan pada halaman redirect URL. Pada environment sandbox, halaman pembayaran e-Pay BRI bersifat dummy. Pelanggan anda cukup menekan tombol bayar untuk menyelesaikan proses transaksi. </p>
+    <p><br />
+Informasi terkait nilai transaksi, order ID, dan keterangan transaksi akan ditampilkan pada halaman redirect URL. Pada environment sandbox, halaman pembayaran e-Pay BRI bersifat dummy. Pelanggan anda cukup menekan tombol bayar untuk menyelesaikan proses transaksi. </p>
 
-    <p>Ketika transaksi selesai, pelanggan anda dapat kembali ke website anda. Untuk melakukan hal ini, anda perlu mengisi konfigurasi callback URL di MAP (Merchant Administration Portal), silahkan melihat menu <a href="getting_started.html">langkah awal</a> untuk informasi lebih lengkap. Berikut adalah tampilan halaman pembayaran environment sandbox:</p>
-
-    <p><img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test2.png" /></p>
-
-    <p>Setelah customer melakukan pembayaran, halaman berikut akan ditampilkan:</p>
-
-    <p><img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test3.png" /></p>
-
-    <p>Berikut adalah tampilan halaman pembayaran e-Pay BRI environment produksi:</p>
-
-    <p><img alt="ePay BRI 3" class="img-responsive img-thumbnail" src="../../images/bri_demo.png" /></p>
-
-    <hr />
+    <p>Ketika transaksi selesai, pelanggan anda dapat kembali ke website anda. Untuk melakukan hal ini, anda perlu mengisi konfigurasi callback URL di MAP (Merchant Administration Portal), silahkan melihat menu <a href="getting_started.html">langkah awal</a> untuk informasi lebih lengkap. Berikut adalah tampilan halaman pembayaran environment sandbox:
+<br /><br />
+<img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test2.png" />
+<br /><br />
+Setelah customer melakukan pembayaran, halaman berikut akan ditampilkan:
+<br /><br />
+<img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test3.png" />
+<br /><br />
+Berikut adalah tampilan halaman pembayaran e-Pay BRI environment produksi:
+<br /><br />
+<img alt="ePay BRI 3" class="img-responsive img-thumbnail" src="../../images/bri_demo.png" />
+<br /><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan redirect url ke halaman e-Pay BRI. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan redirect url ke halaman e-Pay BRI. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -418,7 +441,8 @@
       </tbody>
     </table>
 
-    <p>Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+    <p><br />
+Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
 
     <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi e-Pay BRI akan dibahas pada <a href="integration_bripay.html#transaction-status-bri">bagian selanjutnya</a>.</p>
 
@@ -426,24 +450,25 @@
   <div class="tab-pane" id="transaction-status-bri">
     <!-- step 4-->
     <!-- empat -->
+    <p><br /></p>
 
     <h2 id="status-transaksi">Status Transaksi</h2>
 
     <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih <code>pending</code>, pelanggan anda harus menyelesaikan pembayaran. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>success</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
 
-    <p>Status pada MAP saat pembayaran belum selesai dilakukan di halaman e-Pay BRI adalah seperti gambar berikut:</p>
-
-    <p><img alt="bripay MAP Pending" class="img-responsive img-thumbnail" src="../../images/bri-pay-pending.png" /></p>
-
-    <p>Status pada MAP saat pembayaran sudah selesai dilakukan di halaman e-Pay BRI adalah seperti gambar berikut:</p>
-
-    <p><img alt="bripay MAP Sukses" class="img-responsive img-thumbnail" src="../../images/bri-pay-success.png" /></p>
-
-    <hr />
+    <p>Status pada MAP saat pembayaran belum selesai dilakukan di halaman e-Pay BRI adalah seperti gambar berikut:
+<br /><br />
+  <img alt="bripay MAP Pending" class="img-responsive img-thumbnail" src="../../images/bri-pay-pending.png" />
+<br /><br />
+Status pada MAP saat pembayaran sudah selesai dilakukan di halaman e-Pay BRI adalah seperti gambar berikut:
+<br /><br />
+  <img alt="bripay MAP Sukses" class="img-responsive img-thumbnail" src="../../images/bri-pay-success.png" />
+<br /><br /></p>
 
     <h3 id="https-post">HTTP(S) POST</h3>
 
-    <p>Server Veritrans akan memberikan respon kepada server anda saat pelanggan anda telah melakukan pembayaran. Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:</p>
+    <p>Server Veritrans akan memberikan respon kepada server anda saat pelanggan anda telah melakukan pembayaran. Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:
+<br /><br /></p>
 
 <pre><code class="highlight php">{
     "status_code": "200",
@@ -458,7 +483,8 @@
 }
 </code></pre>
 
-    <p>Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct &#8211; Mendapatkan Status Transaksi</a>.</p>
+    <p><br />
+Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
 
   </div>
 </div>
@@ -506,6 +532,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

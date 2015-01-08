@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -202,7 +212,8 @@
   <li>Contoh VT-Direct e-Pay BRI</li>
 </ol>
 
-<p>Sebenarnya, parameter charge transaksi cukup bervariasi. Banyak parameter yang dapat dikonfigurasi untuk mengaktifkan fitur cicilan, BIN Promo, one click, dan two clicks. Agar konten materi tetap sederhana dan sistematis, fitur charge transaksi tersebut akan dibahas pada bab yang terpisah.</p>
+<p>Sebenarnya, parameter charge transaksi cukup bervariasi. Banyak parameter yang dapat dikonfigurasi untuk mengaktifkan fitur cicilan, BIN Promo, one click, dan two clicks. Agar konten materi tetap sederhana dan sistematis, fitur charge transaksi tersebut akan dibahas pada bab yang terpisah.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -217,15 +228,18 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="specification">
+    <p><br /></p>
 
     <h3 id="spesifikasi-https-post">Spesifikasi HTTP(S) POST</h3>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Deskripsi</td>
-          <td>Melakukan charge transaksi</td>
+          <th>Deskripsi</th>
+          <th>Melakukan charge transaksi</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>Endpoint</td>
           <td><a href="introduction.html#url-endpoint">BASE_URL</a>/charge</td>
@@ -241,18 +255,22 @@
       </tbody>
     </table>
 
+    <p><br /></p>
+
     <h3 id="json-request">JSON Request</h3>
 
     <p>Keterangan objek <code>JSON request</code> charge transaksi:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>payment_type</td>
           <td>String</td>
@@ -310,18 +328,20 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan Objek <strong>request.</strong><code>vtweb</code>:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>enabled_payments</td>
           <td>JSON Array</td>
@@ -349,20 +369,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan objek <strong>request.</strong><code>installment</code>:</p>
 
     <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>installment</code> digunakan dalam <code>payment_options</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Deskripsi</td>
+          <th>Atribut</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td><code>required</code></td>
           <td>Boolean</td>
@@ -378,20 +400,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan objek <strong>request.installment.</strong><code>installment_terms</code>:</p>
 
     <p><strong>Note</strong>: Minimal satu bank dan satu masa berlaku harus ada pada objek <code>installment_terms</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td><code>bni</code></td>
           <td>JSON Array</td>
@@ -407,18 +431,20 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan objek <code>payment_options</code>:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Deskripsi</td>
+          <th>Atribut</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>installment</td>
           <td>JSON Object</td>
@@ -428,20 +454,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan Objek <strong>request.</strong><code>credit_card</code>:</p>
 
     <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>credit_card</code> digunakan dalam <code>JSON request</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>token_id</td>
           <td>String</td>
@@ -481,20 +509,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan Objek <strong>request.</strong><code>mandiri_clickpay</code>:</p>
 
     <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>mandiri_clickpay</code> digunakan dalam <code>JSON request</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>card_number</td>
           <td>String</td>
@@ -528,20 +558,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan Objek <strong>request.</strong><code>cimb_clicks</code>:</p>
 
     <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>cimb_clicks</code> digunakan dalam <code>JSON request</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>description</td>
           <td>String</td>
@@ -551,20 +583,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan Objek <strong>request.</strong><code>bank_transfer</code>:</p>
 
     <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>bank_transfer</code> digunakan dalam <code>JSON request</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>bank</td>
           <td>String</td>
@@ -574,18 +608,20 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan Objek <strong>request.</strong><code>transaction_details</code>:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>order_id</td>
           <td>String (50)</td>
@@ -601,18 +637,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan elemen Objek <strong>request.</strong><code>item_details</code>:</p>
 
+    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>item_details</code> digunakan dalam <code>JSON request</code></p>
+
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>id</td>
           <td>String (50)</td>
@@ -640,20 +680,20 @@
       </tbody>
     </table>
 
-    <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>item_details</code> digunakan dalam <code>JSON request</code></p>
-
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan Objek <strong>request.</strong><code>customer_details</code>:</p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>first_name</td>
           <td>String (20)</td>
@@ -693,20 +733,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan Objek <strong>request.customer_details.</strong><code>billing_address</code>.</p>
 
     <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>billing_address</code> digunakan dalam <code>customer_details</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>first_name</td>
           <td>String (20)</td>
@@ -752,20 +794,22 @@
       </tbody>
     </table>
 
-    <hr />
+    <p><br /></p>
 
     <p>Keterangan objek <strong>request.customer_details.</strong><code>shipping_address</code>.</p>
 
     <p><strong>Note</strong>: Status required hanya berlaku jika objek <code>shipping_address</code> digunakan dalam <code>customer_details</code></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Required</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Required</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>first_name</td>
           <td>String (20)</td>
@@ -813,10 +857,12 @@
 
   </div>
   <div class="tab-pane" id="vtweb">
+    <p><br /></p>
 
     <p>Berikut adalah contoh JSON request VT-Web. Pada VT-Web, fungsi charge transaksi digunakan untuk memperoleh URL pembayaran. Proses charge transaksi sebenarnya baru terjadi saat pelanggan anda menyelesaikan pembayaran di URL VT-Web. Keterangan lebih lengkap mengenai deskripsi dan alur pembayaran VT-Web dapat dilihat di <a href="../vtweb/integration_php.html">VT-Web – Integrasi</a>. </p>
 
-    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting pada JSON request VT-Web adalah <code>payment_type</code>, <code>vtweb</code>, dan <code>transaction_details</code>. Pada contoh ini, kita akan mencoba mendapatkan URL pembayaran VT-Web ketika semua parameter digunakan dan fitur 3D Secure diaktifkan:</p>
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting pada JSON request VT-Web adalah <code>payment_type</code>, <code>vtweb</code>, dan <code>transaction_details</code>. Pada contoh ini, kita akan mencoba mendapatkan URL pembayaran VT-Web ketika semua parameter digunakan dan fitur 3D Secure diaktifkan:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -875,17 +921,21 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Perlu diperhatikan bahwa atribut <code>enabled_payments</code> tidak digunakan pada <code>vtweb</code>. Sesuai keterangan pada bagian <a href="charge.html#specification">spesifikasi</a>, semua metode pembayaran yang valid otomatis akan ditampilkan pada halaman pembayaran VT-Web. </p>
+    <p><br />
+Perlu diperhatikan bahwa atribut <code>enabled_payments</code> tidak digunakan pada <code>vtweb</code>. Sesuai keterangan pada bagian <a href="charge.html#specification">spesifikasi</a>, semua metode pembayaran yang valid otomatis akan ditampilkan pada halaman pembayaran VT-Web. 
+<br /><br /></p>
 
     <h3 id="struktur-dan-contoh-json-respon-vt-web">Struktur dan Contoh JSON Respon VT-Web</h3>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -904,7 +954,8 @@
       </tbody>
     </table>
 
-    <p>Contoh response sukses:</p>
+    <p><br />
+Contoh response sukses:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -913,13 +964,16 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Contoh response gagal:</p>
+    <p><br />
+Contoh response gagal:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"406"</span><span class="p">,</span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Merchant charges the same order id more than once or transaction has been paid"</span>
 <span class="p">}</span>
 </code></pre>
+
+    <p><br /></p>
 
     <h3 id="mengetahui-status-transaksi">Mengetahui Status Transaksi</h3>
 
@@ -935,10 +989,12 @@
   </div>
 
   <div class="tab-pane" id="vtdirect-cc">
+    <p><br /></p>
 
     <p>Pada metode pembayaran kartu kredit, anda harus memperoleh token ID terlebih dahulu. Token ID merepresentasikan informasi kartu kredit pelanggan anda yang telah disimpan di server Veritrans. Untuk memperoleh token, anda dapat mengikuti petunjuk di <a href="../vtdirect/integration_cc.html#step1">VT-Direct – Mendapatkan Token</a>.</p>
 
-    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi kartu kredit VT-Direct adalah <code>payment_type</code>, <code>credit_card</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Kartu Kredit dengan semua parameter digunakan:</p>
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi kartu kredit VT-Direct adalah <code>payment_type</code>, <code>credit_card</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Kartu Kredit dengan semua parameter digunakan:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
@@ -991,13 +1047,15 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Perlu diperhatikan bahwa struktur JSON request saat fitur 3D Secure digunakan atau tidak adalah sama. Contoh JSON request di atas dapat digunakan untuk kedua jenis transaksi. Perbedaan terjadi pada tahap request token ID.</p>
+    <p><br />
+Perlu diperhatikan bahwa struktur JSON request saat fitur 3D Secure digunakan atau tidak adalah sama. Contoh JSON request di atas dapat digunakan untuk kedua jenis transaksi. Perbedaan terjadi pada tahap request token ID.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1034,21 +1092,24 @@
       </tbody>
     </table>
 
-    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="struktur-dan-contoh-json-response-vt-direct-kartu-kredit">Struktur dan Contoh JSON Response VT-Direct Kartu Kredit</h3>
 
-    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct kartu kredit adalah sebagai berikut:</p>
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct kartu kredit adalah sebagai berikut:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>transaction_id</td>
           <td>String</td>
@@ -1107,7 +1168,8 @@
       </tbody>
     </table>
 
-    <p>Contoh JSON response transaksi sukses: </p>
+    <p><br />
+Contoh JSON response transaksi sukses: </p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1a1a66f7-27a7-4844-ba1f-d86dcc16ab27"</span><span class="p">,</span>
@@ -1124,7 +1186,8 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Contoh JSON response transaksi gagal:</p>
+    <p><br />
+Contoh JSON response transaksi gagal:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"b98fafec-fc2b-436f-bc6d-87853291cb35"</span><span class="p">,</span>
@@ -1139,6 +1202,8 @@
 	<span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Deny by Bank [BNI] with code [05] and message [Do not honour]"</span>
 <span class="p">}</span>
 </code></pre>
+
+    <p><br /></p>
 
     <h3 id="mengetahui-status-transaksi-1">Mengetahui Status Transaksi</h3>
 
@@ -1155,10 +1220,12 @@
   </div>
 
   <div class="tab-pane" id="vtdirect-mandiri">
+    <p><br /></p>
 
     <p>Pada metode pembayaran Mandiri Clickpay, anda harus harus menyertakan input dan output mesin token Mandiri Clickpay. Input token terdiri dari <code>input1</code>, <code>input2</code>, dan <code>input3</code>. Sedangkan output token merupakan 6 digit angka yang dapat diperoleh dengan memasukkan ketiga parameter input. Penjelasan lebih rinci mengenai alur dan deskripsi metode Mandiri Clickpay dapat anda ikuti di <a href="../vtdirect/integration_mandiri.html">VT-Direct – Mandiri Clickpay</a>.</p>
 
-    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi Mandiri Clickpay VT-Direct adalah <code>payment_type</code>, <code>mandiri_clickpay</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Mandiri Clickpay dengan semua parameter digunakan:</p>
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi Mandiri Clickpay VT-Direct adalah <code>payment_type</code>, <code>mandiri_clickpay</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Mandiri Clickpay dengan semua parameter digunakan:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -1221,11 +1288,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi-1">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1258,21 +1326,24 @@
       </tbody>
     </table>
 
-    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="struktur-dan-contoh-json-response-vt-direct-mandiri-clickpay">Struktur dan Contoh JSON Response VT-Direct Mandiri Clickpay</h3>
 
-    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct Mandiri Clickpay adalah sebagai berikut:</p>
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct Mandiri Clickpay adalah sebagai berikut:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -1316,7 +1387,8 @@
       </tbody>
     </table>
 
-    <p>Contoh JSON response transaksi sukses: </p>
+    <p><br />
+Contoh JSON response transaksi sukses: </p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -1332,7 +1404,8 @@
 <span class="p">}</span>
 </code></pre>
 
-    <p>Contoh JSON response transaksi gagal:</p>
+    <p><br />
+Contoh JSON response transaksi gagal:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"202"</span><span class="p">,</span>
@@ -1347,6 +1420,8 @@
 	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
 <span class="p">}</span>
 </code></pre>
+
+    <p><br /></p>
 
     <h3 id="mengetahui-status-transaksi-2">Mengetahui Status Transaksi</h3>
 
@@ -1363,10 +1438,11 @@
   </div>
 
   <div class="tab-pane" id="vtdirect-cimb">
+    <p><br />
+Pada metode pembayaran CIMB Clicks, charge transaksi yang berhasil hanya akan menghasilkan URL pembayaran. Anda harus me-redirect pelanggan ke URL pembayaran CIMB Clicks untuk menyelesaikan proses transaksi. Info lebih lengkap dapat diperoleh di <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">website CIMB Niaga</a>.</p>
 
-    <p>Pada metode pembayaran CIMB Clicks, charge transaksi yang berhasil hanya akan menghasilkan URL pembayaran. Anda harus me-redirect pelanggan ke URL pembayaran CIMB Clicks untuk menyelesaikan proses transaksi. Info lebih lengkap dapat diperoleh di <a title="CIMB Niaga" href="http://www.cimbniaga.com/?ch=branchless&amp;tab=question&amp;lang=BI">website CIMB Niaga</a>.</p>
-
-    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi CIMB Clicks VT-Direct adalah <code>payment_type</code>, <code>cimb_clicks</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct CIMB Clicks dengan semua parameter digunakan:</p>
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi CIMB Clicks VT-Direct adalah <code>payment_type</code>, <code>cimb_clicks</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct CIMB Clicks dengan semua parameter digunakan:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -1425,11 +1501,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi-2">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1462,21 +1539,24 @@
       </tbody>
     </table>
 
-    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="struktur-dan-contoh-json-response-vt-direct-cimb-clicks">Struktur dan Contoh JSON Response VT-Direct CIMB Clicks</h3>
 
-    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct CIMB Clicks adalah sebagai berikut:</p>
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct CIMB Clicks adalah sebagai berikut:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -1527,7 +1607,8 @@
 
     <p>Dua informasi penting dalam respon JSON adalah <code>transaction_status</code> dan <code>redirect_url</code>. Jika nilai <code>transaction_status</code> adalah <code>pending</code>, maka transaksi berhasil dicatat pada server Veritrans. Namun, transaksi masih belum selesai dan masih menunggu proses pembayaran pelanggan di halaman <code>redirect_url</code>.</p>
 
-    <p>Contoh JSON response saat charge transaksi berhasil: </p>
+    <p><br />
+Contoh JSON response saat charge transaksi berhasil: </p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -1541,6 +1622,8 @@
 	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
 <span class="p">}</span>
 </code></pre>
+
+    <p><br /></p>
 
     <h3 id="mengetahui-status-transaksi-3">Mengetahui Status Transaksi</h3>
 
@@ -1556,10 +1639,12 @@
   </div>
 
   <div class="tab-pane" id="vtdirect-va">
+    <p><br /></p>
 
     <p>Pada metode pembayaran Virtual Account, charge transaksi yang berhasil akan menghasilkan nomor rekening virtual account. Anda harus menampilkan nomor rekening virtual account tersebut ke pelanggan anda agar pelanggan anda dapat menyelesaikan proses pembayaran.</p>
 
-    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi Virtual Account VT-Direct adalah <code>payment_type</code>, <code>bank_transfer</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Virtual Account dengan semua parameter digunakan:</p>
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi Virtual Account VT-Direct adalah <code>payment_type</code>, <code>bank_transfer</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct Virtual Account dengan semua parameter digunakan:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -1618,11 +1703,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi-3">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1655,21 +1741,24 @@
       </tbody>
     </table>
 
-    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+    <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="struktur-dan-contoh-json-response-vt-direct-virtual-account">Struktur dan Contoh JSON Response VT-Direct Virtual Account</h3>
 
-    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct Virtual Account adalah sebagai berikut:</p>
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct Virtual Account adalah sebagai berikut:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -1720,7 +1809,8 @@
 
     <p>Dua informasi penting dalam respon JSON adalah <code>transaction_status</code> dan <code>permata_va_number</code>. Jika nilai <code>transaction_status</code> adalah <code>pending</code>, maka transaksi berhasil dicatat pada server Veritrans. Namun, transaksi masih belum selesai dan masih menunggu proses pembayaran pelanggan ke nomor rekening<code>permata_va_number</code>.</p>
 
-    <p>Contoh JSON response saat charge transaksi berhasil: </p>
+    <p><br />
+Contoh JSON response saat charge transaksi berhasil: </p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -1735,6 +1825,8 @@
 <span class="p">}</span>
 </code></pre>
 
+    <p><br /></p>
+
     <h3 id="mengetahui-status-transaksi-4">Mengetahui Status Transaksi</h3>
 
     <p>Pada VT-Direct Virtual Account, status transaksi masih <code>pending</code> setelah proses charge transaksi. Status apakah transaksi berhasil atau tidak baru diketahui setelah pelanggan anda menyelesaikan pembayaran. Anda dapat mengetahui status transaksi melalui mekanisme berikut:</p>
@@ -1748,10 +1840,12 @@
   </div>
 
   <div class="tab-pane" id="vtdirect-bripay">
+    <p><br /></p>
 
     <p>Pada metode pembayaran e-Pay BRI, charge transaksi yang berhasil hanya akan menghasilkan URL pembayaran. Anda harus me-redirect pelanggan ke URL pembayaran e-Pay BRI untuk menyelesaikan proses transaksi. Info lebih lengkap dapat diperoleh di <a title="e-Pay BRI" href="http://e-pay.bri.co.id">website e-Pay BRI</a>.</p>
 
-    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi e-Pay BRI VT-Direct adalah <code>payment_type</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct e-Pay BRI dengan semua parameter digunakan:</p>
+    <p>Berdasarkan keterangan pada bagian <a href="#specification">spesifikasi</a>, atribut penting charge transaksi e-Pay BRI VT-Direct adalah <code>payment_type</code>, <code>transaction_details</code> dan <code>customer_detail</code>. Pada contoh ini, kita akan mencoba charge transaksi VT-Direct e-Pay BRI dengan semua parameter digunakan:
+<br /><br /></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="c1">// Required</span>
@@ -1806,11 +1900,12 @@
 <span class="p">}</span>
 </code></pre>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi-4">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -1845,19 +1940,22 @@
 
     <p>Daftar status code lengkap dapat dilihat di <a href="status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
 
-    <hr />
+    <p><br /></p>
 
     <h3 id="struktur-dan-contoh-json-response-vt-direct-e-pay-bri">Struktur dan Contoh JSON Response VT-Direct e-Pay BRI</h3>
 
-    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct CIMB Clicks adalah sebagai berikut:</p>
+    <p>Jika charge transaksi tidak mengalami error, server Veritrans akan mengembalikan JSON response. Struktur JSON response VT-Direct CIMB Clicks adalah sebagai berikut:
+<br /><br /></p>
 
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Atribut JSON</td>
-          <td>Tipe Data</td>
-          <td>Keterangan</td>
+          <th>Atribut JSON</th>
+          <th>Tipe Data</th>
+          <th>Keterangan</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>status_code</td>
           <td>String</td>
@@ -1908,7 +2006,8 @@
 
     <p>Dua informasi penting dalam respon JSON adalah <code>transaction_status</code> dan <code>redirect_url</code>. Jika nilai <code>transaction_status</code> adalah <code>pending</code>, maka transaksi berhasil dicatat pada server Veritrans. Namun, transaksi masih belum selesai dan masih menunggu proses pembayaran pelanggan di halaman <code>redirect_url</code>.</p>
 
-    <p>Contoh JSON response saat charge transaksi berhasil: </p>
+    <p><br />
+Contoh JSON response saat charge transaksi berhasil: </p>
 
 <pre><code class="highlight json"><span class="p">{</span>
 	<span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
@@ -1922,6 +2021,8 @@
 	<span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
 <span class="p">}</span>
 </code></pre>
+
+    <p><br /></p>
 
     <h3 id="mengetahui-status-transaksi-5">Mengetahui Status Transaksi</h3>
 
@@ -1980,6 +2081,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

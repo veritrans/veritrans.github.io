@@ -174,14 +174,24 @@
 			
 			<li>
         
+          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+        
+			</li>
+			
+			<li>
+        
           <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
         
 			</li>
 			
 		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
 	</div>
 </div><!--/span-->
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -201,9 +211,10 @@
     <p>Digunakan untuk development. Data dan transaksi yang digunakan pada akun ini bersifat <em>dummy</em>. Pada tahap pengembangan, diharuskan untuk menggunakan akun <em>sandbox</em>. Akun <em>sandbox</em> dapat dibuat di <a href="https://my.sandbox.veritrans.co.id/register">sini</a>.</p>
   </li>
   <li>
-    <p>Mengisi informasi dasar tentang anda di MAP. Dapat ditemukan di menu <a title="General Settings" href="https://my.sandbox.veritrans.co.id/settings/general_info">Settings - General Settings</a>.</p>
+    <p>Mengisi informasi dasar tentang anda di MAP. Dapat ditemukan di menu <a title="General Settings" href="https://my.sandbox.veritrans.co.id/settings/general_info">Settings - General Settings</a>.<br /><br /></p>
 
-    <p><img alt="General Setting" class="img-responsive img-thumbnail" src="../../images/gen_set.png" /></p>
+    <p><img alt="General Setting" class="img-responsive img-thumbnail" src="../../images/gen_set.png" />
+<br /><br /></p>
   </li>
   <li>
     <p>Mengunduh library <code>Veritrans-PHP</code> [ <a href="https://github.com/veritrans/veritrans-php">Github</a> | <a href="https://github.com/veritrans/veritrans-php/archive/master.zip">Zip</a> ]</p>
@@ -213,36 +224,58 @@
       <li>
         <p>Login <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> MAP (Merchant Administration Portal).</p>
       </li>
-      <li>
-        <p>Pilih menu <strong>Settings</strong> dan <strong>Access keys</strong> </p>
-      </li>
-    </ul>
-
-    <p><img alt="Access Keys" class="img-responsive img-thumbnail" src="../../images/access_key.png" /></p>
-
-    <ul>
-      <li><strong><font color="#F50000">Perhatian!!!</font></strong> Jaga baik-baik kerahasiaan <code>server key</code> anda.</li>
+      <li>Pilih menu <strong>Settings</strong> dan <strong>Access keys</strong> 
+<br /><br />
+ <img alt="Access Keys" class="img-responsive img-thumbnail" src="../../images/access_key.png" />
+<br /><br /></li>
+      <li><strong><font color="#F50000">Perhatian!!!</font></strong> Jaga baik-baik kerahasiaan <code>server key</code> anda.
+<br /><br /></li>
     </ul>
   </li>
   <li>
     <p>Menangani redirect URL</p>
 
-    <p>Tahap terakhir sebelum memulai integrasi adalah menentukan bagaimana pelanggan anda kembali ke website setelah proses pembayaran selesai dilakukan. Setelah pelanggan anda menyelesaikan proses pembayaran, mereka akan dialihkan kembali ke website anda. Kemana pelanggan anda akan dialihkan, dapat diatur melalui MAP pada menu <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration</a>.</p>
+    <p>Tahap terakhir sebelum memulai integrasi adalah menentukan bagaimana pelanggan anda kembali ke website setelah proses pembayaran selesai dilakukan. Setelah pelanggan anda menyelesaikan proses pembayaran, mereka akan dialihkan kembali ke website anda. Kemana pelanggan anda akan dialihkan, dapat diatur melalui MAP ataupun melalui code yang dikirim ke Veritrans.</p>
 
-    <p><img alt="vtweb-config" class="img-responsive img-thumbnail" src="../../images/vtweb-config.png" /></p>
+    <p>Untuk mengatur melalui MAP, bisa dilakukan pada menu <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration</a>.
+<br /><br />
+ <img alt="vtweb-config" class="img-responsive img-thumbnail" src="../../images/vtweb-config.png" />
+<br /><br />
+ Untuk mengatur melalui code yang dikirim ke Veritrans, bisa menggunakan parameter berikut:<br /><br /></p>
+
+<pre><code class="highlight plaintext"> &lt;?php 
+ ...
+
+ // Fill transaction data
+ $transaction = array(
+ "vtweb" =&gt; array (
+       "credit_card_3d_secure" =&gt; true,
+       'finish_redirect_url' =&gt; 'http://www.example.com',
+       'unfinish_redirect_url' =&gt; 'http://www.example.com',
+       'error_redirect_url' =&gt; 'http://www.example.com'
+     ),
+ 'transaction_details' =&gt; array(
+     'order_id' =&gt; rand(),
+     'gross_amount' =&gt; 10000,
+     )
+ );
+
+ ...
+ ?&gt;
+</code></pre>
 
     <hr />
 
-    <p>Berikut adalah alur kemana pelanggan anda akan dialihkan sesaat setelah proses pembayaran selesai dilakukan.</p>
-
-    <p><img alt="vtweb-diagram" class="img-responsive img-thumbnail" src="../../images/vtweb-diagram.png" /></p>
-
+    <p>Berikut adalah alur kemana pelanggan anda akan dialihkan sesaat setelah proses pembayaran selesai dilakukan.
+<br /><br />
+ <img alt="vtweb-diagram" class="img-responsive img-thumbnail" src="../../images/vtweb-diagram.png" />
+<br /><br /></p>
     <ol>
-   <li>Finish Redirect URL</li>
-   Alamat URL kemana pelanggan anda akan diarahkan jika proses pembayaran berhasil
-   <li>Error Redirect URL</li>
-   Alamat URL kemana pelanggan anda akan diarahkan jika pembayaran gagal
-   <li>Unfinish Redirect URL</li>
+   <b><li>Finish Redirect URL</li></b>
+   Alamat URL kemana pelanggan anda akan diarahkan jika proses pembayaran berhasil.
+   <b><li>Error Redirect URL</li></b>
+   Alamat URL kemana pelanggan anda akan diarahkan jika pembayaran gagal.
+   <b><li>Unfinish Redirect URL</li></b>
    Alamat URL kemana pelanggan anda akan diarahkan saat menekan tombol "Back to Merchant Website" (Batal melakukan proses pembayaran).
  </ol>
   </li>
@@ -293,6 +326,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>

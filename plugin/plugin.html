@@ -95,7 +95,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../id/vtweb/getting_started.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../id/plugin/plugin.html">Bahasa Indonesia</a></div>
         <ul class="sidebar">
             
                 <li>
@@ -110,15 +110,15 @@
                         <b class="caret"></b>
                         <ul class="child-menu">
                             
-                            <li class=""><a href="introduction.html">Introduction</a></li>
+                            <li class=""><a href="../vtweb/introduction.html">Introduction</a></li>
                             
-                            <li class="active"><a href="getting_started.html">Getting Started</a></li>
+                            <li class=""><a href="../vtweb/getting_started.html">Getting Started</a></li>
                             
-                            <li class=""><a href="integration.html">Integration</a></li>
+                            <li class=""><a href="../vtweb/integration.html">Integration</a></li>
                             
-                            <li class=""><a href="other_features.html">Other Features</a></li>
+                            <li class=""><a href="../vtweb/other_features.html">Other Features</a></li>
                             
-                            <li class=""><a href="going_live.html">Going Live</a></li>
+                            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
                             
                         </ul>
                     
@@ -174,7 +174,7 @@
             
                 <li>
                     
-                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                        <a class="parent" href="plugin.html">Plugin</a>
                     
                 </li>
             
@@ -195,97 +195,64 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="vtweb-getting-started">
-            <h2 id="getting-started">Getting Started</h2>
+          <div class="plugin-plugin">
+            <h2 id="plugin-and-libraries">Plugin and Libraries</h2>
 <hr />
 
-<h5 id="target-merchant-understands-what-to-prepare-before-integration-with-vt-web"><strong><em>Target:</em></strong> <em>Merchant understands what to prepare before integration with VT-Web</em></h5>
+<h5 id="we-trying-to-make-the-integration-process-as-easy-as-posible-this-page-contains-a-list-of-plugins-and-libraries-owned-by-veritrans-if-you-write-your-own-plugin-or-library-and-would-like-us-to-link-it-contact--supportveritranscoidmailtosupportveritranscoid-email-support"><em>We trying to make the integration process as easy as posible. This page contains a list of plugins and libraries owned by Veritrans. If you write your own plugin or library and would like us to link it, contact  <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a>.</em></h5>
 <hr />
 
-<p>There are a few actions recommended prior to integrating with VT-Web:</p>
+<p><br /></p>
 
-<ol>
-  <li>
-    <p>Create Veritrans <em>Sandbox</em> account.</p>
+<h2 id="plugin-for-vt-web">Plugin for VT-Web</h2>
 
-    <p>Utilized for development. Data and transaction made on this account is <em>dummy</em> in nature. During development period, merchant has to use <em>sandbox</em> account. <em>Sandbox</em> account can be created <a href="https://my.sandbox.veritrans.co.id/register">here</a>.</p>
-  </li>
-  <li>
-    <p>Fill in your basic information in MAP (Merchant Administration Portal). Can be found in menu <a title="General Settings" href="https://my.sandbox.veritrans.co.id/settings/general_info">Settings - General Settings</a>.<br /><br /></p>
+<table>
+  <thead>
+    <tr>
+      <th>Prestashop</th>
+      <th>magento</th>
+      <th>Opencart</th>
+      <th>Wordpress-Woocommerce</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1.5, 1.6</strong><br /> * <a href="https://github.com/veritrans/vtweb-prestashop">Github</a><br /> * <a href="../vtweb/integration_prestashop.html">Veritrans Docs</a><br /><br /><br /></td>
+      <td><strong>1.8, 1.9</strong><br /> * <a href="https://github.com/veritrans/vtweb-magento">Github</a><br /> * <a href="../vtweb/integration_magento.html">Veritrans Docs</a><br /><br /><br /></td>
+      <td><strong>1.5.6.4</strong><br /> * <a href="https://github.com/veritrans/vtweb-opencart">Github</a><br /> * <a href="../vtweb/integration_opencart.html">Veritrans Docs</a><br /><strong>2.0</strong><br /> * <a href="https://github.com/harrypujianto/vtweb-opencart-2.0/archive/master.zip">Download</a></td>
+      <td><strong>Wordpress 3.9.1 - 4.0.1</strong><br /><strong>WooCommerce 2.1.11 - 2.2.8</strong><br /> * <a href="https://github.com/veritrans/veritrans-woocommerce">Github</a><br /> * <a href="../vtweb/integration_woocommerce.html">Veritrans Docs</a><br /><br /></td>
+    </tr>
+  </tbody>
+</table>
 
-    <p><img alt="General Setting" class="img-responsive img-thumbnail" src="../images/gen_set.png" />
-<br /><br /></p>
-  </li>
-  <li>
-    <p>Download <code>Veritrans-PHP</code> library [ <a href="https://github.com/veritrans/veritrans-php">Github</a> | <a href="https://github.com/veritrans/veritrans-php/archive/master.zip">Zip</a> ]</p>
-  </li>
-  <li>Take note the <code>server key</code> and <code>client key</code> of your account. Both keys can be obtained by
-    <ul>
-      <li>
-        <p>Login <a href="https://my.sandbox.veritrans.co.id">Sandbox</a> MAP (Merchant Administration Portal).</p>
-      </li>
-      <li>Choose menu <strong>Settings</strong> and <strong>Access keys</strong> 
-<br /><br />
- <img alt="Access Keys" class="img-responsive img-thumbnail" src="../images/access_key.png" />
-<br /><br /></li>
-      <li><strong><font color="#F50000">Caution!!!</font></strong> Be discreet on your <code>server key</code>.
-<br /><br /></li>
-    </ul>
-  </li>
-  <li>
-    <p>Manage redirected URL</p>
+<p><br /></p>
 
-    <p>The last step is to decide on how your customer will return to your website after payment process is completed. The website page where customer will be redirected can be configured in MAP or by code.</p>
+<hr />
 
-    <p>To set through MAP, you can go to <a href="https://my.sandbox.veritrans.co.id/settings/vtweb_configuration">Settings - Configuration menu</a> on MAP.
-<br /><br />
- <img alt="vtweb-config" class="img-responsive img-thumbnail" src="../images/vtweb-config.png" />
-<br /><br />
- To set through code, use the following parameters:<br /><br /></p>
+<p><br /></p>
 
-<pre><code class="highlight plaintext"> &lt;?php 
- ...
+<h2 id="libraries">Libraries</h2>
 
- // Fill transaction data
- $transaction = array(
- "vtweb" =&gt; array (
-       "credit_card_3d_secure" =&gt; true,
-       'finish_redirect_url' =&gt; 'http://www.example.com',
-       'unfinish_redirect_url' =&gt; 'http://www.example.com',
-       'error_redirect_url' =&gt; 'http://www.example.com'
-     ),
- 'transaction_details' =&gt; array(
-     'order_id' =&gt; rand(),
-     'gross_amount' =&gt; 10000,
-     )
- );
-
- ...
- ?&gt;
-</code></pre>
-
-    <hr />
-
-    <p>Detailed below is the flow on how the customer will be redirected after payment process is completed.</p>
-
-    <p><img alt="vtweb-diagram" class="img-responsive img-thumbnail" src="../images/vtweb-diagram.png" /></p>
-
-    <ol>
-   <b><li>Finish Redirect URL</li></b>
-  URL address where customer will be redirected if payment process is successful
-   <b><li>Error Redirect URL</li></b>
-  URL address where customer will be redirected if payment process is unsuccessful.
-  <b> <li>Unfinish Redirect URL</li></b>
-  URL address where customer will be redirected when clicking "Back to Merchant Website" (Payment process cancelled).
- </ol>
-  </li>
-</ol>
-
-<p>When all of the above step is completed, VT-Web integration can be initiated.</p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>PHP</strong></td>
+      <td><a href="https://github.com/veritrans/veritrans-php">https://github.com/veritrans/veritrans-php</a></td>
+    </tr>
+    <tr>
+      <td><strong>Ruby</strong></td>
+      <td><a href="https://github.com/veritrans/veritrans-ruby">https://github.com/veritrans/veritrans-ruby</a></td>
+    </tr>
+    <tr>
+      <td><strong>Python</strong></td>
+      <td>* <a href="https://pypi.python.org/pypi/VeritransPay/0.4">Python library</a> by Apps-Foundry<br /> * <a href="http://veritranspay.readthedocs.org/en/latest/index.html">Documentation</a></td>
+    </tr>
+  </tbody>
+</table>
 
 
 			<div class="pagination">
-				<ul><li class="left">« Previous: <a href="introduction.html">VT-Web : Introduction</a></li><li class="right">Next: <a href="integration.html">VT-Web : Integration</a> »</li></ul>
+				<ul><li class="left">« Previous: <a href="../sandbox/status_code.html">API Reference : Status Code</a></li><li class="right">Next: <a href="http://support.veritrans.co.id">FAQ : FAQ</a> »</li></ul>
 			</div>
           </div>
         </div><!--/span-->

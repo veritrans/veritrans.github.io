@@ -174,14 +174,24 @@
             
                 <li>
                     
+                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                    
+                </li>
+            
+                <li>
+                    
                         <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
                     
                 </li>
             
         </ul>
+        <p class="question">
+            Something is missing from the docs?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
+        </p>
     </div>
 </div>
-        <div class="col-xs-12 col-sm-9" id="bodier">
+        <div class="col-xs-12 col-sm-7" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
@@ -191,6 +201,7 @@
 
 <h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-with-virtual-account-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct with Virtual Account payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
 <hr />
+<p><br /></p>
 
 <div class="row">
   <div class="col-sm-2 col-xs-12">
@@ -221,10 +232,11 @@
 </div>
 
 <hr />
+<p><br /></p>
 
 <p>One of the payment method offered by Veritrans is Virtual Account. Currently Veritrans has already integrated with Permata Bank for Virtual Account system. By using this service, your customer will have an option to make a payment via bank transfer to a Permata Bank Virtual Account Number.</p>
 
-<p>To activate Virtual Account method of payment (automatically active on Sandbox mode), you have to contact Veritrans sales representative.</p>
+<p>To activate Virtual Account method of payment (automatically active on Sandbox mode), you have to contact a Veritrans sales representative.</p>
 
 <h3 id="integration-vt-direct-virtual-account">Integration VT-Direct Virtual Account</h3>
 
@@ -235,7 +247,8 @@
   <li>Check Transaction Status</li>
 </ol>
 
-<p>Unlike the other payment methods (Credit Card, Mandiri ClickPay and CIMB Clicks), Virtual Account payment process is not executed in your payment page. Customer has to pay with transfer method to complete transaction.</p>
+<p>Unlike the other payment methods (Credit Card, Mandiri ClickPay and CIMB Clicks), Virtual Account payment process is not executed on your payment page. Customer has to pay with transfer method to complete the transaction.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -249,12 +262,14 @@
   <div class="tab-pane active" id="form-va">
     <!-- step 1-->
     <!-- satu -->
+    <p><br /></p>
 
     <h2 id="create-form">Create Form</h2>
 
-    <p>Virtual Account payment form will be made in the file <code>form_vtdirect_va.html</code>. Because most of the transaction process will not be made in the merchant's page, the form that we made will only show the steps of payment and the payment button of Virtual Account. When customer clicks this payment button, charge transaction process will be carried on the next step.</p>
+    <p>Virtual Account payment form will be made in the file <code>form_vtdirect_va.html</code>. Because most of the transaction process will not be made in the merchant's page, the form that we made will only show the steps of payment and the payment button of the Virtual Account. When customer clicks this payment button, charge transaction process will be carried on the next step.</p>
 
-    <p>The following is a sample from the file <code>form_vtdirect_va.html</code>:</p>
+    <p>The following is a sample from the file <code>form_vtdirect_va.html</code>:
+<br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;head&gt;</span>
 	<span class="nt">&lt;title&gt;</span>Bank Transfer<span class="nt">&lt;/title&gt;</span>
@@ -271,6 +286,7 @@
   <div class="tab-pane" id="charge-transaction-va">
     <!-- step 2-->
     <!-- dua -->
+    <p><br /></p>
 
     <h2 id="charge-transaction">Charge Transaction</h2>
 
@@ -279,7 +295,7 @@
     <ul>
       <li><code>payment_type</code> parameter has to be set as <code>bank_transfer</code>.</li>
       <li>
-        <p>New JSON object has to be added, with the name <code>bank_transfer</code>, and has the pairing name/value as follows:</p>
+        <p>New JSON object has to be added, with the name <code>bank_transfer</code>, and has the pairing name/value as followed:</p>
 
         <ul>
           <li><code>bank</code> →   Descriptions bank will use for Virtual Account</li>
@@ -287,7 +303,8 @@
       </li>
     </ul>
 
-    <p>This step describes the Virtual Account charge transaction in the file checkout_va.php. To perform charge transaction, we will use Veritrans PHP library. The following is an example of charge transaction implementation in the file checkout_va.php:</p>
+    <p>This step describes the Virtual Account charge transaction in the file checkout_va.php. To perform charge transaction, we will use Veritrans PHP library. The following is an example of charge transaction implementation in the file checkout_va.php:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -322,16 +339,19 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>On the above example, we utilise the Virtual Account data, transaction data, and customer data as the charge transaction parameter. You can add additional data during charge transaction, such as: Customer address, delivery address, and item information. To add this data, you can check <a href="../sandbox/charge.html">API Reference - Charge Transaksi</a>.</p>
+    <p><br />
+On the above example, we utilize the Virtual Account data, transaction data, and customer data as the charge transaction parameter. You can add additional data during the charge transaction, such as: Customer address, delivery address, and item information. To add this data, you can check <a href="../sandbox/charge.html">API Reference - Charge Transaksi</a>.</p>
 
   </div>
   <div class="tab-pane" id="response-transaction-va">
     <!-- step 3-->
     <!-- tiga -->
+    <p><br /></p>
 
     <h2 id="display-virtual-account">Display Virtual Account</h2>
 
-    <p>Veritrans server will return a response for every charge transaction in JSON form. Veritrans PHP Library will convert JSON into PHP object automatically. The sample JSON script that is returned by Veritrans is as follows:</p>
+    <p>Veritrans' server will return a response for every charge transaction in JSON form. Veritrans' PHP Library will convert JSON into a PHP object automatically. The sample JSON script that is returned by Veritrans is as followed:
+<br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
@@ -346,7 +366,9 @@
 );
 </code></pre>
 
-    <p>Two important information in the JSON response above is the <code>status_code</code> and <code>permata_va_number</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. Merchant is required to show the <code>permata_va_number</code> to the customer so they can finish the Virtual Account transaction. You can add the following PHP code at the last line of the file checkout_va.php to do so:</p>
+    <p><br />
+Two important information details in the JSON response above are the <code>status_code</code> and <code>permata_va_number</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. Merchant is required to show the <code>permata_va_number</code> to the customer so they can finish the Virtual Account transaction. You can add the following PHP code at the last line of the file checkout_va.php to do so:
+<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -373,25 +395,26 @@
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p>Up to this point, the transaction is stored in MAP with <em>pending</em> status. Transaction status will change to <em>success</em> when your customer completes the payment.</p>
+    <p><br />
+Up to this point, the transaction is stored in MAP with <em>pending</em> status. Transaction status will change to <em>success</em> when your customer completes the payment.</p>
 
-    <p>To facilitate the payment process, we provide the <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">payment simulator</a> in sandbox Environment. Enter the account number previously obtained to check whether there is a transaction with the virtual account number.</p>
-
-    <p><img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test3.png" /></p>
-
-    <p>If there is a transaction with virtual account numbers you provide, you can do a payment simulation.</p>
-
-    <p><img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test4.png" /></p>
-
-    <p>Successful payment.</p>
-
-    <p><img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test5.png" /></p>
-
-    <hr />
+    <p>To facilitate the payment process, we provide the <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">payment simulator</a> in sandbox Environment. Enter the account number previously obtained to check whether there is a transaction with the virtual account number.
+<br /><br />
+<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test3.png" />
+<br /><br />
+If there is a transaction with virtual account numbers you provide, you can do a payment simulation.
+<br /><br />
+<img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test4.png" />
+<br /><br />
+Successful payment.
+<br /><br />
+<img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../images/vtweb_transfer_test5.png" />
+<br /><br /></p>
 
     <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
 
-    <p>Under a certain case, charge transaction on VT-Direct can fail. This will prevents you in getting the virtual account number. Veritrans will return an error message if failure occurred, The reason of failure can be inspected from the status code displayed on the error message. The status code that generally occurs are:</p>
+    <p>Under a certain case, charge transaction on VT-Direct may fail. This will prevent you from getting the virtual account number. Veritrans will return an error message if failure occurrs. The reason of failure can be inspected from the status code displayed on the error message. The status codes that generally occur are:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -424,7 +447,8 @@
       </tbody>
     </table>
 
-    <p>The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
+    <p><br />
+The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
 
     <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_va.html#transaction-status-va">next steps</a>.</p>
 
@@ -432,24 +456,25 @@
   <div class="tab-pane" id="transaction-status-va">
     <!-- step 4-->
     <!-- empat -->
+    <p><br /></p>
 
     <h2 id="transaction-status">Transaction Status</h2>
 
     <p>When charge transaction is successful, the transaction status is still pending. Customer has to complete the transaction. When this process is completed, the transaction status will be changed into <code>success</code>. You can check the transaction status change through MAP.</p>
 
-    <p>The status on MAP when payment is not yet completed is as follows:</p>
-
-    <p><img alt="Permata MAP Pending" class="img-responsive img-thumbnail" src="../images/va-map-pending.png" /></p>
-
-    <p>The status on MAP when payment has been completed is as follows:</p>
-
-    <p><img alt="Permata MAP Sukses" class="img-responsive img-thumbnail" src="../images/va-map-success.png" /></p>
-
-    <hr />
+    <p>The status on MAP when payment is not yet completed is as followed:
+<br /><br />
+  <img alt="Permata MAP Pending" class="img-responsive img-thumbnail" src="../images/va-map-pending.png" />
+<br /><br />
+The status on MAP when payment has been completed is as followed:
+<br /><br />
+  <img alt="Permata MAP Sukses" class="img-responsive img-thumbnail" src="../images/va-map-success.png" />
+<br /><br /></p>
 
     <h3 id="http-response">HTTP Response</h3>
 
-    <p>Veritrans server will return a response to your server when customer has complete the payment. The sample JSON script that is returned by Veritrans is as follows:</p>
+    <p>Veritrans' server will return a response to your server when customer has complete the payment. The sample JSON script that is returned by Veritrans is as followed:
+<br /><br /></p>
 
 <pre><code class="highlight php">{
     "status_code": "200",
@@ -464,7 +489,8 @@
 }
 </code></pre>
 
-    <p>The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction Status</a>.</p>
+    <p><br />
+The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction Status</a>.</p>
 
   </div>
 </div>
@@ -512,6 +538,9 @@
     $(document).ready(function() {
       $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
       });
     });
     </script>
