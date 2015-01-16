@@ -19,64 +19,54 @@
   <body>
     <div class="header navbar navbar-default navbar-fixed-top">
       <div class="custom-container">
-        <div class="col-md-3 navbar-header">
+        <div class="col-md-3 col-sm-12 navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <h2 class="logo"><a href="https://www.veritrans.co.id" title="Home"><span>Veritrans</span></a></h2>
+          <h2 class="logo"><a href="index.html" title="Home"><span>Veritrans</span></a></h2>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="https://www.veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
-            <li><a href="https://www.veritrans.co.id/product.html" title="Our Online Payment Products">product</a></li>
-            <li><a href="https://www.veritrans.co.id/pricing.html" title="Check for Our Pricing">pricing</a></li>
-            <li class="dropdown hidden-xs hidden-sm">
-              <a href="https://www.veritrans.co.id/about.html">about <b class="caret"></b></a>
+            <li><a href="whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="product.html" title="Our Online Payment Products">product</a></li>
+            
+            <li class="dropdown hidden-xs hidden-sm hidden-md">
+              <a href="about.html">about <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="https://www.veritrans.co.id/team.html" title="Team">team</a></li>
-                <li><a href="https://www.veritrans.co.id/press.html" title="Press">press</a></li>
-                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
-                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+                <li><a href="team.html" title="Team">team</a></li>
+                <li><a href="press.html" title="Press">press</a></li>
+                <li><a href="career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="contact.html" title="Contact Us">contact</a></li>
                 <li><a href="http://support.veritrans.co.id/" title="FAQ & How To">FAQ</a></li>
               </ul>
             </li>
-            <li class="dropdown hidden-lg hidden-md">
+            <li class="dropdown hidden-lg">
               <a href="#">about <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="https://www.veritrans.co.id/about.html" title="Team">about us</a></li>
-                <li><a href="https://www.veritrans.co.id/team.html" title="Team">team</a></li>
-                <li><a href="https://www.veritrans.co.id/press.html" title="Press">press</a></li>
-                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
-                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+                <li><a href="about.html" title="Team">about us</a></li>
+                <li><a href="team.html" title="Team">team</a></li>
+                <li><a href="press.html" title="Press">press</a></li>
+                <li><a href="career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="contact.html" title="Contact Us">contact</a></li>
                 <li><a href="http://support.veritrans.co.id/" title="FAQ & How To">FAQ</a></li>
               </ul>
             </li>
-            <!-- <li class="dropdown">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">about <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="https://www.veritrans.co.id/about.html" title="About Veritrans">about us</a></li>
-                <li><a href="http://support.veritrans.co.id/hc/en-us" title="FAQ & How To">FAQ</a></li>
-                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
-                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
-              </ul>
-            </li> -->
             <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
             <li class="dropdown">
               <a href="#">developer <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="https://www.veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="sandbox.html">sandbox</a></li>
                 <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">community <b class="caret"></b></a>
+              <a href="#">community <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
-                <li><a href="https://www.veritrans.co.id/portfolio.html" title="Our Clients">our clients</a></li>
-                <li><a href="https://www.veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
-                <li><a href="https://www.veritrans.co.id/newsletter.html" title="Newsletter">newsletter</a></li>
+                <li><a href="merchants.html" title="Merchants">merchants</a></li>
+                <li><a href="why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
               </ul>
             </li>
           </ul>
@@ -398,7 +388,7 @@ Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fanc
       <span class="c1">// Set 'secure', 'bank', and 'gross_amount', if the merchant wants transaction to be processed with 3D Secure</span>
       <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
-      <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+      <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="c1">// no decimal allowed for creditcard</span>
     <span class="p">}</span>
   <span class="p">};</span>
 
@@ -558,8 +548,8 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
 
 <span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
-  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span>
-<span class="p">);</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span> <span class="c1">// no decimal allowed for creditcard
+</span><span class="p">);</span>
 
 <span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -601,8 +591,8 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
 <span class="c1">//Required
 </span><span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
-  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span>
-<span class="p">);</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span> <span class="c1">// no decimal allowed for creditcard
+</span><span class="p">);</span>
 
 <span class="c1">//Opsional
 </span><span class="nv">$item1_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
