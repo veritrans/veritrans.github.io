@@ -25,31 +25,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <h2 class="logo"><a href="index.html" title="Home"><span>Veritrans</span></a></h2>
+          <h2 class="logo"><a href="https://www.veritrans.co.id/" title="Home"><span>Veritrans</span></a></h2>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="whatwedo.html" title="What We Do">what we do</a></li>
-            <li><a href="product.html" title="Our Online Payment Products">product</a></li>
+            <li><a href="https://www.veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="https://www.veritrans.co.id/product.html" title="Our Online Payment Products">product</a></li>
             
             <li class="dropdown hidden-xs hidden-sm hidden-md">
               <a href="about.html">about <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="team.html" title="Team">team</a></li>
-                <li><a href="press.html" title="Press">press</a></li>
-                <li><a href="career.html" title="Career at Veritrans">career</a></li>
-                <li><a href="contact.html" title="Contact Us">contact</a></li>
+                <li><a href="https://www.veritrans.co.id/team.html" title="Team">team</a></li>
+                <li><a href="https://www.veritrans.co.id/press.html" title="Press">press</a></li>
+                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
                 <li><a href="http://support.veritrans.co.id/" title="FAQ & How To">FAQ</a></li>
               </ul>
             </li>
             <li class="dropdown hidden-lg">
               <a href="#">about <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="about.html" title="Team">about us</a></li>
-                <li><a href="team.html" title="Team">team</a></li>
-                <li><a href="press.html" title="Press">press</a></li>
-                <li><a href="career.html" title="Career at Veritrans">career</a></li>
-                <li><a href="contact.html" title="Contact Us">contact</a></li>
+                <li><a href="https://www.veritrans.co.id/about.html" title="Team">about us</a></li>
+                <li><a href="https://www.veritrans.co.id/team.html" title="Team">team</a></li>
+                <li><a href="https://www.veritrans.co.id/press.html" title="Press">press</a></li>
+                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
                 <li><a href="http://support.veritrans.co.id/" title="FAQ & How To">FAQ</a></li>
               </ul>
             </li>
@@ -57,7 +57,7 @@
             <li class="dropdown">
               <a href="#">developer <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="sandbox.html">sandbox</a></li>
+                <li><a href="https://www.veritrans.co.id/sandbox.html">sandbox</a></li>
                 <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
               </ul>
             </li>
@@ -65,8 +65,8 @@
               <a href="#">community <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
-                <li><a href="merchants.html" title="Merchants">merchants</a></li>
-                <li><a href="why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+                <li><a href="https://www.veritrans.co.id/merchants.html" title="Merchants">merchants</a></li>
+                <li><a href="https://www.veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
               </ul>
             </li>
           </ul>
@@ -219,6 +219,11 @@
     <a href="integration_bripay.html"><img src="../../images/bri_icon_gray.jpg" /></a>
     </div>
   </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_tcash.html"><img src="../../images/tcash_icon_gray.jpg" /></a>
+    </div>
+  </div>
 </div>
 
 <hr />
@@ -345,7 +350,7 @@ Pada contoh di atas, kita menggunakan data Virtual Account, transaksi, dan pelan
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
-  "status_message" =&gt; "Success, PERMATA transaction is successful",
+  "status_message" =&gt; "Success, PERMATA VA transaction is successful",
   "transaction_id" =&gt; "ff05337c-6c94-4f70-8e81-35acd89b688e",
   "order_id" =&gt; "201404141421",
   "payment_type" =&gt; "bank_transfer",
@@ -471,9 +476,10 @@ Status pada MAP saat pembayaran sudah selesai dilakukan adalah seperti gambar be
     "status_message": "Veritrans payment notification",
     "transaction_id": "93c6a0ff-b270-4b00-adba-f1738ff90261",
     "order_id": "2014110701",
-    "payment_type": "cim_clicks",
+    "payment_type": "bank_transfer",
     "transaction_time": "2014-11-07 10:43:17",
     "transaction_status": "settlement",
+    "permata_va_number =&gt; "8778999933221111",
     "signature_key": "4533cbaf612267f5da81a17ff8ab8b86d39de8a1877e6125f39782baac3fe211469532f20e7bf5cc88eb51dfc36eca098578503c3cc5a880a0245e733579afc3",
     "gross_amount": 145000.00
 }
@@ -501,7 +507,7 @@ Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a hr
         <div class="content text-center">
           <span>&copy;2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
           <span class="divider">|</span>
-          <a href="privacy.html" title="Privacy Policy">Privacy Policy</a>
+          <a href="https://www.veritrans.co.id/privacy.html" title="Privacy Policy">Privacy Policy</a>
         </div>
       </div>
     </div>

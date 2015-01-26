@@ -85,7 +85,7 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
-		<div class="language-toggle"> <a href="../../vtdirect/integration_bripay.html">English</a> / Bahasa Indonesia</div>
+		<div class="language-toggle"> <a href="../../vtdirect/integration_tcash.html">English</a> / Bahasa Indonesia</div>
 		<ul class="sidebar">
 			
 			<li>
@@ -185,11 +185,11 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="id-vtdirect-integration-bripay">
-            <h2 id="integrasi-vt-direct-e-pay-bri">Integrasi VT-Direct (e-Pay BRI)</h2>
+          <div class="id-vtdirect-integration-tcash">
+            <h2 id="integrasi-vt-direct-t-cash">Integrasi VT-Direct (T-Cash)</h2>
 <hr />
 
-<h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-e-pay-bri-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran e-Pay BRI. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
+<h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-t-cash-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran T-Cash. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
 <p><br /></p>
 
@@ -216,101 +216,139 @@
   </div>
   <div class="col-sm-2 col-xs-12">
     <div class="thumbnail">
-    <a href="integration_bripay.html"><img src="../../images/bri_icon.jpg" /></a>
+    <a href="integration_bripay.html"><img src="../../images/bri_icon_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
     <div class="thumbnail">
-    <a href="integration_tcash.html"><img src="../../images/tcash_icon_gray.jpg" /></a>
+    <a href="integration_tcash.html"><img src="../../images/tcash_icon.jpg" /></a>
     </div>
   </div>
 </div>
-
 <hr />
-<p><br /></p>
 
-<p>e-Pay BRI adalah salah satu metode pembayaran internet banking yang disediakan oleh Bank BRI. Jika metode ini digunakan, pelanggan akan diarahkan ke halaman pembayaran e-Pay BRI untuk melakukan transaksi. Sebelum menggunakan layanan BRI Epay ini, pelanggan anda harus melakukan registrasi terlebih dahulu. Untuk info lebih lengkap silahkan mengunjungi <a title="e-Pay BRI" href="http://e-pay.bri.co.id">website e-Pay BRI</a>.</p>
+<p><br />
+Telkomsel Cash (T-CASH) merupakan layanan uang elektronik (E­-money) yang memberikan kemudahan bagi Anda dalam melakukan transaksi keuangan melalui ponsel. Metode ini memungkinkan pelanggan melakukan transaksi pembayaran dengan memasukkan 10 digit token yang didapat dari Telkomsel sebagai validasi transaksi. Untuk info lebih lengkap dapat diperoleh di website <a href="http://www.telkomsel.com/services/t-cash">T-Cash</a>.</p>
 
-<p>Untuk mengaktifkan metode pembayaran e-Pay BRI (otomatis aktif pada mode Sandbox), anda perlu menghubungi sales representative Veritrans.</p>
+<p>Untuk mengaktifkan metode pembayaran T-Cash (otomatis aktif pada mode Sandbox), anda perlu menghubungi sales representative Veritrans.
+<br /><br /></p>
 
-<h3 id="tahapan-integrasi-vt-direct-e-pay-bri">Tahapan Integrasi VT-Direct e-Pay BRI</h3>
+<h3 id="alur-proses-transaksi">Alur Proses Transaksi</h3>
+
+<p><img alt="Tcash Flow" class="img-responsive img-thumbnail" src="../../images/tcash_flow.png" />
+<br /><br /></p>
+
+<h3 id="tahapan-integrasi-vt-direct-t-cash">Tahapan Integrasi VT-Direct T-Cash</h3>
 
 <ol>
   <li>Membuat Form</li>
   <li>Charge Transaksi</li>
-  <li>Redirect</li>
-  <li>Status Transaksi</li>
+  <li>Status Transaksi
+<br /><br /></li>
 </ol>
-
-<p>Berbeda dengan metode pembayaran lain (kartu kredit dan Mandiri Clickpay), proses utama pembayaran e-Pay BRI tidak dilakukan di halaman anda. Pelanggan akan di redirect ke halaman e-Pay BRI untuk menyelesaikan transaksi.
-<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#form-bri" data-toggle="tab"><span>Tahap 1</span>Membuat Form</a></li>
-  <li><a href="#charge-transaction-bri" data-toggle="tab"><span>Tahap 2</span>Charge Transaksi</a></li>
-  <li><a href="#redirect-bri" data-toggle="tab"><span>Tahap 3</span>Redirect</a></li>
-  <li><a href="#transaction-status-bri" data-toggle="tab"><span>Tahap 4</span>Status Transaksi</a></li>
+  <li class="active"><a href="#form-tcash" data-toggle="tab"><span>Tahap 1</span>Membuat Form</a></li>
+  <li><a href="#charge-tcash" data-toggle="tab"><span>Tahap 2</span>Charge Transaksi</a></li>
+  <li><a href="#status-tcash" data-toggle="tab"><span>Tahap 3</span>Status Transaksi</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="form-bri">
+  <div class="tab-pane active" id="form-tcash">
     <!-- step 1-->
     <!-- satu -->
     <p><br /></p>
 
     <h2 id="membuat-form">Membuat Form</h2>
 
-    <p>Form pembayaran e-Pay BRI akan kita buat di file <code>form_vtdirect_bri.php</code>. Karena sebagian besar proses transaksi akan dilakukan di halaman e-Pay BRI, form yang akan kita buat hanya berisi petunjuk pembayaran dan tombol bayar menggunakan e-Pay BRI. Ketika pelanggan anda menekan tombol ini, proses charge transaksi dilakukan pada tahap selanjutnya.</p>
+    <p>Pada tahap ini, kita akan mencoba membuat form transaksi T-Cash pada file <code>form_vtdirect_tcash.html</code>. Form T-Cash yang akan dibuat harus memiliki <em>field</em> untuk memasukan token yang didapat dari Telkomsel.
+<br /><br /></p>
 
-    <p>Berikut adalah contoh form pada file <code>form_vtdirect_bri.php</code>:
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Field</th>
+          <th>Tipe Data</th>
+          <th style="text-align: center">Nilai</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Token number</td>
+          <td>Numeric</td>
+          <td style="text-align: center">10</td>
+          <td>Dimasukan di website merchant</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br />
+Berikut adalah contoh form T-Cash di file <code>form_vtdirect_tcash.html</code>:
 <br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Contoh Form VT-Direct e-Pay BRI<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;title&gt;</span>VT­Direct Form Example for T­cash<span class="nt">&lt;/title&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>Transaksi e-Pay BRI<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;ol&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Pastikan anda telah memiliki User ID Internet Banking BRI dan sudah mendaftarkan mTOKEN sebelum melakukan pembayaran menggunakan e-Pay BRI langsung dari website kami <span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Untuk mendapatkan User ID Internet Banking BRI, silahkan melakukan registrasi melalui ATM BRI terdekat<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Untuk mendaftarkan mTOKEN, silahkan melakukan registrasi finansial di cabang BRI terdekat<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Pembayaran menggunakan e-Pay BRI akan di proses secara online, saldo rekening BRI anda akan didebet secara otomatis sesuai jumlah pembelanjaan anda<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Transaksi anda akan dibatalkan jika pembayaran tidak diselesaikan dalam 2 jam<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ol&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_bri.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>T­Cash Transaction<span class="nt">&lt;/h1&gt;</span> <span class="nt">&lt;br&gt;</span>
+      Insert your Token number
+      <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_tcash.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment­form"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>T­Cash Token<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"token­-number"</span> <span class="na">name=</span><span class="s">"token­-number"</span> <span class="na">size=</span><span class="s">"10"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"0811111111"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit­button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/body&gt;</span> 
+<span class="nt">&lt;/html&gt;</span>
 </code></pre>
+
+    <p><br />
+Pelanggan anda cukup menggunakan token yang didapat dari Telkomsel untuk mengisi field TCash token dan informasi akan disubmit ke <code>checkout_tcash.php</code>. File ini berisi implementasi charge transaksi menggunakan T-Cash yang akan dibahas selanjutnya.</p>
+
+    <p>Untuk mempermudah proses transaksi, kami sangat menyarankan agar petunjuk transaksi T-Cash anda sampaikan dengan jelas pada halaman form.</p>
   </div>
-  <div class="tab-pane" id="charge-transaction-bri">
+  <div class="tab-pane" id="charge-tcash">
     <!-- step 2-->
     <!-- dua -->
     <p><br /></p>
 
     <h2 id="charge-transaksi">Charge Transaksi</h2>
 
-    <p>Untuk melakukan charge transaction menggunakan e-Pay BRI, beberapa langkah harus dilakukan sebagai berikut:</p>
+    <p>Untuk melakukan charge transaksi menggunakan T-Cash, beberapa langkah harus dilakukan sebagai berikut:</p>
 
     <ul>
-      <li><code>payment_type</code> harus di-set menjadi <code>bri_epay</code>.</li>
+      <li><code>payment_type</code> harus di-set menjadi <code>telkomsel_cash</code></li>
+      <li>
+        <p>JSON object baru harus ditambahkan, dengan nama <code>telkomsel_cash</code>, dan mempunyai nama/value pasangan sebagai berikut:</p>
+
+        <ul>
+          <li>"token" → token yang di isi oleh customer</li>
+          <li>"promo" → di isi dengan nilai <code>false</code></li>
+          <li>"is_reversal" → di isi dengan nilai <code>0</code></li>
+        </ul>
+      </li>
     </ul>
 
-    <p>Tahap ini membahas cara charge transaksi e-Pay BRI di file <code>checkout_bri.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_bri.php</code>:
+    <p>Untuk melakukan charge transaksi T-Cash, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_tcash.php</code>:
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
+
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key&gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="nv">$token_number</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-number'</span><span class="p">];</span>
 
 <span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
-  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="mi">145000</span><span class="p">,</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="mi">60000</span>
 <span class="p">);</span>
 
 <span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -320,9 +358,14 @@
     <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
     <span class="p">);</span>
 
-<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan e-Pay BRI.
+<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan T-Cash.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'bri_epay'</span><span class="p">,</span>
+  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'telkomsel_cash'</span><span class="p">,</span>
+  <span class="s1">'telkomsel_cash'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+      <span class="s1">'token'</span> <span class="o">=&gt;</span> <span class="nv">$token_number</span><span class="p">,</span>
+      <span class="s1">'promo'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s1">'is_reversal'</span> <span class="o">=&gt;</span> <span class="mi">0</span>
+    <span class="p">),</span>
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
@@ -332,78 +375,14 @@
 </code></pre>
 
     <p><br />
-Pada contoh di atas, kita menggunakan data e-Pay BRI, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
-  </div>
+Pada contoh di atas, kita menggunakan data T-Cash, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html#specification">Referensi API - Charge Transaksi</a>.</p>
 
-  <div class="tab-pane" id="redirect-bri">
-    <!-- step 3-->
-    <!-- tiga -->
-    <p><br /></p>
-
-    <h2 id="redirect">Redirect</h2>
-
-    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:
-<br /><br /></p>
-
-<pre><code class="highlight php">$result = array(
-  "status_code" =&gt; "201",
-  "status_message" =&gt; "Success, BRI E-Pay transaction is successful",
-  "transaction_id" =&gt; "cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36",
-  "order_id" =&gt; "2014111702",
-  "payment_type" =&gt; "bri_epay",
-  "transaction_time" =&gt; "2014-11-17 12:27:40",
-  "transaction_status" =&gt; "pending",
-  "redirect_url" =&gt; "https://api.sandbox.veritrans.co.id/v2/redirect/cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36",
-  "gross_amount" =&gt; "145000"
-);
-</code></pre>
-
-    <p><br />
-Dua informasi penting dalam respon JSON adalah <code>status_code</code> dan <code>redirect_url</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus me-redirect pelanggan anda ke <code>redirect_url</code> untuk menyelesaikan transaksi e-Pay BRI. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_bri.php</code>:
-<br /><br /></p>
-
-<pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-
-<span class="o">...</span>
-
-<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
-
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">"201"</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="c1">//success
-</span>  <span class="k">echo</span> <span class="s2">"Redirect e-Pay BRI. &lt;br /&gt;"</span><span class="p">;</span>
-  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
-  <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">redirect_url</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="c1">//error
-</span>  <span class="k">echo</span> <span class="s2">"Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;"</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
-  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
-</code></pre>
-
-    <p><br />
-Informasi terkait nilai transaksi, order ID, dan keterangan transaksi akan ditampilkan pada halaman redirect URL. Pada environment sandbox, halaman pembayaran e-Pay BRI bersifat dummy. Pelanggan anda cukup menekan tombol bayar untuk menyelesaikan proses transaksi. </p>
-
-    <p>Ketika transaksi selesai, pelanggan anda dapat kembali ke website anda. Untuk melakukan hal ini, anda perlu mengisi konfigurasi callback URL di MAP (Merchant Administration Portal), silahkan melihat menu <a href="getting_started.html">langkah awal</a> untuk informasi lebih lengkap. Berikut adalah tampilan halaman pembayaran environment sandbox:
-<br /><br />
-<img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test2.png" />
-<br /><br />
-Setelah customer melakukan pembayaran, halaman berikut akan ditampilkan:
-<br /><br />
-<img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test3.png" />
-<br /><br />
-Berikut adalah tampilan halaman pembayaran e-Pay BRI environment produksi:
-<br /><br />
-<img alt="ePay BRI 3" class="img-responsive img-thumbnail" src="../../images/bri_demo.png" />
+    <p>Ketika transaksi selesai, pelanggan anda dapat kembali ke website anda. Untuk melakukan hal ini, anda perlu mengisi konfigurasi callback URL di MAP (Merchant Administration Portal), silahkan melihat menu <a href="getting_started.html">langkah awal</a> untuk informasi lebih lengkap.
 <br /><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan redirect url ke halaman e-Pay BRI. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:
-<br /><br /></p>
+    <p>Pada beberapa kasus, charge transaksi VT-Direct bisa gagal. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan. Penyebab gagalnya charge transaksi VT-Direct dapat dilihat dari status code yang ada di dalam pesan error, status code yang umumnya muncul adalah:</p>
 
     <table>
       <thead>
@@ -437,49 +416,79 @@ Berikut adalah tampilan halaman pembayaran e-Pay BRI environment produksi:
     </table>
 
     <p><br />
-Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>.</p>
 
-    <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi e-Pay BRI akan dibahas pada <a href="integration_bripay.html#transaction-status-bri">bagian selanjutnya</a>.</p>
+    <p>Ketika proses charge transaksi berhasil dilakukan, anda dapat melihat status transaksi. Cara melihat status transaksi akan dibahas pada <a href="integration_tcash.html#status-tcash">langkah selanjutnya</a>.</p>
 
   </div>
-  <div class="tab-pane" id="transaction-status-bri">
-    <!-- step 4-->
-    <!-- empat -->
+  <div class="tab-pane" id="status-tcash">
+    <!-- step 3-->
+    <!-- tiga -->
     <p><br /></p>
 
     <h2 id="status-transaksi">Status Transaksi</h2>
 
-    <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih <code>pending</code>, pelanggan anda harus menyelesaikan pembayaran. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>success</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
-
-    <p>Status pada MAP saat pembayaran belum selesai dilakukan di halaman e-Pay BRI adalah seperti gambar berikut:
-<br /><br />
-  <img alt="bripay MAP Pending" class="img-responsive img-thumbnail" src="../../images/bri-pay-pending.png" />
-<br /><br />
-Status pada MAP saat pembayaran sudah selesai dilakukan di halaman e-Pay BRI adalah seperti gambar berikut:
-<br /><br />
-  <img alt="bripay MAP Sukses" class="img-responsive img-thumbnail" src="../../images/bri-pay-success.png" />
+    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:
 <br /><br /></p>
 
-    <h3 id="https-post">HTTP(S) POST</h3>
-
-    <p>Server Veritrans akan memberikan respon kepada server anda saat pelanggan anda telah melakukan pembayaran. Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:
-<br /><br /></p>
-
-<pre><code class="highlight php">{
-    "status_code": "200",
-    "status_message": "Veritrans payment notification",
-    "transaction_id": "68cebcbd-5894-4a09-84e1-b9952b3dcf1d",
-    "order_id": "2014101501",
-    "payment_type": "bri_epay",
-    "transaction_time": "2014-11-25 14:12:06",
-    "transaction_status": "settlement",
-    "signature_key": "4533cbaf612267f5da81a17ff8ab8b86d39de8a1877e6125f39782baac3fe211469532f20e7bf5cc88eb51dfc36eca098578503c3cc5a880a0245e733579afc3",
-    "gross_amount": 145000.00
-}
+<pre><code class="highlight php">$result = array(
+    "transaction_id" =&gt; "cddd6c1f-3b03-4c89-b0a8-0ea7dccf5217",
+    "order_id" =&gt; "201404031721",
+    "gross_amount" =&gt; "60000",
+    "payment_type" =&gt; "telkomsel_cash",
+    "transaction_time" =&gt; "2014-04-03 17:21:46",
+    "transaction_status" =&gt; "settlement",
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "Success, T-Cash transaction is successful"
+);
 </code></pre>
 
     <p><br />
-Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct &#8211; Mendapatkan Status Transaksi</a>.</p>
+Salah satu informasi yang paling penting dalam respon JSON adalah transaction status. Dua transaction status penting pada respon charge transaksi T-Cash:</p>
+
+    <ul>
+      <li><strong>settlement</strong>: Transaksi berhasil.</li>
+      <li><strong>deny</strong>: Transaksi ditolak.</li>
+    </ul>
+
+    <p>Anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_tcash.php</code> untuk menyampaikan status transaksi pada pelanggan anda:
+<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"settlement"</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//success
+</span>  <span class="k">echo</span> <span class="s2">"Transaksi T-Cash berhasil. &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Transaction status untuk order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Detail transaksi:&lt;/h3&gt;"</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"deny"</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//deny
+</span>  <span class="k">echo</span> <span class="s2">"Transaksi T-Cash Gagal. &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"Transaction status untuk order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Detail transaksi:&lt;/h3&gt;"</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">//error
+</span>  <span class="k">echo</span> <span class="s2">"Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Sampai di sini, proses pembayaran T-Cash telah selesai. Jika nilai <code>transaction_status</code> adalah <code>settlement</code>, nominal transaksi akan ditambahkan ke bagian settlement akun anda. Selain menyampaikan status transaksi ke pelanggan, anda juga dapat menambah kode di atas untuk meng-update database terkait, misalnya menandai bahwa transaksi dengan <code>order_id</code> tersebut telah terbayar. </p>
+
+    <p>Status transaksi juga dapat anda ketahui di Merchant Administration Portal (MAP). Anda perlu login ke MAP untuk melihat detail informasi transaksi tersebut. Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
 
   </div>
 </div>
