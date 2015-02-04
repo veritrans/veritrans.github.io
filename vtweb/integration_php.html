@@ -164,7 +164,7 @@
             
                 <li>
                     
-                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                        <a class="parent" href="../plugin/plugin.html">Plugin & Mobile Apps</a>
                     
                 </li>
             
@@ -454,6 +454,8 @@ The list of status codes can be found in <a href="sandbox/status_code.html">Refe
   <li><a href="#testcimb" data-toggle="tab">CIMB Clicks</a></li>
   <li><a href="#virtualacc" data-toggle="tab">Virtual Account</a></li>
   <li><a href="#bripay" data-toggle="tab">ePay BRI</a></li>
+  <li><a href="#tcash" data-toggle="tab">Telkomsel Cash</a></li>
+
 </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
@@ -667,9 +669,42 @@ Transaction status on MAP will be updated. The following figure displays the upd
 <img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../images/epay_status.png" />
 <br /><br />
 Examining the transaction status from MAP is easy. However, the merchant has to check transaction manually every time. This method may be complicated to integrate with the merchant’s current information system. To solve this issue, merchant can use the <strong>Transaction Notification</strong> method. The description on how to use the transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
-
           </div>
           <!-- end of step epay-->
+          <div class="tab-pane" id="tcash">
+            <!-- step mandiri-->
+
+            <!-- Tcash -->
+
+            <h3 id="transaction-test-successful-4">Transaction Test Successful</h3>
+            <p>We will try to perform a successful Telkomsel Cash transaction. According to <a href="../sandbox/card_list.html">Reference - List of test cards</a>, the token that can be used is:
+<br /></p>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>Accept Token</td>
+                  <td>0811 1111 11</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is shown below:
+<br /><br />
+<img alt="VT-Web Tcash Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_tcash_test1.png" />
+<br /><br />
+Click Confirm Payment and a VT-Web result payment page will be displayed.
+<br /><br />
+<img alt="VT-Web Tcash Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_tcash_test2.png" />
+<br /><br />
+After the authentication process is completed, the status will also be updated in MAP. The following figure displays the update on MAP when Telkomsel Cash transaction is successful.
+<br /><br />
+<img alt="VT-Web Tcash Test 3" class="img-responsive img-thumbnail" src="../images/tcash_status.png" />
+<br /><br />
+Examining the transaction status from MAP is easy. However, merchant has to check transaction manually every time. This method might be complicated to integrate with the merchant’s current information system. To solve this issue, the merchant can use the <strong>Transaction Notification</strong> method. The description on how to use the transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
+
+          </div>
+          <!-- end of step Tcash-->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>

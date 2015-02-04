@@ -164,7 +164,7 @@
 			
 			<li>
         
-          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+          <a class="parent" href="../plugin/plugin.html">Plugin & Mobile Apps</a>
         
 			</li>
 			
@@ -223,6 +223,7 @@
       <li><a href="#cimb-clicks">CIMB Clicks</a></li>
       <li><a href="#virtual-account">Virtual Account</a></li>
       <li><a href="#bri-pay">e-Pay BRI</a></li>
+      <li><a href="#tcash">Telkomsel Cash</a></li>
     </ol>
 
     <p>Pada bagian <a href="integration_php.html#step1">VT-Web – Integrasi</a>, kami telah menjelaskan bagaimana mengaktifkan semua metode pembayaran yang anda miliki secara otomatis. Hal ini dapat diimplementasikan dengan <strong>tidak</strong> menyertakan parameter <code>enabled_payments</code>. Namun, pada kondisi tertentu anda mungkin perlu menampilkan beberapa metode pembayaran saja pada VT-Web. Jika anda menghadapi kondisi ini, silahkan ikuti petunjuk berikut.</p>
@@ -418,6 +419,47 @@ Tab Bank Transfer akan muncul pada halaman pembayaran VT-Web. Informasi dan petu
 Tab e-Pay BRI akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk pembayaran menggunakan metode e-Pay BRI ditampilkan secara rinci pada halaman ini.
 <br /><br />
 <img alt="vtweb_bripay" class="img-responsive img-thumbnail" src="../../images/vtweb_bripay.png" /></p>
+
+    <hr />
+
+    <h3 id="tcash">Telkomsel Cash</h3>
+
+    <p>Telkomsel Cash (T-CASH) merupakan layanan uang elektronik (E­-money) yang memberikan kemudahan bagi Anda dalam melakukan transaksi keuangan melalui ponsel. Metode ini memungkinkan pelanggan melakukan transaksi pembayaran dengan memasukkan 10 digit token yang didapat dari Telkomsel sebagai validasi transaksi.</p>
+
+    <p>Untuk mengaktifkan metode pembayaran Telkomsel Cash (otomatis aktif pada mode Sandbox), merchant perlu:</p>
+
+    <ol>
+      <li>Daftarkan metode pembayaran Telkomsel Cash dengan menghubungi sales representative Veritrans.</li>
+      <li>Menambahkan parameter <code>telkomsel_cash</code> pada variabel <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"telkomsel_cash"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Tab Telkomsel Cash dapat digunakan oleh pelanggan untuk melakukan transaksi. Form beserta petunjuk pembayaran menggunakan Telkomsel Cash akan ditampilkan pada halaman ini.
+<br /><br />
+<img alt="vtweb_tcash" class="img-responsive img-thumbnail" src="../../images/vtweb_tcash.png" /></p>
 
   </div>
   <div class="tab-pane" id="three-D-secure">

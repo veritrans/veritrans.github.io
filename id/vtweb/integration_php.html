@@ -164,7 +164,7 @@
 			
 			<li>
         
-          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+          <a class="parent" href="../plugin/plugin.html">Plugin & Mobile Apps</a>
         
 			</li>
 			
@@ -457,6 +457,8 @@ Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html
   <li><a href="#testcimb" data-toggle="tab">CIMB Clicks</a></li>
   <li><a href="#virtualacc" data-toggle="tab">Virtual Account</a></li>
   <li><a href="#bripay" data-toggle="tab">ePay BRI</a></li>
+  <li><a href="#tcash" data-toggle="tab">Telkomsel Cash</a></li>
+
 </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
@@ -671,6 +673,40 @@ Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchan
 
           </div>
           <!-- end of step epay-->
+          <div class="tab-pane" id="tcash">
+            <!-- step tcash-->
+
+            <!-- tcash -->
+
+            <h3 id="tes-transaksi-sukses-4">Tes Transaksi Sukses</h3>
+            <p>Kita akan mencoba transaksi Telkomsel Cash yang berhasil. Berdasarkan <a href="../sandbox/card_list.html">Referensi - Daftar Kartu Uji Coba</a>, Token yang dapat digunakan adalah:
+<br /></p>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>Token sukses</td>
+                  <td>0811 1111 11</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:
+<br /><br />
+<img alt="VT-Web Tcash Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_tcash_test1.png" />
+<br /><br />
+Lakukan konfirmasi pembayaran dan halaman transaksi sukses akan ditampilkan.
+<br /><br />
+<img alt="VT-Web Tcash Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_tcash_test2.png" />
+<br /><br />
+Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi Telkomsel Cash berhasil.
+<br /><br />
+<img alt="VT-Web Tcash Test 3" class="img-responsive img-thumbnail" src="../../images/tcash_status.png" />
+<br /><br />
+Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+
+          </div>
+          <!-- end of step tcash-->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>

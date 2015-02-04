@@ -164,7 +164,7 @@
             
                 <li>
                     
-                        <a class="parent" href="../plugin/plugin.html">Plugin</a>
+                        <a class="parent" href="../plugin/plugin.html">Plugin & Mobile Apps</a>
                     
                 </li>
             
@@ -223,6 +223,7 @@
       <li><a href="#cimb-clicks">CIMB Clicks</a></li>
       <li><a href="#virtual-account">Virtual Account</a></li>
       <li><a href="#bri-pay">e-Pay BRI</a></li>
+      <li><a href="#tcash">Telkomsel Cash</a></li>
     </ol>
 
     <p>On section <a href="integration_php.html#step1">VT-Web – Integration</a>, we explained on how to automatically activate all available payments for the merchant. This can be implemented by <strong>not</strong> including the <code>enabled_payments</code> parameter. However, under a certain condition, you need to display only some of the payment methods available. If such circumstances occurr, please follow the steps below.</p>
@@ -418,6 +419,47 @@ The Bank Transfer tab will be shown at the VT-Web payment page. Information and 
 The e-Pay BRI tab will be shown at the VT-Web payment page. Information and procedure to perform e-Pay BRI transaction is displayed on the figure below.
 <br /><br />
 <img alt="vtweb_bripay" class="img-responsive img-thumbnail" src="../images/vtweb_bripay.png" /></p>
+
+    <hr />
+
+    <h3 id="tcash">Telkomsel Cash</h3>
+
+    <p>Telkomsel Cash (T-CASH) is a service of electronic money (E-money) which makes it easy for you to perform financial transaction via mobile phone. This method allows customer to perform transaction by filling in his 10 digits token obtained from Telkomsel as validation of transactions</p>
+
+    <p>To activate Telkomsel Cash method of payment (automatically active on Sandbox mode), merchant needs to:</p>
+
+    <ol>
+      <li>Sign on for Telkomsel Cash method of payment by contacting Veritrans sales representative.</li>
+      <li>Add the <code>telkomsel cash</code>  parameter on variable <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"telkomsel_cash"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+The Telkomsel Cash tab will be shown at the VT-Web payment page. Information and procedure to perform Telkomsel Cash transaction is displayed on the figure below.
+<br /><br />
+<img alt="vtweb_tcash" class="img-responsive img-thumbnail" src="../images/vtweb_tcash.png" /></p>
 
   </div>
   <div class="tab-pane" id="three-D-secure">
