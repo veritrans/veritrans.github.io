@@ -85,7 +85,7 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
-		<div class="language-toggle"> <a href="../../plugin/android.html">English</a> / Bahasa Indonesia</div>
+		<div class="language-toggle"> <a href="../../plugin/ios.html">English</a> / Bahasa Indonesia</div>
 		<ul class="sidebar">
 			
 			<li>
@@ -185,19 +185,19 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="id-plugin-android">
-            <h2 id="integrasi-android">Integrasi Android</h2>
+          <div class="id-plugin-ios">
+            <h2 id="integrasi-ios">Integrasi iOS</h2>
 <hr />
 
-<h5 id="dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-dengan-metode-pembayaran-kartu-kredit-pada-aplikasi-android-menggunakan-vt-direct-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi dengan metode pembayaran kartu kredit pada aplikasi android menggunakan VT-Direct. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
+<h5 id="dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-dengan-metode-pembayaran-kartu-kredit-pada-aplikasi-ios-menggunakan-vt-direct-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi dengan metode pembayaran kartu kredit pada aplikasi iOS menggunakan VT-Direct. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
 <p><br /></p>
 
 <h3 id="perkenalan">Perkenalan</h3>
 
-<p>VTAndroidLib adalah library android yang digunakan untuk melakukan proses mendapatkan token dari Veritrans dengan menggunakan <a href="../vtdirect/introduction.html">VT-Direct</a>. Anda membutuhkan <a href="https://sites.google.com/site/gson/">Library Gson</a> yang harus di setting pada file Gradle (akan dijelaskan lebih lanjut di bawah) agar library ini dapat berjalan dengan baik.</p>
+<p>VTiOSLib adalah library iOS yang digunakan untuk melakukan proses mendapatkan token dari Veritrans dengan menggunakan <a href="../vtdirect/introduction.html">VT-Direct</a>. Dengan mempergunakan library ini, anda bisa mendapatkan data kartu kredit secara aman tanpa harus menyimpan data tersebut di server milik anda, library ini juga sudah mendukung proses mendapatkan token 3D Secure.</p>
 
-<p>Dengan mempergunakan library ini, anda bisa mendapatkan data kartu kredit secara aman tanpa harus menyimpan data tersebut di server milik anda, library ini juga sudah mendukung proses mendapatkan token 3D Secure.</p>
+<p><br /></p>
 
 <pre><code class="highlight plaintext">Note: Untuk proses pengembangan dan testing, anda harus memiliki akun sandbox Veritrans.
 </code></pre>
@@ -212,13 +212,13 @@
 
 <ol>
   <li>
-    <p><strong>Klik Pay</strong>: Pelanggan anda memasukan detail kartu kredit di aplikasi android anda, dan menekan tombol <code>PAY</code> untuk menyelesaikan pembayaran.</p>
+    <p><strong>Klik Pay</strong>: Pelanggan anda memasukan detail kartu kredit di aplikasi iOS anda, dan menekan tombol <code>PAY</code> untuk menyelesaikan pembayaran.</p>
   </li>
   <li>
-    <p><strong>Mengirim data</strong>: ketika pelanggan anda menekan tombol PAY, library android akan menggabungkan informasi kartu kredit yang sensitif dengan <em>client key</em>. Gabungan data tersebut dikirimkan ke server Veritrans untuk ditukar dengan <em>onetime-token</em> ("Token").</p>
+    <p><strong>Mengirim data</strong>: ketika pelanggan anda menekan tombol PAY, library iOS akan menggabungkan informasi kartu kredit yang sensitif dengan <em>client key</em>. Gabungan data tersebut dikirimkan ke server Veritrans untuk ditukar dengan <em>onetime-token</em> ("Token").</p>
   </li>
   <li>
-    <p><strong>Mendapatkan Token</strong>: Veritrans akan mengembalikan Token ke aplikasi android anda. Token akan valid selama <strong>3 menit</strong> pada transaksi kartu kredit biasa dan <strong>10 menit</strong> jika fitur 3D Secure digunakan. Token tidak bisa digunakan lagi jika melewati durasi waktu tersebut.</p>
+    <p><strong>Mendapatkan Token</strong>: Veritrans akan mengembalikan Token ke aplikasi iOS anda. Token akan valid selama <strong>3 menit</strong> pada transaksi kartu kredit biasa dan <strong>10 menit</strong> jika fitur 3D Secure digunakan. Token tidak bisa digunakan lagi jika melewati durasi waktu tersebut.</p>
   </li>
   <li>
     <p><strong>Mengirim Token</strong>: Token kemudian dikirimkan ke server anda. Harap di perhatikan, anda hanya akan menerima Token sebagai pengganti detail dari kartu kredit. <strong>Anda tidak akan menyimpan ataupun memproses informasi dari kartu kredit.</strong> Karena hal tersebut, anda tidak perlu berurusan dengan PCI DSS compliance.</p>
@@ -243,29 +243,39 @@
 
 <h3 id="step-1-instalasi">STEP 1: INSTALASI</h3>
 
-<p>Kami menyarankan anda menggunakan Gradle untuk mengelola dependensi pekerjaan anda. Contoh di halaman ini menggunakan Gradle.</p>
+<p>Ada dua langkah yang harus dilakukan agar aplikasi anda dapat menggunakan library iOS Veritrans.</p>
 
-<ul>
-  <li>Download versi terbaru VTAndroidLib.aar dari <a href="https://github.com/muhammadanis/vtandroidlib/releases/">Github</a>, simpan di dalam folder libs. contoh: PROJECT_ROOT/app/libs.</li>
-  <li>Menambahkan dependensi pada file <code>build.gradle</code> untuk VTAndroidLib dan Gson.</li>
-</ul>
+<ol>
+  <li>
+    <p>Import VTiOSAPI.a</p>
 
-<p><br /></p>
+    <ul>
+      <li>Download versi terbaru VTiOSAPI.a dari <a href="https://github.com/muhammadanis/vtiOSLib/releases">github</a>.</li>
+      <li>Membuat folder <code>Lib</code> dibawah folder root project anda.</li>
+      <li>Salin VTiOSAPI.a ke dalam folder <code>Lib</code> yang sudah dibuat.</li>
+      <li>Klik project anda dari <code>Project Structure</code> di XCode.</li>
+      <li>Pilih <code>Build Phases</code></li>
+      <li>Dibawah <code>Link Binary with Libraries</code> klik simbol <code>+</code> dan pilih <code>add other</code></li>
+      <li>Cari folder Lib yang tadi sudah dibuat dan pilih VTiOSAPI.a untuk dimasukan oleh XCode kedalam struktur project anda.
+<br /><br /></li>
+    </ul>
+  </li>
+  <li>
+    <p>Membuat file Bridging-Header</p>
 
-<pre><code class="highlight plaintext">allprojects {
-    repositories {
-        jcenter()
-        flatDir {
-            dirs 'libs'
-        }
-    }
-}
-dependencies {
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile (name : 'VTAndroidAPI', ext: 'aar')
-}
-</code></pre>
+    <ul>
+      <li>Salin folder <code>include</code> yang terdapat pada file ZIP yang sudah di download ke folder root project anda.</li>
+      <li>Pindahkan folder <code>include</code> dari finder ke <code>XCode Project Structure</code>.</li>
+      <li>Klik <code>project Structure</code> dan pilih tab <code>Build Settings</code>.</li>
+      <li>Cari <code>Objective-C Bridging header</code> dibawah <code>Swift Compiler - Code Generation</code>.</li>
+      <li>Double Klik field input dan masukan <code>$SOURCE_ROOT/include/VTiOSAPI-Bridging-Header.h</code> (pastikan folder include ada di dalam root project anda).</li>
+      <li>Saat ini VTiOSAPI dapat digunakan untuk project anda.</li>
+    </ul>
+
+    <p><br />
+ Note: Semua file yang dibutuhkan ada di dalam folder ZIP.</p>
+  </li>
+</ol>
 
 <p><br /></p>
 
@@ -276,10 +286,10 @@ dependencies {
 </ul>
 
 <pre><code class="highlight plaintext">//set environment
-VTConfig.VT_IsProduction = false;
+VTConfig.setVT_IsProduction(false)
 
 //set client key
-VTConfig.CLIENT_KEY = "&lt; Your Client Key &gt;";
+VTConfig.setCLIENT_KEY("&lt; Your Client Key &gt;”);
 </code></pre>
 
 <p><br /></p>
@@ -288,25 +298,25 @@ VTConfig.CLIENT_KEY = "&lt; Your Client Key &gt;";
   <li>Membuat objek VTDirect serta mengatur rincian data kartu untuk mendapatkan token.</li>
 </ul>
 
-<pre><code class="highlight plaintext">//Create VTDirect Object. It’s config is Based on VTConfig Static Class
-VTDirect vtDirect = new VTDirect();
+<pre><code class="highlight plaintext">//Create VTDirect Object. Its config is Based on VTConfig Class that you set previously
+var vtDirect = VTDirect()
 
 //Create VTCardDetails Object to be set to VTDirect Object
-VTCardDetails cardDetails = new VTCardDetails();
-	
+var cardDetails = VTCardDetails()
+
 //TODO: Set your card details based on user input.
 //this is a sample
-cardDetails.setCard_number("4811111111111114"); // 3DS Dummy CC 
-cardDetails.setCard_cvv("123");
-cardDetails.setCard_exp_month(1);
-cardDetails.setCard_exp_year(2020);
-	
+cardDetails.card_number = "4811111111111114"
+cardDetails.card_cvv = "123"
+cardDetails.card_exp_month = 1
+cardDetails.card_exp_year = 2020;
+
 //set true or false to enable or disable 3dsecure
-cardDetails.setSecure(true);
-cardDetails.setGross_amount("10000");
-	
+cardDetails.secure = true
+cardDetails.gross_amount = "100000"
+
 //Set VTCardDetails to VTDirect
-vtDirect.setCard_details(cardDetails);
+vtDirect.card_details = cardDetails
 </code></pre>
 
 <p><br /></p>
@@ -316,87 +326,63 @@ vtDirect.setCard_details(cardDetails);
 </ul>
 
 <pre><code class="highlight plaintext">//Simply Call getToken function and put your callback to handle data
-vtDirect.getToken(new ITokenCallback() {
-    @Override
-   	public void onSuccess(VTToken token) {
-    
-    //use token anyhow you want, maybe send it to your server. Example here to check whether you are using 3dsecure feature or not.
-        if(token.getRedirect_url() != null){
-            
-            //using 3d secure
-			WebView webView = new 
-				WebView(getActivity());
-                          
-				webView.getSettings().setJavaScriptEnabled(true);	
-                webView.setOnTouchListener(new View.OnTouchListener(){
+vtDirect.getToken { (token:VTToken!, ex : NSException!) -&gt; Void in
+            if(ex == nil){
 
-					@Override
-    				public boolean onTouch(View v, MotionEvent event){
-      					switch (event.getAction()){
-                            case MotionEvent.ACTION_DOWN
-                            case MotionEvent.ACTION_UP:
-                            if (!v.hasFocus())
-                            	{
-                                    v.requestFocus();
-                                }
-                            break;
-                        }
-                            return false;
-                    }
-                });
-                webView.loadUrl(token.getRedirect_url());
-		}
-        //print or send token
-    }
-
-    @Override
-    public void onError(Exception e) {
-					
-		//Something is wrong, get details message by print e.getMessage()
-    }
-});
+                //use token anyhow you want, maybe send it to your server. Example here to check whether you are using 3dsecure feature or not.
+                if(token.redirect_url != nil){
+                    
+                    //using 3d secure
+                    let webView:UIWebView = UIWebView(frame: CGRectMake(0, 0, 400, 420))
+                    webView.loadRequest(NSURLRequest(URL: NSURL(string:token.redirect_url)!))
+                    webView.delegate = self
+                    self.view.addSubview(webView)
+                    
+                }
+                
+                }else{
+                    //Something is wrong, get details message by print ex.reason
+                    println(ex.reason)
+            }
+        }
 </code></pre>
 
 <p><br /></p>
 
 <h3 id="step-3-mengirim-token-ke-server">STEP 3: Mengirim token ke server</h3>
 
-<p>Setelah mendapatkan token, anda harus mengirimkan token tersebut ke server agar dapat melakukan proses charge. Untuk melakukan ini, dapat menggunakan fitur AsyncTask dari android.</p>
+<p>Setelah mendapatkan token, anda harus mengirimkan token tersebut ke server agar dapat melakukan proses charge.</p>
 
-<pre><code class="highlight plaintext">private class SendTokenAsync extends AsyncTask&lt;String, Void, String&gt;{
+<pre><code class="highlight plaintext">var request = NSMutableURLRequest(URL: NSURL(string: "http://128.199.141.15:9091/index.php")!)
+var session = NSURLSession.sharedSession()
+request.HTTPMethod = "POST"
 
-        @Override
-        protected String doInBackground(String... strings) {
-            HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://&lt;Your Server&gt;/index.php");
+//put your token on a variable to be retrieved again in this part
+var bodyData = "token-id=\(self.token!.token_id)&amp;price=\(totalPrice)"
+request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
+request.addValue("application/json", forHTTPHeaderField: "Accept")
 
-            List&lt;NameValuePair&gt; nameValuePairs = new ArrayList&lt;NameValuePair&gt;(1);
-            try {
-				
-				//add post parameter called token-id and price
-                nameValuePairs.add(new BasicNameValuePair("token-id", URLEncoder.encode(strings[0],"UTF-8")));
-                nameValuePairs.add(new BasicNameValuePair("price",strings[1]));
-                httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-				
-				//get response from server
-                HttpResponse response = httpClient.execute(httpPost);
-                String jsonResponse = EntityUtils.toString(response.getEntity()).toString();
-                return jsonResponse;
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }catch (IOException e) {
-                e.printStackTrace();
-            }
-            return "";      
-        }
-    }
+//Asynchronously get data from your server
+var task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -&gt; Void in
+                if(error == nil){
+             //we’ve got response from server, print it here
+                    var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+                    println("Body: \(strData!)")                    
+                    
+                }else{
+              //something is wrong, print localizedDescription
+                    println("Error: \(error.localizedDescription)")
+                }
+                
+            })
+            task.resume()
 </code></pre>
 
 <p><br /></p>
 
 <h3 id="step-4-melakukan-proses-charge">STEP 4: Melakukan Proses Charge</h3>
 
-<p>Setelah mengirimkan token ke server, sekarang saatnya melakukan proses charge dari server merchant ke server Veritrans dengan menggunakan server key. Contoh berikut menggunakan PHP sebagai processing server dengan menggunakan <a href="https://github.com/veritrans/veritrans-php">library PHP</a> milik Veritrans.</p>
+<p>Setelah mengirimkan token ke server, sekarang saatnya melakukan proses charge dari server merchant ke server Veritrans dengan menggunakan server key. Contoh berikut menggunakan PHP sebagai processing server dengan menggunakan <a href="https://github.com/veritrans/veritrans-php">library PHP</a> milik Veritrabs.</p>
 
 <p>File : index.php</p>
 
@@ -440,7 +426,7 @@ vtDirect.getToken(new ITokenCallback() {
 
 <p>Bila anda menggunakan bahasa pemrograman lain, silahkan cek library kami di <a href="plugin.html">sini</a>.</p>
 
-<p>Anda dapat melihat contoh toko sederhana dari aplikasi yang menggunakan library kami di <a href="https://github.com/muhammadanis/vtsamplestoreAndroid">sini</a>.</p>
+<p>Anda dapat melihat contoh toko sederhana dari aplikasi yang menggunakan library kami di <a href="https://github.com/muhammadanis/vtSampleStoreiOS">sini</a>.</p>
 
 <p><br /></p>
 

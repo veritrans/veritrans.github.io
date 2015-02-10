@@ -85,7 +85,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../id/plugin/android.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../id/plugin/ios.html">Bahasa Indonesia</a></div>
         <ul class="sidebar">
             
                 <li>
@@ -185,23 +185,21 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="plugin-android">
-            <h2 id="android-integration">Android Integration</h2>
+          <div class="plugin-ios">
+            <h2 id="ios-integration">iOS Integration</h2>
 <hr />
 
-<h5 id="the-objective-of-this-documentation-is-to-assist-you-integrating-credit-card-payment-method-on-an-android-app-with-vt-direct-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>The objective of this documentation is to assist you integrating credit card payment method on an Android App with VT-Direct. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
+<h5 id="the-objective-of-this-documentation-is-for-merchants-to-understand-integrating-credit-card-payment-method-on-an-ios-app-with-vt-direct-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>The objective of this documentation is for merchants to understand integrating credit card payment method on an iOS App with VT-Direct. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
 <hr />
 <p><br /></p>
 
 <h3 id="overview">OVERVIEW</h3>
 
-<p>VTAndroidLib is an Android library for getting token from Veritrans payment gateway by using <a href="../vtdirect/introduction.html">VT-Direct</a>. The only dependency for this library is the <a href="https://sites.google.com/site/gson/">Gson Library</a> which can be set on your Gradle file (will be explained later).</p>
+<p>VTiOSLib is an iOS library for getting token from Veritrans payment gateway by using <a href="../vtdirect/introduction.html">VT-Direct</a>. With this library you will able to securely collect credit card information without exposing sensitive credit card Information to your servers, this library also support get token for 3d secure enabled transactions.</p>
 
-<p>With this library you will able to securely collect credit card information without exposing sensitive credit card Information to your servers, this library also support get token for 3d secure enabled transactions.</p>
+<p><br /></p>
 
-<pre><code class="highlight plaintext">Note:
-
-For developing and testing you will need a SANDBOX ACCOUNT.
+<pre><code class="highlight plaintext">Note: For developing and testing you will need a SANDBOX ACCOUNT.
 </code></pre>
 
 <p><br /></p>
@@ -214,13 +212,13 @@ For developing and testing you will need a SANDBOX ACCOUNT.
 
 <ol>
   <li>
-    <p><strong>Click Pay</strong>: Customer will fill the credit card information on the android apps, and click <code>Pay</code> to complete payment.</p>
+    <p><strong>Click Pay</strong>: Customer will fill the credit card information on the iOS apps, and click <code>Pay</code> to complete payment.</p>
   </li>
   <li>
-    <p><strong>Send Card Data</strong>: When the customer click the pay button, android library will combine the sensitive credit card information with the <em>client key</em>. The combination of the data is then sent to Veritrans server to be exchanged with the <em>onetime-token</em> ("Token").</p>
+    <p><strong>Send Card Data</strong>: When the customer click the pay button, iOS library will combine the sensitive credit card information with the <em>client key</em>. The combination of the data is then sent to Veritrans server to be exchanged with the <em>onetime-token</em> ("Token").</p>
   </li>
   <li>
-    <p><strong>Get Token</strong>: Veritrans will return the Token to the android apps. The token will be valid for <strong>3 minutes</strong> during a standard credit card transaction and <strong>10 minutes</strong> if a 3D Secure feature is utilized. Token will expire after exceeding the respective time.</p>
+    <p><strong>Get Token</strong>: Veritrans will return the Token to the iOS apps. The token will be valid for <strong>3 minutes</strong> during a standard credit card transaction and <strong>10 minutes</strong> if a 3D Secure feature is utilized. Token will expire after exceeding the respective time.</p>
   </li>
   <li>
     <p><strong>Send Token</strong>: Token is then sent to the merchant server. Do note that the merchant will only receive Token as a substitution for the credit card details. <strong>Merchant will not save or process any credit card information.</strong> Therefore, merchant does not have to encounter any PCI DSS security issue.</p>
@@ -245,29 +243,38 @@ For developing and testing you will need a SANDBOX ACCOUNT.
 
 <h3 id="step-1-installation">STEP 1: INSTALLATION</h3>
 
-<p>We recommend you to use Gradle for managing dependencies for your project. This example will be based on Gradle.</p>
+<p>There are two steps for your apps to include our iOS library.</p>
 
-<ul>
-  <li>Download latest version of VTAndroidLib.aar from <a href="https://github.com/muhammadanis/vtandroidlib/releases/">Github</a>, and put it under your libs folder. For example PROJECT_ROOT/app/libs.</li>
-  <li>Add dependencies to your <code>build.gradle</code> file for VTAndroidLib and Gson.</li>
-</ul>
+<ol>
+  <li>
+    <p>Import VTiOSAPI.a</p>
 
-<p><br /></p>
+    <ul>
+      <li>Download our latest release VTiOSAPI.a from <a href="https://github.com/muhammadanis/vtiOSLib/releases">github</a>.</li>
+      <li>Create a folder named <code>lib</code> under your root project folder (this is optional, you can always name your folder for something else).</li>
+      <li>Copy VTiOSAPI.a to previously created <code>lib</code> folder.</li>
+      <li>Click your project from <code>Project Structure</code> in XCode.</li>
+      <li>Choose <code>Build Phases</code>.</li>
+      <li>Under <code>Link Binary with Libraries</code> click the <code>+</code> symbol and choose <code>add other</code>.</li>
+      <li>Browse to previously created <code>lib</code> folder and choose VTiOSAPI.a. Then XCode will add it under your tree project.
+<br /><br /></li>
+    </ul>
+  </li>
+  <li>
+    <p>Create Bridging-Header file</p>
 
-<pre><code class="highlight plaintext">allprojects {
-    repositories {
-        jcenter()
-        flatDir {
-            dirs 'libs'
-        }
-    }
-}
-dependencies {
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile (name : 'VTAndroidAPI', ext: 'aar')
-}
-</code></pre>
+    <ul>
+      <li>Copy <code>include</code> folder from our release to your root project folder.</li>
+      <li>Drag your <code>include</code> folder from finder to your XCode Project Structure.</li>
+      <li>Click on <code>Project Structure</code> and choose <code>Build Settings</code> tab.</li>
+      <li>Search for <code>Objective-C Bridging Header</code> under <code>Swift Compiler - Code Generation</code>.</li>
+      <li>Double click on input field and put <code>$SOURCE_ROOT/include/VTiOSAPI-Bridging-Header.h</code> (make sure include folder is inside your root project)</li>
+      <li>Now you can use VTiOSAPI in your project.</li>
+    </ul>
+
+    <p>Note: All files is available in our latest release.</p>
+  </li>
+</ol>
 
 <p><br /></p>
 
@@ -278,10 +285,10 @@ dependencies {
 </ul>
 
 <pre><code class="highlight plaintext">//set environment
-VTConfig.VT_IsProduction = false;
+VTConfig.setVT_IsProduction(false)
 
 //set client key
-VTConfig.CLIENT_KEY = "&lt; Your Client Key &gt;";
+VTConfig.setCLIENT_KEY("&lt; Your Client Key &gt;”);
 </code></pre>
 
 <p><br /></p>
@@ -290,25 +297,25 @@ VTConfig.CLIENT_KEY = "&lt; Your Client Key &gt;";
   <li>Create VTDirect Object and set card details to get your token for current transaction</li>
 </ul>
 
-<pre><code class="highlight plaintext">//Create VTDirect Object. It’s config is Based on VTConfig Static Class
-VTDirect vtDirect = new VTDirect();
+<pre><code class="highlight plaintext">//Create VTDirect Object. Its config is Based on VTConfig Class that you set previously
+var vtDirect = VTDirect()
 
 //Create VTCardDetails Object to be set to VTDirect Object
-VTCardDetails cardDetails = new VTCardDetails();
-	
+var cardDetails = VTCardDetails()
+
 //TODO: Set your card details based on user input.
 //this is a sample
-cardDetails.setCard_number("4811111111111114");
-cardDetails.setCard_cvv("123");
-cardDetails.setCard_exp_month(1);
-cardDetails.setCard_exp_year(2020);
-	
+cardDetails.card_number = "4811111111111114"
+cardDetails.card_cvv = "123"
+cardDetails.card_exp_month = 1
+cardDetails.card_exp_year = 2020;
+
 //set true or false to enable or disable 3dsecure
-cardDetails.setSecure(true);
-cardDetails.setGross_amount("10000");
-	
+cardDetails.secure = true
+cardDetails.gross_amount = "100000"
+
 //Set VTCardDetails to VTDirect
-vtDirect.setCard_details(cardDetails);
+vtDirect.card_details = cardDetails
 </code></pre>
 
 <p><br /></p>
@@ -318,80 +325,56 @@ vtDirect.setCard_details(cardDetails);
 </ul>
 
 <pre><code class="highlight plaintext">//Simply Call getToken function and put your callback to handle data
-vtDirect.getToken(new ITokenCallback() {
-    @Override
-   	public void onSuccess(VTToken token) {
-    
-    //use token anyhow you want, maybe send it to your server. Example here to check whether you are using 3dsecure feature or not.
-        if(token.getRedirect_url() != null){
-            
-            //using 3d secure
-			WebView webView = new 
-				WebView(getActivity());
-                          
-				webView.getSettings().setJavaScriptEnabled(true);	
-                webView.setOnTouchListener(new View.OnTouchListener(){
+vtDirect.getToken { (token:VTToken!, ex : NSException!) -&gt; Void in
+            if(ex == nil){
 
-					@Override
-    				public boolean onTouch(View v, MotionEvent event){
-      					switch (event.getAction()){
-                            case MotionEvent.ACTION_DOWN
-                            case MotionEvent.ACTION_UP:
-                            if (!v.hasFocus())
-                            	{
-                                    v.requestFocus();
-                                }
-                            break;
-                        }
-                            return false;
-                    }
-                });
-                webView.loadUrl(token.getRedirect_url());
-		}
-        //print or send token
-    }
-
-    @Override
-    public void onError(Exception e) {
-					
-		//Something is wrong, get details message by print e.getMessage()
-    }
-});
+                //use token anyhow you want, maybe send it to your server. Example here to check whether you are using 3dsecure feature or not.
+                if(token.redirect_url != nil){
+                    
+                    //using 3d secure
+                    let webView:UIWebView = UIWebView(frame: CGRectMake(0, 0, 400, 420))
+                    webView.loadRequest(NSURLRequest(URL: NSURL(string:token.redirect_url)!))
+                    webView.delegate = self
+                    self.view.addSubview(webView)
+                    
+                }
+                
+                }else{
+                    //Something is wrong, get details message by print ex.reason
+                    println(ex.reason)
+            }
+        }
 </code></pre>
 
 <p><br /></p>
 
 <h3 id="step-3-send-token-to-server">STEP 3: Send token to server</h3>
 
-<p>After getting your token to your callback, you should send it to your server for example for charging. For this we can use AsyncTask from Android to send it asynchronously.</p>
+<p>After getting your token to your callback, you should send it to your server for example for charging.</p>
 
-<pre><code class="highlight plaintext">private class SendTokenAsync extends AsyncTask&lt;String, Void, String&gt;{
+<pre><code class="highlight plaintext">var request = NSMutableURLRequest(URL: NSURL(string: "http://128.199.141.15:9091/index.php")!)
+var session = NSURLSession.sharedSession()
+request.HTTPMethod = "POST"
 
-        @Override
-        protected String doInBackground(String... strings) {
-            HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://&lt;Your Server&gt;/index.php");
+//put your token on a variable to be retrieved again in this part
+var bodyData = "token-id=\(self.token!.token_id)&amp;price=\(totalPrice)"
+request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
+request.addValue("application/json", forHTTPHeaderField: "Accept")
 
-            List&lt;NameValuePair&gt; nameValuePairs = new ArrayList&lt;NameValuePair&gt;(1);
-            try {
-				
-				//add post parameter called token-id and price
-                nameValuePairs.add(new BasicNameValuePair("token-id", URLEncoder.encode(strings[0],"UTF-8")));
-                nameValuePairs.add(new BasicNameValuePair("price",strings[1]));
-                httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-				
-				//get response from server
-                HttpResponse response = httpClient.execute(httpPost);
-                String jsonResponse = EntityUtils.toString(response.getEntity()).toString();
-                return jsonResponse;
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }catch (IOException e) {
-                e.printStackTrace();
-            }
-            return "";      
-        }
-    }
+//Asynchronously get data from your server
+var task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -&gt; Void in
+                if(error == nil){
+             //we’ve got response from server, print it here
+                    var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+                    println("Body: \(strData!)")                    
+                    
+                }else{
+              //something is wrong, print localizedDescription
+                    println("Error: \(error.localizedDescription)")
+                }
+                
+            })
+            task.resume()
 </code></pre>
 
 <p><br /></p>
@@ -444,7 +427,7 @@ vtDirect.getToken(new ITokenCallback() {
 
 <p>If you are using another programming language, you can checkout another library that already available <a href="plugin.html">here</a>.</p>
 
-<p>For a working example of an Android application using this library you can check <a href="https://github.com/muhammadanis/vtsamplestoreAndroid">here</a>.</p>
+<p>For a working example of an iOS application using this library you can check <a href="https://github.com/muhammadanis/vtSampleStoreiOS">here</a>.</p>
 
 <p><br /></p>
 
