@@ -85,7 +85,7 @@
 		<div class="docs-logo">
 			<span>DOCS</span>
 		</div>
-		<div class="language-toggle"> <a href="../../vtdirect/integration_va.html">English</a> / Bahasa Indonesia</div>
+		<div class="language-toggle"> <a href="../../vtdirect/integration_xltunai.html">English</a> / Bahasa Indonesia</div>
 		<ul class="sidebar">
 			
 			<li>
@@ -185,11 +185,11 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="id-vtdirect-integration-va">
-            <h2 id="integrasi-vt-direct-virtual-account">Integrasi VT-Direct (Virtual Account)</h2>
+          <div class="id-vtdirect-integration-xltunai">
+            <h2 id="integrasi-vt-direct-xl-tunai">Integrasi VT-Direct (Xl Tunai)</h2>
 <hr />
 
-<h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-virtual-account-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran Virtual Account. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
+<h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-xl-tunai-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran XL Tunai. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
 <hr />
 <p><br /></p>
 
@@ -211,7 +211,7 @@
   </div>
   <div class="col-sm-2 col-xs-12">
     <div class="thumbnail">
-    <a href="integration_va.html"><img src="../../images/va_icon.png" /></a>
+    <a href="integration_va.html"><img src="../../images/va_icon_gray.png" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
@@ -226,7 +226,7 @@
   </div>
   <div class="col-sm-2 col-xs-12">
     <div class="thumbnail">
-    <a href="integration_xltunai.html"><img src="../../images/xltunai_icon_gray.jpg" /></a>
+    <a href="integration_xltunai.html"><img src="../../images/xltunai_icon.jpg" /></a>
     </div>
   </div>
 </div>
@@ -234,76 +234,75 @@
 <hr />
 <p><br /></p>
 
-<p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah virtual account, saat ini Veritrans sudah terintegrasi dengan Bank Permata untuk proses virtual account. Dengan menggunakan layanan ini, pelanggan anda akan memiliki pilihan untuk melakukan pembayaran melalui transfer bank ke rekening virtual account Bank Permata. </p>
+<p>XL Tunai adalah layanan uang elektronik dari XL yang memungkinkan pelanggan XL melakukan transaksi keuangan hanya dengan menggunakan ponsel. Pelanggan melakukan pembayaran dengan cara memasukan nomor tertentu yang sudah di berikan oleh veritrans sebagai validasi transaksi. Untuk info lebih lengkap dapat diperoleh di website <a href="http://www.xl.co.id/id/layanan-lain/xl-tunai">XL Tunai</a>.</p>
 
-<p>Untuk mengaktifkan metode pembayaran Virtual Account (otomatis aktif pada mode Sandbox), anda perlu menghubungi sales representative Veritrans.</p>
+<p>Untuk mengaktifkan metode pembayaran XL Tunai (otomatis aktif pada mode Sandbox), anda perlu menghubungi sales representative Veritrans.
+<br /><br /></p>
 
-<h3 id="tahapan-integrasi-vt-direct-virtual-account">Tahapan Integrasi VT-Direct Virtual Account</h3>
+<h3 id="alur-proses-transaksi">Alur Proses Transaksi</h3>
+
+<p><img alt="Tcash Flow" class="img-responsive img-thumbnail" src="../../images/xltunai_flow.png" />
+<br /><br /></p>
+
+<h3 id="tahapan-integrasi-vt-direct-xl-tunai">Tahapan Integrasi VT-Direct XL Tunai</h3>
 
 <ol>
   <li>Membuat Form</li>
   <li>Charge Transaksi</li>
-  <li>Menampilkan Virtual Account</li>
+  <li>Menampilkan ID dan Order Id</li>
   <li>Status Transaksi</li>
 </ol>
 
-<p>Berbeda dengan metode pembayaran lain (kartu kredit, Mandiri Clickpay dan CIMB Clicks), proses utama pembayaran Virtual Account tidak dilakukan di halaman anda. Pelanggan melakukan pembayaran melalui transfer di ATM terdekat, Internet Banking dll.
+<p>Berbeda dengan metode pembayaran lain (kartu kredit, Mandiri Clickpay dan CIMB Clicks), proses utama pembayaran XL Tunai tidak dilakukan di halaman anda melainkan melalui ponsel yang sudah registrasi dengan XL Tunai.
 <br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#form-va" data-toggle="tab"><span>Tahap 1</span>Membuat Form</a></li>
-  <li><a href="#charge-transaction-va" data-toggle="tab"><span>Tahap 2</span>Charge Transaksi</a></li>
-  <li><a href="#response-transaction-va" data-toggle="tab"><span>Tahap 3</span>Menampilkan Virtual Account</a></li>
-  <li><a href="#transaction-status-va" data-toggle="tab"><span>Tahap 4</span>Status Transaksi</a></li>
+  <li class="active"><a href="#form-xl" data-toggle="tab"><span>Tahap 1</span>Membuat Form</a></li>
+  <li><a href="#charge-transaction-xl" data-toggle="tab"><span>Tahap 2</span>Charge Transaksi</a></li>
+  <li><a href="#response-transaction-xl" data-toggle="tab"><span>Tahap 3</span>Menampilkan ID dan Order Id</a></li>
+  <li><a href="#transaction-status-xl" data-toggle="tab"><span>Tahap 4</span>Status Transaksi</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="form-va">
+  <div class="tab-pane active" id="form-xl">
     <!-- step 1-->
     <!-- satu -->
     <p><br /></p>
 
     <h2 id="membuat-form">Membuat Form</h2>
 
-    <p>Form pembayaran Virtual Account akan kita buat di file <code>form_vtdirect_va.html</code>. Karena sebagian besar proses pembayaran tidak dilakukan di halaman merchant, form yang akan kita buat hanya berisi petunjuk pembayaran dan tombol bayar menggunakan Virtual Account. Ketika pelanggan anda menekan tombol ini, proses charge transaksi dilakukan pada tahap selanjutnya.</p>
+    <p>Form pembayaran XL Tunai akan kita buat di file <code>form_vtdirect_xl.html</code>. Karena sebagian besar proses pembayaran tidak dilakukan di halaman merchant, form yang akan kita buat hanya berisi petunjuk pembayaran dan tombol bayar menggunakan Xl Tunai. Ketika pelanggan anda menekan tombol ini, proses charge transaksi dilakukan pada tahap selanjutnya.</p>
 
-    <p>Berikut adalah contoh form pada file <code>form_vtdirect_va.html</code>:
+    <p>Berikut adalah contoh form pada file <code>form_vtdirect_xl.html</code>:
 <br /><br /></p>
 
 <pre><code class="highlight html"><span class="nt">&lt;head&gt;</span>
-	<span class="nt">&lt;title&gt;</span>Bank Transfer<span class="nt">&lt;/title&gt;</span>
+	<span class="nt">&lt;title&gt;</span>XL Tunai<span class="nt">&lt;/title&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-	<span class="nt">&lt;h1&gt;</span>Bank Transfer<span class="nt">&lt;/h1&gt;</span>
-	<span class="nt">&lt;b&gt;</span>Saya akan melakukan pembayaran dengan metode bank transfer<span class="nt">&lt;/b&gt;</span>
-	<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_va.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;h1&gt;</span>XL Tunai<span class="nt">&lt;/h1&gt;</span>
+	<span class="nt">&lt;b&gt;</span>Saya akan melakukan pembayaran dengan metode XL Tunai<span class="nt">&lt;/b&gt;</span>
+	<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_xl.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 </code></pre>
   </div>
-  <div class="tab-pane" id="charge-transaction-va">
+  <div class="tab-pane" id="charge-transaction-xl">
     <!-- step 2-->
     <!-- dua -->
     <p><br /></p>
 
     <h2 id="charge-transaksi">Charge Transaksi</h2>
 
-    <p>Untuk melakukan charge transaction menggunakan Virtual Account, beberapa langkah harus dilakukan sebagai berikut:</p>
+    <p>Untuk melakukan charge transaction menggunakan XL Tunai, beberapa langkah harus dilakukan sebagai berikut:</p>
 
     <ul>
-      <li><code>payment_type</code> harus di-set menjadi <code>bank_transfer</code>.</li>
-      <li>
-        <p>JSON object baru harus ditambahkan, dengan nama <code>bank_transfer</code>,dan mempunyai nama/value pasangan sebagai berikut:</p>
-
-        <ul>
-          <li><code>bank</code> → keterangan bank</li>
-        </ul>
-      </li>
+      <li><code>payment_type</code> harus di-set menjadi <code>xl_tunai</code>.</li>
     </ul>
 
-    <p>Tahap ini membahas cara charge transaksi Virtual Account di file <code>checkout_va.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_va.php</code>:
+    <p>Tahap ini membahas cara charge transaksi XL Tunai di file <code>checkout_xl.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_xl.php</code>:
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
@@ -327,10 +326,8 @@
 
 <span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'bank_transfer'</span><span class="p">,</span>
-  <span class="s1">'bank_transfer'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-      <span class="s1">'bank'</span> <span class="o">=&gt;</span> <span class="s2">"permata"</span><span class="p">,</span>
-    <span class="p">),</span>
+  <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'xl_tunai'</span><span class="p">,</span>
+
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
@@ -340,34 +337,34 @@
 </code></pre>
 
     <p><br />
-Pada contoh di atas, kita menggunakan data Virtual Account, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
+Pada contoh di atas, kita menggunakan data XL Tunai, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
 
   </div>
-  <div class="tab-pane" id="response-transaction-va">
+  <div class="tab-pane" id="response-transaction-xl">
     <!-- step 3-->
     <!-- tiga -->
     <p><br /></p>
 
-    <h2 id="menampilkan-virtual-account">Menampilkan Virtual Account</h2>
+    <h2 id="menampilkan-id-dan-order-id">Menampilkan ID dan Order Id</h2>
 
     <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:
 <br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
-  "status_message" =&gt; "Success, PERMATA VA transaction is successful",
-  "transaction_id" =&gt; "ff05337c-6c94-4f70-8e81-35acd89b688e",
-  "order_id" =&gt; "201404141421",
-  "payment_type" =&gt; "bank_transfer",
-  "transaction_time" =&gt; "2014-04-14 16:03:51",
+  "status_message" =&gt; "Success, XL Tunai transaction is successful",
+  "transaction_id" =&gt; "6a0027a9­9e11­466b­b2e5­d984ac3d2638",
+  "order_id" =&gt; "2015011603",
+  "payment_type" =&gt; "xl_tunai",
+  "transaction_time" =&gt; "2015­01­20 16:28:40",
   "transaction_status" =&gt; "pending",
-  "permata_va_number =&gt; "8778999933221111",
+  "xl_tunai_order_id": "00039",
   "gross_amount" =&gt; "145000"
 );
 </code></pre>
 
     <p><br />
-Dua informasi penting dalam respon JSON diatas adalah <code>status_code</code> dan <code>permata_va_number</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus menampilkan <code>permata_va_number</code> ke pelanggan anda, agar pelanggan anda dapat melakukan pembayaran. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_va.php</code>:
+Dua informasi penting dalam respon JSON diatas adalah <code>status_code</code> dan <code>xl_tunai_order_id</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus menampilkan <code>XL ID</code> yang didapat dari XL dan <code>xl_tunai_order_id</code> yang didapat dari Veritrans ke pelanggan anda, agar pelanggan anda dapat melakukan pembayaran. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_xl.php</code>:
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
@@ -380,10 +377,13 @@ Dua informasi penting dalam respon JSON diatas adalah <code>status_code</code> d
 <span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">"201"</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//success
-</span>  <span class="k">echo</span> <span class="s2">"&lt;b&gt;Bank Transfer&lt;/b&gt; &lt;br /&gt;&lt;br /&gt;"</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"&lt;b&gt;Silahkan transfer ke Bank Permata dengan No rekening:&lt;/b&gt; "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">permata_va_number</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"&lt;br /&gt;&lt;br /&gt;"</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"1. Anda memiliki waktu 2 jam untuk melakukan pembayaran, sebelum transaksi tersebut dibatalkan &lt;br /&gt;"</span><span class="p">;</span>
+</span>  <span class="k">echo</span> <span class="s2">"&lt;b&gt;XL Tunai&lt;/b&gt; &lt;br /&gt;&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;b&gt;XL ID: 12345&lt;/b&gt;"</span> <span class="c1">// Nomor XL ID Merchant
+</span>  <span class="k">echo</span> <span class="s2">"&lt;b&gt;Order ID:&lt;/b&gt; "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">xl_tunai_order_id</span><span class="p">;</span> <span class="c1">// order ID dari Veritrans
+</span>  <span class="k">echo</span> <span class="s2">"&lt;br /&gt;&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"1. Tekan *123*120# melalui ponsel anda &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"2. Masukan kode merchant id dan order id"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"2. Menyelesaikan pembayaran"</span><span class="p">;</span>
   <span class="k">echo</span> <span class="s2">"2. Jika anda menemui kendala, silahkan hubungi kami di 021-22334456"</span><span class="p">;</span>
 
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -398,22 +398,22 @@ Dua informasi penting dalam respon JSON diatas adalah <code>status_code</code> d
     <p><br />
 Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. Status transaksi akan berubah menjadi <em>sukses</em> saat pelanggan anda selesai melakukan pembayaran.</p>
 
-    <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/permata/va/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor account yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor virtual account tersebut.
+    <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/xl/tunai/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor Merchant Id dan XL Tunai Order Id yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor tersebut.
 <br /><br />
-<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test3.png" />
+<img alt="VT-Web xl Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test3.png" />
 <br /><br />
 Apabila transaksi dengan nomor virtual account tersebut ada, anda dapat melakukan simulasi untuk melakukan pembayaran.
 <br /><br />
-<img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test4.png" />
+<img alt="VT-Web xl Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test4.png" />
 <br /><br />
 Sukses melakukan pembayaran.
 <br /><br />
-<img alt="VT-Web transfer Test 5" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test5.png" />
+<img alt="VT-Web xl Test 5" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test5.png" />
 <br /><br /></p>
 
     <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
 
-    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan nomor virtual account. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:
+    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan xl tunai order id. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:
 <br /><br /></p>
 
     <table>
@@ -448,27 +448,27 @@ Sukses melakukan pembayaran.
     </table>
 
     <p><br />
-Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>.</p>
 
-    <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi Virtual Account akan dibahas pada <a href="integration_va.html#transaction-status-va">bagian selanjutnya</a>.</p>
+    <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi XL Tunai akan dibahas pada <a href="integration_va.html#transaction-status-va">bagian selanjutnya</a>.</p>
 
   </div>
-  <div class="tab-pane" id="transaction-status-va">
+  <div class="tab-pane" id="transaction-status-xl">
     <!-- step 4-->
     <!-- empat -->
     <p><br /></p>
 
     <h2 id="status-transaksi">Status Transaksi</h2>
 
-    <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih pending. Pelanggan anda harus menyelesaikan transaksi dalam waktu maksimal 24 jam. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>success</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
+    <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih pending. Pelanggan anda harus menyelesaikan transaksi dalam waktu maksimal 2 jam. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>success</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
 
     <p>Status pada MAP saat pembayaran belum selesai dilakukan adalah seperti gambar berikut:
 <br /><br />
-  <img alt="Permata MAP Pending" class="img-responsive img-thumbnail" src="../../images/va-map-pending.png" />
+  <img alt="XL MAP Pending" class="img-responsive img-thumbnail" src="../../images/xl-map-pending.png" />
 <br /><br />
 Status pada MAP saat pembayaran sudah selesai dilakukan adalah seperti gambar berikut:
 <br /><br />
-  <img alt="Permata MAP Sukses" class="img-responsive img-thumbnail" src="../../images/va-map-success.png" />
+  <img alt="XL MAP Sukses" class="img-responsive img-thumbnail" src="../../images/xl-map-success.png" />
 <br /><br /></p>
 
     <h3 id="https-post">HTTP(S) POST</h3>
@@ -477,16 +477,15 @@ Status pada MAP saat pembayaran sudah selesai dilakukan adalah seperti gambar be
 <br /><br /></p>
 
 <pre><code class="highlight php">{
-    "status_code": "200",
-    "status_message": "Veritrans payment notification",
-    "transaction_id": "93c6a0ff-b270-4b00-adba-f1738ff90261",
-    "order_id": "2014110701",
-    "payment_type": "bank_transfer",
-    "transaction_time": "2014-11-07 10:43:17",
-    "transaction_status": "settlement",
-    "permata_va_number =&gt; "8778999933221111",
-    "signature_key": "4533cbaf612267f5da81a17ff8ab8b86d39de8a1877e6125f39782baac3fe211469532f20e7bf5cc88eb51dfc36eca098578503c3cc5a880a0245e733579afc3",
-    "gross_amount": 145000.00
+  "status_code": "200",
+  "status_message": "Veritrans payment notification",
+  "transaction_id": "9b48d9da-7b35-43f8-b375-026bf0b05538",
+  "order_id": "vtxl003",
+  "payment_type": "xl_tunai",
+  "transaction_time": "2015-02-12 16:32:41",
+  "transaction_status": "settlement",
+  "signature_key": "ac9d80e274499386400244bd3737ec0a378b05ccb2b1c0a244becdf1c74b9139cf1172c39d28025e9730f21ddb065388a9008164d717b13f76a95aee1c467aef",
+  "gross_amount": "145000.00"
 }
 </code></pre>
 

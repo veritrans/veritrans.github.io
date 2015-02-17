@@ -85,7 +85,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../id/vtdirect/integration_tcash.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../id/vtdirect/integration_xltunai.html">Bahasa Indonesia</a></div>
         <ul class="sidebar">
             
                 <li>
@@ -185,11 +185,11 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="vtdirect-integration-tcash">
-            <h2 id="vt-direct-integration-t-cash">VT-Direct Integration (T-Cash)</h2>
+          <div class="vtdirect-integration-xltunai">
+            <h2 id="vt-direct-integration-xl-tunai">VT-Direct Integration (Xl Tunai)</h2>
 <hr />
 
-<h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-t-cash-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct T-Cash payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
+<h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-xl-tunai-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct XL Tunai payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
 <hr />
 <p><br /></p>
 
@@ -221,139 +221,94 @@
   </div>
   <div class="col-sm-2 col-xs-12">
     <div class="thumbnail">
-    <a href="integration_tcash.html"><img src="../images/tcash_icon.jpg" /></a>
+    <a href="integration_tcash.html"><img src="../images/tcash_icon_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
     <div class="thumbnail">
-    <a href="integration_xltunai.html"><img src="../images/xltunai_icon_gray.jpg" /></a>
+    <a href="integration_xltunai.html"><img src="../images/xltunai_icon.jpg" /></a>
     </div>
   </div>
 </div>
+
 <hr />
+<p><br /></p>
 
-<p><br />
-Telkomsel Cash (T-CASH) is a service of electronic money (E-money) which makes it easy for you to perform financial transaction via mobile phone. This method allows customer to perform transaction by filling in his 10 digits token obtained from Telkomsel as validation of transactions. For more information, please visit <a href="http://www.telkomsel.com/services/t-cash">T-Cash website</a>.</p>
+<p>Xl Tunai is an electronic money (E-money) from XL, that allows customers of XL perform financial transaction via mobile phone. This method allows customer to perform transaction by filling in spesific number obtained from Veritrans as validation of transactions. For more information, please visit <a href="http://www.xl.co.id/id/layanan-lain/xl-tunai">XL Tunai website</a>.</p>
 
-<p>To activate T-Cash payment method (Automatically active on Sandbox mode), you have to contact a Veritrans sales representative.
-<br /><br /></p>
+<p>To activate Xl Tunai method of payment (automatically active on Sandbox mode), you have to contact a Veritrans sales representative.</p>
 
-<h3 id="transaction-process-flows">Transaction Process Flows</h3>
-
-<p><img alt="Tcash Flow" class="img-responsive img-thumbnail" src="../images/tcash_flow.png" />
-<br /><br /></p>
-
-<h3 id="integration-steps-vt-direct-t-cash">Integration Steps VT-Direct T-Cash</h3>
+<h3 id="integration-vt-direct-xl-tunai">Integration VT-Direct Xl Tunai</h3>
 
 <ol>
   <li>Create Form</li>
   <li>Perform Charge Transaction</li>
-  <li>Check Transaction Status
-<br /><br /></li>
+  <li>Display ID and Order Id</li>
+  <li>Check Transaction Status</li>
 </ol>
+
+<p>Unlike the other payment methods (Credit Card, Mandiri ClickPay and CIMB Clicks), Xl Tunai payment process is not executed on your payment page. Customer has to pay from their mobile phone already registered to XL Tunai to complete the transaction.
+<br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#form-tcash" data-toggle="tab"><span>Step 1</span>Create Form</a></li>
-  <li><a href="#charge-transaction-tcash" data-toggle="tab"><span>Step 2</span>Perform Charge Transaction</a></li>
-  <li><a href="#status-tcash" data-toggle="tab"><span>Step 3</span>Check Transaction Status</a></li>
+  <li class="active"><a href="#form-xl" data-toggle="tab"><span>Step 1</span>Create Form</a></li>
+  <li><a href="#charge-transaction-xl" data-toggle="tab"><span>Step 2</span>Charge Transaction</a></li>
+  <li><a href="#response-transaction-xl" data-toggle="tab"><span>Step 3</span>Display ID and order Id</a></li>
+  <li><a href="#transaction-status-xl" data-toggle="tab"><span>Step 4</span>Transaction Status</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="form-tcash">
+  <div class="tab-pane active" id="form-xl">
     <!-- step 1-->
     <!-- satu -->
     <p><br /></p>
 
     <h2 id="create-form">Create Form</h2>
 
-    <p>On this step, we will try to create T-Cash transaction form at the file <code>form_vtdirect_tcash.html</code>. T-Cash form must have <em>field</em> to insert tokens obtained from Telkomsel.
+    <p>Xl Tunai payment form will be made in the file <code>form_vtdirect_xl.html</code>. Because most of the transaction process will not be made in the merchant's page, the form that we made will only show the steps of payment and the payment button of the Xl Tunai. When customer clicks this payment button, charge transaction process will be carried on the next step.</p>
+
+    <p>The following is a sample from the file <code>form_vtdirect_xl.html</code>:
 <br /><br /></p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Field Name</th>
-          <th>Data Type</th>
-          <th style="text-align: center">Length</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Token number</td>
-          <td>Numeric</td>
-          <td style="text-align: center">10</td>
-          <td>insert in merchant website</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p><br />
-The following is a sample from the file <code>form_vtdirect_tcash.html</code>:
-<br /><br /></p>
-
-<pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>VT­Direct Form Example for T­cash<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>T­Cash Transaction<span class="nt">&lt;/h1&gt;</span> <span class="nt">&lt;br&gt;</span>
-      Insert your Token number
-      <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_tcash.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment­form"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;label&gt;</span>T­Cash Token<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"token­-number"</span> <span class="na">name=</span><span class="s">"token­-number"</span> <span class="na">size=</span><span class="s">"10"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"0811111111"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit­button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>XL Tunai<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>XL Tunai<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;b&gt;</span>I want to pay with XL Tunai<span class="nt">&lt;/b&gt;</span>
+  <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_xl.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
-  <span class="nt">&lt;/body&gt;</span> 
-<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </code></pre>
-
-    <p><br />
-Your customers simply use the token obtained from Telkomsel and the information will be submitted to the <code>checkout_tcash.php</code>. This file contains the charge implementation using T-cash transactions will be discussed later.</p>
-
-    <p>To ease the transaction process, we recommend that the T-Cash transaction details is filled comprehensively in the form page.</p>
   </div>
-  <div class="tab-pane" id="charge-transaction-tcash">
+  <div class="tab-pane" id="charge-transaction-xl">
     <!-- step 2-->
     <!-- dua -->
     <p><br /></p>
 
-    <h2 id="perform-charge-transaction">Perform Charge Transaction</h2>
+    <h2 id="charge-transaction">Charge Transaction</h2>
 
-    <p>To perform charge transaction using T-Cash, the steps required are as followed:</p>
+    <p>To perform charge transaction using XL Tunai, the following steps are required:</p>
 
     <ul>
-      <li><code>payment_type</code> parameter has to be set as <code>telkomsel_cash</code>.</li>
-      <li>
-        <p>New JSON object has to be added, with the name <code>telkomsel_cash</code>, and has the pairing name/value as followed:</p>
-
-        <ul>
-          <li>"token" → token that is filled by the customer</li>
-          <li>"promo" → <code>false</code></li>
-          <li>"is_reversal" → <code>0</code></li>
-        </ul>
-      </li>
+      <li><code>payment_type</code> parameter has to be set as <code>xl_tunai</code>.</li>
     </ul>
 
-    <p>To perform transaction charge in T-Cash, we can use Veritrans PHP Library. The following is an example of charge transaction implementation in the file <code>checkout_tcash.php</code>:
+    <p>This step describes the XL Tunai charge transaction in the file <code>checkout_xl.php</code>. To perform charge transaction, we will use Veritrans PHP library. The following is an example of charge transaction implementation in the file <code>checkout_xl.php</code>:
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
-
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
 <span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key&gt;"</span><span class="p">;</span>
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-
-<span class="nv">$token_number</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-number'</span><span class="p">];</span>
 
 <span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
-  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="mi">60000</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="mi">145000</span><span class="p">,</span>
 <span class="p">);</span>
 
 <span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -363,14 +318,10 @@ Your customers simply use the token obtained from Telkomsel and the information 
     <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
     <span class="p">);</span>
 
-<span class="c1">// Data that will be sent for charge transaction request with T-Cash
+<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'telkomsel_cash'</span><span class="p">,</span>
-  <span class="s1">'telkomsel_cash'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-      <span class="s1">'token'</span> <span class="o">=&gt;</span> <span class="nv">$token_number</span><span class="p">,</span>
-      <span class="s1">'promo'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s1">'is_reversal'</span> <span class="o">=&gt;</span> <span class="mi">0</span>
-    <span class="p">),</span>
+  <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'xl_tunai'</span><span class="p">,</span>
+  
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
@@ -380,15 +331,84 @@ Your customers simply use the token obtained from Telkomsel and the information 
 </code></pre>
 
     <p><br />
-On the above example, we utilize the T-Cash, transaction, and customer data as the charge transaction parameter. You can add additional data during the charge transaction, such as: Customer address, Delivery address, and item information.
-To add this data, you can check <a href="../sandbox/charge.html#specification">API Reference - Charge Transaction</a>.</p>
+On the above example, we utilize the XL Tunai data, transaction data, and customer data as the charge transaction parameter. You can add additional data during the charge transaction, such as: Customer address, delivery address, and item information. To add this data, you can check <a href="../sandbox/charge.html">API Reference - Charge Transaksi</a>.</p>
 
-    <p>When the transaction is completed, customer can proceed back to your website. To do this, you have to fill in the callback URL configuration in MAP (Merchant Administration Portal). For more information, please refer to the menu <a href="getting_started.html">Getting Started</a>.
+  </div>
+  <div class="tab-pane" id="response-transaction-xl">
+    <!-- step 3-->
+    <!-- tiga -->
+    <p><br /></p>
+
+    <h2 id="display-id-and-order-id">Display ID and Order Id</h2>
+
+    <p>Veritrans' server will return a response for every charge transaction in JSON form. Veritrans' PHP Library will convert JSON into a PHP object automatically. The sample JSON script that is returned by Veritrans is as followed:
+<br /><br /></p>
+
+<pre><code class="highlight php">$result = array(
+  "status_code" =&gt; "201",
+  "status_message" =&gt; "Success, XL Tunai transaction is successful",
+  "transaction_id" =&gt; "6a0027a9­9e11­466b­b2e5­d984ac3d2638",
+  "order_id" =&gt; "2015011603",
+  "payment_type" =&gt; "xl_tunai",
+  "transaction_time" =&gt; "2015­01­20 16:28:40",
+  "transaction_status" =&gt; "pending",
+  "xl_tunai_order_id": "00039",
+  "gross_amount" =&gt; "145000"
+);
+</code></pre>
+
+    <p><br />
+Two important information details in the JSON response above are the <code>status_code</code> and <code>xl_tunai_order_id</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. Merchant is required to show the XL ID obtain from XL and <code>xl_tunai_order_id</code> obtain from Veritrans to the customer so they can finish the transaction. You can add the following PHP code at the last line of the file checkout_xl.php:
+<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">"201"</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//success
+</span>  <span class="k">echo</span> <span class="s2">"&lt;b&gt;XL Tunai&lt;/b&gt; &lt;br /&gt;&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;b&gt;XL ID: 12345&lt;/b&gt;"</span> <span class="c1">// Merchant XL ID number
+</span>  <span class="k">echo</span> <span class="s2">"&lt;b&gt;Order ID:&lt;/b&gt; "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">xl_tunai_order_id</span><span class="p">;</span> <span class="c1">// Order ID from Veritrans
+</span>
+  <span class="k">echo</span> <span class="s2">"&lt;br /&gt;&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"1. Dial *123*120# from your cellphone &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"1. Insert merchant id and order id &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"2. If you need help, please contact 021-22334456"</span><span class="p">;</span>
+
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">//error
+</span>  <span class="k">echo</span> <span class="s2">"Have error on transaction.&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Up to this point, the transaction is stored in MAP with <em>pending</em> status. Transaction status will change to <em>success</em> when your customer completes the payment.</p>
+
+    <p>To facilitate the payment process, we provide the <a href="https://api.sandbox.veritrans.co.id:7676/xl/tunai/index">payment simulator</a> in sandbox Environment. Enter the Merchant Id and XL Tunai order Id previously obtained to check whether there is a transaction.
+<br /><br />
+<img alt="VT-Web xl Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_xl_test3.png" />
+<br /><br />
+If there is a transaction with virtual account numbers you provide, you can do a payment simulation.
+<br /><br />
+<img alt="VT-Web xl Test 4" class="img-responsive img-thumbnail" src="../images/vtweb_xl_test4.png" />
+<br /><br />
+Successful payment.
+<br /><br />
+<img alt="VT-Web xl Test 5" class="img-responsive img-thumbnail" src="../images/vtweb_xl_test5.png" />
 <br /><br /></p>
 
     <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
 
-    <p>Under a certain case, charge transaction on VT-Direct may fail. Veritrans will return an error message if failure occurrs, the reason for failure can be inspected from the status code displayed on the error message. The status codes that generally occur are:</p>
+    <p>Under a certain case, charge transaction on VT-Direct may fail. This will prevent you from getting the virtual account number. Veritrans will return an error message if failure occurrs. The reason of failure can be inspected from the status code displayed on the error message. The status codes that generally occur are:
+<br /><br /></p>
 
     <table>
       <thead>
@@ -422,79 +442,49 @@ To add this data, you can check <a href="../sandbox/charge.html#specification">A
     </table>
 
     <p><br />
-The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>.</p>
+The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
 
-    <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_tcash.html#status-tcash">next step</a>.</p>
+    <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_va.html#transaction-status-xl">next steps</a>.</p>
 
   </div>
-  <div class="tab-pane" id="status-tcash">
-    <!-- step 3-->
-    <!-- tiga -->
+  <div class="tab-pane" id="transaction-status-xl">
+    <!-- step 4-->
+    <!-- empat -->
     <p><br /></p>
 
     <h2 id="transaction-status">Transaction Status</h2>
 
-    <p>Veritrans server will return a response for every charged transaction in JSON form. Veritrans PHP Library will convert JSON into a PHP object automatically. The sample JSON script that is returned by Veritrans is as followed:
+    <p>When charge transaction is successful, the transaction status is still pending. Customer has to complete the transaction. When this process is completed, the transaction status will be changed into <code>success</code>. You can check the transaction status change through MAP.</p>
+
+    <p>The status on MAP when payment is not yet completed is as followed:
+<br /><br />
+  <img alt="XL MAP Pending" class="img-responsive img-thumbnail" src="../images/xl-map-pending.png" />
+<br /><br />
+The status on MAP when payment has been completed is as followed:
+<br /><br />
+  <img alt="XL MAP Sukses" class="img-responsive img-thumbnail" src="../images/xl-map-success.png" />
 <br /><br /></p>
 
-<pre><code class="highlight php">$result = array(
-    "transaction_id" =&gt; "cddd6c1f-3b03-4c89-b0a8-0ea7dccf5217",
-    "order_id" =&gt; "201404031721",
-    "gross_amount" =&gt; "60000",
-    "payment_type" =&gt; "telkomsel_cash",
-    "transaction_time" =&gt; "2014-04-03 17:21:46",
-    "transaction_status" =&gt; "settlement",
-    "status_code" =&gt; "200",
-    "status_message" =&gt; "Success, T-Cash transaction is successful"
-);
+    <h3 id="https-post">HTTP(S) POST</h3>
+
+    <p>Veritrans' server will return a response to your server when customer has complete the payment. The sample JSON script that is returned by Veritrans is as followed:
+<br /><br /></p>
+
+<pre><code class="highlight php">{
+  "status_code": "200",
+  "status_message": "Veritrans payment notification",
+  "transaction_id": "9b48d9da-7b35-43f8-b375-026bf0b05538",
+  "order_id": "vtxl003",
+  "payment_type": "xl_tunai",
+  "transaction_time": "2015-02-12 16:32:41",
+  "transaction_status": "settlement",
+  "signature_key": "ac9d80e274499386400244bd3737ec0a378b05ccb2b1c0a244becdf1c74b9139cf1172c39d28025e9730f21ddb065388a9008164d717b13f76a95aee1c467aef",
+  "gross_amount": "145000.00"
+}
 </code></pre>
 
     <p><br />
-One of the most important information in the JSON response is the transaction status. There are two types of transaction status for T-Cash charge transaction response:</p>
-
-    <ol>
-      <li><strong>settlement</strong>: Transaction successful.</li>
-      <li><strong>deny</strong>: Transaction rejected by bank.</li>
-    </ol>
-
-    <p>You can add the following PHP code at the last line of the file <code>checkout_tcash.php</code> to send transaction status to your customer:
-<br /><br /></p>
-
-<pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-
-<span class="o">...</span>
-
-<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
-
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"settlement"</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="c1">//success
-</span>  <span class="k">echo</span> <span class="s2">"T-Cash Transaction Successful. &lt;br /&gt;"</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"Transaction status for order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Transaction details:&lt;/h3&gt;"</span><span class="p">;</span>
-  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">==</span> <span class="s2">"deny"</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="c1">//deny
-</span>  <span class="k">echo</span> <span class="s2">"T-Cash Transaction Failed. &lt;br /&gt;"</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"Transaction status for order id "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="o">.</span><span class="s2">": "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Transaction details:&lt;/h3&gt;"</span><span class="p">;</span>
-  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="c1">//error
-</span>  <span class="k">echo</span> <span class="s2">"Errors occurs on the sent transaction data.&lt;br /&gt;"</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
-  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
-</code></pre>
-
-    <p><br />
-At this point, the payment process of a T-Cash transaction is completed. If <code>transaction_status</code> value is <code>200</code>, the transaction value has been settled to your account. In addition to sending the transaction status to the customer, you may also use the code above to update the respective database. Example, to mark if the respective <code>order_id</code> has been paid.</p>
-
-    <p>Transaction status can also be found in Merchant Administration Portal (MAP). You have to login to MAP to see the details of the transaction. The other alternative to check on the transaction status is to use the command <a href="other_commands.html#status">VT-Direct — Acquiring Transaction Status</a>.</p>
+The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction Status</a>.</p>
 
   </div>
 </div>
