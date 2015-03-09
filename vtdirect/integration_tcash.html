@@ -331,7 +331,7 @@ Your customers simply use the token obtained from Telkomsel and the information 
         <p>New JSON object has to be added, with the name <code>telkomsel_cash</code>, and has the pairing name/value as followed:</p>
 
         <ul>
-          <li>"token" → token that is filled by the customer</li>
+          <li>"customer" → token that is filled by the customer</li>
           <li>"promo" → <code>false</code></li>
           <li>"is_reversal" → <code>0</code></li>
         </ul>
@@ -367,7 +367,7 @@ Your customers simply use the token obtained from Telkomsel and the information 
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'telkomsel_cash'</span><span class="p">,</span>
   <span class="s1">'telkomsel_cash'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-      <span class="s1">'token'</span> <span class="o">=&gt;</span> <span class="nv">$token_number</span><span class="p">,</span>
+      <span class="s1">'customer'</span> <span class="o">=&gt;</span> <span class="nv">$token_number</span><span class="p">,</span>
       <span class="s1">'promo'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s1">'is_reversal'</span> <span class="o">=&gt;</span> <span class="mi">0</span>
     <span class="p">),</span>

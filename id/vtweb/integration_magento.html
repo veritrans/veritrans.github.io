@@ -220,7 +220,7 @@
     <ol>
   <li>Instalasi Plugin</li>
   <li>Tes Transaksi</li>
-  <li>Cicilan (Opsional)</li>
+<!--  <li>Cicilan (Opsional)</li> -->
 </ol>
     <p><br /></p>
 
@@ -228,7 +228,7 @@
     <ul class="nav nav-tabs">
   <li class="active"><a href="#magento-step1" data-toggle="tab">Instalasi Plugin</a></li>
   <li><a href="#magento-step2" data-toggle="tab">Tes Transaksi</a></li>
-  <li><a href="#magento-step3" data-toggle="tab">Cicilan</a></li>
+<!--  <li><a href="#magento-step3" data-toggle="tab">Cicilan</a></li> -->
 </ul>
 
     <div class="tab-content">
@@ -377,286 +377,174 @@ Bila Setting plugin sudah benar, maka akan tampil halaman pembayaran VT-Web.
 
       </div>
 
-      <div class="tab-pane" id="magento-step3">
+      <!--
+<div class="tab-pane" id="magento-step3">
 
-        <p><br />
-Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant harus melakukan beberapa perubahan di plugin.</p>
+<br />
+Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant harus melakukan beberapa perubahan di plugin.
 
-        <p><br /></p>
+<br />
 
-        <h4 id="konfigurasi-cicilan-untuk-semua-produk">1. Konfigurasi Cicilan untuk semua produk</h4>
+#### 1. Konfigurasi Cicilan untuk semua produk
 
-        <p>Merupakan fitur cicilan yang digunakan <strong>jika semua produk yang ada di toko Anda dapat dibayarkan dengan durasi cicilan yang sama</strong>. Untuk fitur ini, pembayaran dengan fitur cicilan berlaku bila total harga satu transaksi nominalnya adalah minimal Rp 500.000,-</p>
+Merupakan fitur cicilan yang digunakan **jika semua produk yang ada di toko Anda dapat dibayarkan dengan durasi cicilan yang sama**. Untuk fitur ini, pembayaran dengan fitur cicilan berlaku bila total harga satu transaksi nominalnya adalah minimal Rp 500.000,-
 
-        <p>Berikut adalah langkah-langkah yang harus Anda lakukan untuk mengaktifkan fitur <em>Installment all products</em> pada plugin :</p>
+Berikut adalah langkah-langkah yang harus Anda lakukan untuk mengaktifkan fitur *Installment all products* pada plugin :
 
-        <ol>
-          <li>Buka halaman admin Magento</li>
-          <li>Buka menu <strong>System - Configuration</strong> pada halaman admin Magento.</li>
-          <li>Pada bagian <strong>Sales - Payment Methods</strong> cari tab Veritrans.</li>
-          <li>Tab Veritrans terdiri dari 4 bagian: <strong>General, Internet Banking, Bank Transfer, dan Installment</strong>. Untuk proses integrasi installment pilih <strong>Installment</strong>.</li>
-          <li>Ubah bagian <strong>Enable Installment</strong> menjadi <code>All Products</code>.</li>
-          <li>Ubah nilai <strong>Enable Installment BNI</strong> atau <strong>Enable Installment Mandiri</strong> menjadi <code>YES</code>, bila Anda ingin menggunakan bank tersebut dalam fitur Installment,</li>
-          <li>Pilih nilai-nilai pada <strong>Installment BNI Term</strong> atau <strong>Installment Mandiri Term</strong> sesuai kesepakatan dengan bank terkait, </li>
-          <li>Untuk memilih <strong>Installment Term</strong> lebih dari satu silahkan masukan term yang sudah disepakati dengan bank dipisahkan dengan tanda koma (,).</li>
-          <li>Klik tombol <strong>Save Config</strong> pada bagian atas (pojok kanan) untuk menyimpan konfigurasi yang telah diubah.
+1. Buka halaman admin Magento
+2. Buka menu **System - Configuration** pada halaman admin Magento.
+3. Pada bagian **Sales - Payment Methods** cari tab Veritrans.
+4. Tab Veritrans terdiri dari 4 bagian: **General, Internet Banking, Bank Transfer, dan Installment**. Untuk proses integrasi installment pilih **Installment**.
+5. Ubah bagian **Enable Installment** menjadi `All Products`.
+6. Ubah nilai **Enable Installment BNI** atau **Enable Installment Mandiri** menjadi `YES`, bila Anda ingin menggunakan bank tersebut dalam fitur Installment,
+7. Pilih nilai-nilai pada **Installment BNI Term** atau **Installment Mandiri Term** sesuai kesepakatan dengan bank terkait, 
+8. Untuk memilih **Installment Term** lebih dari satu silahkan masukan term yang sudah disepakati dengan bank dipisahkan dengan tanda koma (,).
+9. Klik tombol **Save Config** pada bagian atas (pojok kanan) untuk menyimpan konfigurasi yang telah diubah.
 <br /><br />
- <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/installment_magento.png" /></li>
-        </ol>
+	![Magento Installment](/images/installment_magento.png){: .img-responsive .img-thumbnail}
 
-        <hr />
+---
 
-        <h4 id="cicilan-untuk-sebagian-produk">2. Cicilan untuk sebagian produk</h4>
+#### 2. Cicilan untuk sebagian produk
 
-        <p>Cicilan untuk sebagian produk adalah fitur cicilan yang digunakan jika hanya ada beberapa produk saja yang dapat dilakukan cicilan dalam proses pembayarannya. Ketentuan untuk menggunakan fitur ini adalah:</p>
+Cicilan untuk sebagian produk adalah fitur cicilan yang digunakan jika hanya ada beberapa produk saja yang dapat dilakukan cicilan dalam proses pembayarannya. Ketentuan untuk menggunakan fitur ini adalah:
 
-        <ul>
-          <li>Total harga dalam satu transaksi minimal Rp. 500.000,-</li>
-          <li>Produk yang di beli telah di aktifkan untuk fitur <strong><em>cicilan untuk sebagian produk</em></strong>. </li>
-          <li>Jenis produk yang dibeli dapat lebih dari satu asalkan pada transaksi semua produk telah diaktifkan untuk fitur <em>Installment certain product</em>-nya, serta bank yang digunakan sama.</li>
-        </ul>
+* Total harga dalam satu transaksi minimal Rp. 500.000,-
+* Produk yang di beli telah di aktifkan untuk fitur ***cicilan untuk sebagian produk***. 
+* Jenis produk yang dibeli dapat lebih dari satu asalkan pada transaksi semua produk telah diaktifkan untuk fitur *Installment certain product*-nya, serta bank yang digunakan sama.
 
-        <p>Langkah-langkah untuk mengaktifkan cicilan untuk sebagian produk terdiri dari 3 bagian yakni, konfigurasi fitur Installment certain product, penambahan atribut Installment pada produk-produk yang akan di implementasi, dan membuat produk cicilan. Berikut adalah penjelasan dari masing-masing langkah yang harus dilakukan :</p>
+Langkah-langkah untuk mengaktifkan cicilan untuk sebagian produk terdiri dari 3 bagian yakni, konfigurasi fitur Installment certain product, penambahan atribut Installment pada produk-produk yang akan di implementasi, dan membuat produk cicilan. Berikut adalah penjelasan dari masing-masing langkah yang harus dilakukan :
 
-        <p><strong>A. Konfigurasi Cicilan untuk sebagian produk pada plugin</strong></p>
+**A. Konfigurasi Cicilan untuk sebagian produk pada plugin**
 
-        <ol>
-          <li>Buka halaman admin Magento.</li>
-          <li>Buka menu <strong>System - Configuration</strong> pada halaman admin Magento.</li>
-          <li>Pada bagian <strong>Sales - Payment Methods</strong> cari tab Veritrans.</li>
-          <li>Tab Veritrans terdiri dari 4 bagian: General, Internet Banking, Bank Transfer dan Installment. Untuk proses integrasi installment, silahkan pilih <strong>Installment</strong>.</li>
-          <li>Ubah bagian <strong>Enable Installment</strong> menjadi <code>Certain Products</code>.</li>
-          <li>Ubah nilai <strong><em>Enable Installment BNI</em></strong> atau <strong><em>Enable Installment Mandiri</em></strong> menjadi <code>YES</code> bila Anda ingin menggunakan bank tersebut dalam fitur Installment. Sebelumnya, pastikan bahwa Anda telah melakukan kesepakatan dengan pihak bank terkait.
+1. Buka halaman admin Magento.
+2. Buka menu **System - Configuration** pada halaman admin Magento.
+3. Pada bagian **Sales - Payment Methods** cari tab Veritrans.
+4. Tab Veritrans terdiri dari 4 bagian: General, Internet Banking, Bank Transfer dan Installment. Untuk proses integrasi installment, silahkan pilih **Installment**.
+5. Ubah bagian **Enable Installment** menjadi `Certain Products`.
+6. Ubah nilai ***Enable Installment BNI*** atau ***Enable Installment Mandiri*** menjadi `YES` bila Anda ingin menggunakan bank tersebut dalam fitur Installment. Sebelumnya, pastikan bahwa Anda telah melakukan kesepakatan dengan pihak bank terkait.
 <br /><br />
- <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/installment_magento2.png" />
-<br /><br /></li>
-        </ol>
-
-        <p><strong>B. Penambahan Atribut Installment pada Produk-Produk</strong></p>
-
-        <p>Tujuan utama pada langkah ini adalah untuk melakukan penambahan atribut “Payment” pada semua produk yang bisa dibayar dengan menggunakan metode cicilan. Langkah-langkahnya adalah sebagai berikut:</p>
-
-        <ol>
-          <li>Buka halaman admin Magento,</li>
-          <li>Buka menu <strong><em>Catalog - Attributes - Manage Attribute</em></strong>.</li>
-          <li>Klik tombol <strong><em>Add New Attribute</em></strong>  untuk membuat atribut baru.
+	![Magento Installment](/images/installment_magento2.png){: .img-responsive .img-thumbnail}
 <br /><br />
- <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain1.png" />
-<br /><br /></li>
-          <li>
-            <p>Setelah masuk ke halaman <strong><em>New Attribute</em></strong>, ada beberapa nilai penting yang perlu diubah sesuai ketentuan berikut :</p>
 
-            <table>
-              <thead>
-                <tr>
-                  <th>Atribut</th>
-                  <th>Nilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Attribut Code</td>
-                  <td>Payment</td>
-                </tr>
-                <tr>
-                  <td>Scope</td>
-                  <td>Global</td>
-                </tr>
-                <tr>
-                  <td>Catalog Input Type for Store Owner</td>
-                  <td>Dropdown</td>
-                </tr>
-                <tr>
-                  <td>Values Required</td>
-                  <td>Yes</td>
-                </tr>
-                <tr>
-                  <td>Use To Create Configurable Product</td>
-                  <td>Yes</td>
-                </tr>
-              </tbody>
-            </table>
+**B. Penambahan Atribut Installment pada Produk-Produk**
 
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain2.png" />
-<br /><br /></p>
-          </li>
-          <li>Setelah selesai melakukan konfigurasi klik tombol <strong><em>Save Attribute</em></strong></li>
-          <li>Pada halaman <strong><em>Manage Label / Options</em></strong> pada bagian <strong><em>vManage Titles (Size, Color, etc)</em></strong>, silahkan ubah nilai <code>Admin</code> dengan <code>Payment</code>.</li>
-          <li>
-            <p>Bagian <strong><em>Manage Options</em></strong> digunakan untuk memberikan nilai-nilai pada tiap atribut yang ada. Nilai yang diberikan disini adalah semua kemungkinan cicilan yang diberikan dengan format sebagai berikut: <strong><em>Installment [Nama Bank] [term installment] [xxx]</em></strong>
-Berikut adalah penjelasan detail dari format yang berlaku :</p>
+Tujuan utama pada langkah ini adalah untuk melakukan penambahan atribut “Payment” pada semua produk yang bisa dibayar dengan menggunakan metode cicilan. Langkah-langkahnya adalah sebagai berikut:
 
-            <table>
-              <tbody>
-                <tr>
-                  <td><strong>Format</strong></td>
-                  <td><strong>Keterangan</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>[Nama Bank]</strong></td>
-                  <td>Bank yang akan digunakan untuk fitur cicilan. <br /> <strong>Contoh</strong>: BNI/Mandiri</td>
-                </tr>
-                <tr>
-                  <td><strong>[Term Installment]</strong></td>
-                  <td>Lama / tenor dari fitur cicilan. <br /> <strong>Contoh</strong>: 3,6,9,12</td>
-                </tr>
-                <tr>
-                  <td><strong>[xxx]</strong></td>
-                  <td>Keterangan tambahan (dapat diisi lebih dari 1 kata). <br /> <strong>Contoh</strong>: Bulan/Months</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p>Contoh lengkap dari penulisan format pada bagian <strong><em>Manage Options:</em></strong> adalah <code>Installment BNI 12 Bulan</code>. Silahkan tambahkan nilai <code>Full Payment</code> bila ada produk Installment yang bisa dibayar penuh tanpa cicilan.</p>
-
-            <blockquote>
-              <p><strong>Note:</strong> untuk tes pada sandbox hanya dapat menggunakan cicilan BNI 6 bulan, BNI 12 bulan, Mandiri 6 bulan, dan Mandiri 12 bulan.</p>
-            </blockquote>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain3.png" />
-<br /><br /></p>
-          </li>
-          <li>Klik <strong><em>Save Attribute</em></strong> setelah selesai melakukan konfigurasi.</li>
-          <li>Berikutnya yang harus dilakukan adalah membuat <strong><em>Attribute Sets</em></strong>. Langkah pertama, silahkan buka menu <strong><em>Catalog » Attributes » Manage Attribute Sets</em></strong>.
+1. Buka halaman admin Magento,
+2. Buka menu ***Catalog - Attributes - Manage Attribute***.
+3. Klik tombol ***Add New Attribute***  untuk membuat atribut baru.
 <br /><br />
- <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain4.png" />
-<br /><br /></li>
-          <li>Klik <em>attribute set name</em> yang Anda ingin tambahkan fitur <em>installment</em>-nya. Sebagai contoh : misalkan Anda akan menambahkan fitur installment pada produk handphone, maka dari itu Anda harus memilih attribute set “<strong>cell phone</strong>”.
-Pada contoh ini, akan digunakan attribute set <strong>DEFAULT</strong>.</li>
-          <li>Berikutnya adalah masuk ke halaman <strong><em>Edit New Attribute Sets</em></strong>. Pada bagian ini buatlah sebuah grup dengan melakukan klik pada tombol <strong><em>Add New</em></strong> di bagian <strong><em>Groups</em></strong>. </li>
-          <li>Akan muncul pop-up untuk memberikan nama pada <strong><em>Groups</em></strong> baru. Isikan dengan nama <strong><em>Payment Method</em></strong>, lalu klik <strong><em>OK</em></strong>.
+	![Magento Installment](/images/install_mag_certain1.png){: .img-responsive .img-thumbnail}
 <br /><br />
-<img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain5.png" />
-<br /><br /></li>
-          <li>Carilah attribute <strong><em>Payment</em></strong> pada bagian <strong><em>Unassigned Attribute</em></strong> dan grup <strong><em>Payment Method</em></strong> pada bagian <strong><em>Groups</em></strong>. Drag atribut <strong><em>Payment</em></strong> ke grup <strong><em>Payment Method</em></strong>. Sehingga grup <strong><em>Payment Method</em></strong> kini memiliki atribut <strong><em>Payment</em></strong>.
+4. Setelah masuk ke halaman ***New Attribute***, ada beberapa nilai penting yang perlu diubah sesuai ketentuan berikut :
+
+	| Atribut | Nilai |
+|---|---|
+| Attribut Code | Payment |
+| Scope | Global |
+| Catalog Input Type for Store Owner | Dropdown |
+| Values Required | Yes |
+| Use To Create Configurable Product | Yes |
+
+	![Magento Installment](/images/install_mag_certain2.png){: .img-responsive .img-thumbnail}
 <br /><br />
-<img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain6.png" />
-<br /><br /></li>
-          <li>Klik <strong><em>Save Attribute Sets</em></strong> setelah selesai melakukan pemindahan tersebut
-<br /></li>
-        </ol>
+5. Setelah selesai melakukan konfigurasi klik tombol ***Save Attribute***
+6. Pada halaman ***Manage Label / Options*** pada bagian ***vManage Titles (Size, Color, etc)***, silahkan ubah nilai `Admin` dengan `Payment`.
+7. Bagian ***Manage Options*** digunakan untuk memberikan nilai-nilai pada tiap atribut yang ada. Nilai yang diberikan disini adalah semua kemungkinan cicilan yang diberikan dengan format sebagai berikut: ***Installment [Nama Bank] [term installment] [xxx]***
+Berikut adalah penjelasan detail dari format yang berlaku :
 
-        <p><strong>C. Membuat Produk Cicilan</strong></p>
+	| **Format** | **Keterangan** |
+| **[Nama Bank]** | Bank yang akan digunakan untuk fitur cicilan. <br/> **Contoh**: BNI/Mandiri |
+| **[Term Installment]** | Lama / tenor dari fitur cicilan. <br/> **Contoh**: 3,6,9,12 |
+| **[xxx]** | Keterangan tambahan (dapat diisi lebih dari 1 kata). <br/> **Contoh**: Bulan/Months |
 
-        <p>Untuk dapat membuat produk dengan menggunakan fitur Installment Certain Products, anda perlu membuat <strong><em>Configurable Products</em></strong> sebanyak semua kombinasi yang ada terlebih dahulu, dan juga membuat <strong><em>Simple Product</em></strong>.</p>
+	Contoh lengkap dari penulisan format pada bagian ***Manage Options:*** adalah `Installment BNI 12 Bulan`. Silahkan tambahkan nilai `Full Payment` bila ada produk Installment yang bisa dibayar penuh tanpa cicilan.
 
-        <p><strong>Configurable Products</strong></p>
+	> **Note:** untuk tes pada sandbox hanya dapat menggunakan cicilan BNI 6 bulan, BNI 12 bulan, Mandiri 6 bulan, dan Mandiri 12 bulan.
 
-        <ol>
-          <li>Buka halaman admin Magento.</li>
-          <li>Buka menu <strong><em>Catalog - Manage Products</em></strong>.</li>
-          <li>Klik tombol <strong><em>Add Product</em></strong>.</li>
-          <li>Pada halaman <strong><em>Settings - New Product</em></strong>, pilih <strong><em>Attribute Set</em></strong> sesuai dengan Attribute set yang sudah ditambahkan pada <strong><em>attribute  payment</em></strong>. Sedangkan untuk <strong><em>Product Type</em></strong>, silahkan pilih <strong><em>Configurable Product</em></strong>.
+	![Magento Installment](/images/install_mag_certain3.png){: .img-responsive .img-thumbnail}
 <br /><br />
- <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain7.png" />
-<br /><br /></li>
-          <li>Klik tombol <strong><em>continue</em></strong> setelah selesai melakukan konfigurasi.</li>
-          <li>Halaman selanjutnya merupakan halaman untuk memilih jenis kombinasi yang ada pada masing-masing produk. Pilihlah sesuai dengan kriteria kombinasi yang ada.
+8. Klik ***Save Attribute*** setelah selesai melakukan konfigurasi.
+9. Berikutnya yang harus dilakukan adalah membuat ***Attribute Sets***. Langkah pertama, silahkan buka menu ***Catalog >> Attributes >> Manage Attribute Sets***.
 <br /><br />
- <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain8.png" />
-<br /><br /></li>
-          <li>Klik tombol <strong><em>continue</em></strong> setelah selesai melakukan konfigurasi.</li>
-          <li>
-            <p>Selanjutnya, maka akan masuk ke halaman <strong><em>New Product Information</em></strong>. Pada halaman ini, isilah bagian-bagian yang diperlukan sesuai dengan keinginan Anda. Akan tetapi, ada beberapa bagian yang bersifat mandatory (wajib untuk diisi), yaitu:</p>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Lokasi</th>
-                  <th>Nama</th>
-                  <th>Nilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>General</td>
-                  <td>Status</td>
-                  <td><strong><em>Enabled</em></strong></td>
-                </tr>
-                <tr>
-                  <td>General</td>
-                  <td>Visibility</td>
-                  <td><strong><em>Catalog, <br />Search</em></strong></td>
-                </tr>
-                <tr>
-                  <td>Inventory</td>
-                  <td>Quantity</td>
-                  <td><strong><em>In-Stock</em></strong></td>
-                </tr>
-                <tr>
-                  <td>Websites</td>
-                  <td>Main Website</td>
-                  <td><strong><em>Check Main Website</em></strong></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain9.png" />
-<br /><br /></p>
-          </li>
-          <li>Masih pada halaman yang sama, silahkan lihat di bagian <strong><em>Associated Products</em></strong> untuk membuat <strong><em>Simple Product</em></strong> yang nantinya akan disambungkan dengan <strong><em>Configurable Product</em></strong>.
+	![Magento Installment](/images/install_mag_certain4.png){: .img-responsive .img-thumbnail}
 <br /><br />
- <img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain10.png" />
-<br /><br /></li>
-          <li>
-            <p>Akan muncul pop-up window halaman <strong><em>New Product Information</em></strong>. Selanjutnya, silahkan lakukan pengisian pada bagian-bagian yang diperlukan sesuai dengan keinginan Anda. Akan tetapi, ada beberapa bagian yang bersifat mandatory (wajib untuk diisi), yaitu:</p>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Lokasi</th>
-                  <th>Nama</th>
-                  <th>Nilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>General</td>
-                  <td>Visibility</td>
-                  <td><strong><em>Not Visible Individually</em></strong></td>
-                </tr>
-                <tr>
-                  <td>Payment Method</td>
-                  <td>Payment</td>
-                  <td><strong><em>Installment yang diinginkan</em></strong></td>
-                </tr>
-                <tr>
-                  <td>Inventory</td>
-                  <td>Quantity</td>
-                  <td><strong><em>Quantitas Produk</em></strong></td>
-                </tr>
-                <tr>
-                  <td>Inventory</td>
-                  <td>Stock Availability</td>
-                  <td><strong><em>In-Stock</em></strong></td>
-                </tr>
-                <tr>
-                  <td>Websites</td>
-                  <td>Main Website</td>
-                  <td><strong><em>Check Main Website</em></strong></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain11.png" /></p>
-
-            <p><img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain12.png" />
-<br /><br /></p>
-          </li>
-          <li>Setelah selesai melakukan pengisian pada <strong><em>Product Information</em></strong>,  klik <strong><em>save</em></strong>.</li>
-          <li>Ulangi langkah-langkah pada pembuatan produk sebanyak kombinasi produk yang Anda inginkan. Contoh : misalkan, produk yang Anda jual memiliki 3 variasi warna dan memiliki 2 jenis cicilan, maka akan diperlukan untuk membuat 6 kombinasi produk,</li>
-          <li>Setelah Anda selesai menambahkan <strong><em>Simple Product</em></strong>, maka pada halaman <strong><em>Associated Product</em></strong> akan tampil produk-produk yang tersambung dengan <strong><em>Configurable Product</em></strong>.</li>
-          <li>Jika Anda lihat sudah sesuai dengan yang diinginkan, silahkan klik tombol <strong><em>save</em></strong>.
+10. Klik *attribute set name* yang Anda ingin tambahkan fitur *installment*-nya. Sebagai contoh : misalkan Anda akan menambahkan fitur installment pada produk handphone, maka dari itu Anda harus memilih attribute set “**cell phone**”.
+Pada contoh ini, akan digunakan attribute set **DEFAULT**.
+11. Berikutnya adalah masuk ke halaman ***Edit New Attribute Sets***. Pada bagian ini buatlah sebuah grup dengan melakukan klik pada tombol ***Add New*** di bagian ***Groups***. 
+12. Akan muncul pop-up untuk memberikan nama pada ***Groups*** baru. Isikan dengan nama ***Payment Method***, lalu klik ***OK***.
 <br /><br />
-<img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain13.png" />
-<br /><br /></li>
-          <li>Item dapat ditemukan pada kolom/field SEARCH di halaman web Anda, atau sesuai pada posisi Anda menempatkan produk tersebut. Pada tampilan add to cart akan tampil <em>dropdown</em> menu Payment, yang berisikan beberapa simple item.
+	![Magento Installment](/images/install_mag_certain5.png){: .img-responsive .img-thumbnail}
 <br /><br />
-<img alt="Magento Installment" class="img-responsive img-thumbnail" src="../../images/install_mag_certain14.png" />
-<br /><br /></li>
-        </ol>
+13. Carilah attribute ***Payment*** pada bagian ***Unassigned Attribute*** dan grup ***Payment Method*** pada bagian ***Groups***. Drag atribut ***Payment*** ke grup ***Payment Method***. Sehingga grup ***Payment Method*** kini memiliki atribut ***Payment***.
+<br /><br />
+	![Magento Installment](/images/install_mag_certain6.png){: .img-responsive .img-thumbnail}
+<br /><br />
+14. Klik ***Save Attribute Sets*** setelah selesai melakukan pemindahan tersebut
+<br />
 
-      </div>
+**C. Membuat Produk Cicilan**
+
+Untuk dapat membuat produk dengan menggunakan fitur Installment Certain Products, anda perlu membuat ***Configurable Products*** sebanyak semua kombinasi yang ada terlebih dahulu, dan juga membuat ***Simple Product***.
+
+**Configurable Products**
+
+1. Buka halaman admin Magento.
+2. Buka menu ***Catalog - Manage Products***.
+3. Klik tombol ***Add Product***.
+4. Pada halaman ***Settings - New Product***, pilih ***Attribute Set*** sesuai dengan Attribute set yang sudah ditambahkan pada ***attribute  payment***. Sedangkan untuk ***Product Type***, silahkan pilih ***Configurable Product***.
+<br /><br />
+	![Magento Installment](/images/install_mag_certain7.png){: .img-responsive .img-thumbnail}
+<br /><br />
+5. Klik tombol ***continue*** setelah selesai melakukan konfigurasi.
+6. Halaman selanjutnya merupakan halaman untuk memilih jenis kombinasi yang ada pada masing-masing produk. Pilihlah sesuai dengan kriteria kombinasi yang ada.
+<br /><br />
+	![Magento Installment](/images/install_mag_certain8.png){: .img-responsive .img-thumbnail}
+<br /><br />
+7. Klik tombol ***continue*** setelah selesai melakukan konfigurasi.
+8. Selanjutnya, maka akan masuk ke halaman ***New Product Information***. Pada halaman ini, isilah bagian-bagian yang diperlukan sesuai dengan keinginan Anda. Akan tetapi, ada beberapa bagian yang bersifat mandatory (wajib untuk diisi), yaitu:
+
+	| Lokasi | Nama | Nilai |
+|---|---|
+| General | Status | ***Enabled*** |
+| General | Visibility | ***Catalog, <br/>Search*** |
+| Inventory | Quantity | ***In-Stock*** |
+| Websites | Main Website | ***Check Main Website*** |
+
+	![Magento Installment](/images/install_mag_certain9.png){: .img-responsive .img-thumbnail}
+<br /><br />
+9. Masih pada halaman yang sama, silahkan lihat di bagian ***Associated Products*** untuk membuat ***Simple Product*** yang nantinya akan disambungkan dengan ***Configurable Product***.
+<br /><br />
+	![Magento Installment](/images/install_mag_certain10.png){: .img-responsive .img-thumbnail}
+<br /><br />
+10. Akan muncul pop-up window halaman ***New Product Information***. Selanjutnya, silahkan lakukan pengisian pada bagian-bagian yang diperlukan sesuai dengan keinginan Anda. Akan tetapi, ada beberapa bagian yang bersifat mandatory (wajib untuk diisi), yaitu:
+
+	| Lokasi | Nama | Nilai |
+|---|---|
+| General | Visibility | ***Not Visible Individually*** |
+| Payment Method | Payment | ***Installment yang diinginkan*** |
+| Inventory | Quantity | ***Quantitas Produk*** |
+| Inventory | Stock Availability | ***In-Stock*** |
+| Websites | Main Website | ***Check Main Website*** |
+
+	![Magento Installment](/images/install_mag_certain11.png){: .img-responsive .img-thumbnail}
+
+	![Magento Installment](/images/install_mag_certain12.png){: .img-responsive .img-thumbnail}
+<br /><br />
+11. Setelah selesai melakukan pengisian pada ***Product Information***,  klik ***save***.
+12. Ulangi langkah-langkah pada pembuatan produk sebanyak kombinasi produk yang Anda inginkan. Contoh : misalkan, produk yang Anda jual memiliki 3 variasi warna dan memiliki 2 jenis cicilan, maka akan diperlukan untuk membuat 6 kombinasi produk,
+13. Setelah Anda selesai menambahkan ***Simple Product***, maka pada halaman ***Associated Product*** akan tampil produk-produk yang tersambung dengan ***Configurable Product***.
+14. Jika Anda lihat sudah sesuai dengan yang diinginkan, silahkan klik tombol ***save***.
+<br /><br />
+	![Magento Installment](/images/install_mag_certain13.png){: .img-responsive .img-thumbnail}
+<br /><br />
+15. Item dapat ditemukan pada kolom/field SEARCH di halaman web Anda, atau sesuai pada posisi Anda menempatkan produk tersebut. Pada tampilan add to cart akan tampil *dropdown* menu Payment, yang berisikan beberapa simple item.
+<br /><br />
+	![Magento Installment](/images/install_mag_certain14.png){: .img-responsive .img-thumbnail}
+<br /><br />
+
+</div> -->
     </div>
   </div>
 </div>

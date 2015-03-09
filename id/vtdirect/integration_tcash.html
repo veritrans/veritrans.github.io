@@ -312,7 +312,7 @@ Berikut adalah contoh form T-Cash di file <code>form_vtdirect_tcash.html</code>:
 </code></pre>
 
     <p><br />
-Pelanggan anda cukup menggunakan token yang didapat dari Telkomsel untuk mengisi field TCash token dan informasi akan disubmit ke <code>checkout_tcash.php</code>. File ini berisi implementasi charge transaksi menggunakan T-Cash yang akan dibahas selanjutnya.</p>
+Pelanggan anda cukup menggunakan token yang didapat dari Telkomsel untuk mengisi field T-Cash token dan informasi akan disubmit ke <code>checkout_tcash.php</code>. File ini berisi implementasi charge transaksi menggunakan T-Cash yang akan dibahas selanjutnya.</p>
 
     <p>Untuk mempermudah proses transaksi, kami sangat menyarankan agar petunjuk transaksi T-Cash anda sampaikan dengan jelas pada halaman form.</p>
   </div>
@@ -331,7 +331,7 @@ Pelanggan anda cukup menggunakan token yang didapat dari Telkomsel untuk mengisi
         <p>JSON object baru harus ditambahkan, dengan nama <code>telkomsel_cash</code>, dan mempunyai nama/value pasangan sebagai berikut:</p>
 
         <ul>
-          <li>"token" → token yang di isi oleh customer</li>
+          <li>"customer" → token yang di isi oleh customer</li>
           <li>"promo" → di isi dengan nilai <code>false</code></li>
           <li>"is_reversal" → di isi dengan nilai <code>0</code></li>
         </ul>
@@ -367,7 +367,7 @@ Pelanggan anda cukup menggunakan token yang didapat dari Telkomsel untuk mengisi
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'telkomsel_cash'</span><span class="p">,</span>
   <span class="s1">'telkomsel_cash'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-      <span class="s1">'token'</span> <span class="o">=&gt;</span> <span class="nv">$token_number</span><span class="p">,</span>
+      <span class="s1">'customer'</span> <span class="o">=&gt;</span> <span class="nv">$token_number</span><span class="p">,</span>
       <span class="s1">'promo'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s1">'is_reversal'</span> <span class="o">=&gt;</span> <span class="mi">0</span>
     <span class="p">),</span>
