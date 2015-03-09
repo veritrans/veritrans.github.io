@@ -164,7 +164,7 @@
 			
 			<li>
         
-          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+          <a class="parent" href="../plugin/plugin.html">Plugin & Mobile Apps</a>
         
 			</li>
 			
@@ -457,6 +457,8 @@ Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html
   <li><a href="#testcimb" data-toggle="tab">CIMB Clicks</a></li>
   <li><a href="#virtualacc" data-toggle="tab">Virtual Account</a></li>
   <li><a href="#bripay" data-toggle="tab">ePay BRI</a></li>
+  <li><a href="#tcash" data-toggle="tab">Telkomsel Cash</a></li>
+
 </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
@@ -671,6 +673,40 @@ Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchan
 
           </div>
           <!-- end of step epay-->
+          <div class="tab-pane" id="tcash">
+            <!-- step tcash-->
+
+            <!-- tcash -->
+
+            <h3 id="tes-transaksi-sukses-4">Tes Transaksi Sukses</h3>
+            <p>Kita akan mencoba transaksi Telkomsel Cash yang berhasil. Berdasarkan <a href="../sandbox/card_list.html">Referensi - Daftar Kartu Uji Coba</a>, Token yang dapat digunakan adalah:
+<br /></p>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>Token sukses</td>
+                  <td>0811 1111 11</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Mengacu pada transaksi yang ada pada halaman <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, maka tampilan halaman VT-Web adalah sebagai berikut:
+<br /><br />
+<img alt="VT-Web Tcash Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_tcash_test1.png" />
+<br /><br />
+Lakukan konfirmasi pembayaran dan halaman transaksi sukses akan ditampilkan.
+<br /><br />
+<img alt="VT-Web Tcash Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_tcash_test2.png" />
+<br /><br />
+Status transaksi di MAP akan berubah. Berikut adalah contoh tampilan MAP ketika transaksi Telkomsel Cash berhasil.
+<br /><br />
+<img alt="VT-Web Tcash Test 3" class="img-responsive img-thumbnail" src="../../images/tcash_status.png" />
+<br /><br />
+Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchant harus mengecek secara manual setiap saat. Cara ini sulit untuk diintegrasikan dengan sistem informasi merchant. Untuk mengatasi permasalahan tersebut, mekanisme <strong>notifikasi status transaksi</strong> dapat digunakan. Petunjuk dan keterangan menggunakan notifikasi status transaksi akan dijelaskan pada <a href="integration_php.html#step3">tahap selanjutnya</a>.</p>
+
+          </div>
+          <!-- end of step tcash-->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>
@@ -784,6 +820,7 @@ Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchan
 <span class="cp">?&gt;</span>
 </code></pre>
 
+        <p><strong>Note:</strong> Veritrans memerlukan response 200 yang mengindikasikan notifikasi telah berhasil di terima oleh merchant.</p>
       </div>
       <!-- end of step 3-->
     </div>
@@ -800,6 +837,11 @@ Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchan
       </div><!--/row-->
 
     </div><!--/.container-->
+
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
     <div class="custom-container footer">
   <div class="wrapper">
     <div class="row">
@@ -813,13 +855,8 @@ Melihat status transaksi melalui MAP cukup mudah untuk dilakukan. Namun, merchan
     </div>
   </div>
 </div>
-
-    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../javascripts/get-token.js" type="text/javascript"></script>
-<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
-<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

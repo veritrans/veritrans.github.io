@@ -164,7 +164,7 @@
 			
 			<li>
         
-          <a class="parent" href="../plugin/plugin.html">Plugin</a>
+          <a class="parent" href="../plugin/plugin.html">Plugin & Mobile Apps</a>
         
 			</li>
 			
@@ -203,13 +203,13 @@
 
 <ol>
   <li>
-    <p><strong>Click Pay</strong>: Pelanggan anda memasukan detail kartu kredit di website anda, dan menekan tombol <code>Pay</code> untuk menyelesaikan pembayaran.</p>
+    <p><strong>Klik Pay</strong>: Pelanggan anda memasukan detail kartu kredit di website anda, dan menekan tombol <code>Pay</code> untuk menyelesaikan pembayaran.</p>
   </li>
   <li>
-    <p><strong>Send Card Data</strong>: ketika pelanggan anda menekan tombol bayar, Sebuah script bernama <code>Veritrans.min.js</code> dipanggil dari server Veritrans dan akan menggabungkan informasi kartu kredit yang sensitif dengan <em>public-key</em>. Gabungan data tersebut dikirimkan ke server Veritrans untuk ditukar dengan <em>onetime-token</em> ("Token").</p>
+    <p><strong>Mengirim data kartu</strong>: ketika pelanggan anda menekan tombol Pay, Sebuah script bernama <code>Veritrans.min.js</code> dipanggil dari server Veritrans dan akan menggabungkan informasi kartu kredit yang sensitif dengan <em>public-key</em>. Gabungan data tersebut dikirimkan ke server Veritrans untuk ditukar dengan <em>onetime-token</em> ("Token").</p>
   </li>
   <li>
-    <p><strong>Get Token</strong>: Veritrans akan mengembalikan Token ke browser pelanggan anda. Token akan valid selama <strong>3 menit</strong> pada transaksi kartu kredit biasa dan <strong>10 menit</strong> jika fitur 3D Secure digunakan. Token tidak bisa digunakan lagi jika melewati durasi waktu tersebut.
+    <p><strong>Mendapatkan Token</strong>: Veritrans akan mengembalikan Token ke browser pelanggan anda. Token akan valid selama <strong>3 menit</strong> pada transaksi kartu kredit biasa dan <strong>10 menit</strong> jika fitur 3D Secure digunakan. Token tidak bisa digunakan lagi jika melewati durasi waktu tersebut.
 <br /><br />
  <img alt="vtdirect_intro1" class="img-responsive img-thumbnail" src="../../images/vtdirect_introduction_1.png" /></p>
 
@@ -217,7 +217,7 @@
 <br /><br /></p>
   </li>
   <li>
-    <p><strong>Send Token</strong>: Token kemudian dikirimkan ke server anda. Harap di perhatikan, anda hanya akan menerima Token sebagai pengganti detail dari kartu kredit. <strong>Anda tidak akan menyimpan ataupun memproses informasi dari kartu kredit.</strong> Karena hal tersebut, anda tidak perlu berurusan dengan PCI DSS compliance.</p>
+    <p><strong>Mengirim Token</strong>: Token kemudian dikirimkan ke server anda. Harap di perhatikan, anda hanya akan menerima Token sebagai pengganti detail dari kartu kredit. <strong>Anda tidak akan menyimpan ataupun memproses informasi dari kartu kredit.</strong> Karena hal tersebut, anda tidak perlu berurusan dengan PCI DSS compliance.</p>
   </li>
   <li>
     <p><strong>Request Charge</strong>: Anda melakukan charge transaksi ke Veritrans menggunakan Token ditambah beberapa informasi lainnya (contoh: detail pelanggan, detail produk, alamat).</p>
@@ -245,6 +245,11 @@
       </div><!--/row-->
 
     </div><!--/.container-->
+
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
     <div class="custom-container footer">
   <div class="wrapper">
     <div class="row">
@@ -258,13 +263,8 @@
     </div>
   </div>
 </div>
-
-    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../javascripts/get-token.js" type="text/javascript"></script>
-<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
-<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://api.sandbox.veritrans.co.id/v2/assets/js/veritrans.min.js"></script>
+    
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

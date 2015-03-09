@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Docs - Veritrans Indonesia</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="header navbar navbar-default navbar-fixed-top">
+      <div class="custom-container">
+        <div class="col-md-3 col-sm-12 navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="logo"><a href="https://www.veritrans.co.id/" title="Home"><span>Veritrans</span></a></h2>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="https://www.veritrans.co.id/whatwedo.html" title="What We Do">what we do</a></li>
+            <li><a href="https://www.veritrans.co.id/product.html" title="Our Online Payment Products">product</a></li>
+            
+            <li class="dropdown hidden-xs hidden-sm hidden-md">
+              <a href="about.html">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.veritrans.co.id/team.html" title="Team">team</a></li>
+                <li><a href="https://www.veritrans.co.id/press.html" title="Press">press</a></li>
+                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+                <li><a href="http://support.veritrans.co.id/" title="FAQ & How To">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown hidden-lg">
+              <a href="#">about <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.veritrans.co.id/about.html" title="Team">about us</a></li>
+                <li><a href="https://www.veritrans.co.id/team.html" title="Team">team</a></li>
+                <li><a href="https://www.veritrans.co.id/press.html" title="Press">press</a></li>
+                <li><a href="https://www.veritrans.co.id/career.html" title="Career at Veritrans">career</a></li>
+                <li><a href="https://www.veritrans.co.id/contact.html" title="Contact Us">contact</a></li>
+                <li><a href="http://support.veritrans.co.id/" title="FAQ & How To">FAQ</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="http://docs.veritrans.co.id" title="Product Documentations">docs</a></li> -->
+            <li class="dropdown">
+              <a href="#">developer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.veritrans.co.id/sandbox.html">sandbox</a></li>
+                <li><a href="http://docs.veritrans.co.id/">documentation</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">community <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://blog.veritrans.co.id" title="Blog, News and Press Release">blog</a></li>
+                <li><a href="https://www.veritrans.co.id/merchants.html" title="Merchants">merchants</a></li>
+                <li><a href="https://www.veritrans.co.id/why-veritrans.html" title="Why Veritrans">why veritrans</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right register-login">
+            <li class="pull-left"><a href="https://my.sandbox.veritrans.co.id/register" class="register">sign up</a></li>
+            <li class="pull-left"><a href="https://my.veritrans.co.id/login">sign in</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="custom-container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	<div class="documentation-sidebar">
+		<div class="docs-logo">
+			<span>DOCS</span>
+		</div>
+		<div class="language-toggle"> <a href="../../vtdirect/integration_xltunai.html">English</a> / Bahasa Indonesia</div>
+		<ul class="sidebar">
+			
+			<li>
+        
+          <a class="parent" href="../welcome/welcome.html">Selamat Datang</a>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent">VT-Web</a>
+          <b class="caret"></b>
+          <ul class="child-menu">
+            
+            <li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
+            
+            <li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
+            
+            <li class=""><a href="../vtweb/integration.html">Integrasi</a></li>
+            
+            <li class=""><a href="../vtweb/other_features.html">Fitur Tambahan</a></li>
+            
+            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+            
+          </ul>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent">VT-Direct</a>
+          <b class="caret"></b>
+          <ul class="child-menu">
+            
+            <li class=""><a href="introduction.html">Perkenalan</a></li>
+            
+            <li class=""><a href="getting_started.html">Langkah Awal</a></li>
+            
+            <li class="active"><a href="integration.html">Integrasi</a></li>
+            
+            <li class=""><a href="other_features.html">Fitur Tambahan</a></li>
+            
+            <li class=""><a href="other_commands.html">Perintah Lain</a></li>
+            
+            <li class=""><a href="going_live.html">Going Live</a></li>
+            
+          </ul>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent">Referensi API</a>
+          <b class="caret"></b>
+          <ul class="child-menu">
+            
+            <li class=""><a href="../sandbox/introduction.html">Perkenalan</a></li>
+            
+            <li class=""><a href="../sandbox/charge.html">Charge Transaksi</a></li>
+            
+            <li class=""><a href="../sandbox/installment.html">Cicilan</a></li>
+            
+            <li class=""><a href="../sandbox/bin.html">BIN Promo</a></li>
+            
+            <li class=""><a href="../sandbox/other_features.html">Fitur Tambahan</a></li>
+            
+            <li class=""><a href="../sandbox/other_commands.html">Perintah Lain</a></li>
+            
+            <li class=""><a href="../sandbox/card_list.html">Daftar Kartu Uji Coba</a></li>
+            
+            <li class=""><a href="../sandbox/status_code.html">Status Kode</a></li>
+            
+          </ul>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent" href="../plugin/plugin.html">Plugin & Mobile Apps</a>
+        
+			</li>
+			
+			<li>
+        
+          <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+        
+			</li>
+			
+		</ul>
+		<p class="question">
+            Anda merasa ada yang kurang dari dokumentasi ini?<br>
+            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+        </p>
+	</div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-7" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="id-vtdirect-integration-xltunai">
+            <h2 id="integrasi-vt-direct-xl-tunai">Integrasi VT-Direct (Xl Tunai)</h2>
+<hr />
+
+<h5 id="setiap-metode-pembayaran-memiliki-tahapan-integrasi-yang-berbeda-dokumentasi-pada-halaman-ini-bertujuan-untuk-membantu-anda-melakukan-integrasi-vt-direct-dengan-metode-pembayaran-xl-tunai-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportveritranscoid-email-support-atau-kunjungi-halaman-support-kamihttpsupportveritranscoid-veritrans-support"><em>Setiap metode pembayaran memiliki tahapan integrasi yang berbeda. Dokumentasi pada halaman ini bertujuan untuk membantu anda melakukan integrasi VT-Direct dengan metode pembayaran XL Tunai. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> atau kunjungi <a title="Veritrans Support" href="http://support.veritrans.co.id">halaman support kami</a>.</em></h5>
+<hr />
+<p><br /></p>
+
+<div class="row">
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_cc.html"><img src="../../images/cc_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_mandiri.html"><img src="../../images/mc_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_cimb.html"><img src="../../images/cic_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_va.html"><img src="../../images/va_icon_gray.png" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_bripay.html"><img src="../../images/bri_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_tcash.html"><img src="../../images/tcash_icon_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+    <div class="thumbnail">
+    <a href="integration_xltunai.html"><img src="../../images/xltunai_icon.jpg" /></a>
+    </div>
+  </div>
+</div>
+
+<hr />
+<p><br /></p>
+
+<p>XL Tunai adalah layanan uang elektronik dari XL yang memungkinkan pelanggan XL melakukan transaksi keuangan hanya dengan menggunakan ponsel. Pelanggan melakukan pembayaran dengan cara memasukan nomor tertentu yang sudah di berikan oleh veritrans sebagai validasi transaksi. Untuk info lebih lengkap dapat diperoleh di website <a href="http://www.xl.co.id/id/layanan-lain/xl-tunai">XL Tunai</a>.</p>
+
+<p>Untuk mengaktifkan metode pembayaran XL Tunai (otomatis aktif pada mode Sandbox), anda perlu menghubungi sales representative Veritrans.
+<br /><br /></p>
+
+<h3 id="alur-proses-transaksi">Alur Proses Transaksi</h3>
+
+<p><img alt="Tcash Flow" class="img-responsive img-thumbnail" src="../../images/xltunai_flow.png" />
+<br /><br /></p>
+
+<h3 id="tahapan-integrasi-vt-direct-xl-tunai">Tahapan Integrasi VT-Direct XL Tunai</h3>
+
+<ol>
+  <li>Membuat Form</li>
+  <li>Charge Transaksi</li>
+  <li>Menampilkan ID dan Order Id</li>
+  <li>Status Transaksi</li>
+</ol>
+
+<p>Berbeda dengan metode pembayaran lain (kartu kredit, Mandiri Clickpay dan CIMB Clicks), proses utama pembayaran XL Tunai tidak dilakukan di halaman anda melainkan melalui ponsel yang sudah registrasi dengan XL Tunai.
+<br /><br /></p>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#form-xl" data-toggle="tab"><span>Tahap 1</span>Membuat Form</a></li>
+  <li><a href="#charge-transaction-xl" data-toggle="tab"><span>Tahap 2</span>Charge Transaksi</a></li>
+  <li><a href="#response-transaction-xl" data-toggle="tab"><span>Tahap 3</span>Menampilkan ID dan Order Id</a></li>
+  <li><a href="#transaction-status-xl" data-toggle="tab"><span>Tahap 4</span>Status Transaksi</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="form-xl">
+    <!-- step 1-->
+    <!-- satu -->
+    <p><br /></p>
+
+    <h2 id="membuat-form">Membuat Form</h2>
+
+    <p>Form pembayaran XL Tunai akan kita buat di file <code>form_vtdirect_xl.html</code>. Karena sebagian besar proses pembayaran tidak dilakukan di halaman merchant, form yang akan kita buat hanya berisi petunjuk pembayaran dan tombol bayar menggunakan Xl Tunai. Ketika pelanggan anda menekan tombol ini, proses charge transaksi dilakukan pada tahap selanjutnya.</p>
+
+    <p>Berikut adalah contoh form pada file <code>form_vtdirect_xl.html</code>:
+<br /><br /></p>
+
+<pre><code class="highlight html"><span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;</span>XL Tunai<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+	<span class="nt">&lt;h1&gt;</span>XL Tunai<span class="nt">&lt;/h1&gt;</span>
+	<span class="nt">&lt;b&gt;</span>Saya akan melakukan pembayaran dengan metode XL Tunai<span class="nt">&lt;/b&gt;</span>
+	<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_xl.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre>
+  </div>
+  <div class="tab-pane" id="charge-transaction-xl">
+    <!-- step 2-->
+    <!-- dua -->
+    <p><br /></p>
+
+    <h2 id="charge-transaksi">Charge Transaksi</h2>
+
+    <p>Untuk melakukan charge transaction menggunakan XL Tunai, beberapa langkah harus dilakukan sebagai berikut:</p>
+
+    <ul>
+      <li><code>payment_type</code> harus di-set menjadi <code>xl_tunai</code>.</li>
+    </ul>
+
+    <p>Tahap ini membahas cara charge transaksi XL Tunai di file <code>checkout_xl.php</code>. Untuk melakukan charge transaksi, kita dapat menggunakan library Veritrans-PHP. Berikut adalah contoh implementasi charge transaksi pada file <code>checkout_xl.php</code>:
+<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="c1">// TODO: change with your actual server_key that can be found on Merchant Administration Portal (MAP)
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt; Your Server Key &gt;"</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+  <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="mi">145000</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
+    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
+    <span class="p">);</span>
+
+<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
+</span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'xl_tunai'</span><span class="p">,</span>
+
+  <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
+  <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Pada contoh di atas, kita menggunakan data XL Tunai, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
+
+  </div>
+  <div class="tab-pane" id="response-transaction-xl">
+    <!-- step 3-->
+    <!-- tiga -->
+    <p><br /></p>
+
+    <h2 id="menampilkan-id-dan-order-id">Menampilkan ID dan Order Id</h2>
+
+    <p>Server Veritrans akan mengembalikan respon untuk setiap charge transaksi dalam bentuk JSON. Library Veritrans-PHP akan melakukan konversi JSON menjadi object PHP secara otomatis. Contoh respon JSON yang dikembalikan oleh veritrans adalah sebagai berikut:
+<br /><br /></p>
+
+<pre><code class="highlight php">$result = array(
+  "status_code" =&gt; "201",
+  "status_message" =&gt; "Success, XL Tunai transaction is successful",
+  "transaction_id" =&gt; "6a0027a9­9e11­466b­b2e5­d984ac3d2638",
+  "order_id" =&gt; "2015011603",
+  "payment_type" =&gt; "xl_tunai",
+  "transaction_time" =&gt; "2015­01­20 16:28:40",
+  "transaction_status" =&gt; "pending",
+  "xl_tunai_order_id": "00039",
+  "gross_amount" =&gt; "145000"
+);
+</code></pre>
+
+    <p><br />
+Dua informasi penting dalam respon JSON diatas adalah <code>status_code</code> dan <code>xl_tunai_order_id</code>. Jika nilai <code>status_code</code> adalah <code>201</code>, maka proses charge transaksi berhasil disimpan pada server Veritrans dengan status pending. Anda selanjutnya harus menampilkan <code>XL ID</code> yang didapat dari XL dan <code>xl_tunai_order_id</code> yang didapat dari Veritrans ke pelanggan anda, agar pelanggan anda dapat melakukan pembayaran. Untuk melakukan hal tersebut, anda dapat menambahkan kode PHP berikut pada bagian akhir file <code>checkout_xl.php</code>:
+<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">"201"</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//success
+</span>  <span class="k">echo</span> <span class="s2">"&lt;b&gt;XL Tunai&lt;/b&gt; &lt;br /&gt;&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;b&gt;XL ID: 12345&lt;/b&gt;"</span><span class="p">;</span> <span class="c1">// Nomor XL ID Merchant
+</span>  <span class="k">echo</span> <span class="s2">"&lt;b&gt;Order ID:&lt;/b&gt; "</span><span class="o">.</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">xl_tunai_order_id</span><span class="p">;</span> <span class="c1">// order ID dari Veritrans
+</span>  <span class="k">echo</span> <span class="s2">"&lt;br /&gt;&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"1. Tekan *123*120# melalui ponsel anda &lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"2. Masukan kode merchant id dan order id"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"2. Menyelesaikan pembayaran"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"2. Jika anda menemui kendala, silahkan hubungi kami di 021-22334456"</span><span class="p">;</span>
+
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">//error
+</span>  <span class="k">echo</span> <span class="s2">"Terjadi kesalahan pada data transaksi yang dikirim.&lt;br /&gt;"</span><span class="p">;</span>
+  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. Status transaksi akan berubah menjadi <em>sukses</em> saat pelanggan anda selesai melakukan pembayaran.</p>
+
+    <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/xl/tunai/index">simulator pembayaran</a> untuk mode sandbox. Masukan nomor Merchant Id dan XL Tunai Order Id yang didapat sebelumnya untuk cek apakah ada transaksi dengan nomor tersebut.
+<br /><br />
+<img alt="VT-Web xl Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test3.png" />
+<br /><br />
+Apabila transaksi dengan nomor virtual account tersebut ada, anda dapat melakukan simulasi untuk melakukan pembayaran.
+<br /><br />
+<img alt="VT-Web xl Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test4.png" />
+<br /><br />
+Sukses melakukan pembayaran.
+<br /><br />
+<img alt="VT-Web xl Test 5" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test5.png" />
+<br /><br /></p>
+
+    <h3 id="kesalahan-dalam-charge-transaksi">Kesalahan dalam Charge Transaksi</h3>
+
+    <p>Pada beberapa kasus, charge transaksi bisa gagal. Hal ini menyebabkan anda tidak mendapatkan xl tunai order id. Veritrans akan mengembalikan pesan error ketika terjadi kegagalan, penyebab gagalnya charge transaksi dapat dilihat dari status code yang ada di dalam pesan error. Status code yang umumnya muncul adalah:
+<br /><br /></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kode Error</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>400</code> Validation error</td>
+          <td>Format atau konten data transaksi tidak valid. Contoh: Salah tipe variabel, metode pembayaran tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>401</code> Access Denied</td>
+          <td>Client atau server key tidak valid.</td>
+        </tr>
+        <tr>
+          <td><code>402</code> Access Denied</td>
+          <td>Merchant tidak memiliki izin menggunakan metode pembayaran tertentu.</td>
+        </tr>
+        <tr>
+          <td><code>406</code> Duplicate Order ID</td>
+          <td>Order ID telah digunakan dan dibayar sebelumnya.</td>
+        </tr>
+        <tr>
+          <td><code>410</code> Account Inactive</td>
+          <td>Akun merchant tidak aktif dalam waktu lama</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br />
+Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>.</p>
+
+    <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi XL Tunai akan dibahas pada <a href="integration_va.html#transaction-status-va">bagian selanjutnya</a>.</p>
+
+  </div>
+  <div class="tab-pane" id="transaction-status-xl">
+    <!-- step 4-->
+    <!-- empat -->
+    <p><br /></p>
+
+    <h2 id="status-transaksi">Status Transaksi</h2>
+
+    <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih pending. Pelanggan anda harus menyelesaikan transaksi dalam waktu maksimal 2 jam. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>success</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
+
+    <p>Status pada MAP saat pembayaran belum selesai dilakukan adalah seperti gambar berikut:
+<br /><br />
+  <img alt="XL MAP Pending" class="img-responsive img-thumbnail" src="../../images/xl-map-pending.png" />
+<br /><br />
+Status pada MAP saat pembayaran sudah selesai dilakukan adalah seperti gambar berikut:
+<br /><br />
+  <img alt="XL MAP Sukses" class="img-responsive img-thumbnail" src="../../images/xl-map-success.png" />
+<br /><br /></p>
+
+    <h3 id="https-post">HTTP(S) POST</h3>
+
+    <p>Server Veritrans akan memberikan respon kepada server anda saat pelanggan anda telah melakukan pembayaran. Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:
+<br /><br /></p>
+
+<pre><code class="highlight php">{
+  "status_code": "200",
+  "status_message": "Veritrans payment notification",
+  "transaction_id": "9b48d9da-7b35-43f8-b375-026bf0b05538",
+  "order_id": "vtxl003",
+  "payment_type": "xl_tunai",
+  "transaction_time": "2015-02-12 16:32:41",
+  "transaction_status": "settlement",
+  "signature_key": "ac9d80e274499386400244bd3737ec0a378b05ccb2b1c0a244becdf1c74b9139cf1172c39d28025e9730f21ddb065388a9008164d717b13f76a95aee1c467aef",
+  "gross_amount": "145000.00"
+}
+</code></pre>
+
+    <p><br />
+Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
+
+  </div>
+</div>
+
+
+			<div class="pagination">
+				<ul><li class="left">« Sebelumnya: <a href="getting_started.html">VT-Direct : Langkah Awal</a></li><li class="right">Selanjutnya: <a href="other_features.html">VT-Direct : Fitur Tambahan</a> »</li></ul>
+			</div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.container-->
+
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
+    <div class="custom-container footer">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <div class="content text-center">
+          <span>&copy;2014 PT. Midtrans (Veritrans Indonesia). All Rights Reserved</span>
+          <span class="divider">|</span>
+          <a href="https://www.veritrans.co.id/privacy.html" title="Privacy Policy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-32232768-1', 'veritrans.co.id');
+      ga('send', 'pageview');
+
+    </script>
+    <script>
+    $(document).ready(function() {
+      $('[data-toggle=offcanvas]').click(function() {
+        $('.row-offcanvas').toggleClass('active');
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    });
+    </script>
+  </body>
+</html>
