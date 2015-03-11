@@ -8,6 +8,14 @@
     <link href="../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="shortcut icon" href="/favicon.ico"/>
+    
+    <!-- Start Alexa Certify Javascript -->
+    <script type="text/javascript">
+    _atrk_opts = { atrk_acct:"0VtQk1a4SBe05T", domain:"veritrans.co.id",dynamic: true};
+    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    </script>
+    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=0VtQk1a4SBe05T" style="display:none" height="1" width="1" alt="" /></noscript>
+    <!-- End Alexa Certify Javascript -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -288,7 +296,7 @@ Take note that when the installment term of BNI bank is an empty array, as found
   <div class="tab-pane" id="vtdirect">
     <p><br /></p>
 
-    <p>For VT-Direct you have to acquire a token ID. Token ID represents customer's credit card information that has been stored inside Veritrans server. To get the token, you should follow the tutorial on <a href="../vtdirect/other_features.html#installment">VT-Direct &#8211; get the Token</a>. With some concerns, the parameter request token for installment is different than a <a href="../vtdirect/integration_cc.html#step1">normal transaction token</a>. You should add <code>installment</code> and <code>installment_term</code> on the parameter.</p>
+    <p>For VT-Direct you have to acquire a token ID. Token ID represents customer's credit card information that has been stored inside Veritrans server. To get the token, you should follow the tutorial on <a href="../vtdirect/other_features.html#installment">VT-Direct – get the Token</a>. With some concerns, the parameter request token for installment is different than a <a href="../vtdirect/integration_cc.html#step1">normal transaction token</a>. You should add <code>installment</code> and <code>installment_term</code> on the parameter.</p>
 
     <p>After you obtain the token, installment transaction charge can be done by adding the <code>installment_term</code> attribute on <code>credit_card</code>:
 <br /><br /></p>
