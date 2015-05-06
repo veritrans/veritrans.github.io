@@ -500,6 +500,7 @@ The list of status codes can be found in <a href="sandbox/status_code.html">Refe
   <li><a href="#tcash" data-toggle="tab">Telkomsel Cash</a></li>
   <li><a href="#xltunai" data-toggle="tab">XL Tunai</a></li>
   <li><a href="#mbill" data-toggle="tab">Mandiri Bill Payment</a></li>
+  <li><a href="#bbmmoney" data-toggle="tab">BBM Money</a></li>
 
 </ul>
         <div class="tab-content">
@@ -827,8 +828,68 @@ Transaction status will change in MAP. Here is an example of MAP when the Virtua
 Examining the transaction status from MAP is easy. However, the merchant has to check transaction manually every time. This method may be complicated to integrate with the merchant’s current information system. To solve this issue, merchant can use the <strong>Transaction Notification</strong> method. The description on how to use the transaction notification can be found in the <a href="integration_php.html#step3">next step</a>.</p>
 
           </div>
-          <!-- end of step bank transfer-->
+          <!-- end of step Mandiri Bill-->
+          <div class="tab-pane" id="bbmmoney">
+            <!-- step BBM Money -->
 
+            <!-- BBM Money -->
+
+            <h3 id="transaction-test-4">Transaction test</h3>
+
+            <h4 id="bbm-money-on-desktop">BBM Money on Desktop</h4>
+
+            <p>We will try to perform a BBM Money transaction from the desktop. The VT-Web page that is displayed is shown below:
+<br /><br />
+<img alt="VT-Web bbmmoney Test 1" class="img-responsive img-thumbnail" src="../images/vtweb_bbmmoney_test1.png" /></p>
+
+            <p><strong>NOTE:</strong> We will show you payment instructions. Write the account number and make payment through your BBM Money Apps.</p>
+
+            <p>At this point, the transaction is stored in MAP with <em>pending</em> status.
+Transaction status will be changed into success when your customer have finished the payment.
+<br /><br /></p>
+
+            <hr />
+
+            <h4 id="bbm-money-on-mobile">BBM Money on Mobile</h4>
+
+            <p>We will try to perform a BBM Money transaction from the mobile web of your device. The VT-Web page that is displayed is shown below:
+<br /><br />
+<img alt="VT-Web bbmmoney Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_bbmmoney_test2.png" /></p>
+
+            <p>Click 'pay with BBM Money' and customer will be redirected to their BBM Money Apps to proceed with BBM Money transaction.</p>
+
+            <p><strong>NOTE:</strong> You need to have BBM Money from Google Play Store to proceed with transaction.</p>
+
+            <p>At this point, the transaction is stored in MAP with <em>pending</em> status.
+Transaction status will be changed into success when your customer have finished the payment.
+<br /><br /></p>
+
+            <hr />
+
+            <!--
+### Payment Simulation
+
+To facilitate the payment process, we provide the [payment simulator](https://api.sandbox.veritrans.co.id:7676/permata/va/index) for a sandbox Environment. Enter the account number previously obtained to check whether there is a transaction with the virtual account number.
+<br /><br />
+![VT-Web transfer Test 3](/images/vtweb_transfer_test3.png){: .img-responsive .img-thumbnail}
+<br /><br />
+If there is a transaction with virtual account numbers you provide, you can do a payment simulation.
+<br /><br />
+![VT-Web transfer Test 4](/images/vtweb_transfer_test4.png){: .img-responsive .img-thumbnail}
+<br /><br />
+Successful payment.
+<br /><br />
+![VT-Web transfer Test 5](/images/vtweb_transfer_test5.png){: .img-responsive .img-thumbnail}
+<br /><br />
+Transaction status will change in MAP. Here is an example of MAP when the Virtual Account transaction was made.
+<br /><br />
+![VT-Web transfer Test 3](/images/transfer_status.png){: .img-responsive .img-thumbnail}
+<br /><br />
+Examining the transaction status from MAP is easy. However, the merchant has to check transaction manually every time. This method may be complicated to integrate with the merchant’s current information system. To solve this issue, merchant can use the **Transaction Notification** method. The description on how to use the transaction notification can be found in the [next step](/vtweb/integration_php.html#step3).
+-->
+
+          </div>
+          <!-- end of BBM Money-->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>
@@ -943,12 +1004,20 @@ Examining the transaction status from MAP is easy. However, the merchant has to 
 <span class="cp">?&gt;</span>
 </code></pre>
 
+        <p><br /></p>
+
+        <p><strong>Note:</strong> </p>
+
+        <ul>
+          <li>Veritrans require a response code 200 which indicates the notification has been successfully received by the merchant.</li>
+          <li>To ensure the notification is from Veritrans, merchant can perform a get status command shortly after receiving the notification.</li>
+        </ul>
+
       </div>
       <!-- end of step 3-->
 
     </div>
     <!-- end of tab-content-->
-
   </div>
 </div>
 
@@ -982,6 +1051,9 @@ Examining the transaction status from MAP is easy. However, the merchant has to 
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/aegis.html">Aegis</a>
           </li>
           <!-- <li>
             <a href="aegis.html">Aegis</a>

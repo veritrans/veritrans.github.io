@@ -277,6 +277,16 @@
       <a href="integration_mbill.html"><img src="../../images/mbill_icon_grey.jpg" /></a>
       </div>
   </div>
+  <div class="col-sm-2 col-xs-12">
+      <div class="thumbnail">
+      <a href="integration_bbm.html"><img src="../../images/bbm_icon_grey.png" /></a>
+      </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+      <div class="thumbnail">
+      <a href="integration_indomrt.html"><img src="../../images/indomrt_icon_grey.png" /></a>
+      </div>
+  </div>
 </div>
 
 <hr />
@@ -373,11 +383,11 @@
     <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
     <span class="p">);</span>
 
-<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
+<span class="c1">// Data yang akan dikirim untuk request charge transaction dengan Virtual Account.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'bank_transfer'</span><span class="p">,</span>
   <span class="s1">'bank_transfer'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-      <span class="s1">'bank'</span> <span class="o">=&gt;</span> <span class="s2">"permata"</span><span class="p">,</span>
+      <span class="s1">'bank'</span> <span class="o">=&gt;</span> <span class="s2">"permata"</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
@@ -578,6 +588,9 @@ Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a hr
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/aegis.html">Aegis</a>
           </li>
           <!-- <li>
             <a href="aegis.html">Aegis</a>

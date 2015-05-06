@@ -258,7 +258,7 @@
     <!-- step 1-->
     <!-- One -->
 
-    <p>Currently, there are eight methods of payment that can be utilised from VT-Web:</p>
+    <p>Currently, we have several methods of payment that can be utilised from VT-Web:</p>
 
     <ol>
       <li><a href="#credit-card">Credit Card</a></li>
@@ -269,6 +269,7 @@
       <li><a href="#tcash">Telkomsel Cash</a></li>
       <li><a href="#xltunai">XL Tunai</a></li>
       <li><a href="#mbill">Mandiri Bill Payment</a></li>
+      <li><a href="#bbmmoney">BBM Money</a></li>
     </ol>
 
     <p>On section <a href="integration_php.html#step1">VT-Web – Integration</a>, we explained on how to automatically activate all available payments for the merchant. This can be implemented by <strong>not</strong> including the <code>enabled_payments</code> parameter. However, under a certain condition, you need to display only some of the payment methods available. If such circumstances occurr, please follow the steps below.</p>
@@ -570,7 +571,7 @@ The XL Tunai will be shown at the VT-Web payment page. Information and procedure
 <span class="c1">// Fill transaction details
 </span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"mandiri_bill"</span><span class="p">)</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"echannel"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
@@ -589,6 +590,46 @@ The Mandiri Bill Payment will be shown at the VT-Web payment page. Information a
 <img alt="vtweb_mbill" class="img-responsive img-thumbnail" src="../images/vtweb_mbill.png" /></p>
 
     <hr />
+
+    <h3 id="bbmmoney">BBM Money</h3>
+
+    <p>One of the payment method offered by Veritrans is BBM Money. By using this service, your customer will have an option to make a payment via BBM Money to either BBM Money account or Permata Bank Virtual Account Number. For more information, please visit <a href="http://www.bbm.com/bbm/id/bbm-money.html">bbm website</a> or <a href="https://www.permatabank.com/Tanya-Jawab-BBM-Money-Aps">Permata bank website</a>.</p>
+
+    <p>To activate BBM Money method of payment (automatically active on Sandbox mode), merchant needs to:</p>
+
+    <ol>
+      <li>Sign on BBM Money Payment method by contacting Veritrans sales representative.</li>
+      <li>Add the <code>bbm_money</code> parameter on variable <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"bbm_money"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+The BBM Money will be shown at the VT-Web payment page. Information and procedure to perform BBM Money Payment transaction is displayed on the figure below.
+<br /><br />
+<img alt="vtweb_bbmmoney" class="img-responsive img-thumbnail" src="../images/vtweb_bbmmoney_test1.png" /></p>
+
   </div>
   <div class="tab-pane" id="three-D-secure">
     <h3 id="inactivate-3d-secure">Inactivate 3D Secure</h3>
@@ -792,6 +833,9 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>, and 
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/aegis.html">Aegis</a>
           </li>
           <!-- <li>
             <a href="aegis.html">Aegis</a>

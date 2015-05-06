@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://docs.veritrans.co.id/</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/welcome/welcome.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/welcome/welcome.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/introduction.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/getting_started.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/integration.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/other_features.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/going_live.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/introduction.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/getting_started.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/other_features.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/other_commands.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/going_live.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/sandbox/introduction.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/sandbox/charge.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/sandbox/installment.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/sandbox/bin.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/sandbox/other_features.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/sandbox/other_commands.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/sandbox/card_list.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/sandbox/status_code.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/plugin/plugin.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/integration_prestashop.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/integration_magento.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/integration_opencart.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/integration_woocommerce.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/introduction.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/getting_started.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/integration.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/other_features.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/going_live.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/introduction.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/getting_started.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/other_features.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/other_commands.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/going_live.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/sandbox/introduction.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/sandbox/charge.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/sandbox/installment.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/sandbox/bin.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/sandbox/other_features.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/sandbox/other_commands.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/sandbox/card_list.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/sandbox/status_code.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/plugin/plugin.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtweb/integration_php.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration_cc.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration_mandiri.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration_cimb.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration_va.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration_bripay.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration_tcash.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration_xltunai.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/vtdirect/integration_mbill.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/integration_php.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration_cimb.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration_bripay.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/plugin/android.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/plugin/ios.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/integration_prestashop.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/integration_magento.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/integration_opencart.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtweb/integration_woocommerce.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration_cc.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration_mandiri.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration_va.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration_tcash.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration_xltunai.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/vtdirect/integration_mbill.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/plugin/android.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://docs.veritrans.co.id/id/plugin/ios.html</loc>
+  <lastmod>2015-04-24T08:51:44+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+</urlset>

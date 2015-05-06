@@ -258,7 +258,7 @@
     <!-- step 1-->
     <!-- satu -->
 
-    <p>Saat ini, ada 8 metode pembayaran yang dapat digunakan melalui VT-Web:</p>
+    <p>Saat ini, ada beberapa metode pembayaran yang dapat digunakan melalui VT-Web:</p>
 
     <ol>
       <li><a href="#credit-card">Kartu Kredit</a></li>
@@ -269,6 +269,7 @@
       <li><a href="#tcash">Telkomsel Cash</a></li>
       <li><a href="#xltunai">XL Tunai</a></li>
       <li><a href="#mbill">Mandiri Bill Payment</a></li>
+      <li><a href="#bbmmoney">BBM Money</a></li>
     </ol>
 
     <p>Pada bagian <a href="integration_php.html#step1">VT-Web – Integrasi</a>, kami telah menjelaskan bagaimana mengaktifkan semua metode pembayaran yang anda miliki secara otomatis. Hal ini dapat diimplementasikan dengan <strong>tidak</strong> menyertakan parameter <code>enabled_payments</code>. Namun, pada kondisi tertentu anda mungkin perlu menampilkan beberapa metode pembayaran saja pada VT-Web. Jika anda menghadapi kondisi ini, silahkan ikuti petunjuk berikut.</p>
@@ -570,7 +571,7 @@ Tab XL Tunai akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk 
 <span class="c1">// Fill transaction details
 </span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"mandiri_bill"</span><span class="p">)</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"echannel"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
@@ -587,6 +588,47 @@ Tab XL Tunai akan muncul pada halaman pembayaran VT-Web. Informasi dan petunjuk 
 Halaman pembayaran Mandiri Bill Payment akan muncul di VT-Web. Informasi dan petunjuk pembayaran menggunakan metode Mandiri Bill payment ditampilkan secara rinci pada halaman ini.
 <br /><br />
 <img alt="vtweb_mbill" class="img-responsive img-thumbnail" src="../../images/vtweb_mbill.png" /></p>
+
+    <hr />
+
+    <h3 id="bbmmoney">BBM Money</h3>
+
+    <p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah BBM Money. Dengan menggunakan layanan ini, pelanggan anda akan memiliki pilihan untuk melakukan pembayaran melalui BBM Money, baik ke akun BBM Money lainnya atau ke rekening virtual account Bank Permata. untuk informasi lebih lengkap silahkan mengunjungi website <a href="http://www.bbm.com/bbm/id/bbm-money.html">bbm</a> dan <a href="https://www.permatabank.com/Tanya-Jawab-BBM-Money-Aps">Bank Permata</a>.</p>
+
+    <p>Untuk mengaktifkan metode pembayaran BBM Money (otomatis aktif pada mode Sandbox), merchant perlu:</p>
+
+    <ol>
+      <li>Daftarkan metode pembayaran BBM Money dengan menghubungi sales representative Veritrans.</li>
+      <li>Menambahkan parameter <code>bbm_money</code> pada variabel <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"bbm_money"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Halaman pembayaran BBM Money Payment akan muncul di VT-Web. Informasi dan petunjuk pembayaran menggunakan metode BBM Money payment ditampilkan secara rinci pada halaman ini.
+<br /><br />
+<img alt="vtweb_bbmmoney" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" /></p>
 
   </div>
   <div class="tab-pane" id="three-D-secure">
@@ -797,6 +839,9 @@ Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>31
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/aegis.html">Aegis</a>
           </li>
           <!-- <li>
             <a href="aegis.html">Aegis</a>

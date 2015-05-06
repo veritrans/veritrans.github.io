@@ -128,7 +128,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../id/vtdirect/integration_bripay.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../id/vtdirect/integration_bbm.html">Bahasa Indonesia</a></div>
         <ul class="sidebar">
             
                 <li>
@@ -228,11 +228,11 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="vtdirect-integration-bripay">
-            <h2 id="vt-direct-integration-e-pay-bri">VT-Direct Integration (e-Pay BRI)</h2>
+          <div class="vtdirect-integration-bbm">
+            <h2 id="vt-direct-integration-bbm-money">VT-Direct Integration (BBM Money)</h2>
 <hr />
 
-<h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-e-pay-bri-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our--support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct e-Pay BRI payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our  <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
+<h5 id="every-payment-method-has-different-integration-steps-available-the-objective-of-this-documentation-is-to-assist-you-in-integrating-with-vt-direct-bbm-money-payment-method-for-more-inquiries-please-contact-us-at-supportveritranscoidmailtosupportveritranscoid-email-support-or-visit-our-support-web-pagehttpsupportveritranscoid-veritrans-support"><em>Every payment method has different integration steps available. The objective of this documentation is to assist you in integrating with VT-Direct BBM Money payment method. For more inquiries, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#118;&#101;&#114;&#105;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#046;&#105;&#100;</a> or visit our <a title="Veritrans Support" href="http://support.veritrans.co.id">support web page</a>.</em></h5>
 <hr />
 <p><br /></p>
 
@@ -259,7 +259,7 @@
   </div>
   <div class="col-sm-2 col-xs-12">
     <div class="thumbnail">
-    <a href="integration_bripay.html"><img src="../images/bri_icon.jpg" /></a>
+    <a href="integration_bripay.html"><img src="../images/bri_icon_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-sm-2 col-xs-12">
@@ -279,7 +279,7 @@
   </div>
   <div class="col-sm-2 col-xs-12">
       <div class="thumbnail">
-      <a href="integration_bbm.html"><img src="../images/bbm_icon_grey.png" /></a>
+      <a href="integration_bbm.html"><img src="../images/bbm_icon.png" /></a>
       </div>
   </div>
   <div class="col-sm-2 col-xs-12">
@@ -292,77 +292,70 @@
 <hr />
 <p><br /></p>
 
-<p>e-Pay BRI is one of the internet banking payment method that is provided by BRI Bank. This method allows customer to perform transaction by redirecting the customer to the e-Pay BRI payment page. For more information, please visit <a title="e-Pay BRI" href="http://e-pay.bri.co.id">e-Pay BRI website</a>.</p>
+<p>One of the payment method offered by Veritrans is BBM Money. By using this service, your customer will have an option to make a payment via BBM Money to either BBM Money account or Permata Bank Virtual Account Number.</p>
 
-<p>To activate e-Pay BRI payment method (Automatically active on Sandbox mode), you have to contact a Veritrans sales representative.</p>
+<p>To activate BBM Money method of payment (automatically active on Sandbox mode), you have to contact a Veritrans sales representative.
+<br /><br /></p>
 
-<h3 id="integration-steps-vt-direct-e-pay-bri">Integration Steps VT-Direct e-Pay BRI</h3>
+<h3 id="integration-vt-direct-bbm-money">Integration VT-Direct BBM Money</h3>
 
 <ol>
   <li>Create Form</li>
-  <li>Perform Charge Transaction</li>
-  <li>Redirect</li>
-  <li>Check Transaction Status</li>
+  <li>Charge Transaction</li>
+  <li>Create BBM Money Link</li>
+  <li>Transaction Status</li>
 </ol>
 
-<p>Unlike the other payment method (Credit Card and Mandiri ClickPay), e-Pay BRI payment process are not executed in your payment page. Customer will be redirected to e-Pay BRI page to complete the transaction.
+<p>Customer has to pay with BBM Money to complete the transaction.
 <br /><br /></p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#form-bri" data-toggle="tab"><span>Step 1</span>Create Form</a></li>
-  <li><a href="#charge-transaction-bri" data-toggle="tab"><span>Step 2</span>Perform Charge Transaction</a></li>
-  <li><a href="#redirect-bri" data-toggle="tab"><span>Step 3</span>Redirect</a></li>
-  <li><a href="#transaction-status-bri" data-toggle="tab"><span>Step 4</span>Check Transaction Status</a></li>
+  <li class="active"><a href="#form-bbm" data-toggle="tab"><span>Step 1</span>Create Form</a></li>
+  <li><a href="#charge-transaction-bbm" data-toggle="tab"><span>Step 2</span>Charge Transaction</a></li>
+  <li><a href="#link-bbm" data-toggle="tab"><span>Step 3</span>Create BBM Money Link</a></li>
+  <li><a href="#transaction-status-bbm" data-toggle="tab"><span>Step 4</span>Transaction Status</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="form-bri">
+  <div class="tab-pane active" id="form-bbm">
     <!-- step 1-->
     <!-- satu -->
     <p><br /></p>
 
     <h2 id="create-form">Create Form</h2>
 
-    <p>e-Pay BRI payment form will be made in the file <code>form_vtdirect_bri.php</code>. Because most of the transaction process will be made in e-Pay BRI page, the form that we made will only shows the steps of payment and the payment button of e-Pay BRI.
-When your customer click this payment button, charge transaction process will be carried to the next step.</p>
+    <p>BBM Money payment form will be made in the file <code>form_vtdirect_bbmmoney.html</code>. Because most of the transaction process will not be made in the merchant's page, the form that we made will only show the steps of payment and the payment button of BBM Money. When customer clicks this payment button, charge transaction process will be carried on the next step.</p>
 
-    <p>The following is a sample from the file <code>form_vtdirect_bri.php</code>:
+    <p>The following is a sample from the file <code>form_vtdirect_bbmmoney.html</code>: 
 <br /><br /></p>
 
-<pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>VT-Direct e-Pay BRI Form Example<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
+<pre><code class="highlight html"><span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;</span>Mobile Payment<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>e-Pay BRI Transaction<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;ol&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Please make sure that you have a User ID for BRI e-Pay and have registered for mTOKEN before going through with the payment <span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>To obtain a User ID for BRI e-Pay, please register at the nearest BRI ATM.<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Please visit the nearest BRI branch office to register the mTOKEN.<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Payment via BRI e-Pay will be processed online and your BRI bank account balance will be deducted automatically based on your total amount.<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>Your transaction will be cancelled if payment is not completed within 2 hours.<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ol&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_bri.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;h1&gt;</span>BBM Money<span class="nt">&lt;/h1&gt;</span>
+	<span class="nt">&lt;b&gt;</span>I want to pay with BBM Money<span class="nt">&lt;/b&gt;</span>
+	<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"checkout_bbmmoney.php"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"payment-form"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"submit-button"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Pay<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </code></pre>
   </div>
-  <div class="tab-pane" id="charge-transaction-bri">
+  <div class="tab-pane" id="charge-transaction-bbm">
     <!-- step 2-->
-    <!-- two -->
+    <!-- dua -->
     <p><br /></p>
 
     <h2 id="charge-transaction">Charge Transaction</h2>
 
-    <p>To perform the charge transaction using e-Pay BRI, the steps required are as followed:</p>
+    <p>To perform charge transaction using BBM Money, the following steps are required:</p>
 
     <ul>
-      <li><code>payment_type</code> parameter has to be set as <code>bri_epay</code>.</li>
+      <li><code>payment_type</code> parameter has to be set as <code>bbm_money</code>.</li>
     </ul>
 
-    <p>This step describes the charge transaction e-Pay BRI in the file <code>checkout_bri.php</code>. To perform the charge transaction, we will use Veritrans' PHP library. The following is an example of charge transaction implementation in the file <code>checkout_bri.php</code>:
+    <p>This step describes the BBM Money charge transaction in the file <code>checkout_bbmmoney.php</code>. To perform charge transaction, we will use Veritrans PHP library. The following is an example of charge transaction implementation in the file checkout_bbmmoney.php:
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
@@ -384,9 +377,9 @@ When your customer click this payment button, charge transaction process will be
     <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span>
     <span class="p">);</span>
 
-<span class="c1">// Data that will be sent for charge transaction request with e-Pay BRI.
+<span class="c1">// Data that will be sent for charge transaction request with BBM Money.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'bri_epay'</span><span class="p">,</span>
+  <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'bbm_money'</span><span class="p">,</span>
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
@@ -396,155 +389,152 @@ When your customer click this payment button, charge transaction process will be
 </code></pre>
 
     <p><br />
-On the above example, we utilize the e-Pay BRI, transaction, and customer data as the charge transaction parameter. You can add additional data during charge transaction such as customer address, delivery address, and item information.
-To add this data, you can check <a href="../sandbox/charge.html">API Reference - Charge Transaction</a>.</p>
-  </div>
+On the above example, we utilize the transaction data and customer data as the charge transaction parameter. You can add additional data during the charge transaction, such as: Customer address, delivery address, and item information. To add this data, you can check <a href="../sandbox/charge.html">Referensi API - Charge Transaction</a>.</p>
 
-  <div class="tab-pane" id="redirect-bri">
+  </div>
+  <div class="tab-pane" id="link-bbm">
     <!-- step 3-->
-    <!-- three -->
+    <!-- tiga -->
     <p><br /></p>
 
-    <h2 id="redirect">Redirect</h2>
+    <h2 id="create-bbm-money-link">Create BBM Money Link</h2>
 
-    <p>Veritrans' server will return a response for every charge transaction in JSON form. Veritrans' PHP Library will convert JSON into a PHP object automatically. The sample JSON script that is returned by Veritrans is as followed:
+    <p>Veritrans' server will return a response for every charge transaction in JSON form. Veritrans' PHP Library will convert JSON into a PHP object automatically. The sample JSON script that is returned by Veritrans is as followed: 
 <br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
-  "status_message" =&gt; "Success, BRI E-Pay transaction is successful",
-  "transaction_id" =&gt; "cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36",
-  "order_id" =&gt; "2014111702",
-  "payment_type" =&gt; "bri_epay",
-  "transaction_time" =&gt; "2014-11-17 12:27:40",
+  "status_message" =&gt; "Success, BBM Money transaction is successful",
+  "transaction_id" =&gt; "ff05337c-6c94-4f70-8e81-35acd89b688e",
+  "order_id" =&gt; "201404141421",
+  "payment_type" =&gt; "bbm_money",
+  "transaction_time" =&gt; "2014-04-14 16:03:51",
   "transaction_status" =&gt; "pending",
-  "redirect_url" =&gt; "https://api.sandbox.veritrans.co.id/v2/redirect/cf0ec2c0-3e52-4f20-94fc-a6bc8ca56e36",
+  "permata_va_number =&gt; "8778999933221111",
   "gross_amount" =&gt; "145000"
 );
 </code></pre>
 
     <p><br />
-Two important information details in the JSON response are the <code>status_code</code> and <code>redirect_url</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. That being so, you have to redirect your customer to <code>redirect_url</code> to finish the e-Pay BRI transaction. You can add the following PHP code at the last line of the file <code>checkout.php</code> to do so:
-<br /><br /></p>
+Two important information details in the JSON response above are the <code>status_code</code> and <code>permata_va_number</code>. If the value of <code>status_code</code> is <code>201</code>, the charge transaction process is successfully saved in Veritrans server with pending status. You should create BBM Money link with permata VA number previously obtained from Veritrans.</p>
 
-<pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+    <hr />
 
-<span class="o">...</span>
+    <h3 id="wrapping-bbm-money">Wrapping BBM Money</h3>
 
-<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+    <ul>
+      <li>
+        <p>BBM Money API Format</p>
 
-<span class="k">if</span><span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">status_code</span> <span class="o">==</span> <span class="s2">"201"</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="c1">//success
-</span>  <span class="k">echo</span> <span class="s2">"Redirect e-Pay BRI. &lt;br /&gt;"</span><span class="p">;</span>
-  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
-  <span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">redirect_url</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="c1">//error
-</span>  <span class="k">echo</span> <span class="s2">"There is an error on the transaction.&lt;br /&gt;"</span><span class="p">;</span>
-  <span class="k">echo</span> <span class="s2">"&lt;h3&gt;Result:&lt;/h3&gt;"</span><span class="p">;</span>
-  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
+        <p>bbmmoney://api/payment/imp?data=<code>URL encoded JSON data</code></p>
+      </li>
+    </ul>
+
+    <p><br /></p>
+
+    <ul>
+      <li>
+        <p>Create <code>URL encode JSON data</code></p>
+
+        <ol>
+          <li>
+            <p>Create JSON data</p>
+
+<pre><code class="highlight json"> <span class="p">{</span>
+   <span class="s2">"reference"</span><span class="p">:</span><span class="s2">"8778999933221111"</span><span class="p">,</span> <span class="c1">// permata_va_number obtain from Veritrans </span>
+   <span class="s2">"callback_url"</span><span class="p">:</span> <span class="p">{</span>
+     <span class="s2">"check_status"</span><span class="p">:</span><span class="s2">"https://example.com/order/check_status.html"</span><span class="p">,</span>
+     <span class="s2">"before_payment_error"</span><span class="p">:</span><span class="s2">"https://example.com/order/unfinish.html"</span><span class="p">,</span>
+     <span class="s2">"user_cancel"</span><span class="p">:</span><span class="s2">"https://example.com/order/cancel.html"</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre>
+          </li>
+          <li>
+            <p>URL Encodes the JSON</p>
+
+<pre><code class="highlight plaintext"> %7B%22reference%22%3A%228778999933221111%22%2C%22callback_url%22%3A%7B%22check_status%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcheck_status.html%22%2C%22before_payment_error%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Funfinish.html%22%2C%22user_cancel%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcancel.html%22%7D%7D
+</code></pre>
+          </li>
+          <li>
+            <p>Final URL</p>
+
+<pre><code class="highlight plaintext"> bbmmoney://api/payment/imp?data=%7B%22reference%22%3A%228778999933221111%22%2C%22callback_url%22%3A%7B%22check_status%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcheck_status.html%22%2C%22before_payment_error%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Funfinish.html%22%2C%22user_cancel%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcancel.html%22%7D%7D
+</code></pre>
+          </li>
+        </ol>
+      </li>
+    </ul>
+
+    <p><br /></p>
+
+    <hr />
+
+    <h3 id="invoking-bbm-money-in-android">Invoking BBM Money in Android</h3>
+
+    <ul>
+      <li>Using HTML tag<br />
+This works in Android standard browser, Firefox dan Chrome.</li>
+    </ul>
+
+<pre><code class="highlight html"><span class="nt">&lt;a</span> <span class="na">href =</span><span class="s">"bbmmoney://api/payment/imp?data=%7B%22reference%22%3A%228778999933221111%22%2C%22callback_url%22%3A%7B%22ch eck_status%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcheck_status.jsp%22%2C%22before_payment_error%22%3A%22 https%3A%2F%2Fexample.com%2Forder%2Fbefore_payment_error.jsp%22%2C%22user_cancel%22%3A%22https%3A%2F%2Fexampl e.com%2Forder%2Fcancel.jsp%22%7D%7D"</span><span class="nt">&gt;</span>Invoke BBM Money<span class="nt">&lt;/a&gt;</span>
 </code></pre>
 
-    <p><br />
-Information that is related to transaction value, order ID and transaction information will be displayed on the redirected URL page. In the sandbox environment, the e-Pay BRI payment page is a dummy page. Customer simply has to click the payment button to complete the transaction.</p>
+    <p><br /></p>
 
-    <p>When the transaction is completed, customer can proceed back to your website. To do this, you have to fill in the callback URL configuration in MAP (Merchant Administration Portal). For more information, please refer to the menu <a href="getting_started.html">Getting Started</a>. The following shows the payment page in sandbox environment:
-<br /><br />
-<img alt="VT-Web epay Test 2" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test2.png" />
-<br /><br />
-After customer completes his payment, the following page will be displayed:
-<br /><br />
-<img alt="VT-Web epay Test 3" class="img-responsive img-thumbnail" src="../images/vtweb_epay_test3.png" />
-<br /><br />
-The following is the e-Pay BRI payment page on production environment:
-<br /><br />
-<img alt="ePay BRI 3" class="img-responsive img-thumbnail" src="../images/bri_demo.png" />
-<br /><br /></p>
+    <ul>
+      <li>Using Javascript</li>
+    </ul>
 
-    <h3 id="error-during-charge-transaction">Error During Charge Transaction</h3>
+<pre><code class="highlight plaintext">var app_url = 
+"bbmmoney://api/payment/imp?data=%7B%22reference%22%3A%228744000000000091%22%2C%22callback_url%22%3A%7B%22che ck_status%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcheck_status.jsp%22%2C%22before_payment_error%22%3A%22h ttps%3A%2F%2Fexample.com%2Forder%2Fbefore_payment_error.jsp%22%2C%22user_cancel%22%3A%22https%3A%2F%2Fexample .com%2Forder%2Fcancel.jsp%22%7D%7D"
 
-    <p>Under a certain case, charge transaction on VT-Direct may fail. This will prevent you from getting the redirected URL to e-Pay BRI page. Veritrans will return an error message if failure occurrs. The reason of failure can be inspected from the status code displayed on the error message. The status codes that generally occur are:
-<br /><br /></p>
+document.location = app_url
+</code></pre>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Error Code</th>
-          <th>Explanation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>400</code> Validation error</td>
-          <td>Format or content of the transaction data is invalid; Example: Wrong variable type, invalid payment method.</td>
-        </tr>
-        <tr>
-          <td><code>401</code> Access Denied</td>
-          <td>Invalid client or server key.</td>
-        </tr>
-        <tr>
-          <td><code>402</code> Access Denied</td>
-          <td>Merchant does not have access to utilise a certain method of payment.</td>
-        </tr>
-        <tr>
-          <td><code>406</code> Duplicate Order ID</td>
-          <td>Order ID has previously been used and paid.</td>
-        </tr>
-        <tr>
-          <td><code>410</code> Account Inactive</td>
-          <td>Merchant account has been inactive for a long period of time.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p><br />
-The complete list of status code can be found at <a href="../sandbox/status_code.html">API Reference - Status Code</a>. If you have any difficulties, please <a href="https://www.veritrans.co.id/contact.html">contact us</a>.</p>
-
-    <p>When charge transaction process is completed, you can check the transaction status. The steps to examine transaction status will be discussed on the <a href="integration_bripay.html#transaction-status-bri">next steps</a>.</p>
+    <p>NOTE: BBM Money link <strong>ONLY</strong> only show in Android device.</p>
 
   </div>
-  <div class="tab-pane" id="transaction-status-bri">
+  <div class="tab-pane" id="transaction-status-bbm">
     <!-- step 4-->
     <!-- empat -->
     <p><br /></p>
 
     <h2 id="transaction-status">Transaction Status</h2>
 
-    <p>When charge transaction is successful, the transaction status will still be pending. Customer has to complete the transaction in the e-Pay BRI page. When this process is completed, the transaction status will be changed into <code>success</code>. You can check the transaction status change through MAP.</p>
+    <p>When charge transaction is successful, the transaction status is still <code>pending</code>. Customer has to complete the transaction. When this process is completed, the transaction status will be changed into <code>success</code>. You can check the transaction status change through MAP.</p>
 
-    <p>The status on MAP when payment is not yet completed in e-Pay BRI page is as followed:
+    <!--
+The status on MAP when payment is not yet completed is as followed: 
 <br /><br />
-  <img alt="bripay MAP Pending" class="img-responsive img-thumbnail" src="../images/bri-pay-pending.png" />
+  ![BBM MAP Pending](bbm-map-pending.png){: .img-responsive .img-thumbnail}
 <br /><br />
-The status on MAP when payment has been completed in e-Pay BRI page is as followed:
+The status on MAP when payment has been completed is as followed:
 <br /><br />
-  <img alt="bripay MAP Sukses" class="img-responsive img-thumbnail" src="../images/bri-pay-success.png" />
-<br /><br /></p>
+  ![BBM MAP Sukses](bbm-map-success.png){: .img-responsive .img-thumbnail}
+<br /><br />
+-->
 
     <h3 id="https-post">HTTP(S) POST</h3>
 
-    <p>Veritrans' server will return a response to your server when customer has completed the payment. The sample JSON script that is returned by Veritrans is as followed:
+    <p>Veritrans' server will return a response to your server when customer has complete the payment. The sample JSON script that is returned by Veritrans is as followed:
 <br /><br /></p>
 
 <pre><code class="highlight php">{
-    "status_code": "200",
-    "status_message": "Veritrans payment notification",
-    "transaction_id": "68cebcbd-5894-4a09-84e1-b9952b3dcf1d",
-    "order_id": "2014101501",
-    "payment_type": "bri_epay",
-    "transaction_time": "2014-11-25 14:12:06",
-    "transaction_status": "settlement",
-    "signature_key": "4533cbaf612267f5da81a17ff8ab8b86d39de8a1877e6125f39782baac3fe211469532f20e7bf5cc88eb51dfc36eca098578503c3cc5a880a0245e733579afc3",
-    "gross_amount": 145000.00
+  "status_code": "200",
+  "status_message": "Veritrans payment notification",
+  "transaction_id": "9b48d9da-7b35-43f8-b375-026bf0b05538",
+  "order_id": "201404141421",
+  "payment_type": "bbm_money",
+  "transaction_time": "2015-02-12 16:32:41",
+  "transaction_status": "settlement",
+  "signature_key": "ac9d80e274499386400244bd3737ec0a378b05ccb2b1c0a244becdf1c74b9139cf1172c39d28025e9730f21ddb065388a9008164d717b13f76a95aee1c467aef",
+  "gross_amount": "145000.00"
 }
 </code></pre>
 
     <p><br />
-The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction Status</a>.</p>
+The other alternative to check transaction status is to use the command on <a href="other_commands.html#status">VT-Direct – Acquiring Transaction</a>.</p>
 
   </div>
 </div>
