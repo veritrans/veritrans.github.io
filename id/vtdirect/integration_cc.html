@@ -2,6 +2,16 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Bing Validate -->
+    <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651"/>
+    <!-- Google Webmaster Validate -->
+    <meta name="google-site-verification" content="uUeOdHBzl0nbyvdyeRHKGIHPxnIpJDTTnWv-QfgkxRs" />
+    <!-- FB OG -->
+    <meta property="og:title" content="Docs || Online Payment Gateway for Indonesia eCommerce"/>
+    <meta property="og:site_name" content="Veritrans"/>
+    <meta property="og:description" content="Payment Gateway Solution for eCommerce merchants in Indonesia to send and receive online payment with credit/debit card, internet and mobile banking"/>
+    <meta property="fb:app_id" content="404252079606310"/>
+    <meta property="og:image" content="http://veritrans.co.id/images/veritrans-og.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
     <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
@@ -21,7 +31,7 @@
     </script>
     <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=0VtQk1a4SBe05T" style="display:none" height="1" width="1" alt="" /></noscript>
     <!-- End Alexa Certify Javascript -->
-
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -32,197 +42,165 @@
   <body>
     <nav class="navbar navbar-fixed-top with-shadow">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand logo" href="https://www.veritrans.co.id/"></a>
+    <div>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand logo" href="/"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="nav navbar-nav">
+          <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
+          <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
+          <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a href="http://docs.veritrans.co.id">Docs</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          </li>
+          <li>
+            <a href="https://blog.veritrans.co.id">Blog</a>
+          </li>
+          <li>
+            <a id="logInHeader" href="https://my.veritrans.co.id">
+              Log In
+            </a>
+          </li>
+          <li>
+            <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
+               Sign Up
+            </a>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
-
-        <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
-        <!-- <li>
-          <a class="uppercase" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shopping <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a class="uppercase" href="event.html">Event &amp; Promo</a></li>
-            <li><a class="uppercase" href="directory.html">Directory</a></li>
-          </ul>
-        </li> -->
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
-        </li>
-        <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
-        </li>
-        <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
-        </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
-            Log In
-          </a>
-        </li>
-        <li>
-          <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow uppercase">
-             Sign Up
-          </a>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
 
-<!-- LOGIN MODAL -->
-<div id="login-modal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="row">
-          <div class="col-sm-6 col-xs-12">
-            <div class="production-box">
-              <!-- <img src="images/banner-about.png"> -->
-              <h5>PRODUCTION</h5>
-              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
-              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12">
-            <div class="sandbox-box">
-              <!-- <img src="images/banner-sandbox.png"> -->
-              <h5>SANDBOX</h5>
-              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
-            </div>
-          </div>
-        </div>
-        <br/><br/>
-        <div class="row">
-          <div class="col-xs-12 text-left">
-            <div class="register-box">
-              Belum terdaftar? <a href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
-            </div>
-          </div>
-        </div>  
-      </div>
-    </div>
-  </div>
-</div>
-
-    <div class="container">
+    <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-	<div class="documentation-sidebar">
-		<div class="docs-logo">
-			<span>DOCS</span>
-		</div>
-		<div class="language-toggle"> <a href="../../vtdirect/integration_cc.html">English</a> / Bahasa Indonesia</div>
-		<ul class="sidebar">
-			
-			<li>
-        
-          <a class="parent" href="../welcome/welcome.html">Selamat Datang</a>
-        
-			</li>
-			
-			<li>
-        
-          <a class="parent">VT-Web</a>
-          <b class="caret"></b>
-          <ul class="child-menu">
-            
-            <li class=""><a href="../vtweb/introduction.html">Perkenalan</a></li>
-            
-            <li class=""><a href="../vtweb/getting_started.html">Langkah Awal</a></li>
-            
-            <li class=""><a href="../vtweb/integration.html">Integrasi</a></li>
-            
-            <li class=""><a href="../vtweb/other_features.html">Fitur Tambahan</a></li>
-            
-            <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
-            
-          </ul>
-        
-			</li>
-			
-			<li>
-        
-          <a class="parent">VT-Direct</a>
-          <b class="caret"></b>
-          <ul class="child-menu">
-            
-            <li class=""><a href="introduction.html">Perkenalan</a></li>
-            
-            <li class=""><a href="getting_started.html">Langkah Awal</a></li>
-            
-            <li class="active"><a href="integration.html">Integrasi</a></li>
-            
-            <li class=""><a href="other_features.html">Fitur Tambahan</a></li>
-            
-            <li class=""><a href="other_commands.html">Perintah Lain</a></li>
-            
-            <li class=""><a href="going_live.html">Going Live</a></li>
-            
-          </ul>
-        
-			</li>
-			
-			<li>
-        
-          <a class="parent">Referensi API</a>
-          <b class="caret"></b>
-          <ul class="child-menu">
-            
-            <li class=""><a href="../sandbox/introduction.html">Perkenalan</a></li>
-            
-            <li class=""><a href="../sandbox/charge.html">Charge Transaksi</a></li>
-            
-            <li class=""><a href="../sandbox/installment.html">Cicilan</a></li>
-            
-            <li class=""><a href="../sandbox/bin.html">BIN Promo</a></li>
-            
-            <li class=""><a href="../sandbox/other_features.html">Fitur Tambahan</a></li>
-            
-            <li class=""><a href="../sandbox/other_commands.html">Perintah Lain</a></li>
-            
-            <li class=""><a href="../sandbox/card_list.html">Daftar Kartu Uji Coba</a></li>
-            
-            <li class=""><a href="../sandbox/status_code.html">Status Kode</a></li>
-            
-          </ul>
-        
-			</li>
-			
-			<li>
-        
-          <a class="parent" href="../plugin/plugin.html">Plugin & Mobile Apps</a>
-        
-			</li>
-			
-			<li>
-        
-          <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
-        
-			</li>
-			
-		</ul>
-		<p class="question">
-            Anda merasa ada yang kurang dari dokumentasi ini?<br>
-            <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
-        </p>
-	</div>
+  <div class="documentation-sidebar" data-spy="affix" data-offset-top="67" data-offset-bottom="402">
+    <div class="docs-logo">
+      <span>DOCS</span>
+    </div>
+    <div class="language-toggle"> <a href="../../en/vtdirect/integration_cc.html">English</a> / Bahasa Indonesia</div>
+    <ul class="sidebar">
+      
+        <li>
+          
+            <a class="parent">Langkah Awal</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../welcome/index.html">Perkenalan</a></li>
+              
+                <li class=""><a href="../welcome/preparation.html">Persiapan Awal</a></li>
+              
+                <li class=""><a href="../welcome/pluginlibrary.html">Library & Plugin</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">VT-Web</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../vtweb/integration.html">Integrasi</a></li>
+              
+                <li class=""><a href="../vtweb/other_features.html">Fitur Tambahan</a></li>
+              
+                <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">VT-Direct</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class="active"><a href="integration.html">Integrasi</a></li>
+              
+                <li class=""><a href="other_features.html">Fitur Tambahan</a></li>
+              
+                <li class=""><a href="other_commands.html">Perintah Lain</a></li>
+              
+                <li class=""><a href="going_live.html">Going Live</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="../vtlink/index.html">VT-Link</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="../mobile/index.html">Mobile</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">Referensi API</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../api/introduction.html">Perkenalan</a></li>
+              
+                <li class=""><a href="../api/methods.html">API Methods</a></li>
+              
+                <li class=""><a href="../api/status_code.html">Status Kode</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="../api/test_credentials.html">Testing</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="../dashboard/index.html">Dashboard</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
+          
+        </li>
+      
+    </ul>
+    <p class="question">
+      Anda merasa ada yang kurang dari dokumentasi ini?<br>
+      <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+    </p>
+  </div>
 </div><!--/span-->
         <div class="col-xs-12 col-sm-9 col-md-9" id="bodier">
           <p class="pull-right visible-xs">
@@ -278,14 +256,9 @@
       </div>
   </div>
   <div class="col-sm-2 col-xs-12">
-      <div class="thumbnail">
-      <a href="integration_bbm.html"><img src="../../images/bbm_icon_grey.png" /></a>
-      </div>
-  </div>
-  <div class="col-sm-2 col-xs-12">
-      <div class="thumbnail">
-      <a href="integration_indomrt.html"><img src="../../images/indomrt_icon_grey.png" /></a>
-      </div>
+    <div class="thumbnail">
+    <a href="integration_bbmmoney.html"><img src="../../images/icon_bbmmoney_gray.png" /></a>
+    </div>
   </div>
 </div>
 <hr />
@@ -553,7 +526,7 @@ Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fanc
 
     <p><br /></p>
 
-    <p>Informasi lebih lengkap terkait akun yang dapat digunakan untuk testing dapat dilihat di <a href="../sandbox/card_list.html">Referensi API - Daftar kartu uji coba</a>.</p>
+    <p>Informasi lebih lengkap terkait akun yang dapat digunakan untuk testing dapat dilihat di menu <a href="../api/test_credentials.html">testing</a>.</p>
 
   </div>
   <!-- end of step 1-->
@@ -591,7 +564,7 @@ Tahap ini membahas cara charge transaksi menggunakan VT-Direct, implementasi cha
     <p><br />
 Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada <code>form_checkout.html</code>. Server key dapat anda peroleh di halaman <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Order ID adalah nilai unik dari suatu transaksi yang bebas anda ditentukan. </p>
 
-    <p>Data transaksi dapat berisi informasi tentang barang dan pelanggan anda. Data transaksi akan disimpan di dalam server Veritrans dan dapat anda ambil sewaktu-waktu. Data ini bersifat opsional.  Umumnya, data transaksi diperoleh dengan menambahkan field yang ada di <code>form_checkout.html</code>. Detail struktur dan keterangan data transaksi dapat dilihat di <a href="../sandbox/charge.html#specification">sini</a>.</p>
+    <p>Data transaksi dapat berisi informasi tentang barang dan pelanggan anda. Data transaksi akan disimpan di dalam server Veritrans dan dapat anda ambil sewaktu-waktu. Data ini bersifat opsional.  Umumnya, data transaksi diperoleh dengan menambahkan field yang ada di <code>form_checkout.html</code>. Detail struktur dan keterangan data transaksi dapat dilihat di <a href="../api/methods.html">sini</a>.</p>
 
     <p>Contoh isi file <code>checkout.php</code> untuk melakukan charge transaksi (simple transaction data):
 <br /><br /></p>
@@ -655,34 +628,25 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
 <span class="c1">// token_id merepresentasikan credit card yang akan di-carge.
 // token_id didapatkan dari request yang dilakukan melalui veritrans.min.js
 </span><span class="nv">$token_id</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">];</span>
-
-<span class="c1">//Required
-</span><span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'order_id'</span>    <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
   <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span> <span class="c1">// no decimal allowed for creditcard
 </span><span class="p">);</span>
-
-<span class="c1">//Opsional
-</span><span class="nv">$item1_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="nv">$item1_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a1'</span><span class="p">,</span>
     <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">500000</span><span class="p">,</span>
     <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Apel'</span>
     <span class="p">);</span>
-
-<span class="c1">//Opsional
-</span><span class="nv">$item2_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="nv">$item2_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a2'</span><span class="p">,</span>
     <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">100500</span><span class="p">,</span>
     <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Jeruk'</span>
     <span class="p">);</span>
 
-<span class="c1">// Opsional
-</span><span class="nv">$items_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
-
-<span class="c1">//Opsional
-</span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="nv">$items_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
+<span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
     <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
     <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
@@ -692,8 +656,7 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
     <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
     <span class="p">);</span>
 
-<span class="c1">// Opsional
-</span><span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Obet"</span><span class="p">,</span>
     <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
     <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
@@ -703,8 +666,7 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
     <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
     <span class="p">);</span>
 
-<span class="c1">// Required
-</span><span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
     <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
     <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
@@ -714,7 +676,6 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
     <span class="p">);</span>
 
 <span class="c1">// Data that will be send for credit card charge transaction request.
-// Required
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span>    <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
@@ -773,9 +734,9 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
     </table>
 
     <p><br />
-Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html">Referensi API - Status Code</a>. Jika mengalami kesulitan, silahkan <a href="https://www.veritrans.co.id/contact.html">hubungi kami</a>.</p>
+Daftar status code lengkap dapat dilihat di <a href="../api/status_code.html">Referensi API - Status Code</a>.</p>
 
-    <p>Ketika proses charge transaksi berhasil dilakukan, anda dapat melihat status transaksi. Cara melihat status transaksi akan dibahas pada <a href="integration_cc.html#step3">langkah selanjutnya</a>.</p>
+    <p>Ketika proses charge transaksi berhasil dilakukan, anda dapat melihat status transaksi. Cara melihat status transaksi akan dibahas pada langkah selanjutnya.</p>
 
   </div>
   <!-- end of step 2-->
@@ -804,6 +765,7 @@ Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html
     "masked_card" =&gt; "481111-1114",
     "status_code" =&gt; "200",
     "bank" =&gt; "bni",
+    "eci" =&gt; "05",
     "approval_code" =&gt; "140540",
     "status_message" =&gt; "Success, Credit Card transaction is successful"
 );
@@ -828,12 +790,12 @@ Daftar status code lengkap dapat dilihat di <a href="../sandbox/status_code.html
 </code></pre>
 
     <p><br />
-Salah satu informasi yang paling penting dalam respon JSON adalah status transaksi. Status transaksi dapat dilihat di atribut <code>transaction_status</code>. Ada 3 macam status transaksi:</p>
+Salah satu informasi yang paling penting dalam respon JSON adalah status code. Status transaksi dapat dilihat di atribut <code>status_code</code>. Ada 3 macam status code:</p>
 
     <ol>
-      <li><strong>Capture</strong>: Transaksi berhasil.</li>
-      <li><strong>Deny</strong>: Transaksi ditolak oleh bank atau Fraud Detection System (FDS).</li>
-      <li><strong>Challenge</strong>: Transaksi ditolak oleh FDS. Anda harus melakukan konfirmasi di Merchant Administration Portal (MAP).</li>
+      <li>Status code <strong>200</strong>: Transaksi berhasil.</li>
+      <li>Status code <strong>202</strong>: Transaksi ditolak oleh bank atau Fraud Detection System (FDS).</li>
+      <li>Status code <strong>201</strong>: Transaksi ditolak oleh FDS. Anda harus melakukan konfirmasi di Merchant Administration Portal (MAP).</li>
     </ol>
 
     <p>Anda dapat menambahkan kode PHP berikut ke dalam bagian akhir file <code>checkout.php</code> untuk menyampaikan status transaksi pada pelanggan anda:
@@ -884,9 +846,9 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status transak
 </code></pre>
     <p><br /></p>
 
-    <p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Jika nilai <code>transaction_status</code> adalah <code>capture</code>, kartu kredit pelanggan anda sudah di-charge ke akun anda. Selain menyampaikan status transaksi ke pelanggan, anda juga dapat menggunakan kode di atas untuk meng-update database terkait, misalnya menandai bahwa transaksi dengan <code>order_id</code> tersebut telah terbayar. </p>
+    <p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Jika nilai <code>status_code</code> adalah <code>200</code>, kartu kredit pelanggan anda sudah di-charge ke akun anda. Selain menyampaikan status transaksi ke pelanggan, anda juga dapat menggunakan kode di atas untuk meng-update database terkait, misalnya menandai bahwa transaksi dengan <code>order_id</code> tersebut telah terbayar. </p>
 
-    <p>Status transaksi juga dapat anda ketahui di Merchant Administration Portal(MAP). Anda perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut. Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
+    <p>Status transaksi juga dapat anda ketahui di Merchant Administration Portal(MAP). Anda perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut. Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html">VT-Direct - Perintah Lain</a>.</p>
 
   </div>
   <!-- end of step 3-->
@@ -895,19 +857,14 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status transak
 
 
 
-			<div class="pagination">
-				<ul><li class="left">« Sebelumnya: <a href="getting_started.html">VT-Direct : Langkah Awal</a></li><li class="right">Selanjutnya: <a href="other_features.html">VT-Direct : Fitur Tambahan</a> »</li></ul>
-			</div>
+            <div class="pagination">
+              <ul><li class="left">« Sebelumnya: <a href="../vtweb/going_live.html">VT-Web : Going Live</a></li><li class="right">Selanjutnya: <a href="other_features.html">VT-Direct : Fitur Tambahan</a> »</li></ul>
+            </div>
           </div>
         </div><!--/span-->
       </div><!--/row-->
-
     </div><!--/.container-->
 
-    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
-<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
     <footer>
   <div class="container">
     <div class="row footer-content">
@@ -932,9 +889,6 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status transak
           <li>
             <a href="https://www.veritrans.co.id/aegis.html">Aegis</a>
           </li>
-          <!-- <li>
-            <a href="aegis.html">Aegis</a>
-          </li> -->
         </ul>
         <!-- <h4 class="text-gray">Shopping</h4>
         <ul>
@@ -1056,6 +1010,10 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status transak
     return false;
   }
 </script>
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -1067,14 +1025,14 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status transak
       ga('send', 'pageview');
     </script>
     <script>
-    $(document).ready(function() {
-      $('[data-toggle=offcanvas]').click(function() {
-        $('.row-offcanvas').toggleClass('active');
+      $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+          $('.row-offcanvas').toggleClass('active');
+        });
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+        });
       });
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    });
     </script>
   </body>
 </html><!-- Veritrans.3.0-20150423 -->
