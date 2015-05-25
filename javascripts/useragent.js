@@ -1,0 +1,1 @@
+$(document).ready(function(){"Win16"==navigator.platform||"Win32"==navigator.platform||"WinCE"==navigator.platform?$("body").css("font-weight","400"):$("body").css("font-weight","300")});
