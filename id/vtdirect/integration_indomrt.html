@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,8 +56,8 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -93,7 +93,7 @@
     <div class="docs-logo">
       <span>DOCS</span>
     </div>
-    <div class="language-toggle"> <a href="/en/vtdirect/integration_indomrt.html">English</a> / Bahasa Indonesia</div>
+    <div class="language-toggle"> <a href="../../en/vtdirect/integration_indomrt.html">English</a> / Bahasa Indonesia</div>
     <ul class="sidebar">
       
         <li>
@@ -254,7 +254,7 @@
   </div>
   <div class="col-sm-2 col-xs-12">
       <div class="thumbnail">
-      <a href="integration_bbm.html"><img src="../../images/bbm_icon_grey.png" /></a>
+      <a href="integration_bbmmoney.html"><img src="../../images/bbm_icon_grey.png" /></a>
       </div>
   </div>
   <div class="col-sm-2 col-xs-12">
@@ -375,7 +375,7 @@
 </code></pre>
 
     <p><br />
-Pada contoh di atas, kita menggunakan data Indomaret, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="/id/sandbox/charge.html">Referensi API - Charge Transaksi</a>.</p>
+Pada contoh di atas, kita menggunakan data Indomaret, transaksi, dan pelanggan sebagai parameter charge transaksi. Anda sebenarnya dapat menambahkan data lain saat charge transaksi, seperti: alamat pelanggan, alamat pengiriman, dan informasi barang. Untuk menambahkan data ini, anda dapat melihat <a href="../api/methods.html">Referensi API - API Methods</a>.</p>
 
   </div>
   <div class="tab-pane" id="response-transaction-indomrt">
@@ -397,7 +397,7 @@ Pada contoh di atas, kita menggunakan data Indomaret, transaksi, dan pelanggan s
   "transaction_time" =&gt; "2014-04-14 16:03:51",
   "transaction_status" =&gt; "pending",
   "payment_code =&gt; "498112345234",
-  "gross_amount" =&gt; "145000"
+  "gross_amount" =&gt; "145000.00"
 );
 </code></pre>
 
@@ -473,9 +473,9 @@ Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em
     </table>
 
     <p><br />
-Daftar status code lengkap dapat dilihat di <a href="/id/sandbox/status_code.html">Referensi API - Status Code</a>.</p>
+Daftar status code lengkap dapat dilihat di <a href="../api/status_code.html">Referensi API - Status Code</a>.</p>
 
-    <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi Indomaret akan dibahas pada <a href="integration_indomrt.html#transaction-status-indomrt">bagian selanjutnya</a>.</p>
+    <p>Jika charge transaksi berhasil, anda dapat mengetahui status transaksi melalui beberapa cara. Cara untuk melihat status transaksi Indomaret akan dibahas pada bagian selanjutnya.</p>
 
   </div>
   <div class="tab-pane" id="transaction-status-indomrt">
@@ -507,7 +507,7 @@ Daftar status code lengkap dapat dilihat di <a href="/id/sandbox/status_code.htm
 </code></pre>
 
     <p><br />
-Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html#status">VT-Direct – Mendapatkan Status Transaksi</a>.</p>
+Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html">get status</a>.</p>
 
   </div>
 </div>
@@ -534,10 +534,10 @@ Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a hr
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/pricing.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/event.html">Promo</a>
+            <a href="https://www.veritrans.co.id/promo.html">Promo</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>

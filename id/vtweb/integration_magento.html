@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,8 +56,8 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -256,7 +256,7 @@
 
         <ol>
           <li>Sebuah toko online berbasis Magento. (Plugin ini di-test dengan Magento versi 1.9)</li>
-          <li>PHP versi minimal 5.3.</li>
+          <li>PHP versi minimal 5.4.</li>
           <li>Plugin Veritrans untuk Magento [ <a href="https://github.com/veritrans/vtweb-magento">Github</a> | <a href="https://github.com/veritrans/vtweb-magento/archive/master.zip">Zip</a> ].</li>
         </ol>
 
@@ -297,15 +297,15 @@
                 </tr>
                 <tr>
                   <td>Finish Redirect URL</td>
-                  <td>http://[your_shop’s_homepage]/</td>
+                  <td>http://[your_shop’s_homepage]/vtweb/payment/response</td>
                 </tr>
                 <tr>
                   <td>Error Redirect URL</td>
-                  <td>http://[your_shop’s_homepage]/</td>
+                  <td>http://[your_shop’s_homepage]/vtweb/payment/response</td>
                 </tr>
                 <tr>
                   <td>Unfinish Redirect URL</td>
-                  <td>http://[your_shop’s_homepage]/</td>
+                  <td>http://[your_shop’s_homepage]/vtweb/payment/response</td>
                 </tr>
               </tbody>
             </table>
@@ -319,7 +319,7 @@
       <div class="tab-pane" id="magento-step2">
         <p><br /></p>
 
-        <p>Di tahap ini, kita akan mencoba melakukan tes transaksi. Jika anda menggunakan akun sandbox, berbagai macam skenario transaksi dapat diuji coba, daftar skenario beserta informasi akun yang tersedia untuk uji coba dapat dilihat di <a href="/id/sandbox/card_list.html">sini</a>.</p>
+        <p>Di tahap ini, kita akan mencoba melakukan tes transaksi. Jika anda menggunakan akun sandbox, berbagai macam skenario transaksi dapat diuji coba, daftar skenario beserta informasi akun yang tersedia untuk uji coba dapat dilihat di <a href="../api/test_credentials.html">sini</a>.</p>
 
         <p>Anda sangat disarankan untuk melakukan tes transaksi menggunakan VT-Web. Manfaat utama melakukan tes transaksi adalah:</p>
 
@@ -328,7 +328,7 @@
           <li>Mengetahui status pembayaran melalui MAP (Merchant Administration Portal) dan notifikasi</li>
         </ol>
 
-        <p>Saat ini, kita kita akan mencoba melakukan transaksi kartu kredit 3D Secure yang berhasil. Berdasarkan <a href="/id/sandbox/card_list.html">Referensi - Daftar Kartu Uji Coba</a>, kartu kredit yang dapat digunakan adalah:</p>
+        <p>Saat ini, kita kita akan mencoba melakukan transaksi kartu kredit 3D Secure yang berhasil. Kartu kredit yang dapat digunakan adalah:</p>
 
         <table>
           <thead>
@@ -589,10 +589,10 @@ Untuk dapat membuat produk dengan menggunakan fitur Installment Certain Products
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/pricing.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/event.html">Promo</a>
+            <a href="https://www.veritrans.co.id/promo.html">Promo</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>

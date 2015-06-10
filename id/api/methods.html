@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,8 +56,8 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -735,7 +735,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em></td>
+            <td>city <em>String(100)</em></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -785,7 +785,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em></td>
+            <td>city <em>String(100)</em></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -1019,7 +1019,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
       <tbody>
         <tr>
           <td>card_number <em>String</em></td>
-          <td>Nomor kartu Mandiri Clickpay.</td>
+          <td>Nomor kartu Mandiri debit.</td>
         </tr>
         <tr>
           <td>input1 <em>String</em></td>
@@ -1375,7 +1375,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -1425,7 +1425,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -2127,7 +2127,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -2177,7 +2177,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -3191,7 +3191,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -3241,7 +3241,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -3349,7 +3349,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, PERMATA transaction is successful"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"7db5f75a-8f41-4266-b4cb-01cd97c3c339"</span><span class="p">,</span>
   <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:58:44"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
   <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778999933221111"</span><span class="p">,</span>
@@ -3606,7 +3606,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -3656,7 +3656,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -3891,7 +3891,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
       <tbody>
         <tr>
           <td>card_number <em>String</em> <strong>Required</strong></td>
-          <td>Nomor kartu Mandiri Clickpay.</td>
+          <td>Nomor kartu Mandiri Debit.<br /><strong>NOTE:</strong> Kartu sudah didaftarkan terlebih dahulu.</td>
         </tr>
         <tr>
           <td>input1 <em>String</em> <strong>Required</strong></td>
@@ -3980,7 +3980,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>AAlamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -4030,7 +4030,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -4110,10 +4110,10 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
   <span class="p">},</span>
 
-  <span class="c1">// Required</span>
+  <span class="c1">// Opsional</span>
   <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>       <span class="c1">// Optional</span>
+    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
     <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
     <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span>
     <span class="p">}</span>
@@ -4375,7 +4375,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -4425,7 +4425,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -4499,10 +4499,10 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
   <span class="p">},</span>
-  <span class="c1">// Required</span>
+  <span class="c1">// Opsional</span>
   <span class="s2">"customer_details"</span> <span class="p">:</span> <span class="p">{</span>
     <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>          <span class="c1">// Optional</span>
+    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
     <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
     <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span>
   <span class="p">}</span>
@@ -4742,7 +4742,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -4792,7 +4792,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -5413,7 +5413,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -5463,7 +5463,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -5787,7 +5787,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -5837,7 +5837,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -6187,7 +6187,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat penagihan pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat penagihan pelanggan.</td>
           </tr>
           <tr>
@@ -6237,7 +6237,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
             <td>Alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>Kota dari alamat pengiriman pelanggan.</td>
           </tr>
           <tr>
@@ -6570,7 +6570,7 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
         <td>Waktu ketika order dibuat di website merchant.<br /> <strong>Format:</strong> <code>yyyy-MM-dd hh:mm:ss Z</code> <br /><strong>NOTE:</strong> Apabila atribut tidak dipakai, waktu berlaku dimulai dari waktu transaksi.</td>
       </tr>
       <tr>
-        <td>expiry_duration <em>Integer</em> <strong>Required</strong></td>
+        <td>expiry_duration <em>String(50)</em> <strong>Required</strong></td>
         <td>Waktu durasi untuk melakukan pembayaran.</td>
       </tr>
       <tr>
@@ -7450,10 +7450,10 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/pricing.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/event.html">Promo</a>
+            <a href="https://www.veritrans.co.id/promo.html">Promo</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>

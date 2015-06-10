@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,8 +54,8 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -723,7 +723,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em></td>
+            <td>city <em>String(100)</em></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -769,7 +769,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em></td>
+            <td>city <em>String(100)</em></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -981,7 +981,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
       <tbody>
         <tr>
           <td>card_number <em>String</em></td>
-          <td>Mandiri Clickpay Card number.</td>
+          <td>Mandiri debit Card number.</td>
         </tr>
         <tr>
           <td>input1 <em>String</em></td>
@@ -1337,7 +1337,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -1387,7 +1387,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -2094,7 +2094,7 @@ The following attributes can be used to perform a charge transaction with a cred
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -2144,7 +2144,7 @@ The following attributes can be used to perform a charge transaction with a cred
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -3159,7 +3159,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -3209,7 +3209,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -3316,7 +3316,7 @@ Add this additional attribute when charging the initial transaction for One Clic
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, PERMATA transaction is successful"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"7db5f75a-8f41-4266-b4cb-01cd97c3c339"</span><span class="p">,</span>
   <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:58:44"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
   <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778999933221111"</span><span class="p">,</span>
@@ -3573,7 +3573,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -3623,7 +3623,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -3858,7 +3858,7 @@ Add this additional attribute when charging the initial transaction for One Clic
       <tbody>
         <tr>
           <td>card_number <em>String</em> <strong>Required</strong></td>
-          <td>Mandiri Clickpay Card number.</td>
+          <td>Mandiri debit Card number.<br /><strong>NOTE:</strong> Card already registered.</td>
         </tr>
         <tr>
           <td>input1 <em>String</em> <strong>Required</strong></td>
@@ -3947,7 +3947,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -3997,7 +3997,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -4077,10 +4077,10 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
   <span class="p">},</span>
 
-  <span class="c1">// Required</span>
+  <span class="c1">// Optional</span>
   <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>       <span class="c1">// Optional</span>
+    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
     <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
     <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span>
     <span class="p">}</span>
@@ -4341,7 +4341,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -4391,7 +4391,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -4465,10 +4465,10 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
   <span class="p">},</span>
-  <span class="c1">// Required</span>
+  <span class="c1">// Optional</span>
   <span class="s2">"customer_details"</span> <span class="p">:</span> <span class="p">{</span>
     <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>          <span class="c1">// Optional</span>
+    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
     <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
     <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span>
   <span class="p">}</span>
@@ -4708,7 +4708,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -4758,7 +4758,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -5379,7 +5379,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -5429,7 +5429,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -5753,7 +5753,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -5803,7 +5803,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -6153,7 +6153,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the billing address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the billing address.</td>
           </tr>
           <tr>
@@ -6203,7 +6203,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Address of the shipping address.</td>
           </tr>
           <tr>
-            <td>city <em>String(20)</em> <strong>Optional</strong></td>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
             <td>City of the shipping address.</td>
           </tr>
           <tr>
@@ -6542,7 +6542,7 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
         <td>Time when the order is created in merchant website.<br /> <strong>Format:</strong> <code>yyyy-MM-dd hh:mm:ss Z</code> <br /><strong>NOTE:</strong> If attribute undefined, expiry time starts from transaction time.</td>
       </tr>
       <tr>
-        <td>expiry_duration <em>Integer</em> <strong>Required</strong></td>
+        <td>expiry_duration <em>String(50)</em> <strong>Required</strong></td>
         <td>Time duration the payment will remain valid.</td>
       </tr>
       <tr>
@@ -7423,10 +7423,10 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/pricing.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/event.html">Promo</a>
+            <a href="https://www.veritrans.co.id/promo.html">Promo</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>

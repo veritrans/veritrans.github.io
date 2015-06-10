@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,8 +56,8 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -226,7 +226,7 @@
 
 <p>URL: <a href="https://my.sandbox.veritrans.co.id">https://my.sandbox.veritrans.co.id</a>.</p>
 
-<p>Anda dapat mencoba berbagai metode pembayaran yang tersedia tanpa melakukan transaksi sungguhan di Environment ini. Kredensial untuk mencoba dapat dilihat <a href="../../en/api/test_credentials.html">sini</a>.</p>
+<p>Anda dapat mencoba berbagai metode pembayaran yang tersedia tanpa melakukan transaksi sungguhan di Environment ini. Kredensial untuk mencoba dapat dilihat <a href="../api/test_credentials.html">sini</a>.</p>
 
 <h4 id="production-environment">Production Environment</h4>
 
@@ -246,18 +246,48 @@
 
 <h3 id="status-transaksi">Status Transaksi</h3>
 
-<p>Transaksi dari setiap metode pembayaran akan menghasilkan Status Transaksi. Figure di bawah ini menjelaskan Transaction Status yang ada di Veritrans</p>
+<p>Transaksi dari setiap metode pembayaran akan menghasilkan Status Transaksi. Tabel di bawah ini menjelaskan Status transaksi yang ada di Veritrans</p>
 
-<p>| Status Transaksi | Definisi |
-|—|—|
-| Authorize | Transaksi diperbolehkan untuk pengambilan dana tertentu untuk pemilik kartu kredit.|
-| Success | Transaksi diterima dan akan diproses untuk Settlement.|
-| Challenge | Transaksi kartu kredit dianggap sebagai transaksi yang mencurigakan oleh Veritrans Fraud Detection System. Merchant harus menerima atau menolak transaksi melalui Veritrans Dashboard.<br />Lihat di bawah ini untuk mengetahui lebih lanjut tentang <a href="#Fraud_Management">Fraud Management</a>. |
-| Failure | Gagalnya transaksi dapat disebabkan oleh beberapa alasan:<br /> 1. Transaksi ditolak oleh bank.<br />2. Transaksi kartu kredit ditolak oleh Fraud Detection System Veritrans.<br />3. Pending Transaction belum dibayar atau sudah tidak berlaku.|
-| Pending | Transaksi yang asynchronous — Pembayaran harus diselesaikan di luar domain Veritrans — akan menghasilkan Pending status.<br />Apabila pelanggan sudah menyelesaikan transaksi, statusnya akan berubah menjadi 'success'.|
-| Cancel | Transaksi yang dibatalkan (Cancel) disebabkan oleh beberapa alasan:<br />1. Success Transaction dibatalkan sebelum Settlement.<br />2. Challenge Transaction ditolak oleh merchant. |
-| Settlement | Perpindahan dana dari akun pelanggan ke akun merchant.<br />Lihat di bawah ini untuk mengetahui lebih lanjut tentang <a href="#Settlement">Settlement</a>.|
-<br /></p>
+<table>
+  <thead>
+    <tr>
+      <th>Status Transaksi</th>
+      <th>Definisi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Authorize</td>
+      <td>Transaksi diperbolehkan untuk pengambilan dana tertentu untuk pemilik kartu kredit.</td>
+    </tr>
+    <tr>
+      <td>Success</td>
+      <td>Transaksi diterima dan akan diproses untuk Settlement.</td>
+    </tr>
+    <tr>
+      <td>Challenge</td>
+      <td>Transaksi kartu kredit dianggap sebagai transaksi yang mencurigakan oleh Veritrans Fraud Detection System. Merchant harus menerima atau menolak transaksi melalui Veritrans Dashboard.<br />Lihat di bawah ini untuk mengetahui lebih lanjut tentang <a href="#Fraud_Management">Fraud Management</a>.</td>
+    </tr>
+    <tr>
+      <td>Failure</td>
+      <td>Gagalnya transaksi dapat disebabkan oleh beberapa alasan:<br /> 1. Transaksi ditolak oleh bank.<br />2. Transaksi kartu kredit ditolak oleh Fraud Detection System Veritrans.<br />3. Pending Transaction belum dibayar atau sudah tidak berlaku.</td>
+    </tr>
+    <tr>
+      <td>Pending</td>
+      <td>Transaksi yang asynchronous — Pembayaran harus diselesaikan di luar domain Veritrans — akan menghasilkan Pending status.<br />Apabila pelanggan sudah menyelesaikan transaksi, statusnya akan berubah menjadi 'success'.</td>
+    </tr>
+    <tr>
+      <td>Cancel</td>
+      <td>Transaksi yang dibatalkan (Cancel) disebabkan oleh beberapa alasan:<br />1. Success Transaction dibatalkan sebelum Settlement.<br />2. Challenge Transaction ditolak oleh merchant.</td>
+    </tr>
+    <tr>
+      <td>Settlement</td>
+      <td>Perpindahan dana dari akun pelanggan ke akun merchant.<br />Lihat di bawah ini untuk mengetahui lebih lanjut tentang <a href="#Settlement">Settlement</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
 
 <div class="alert alert-info" role="alert">
   <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
@@ -273,7 +303,7 @@
 
 <ul>
   <li>Transaksi Non-Credit Card: <br />Success Transaction akan langsung diproses untuk Settlement.<br /></li>
-  <li>Transaksi Credit Card: <br />Success Transactions dari pukul 00:00 - 23:59 akan diproses untuk Settlement keesokan harinya dalam satu batch pada pukul 16:00.</li>
+  <li>Transaksi Credit Card: <br />Success Transactions dari pukul 00:00 - 23:59 WIB akan diproses untuk Settlement keesokan harinya dalam satu batch pada pukul 16:00 WIB.</li>
 </ul>
 
 <p><br /></p>
@@ -331,7 +361,7 @@
 
 <h3 id="Fraud_Management">Pengertian Fraud Management</h3>
 
-<p>Pembayaran melalui Credit Card di Veritrans akan difilter oleh Aegis — Fraud Detection System Veritrans. <br />
+<p>Pembayaran melalui Credit Card di Veritrans akan di filter oleh Aegis — Fraud Detection System Veritrans. <br />
 Aegis akan memberikan beberapa rekomendasi:</p>
 
 <ol>
@@ -457,10 +487,10 @@ Aegis akan memberikan beberapa rekomendasi:</p>
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/pricing.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/event.html">Promo</a>
+            <a href="https://www.veritrans.co.id/promo.html">Promo</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>

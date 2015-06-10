@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,8 +56,8 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -256,6 +256,11 @@
     <div class="thumbnail">
     <a href="integration_bbmmoney.html"><img src="../../images/icon_bbmmoney.png" /></a>
     </div>
+  </div>
+  <div class="col-sm-2 col-xs-12">
+      <div class="thumbnail">
+      <a href="integration_indomrt.html"><img src="../../images/indomrt_icon_grey.png" /></a>
+      </div>
   </div>
 </div>
 
@@ -457,13 +462,23 @@ Cara ini dapat bekerja di browser standar Android, Firefox dan Chrome</li>
 </code></pre>
 
     <ul>
-      <li>Menggunakan Javascript</li>
+      <li>Menggunakan Javascript di browser standar Android dan Firefox</li>
     </ul>
 
 <pre><code class="highlight plaintext">var app_url = 
 "bbmmoney://api/payment/imp?data=%7B%22reference%22%3A%228744000000000091%22%2C%22callback_url%22%3A%7B%22che ck_status%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcheck_status.jsp%22%2C%22before_payment_error%22%3A%22h ttps%3A%2F%2Fexample.com%2Forder%2Fbefore_payment_error.jsp%22%2C%22user_cancel%22%3A%22https%3A%2F%2Fexample .com%2Forder%2Fcancel.jsp%22%7D%7D"
 
 document.location = app_url
+</code></pre>
+
+    <ul>
+      <li>Menggunakan Javascript di Chrome untuk Android</li>
+    </ul>
+
+<pre><code class="highlight plaintext">
+var app_intent ="intent://api/payment/imp?data=%7B%22reference%22%3A%228744000000000091%22%2C%22callback_url%22%3A%7B%22chec k_status%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcheck_status.jsp%22%2C%22before_payment_error%22%3A%22ht tps%3A%2F%2Fexample.com%2Forder%2Fbefore_payment_error.jsp%22%2C%22user_cancel%22%3A%22https%3A%2F%2Fexample. com%2Forder%2Fcancel.jsp%22%7D%7D#Intent;scheme=bbmmoney;package=com.monitise.client.android.bbmmoney;end";
+
+document.location = app_intent;
 </code></pre>
 
     <div class="alert alert-info" role="alert">
@@ -529,10 +544,10 @@ Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a hr
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/pricing.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/event.html">Promo</a>
+            <a href="https://www.veritrans.co.id/promo.html">Promo</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>

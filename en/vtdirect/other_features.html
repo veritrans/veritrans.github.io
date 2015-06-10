@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,8 +54,8 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/pricing.html">Product</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/event.html">Promo</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -219,6 +219,7 @@ Currently, VT-Direct has additional features for credit card payment method whic
   <li>BIN Promo</li>
   <li>One Click</li>
   <li>Two Clicks</li>
+  <li>Point Transaction</li>
 </ol>
 
 <p>VT-Direct also offers additional Charge Feature, such as:</p>
@@ -241,7 +242,8 @@ Currently, VT-Direct has additional features for credit card payment method whic
   <li><a href="#one-click" data-toggle="tab">One Click</a></li>
   <li><a href="#two-click" data-toggle="tab">Two Clicks</a></li>
   <li><a href="#custom-field" data-toggle="tab">Custom Fields</a></li>  
-  <li><a href="#custom-expiry" data-toggle="tab">Custom Expiry</a></li>  
+  <li><a href="#custom-expiry" data-toggle="tab">Custom Expiry</a></li>
+  <li><a href="#point-inquiry" data-toggle="tab">Point Transaction</a></li>  
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="pre-authorization">
@@ -983,7 +985,151 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
   <span class="sr-only">Info:</span>
 <strong>Info</strong>:<br /> Please refer to our <a href="../api/methods.html#Set-Custom-Expiry">API Documentation - Set Custom Expiry</a> for more info on the JSON attributes.</p>
     </div>
+  </div>
 
+  <div class="tab-pane" id="point-inquiry">
+
+    <h2 id="point-transaction">Point Transaction</h2>
+
+    <p>Point transaction is a transaction in which payment can be made by the reward points on credit cards in full or partial. For now, point transaction can only be used with BNI acquiring and using BNI credit card (On Us).
+<br /><br /></p>
+
+    <h3 id="point-transaction-for-3d-secure-merchant">Point Transaction for 3D Secure Merchant</h3>
+
+    <h4 id="getting-point-information">1. Getting point information</h4>
+
+    <p><strong>* Token request process</strong></p>
+
+    <p>The parameters need to be added during get token request process is <code>point = true</code>.<br /> Add the following script during the get token request: </p>
+
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  
+  <span class="p">...</span>
+
+  <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="s1">'card_number'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
+
+      <span class="c1">// Ask for transaction point</span>
+      <span class="s1">'point'</span> <span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="p">...</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+    <p>Result of the above token request is <code>token_id</code> used to obtain point information<br /><br /></p>
+
+    <p><strong>* Inquiry point process</strong></p>
+
+    <p><code>GET {api_url}/v2/point_inquiry/{token_id}</code>
+<br /><br /></p>
+
+    <h4 id="success-response">Success response</h4>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card Point transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-05-11 16:28:17"</span><span class="p">,</span>
+    <span class="s2">"point_balance"</span><span class="p">:</span> <span class="mi">100000</span>
+<span class="p">}</span>
+</code></pre>
+
+    <p>The essentials of the above information is <code>point_balance</code>, stating that the customer has a number of points that can be used.</p>
+
+    <p><br /></p>
+
+    <h4 id="failed-response">Failed response</h4>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"402"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Your Credit Card is invalid for Point Transaction "</span>
+<span class="p">}</span>
+</code></pre>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"400"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Unavailable terminal id for NORMAL POINT PRE_AUTH_CAPTURE transaction"</span>
+<span class="p">}</span>
+</code></pre>
+
+    <p>Failed response can be invalid card number or Merchant TID is not supported for point transaction.
+<br /><br /></p>
+
+    <h4 id="using-a-point-to-make-payment">2. Using a point to make payment</h4>
+
+    <p>Point balance that you have can be used to make payments, the parameters that need to be added when the charge process is <code>point_redeem_amount</code>. Script that is modified during charge process is as followed:</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
+  <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
+    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
+    <span class="s1">'point_redeem_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span> <span class="c1">// should not exceed the balance point
+</span>    <span class="p">),</span>
+  <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
+  <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br /></p>
+
+    <h3 id="point-transaction-for-non-3d-secure-merchant-normal">Point transaction for non-3D Secure merchant (Normal)</h3>
+
+    <p>For non-3D Secure merchant, the inquiry point and charge process is same as 3D Secure merchant. The difference occurs when the token request, Merchant no need to includes <code>point = true</code> parameter.</p>
+
+    <p>Script that is modified during token request process is as followed:</p>
+
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  
+  <span class="p">...</span>
+
+  <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="s1">'card_number'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="p">...</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+    <p>Result of the above token request is <code>token_id</code> used to obtain point information.<br /><br /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Notes</strong>:<br /><br /> * Point transaction are only available to BNI On Us transaction. That means issuer == acquirer.<br />
+* Parameter bank in credit_card or token_request are optional. If specified, the only possible value are <code>BNI</code>.<br />
+* Nominal payment using point should not exceed the balance point owned, If redeem points larger than nominal point balance, the transaction will fail.</p>
+    </div>
   </div>
 </div>
 
@@ -1009,10 +1155,10 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/pricing.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/event.html">Promo</a>
+            <a href="https://www.veritrans.co.id/promo.html">Promo</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>
