@@ -69,7 +69,7 @@
           <a href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a id="logInHeader" href="https://my.veritrans.co.id">
+          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
             Log In
           </a>
         </li>
@@ -83,6 +83,41 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+<!-- LOGIN MODAL -->
+<div id="login-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="production-box">
+              <!-- <img src="images/banner-about.png"> -->
+              <h5>PRODUCTION</h5>
+              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
+              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="sandbox-box">
+              <!-- <img src="images/banner-sandbox.png"> -->
+              <h5>SANDBOX</h5>
+              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
+            </div>
+          </div>
+        </div>
+        <br/><br/>
+        <div class="row">
+          <div class="col-xs-12 text-left">
+            <div class="register-box">
+              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -5180,7 +5215,7 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span><span class="err"> </span>
     <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"20140219 08:22:06"</span><span class="p">,</span> 
     <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.veritans.co.id/v2/redirect/27923228- 0e944366b057a1e60c777a4c"</span><span class="p">,</span>
+    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritans.co.id/v2/redirect/27923228- 0e944366b057a1e60c777a4c"</span><span class="p">,</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span><span class="err"> </span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do BCA KlikPay transaction, please go to redirect_url"</span> 
 <span class="p">}</span>
@@ -6448,6 +6483,400 @@ example: http://example.com/checkstatus?order_id=12345</p>
 <p><br />
 <br /></p>
 
+<h3 id="vt-direct-convenience-store">VT-Direct: Convenience Store</h3>
+
+<h4 id="indomaret">Convenience Store: Indomaret</h4>
+
+<p>The following attribute can be used to perform a charge transaction with Indomaret:</p>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>JSON Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>payment_type <em>String</em> <strong>Required</strong></td>
+        <td>Set Indomaret Payment method. <br /> Value is: <code>"cstore"</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#transaction_details_indomrt">transaction_details</a> <em>JSON Object</em> <strong>Required</strong></td>
+          <td>Gross payment that will be paid by customer.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="transaction_details_indomrt" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>order_id <em>String(50)</em> <strong>Required</strong></td>
+          <td>Order ID of the transaction.</td>
+        </tr>
+        <tr>
+          <td>gross_amount <em>Long</em> <strong>Required</strong></td>
+          <td>Gross value of the transaction.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#cstore_vtdirect">echannel</a> <em>JSON Object</em> <strong>Required</strong></td>
+          <td>VT-Direct charge details using Mandiri Billpayment.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="cstore_vtdirect" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Store <em>String(20)</em> <strong>Optional</strong></td>
+          <td>Store name</td>
+        </tr>
+        <tr>
+          <td>Message <em>String(20)</em> <strong>Optional</strong></td>
+          <td>Label to be displayed in Indomaret POS</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#item_details_indomrt">item_details</a> <em>JSON Array</em> <strong>Required</strong></td>
+          <td>Shopping item details that will be paid by customer.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="item_details_indomrt" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>id <em>String(50)</em> <strong>Required</strong></td>
+          <td>Item ID.</td>
+        </tr>
+        <tr>
+          <td>price <em>Long</em> <strong>Required</strong></td>
+          <td>Price of the item.</td>
+        </tr>
+        <tr>
+          <td>quantity <em>Integer</em> <strong>Required</strong></td>
+          <td>Quantity of the item bought.</td>
+        </tr>
+        <tr>
+          <td>name <em>String(50)</em> <strong>Required</strong></td>
+          <td>Name of the item</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#customer_details_indomrt">customer_details</a> <em>JSON Object</em> <strong>Optional</strong></td>
+          <td>Customer data that makes the purchase.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="customer_details_indomrt" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
+          <td>Customer's first name.</td>
+        </tr>
+        <tr>
+          <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
+          <td>Customer's last name.</td>
+        </tr>
+        <tr>
+          <td>email <em>String(45)</em> <strong>Optional</strong></td>
+          <td>Customer's Email.<br /> <strong>Note:</strong> There will be validation check for the email address format.</td>
+        </tr>
+        <tr>
+          <td>phone <em>String(19)</em> <strong>Optional</strong></td>
+          <td>Customer's phone number. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="nested-table-wrapper">
+
+      <table>
+        <tbody>
+          <tr>
+            <td><a data-toggle="collapse" href="#billing_add_indomrt">billing_address</a> <em>JSON Array</em> <strong>Optional</strong></td>
+            <td>Customer's billing address.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="billing_add_indomrt" class="tb-nest-2 collapse">
+
+      <table>
+        <tbody>
+          <tr>
+            <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
+            <td>First name of customer's billing address.<br /><strong>Note:</strong> Not required if it is the same as customer's first_name</td>
+          </tr>
+          <tr>
+            <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
+            <td>Last name of customer's billing address.</td>
+          </tr>
+          <tr>
+            <td>address <em>String(200)</em> <strong>Optional</strong></td>
+            <td>Address of the billing address.</td>
+          </tr>
+          <tr>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
+            <td>City of the billing address.</td>
+          </tr>
+          <tr>
+            <td>postal_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>Postal code of billing address.<br /><strong>Note:</strong> Format is alpha-numeric. It can accept “-” and space</td>
+          </tr>
+          <tr>
+            <td>phone <em>String(19)</em> <strong>Optional</strong></td>
+            <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
+          </tr>
+          <tr>
+            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="nested-table-wrapper">
+
+      <table>
+        <tbody>
+          <tr>
+            <td><a data-toggle="collapse" href="#shipping_add_indomrt">shipping_address</a> <em>JSON Array</em> <strong>Optional</strong></td>
+            <td>Customer's shipping address.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="shipping_add_indomrt" class="tb-nest-2 collapse">
+
+      <table>
+        <tbody>
+          <tr>
+            <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
+            <td>First name of customer's shipping address.<br /><strong>Note:</strong> Not required if it is the same as customer's first_name</td>
+          </tr>
+          <tr>
+            <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
+            <td>Last name of customer's shipping address.</td>
+          </tr>
+          <tr>
+            <td>address <em>String(200)</em> <strong>Optional</strong></td>
+            <td>Address of the shipping address.</td>
+          </tr>
+          <tr>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
+            <td>City of the shipping address.</td>
+          </tr>
+          <tr>
+            <td>postal_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>Postal code of shipping address.<br /><strong>Note:</strong> Format is alpha-numeric. It can accept “-” and space</td>
+          </tr>
+          <tr>
+            <td>phone <em>String(19)</em> <strong>Optional</strong></td>
+            <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
+          </tr>
+          <tr>
+            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
+
+<pre><code class="highlight php">{
+    //Required
+    "payment_type": "cstore", 
+
+    //Required
+    "transaction_details": {
+        "order_id": "1388",
+        "gross_amount": 100000
+        },
+
+    //Required
+    "cstore" : {
+        "store" : "Indomaret Midplaza",
+        "message" : "mangga" 
+        }
+}
+</code></pre>
+
+<h4 id="IndomartResponse">Indomaret Response</h4>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>JSON Attribute</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>status_code</td>
+        <td>String</td>
+        <td>Status code of transaction charge result. Complete list of status code can be checked <a href="/sandbox/status_code.html">here</a></td>
+      </tr>
+      <tr>
+        <td>status_message</td>
+        <td>String</td>
+        <td>Description of transaction charge result</td>
+      </tr>
+      <tr>
+        <td>transaction_id</td>
+        <td>String</td>
+        <td>Transaction ID given by Veritrans</td>
+      </tr>
+      <tr>
+        <td>order_id</td>
+        <td>String</td>
+        <td>Order Id given by merchant</td>
+      </tr>
+      <tr>
+        <td>payment_type</td>
+        <td>String</td>
+        <td>Transaction payment method</td>
+      </tr>
+      <tr>
+        <td>transaction_time</td>
+        <td>String</td>
+        <td>Timestamp of transaction</td>
+      </tr>
+      <tr>
+        <td>transaction_status</td>
+        <td>String</td>
+        <td>Transaction status after Indomaret charge transaction, the possible value is<br /> <code>pending</code> : Indomaret payment code is generated. Waiting for the result of transaction.</td>
+      </tr>
+      <tr>
+        <td>payment_code</td>
+        <td>String</td>
+        <td>Veritrans Unique payment code</td>
+      </tr>
+      <tr>
+        <td>gross_amount</td>
+        <td>String</td>
+        <td>Amount of Transaction</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span> <span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span> <span class="p">:</span> <span class="s2">"Success, cstore transaction is successful"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span> <span class="p">:</span> <span class="s2">"ff05337c-6c94-4f70-8e81-35acd89b688e"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span> <span class="p">:</span> <span class="s2">"201404141421"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span> <span class="p">:</span> <span class="s2">"cstore"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span> <span class="p">:</span> <span class="s2">"2014-04-14 16:03:51"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span> <span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+  <span class="s2">"payment_code : "</span><span class="err">498112345234</span><span class="s2">",
+  "</span><span class="err">gross_amount</span><span class="s2">" : "</span><span class="err">145000.00"</span>
+<span class="err">}</span>
+</code></pre>
+
+<h4 id="indomaret-error-response">Indomaret Error Response</h4>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Error Code</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>400</code> Validation error</td>
+        <td>Validation Error, merchant send bad request data.</td>
+      </tr>
+      <tr>
+        <td><code>401</code> Access Denied</td>
+        <td>Invalid client key or server key</td>
+      </tr>
+      <tr>
+        <td><code>402</code> Access Denied</td>
+        <td>Merchant doesn't have access for this payment type</td>
+      </tr>
+      <tr>
+        <td><code>406</code> Duplicate Order ID</td>
+        <td>Order ID has been used before or transaction has been paid.</td>
+      </tr>
+      <tr>
+        <td><code>410</code> Account Inactive</td>
+        <td>Merchant account is deactivated or not active for a long period</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p><br />
+<br /></p>
+
 <h3 id="Charge-Feature">Charge Features</h3>
 
 <p>Veritrans provides additional features that can be utilized in both VT-Web and VT-Direct.</p>
@@ -6579,7 +7008,7 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
 <span class="p">}</span>
 </code></pre>
 
-<p><br />
+<p id="Capture"><br />
 <br /></p>
 
 <h2 id="capture-transaction">Capture Transaction</h2>
@@ -7291,10 +7720,26 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
                 <li>
                   <a href="#vtwebcharge">VT-Web</a>
                   
+                    <ul class="nav second-submenu">
+                      
+                        <li>    
+                          <a href="#"></a>
+                        </li>
+                      
+                    </ul>
+                  
                 </li>
               
                 <li>
                   <a href="#vt-direct-card-payment">VT-Direct: Card Payment</a>
+                  
+                    <ul class="nav second-submenu">
+                      
+                        <li>    
+                          <a href="#"></a>
+                        </li>
+                      
+                    </ul>
                   
                 </li>
               
@@ -7355,6 +7800,19 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
                       
                         <li>    
                           <a href="#bbm_money">BBM Money</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+                <li>
+                  <a href="#vt-direct-convenience-store">VT-Direct: Convenience Store</a>
+                  
+                    <ul class="nav second-submenu">
+                      
+                        <li>    
+                          <a href="#indomaret">Indomaret</a>
                         </li>
                       
                     </ul>

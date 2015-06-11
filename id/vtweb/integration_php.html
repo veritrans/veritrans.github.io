@@ -71,7 +71,7 @@
           <a href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a id="logInHeader" href="https://my.veritrans.co.id">
+          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
             Log In
           </a>
         </li>
@@ -85,6 +85,41 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+<!-- LOGIN MODAL -->
+<div id="login-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="production-box">
+              <!-- <img src="images/banner-about.png"> -->
+              <h5>PRODUCTION</h5>
+              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
+              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="sandbox-box">
+              <!-- <img src="images/banner-sandbox.png"> -->
+              <h5>SANDBOX</h5>
+              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
+            </div>
+          </div>
+        </div>
+        <br/><br/>
+        <div class="row">
+          <div class="col-xs-12 text-left">
+            <div class="register-box">
+              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -486,7 +521,7 @@ Daftar status code lengkap dapat dilihat di <a href="../api/status_code.html">Re
   <li><a href="#xltunai" data-toggle="tab-code" data-lang="xl">XL Tunai</a></li>
   <li><a href="#bbmmoney" data-toggle="tab-code" data-lang="bbm">BBM Money</a></li>
   <li><a href="#mbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
-
+  <li><a href="#indomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
 </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
@@ -524,7 +559,7 @@ Daftar status code lengkap dapat dilihat di <a href="../api/status_code.html">Re
             </table>
 
             <p><br /><br />
-Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="vtweb_test1" class="img-responsive img-thumbnail" src="../../images/vtweb_test.png" />
 <br /><br />
@@ -552,7 +587,7 @@ Setelah proses autentikasi selesai dilakukan, hasil pembayaran akan muncul.
             <h3 id="permata-virtual-account">Permata Virtual Account</h3>
             <p>Kami akan mencoba transaksi Virtual Account yang berhasil. </p>
 
-            <p>Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+            <p>Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="VT-Web transfer Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test1.png" />
 <br /><br />
@@ -579,7 +614,7 @@ Klik tombol <strong>Confirm Payment</strong> untuk menampilkan nomor rekening vi
 <br />
 <img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test3.png" />
 <br /><br />
-Aoabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
+Apabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
 <br />
 <img alt="VT-Web transfer Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test4.png" />
 <br /><br />
@@ -620,7 +655,7 @@ Simulasi pembayaran Permata Virtual Account berhasil.
 
             <p><br />
 <br />
-Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="VT-Web Mandiri Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_test1.png" />
 <br /><br />
@@ -640,7 +675,7 @@ Klik tombol <strong>Confirm Payment</strong> dan halaman konfirmasi pembayaran V
             <h3 id="cimb-clicks">CIMB Clicks</h3>
             <p>Kami akan mencoba transaksi CIMB Clicks yang berhasil. </p>
 
-            <p>Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+            <p>Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="VT-Web CIMB Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb_test1.png" />
 <br /><br />
@@ -664,7 +699,7 @@ Ketika petunjuk transaksi CIMB Clicks diselesaikan, klik tombol <strong>Bayar</s
             <h3 id="e-pay-bri">e-Pay BRI</h3>
             <p>Kami akan mencoba transaksi e-Pay BRI yang berhasil. </p>
 
-            <p>Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+            <p>Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="VT-Web epay Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test1.png" />
 <br /><br />
@@ -705,7 +740,7 @@ Ketika petunjuk transaksi e-Pay BRI diselesaikan, klik tombol <strong>Bayar</str
 
             <p><br />
 <br />
-Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="VT-Web Tcash Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_tcash_test1.png" />
 <br /><br />
@@ -724,7 +759,7 @@ Klik tombol <strong>Confirm Payment</strong> dan halaman konfirmasi pembayaran V
             <h3 id="xl-tunai">XL Tunai</h3>
             <p>Kami akan mencoba transaksi XL Tunai yang berhasil. </p>
 
-            <p>Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+            <p>Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="VT-Web xltunai Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test1.png" />
 <br /><br />
@@ -744,7 +779,7 @@ Klik tombol <strong>Pay Now</strong> untuk menampilkan nomor order ID XL tunai, 
 <br />
 <img alt="VT-Web xltunai Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test3.png" />
 <br /><br />
-Aoabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
+Apabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
 <br />
 <img alt="VT-Web xltunai Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test4.png" />
 <br /><br />
@@ -763,7 +798,7 @@ Simulasi pembayaran XL Tunai berhasil.
             <h3 id="bbm-money-desktop">BBM Money: Desktop</h3>
             <p>Kami akan mencoba transaksi BBM Money yang berhasil melalui Desktop. </p>
 
-            <p>Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+            <p>Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="VT-Web BBM Money Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" />
 <br /><br /></p>
@@ -811,7 +846,7 @@ klik <strong>'Pay with BBM Money'</strong> dan pelanggan akan dialihkan ke Apps 
             <h3 id="mandiri-bill-payment">Mandiri Bill Payment</h3>
             <p>Kami akan mencoba transaksi Mandiri Bill Payment yang berhasil. </p>
 
-            <p>Mengacu pada petunjuk di <a href="integration_php.html#step1">Mendapatkan URL VT-Web</a>, tampilan halaman VT-Web adalah sebagai berikut:
+            <p>Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
 <br />
 <img alt="VT-Web mbill Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_mbill_test1.png" />
 <br /><br />
@@ -830,7 +865,7 @@ Klik tombol <strong>Show Payment Code</strong> untuk menampilkan company code da
 
             <hr />
 
-            <h3 id="payment-simulation">Payment Simulation</h3>
+            <h3 id="simulasi-pembayaran-2">Simulasi Pembayaran</h3>
 
             <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/mandiri/bill/index">simulator pembayaran</a> untuk Sandbox Environment.</p>
 
@@ -838,14 +873,53 @@ Klik tombol <strong>Show Payment Code</strong> untuk menampilkan company code da
 <br />
 <img alt="VT-Web mbill Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_mbill_test3.png" />
 <br /><br />
-Aoabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
+Apabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
 <br />
 <img alt="VT-Web mbill Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_mbill_test4.png" />
 <br /></p>
 
           </div>
           <!-- end of step Mandiri Billpayment-->
+          <div class="tab-pane" id="indomrt">
+            <!-- step Indomaret -->
 
+            <h3 id="indomaret">Indomaret</h3>
+            <p>Kita akan mencoba transaksi Indomaret yang berhasil. </p>
+
+            <p>Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
+<br />
+<img alt="VT-Web indomrt1" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt_test1.png" />
+<br /><br />
+Klik tombol <strong>Confirm Payment</strong> untuk menampilkan kode pembayaran dan instruksi cara melakukan pembayaran.
+<br />
+<img alt="VT-Web indomrt2" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt_test2.png" />
+<br /></p>
+
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Note</strong>:<br /> Catat kode pembayaran dan lakukan pembayaran melalui kasir Indomaret terdekat.</p>
+            </div>
+
+            <p>Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. <br />Status transaksi akan berubah menjadi <em>success</em> saat pelanggan anda selesai melakukan pembayaran.</p>
+
+            <hr />
+
+            <h3 id="simulasi-pembayaran-3">Simulasi Pembayaran</h3>
+
+            <p>Untuk memudahkan proses pembayaran, kami menyediakan <a href="https://api.sandbox.veritrans.co.id:7676/indomaret/index">simulator pembayaran</a> untuk Sandbox Environment.</p>
+
+            <p>Masukan nomor kode pembayaran yang di dapat sebelumnya untuk memeriksa apabila ada transaksi pending.
+<br />
+<img alt="VT-Web indomrt3" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt_test3.png" />
+<br /><br />
+Apabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
+<br />
+<img alt="VT-Web indomrt4" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt_test4.png" />
+<br /></p>
+
+          </div>
+          <!-- end of step Indomaret -->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>
@@ -911,6 +985,7 @@ Aoabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
   <li><a href="#statusxltunai" data-toggle="tab-code" data-lang="xl">XL Tunai</a></li>
   <li><a href="#statusbbmmoney" data-toggle="tab-code" data-lang="bbm">BBM Money</a></li>
   <li><a href="#statusmbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
+  <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
 </ul>
 
         <div class="tab-content">
@@ -1095,7 +1170,7 @@ Aoabila ada transaksi pending, anda dapat melakukan simulasi pembayaran.
                 </tr>
                 <tr>
                   <td>Challenge</td>
-                  <td>Transaksi kartu kredit dianggap mencurigakan oleh Sistem Deteksi Penipuan (FDS) Veritrans. Merchant harus menerima atau menolak transaksi secara manual melalui Veritrans Dashboard.<br />Beralih ke Penggunaan Dashbaord untuk mengetahui lebih lanjut tentang <a href="../dashboard/index.html#Fraud_Management">Fraud Management</a>.</td>
+                  <td>Transaksi kartu kredit dianggap mencurigakan oleh Sistem Deteksi Penipuan (FDS) Veritrans. Merchant harus menerima atau menolak transaksi secara manual melalui Veritrans Dashboard.<br />Beralih ke Penggunaan Dashboard untuk mengetahui lebih lanjut tentang <a href="../dashboard/index.html#Fraud_Management">Fraud Management</a>.</td>
                 </tr>
                 <tr>
                   <td>Failure</td>
@@ -1920,7 +1995,7 @@ PUT PHP CODE
               <tbody>
                 <tr>
                   <td>pending</td>
-                  <td>Transaksi belum terproses dan masi menunggu untuk diselesaikan.</td>
+                  <td>Transaksi belum terproses dan masih menunggu untuk diselesaikan.</td>
                 </tr>
                 <tr>
                   <td>cancel</td>
@@ -1956,7 +2031,7 @@ PUT PHP CODE
 
             <h3 id="status-transaksi-merchant-admin-portalmap-8">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
-            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">Transactions</a> di MAP.</p>
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">Transaction</a> di MAP.</p>
 
             <p>Contoh transaksi status yang sukses untuk pembayaran Mandiri Bill Payment:
 <img alt="VT-Web mbill Test 3" class="img-responsive img-thumbnail" src="../../images/mbill_status.png" /></p>
@@ -1991,6 +2066,118 @@ PUT PHP CODE
           </div>
           <!-- End of Mandiri BillPayment Status -->
 
+          <div class="tab-pane" id="statusindomrt">
+            <!-- Indomaret Status -->
+
+            <h3 id="indomaret-1">Indomaret</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Indomaret yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, CSTORE transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span> 
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtindomrt01"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cstore"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015­01­21 12:00:31"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span> 
+    <span class="s2">"payment_code"</span><span class="p">:</span> <span class="s2">"741122334455"</span><span class="p">,</span> 
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <!--
+<div class="alert alert-info" role="alert">
+  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+**Note**:<br>Untuk informasi lebih lanjut mengenai respon pembayaran Mandiri Billpayment, silahkan mengalih ke [sini](/en/api/methods.html#MandiriBillResponse).
+</div>
+-->
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-9">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi belum terproses dan masi menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi telah dibatalkan. Nomor kode pembayaran Indomaret sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi belum diselesaikan setelah waktu berlaku. Nomor kode pembayaran Indomaret sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- LIST OF STATUS THAT IS AVAILABLE IN THE FUTURE
+|refund | Transaction is fully refunded to the customer.|
+|partial_refund | Transaction is partially refunded to the customer.|
+-->
+
+            <p><br /></p>
+
+            <!--Update PLEASE
+#### Handling HTTP(S) Notification
+The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing **Veritrans-PHP** library. This PHP code is executed when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br />
+~~~ php
+PUT PHP CODE
+~~~
+-->
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-9">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">Transactions</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Indomaret:
+<img alt="VT-Web indomrt3" class="img-responsive img-thumbnail" src="../../images/indomrt_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri Bill Payment adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'success'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima dan sudah diproses untuk settlement.<br />Beralih ke Penggunaan Dashboard untuk mengetahui lebih lanjut tentang <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Mandiri BillPayment Status -->
         </div>
         <!-- End of Tab-Content u/ Status -->
 
@@ -1998,10 +2185,8 @@ PUT PHP CODE
 
       </div>
       <!-- end of step 3-->
-
     </div>
     <!-- end of STEPS tab-content-->
-
   </div>
   <!-- end of header-->
 </div>

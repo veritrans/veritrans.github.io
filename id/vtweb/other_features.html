@@ -71,7 +71,7 @@
           <a href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a id="logInHeader" href="https://my.veritrans.co.id">
+          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
             Log In
           </a>
         </li>
@@ -85,6 +85,41 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+<!-- LOGIN MODAL -->
+<div id="login-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="production-box">
+              <!-- <img src="images/banner-about.png"> -->
+              <h5>PRODUCTION</h5>
+              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
+              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="sandbox-box">
+              <!-- <img src="images/banner-sandbox.png"> -->
+              <h5>SANDBOX</h5>
+              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
+            </div>
+          </div>
+        </div>
+        <br/><br/>
+        <div class="row">
+          <div class="col-xs-12 text-left">
+            <div class="register-box">
+              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -246,21 +281,47 @@
     <!-- step 1-->
     <!-- satu -->
 
-    <p>Saat ini, ada 9 metode pembayaran yang dapat digunakan melalui VT-Web:</p>
+    <h3 id="memilih-metode-pembayaran">Memilih Metode Pembayaran</h3>
 
-    <ol>
-      <li><a href="#credit-card">Kartu Kredit</a></li>
-      <li><a href="#mandiri-clickpay">Mandiri ClickPay</a></li>
-      <li><a href="#cimb-clicks">CIMB Clicks</a></li>
-      <li><a href="#virtual-account">Virtual Account</a></li>
-      <li><a href="#bri-pay">e-Pay BRI</a></li>
-      <li><a href="#tcash">Telkomsel Cash</a></li>
-      <li><a href="#xltunai">XL Tunai</a></li>
-      <li><a href="#mbill">Mandiri Bill Payment</a></li>
-      <li><a href="#bbmmoney">BBM Money</a></li>
-    </ol>
+    <p>Saat ini, Veritrans memiliki beberapa metode pembayaran yang dapat digunakan melalui VT-Web:<br /></p>
 
-    <p>Pada bagian <a href="integration_php.html#step1">VT-Web – Integrasi</a>, kami telah menjelaskan bagaimana mengaktifkan semua metode pembayaran yang anda miliki secara otomatis. Hal ini dapat diimplementasikan dengan <strong>tidak</strong> menyertakan parameter <code>enabled_payments</code>. Namun, pada kondisi tertentu anda mungkin perlu menampilkan beberapa metode pembayaran saja pada VT-Web. Jika anda menghadapi kondisi ini, silahkan ikuti petunjuk berikut.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Card Payment</th>
+          <th>Direct Debit</th>
+          <th>e-Wallet</th>
+          <th>Bank Transfer</th>
+          <th>Convenience Store</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#credit-card">Kartu Kredit</a></td>
+          <td><a href="#mandiri-clickpay">Mandiri ClickPay</a></td>
+          <td><a href="#tcash">Telkomsel Cash</a></td>
+          <td><a href="#virtual-account">Virtual Account</a></td>
+          <td><a href="#indomaret">Indomaret</a></td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td><a href="#cimb-clicks">CIMB Clicks</a></td>
+          <td><a href="#xltunai">XL Tunai</a></td>
+          <td><a href="#mbill">Mandiri Bill Payment</a></td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td><a href="#bri-pay">e-Pay BRI</a></td>
+          <td><a href="#bbmmoney">BBM Money</a></td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /><br />
+Pada bagian <a href="integration_php.html#step1">VT-Web – Integrasi</a>, kami telah menjelaskan bagaimana mengaktifkan semua metode pembayaran yang anda miliki secara otomatis. Hal ini dapat diimplementasikan dengan <strong>tidak</strong> menyertakan parameter <code>enabled_payments</code>. Namun, pada kondisi tertentu anda mungkin perlu menampilkan beberapa metode pembayaran saja pada VT-Web. Jika anda menghadapi kondisi ini, silahkan ikuti petunjuk berikut.</p>
 
     <div class="alert alert-info" role="alert">
       <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
@@ -622,7 +683,50 @@ Halaman pembayaran Mandiri Bill Payment akan muncul di VT-Web. Informasi dan pet
     <p><br />
 Halaman pembayaran BBM Money Payment akan muncul di VT-Web.<br /> Informasi dan petunjuk pembayaran menggunakan metode BBM Money payment ditampilkan secara rinci pada halaman ini. 
 <br /><br />
-<img alt="vtweb_bbmoney" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_single_test1.png" /></p>
+<img alt="vtweb_bbmoney" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" /></p>
+
+    <hr />
+
+    <h3 id="indomaret">Indomaret</h3>
+
+    <p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah Indomaret. Dengan menggunakan metode ini, setelah melakukan pembelian online pelanggan anda cukup mendatangi kasir indomaret terdekat untuk menyelesaikan pembayaran. Veritrans akan mengirimkan pemberitahuan secara real time untuk setiap pembayaran yang masuk.</p>
+
+    <p>Untuk mengaktifkan metode pembayaran Indomaret (otomatis aktif pada mode Sandbox), merchant perlu:</p>
+
+    <ol>
+      <li>Daftarkan metode pembayaran Indomaret dengan menghubungi sales representative Veritrans.</li>
+      <li>Menambahkan parameter <code>cstore</code> pada variabel <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"cstore"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Halaman pembayaran Indomaret akan muncul di VT-Web. Informasi dan petunjuk pembayaran menggunakan metode Indomaret ditampilkan secara rinci pada halaman ini.
+<br /><br />
+<img alt="vtweb_indomrt" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt.png" /></p>
+
+    <p><br /></p>
 
     <hr />
 

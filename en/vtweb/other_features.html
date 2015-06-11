@@ -69,7 +69,7 @@
           <a href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a id="logInHeader" href="https://my.veritrans.co.id">
+          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
             Log In
           </a>
         </li>
@@ -83,6 +83,41 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+<!-- LOGIN MODAL -->
+<div id="login-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="production-box">
+              <!-- <img src="images/banner-about.png"> -->
+              <h5>PRODUCTION</h5>
+              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
+              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="sandbox-box">
+              <!-- <img src="images/banner-sandbox.png"> -->
+              <h5>SANDBOX</h5>
+              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
+            </div>
+          </div>
+        </div>
+        <br/><br/>
+        <div class="row">
+          <div class="col-xs-12 text-left">
+            <div class="register-box">
+              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -246,27 +281,55 @@
     <!-- step 1-->
     <!-- One -->
 
-    <p>Currently, there are nine payment methods that can be utilised from VT-Web:</p>
+    <h3 id="choose-the-method-of-payment">Choose The Method of Payment</h3>
 
-    <ol>
-      <li><a href="#credit-card">Credit Card</a></li>
-      <li><a href="#mandiri-clickpay">Mandiri ClickPay</a></li>
-      <li><a href="#cimb-clicks">CIMB Clicks</a></li>
-      <li><a href="#virtual-account">Virtual Account</a></li>
-      <li><a href="#bri-pay">e-Pay BRI</a></li>
-      <li><a href="#tcash">Telkomsel Cash</a></li>
-      <li><a href="#xltunai">XL Tunai</a></li>
-      <li><a href="#mbill">Mandiri Bill Payment</a></li>
-      <li><a href="#bbmmoney">BBM Money</a></li>
-    </ol>
+    <p>Currently, we have several payment methods that can be utilised from VT-Web:</p>
 
-    <p>On section <a href="integration_php.html#step1">VT-Web – Integration</a>, all available payments for the merchant is activated by default.<br />Under some condition, you might need to display only some of the payment methods available. Please follow the steps below to enable a certain payment methods.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Card Payment</th>
+          <th>Direct Debit</th>
+          <th>e-Wallet</th>
+          <th>Bank Transfer</th>
+          <th>Convenience Store</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#credit-card">Credit Card</a></td>
+          <td><a href="#mandiri-clickpay">Mandiri ClickPay</a></td>
+          <td><a href="#tcash">Telkomsel Cash</a></td>
+          <td><a href="#virtual-account">Virtual Account</a></td>
+          <td><a href="#indomaret">Indomaret</a></td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td><a href="#cimb-clicks">CIMB Clicks</a></td>
+          <td><a href="#xltunai">XL Tunai</a></td>
+          <td><a href="#mbill">Mandiri Bill Payment</a></td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td><a href="#bri-pay">e-Pay BRI</a></td>
+          <td><a href="#bbmmoney">BBM Money</a></td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><br /><br />
+On <a href="integration_php.html#step1">VT-Web – Integration</a> section, all available payments for the merchant is activated by default.<br />Under some condition, you might need to display only some of the payment methods available. Please follow the steps below to enable a certain payment methods.</p>
 
     <div class="alert alert-info" role="alert">
       <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <span class="sr-only">Info:</span>
 <strong>Info</strong>:<br /> Please refer to our <a href="../api/methods.html#vtwebenable">API Documentation - VT-Web Features</a> for more info on the JSON attributes.</p>
     </div>
+
+    <p><br /></p>
 
     <h3 id="credit-card">Credit Card</h3>
 
@@ -623,7 +686,48 @@ The Mandiri Bill Payment will be shown at the VT-Web payment page. Information a
 
     <p>The BBM Money will be shown at the VT-Web payment page. Information and procedure to perform BBM Money Payment transaction is displayed on the figure below.
 <br /><br />
-<img alt="vtweb_bbmmoney" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_single_test1.png" /></p>
+<img alt="vtweb_bbmmoney" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" /></p>
+
+    <hr />
+
+    <h3 id="indomaret">Indomaret</h3>
+
+    <p>Indomaret is a feature provided by Indomaret where customer can make online payment at indomaret store. The customer only has to come to indomaret cashier and complete the payment. By using this convenience store channel, customer can pay the bill in any indomaret store. Veritrans will send notification in real time for every incoming payment.</p>
+
+    <p>To activate Indomaret method of payment (automatically active on Sandbox mode), merchant needs to:</p>
+
+    <ol>
+      <li>Sign on Indomaret method of payment by contacting Veritrans sales representative.</li>
+      <li>Add the <code>cstore</code> parameter on variable <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"cstore"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+The Indomaret page will be shown at the VT-Web. Information and procedure to perform Indomaret transaction is displayed on the figure below.
+<br /><br />
+<img alt="vtweb_indomrt" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt.png" /></p>
 
     <hr />
 
@@ -662,7 +766,7 @@ The Mandiri Bill Payment will be shown at the VT-Web payment page. Information a
 
     <h3 id="installment">Installment</h3>
 
-    <p>To activate installment feature, merchant has to make an agreement with the acquiring bank. The merchant also needs to contact a Veritrans sales representative if the MID for instalment is ready. If MID is ready, merchant simply has to add the parameter <code>installment</code> during redirect VT-Web URL request.</p>
+    <p>To activate installment feature, merchant has to make an agreement with the acquiring bank. The merchant also needs to contact a Veritrans sales representative if the MID for installment is ready. If MID is ready, merchant simply has to add the parameter <code>installment</code> during redirect VT-Web URL request.</p>
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /></p>
 

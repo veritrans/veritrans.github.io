@@ -69,7 +69,7 @@
           <a href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a id="logInHeader" href="https://my.veritrans.co.id">
+          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
             Log In
           </a>
         </li>
@@ -83,6 +83,41 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+<!-- LOGIN MODAL -->
+<div id="login-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="production-box">
+              <!-- <img src="images/banner-about.png"> -->
+              <h5>PRODUCTION</h5>
+              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
+              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="sandbox-box">
+              <!-- <img src="images/banner-sandbox.png"> -->
+              <h5>SANDBOX</h5>
+              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
+            </div>
+          </div>
+        </div>
+        <br/><br/>
+        <div class="row">
+          <div class="col-xs-12 text-left">
+            <div class="register-box">
+              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -489,7 +524,7 @@ The list of status codes can be found in <a href="../api/status_code.html">Refer
   <li><a href="#xltunai" data-toggle="tab-code" data-lang="xl">XL Tunai</a></li>
   <li><a href="#bbmmoney" data-toggle="tab-code" data-lang="bbm">BBM Money</a></li>
   <li><a href="#mbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
-
+  <li><a href="#indomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
 </ul>
         <div class="tab-content">
 
@@ -529,7 +564,7 @@ The list of status codes can be found in <a href="../api/status_code.html">Refer
 
             <p><br />
 <br />
-Referring to the steps on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the displayed VT-Web page is as follows:
+Referring to the steps on Obtain VT-Web URL, the displayed VT-Web page is as follows:
 <br />
 <img alt="vtweb_test1" class="img-responsive img-thumbnail" src="../../images/vtweb_test.png" />
 <br /><br />
@@ -557,7 +592,7 @@ After authentication process is completed, payment status will be displayed.
             <h3 id="permata-virtual-account">Permata Virtual Account</h3>
             <p>We will try to perform a Virtual Account transaction. </p>
 
-            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is shown below:
+            <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
 <img alt="VT-Web transfer Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_transfer_test1.png" />
 <br /><br />
@@ -625,7 +660,7 @@ Permata Virtual Account payment simulation is successful.
 
             <p><br />
 <br />
-Referring to the steps on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the displayed VT-Web page is as follows:
+Referring to the steps on Obtain VT-Web URL, the displayed VT-Web page is as follows:
 <br />
 <img alt="VT-Web Mandiri Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_test1.png" />
 <br /><br />
@@ -645,7 +680,7 @@ Click Confirm Payment and a VT-Web confirmation payment page will be displayed.
             <h3 id="cimb-clicks">CIMB Clicks</h3>
             <p>We will try to perform a successful CIMB Clicks transaction. </p>
 
-            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is shown below:
+            <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
 <img alt="VT-Web CIMB Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_cimb_test1.png" />
 <br /><br />
@@ -669,7 +704,7 @@ When the CIMB Clicks transaction step is completed, select the Pay button and th
             <h3 id="e-pay-bri">e-Pay BRI</h3>
             <p>We will try to perform a successful e-Pay BRI transaction.</p>
 
-            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is shown below:
+            <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
 <img alt="VT-Web epay Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_epay_test1.png" />
 <br /><br />
@@ -710,7 +745,7 @@ When e-Pay BRI transaction step is completed, select the Pay button and a confir
 
             <p><br />
 <br />
-Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is shown below:
+Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
 <img alt="VT-Web Tcash Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_tcash_test1.png" />
 <br /><br />
@@ -729,7 +764,7 @@ Click Confirm Payment and a VT-Web result payment page will be displayed.
             <h3 id="xl-tunai">XL Tunai</h3>
             <p>We will try to perform a XL Tunai transaction. </p>
 
-            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is shown below:
+            <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
 <img alt="VT-Web xltunai Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_xl_test1.png" />
 <br /><br />
@@ -769,9 +804,9 @@ XL Tunai payment simulation is successful.
             <h3 id="bbm-money-desktop">BBM Money: Desktop</h3>
             <p>We will try to perform BBM Money transaction from the desktop. </p>
 
-            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is shown below:
+            <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
-<img alt="VT-Web BBM Money Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_single_test1.png" />
+<img alt="VT-Web BBM Money" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" />
 <br /><br /></p>
 
             <div class="alert alert-info" role="alert">
@@ -792,7 +827,7 @@ XL Tunai payment simulation is successful.
 <br /></p>
 
             <div class="text-center">
-              <p><img alt="VT-Web BBM Money Mobile Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_mobile_test1.png" /></p>
+              <p><img alt="VT-Web BBM Money Mobile" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test2.png" /></p>
             </div>
 
             <p><br /><br />
@@ -818,7 +853,7 @@ Click 'Pay with BBM Money' and customer will be redirected to their BBM Money Ap
             <h3 id="mandiri-bill-payment">Mandiri Bill Payment</h3>
             <p>We will try to perform a Mandiri Bill Payment transaction.</p>
 
-            <p>Referring to the transaction on <a href="integration_php.html#step1">Obtain VT-Web URL</a>, the VT-Web page that is displayed is shown below:
+            <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
 <img alt="VT-Web mbill Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_mbill_test1.png" />
 <br /><br />
@@ -853,9 +888,48 @@ If there is a pending transaction, you can do a payment simulation.
           </div>
           <!-- end of step Mandiri Billpayment-->
 
+          <div class="tab-pane" id="indomrt">
+            <!-- step Indomaret -->
+
+            <h3 id="indomaret">Indomaret</h3>
+            <p>We will try to perform an Indomaret Payment transaction.</p>
+
+            <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
+<br />
+<img alt="VT-Web indomrt1" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt_test1.png" />
+<br /><br />
+Click <strong>Confirm Payment</strong> button to display the payment code number and payment instructions.
+<br />
+<img alt="VT-Web indomrt2" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt_test2.png" />
+<br /></p>
+
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Note</strong>:<br /> Write your payment code number and make payment through cashier Indomaret store nearby.</p>
+            </div>
+
+            <p>At this point, the transaction is stored in MAP with <em>pending</em> status.<br /> Transaction status will be changed into <em>success</em> when your customer have finished the payment.</p>
+
+            <hr />
+
+            <h3 id="payment-simulation-3">Payment Simulation</h3>
+
+            <p>To facilitate the payment process, we provide a <a href="https://api.sandbox.veritrans.co.id:7676/indomaret/index">payment simulator</a> for sandbox environment. </p>
+
+            <p>Enter the payment code number obtained to check whether there is a pending transaction.
+<br />
+<img alt="VT-Web indomrt3" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt_test3.png" />
+<br /><br />
+If there is a pending transaction, you can do a payment simulation.
+<br />
+<img alt="VT-Web indomrt4" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt_test4.png" />
+<br /><br /></p>
+
+          </div>
+          <!-- end of step Indomaret-->
         </div>
         <!-- end of tab-content u/ testing-->
-
       </div>
       <!-- end of step 2-->
 
@@ -919,6 +993,7 @@ If there is a pending transaction, you can do a payment simulation.
   <li><a href="#statusxltunai" data-toggle="tab-code" data-lang="xl">XL Tunai</a></li>
   <li><a href="#statusbbmmoney" data-toggle="tab-code" data-lang="bbm">BBM Money</a></li>
   <li><a href="#statusmbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
+  <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
 </ul>
 
         <div class="tab-content">
@@ -1218,7 +1293,7 @@ PUT PHP CODE
                   <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
                 </tr>
                 <tr>
-                  <td>Success</td>
+                  <td>Settlement</td>
                   <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
                 </tr>
                 <tr>
@@ -1319,7 +1394,7 @@ PUT PHP CODE
               </thead>
               <tbody>
                 <tr>
-                  <td>Success</td>
+                  <td>Settlement</td>
                   <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
                 </tr>
                 <tr>
@@ -1433,7 +1508,7 @@ PUT PHP CODE
                   <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
                 </tr>
                 <tr>
-                  <td>Success</td>
+                  <td>Settlement</td>
                   <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
                 </tr>
                 <tr>
@@ -1550,7 +1625,7 @@ PUT PHP CODE
                   <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
                 </tr>
                 <tr>
-                  <td>Success</td>
+                  <td>Settlement</td>
                   <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
                 </tr>
                 <tr>
@@ -1651,7 +1726,7 @@ PUT PHP CODE
               </thead>
               <tbody>
                 <tr>
-                  <td>Success</td>
+                  <td>Settlement</td>
                   <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
                 </tr>
                 <tr>
@@ -1765,7 +1840,7 @@ PUT PHP CODE
                   <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
                 </tr>
                 <tr>
-                  <td>Success</td>
+                  <td>Settlement</td>
                   <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
                 </tr>
                 <tr>
@@ -1875,7 +1950,7 @@ PUT PHP CODE
                   <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
                 </tr>
                 <tr>
-                  <td>Success</td>
+                  <td>Settlement</td>
                   <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
                 </tr>
                 <tr>
@@ -1986,7 +2061,7 @@ PUT PHP CODE
                   <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
                 </tr>
                 <tr>
-                  <td>Success</td>
+                  <td>Settlement</td>
                   <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
                 </tr>
                 <tr>
@@ -1999,6 +2074,119 @@ PUT PHP CODE
           </div>
           <!-- End of Mandiri BillPayment Status -->
 
+          <div class="tab-pane" id="statusindomrt">
+            <!-- Indomaret Status -->
+
+            <h3 id="indomaret-1">Indomaret</h3>
+
+            <p>HTTP Notification example of a successful Indomaret transaction:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, CSTORE transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span> 
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtindomrt01"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cstore"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015­01­21 12:00:31"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span> 
+    <span class="s2">"payment_code"</span><span class="p">:</span> <span class="s2">"741122334455"</span><span class="p">,</span> 
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <!--
+<div class="alert alert-info" role="alert">
+  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+**Note**:<br>For more information about Mandiri Bill Payment response, please check [here](/en/api/methods.html#MandiriBillResponse).
+</div>
+-->
+
+            <p><br /></p>
+
+            <h4 id="available-https-post-notification-status-9">Available HTTP(S) POST Notification Status</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaction has not been processed and is waiting to be completed.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaction has been cancelled. Indomaret payment code Number is now invalid.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaction has not been completed by the expiry date. Indomaret payment code Number is now invalid.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Funds from the transaction has moved from customer to merchant's account.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- LIST OF STATUS THAT IS AVAILABLE IN THE FUTURE
+|refund | Transaction is fully refunded to the customer.|
+|partial_refund | Transaction is partially refunded to the customer.|
+-->
+
+            <p><br /></p>
+
+            <!--Update PLEASE
+#### Handling HTTP(S) Notification
+The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing **Veritrans-PHP** library. This PHP code is executed when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br />
+~~~ php
+PUT PHP CODE
+~~~
+-->
+
+            <hr />
+
+            <h3 id="merchant-admin-portalmap-transaction-status-9">Merchant Admin Portal(MAP) Transaction Status</h3>
+
+            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Transaction menu</a> on MAP.</p>
+
+            <p>Example of a successful transaction status for Indomaret:
+<img alt="VT-Web indomrt3" class="img-responsive img-thumbnail" src="../../images/indomrt_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>List of available MAP transaction status for Indomaret is described below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Failure transaction can be caused by various reasons:<br /> 1. Transaction is denied by the Bank.<br />2. Pending Transaction has not been paid and is expired.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Indomaret Status -->
+
         </div>
         <!-- End of Tab-Content u/ Status -->
 
@@ -2006,10 +2194,8 @@ PUT PHP CODE
 
       </div>
       <!-- end of step 3-->
-
     </div>
     <!-- end of STEPS tab-content-->
-
   </div>
   <!-- end of header-->
 </div>
