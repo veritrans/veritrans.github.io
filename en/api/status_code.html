@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,7 +54,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -264,15 +264,15 @@
   <tbody>
     <tr>
       <td>200</td>
-      <td>OK. Request is successful, and transaction is successful (authorize, capture, settlement, cancel, get order, approve challenge transactions), accepted by Veritrans and bank.</td>
+      <td><strong>Credit Card:</strong>. <code>Success</code>. Request is successful, and transaction is successful (authorize, capture, settlement, cancel, get order, approve challenge transactions), accepted by Veritrans and bank. <br /><br /> <strong>Other payment methods:</strong> <code>Success</code>. Transaction is successful/settlement.</td>
     </tr>
     <tr>
       <td>201</td>
-      <td>Pending, Transaction is successful but the process has not been completed, for example, a challenged transaction or a pending transaction.</td>
+      <td><strong>Credit Card:</strong>. <code>Challenge</code>. Transaction successfully sent to bank but the process has not been completed, need manual action from merchant to complete the transaction process. If the merchant does not perform any action until settlement time (H+1 16:00) Veritrans will cancel the transaction. <br /><br /> <strong>Bank Transfer:</strong> <code>Pending</code>. Transaction successfully sent to bank but the process has not been completed by the customer. By default the transaction will expire within 24 hours. <br /><br /> <strong>Cimb Clicks:</strong> <code>Pending</code>. Transaction successfully sent to bank but the process has not been completed by the customer. By default the transaction will expire within 2 hours. <br /><br /> <strong>BRI ePay:</strong> <code>Pending</code>. Transaction successfully sent to bank but the process has not been completed by the customer. By default the transaction will expire within 2 hours. <br /><br /> <strong>Klik BCA:</strong> <code>Pending</code>. Transaction successfully sent to bank but the process has not been completed by the customer. By default the transaction will expire within 2 hours. <br /><br /> <strong>BCA Klikpay:</strong> <code>Pending</code>. Transaction successfully sent to bank but the process has not been completed by the customer. By default the transaction will expire within 2 hours. <br /><br /> <strong>Mandiri Bill Payment:</strong> <code>Pending</code>. Transaction successfully sent to bank but the process has not been completed by the customer. By default the transaction will expire within 2 hours. <br /><br /> <strong>XL Tunai:</strong> <code>Pending</code>. Transaction successfully sent to provider but the process has not been completed by the customer. By default the transaction will expire within 2 hours. <br /><br /> <strong>Indomaret:</strong> <code>Pending</code>. Transaction successfully sent to provider but the process has not been completed by the customer. By default the transaction will expire within 2 hours. <br /><br /> <strong>BBM Money:</strong> <code>Pending</code>. Transaction successfully sent to provider but the process has not been completed by the customer. By default the transaction will expire within 2 hours.</td>
     </tr>
     <tr>
       <td>202</td>
-      <td>Denied. Request is successful but transaction is denied by bank or Veritrans' fraud detection system.</td>
+      <td><strong>Credit Card:</strong> <code>Denied</code>. Transaction has been processed but is denied by payment provider or Veritrans' fraud detection system. <br /><br /> <strong>Other payment methods:</strong> <code>Denied</code>. Transaction has been processed but is denied by payment provider.</td>
     </tr>
   </tbody>
 </table>
@@ -338,7 +338,7 @@
     </tr>
     <tr>
       <td>407</td>
-      <td>Resource is no longer available and will not be available again</td>
+      <td>Expired transaction</td>
     </tr>
     <tr>
       <td>408</td>
@@ -424,7 +424,7 @@
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

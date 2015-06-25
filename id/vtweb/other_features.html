@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,7 +56,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -317,6 +317,13 @@
           <td> </td>
           <td><a href="#bri-pay">e-Pay BRI</a></td>
           <td><a href="#bbmmoney">BBM Money</a></td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td><a href="#dompetku">Indosat Dompetku</a></td>
+          <td> </td>
           <td> </td>
           <td> </td>
         </tr>
@@ -729,6 +736,47 @@ Halaman pembayaran Indomaret akan muncul di VT-Web. Informasi dan petunjuk pemba
 <br /><br />
 <img alt="vtweb_indomrt" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt.png" /></p>
 
+    <hr />
+
+    <h3 id="dompetku">Indosat Dompetku</h3>
+
+    <p>Indosat Dompetku merupakan layanan uang elektronik (E-money) yang disediakan oleh Indosat yang memberikan kemudahan bagi customer dalam melakukan transaksi keuangan melalui ponsel. Customer harus melakukan registrasi nomor telepon terlebih dahulu sebelum menggunakannya untuk transaksi Indosat Dompetku.</p>
+
+    <p>Untuk mengaktifkan metode pembayaran Indosat Dompetku (otomatis aktif pada mode Sandbox), merchant perlu:</p>
+
+    <ol>
+      <li>Daftarkan metode pembayaran Indosat Dompetku dengan menghubungi sales representative Veritrans.</li>
+      <li>Menambahkan parameter <code>indosat_dompetku</code> pada variabel <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"indosat_dompetku"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Tab Indosat Dompetku dapat digunakan oleh pelanggan untuk melakukan transaksi. Form beserta petunjuk pembayaran menggunakan Indosat Dompetku akan ditampilkan pada halaman ini.
+<br /><br />
+<img alt="vtweb_tcash" class="img-responsive img-thumbnail" src="../../images/vtweb_dompetku.png" /></p>
+
     <p><br /></p>
 
     <hr />
@@ -1074,7 +1122,7 @@ Secara default, redirection URL dapat dikonfigurasi melalui MAP Veritrans melalu
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

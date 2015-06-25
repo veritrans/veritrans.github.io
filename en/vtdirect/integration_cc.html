@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,7 +54,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -300,6 +300,11 @@
       <a href="integration_indomrt.html"><img src="../../images/indomrt_icon_grey.png" /></a>
       </div>
   </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+      <div class="thumbnail">
+        <a href="integration_dompetku.html"><img src="../../images/dompetku_icon_gray.png" /></a>
+      </div>
+  </div>
 </div>
 <hr />
 <p><br /></p>
@@ -450,7 +455,7 @@ Make sure the javascript file path and CSS fancy box follows in accordance to yo
     <p><br />
 To improve the security of online transaction, we recommend you to activate the 3D Secure feature. There are 2 information components that need to be added for this feature to be utilized: acquiring bank (Merchant’s Bank) and transaction value.</p>
 
-    <p>If you are using sandbox environment, the acquiring bank is BNI and the transaction value is Rp 200.000,00. The sample script that we add in the tag <code>head</code> at the file <code>form_vtdirect.html</code>:
+    <p>If you are using sandbox environment, the acquiring bank is BNI and the transaction value is Rp 200.000,00. The sample script that we add in the tag <code>body</code> at the file <code>form_vtdirect.html</code>:
 <br /><br /></p>
 
 <pre><code class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
@@ -691,7 +696,7 @@ Sample script <code>checkout.php</code> to perform charge transaction (full tran
     <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Orange'</span>
     <span class="p">);</span>
 
-<span class="nv">$items_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
+<span class="nv">$item_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
 
 <span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
@@ -926,7 +931,7 @@ One of the most important information details in the JSON response is the status
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

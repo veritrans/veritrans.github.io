@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,7 +54,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -280,6 +280,7 @@
   <li>Obtain VT-Web URL</li>
   <li>Transaction Test</li>
   <li>Transaction Status</li>
+   <li>Handling HTTP Notification</li>
 </ol>
 
     <p><br /></p>
@@ -289,6 +290,7 @@
   <li class="active"><a href="#step1" data-toggle="tab"><span>Step 1</span>Obtain VT-Web URL</a></li>
   <li><a href="#step2" data-toggle="tab"><span>Step 2</span>Transaction Test</a></li>
   <li><a href="#step3" data-toggle="tab"><span>Step 3</span>Transaction Status</a></li>
+  <li><a href="#step4" data-toggle="tab"><span>Step 4</span>Handling Notification</a></li>
 </ul>
 
     <div class="tab-content">
@@ -397,7 +399,7 @@ PHP sample code that includes all transaction data is shown as follow:<br /></p>
     <span class="p">);</span>
 
 <span class="c1">// Optional
-</span><span class="nv">$items_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
+</span><span class="nv">$item_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
 
 <span class="c1">// Optional
 </span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -439,7 +441,7 @@ PHP sample code that includes all transaction data is shown as follow:<br /></p>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
     <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
-    <span class="s1">'item_details'</span> <span class="o">=&gt;</span> <span class="nv">$items_details</span><span class="p">,</span>
+    <span class="s1">'item_details'</span> <span class="o">=&gt;</span> <span class="nv">$item_details</span><span class="p">,</span>
     <span class="p">);</span>
 
 <span class="nv">$vtweb_url</span> <span class="o">=</span> <span class="nx">Veritrans_Vtweb</span><span class="o">::</span><span class="na">getRedirectionUrl</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
@@ -528,6 +530,7 @@ The list of status codes can be found in <a href="../api/status_code.html">Refer
   <li><a href="#bbmmoney" data-toggle="tab-code" data-lang="bbm">BBM Money</a></li>
   <li><a href="#mbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#indomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
+  <li><a href="#dompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
 </ul>
         <div class="tab-content">
 
@@ -931,6 +934,40 @@ If there is a pending transaction, you can do a payment simulation.
 
           </div>
           <!-- end of step Indomaret-->
+          <div class="tab-pane" id="dompetku">
+            <!-- step Indosat Dompetku-->
+
+            <h3 id="indosat-dompetku">Indosat Dompetku</h3>
+            <p>We will try to perform a successful Indosat Dompetku transaction.<br />The dummy Indosat Dompetku credentials that can be used is:<br /></p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Fields</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Accept number</td>
+                  <td>08123456789</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br />
+<br />
+Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
+<br />
+<img alt="VT-Web dompetku Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_dompetku_test1.png" />
+<br /><br />
+Click Confirm Payment and a VT-Web result payment page will be displayed.
+<br />
+<img alt="VT-Web dompetku Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_dompetku_test2.png" />
+<br /></p>
+
+          </div>
+          <!-- end of step dompetku-->
         </div>
         <!-- end of tab-content u/ testing-->
       </div>
@@ -997,6 +1034,7 @@ If there is a pending transaction, you can do a payment simulation.
   <li><a href="#statusbbmmoney" data-toggle="tab-code" data-lang="bbm">BBM Money</a></li>
   <li><a href="#statusmbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
+  <li><a href="#statusdompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
 </ul>
 
         <div class="tab-content">
@@ -1098,67 +1136,11 @@ If there is a pending transaction, you can do a payment simulation.
 
             <p><br /></p>
 
-            <h4 id="handling-https-notification">Handling HTTP(S) Notification</h4>
-
-            <p>The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing <strong>Veritrans-PHP</strong> library. This PHP code is executed when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br /></p>
-
-<pre><code class="highlight php">
-<span class="cp">&lt;?php</span>
-
-<span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
-
-<span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
-<span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
-<span class="nv">$order_id</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">;</span>
-<span class="nv">$fraud</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'capture'</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// For credit card transaction, we need to check whether transaction is challenge by FDS or not
-</span>  <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'credit_card'</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s1">'challenge'</span><span class="p">){</span>
-      <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
-</span>      <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
-</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
-      <span class="p">}</span> 
-      <span class="k">else</span> <span class="p">{</span>
-      <span class="c1">// TODO set payment status in merchant's database to 'Success'
-</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
-</span>  <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> 
-  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Pending'
-</span>  <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> 
-  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
-</span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
-
-</code></pre>
-
-            <div class="alert alert-warning" role="alert">
-              <p><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
-  <span class="sr-only">Warning:</span>
-<strong>Note:</strong></p>
-
-              <p>For merchant's security,<br />manual checking of Veritrans transaction status is recommended through <a href="../../id/api/methods.html#Status">Get Status API</a>.</p>
-            </div>
-
-            <p><br /></p>
-
             <hr />
 
             <h3 id="merchant-admin-portalmap-transaction-status">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for credit card:
 <img alt="map_transaction" class="img-responsive img-thumbnail" src="../../images/map_transaction.png" /></p>
@@ -1274,7 +1256,7 @@ PUT PHP CODE
 
             <h3 id="merchant-admin-portalmap-transaction-status-1">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for Permata Virtual Account:
 <img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/transfer_status.png" /></p>
@@ -1379,7 +1361,7 @@ PUT PHP CODE
 
             <h3 id="merchant-admin-portalmap-transaction-status-2">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for Mandiri clickpay:
 <img alt="VT-Web Mandiri Test 3" class="img-responsive img-thumbnail" src="../../images/mandiri_status.png" /></p>
@@ -1489,7 +1471,7 @@ PUT PHP CODE
 
             <h3 id="merchant-admin-portalmap-transaction-status-3">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for CIMB Clicks:
 <img alt="VT-Web CIMB Test 4" class="img-responsive img-thumbnail" src="../../images/cimb_status.png" /></p>
@@ -1606,7 +1588,7 @@ PUT PHP CODE
 
             <h3 id="merchant-admin-portalmap-transaction-status-4">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for e-Pay BRI:
 <img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../../images/epay_status.png" /></p>
@@ -1711,7 +1693,7 @@ PUT PHP CODE
 
             <h3 id="merchant-admin-portalmap-transaction-status-5">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for Telkomsel Cash:
 <img alt="VT-Web Tcash Test 3" class="img-responsive img-thumbnail" src="../../images/tcash_status.png" /></p>
@@ -1821,7 +1803,7 @@ PUT PHP CODE
 
             <h3 id="merchant-admin-portalmap-transaction-status-6">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for XL Tunai:
 <img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/xl_status.png" /></p>
@@ -1931,7 +1913,7 @@ PUT PHP CODE
 
             <h3 id="merchant-admin-portalmap-transaction-status-7">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for BBM Money:
 <img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/bbm_status.png" /></p>
@@ -2042,7 +2024,7 @@ PUT PHP CODE
 
             <h3 id="merchant-admin-portalmap-transaction-status-8">Merchant Admin Portal(MAP) Transaction Status</h3>
 
-            <p>Merchant can check the transactions status under <a href="https://my.sandbox.veritrans.co.id/payments">Payments</a> on MAP.</p>
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
 
             <p>Example of a successful transaction status for Mandiri Bill Payment:
 <img alt="VT-Web mbill Test 3" class="img-responsive img-thumbnail" src="../../images/mbill_status.png" /></p>
@@ -2189,6 +2171,105 @@ PUT PHP CODE
 
           </div>
           <!-- End of Indomaret Status -->
+          <div class="tab-pane" id="statusdompetku">
+            <!-- Indosat Dompetku Status -->
+
+            <h3 id="indosat-dompetku-1">Indosat Dompetku</h3>
+
+            <p>HTTP Notification example of a successful Indosat Dompetku transaction:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b7696f1-f9ca-4f4b-a389-ede2c2dddb5c"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtdompetku03"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"indosat_dompetku"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-06-24 11:20:24"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"73c70c8354e0705a16bd5d47d0ab3029a70b79bef0fe3b29161557110205d3679f0ea177101f56fe6313a887f340be7d302750ce8a4e0f67753c70548159895e"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Note</strong>:<br />For more information about Indosat Dompetku response, please check <a href="../api/methods.html#dompetku">here</a>.</p>
+
+            </div>
+
+            <p><br /></p>
+
+            <h4 id="available-https-post-notification-status-10">Available HTTP(S) POST Notification Status</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaction is denied by the provider.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Funds from the transaction has moved from customer to merchant's account.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- LIST OF STATUS THAT IS AVAILABLE IN THE FUTURE
+|refund | Transaction is fully refunded to the customer.|
+|partial_refund | Transaction is partially refunded to the customer.|
+-->
+
+            <p><br /></p>
+
+            <!--Update PLEASE
+#### Handling HTTP(S) Notification
+The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing **Veritrans-PHP** library. This PHP code is executed when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br />
+~~~ php
+PUT PHP CODE
+~~~
+-->
+
+            <hr />
+
+            <h3 id="merchant-admin-portalmap-transaction-status-10">Merchant Admin Portal(MAP) Transaction Status</h3>
+
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
+
+            <p>Example of a successful transaction status for Indosat Dompetku:
+<img alt="VT-Web dompetku Test 3" class="img-responsive img-thumbnail" src="../../images/dompetku_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>List of available MAP transaction status for Indosat Dompetku is described below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaction is denied by the Provider.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of dompetku Status -->
 
         </div>
         <!-- End of Tab-Content u/ Status -->
@@ -2197,6 +2278,66 @@ PUT PHP CODE
 
       </div>
       <!-- end of step 3-->
+      <div class="tab-pane" id="step4">
+        <!-- step 4-->
+
+        <h2 id="handling-https-notification">Handling HTTP(S) Notification</h2>
+
+        <p>The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing <strong>Veritrans-PHP</strong> library. This PHP code is executed when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br /></p>
+
+        <p><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+<span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
+<span class="nv">$order_id</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">;</span>
+<span class="nv">$fraud</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'capture'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// For credit card transaction, we need to check whether transaction is challenge by FDS or not
+</span>  <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'credit_card'</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s1">'challenge'</span><span class="p">){</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
+</span>      <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
+</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
+      <span class="p">}</span> 
+      <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Success'
+</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
+</span>  <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> 
+  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Pending'
+</span>  <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span> 
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
+</span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+
+</code></pre>
+
+        <div class="alert alert-info" role="alert">
+          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Info</strong>:<br /> For security reason, if you using Veritrans_Notification class like the example. Our veritrans php library is already doing the <a href="../api/methods.html#Validation">challenge notification</a> process.</p>
+        </div>
+
+        <p><br /><br /></p>
+
+      </div>
+      <!-- end of step 4-->
     </div>
     <!-- end of STEPS tab-content-->
   </div>
@@ -2225,7 +2366,7 @@ PUT PHP CODE
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

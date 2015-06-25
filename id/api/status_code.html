@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,7 +56,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -264,15 +264,15 @@
   <tbody>
     <tr>
       <td>200</td>
-      <td>OK, Request dan transaksi berhasil (authorize, capture, cancel, get status, approve transaksi), telah diterima oleh Veritrans dan bank.</td>
+      <td><strong>Kartu Kredit:</strong> <code>Sukses</code>. Request dan transaksi berhasil (authorize, capture, cancel, get status, approve transaksi), telah diterima oleh Veritrans dan bank. <br /><br /> <strong>Metode pembayaran lainnya:</strong> <code>Sukses</code>. Transaksi berhasil/settlement.</td>
     </tr>
     <tr>
       <td>201</td>
-      <td>Pending, Transaksi berhasil namun belum selesai diproses, misalnya transaksi dengan status 'challenge' atau 'pending'.</td>
+      <td><strong>Kartu Kredit:</strong> <code>Challenge</code>. Transaksi berhasil namun belum selesai diproses, diperlukan manual <em>action</em> oleh merchant untuk menyelesaikan proses transaksi. Jika merchant tidak melakukan <em>action</em> apapun hingga waktu settlement (H+1 pkl 16.00 WIB), Veritrans akan membatalkan transaksi tersebut. <br /><br /> <strong>Bank Transfer:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 24 jam. <br /><br /> <strong>Cimb Clicks:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 2 jam. <br /><br /> <strong>BRI ePay:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 2 jam. <br /><br /> <strong>Klik BCA:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 2 jam. <br /><br /> <strong>BCA Klikpay:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 2 jam. <br /><br /> <strong>Mandiri Bill Payment:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 2 jam. <br /><br /> <strong>XL Tunai:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 2 jam. <br /><br /> <strong>Indomaret:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 2 jam. <br /><br /> <strong>BBM Money:</strong> <code>Pending</code>. Transaksi berhasil namun proses pembayaran belum selesai dilakukan oleh customer. Secara <em>default</em> transaksi akan kadaluarsa dalam waktu 2 jam.</td>
     </tr>
     <tr>
       <td>202</td>
-      <td>Denied, Request berhasil tapi transaksi ditolak oleh bank atau Fraud Detection System Veritrans.</td>
+      <td><strong>Kartu Kredit:</strong> <code>Gagal</code>. Request berhasil tapi transaksi ditolak oleh penyedia pembayaran atau Fraud Detection System Veritrans. <br /><br /> <strong>Metode pembayaran lainnya:</strong> <code>Gagal</code>. Request berhasil tapi transaksi ditolak penyedia pembayaran.</td>
     </tr>
   </tbody>
 </table>
@@ -338,7 +338,7 @@
     </tr>
     <tr>
       <td>407</td>
-      <td>Sumber sudah tidak tersedia dan tidak akan tersedia lagi.</td>
+      <td>Transaksi telah lewat dari masa berlaku.</td>
     </tr>
     <tr>
       <td>408</td>
@@ -424,7 +424,7 @@
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

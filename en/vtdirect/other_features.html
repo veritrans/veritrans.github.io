@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,7 +54,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -1032,13 +1032,9 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
     <p>Point transaction is a transaction in which payment can be made by the reward points on credit cards in full or partial. For now, point transaction can only be used with BNI acquiring and using BNI credit card (On Us).
 <br /><br /></p>
 
-    <h3 id="point-transaction-for-3d-secure-merchant">Point Transaction for 3D Secure Merchant</h3>
+    <h3 id="getting-point-information">Getting point information</h3>
 
-    <h4 id="getting-point-information">1. Getting point information</h4>
-
-    <p><strong>* Token request process</strong></p>
-
-    <p>The parameters need to be added during get token request process is <code>point = true</code>.<br /> Add the following script during the get token request: </p>
+    <h4 id="token-request-process">Token request process</h4>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -1052,12 +1048,8 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
       <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
-
-      <span class="c1">// Ask for transaction point</span>
-      <span class="s1">'point'</span> <span class="p">:</span> <span class="kc">true</span>
     <span class="p">}</span>
   <span class="p">};</span>
 
@@ -1068,12 +1060,12 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
 
     <p>Result of the above token request is <code>token_id</code> used to obtain point information<br /><br /></p>
 
-    <p><strong>* Inquiry point process</strong></p>
+    <h4 id="inquiry-point-process">Inquiry point process</h4>
 
-    <p><code>GET {api_url}/v2/point_inquiry/{token_id}</code>
+    <p><code>GET https://api.veritrans.co.id/v2/point_inquiry/{token_id}</code>
 <br /><br /></p>
 
-    <h4 id="success-response">Success response</h4>
+    <p><strong>Success response</strong></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -1087,7 +1079,7 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
 
     <p><br /></p>
 
-    <h4 id="failed-response">Failed response</h4>
+    <p><strong>Failed response</strong></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"402"</span><span class="p">,</span>
@@ -1104,7 +1096,7 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
     <p>Failed response can be invalid card number or Merchant TID is not supported for point transaction.
 <br /><br /></p>
 
-    <h4 id="using-a-point-to-make-payment">2. Using a point to make payment</h4>
+    <h4 id="using-a-point-to-make-payment">Using a point to make payment</h4>
 
     <p>Point balance that you have can be used to make payments, the parameters that need to be added when the charge process is <code>point_redeem_amount</code>. Script that is modified during charge process is as followed:</p>
 
@@ -1131,35 +1123,7 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p><br /></p>
-
-    <h3 id="point-transaction-for-non-3d-secure-merchant-normal">Point transaction for non-3D Secure merchant (Normal)</h3>
-
-    <p>For non-3D Secure merchant, the inquiry point and charge process is same as 3D Secure merchant. The difference occurs when the token request, Merchant no need to includes <code>point = true</code> parameter.</p>
-
-    <p>Script that is modified during token request process is as followed:</p>
-
-<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  
-  <span class="p">...</span>
-
-  <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="s1">'card_number'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-
-  <span class="p">...</span>
-
-<span class="nt">&lt;/script&gt;</span>
-</code></pre>
-
-    <p>Result of the above token request is <code>token_id</code> used to obtain point information.<br /><br /></p>
+    <p><br /><br /></p>
 
     <div class="alert alert-info" role="alert">
       <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
@@ -1193,7 +1157,7 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

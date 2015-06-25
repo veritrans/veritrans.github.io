@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,7 +56,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -300,6 +300,11 @@
       <a href="integration_indomrt.html"><img src="../../images/indomrt_icon_grey.png" /></a>
       </div>
   </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+      <div class="thumbnail">
+        <a href="integration_dompetku.html"><img src="../../images/dompetku_icon_gray.png" /></a>
+      </div>
+  </div>
 </div>
 <hr />
 <p><br /></p>
@@ -448,7 +453,7 @@ Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fanc
 
     <p>Untuk meningkatkan keamanan transaksi online, kami sangat menyarankan anda untuk mengaktifkan fitur 3D Secure. Ada 2 informasi yang perlu diberikan agar fitur ini dapat digunakan: acquiring bank (Bank Penerbit Kartu Kredit Merchant) dan nilai transaksi.</p>
 
-    <p>Jika anda menggunakan environment sandbox, acquiring bank adalah BNI, dan nilai transaksi adalah Rp 200.000,00, contoh script yang ditambakan ke dalam tag <code>head</code> file <code>form_vtdirect.html</code>:
+    <p>Jika anda menggunakan environment sandbox, acquiring bank adalah BNI, dan nilai transaksi adalah Rp 200.000,00, contoh script yang ditambahkan ke dalam tag <code>body</code> file <code>form_vtdirect.html</code>:
 <br /><br /></p>
 
 <pre><code class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
@@ -685,7 +690,7 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
     <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Jeruk'</span>
     <span class="p">);</span>
 
-<span class="nv">$items_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
+<span class="nv">$item_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
 <span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
     <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
@@ -918,7 +923,7 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status code. S
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

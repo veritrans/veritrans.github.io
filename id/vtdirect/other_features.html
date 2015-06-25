@@ -19,7 +19,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
@@ -56,7 +56,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -258,6 +258,13 @@ Saat ini VT-Direct memiliki fitur tambahan untuk metode pembayaran dengan kartu 
   <li>One Click</li>
   <li>Two Clicks</li>
   <li>Transaksi Point</li>
+</ol>
+
+<p>VT-Direct juga menawarkan beberapa fitur untuk charge, antara lain:</p>
+
+<ol>
+  <li>Set Custom Field</li>
+  <li>Set Custom Expiration</li>
 </ol>
 
 <p>Berikut adalah tutorial untuk melakukan integrasi menggunakan fitur - fitur sesuai dengan kebutuhan anda.
@@ -1026,13 +1033,11 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
     <p>Transaksi point adalah transaksi di mana proses pembayaran tagihannya dapat menggunakan point reward dari kartu kredit baik secara keseluruhan ataupun sebagian. Untuk saat ini transaksi point hanya dapat digunakan dengan acquiring BNI dan menggunakan kartu kredit BNI (On Us).
 <br /><br /></p>
 
-    <h3 id="transaksi-point-untuk-merchant-3d-secure">Transaksi point untuk merchant 3D Secure</h3>
+    <h3 id="mendapatkan-informasi-point-yang-dapat-digunakan">Mendapatkan informasi point yang dapat digunakan</h3>
 
-    <h4 id="mendapatkan-informasi-point-yang-dapat-digunakan">1. Mendapatkan informasi point yang dapat digunakan</h4>
+    <h4 id="proses-request-token">Proses Request token</h4>
 
-    <p><strong>* Proses Request token</strong></p>
-
-    <p>Parameter yang perlu ditambahkan saat proses request token adalah <code>point = true</code>. Contoh modifikasi script saat request token adalah sebagai berikut:</p>
+    <p>Proses request token untuk transaksi point sama seperti proses token biasa.</p>
 
 <pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
@@ -1046,12 +1051,8 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
       <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
-
-      <span class="c1">// Ask for transaction point</span>
-      <span class="s1">'point'</span> <span class="p">:</span> <span class="kc">true</span>
     <span class="p">}</span>
   <span class="p">};</span>
 
@@ -1062,12 +1063,12 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
 
     <p>Hasil dari proses request token di atas adalah <code>token_id</code> yang digunakan untuk mendapatkan informasi point.<br /><br /></p>
 
-    <p><strong>* Proses inquiry point</strong></p>
+    <h4 id="proses-inquiry-point">Proses inquiry point</h4>
 
-    <p><code>GET {api_url}/v2/point_inquiry/{token_id}</code>
+    <p><code>GET https://api.veritrans.co.id/v2/point_inquiry/{token_id}</code>
 <br /><br /></p>
 
-    <h4 id="respon-sukses">Respon Sukses</h4>
+    <p><strong>Respon Sukses</strong></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
@@ -1081,7 +1082,7 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
 
     <p><br /></p>
 
-    <h4 id="respon-gagal">Respon Gagal</h4>
+    <p><strong>Respon Gagal</strong></p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"402"</span><span class="p">,</span>
@@ -1098,7 +1099,7 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
     <p>Kegagalan bisa disebabkan karena nomor kartu yang salah atau Merchant TID belum mendukung transaksi point.
 <br /><br /></p>
 
-    <h4 id="menggunakan-point-untuk-melakukan-pembayaran">2. Menggunakan point untuk melakukan pembayaran</h4>
+    <h4 id="menggunakan-point-untuk-melakukan-pembayaran">Menggunakan point untuk melakukan pembayaran</h4>
 
     <p>Point balance yang anda miliki dapat digunakan untuk melakukan pembayaran, parameter yang perlu ditambahkan saat proses charge adalah <code>point_redeem_amount</code>. Contoh modifikasi script saat proses charge adalah sebagai berikut:</p>
 
@@ -1125,35 +1126,7 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
 <span class="cp">?&gt;</span>
 </code></pre>
 
-    <p><br /></p>
-
-    <h3 id="transaksi-point-untuk-merchant-non-3d-secure-normal">Transaksi point untuk merchant non 3D Secure (Normal)</h3>
-
-    <p>Untuk Merchant non-3D Secure, proses inquiry point dan charge yang dilakukan sama seperti merchant 3D Secure, perbedaan terjadi saat proses request token dimana merchant TIDAK PERLU menyertakan parameter <code>point = true</code>. </p>
-
-    <p>Contoh modifikasi script saat request token adalah sebagai berikut:</p>
-
-<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  
-  <span class="p">...</span>
-
-  <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="s1">'card_number'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-
-  <span class="p">...</span>
-
-<span class="nt">&lt;/script&gt;</span>
-</code></pre>
-
-    <p>Hasil dari proses request token di atas adalah <code>token_id</code> yang digunakan untuk mendapatkan informasi point.<br /><br /></p>
+    <p><br /><br /></p>
 
     <div class="alert alert-info" role="alert">
       <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
@@ -1187,7 +1160,7 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

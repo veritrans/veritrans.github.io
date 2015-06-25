@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,7 +54,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -300,6 +300,11 @@
       <a href="integration_indomrt.html"><img src="../../images/indomrt_icon_grey.png" /></a>
       </div>
   </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+      <div class="thumbnail">
+        <a href="integration_dompetku.html"><img src="../../images/dompetku_icon_gray.png" /></a>
+      </div>
+  </div>
 </div>
 
 <hr />
@@ -405,7 +410,7 @@
     <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Jeruk'</span>
     <span class="p">);</span>
 
-<span class="nv">$items_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
+<span class="nv">$item_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
 
 <span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
@@ -423,7 +428,7 @@
       <span class="s1">'bill_info2'</span> <span class="o">=&gt;</span> <span class="s2">"debt"</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
-  <span class="s1">'item_details'</span>        <span class="o">=&gt;</span> <span class="nv">$items_details</span><span class="p">,</span>
+  <span class="s1">'item_details'</span>        <span class="o">=&gt;</span> <span class="nv">$item_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
 
@@ -453,7 +458,7 @@ On the above example, we utilize the mandiri bill payment data, transaction data
   "payment_type" =&gt; "echannel",
   "transaction_time" =&gt; "2014-04-14 16:03:51",
   "transaction_status" =&gt; "pending",
-  "bill_key" =&gt; "060811223344",
+  "bill_key" =&gt; "000182",
   "biller_code" =&gt; "70012",
   "gross_amount" =&gt; "145000.00"
 );
@@ -566,7 +571,7 @@ The complete list of status code can be found at <a href="../api/status_code.htm
     "payment_type": "echannel",
     "transaction_time": "2014-11-07 10:43:17",
     "transaction_status": "settlement",
-    "bill_key" =&gt; "060811223344",
+    "bill_key" =&gt; "000182",
     "biller_code" =&gt; "70012",
     "signature_key": "4533cbaf612267f5da81a17ff8ab8b86d39de8a1877e6125f39782baac3fe211469532f20e7bf5cc88eb51dfc36eca098578503c3cc5a880a0245e733579afc3",
     "gross_amount": 145000.00
@@ -601,7 +606,7 @@ The other alternative to check transaction status is to use the command on <a hr
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

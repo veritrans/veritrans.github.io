@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,7 +54,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -320,6 +320,13 @@
           <td> </td>
           <td> </td>
         </tr>
+        <tr>
+          <td> </td>
+          <td><a href="#dompetku">Indosat Dompetku</a></td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
       </tbody>
     </table>
 
@@ -536,7 +543,7 @@ The e-Pay BRI tab will be shown at the VT-Web payment page. Information and proc
 
     <ol>
       <li>Sign on for Telkomsel Cash method of payment by contacting Veritrans sales representative.</li>
-      <li>Add the <code>telkomsel cash</code>  parameter on variable <code>enabled_payments</code>.</li>
+      <li>Add the <code>telkomsel_cash</code>  parameter on variable <code>enabled_payments</code>.</li>
     </ol>
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
@@ -731,6 +738,47 @@ The Mandiri Bill Payment will be shown at the VT-Web payment page. Information a
 The Indomaret page will be shown at the VT-Web. Information and procedure to perform Indomaret transaction is displayed on the figure below.
 <br /><br />
 <img alt="vtweb_indomrt" class="img-responsive img-thumbnail" src="../../images/vtweb_indomrt.png" /></p>
+
+    <hr />
+
+    <h3 id="dompetku">Indosat Dompetku</h3>
+
+    <p>Indosat Dompetku is an electronic money (E-money) from Indosat, that allows Indosat customers to pay online transactions via mobile phone. This method needs the customer to perform transaction by filling their indosat phone number as validation of transactions.</p>
+
+    <p>To activate Indosat Dompetku method of payment (automatically active on Sandbox mode), merchant needs to:</p>
+
+    <ol>
+      <li>Sign on for Indosat Dompetku method of payment by contacting Veritrans sales representative.</li>
+      <li>Add the <code>indosat_dompetku</code> parameter on variable <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"indosat_dompetku"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+The Indosat Dompetku tab will be shown at the VT-Web payment page. Information and procedure to perform Indosat Dompetku transaction is displayed on the figure below.
+<br /><br />
+<img alt="vtweb_dompetku" class="img-responsive img-thumbnail" src="../../images/vtweb_dompetku.png" /></p>
 
     <hr />
 
@@ -1074,7 +1122,7 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>, and 
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

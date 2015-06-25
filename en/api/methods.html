@@ -18,7 +18,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
@@ -54,7 +54,7 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product.html">Product</a></li>
+        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
         <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
@@ -253,44 +253,47 @@
     <thead>
       <tr>
         <th>Endpoint</th>
-        <th>HTTP Method</th>
         <th>Definition</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>BASE_URL/<a href="#Get_Token">token</a></td>
-        <td>POST</td>
+        <td>POST <br /> https://api.veritrans.co.id/v2/<a href="#Get_Token">token</a></td>
         <td>Tokenize Credit Card information before being charged</td>
       </tr>
       <tr>
-        <td>BASE_URL/<a href="#Charge">charge</a></td>
-        <td>POST</td>
+        <td>POST <br /> https://api.veritrans.co.id/v2/<a href="#Charge">charge</a></td>
         <td>Perform a transaction with various available payment methods and features</td>
       </tr>
       <tr>
-        <td>BASE_URL/<a href="#Capture">capture</a></td>
-        <td>POST</td>
+        <td>POST <br /> https://api.veritrans.co.id/v2/<a href="#Capture">capture</a></td>
         <td>Charge a Pre-Authorized transaction for card payment</td>
       </tr>
       <tr>
-        <td>BASE_URL/<code>query</code>/<a href="#Approve">approve</a></td>
-        <td>POST</td>
+        <td>POST <br /> https://api.veritrans.co.id/v2/<code>query</code>/<a href="#Approve">approve</a></td>
         <td>Approve a transaction with certain <code>order_id</code> or <code>transaction_id</code> which gets challenge status from Fraud Detection System.</td>
       </tr>
       <tr>
-        <td>BASE_URL/<code>query</code>/<a href="#Cancel">cancel</a></td>
-        <td>POST</td>
+        <td>POST <br /> https://api.veritrans.co.id/v2/<code>query</code>/<a href="#Cancel">cancel</a></td>
         <td>Cancel a transaction with certain <code>order_id</code> or <code>transaction_id</code>. Cancelation can only be done before settlement process.</td>
       </tr>
       <tr>
-        <td>BASE_URL/<code>query</code>/<a href="#Status">status</a></td>
-        <td>GET</td>
+        <td>GET <br /> https://api.veritrans.co.id/v2/<code>query</code>/<a href="#Status">status</a></td>
         <td>Get information status of a transaction with certain <code>order_id</code> or <code>transaction_id</code>.</td>
+      </tr>
+      <tr>
+        <td>POST <br /> https://api.veritrans.co.id/v2/<code>query</code>/<a href="#Expire">expire</a></td>
+        <td>expire a transaction with certain <code>order_id</code> or <code>transaction_id</code>. expire can only be done for pending status transaction.</td>
       </tr>
     </tbody>
   </table>
 
+</div>
+
+<div class="alert alert-info" role="alert">
+  <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Note:</strong> on Sandbox use <code>https://api.sandbox.veritrans.co.id</code></p>
 </div>
 
 <p id="Get_Token"><br />
@@ -585,7 +588,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
     <tbody>
       <tr>
         <td>payment_type <em>String</em></td>
-        <td>Choose the desired payment method. <br /> <strong>VT-Direct</strong>: <code>credit_card</code>, <code>bank_transfer</code>, <code>mandiri_clickpay</code>, <code>cimb_clicks</code>, <code>bca_klikpay</code>, <code>bri_epay</code>, <code>telkomsel_cash</code>, <code>xl_tunai</code>, <code>echannel</code>, <code>bbm_money</code>, or <code>cstore</code>.<br /><strong>VT-WEB</strong>: <code>vtweb</code>.</td>
+        <td>Choose the desired payment method. <br /> <strong>VT-Direct</strong>: <code>credit_card</code>, <code>bank_transfer</code>, <code>mandiri_clickpay</code>, <code>cimb_clicks</code>, <code>bca_klikpay</code>, <code>bri_epay</code>, <code>telkomsel_cash</code>, <code>xl_tunai</code>, <code>echannel</code>, <code>bbm_money</code>, <code>cstore</code> or <code>indosat_dompetku</code>.<br /><strong>VT-WEB</strong>: <code>vtweb</code>.</td>
       </tr>
       <tr>
         <td>custom_field1 <em>String</em></td>
@@ -1189,7 +1192,60 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
     </table>
 
   </div>
+  <div class="nested-table-wrapper">
 
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#cstore_attr">cstore</a> <em>JSON Object</em></td>
+          <td>VT-Direct charge details using Indomaret.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="cstore_attr" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Store <em>String(20)</em></td>
+          <td>Store name.</td>
+        </tr>
+        <tr>
+          <td>Message <em>String(20)</em></td>
+          <td>Label to be displayed in Indomaret POS.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#indosat_dompetku_attr">indosat_dompetku</a> <em>JSON Object</em></td>
+          <td>VT-Direct charge details using Dompetku.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="indosat_dompetku_attr" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>msisdn <em>String(12)</em></td>
+          <td>Customer phone number.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 </div>
 
 <p><br /></p>
@@ -2772,7 +2828,7 @@ Add this additional attribute when charging the initial transaction for Two Clic
 
 <h4 id="two-clicks-charge">2. Two Clicks Charge</h4>
 
-<p>You need the <a href="#Feature_Get_Token">Two Clicks Token</a> from Get Token in order to charge the following Two Clicks transaction.<br /></p>
+<p>You need the Two Clicks Token from Get Token in order to charge the following Two Clicks transaction.<br /></p>
 
 <div class="table-wrapper">
 
@@ -3018,7 +3074,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <h4 id="bank-transfer-permata-virtual-account">Bank Transfer: Permata Virtual Account</h4>
 
-<p>The following attribute is required to charge in Permata Virtual Account:</p>
+<p>The following attributes are required to charge in Permata Virtual Account:</p>
 
 <div class="table-wrapper">
 
@@ -3691,8 +3747,24 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="c1">//Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span>
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
         <span class="p">},</span>
+
+    <span class="c1">//Required    </span>
+    <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
+          <span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+          <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+         <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
+          <span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
+          <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
 
     <span class="c1">//Required</span>
     <span class="s2">"echannel"</span> <span class="p">:</span> <span class="p">{</span>
@@ -3779,7 +3851,7 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015­01­21 12:00:31"</span><span class="p">,</span>
     <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span> 
     <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span> 
-    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000857123456"</span><span class="p">,</span> 
+    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000182"</span><span class="p">,</span> 
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"400000.00"</span>
 <span class="p">}</span>
 </code></pre>
@@ -3828,7 +3900,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <h4 id="direct-debit-mandiri-clickpay">Direct Debit: Mandiri clickpay</h4>
 
-<p>The following attribute is required to charge in Mandiri Clickpay:</p>
+<p>The following attributes are required to charge in Mandiri Clickpay:</p>
 
 <div class="table-wrapper">
 
@@ -4103,7 +4175,7 @@ Add this additional attribute when charging the initial transaction for One Clic
   <span class="c1">// Required to configure mandiri clickpay</span>
     <span class="s2">"mandiri_clickpay"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"card_number"</span><span class="p">:</span> <span class="s2">"4111111111111111"</span><span class="p">,</span>
-    <span class="s2">"input1"</span><span class="p">:</span> <span class="s2">"111111111`"</span><span class="p">,</span>
+    <span class="s2">"input1"</span><span class="p">:</span> <span class="s2">"1111111111"</span><span class="p">,</span>
     <span class="s2">"input2"</span><span class="p">:</span> <span class="s2">"145000"</span><span class="p">,</span>
     <span class="s2">"input3"</span><span class="p">:</span> <span class="s2">"54321"</span><span class="p">,</span>
     <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"000000"</span>
@@ -4238,7 +4310,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <h4 id="direct-debit-cimb-clicks">Direct Debit: CIMB Clicks</h4>
 
-<p>The following attribute is required to charge in CIMB Clicks:</p>
+<p>The following attributes are required to charge in CIMB Clicks:</p>
 
 <div class="table-wrapper">
 
@@ -4631,7 +4703,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <h4 id="direct-debit-e-pay-bri">Direct Debit: e-pay BRI</h4>
 
-<p>The following attribute is required to charge in e-pay BRI:</p>
+<p>The following attributes are required to charge in e-pay BRI:</p>
 
 <div class="table-wrapper">
 
@@ -4998,7 +5070,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <h4 id="direct-debit-bca-klikpay">Direct Debit: BCA KlikPay</h4>
 
-<p>The following attribute is required to charge in BCA KlikPay:</p>
+<p>The following attributes are required to charge in BCA KlikPay:</p>
 
 <div class="table-wrapper">
 
@@ -5268,7 +5340,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <h4 id="tcashresponse">e-Wallet: Telkomsel Cash</h4>
 
-<p>The following attribute is required to charge in Telkomsel Cash:</p>
+<p>The following attributes are required to charge in Telkomsel Cash:</p>
 
 <div class="table-wrapper">
 
@@ -5543,7 +5615,7 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
         <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
         <span class="s2">"price"</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
-        <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Mie Ayam Original"</span>
     <span class="p">}</span> <span class="p">],</span>
 
@@ -5676,7 +5748,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <h4 id="xl-tunai">e-Wallet: XL Tunai</h4>
 
-<p>The following attribute is required to charge in XL Tunai:</p>
+<p>The following attributes are required to charge in XL Tunai:</p>
 
 <div class="table-wrapper">
 
@@ -6038,7 +6110,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <h4 id="bbm_money">e-Wallet: BBM Money</h4>
 
-<p>The following attribute is required to charge in BBM Money:</p>
+<p>The following attributes are required to charge in BBM Money:</p>
 
 <div class="table-wrapper">
 
@@ -6267,14 +6339,13 @@ Add this additional attribute when charging the initial transaction for One Clic
 <pre><code class="highlight json"><span class="p">{</span>
   <span class="c1">// Required</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bbm_money"</span>     <span class="c1">// &lt;-- To flag that BBM Money is used</span>
-  <span class="p">}</span><span class="err">,</span>
 
   <span class="c1">// Required</span>
   <span class="s2">"transaction_details"</span><span class="err">:</span> <span class="p">{</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
   <span class="p">}</span>
-<span class="err">}</span>
+<span class="p">}</span>
 </code></pre>
 
 <h4 id="BBMmoneyresponse">BBM Money Response</h4>
@@ -6461,6 +6532,403 @@ example: http://example.com/checkstatus?order_id=12345</p>
       <tr>
         <td><code>400</code> Validation error</td>
         <td>Validation Error, merchant send bad request data example; validation error, invalid transaction type, invalid credit card format, etc.</td>
+      </tr>
+      <tr>
+        <td><code>401</code> Access Denied</td>
+        <td>Invalid client key or server key</td>
+      </tr>
+      <tr>
+        <td><code>402</code> Access Denied</td>
+        <td>Merchant doesn't have access for this payment type</td>
+      </tr>
+      <tr>
+        <td><code>406</code> Duplicate Order ID</td>
+        <td>Order ID has been used before or transaction has been paid.</td>
+      </tr>
+      <tr>
+        <td><code>410</code> Account Inactive</td>
+        <td>Merchant account is deactivated or not active for a long period</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p><br /><br /></p>
+
+<h4 id="dompetku">e-Wallet: Indosat Dompetku</h4>
+
+<p>The following attributes are required to charge in Indosat Dompetku:</p>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>JSON Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>payment_type <em>String</em> <strong>Required</strong></td>
+        <td>Set Indosat Dompetku payment method. <br /> Value is: <code>"indosat_dompetku"</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#transaction_details_indosatdompetku">transaction_details</a> <em>JSON Object</em> <strong>Required</strong></td>
+          <td>Gross payment that will be paid by customer.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="transaction_details_indosatdompetku" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>order_id <em>String(50)</em> <strong>Required</strong></td>
+          <td>Order ID of the transaction.</td>
+        </tr>
+        <tr>
+          <td>gross_amount <em>Long</em> <strong>Required</strong></td>
+          <td>Gross value of the transaction.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#indosat_dompetku_vtdirect">indosat_dompetku</a> <em>JSON Object</em> <strong>Required</strong></td>
+          <td>VT-Direct charge details using Indosat Dompetku.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="indosat_dompetku_vtdirect" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>msisdn <em>String(12)</em> <strong>Required</strong></td>
+          <td>Customer phone number</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#customer_details_indosatdompetku">customer_details</a> <em>JSON Object</em> <strong>Optional</strong></td>
+          <td>Customer data that makes the purchase.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="customer_details_indosatdompetku" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
+          <td>Customer's first name.</td>
+        </tr>
+        <tr>
+          <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
+          <td>Customer's last name.</td>
+        </tr>
+        <tr>
+          <td>email <em>String(45)</em> <strong>Optional</strong></td>
+          <td>Customer's Email.<br /> <strong>Note:</strong> There will be validation check for the email address format.</td>
+        </tr>
+        <tr>
+          <td>phone <em>String(19)</em> <strong>Optional</strong></td>
+          <td>Customer's phone number. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="nested-table-wrapper">
+
+      <table>
+        <tbody>
+          <tr>
+            <td><a data-toggle="collapse" href="#billing_add_indosatdompetku">billing_address</a> <em>JSON Array</em> <strong>Optional</strong></td>
+            <td>Customer's billing address.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="billing_add_indosatdompetku" class="tb-nest-2 collapse">
+
+      <table>
+        <tbody>
+          <tr>
+            <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
+            <td>First name of customer's billing address.<br /><strong>Note:</strong> Not required if it is the same as customer's first_name</td>
+          </tr>
+          <tr>
+            <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
+            <td>Last name of customer's billing address.</td>
+          </tr>
+          <tr>
+            <td>address <em>String(200)</em> <strong>Optional</strong></td>
+            <td>Address of the billing address.</td>
+          </tr>
+          <tr>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
+            <td>City of the billing address.</td>
+          </tr>
+          <tr>
+            <td>postal_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>Postal code of billing address.<br /><strong>Note:</strong> Format is alpha-numeric. It can accept “-” and space</td>
+          </tr>
+          <tr>
+            <td>phone <em>String(19)</em> <strong>Optional</strong></td>
+            <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
+          </tr>
+          <tr>
+            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="nested-table-wrapper">
+
+      <table>
+        <tbody>
+          <tr>
+            <td><a data-toggle="collapse" href="#shipping_add_indosatdompetku">shipping_address</a> <em>JSON Array</em> <strong>Optional</strong></td>
+            <td>Customer's shipping address.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="shipping_add_indosatdompetku" class="tb-nest-2 collapse">
+
+      <table>
+        <tbody>
+          <tr>
+            <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
+            <td>First name of customer's shipping address.<br /><strong>Note:</strong> Not required if it is the same as customer's first_name</td>
+          </tr>
+          <tr>
+            <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
+            <td>Last name of customer's shipping address.</td>
+          </tr>
+          <tr>
+            <td>address <em>String(200)</em> <strong>Optional</strong></td>
+            <td>Address of the shipping address.</td>
+          </tr>
+          <tr>
+            <td>city <em>String(100)</em> <strong>Optional</strong></td>
+            <td>City of the shipping address.</td>
+          </tr>
+          <tr>
+            <td>postal_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>Postal code of shipping address.<br /><strong>Note:</strong> Format is alpha-numeric. It can accept “-” and space</td>
+          </tr>
+          <tr>
+            <td>phone <em>String(19)</em> <strong>Optional</strong></td>
+            <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
+          </tr>
+          <tr>
+            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="nested-table-wrapper">
+
+    <table>
+      <tbody>
+        <tr>
+          <td><a data-toggle="collapse" href="#item_details_indosatdompetku">item_details</a> <em>JSON Array</em> <strong>Optional</strong></td>
+          <td>Shopping item details that will be paid by customer.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div id="item_details_indosatdompetku" class="tb-nest-1 collapse">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>id <em>String(50)</em> <strong>Optional</strong></td>
+          <td>Item ID.</td>
+        </tr>
+        <tr>
+          <td>price <em>Number</em> <strong>Optional</strong></td>
+          <td>Price of the item.</td>
+        </tr>
+        <tr>
+          <td>quantity <em>Number</em> <strong>Optional</strong></td>
+          <td>Quantity of the item bought.</td>
+        </tr>
+        <tr>
+          <td>name <em>String(50)</em> <strong>Optional</strong></td>
+          <td>Name of the item</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="c1">// Required</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> 
+        <span class="s2">"indosat_dompetku"</span><span class="p">,</span> 
+
+    <span class="c1">// Required</span>
+    <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span> 
+        <span class="p">},</span>
+
+    <span class="c1">// Optional</span>
+    <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
+        <span class="s2">"price"</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
+        <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Mie Ayam Original"</span>
+    <span class="p">}</span> <span class="p">],</span>
+
+    <span class="c1">// Optional</span>
+    <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"obet.supriadi@gmail.com"</span><span class="p">,</span>
+        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span> 
+        <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span> 
+        <span class="p">},</span>
+
+    <span class="c1">// Required for Indosat Dompetku configuration</span>
+    <span class="s2">"indosat_dompetku"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"msisdn"</span><span class="p">:</span> <span class="s2">"08123456789"</span>
+    <span class="p">}</span> 
+<span class="p">}</span>
+</code></pre>
+
+<h4 id="indosat-dompetku-response">Indosat Dompetku Response</h4>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>JSON Attribute</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>transaction_id</td>
+        <td>String</td>
+        <td>Transaction ID given by Veritrans</td>
+      </tr>
+      <tr>
+        <td>order_id</td>
+        <td>String</td>
+        <td>Order Id given by merchant</td>
+      </tr>
+      <tr>
+        <td>gross_amount</td>
+        <td>String</td>
+        <td>Amount of Transaction</td>
+      </tr>
+      <tr>
+        <td>payment_type</td>
+        <td>String</td>
+        <td>Transaction payment method</td>
+      </tr>
+      <tr>
+        <td>transaction_time</td>
+        <td>String</td>
+        <td>Timestamp of transaction</td>
+      </tr>
+      <tr>
+        <td>transaction_status</td>
+        <td>String</td>
+        <td>Transaction status after Indosat Dompetku charge transaction, the possible value is<br /> <code>settlement</code> : Indosat Dompetku transaction is Successful. <br /> <code>deny</code> : Indosat Dompetku transaction is Unsuccesful. <br /> <code>expire</code> : Indosat Dompetku transaction has expired. Please perform new transaction. <br /></td>
+      </tr>
+      <tr>
+        <td>status_code</td>
+        <td>String</td>
+        <td>Status code of transaction charge result. Complete list of status code can be checked <a href="/sandbox/status_code.html">here</a></td>
+      </tr>
+      <tr>
+        <td>status_message</td>
+        <td>String</td>
+        <td>Description of transaction charge result</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Indosat Dompetku transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"01b33f31-3433-42df-b850-95dbc594c734"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1432869511"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"indosat_dompetku"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-06-23 14:00:19"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"60000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+<h4 id="indosat-dompetku-error-code">Indosat Dompetku Error Code</h4>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Error Code</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>400</code> Validation error</td>
+        <td>Validation Error, merchant send bad request data example; invalid <code>customer</code> value, etc.</td>
       </tr>
       <tr>
         <td><code>401</code> Access Denied</td>
@@ -6758,7 +7226,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
 
     //Required
     "cstore" : {
-        "store" : "Indomaret Midplaza",
+        "store" : "indomaret",
         "message" : "mangga" 
         }
 }
@@ -7011,10 +7479,10 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
 <span class="p">}</span>
 </code></pre>
 
-<p id="Capture"><br />
+<p><br />
 <br /></p>
 
-<h2 id="capture-transaction">Capture Transaction</h2>
+<h2 id="Capture">Capture Transaction</h2>
 
 <h3 id="card-payment-feature-pre-authorization">Card Payment Feature: Pre-Authorization</h3>
 
@@ -7355,10 +7823,10 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
 <span class="p">}</span>
 </code></pre>
 
-<p id="Cancel"><br />
+<p><br />
 <br /></p>
 
-<h2 id="cancel-transaction">Cancel Transaction</h2>
+<h2 id="Cancel">Cancel Transaction</h2>
 
 <h3 id="card-payment-1">Card Payment</h3>
 
@@ -7541,10 +8009,139 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
 <span class="p">}</span>
 </code></pre>
 
-<p id="Status"><br />
+<p><br />
 <br /></p>
 
-<h2 id="get-transaction-status">Get Transaction Status</h2>
+<h2 id="Expire">Expire Transaction</h2>
+
+<h3 id="card-payment-2">Card Payment</h3>
+
+<p>Card payment can be expire with expire method if transaction has not been settled/pending status.</p>
+
+<h4 id="expire-transaction-method">Expire Transaction Method</h4>
+
+<pre><code class="highlight plaintext">POST https://api.sandbox.veritrans.co.id/v2/{order_id}/expire
+</code></pre>
+<pre><code class="highlight plaintext">POST https://api.sandbox.veritrans.co.id/v2/{transaction_id}/expire
+</code></pre>
+
+<h4 id="expire-transaction-response">Expire Transaction Response</h4>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>JSON Attribute</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>status_code</td>
+        <td>String</td>
+        <td>Status code of charge transaction result. Complete list of status codes can be seen <a href="status_code.html">here</a></td>
+      </tr>
+      <tr>
+        <td>status_message</td>
+        <td>String</td>
+        <td>Description of Cancel transaction result</td>
+      </tr>
+      <tr>
+        <td>transaction_id</td>
+        <td>String</td>
+        <td>Transaction ID given by Veritrans</td>
+      </tr>
+      <tr>
+        <td>order_id</td>
+        <td>String</td>
+        <td>Order Id given by merchant</td>
+      </tr>
+      <tr>
+        <td>payment_type</td>
+        <td>String</td>
+        <td>Transaction payment method</td>
+      </tr>
+      <tr>
+        <td>transaction_time</td>
+        <td>String</td>
+        <td>Timestamp of transaction</td>
+      </tr>
+      <tr>
+        <td>transaction_status</td>
+        <td>String</td>
+        <td>Transaction status after expire transaction, the values is<br /><code>expire</code> : Transaction has been expire.</td>
+      </tr>
+      <tr>
+        <td>gross_amount</td>
+        <td>String</td>
+        <td>total ammount of transaction</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"407"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, transaction has expired"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"447e846a-403e-47db-a5da-d7f3f06375d6"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtmbill05"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-06-15 13:36:24"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"expire"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"10000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+<h4 id="expire-transaction-error-response">Expire Transaction Error response</h4>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Error Code</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>401</code> Access Denied</td>
+        <td>Invalid client key or server key</td>
+      </tr>
+      <tr>
+        <td><code>402</code> Access Denied</td>
+        <td>Merchant doesn't have access for this payment type</td>
+      </tr>
+      <tr>
+        <td><code>404</code> Transaction Not Found</td>
+        <td>The <code>order_id</code> is not found</td>
+      </tr>
+      <tr>
+        <td><code>410</code> Account Inactive</td>
+        <td>Merchant account is deactivated or not active for a long period</td>
+      </tr>
+      <tr>
+        <td><code>412</code> Transaction Cannot Be Modified</td>
+        <td>The <code>transaction_status</code> is not capture or is not pending</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span> <span class="p">:</span> <span class="s2">"412"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span> <span class="p">:</span> <span class="s2">"Merchant cannot modify the status of the transaction"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><br />
+<br /></p>
+
+<h2 id="Status">Get Transaction Status</h2>
 
 <p>Transaction status can be obtained by triggering the Get Status Method.</p>
 
@@ -7698,6 +8295,204 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
 <span class="p">}</span>
 </code></pre>
 
+<p><br />
+<br /></p>
+
+<h2 id="Status">Get Transaction Status</h2>
+
+<p>Transaction status can be obtained by triggering the Get Status Method.</p>
+
+<h4 id="get-status-method-1">Get Status Method</h4>
+
+<pre><code class="highlight plaintext">GET https://api.sandbox.veritrans.co.id/v2/{order_id}/status
+</code></pre>
+<pre><code class="highlight plaintext">GET https://api.sandbox.veritrans.co.id/v2/{transaction_id}/status
+</code></pre>
+
+<h4 id="get-status-response-1">Get Status Response</h4>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>JSON Attribute</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>status_code</td>
+        <td>String</td>
+        <td>Status code of Get transaction status. Complete list of status codes can be seen <a href="status_code.html">here</a></td>
+      </tr>
+      <tr>
+        <td>status_message</td>
+        <td>String</td>
+        <td>Description of Get transaction status</td>
+      </tr>
+      <tr>
+        <td>transaction_id</td>
+        <td>String</td>
+        <td>Transaction ID given by Veritrans</td>
+      </tr>
+      <tr>
+        <td>masked_card</td>
+        <td>String</td>
+        <td>First 6-digit and last 4-digit of customer's credit card number, if payment_type is <code>credit_card</code></td>
+      </tr>
+      <tr>
+        <td>order_id</td>
+        <td>String</td>
+        <td>Order Id given by merchant</td>
+      </tr>
+      <tr>
+        <td>payment_type</td>
+        <td>String</td>
+        <td>Transaction payment method</td>
+      </tr>
+      <tr>
+        <td>transaction_time</td>
+        <td>String</td>
+        <td>Timestamp of transaction</td>
+      </tr>
+      <tr>
+        <td>transaction_status</td>
+        <td>String</td>
+        <td>Transaction status of a transaction, the values is<br /><code>authorize</code> : Transaction is pre-authorized.<br /><code>capture</code> : Transaction has been captured.<br /><code>Settlement</code> : Transaction has been settled.<br /><code>deny</code> : Transaction has been denied.<br /><code>pending</code> : Transaction has not been completed.<br /><code>cancel</code> : Transaction has been cancelled.<br /><code>expire</code> : Transaction has been expired.</td>
+      </tr>
+      <tr>
+        <td>fraud_status</td>
+        <td>String</td>
+        <td>Detection result by Fraud Detection System (FDS). Possible Value:<br /><code>accept</code> : Approved by FDS.<br /><code>challenge</code>: Questioned by FDS.<br /><code>Deny</code>: Denied by FDS.</td>
+      </tr>
+      <tr>
+        <td>approval_code</td>
+        <td>String</td>
+        <td>Approval code. It can be used for refund. This does not exist on denied transaction</td>
+      </tr>
+      <tr>
+        <td>signature_key</td>
+        <td>String</td>
+        <td>Signature key to validate if the notification is originated from Veritrans</td>
+      </tr>
+      <tr>
+        <td>bank</td>
+        <td>String</td>
+        <td>The acquiring bank of the transaction</td>
+      </tr>
+      <tr>
+        <td>gross_amount</td>
+        <td>String</td>
+        <td>total ammount of transaction</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span> <span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span> <span class="p">:</span> <span class="s2">"Success, transaction found"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span> <span class="p">:</span> <span class="s2">"249fc620-6017-4540-af7c-5a1c25788f46"</span><span class="p">,</span>
+  <span class="s2">"masked_card"</span> <span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span> <span class="p">:</span> <span class="s2">"example-1424936368"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span> <span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span> <span class="p">:</span> <span class="s2">"2015-02-26 14:39:33"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span> <span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span> <span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span> <span class="p">:</span> <span class="s2">"1424936374393"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span> <span class="p">:</span> <span class="s2">"2802a264cb978fbc59f631c68d120cbda8dc853f5dfdc52301c615cf4f14e7a0b09aa..."</span><span class="p">,</span>
+  <span class="s2">"bank"</span> <span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span> <span class="p">:</span> <span class="s2">"30000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+<h4 id="get-status-error-response-1">Get Status Error response:</h4>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Error Code</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>401</code> Access Denied</td>
+        <td>Invalid client key or server key</td>
+      </tr>
+      <tr>
+        <td><code>402</code> Access Denied</td>
+        <td>Merchant doesn't have access for this payment type</td>
+      </tr>
+      <tr>
+        <td><code>404</code> Transaction Not Found</td>
+        <td>The <code>order_id</code> is not found</td>
+      </tr>
+      <tr>
+        <td><code>410</code> Account Inactive</td>
+        <td>Merchant account is deactivated or not active for a long period</td>
+      </tr>
+      <tr>
+        <td><code>422</code> Unprocessable Entity</td>
+        <td>Payment is still in process, still determining the <code>transaction_status</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"404"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"The requested resource is not found"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><br /><br /></p>
+
+<h2 id="Validation">Handling Notification</h2>
+
+<p>In order to increase security aspect, there are several ways to ensure notification received is from Veritrans.</p>
+
+<p><br /></p>
+
+<h3 id="challenge-response">1. Challenge Response</h3>
+
+<p>An additional mechanism we provide to verify the content and the origin of the notification is to challenge. This can be achieved by calling the <a href="methods.html#Status">get status</a> API. The response is the same as the notification status.</p>
+
+<p><img alt="VT-Web notif validation" class="img-responsive img-thumbnail" src="../../images/signaturekey1.png" /></p>
+
+<p><br /></p>
+
+<h3 id="signature-key">2. Signature Key</h3>
+
+<p>We add signature key information in our notification. The purpose of this signature key is to validate whether the notification is originated from Veritrans or not. Should the notification is not genuine, merchants can disregard the notification. The logic of the signature key is as follows below:</p>
+
+<pre><code class="highlight plaintext">SHA512(order_id+status_code+gross_amount+serverkey)
+</code></pre>
+
+<p><br /></p>
+
+<p>Here is a sample code to generate signature key.</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="nv">$orderId</span> <span class="o">=</span> <span class="s2">"1111"</span><span class="p">;</span>
+<span class="nv">$statusCode</span> <span class="o">=</span> <span class="s2">"200"</span><span class="p">;</span>
+<span class="nv">$grossAmount</span> <span class="o">=</span> <span class="s2">"100000"</span><span class="p">;</span>
+<span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"askvnoibnosifnboseofinbofinfgbiufglnbfg"</span><span class="p">;</span>
+<span class="nv">$input</span> <span class="o">=</span> <span class="nv">$orderId</span><span class="o">.</span><span class="nv">$statusCode</span><span class="o">.</span><span class="nv">$grossAmount</span><span class="o">.</span><span class="nv">$serverKey</span><span class="p">;</span>
+<span class="nv">$signature</span> <span class="o">=</span> <span class="nb">openssl_digest</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="s1">'sha512'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">"INPUT: "</span> <span class="p">,</span> <span class="nv">$input</span><span class="o">.</span><span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s2">"SIGNATURE: "</span> <span class="p">,</span> <span class="nv">$signature</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+
+</code></pre>
+
+<p><br /><br /></p>
 
 
                 <div class="pagination">
@@ -7805,6 +8600,10 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
                           <a href="#bbm_money">BBM Money</a>
                         </li>
                       
+                        <li>    
+                          <a href="#dompetku">Indosat Dompetku</a>
+                        </li>
+                      
                     </ul>
                   
                 </li>
@@ -7844,7 +8643,7 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
         </li>
       
         <li>
-          <a href="#capture-transaction">Capture Transaction</a>
+          <a href="#Capture">Capture Transaction</a>
           
         </li>
       
@@ -7854,12 +8653,22 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
         </li>
       
         <li>
-          <a href="#cancel-transaction">Cancel Transaction</a>
+          <a href="#Cancel">Cancel Transaction</a>
           
         </li>
       
         <li>
-          <a href="#get-transaction-status">Get Transaction Status</a>
+          <a href="#Expire">Expire Transaction</a>
+          
+        </li>
+      
+        <li>
+          <a href="#Status">Get Transaction Status</a>
+          
+        </li>
+      
+        <li>
+          <a href="#Validation">Handling Notification</a>
           
         </li>
          
@@ -7884,7 +8693,7 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
             <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
           </li>
           <li>
-            <a href="https://www.veritrans.co.id/product.html">Product &amp; Pricing</a>
+            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>
