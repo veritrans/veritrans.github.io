@@ -22,13 +22,13 @@
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
-    <!-- Start Alexa Certify Javascript -->
-    <script type="text/javascript">
-    _atrk_opts = { atrk_acct:"0VtQk1a4SBe05T", domain:"veritrans.co.id",dynamic: true};
-    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("f93e9c92cf8729b32c4491fb6794689b", {cross_subdomain_cookie : false﻿});
     </script>
-    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=0VtQk1a4SBe05T" style="display:none" height="1" width="1" alt="" /></noscript>
-    <!-- End Alexa Certify Javascript -->
+    <!-- end mixpanel -->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -383,7 +383,7 @@ The important attribute on pre-authorization response is <code>transaction_id</c
 
     <h3 id="capture-transaction">Capture Transaction</h3>
 
-    <p>To perform capture transaction, you simply have to prepare the attribute <code>transaction_id</code> and <code>gross_amount</code>. Both these attributes is related to the previous pre-authorization process. The <code>gross_amount</code> value cannot exceed the <code>gross_amount</code> on pre-authorization. If <code>gross_amount</code> attribute is not given during capture, the <code>gross_amount</code> value on pre-authorization will be used.</p>
+    <p>To perform capture transaction, you simply have to prepare the attribute <code>transaction_id</code> and <code>gross_amount</code>. Both these attributes are related to the previous pre-authorization process. The <code>gross_amount</code> value cannot exceed the <code>gross_amount</code> on pre-authorization. If <code>gross_amount</code> attribute is not given during capture, the <code>gross_amount</code> value on pre-authorization will be used.</p>
 
     <p>The following is the sample PHP code to perform capture transaction:
 <br /><br /></p>
@@ -405,7 +405,7 @@ The important attribute on pre-authorization response is <code>transaction_id</c
 </code></pre>
 
     <p><br />
-On the above example, the capture response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when pre-authorization process is successful is as followed:
+On the above example, the capture response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when capture transaction process is successful is as followed:
 <br /><br /></p>
 
 <pre><code class="highlight php">$result = array(
@@ -430,7 +430,9 @@ On the above example, the capture response is saved in the variable <code>$resul
 
     <h2 id="installment">Installment</h2>
 
-    <p>To activate installment feature, merchant has to make an agreement with the acquiring bank. Merchant also needs to inquire if the MID for installment is ready from a Veritrans sales representative. The installment feature can be performed with a normal token or 3DS token.</p>
+    <h3 id="online-installment">Online Installment</h3>
+
+    <p>To activate installment feature, merchant has to make an agreement with the acquiring bank. Acquiring bank will issue MID Installment which allow the transaction to be converted into installment automatically. Merchant also needs to inquire if the MID for installment is ready from a Veritrans sales representative. The installment feature can be performed with a normal token or 3DS token.</p>
 
     <p>The installment feature implementation is similar to credit card charge transaction. The difference lies on the request token and charge transaction, you have to add a <code>'Installment’</code> attribute and <code>installment_term</code>. The installment attribute with the respective value can be used in Sandbox environment:
 <br /><br /></p>
@@ -539,6 +541,94 @@ In the above example, the installment response is saved in the variable <code>$r
 
 </code></pre>
 
+    <h3 id="offline-installment">Offline Installment</h3>
+
+    <p>To allow installment feature with banks which doesn't issue MID Installment, merchant can use feature offline installment. With offline installment feature, the transaction will be charged in full amount and the transaction will be converted into installment later. For more information and support, merchant can contact Veritrans Sales Representative.</p>
+
+    <p>This installment feature implementation is similar with credit card charge online installment with combination with bin filter feature. The purpose of bin filter is to limit only certain cards will be allowed to do offline installment based on the agreement between merchant and issuing banks.</p>
+
+    <p><br />
+Using the same example in credit card charge transaction, script that is modified during request token is as followed:
+<br /><br /></p>
+
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  
+  <span class="p">...</span>
+
+  <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="s1">'card_number'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+      <span class="c1">// Ask for 12 months installment token_id</span>
+      <span class="s1">'installment'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
+      <span class="s1">'installment_term'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      
+      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="p">...</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+    <p><br />
+The acquired token can be saved and then used to perform the charge transaction. Attribute that has to be added to perform installment is <code>installment_term</code> and <code>bins</code>. Parameters that are modified during charge transaction is as followed:
+<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
+  <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
+    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
+    <span class="s1">'installment_term'</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
+    <span class="p">),</span>
+  <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
+  <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+In the above example, the charge response is saved in the variable <code>$result</code>. Structure and example of <em>state</em> <code>$result</code> when charge process is successful is as followed:
+<br /><br /></p>
+
+<pre><code class="highlight php">$result = array(
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "Success, Credit Card Installment transaction is successful",
+    "transaction_id" =&gt; "2a913000-4ed6-4c91-aff1-94e5ffb1b737",
+    "order_id" =&gt; "201404231811",
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-04-23 18:11:44",
+    "transaction_status" =&gt; "capture",
+    "fraud_status" =&gt; "accept",
+    "masked_card" =&gt; "481111-1114",
+    "bank" =&gt; "bni",
+    "installment_term" =&gt; "12",
+    "approval_code" =&gt; "140540",
+    "gross_amount" =&gt; "10000.00"
+    );
+
+</code></pre>
+
   </div>
   <div class="tab-pane" id="bin-promo">
     <!-- step 3-->
@@ -587,7 +677,7 @@ On the above example, the BIN that is listed is <code>48111111</code>, <code>311
 
     <h2 id="one-click">One Click</h2>
 
-    <p>The one click feature allows you to use one token on several transactions. The token represents the credit card number, expiry date, CVV, and 3D Secure authentication of the customer. This will make transactions easier since the credit card information needs to be filled only once and not recurrently.</p>
+    <p>The one click feature allows you to use one token on several transactions. The token represents the credit card number dan expiry date of the customer. This will make transactions easier since the credit card information needs to be filled only once and not recurrently.</p>
 
     <p>Do note that token will be activated only after the initial transaction is performed. To use the one click feature, 3D Secure feature has to be used.</p>
 
@@ -665,7 +755,7 @@ On the above example, one click response is saved in the variable <code>$result<
 </code></pre>
 
     <p><br />
-Two important attributes for a successful one click response is <code>saved_token_id</code> and <code>saved_token_id_expired</code>. <code>saved_token_id</code> is the token that you save when the customer makes a following transaction. This attribute is what we referred as <code>saved_token</code> on the previous explanation. The value from <code>saved_token</code> can be used repeatedly until <code>saved_token_id_expired</code>.</p>
+Two important attributes for a successful one click response is <code>saved_token_id</code> and <code>saved_token_id_expired_at</code>. <code>saved_token_id</code> is the token that you save when the customer makes a following transaction. This attribute is what we referred as <code>saved_token</code> on the previous explanation. The value from <code>saved_token</code> can be used repeatedly until <code>saved_token_id_expired_at</code>.</p>
 
     <p><br /></p>
 
@@ -808,7 +898,7 @@ On the above example, two clicks response is saved in the variable <code>$result
 </code></pre>
 
     <p><br />
-With a successful two clicks response, the <code>saved_token_id</code> along with <code>saved_token_id_expired</code>. <code>saved_token_id</code> is saved for the customer's conveniance in a following transaction. This attribute is what we referred as <code>saved_token</code> on two clicks step. The value from <code>saved_token</code> can be used repeatedly until <code>saved_token_id_expired</code>.</p>
+With a successful two clicks response, the <code>saved_token_id</code> along with <code>saved_token_id_expired_at</code>. <code>saved_token_id</code> is saved for the customer's conveniance in a following transaction. This attribute is what we referred as <code>saved_token</code> on two clicks step. The value from <code>saved_token</code> can be used repeatedly until <code>saved_token_id_expired_at</code>.</p>
 
     <p><br /></p>
 
@@ -1313,6 +1403,10 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
         });
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        mixpanel.track('en docs page viewed',{
+          'url' : location.href
         });
       });
     </script>

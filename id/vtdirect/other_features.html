@@ -23,13 +23,12 @@
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
-    <!-- Start Alexa Certify Javascript -->
-    <script type="text/javascript">
-    _atrk_opts = { atrk_acct:"0VtQk1a4SBe05T", domain:"veritrans.co.id",dynamic: true};
-    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("f93e9c92cf8729b32c4491fb6794689b", {cross_subdomain_cookie : false﻿});
     </script>
-    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=0VtQk1a4SBe05T" style="display:none" height="1" width="1" alt="" /></noscript>
-    <!-- End Alexa Certify Javascript -->
+    <!-- end mixpanel -->
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -428,7 +427,9 @@ Pada contoh di atas, capture response disimpan pada variable <code>$result</code
 
     <h2 id="cicilaninstallment">Cicilan/Installment</h2>
 
-    <p>Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Fitur cicilan/installment dapat dilakukan menggunakan token biasa atau token 3DS. </p>
+    <h3 id="cicilan-onlineonline-installment">Cicilan Online/Online Installment</h3>
+
+    <p>Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Acquiring Bank akan mengeluarkan MID installment yang memungkinkan transaksi diubah menjadi cicilan secara otomatis. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Fitur cicilan/installment dapat dilakukan menggunakan token biasa atau token 3DS. </p>
 
     <p>Implementasi fitur cicilan mirip dengan charge transaksi kartu kredit biasa, perbedaan ada pada parameter request token dan charge transaksi. Pada saat melakukan request token, anda perlu menambahkan atribut <code>installment</code> dan <code>installment_term</code>. Deskripsi atribut installment beserta nilai yang dapat digunakan pada environment Sandbox:
 <br /><br /></p>
@@ -536,6 +537,95 @@ Pada contoh di atas, installment response disimpan pada variable <code>$result</
     );
 
 </code></pre>
+    <p><br /></p>
+
+    <h3 id="cicilan-offlineoffline-installment">Cicilan Offline/Offline Installment</h3>
+
+    <p>Apabila merchant ingin menggunakan fitur cicilan dengan bank yang tidak bisa mengeluarkan MID Installment, merchant dapat menggukana fitur cicilan offline. Dengan fitur cicilan offline ini, charge transaksi akan dilakukan secara full amount dan perubahan menjadi cicilan akan dilakukan setelahnya. Untuk informasi lebih lanjut dan bantuan, merchant bisa menghubungi Sales Representatif Veritrans.</p>
+
+    <p>Implementasi dari fitur cicilan offline ini mirip dengan implementasi charge cicilan online dengan kombinasi fitur bin filter. Tujuan dari implementasi fitur bin filter adalah membatasi hanya kartu-kartu tertentu saja yang bisa menggukana fitur cicilan offline ini sesuai dengan kesepakatan antara merchant dengan bank penerbit kartu.  </p>
+
+    <p><br />
+Menggunakan contoh yang sama dengan charge transaksi kartu kredit, modifikasi script tambahan saat request token adalah sebagai berikut:
+<br /><br /></p>
+
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  
+  <span class="p">...</span>
+
+  <span class="kd">var</span> <span class="nx">card</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="s1">'card_number'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-number"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+      <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+      <span class="c1">// Ask for 12 months installment token_id</span>
+      <span class="s1">'installment'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
+      <span class="s1">'installment_term'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      
+      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
+      <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="p">...</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+    <p><br />
+Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan charge transaksi. Atribut yang harus ditambahkan untuk melakukan installment adalah <code>installment_term</code> dan <code>bins</code>. Modifikasi parameter pada saat charge transaksi adalah sebagai berikut:
+<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
+  <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
+    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
+    <span class="s1">'installment_term'</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
+    <span class="p">),</span>
+  <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
+  <span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Pada contoh di atas, installment response disimpan pada variable <code>$result</code>. Struktur dan contoh <em>state</em> <code>$result</code> ketika proses installment berhasil adalah sebagai berikut:
+<br /><br /></p>
+
+<pre><code class="highlight php">$result = array(
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "Success, Credit Card Installment transaction is successful",
+    "transaction_id" =&gt; "2a913000-4ed6-4c91-aff1-94e5ffb1b737",
+    "order_id" =&gt; "201404231811",
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-04-23 18:11:44",
+    "transaction_status" =&gt; "capture",
+    "fraud_status" =&gt; "accept",
+    "masked_card" =&gt; "481111-1114",
+    "bank" =&gt; "bni",
+    "installment_term" =&gt; "12",
+    "approval_code" =&gt; "140540",
+    "gross_amount" =&gt; "10000.00"
+    );
+
+</code></pre>
 
   </div>
   <div class="tab-pane" id="bin-promo">
@@ -587,7 +677,7 @@ Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>31
 
     <h2 id="one-click">One Click</h2>
 
-    <p>Fitur one click memungkinkan anda untuk menggunakan satu token pada beberapa transaksi. Token mewakili informasi nomor, expiry date, CVV, dan autentikasi 3D Secure pelanggan anda. Hal ini akan mempermudah pelanggan anda dalam melakukan transaksi karena informasi kartu kredit hanya perlu diisi sekali saja.</p>
+    <p>Fitur one click memungkinkan anda untuk menggunakan satu token pada beberapa transaksi. Token mewakili informasi nomor dan expiry date pelanggan anda. Hal ini akan mempermudah pelanggan anda dalam melakukan transaksi karena informasi kartu kredit hanya perlu diisi sekali saja.</p>
 
     <p>Perlu diperhatikan bahwa token baru aktif setelah transaksi pertama berhasil dilakukan. Untuk menggunakan one click, fitur 3D Secure harus digunakan.</p>
 
@@ -664,7 +754,7 @@ Pada contoh di atas, one click response disimpan pada variable <code>$result</co
 </code></pre>
 
     <p><br />
-Dua atribut penting pada one click response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired</code>. Atribut <code>saved_token_id</code> adalah token yang dapat anda simpan jika pelanggan anda melakukan transaksi lagi. Atribut ini kita sebut sebagai <code>saved_token</code> pada penjelasan tahapan one click sebelumnya. Nilai dari <code>saved_token</code> dapat terus digunakan hingga <code>saved_token_id_expired</code>.</p>
+Dua atribut penting pada one click response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired_at</code>. Atribut <code>saved_token_id</code> adalah token yang dapat anda simpan jika pelanggan anda melakukan transaksi lagi. Atribut ini kita sebut sebagai <code>saved_token</code> pada penjelasan tahapan one click sebelumnya. Nilai dari <code>saved_token</code> dapat terus digunakan hingga <code>saved_token_id_expired_at</code>.</p>
 
     <p><br /></p>
 
@@ -809,7 +899,7 @@ Pada contoh di atas, two clicks response disimpan pada <em>variable</em> <code>$
 </code></pre>
 
     <p><br />
-Dua atribut penting pada two clicks response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired</code>. Atribut <code>saved_token_id</code> adalah yang kita sebut sebagai <code>saved_token</code> pada bagian tahapan two clicks. Nilai <code>saved_token</code> ini dapat terus digunakan hingga <code>saved_token_id_expired</code>.</p>
+Dua atribut penting pada two clicks response yang sukses adalah <code>saved_token_id</code> dan <code>saved_token_id_expired_at</code>. Atribut <code>saved_token_id</code> adalah yang kita sebut sebagai <code>saved_token</code> pada bagian tahapan two clicks. Nilai <code>saved_token</code> ini dapat terus digunakan hingga <code>saved_token_id_expired_at</code>.</p>
 
     <p><br /></p>
 
@@ -1314,6 +1404,10 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
         });
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        mixpanel.track('id docs page viewed',{
+          'url' : location.href
         });
       });
     </script>

@@ -22,13 +22,13 @@
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
-    <!-- Start Alexa Certify Javascript -->
-    <script type="text/javascript">
-    _atrk_opts = { atrk_acct:"0VtQk1a4SBe05T", domain:"veritrans.co.id",dynamic: true};
-    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("f93e9c92cf8729b32c4491fb6794689b", {cross_subdomain_cookie : false﻿});
     </script>
-    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=0VtQk1a4SBe05T" style="display:none" height="1" width="1" alt="" /></noscript>
-    <!-- End Alexa Certify Javascript -->
+    <!-- end mixpanel -->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -2612,14 +2612,80 @@ The following attributes can be used to perform a charge transaction with a cred
 
 <h4 id="installment-charge-response">Installment Charge Response</h4>
 
-<p>Installment Charge Response is identical with <a href="#Card_Response">Card Payment Charge Response</a>.
-<br /> Successful Installment transaction is described as <code>capture</code> and is ready for settlement.</p>
+<p>Installment Charge Response is as follow below:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card Installment transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2a913000-4ed6-4c91-aff1-94e5ffb1b737"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"201404231811"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-04-23 18:11:44"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+    <span class="s2">"installment_term"</span><span class="p">:</span> <span class="s2">"12"</span><span class="p">,</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"140540"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"10000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><br /> Successful Installment transaction is described as <code>capture</code> and is ready for settlement.</p>
 
 <div class="alert alert-info" role="alert">
   <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <span class="sr-only">Info:</span>
 <strong>NOTE:</strong> <a href="#Approve">Approve transaction</a> when <code>fraud_status</code> = "challenge" to accept it or transaction will auto cancel during settlement.</p>
 </div>
+
+<h4 id="offline-installment">Offline Installment</h4>
+
+<p>Offline installment feature allow merchant to do installment conversion for transactions which is not supported by MID installment. <br />To charge the offline installment feature in VT-Direct, additional attributes <code>installment</code> will be required with combination <code>bin_filter</code>. The purpose of <code>bin_filter</code> is to limit only certain cards can be used depends on the agreement between merchant and banks.</p>
+
+<p>Below is the charge request for offline installment
+<br /></p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="c1">// Required</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+
+  <span class="c1">// Required</span>
+  <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"C17550"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+  <span class="p">},</span>
+
+  <span class="c1">// Required</span>
+  <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>                     
+    <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Installment Token ID from Get Token</span>
+    <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>            <span class="c1">// &lt;-- Field to set installment</span>
+    <span class="s2">"bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>  <span class="c1">// &lt;-- Field to set BIN Promo</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<h4 id="installment-charge-response-1">Installment Charge Response</h4>
+
+<p>Installment Charge Response is as follow below:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card Installment transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2a913000-4ed6-4c91-aff1-94e5ffb1b737"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"201404231811"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-04-23 18:11:44"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+    <span class="s2">"installment_term"</span><span class="p">:</span> <span class="s2">"12"</span><span class="p">,</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"140540"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"10000.00"</span>
+<span class="p">}</span>
+</code></pre>
 
 <p><br />
 <br /></p>
@@ -7012,8 +7078,8 @@ example: http://example.com/checkstatus?order_id=12345</p>
     <table>
       <tbody>
         <tr>
-          <td><a data-toggle="collapse" href="#cstore_vtdirect">echannel</a> <em>JSON Object</em> <strong>Required</strong></td>
-          <td>VT-Direct charge details using Mandiri Billpayment.</td>
+          <td><a data-toggle="collapse" href="#cstore_vtdirect">cstore</a> <em>JSON Object</em> <strong>Required</strong></td>
+          <td>VT-Direct charge details using Indomaret.</td>
         </tr>
       </tbody>
     </table>
@@ -8014,9 +8080,7 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
 
 <h2 id="Expire">Expire Transaction</h2>
 
-<h3 id="card-payment-2">Card Payment</h3>
-
-<p>Card payment can be expire with expire method if transaction has not been settled/pending status.</p>
+<p>Transaction status can be updated into expired if the customer has not complete the payment. The expired order id can be reuse again with the same or different payment method.</p>
 
 <h4 id="expire-transaction-method">Expire Transaction Method</h4>
 
@@ -8297,162 +8361,6 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
 
 <p><br />
 <br /></p>
-
-<h2 id="Status">Get Transaction Status</h2>
-
-<p>Transaction status can be obtained by triggering the Get Status Method.</p>
-
-<h4 id="get-status-method-1">Get Status Method</h4>
-
-<pre><code class="highlight plaintext">GET https://api.sandbox.veritrans.co.id/v2/{order_id}/status
-</code></pre>
-<pre><code class="highlight plaintext">GET https://api.sandbox.veritrans.co.id/v2/{transaction_id}/status
-</code></pre>
-
-<h4 id="get-status-response-1">Get Status Response</h4>
-
-<div class="table-wrapper">
-
-  <table>
-    <thead>
-      <tr>
-        <th>JSON Attribute</th>
-        <th>Data Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>status_code</td>
-        <td>String</td>
-        <td>Status code of Get transaction status. Complete list of status codes can be seen <a href="status_code.html">here</a></td>
-      </tr>
-      <tr>
-        <td>status_message</td>
-        <td>String</td>
-        <td>Description of Get transaction status</td>
-      </tr>
-      <tr>
-        <td>transaction_id</td>
-        <td>String</td>
-        <td>Transaction ID given by Veritrans</td>
-      </tr>
-      <tr>
-        <td>masked_card</td>
-        <td>String</td>
-        <td>First 6-digit and last 4-digit of customer's credit card number, if payment_type is <code>credit_card</code></td>
-      </tr>
-      <tr>
-        <td>order_id</td>
-        <td>String</td>
-        <td>Order Id given by merchant</td>
-      </tr>
-      <tr>
-        <td>payment_type</td>
-        <td>String</td>
-        <td>Transaction payment method</td>
-      </tr>
-      <tr>
-        <td>transaction_time</td>
-        <td>String</td>
-        <td>Timestamp of transaction</td>
-      </tr>
-      <tr>
-        <td>transaction_status</td>
-        <td>String</td>
-        <td>Transaction status of a transaction, the values is<br /><code>authorize</code> : Transaction is pre-authorized.<br /><code>capture</code> : Transaction has been captured.<br /><code>Settlement</code> : Transaction has been settled.<br /><code>deny</code> : Transaction has been denied.<br /><code>pending</code> : Transaction has not been completed.<br /><code>cancel</code> : Transaction has been cancelled.<br /><code>expire</code> : Transaction has been expired.</td>
-      </tr>
-      <tr>
-        <td>fraud_status</td>
-        <td>String</td>
-        <td>Detection result by Fraud Detection System (FDS). Possible Value:<br /><code>accept</code> : Approved by FDS.<br /><code>challenge</code>: Questioned by FDS.<br /><code>Deny</code>: Denied by FDS.</td>
-      </tr>
-      <tr>
-        <td>approval_code</td>
-        <td>String</td>
-        <td>Approval code. It can be used for refund. This does not exist on denied transaction</td>
-      </tr>
-      <tr>
-        <td>signature_key</td>
-        <td>String</td>
-        <td>Signature key to validate if the notification is originated from Veritrans</td>
-      </tr>
-      <tr>
-        <td>bank</td>
-        <td>String</td>
-        <td>The acquiring bank of the transaction</td>
-      </tr>
-      <tr>
-        <td>gross_amount</td>
-        <td>String</td>
-        <td>total ammount of transaction</td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
-
-<pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"status_code"</span> <span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
-  <span class="s2">"status_message"</span> <span class="p">:</span> <span class="s2">"Success, transaction found"</span><span class="p">,</span>
-  <span class="s2">"transaction_id"</span> <span class="p">:</span> <span class="s2">"249fc620-6017-4540-af7c-5a1c25788f46"</span><span class="p">,</span>
-  <span class="s2">"masked_card"</span> <span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span> <span class="p">:</span> <span class="s2">"example-1424936368"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span> <span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
-  <span class="s2">"transaction_time"</span> <span class="p">:</span> <span class="s2">"2015-02-26 14:39:33"</span><span class="p">,</span>
-  <span class="s2">"transaction_status"</span> <span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
-  <span class="s2">"fraud_status"</span> <span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-  <span class="s2">"approval_code"</span> <span class="p">:</span> <span class="s2">"1424936374393"</span><span class="p">,</span>
-  <span class="s2">"signature_key"</span> <span class="p">:</span> <span class="s2">"2802a264cb978fbc59f631c68d120cbda8dc853f5dfdc52301c615cf4f14e7a0b09aa..."</span><span class="p">,</span>
-  <span class="s2">"bank"</span> <span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-  <span class="s2">"gross_amount"</span> <span class="p">:</span> <span class="s2">"30000.00"</span>
-<span class="p">}</span>
-</code></pre>
-
-<h4 id="get-status-error-response-1">Get Status Error response:</h4>
-
-<div class="table-wrapper">
-
-  <table>
-    <thead>
-      <tr>
-        <th>Error Code</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>401</code> Access Denied</td>
-        <td>Invalid client key or server key</td>
-      </tr>
-      <tr>
-        <td><code>402</code> Access Denied</td>
-        <td>Merchant doesn't have access for this payment type</td>
-      </tr>
-      <tr>
-        <td><code>404</code> Transaction Not Found</td>
-        <td>The <code>order_id</code> is not found</td>
-      </tr>
-      <tr>
-        <td><code>410</code> Account Inactive</td>
-        <td>Merchant account is deactivated or not active for a long period</td>
-      </tr>
-      <tr>
-        <td><code>422</code> Unprocessable Entity</td>
-        <td>Payment is still in process, still determining the <code>transaction_status</code></td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
-
-<pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"404"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"The requested resource is not found"</span>
-<span class="p">}</span>
-</code></pre>
-
-<p><br /><br /></p>
 
 <h2 id="Validation">Handling Notification</h2>
 
@@ -8849,6 +8757,10 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
         });
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        mixpanel.track('en docs page viewed',{
+          'url' : location.href
         });
       });
     </script>

@@ -23,13 +23,12 @@
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
-    <!-- Start Alexa Certify Javascript -->
-    <script type="text/javascript">
-    _atrk_opts = { atrk_acct:"0VtQk1a4SBe05T", domain:"veritrans.co.id",dynamic: true};
-    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("f93e9c92cf8729b32c4491fb6794689b", {cross_subdomain_cookie : false﻿});
     </script>
-    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=0VtQk1a4SBe05T" style="display:none" height="1" width="1" alt="" /></noscript>
-    <!-- End Alexa Certify Javascript -->
+    <!-- end mixpanel -->
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -2643,8 +2642,26 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
 
 <h4 id="respon-charge-cicilan">Respon Charge Cicilan</h4>
 
-<p>Respon Charge dengan fitur cicilan sama dengan <a href="#Card_Response">Respon Charge Card Payment</a>.
-<br /> Transaksi Cicilan yang sukses memiliki keterangan <code>capture</code> dan siap untuk proses settlement.</p>
+<p>Respon Charge dengan fitur cicilan adalah berikut di bawah ini:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card Installment transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2a913000-4ed6-4c91-aff1-94e5ffb1b737"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"201404231811"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-04-23 18:11:44"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+    <span class="s2">"installment_term"</span><span class="p">:</span> <span class="s2">"12"</span><span class="p">,</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"140540"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"10000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><br /> Transaksi Cicilan yang sukses memiliki keterangan <code>capture</code> dan siap untuk proses settlement.</p>
 
 <div class="alert alert-info" role="alert">
   <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
@@ -2652,6 +2669,57 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
 <strong>NOTE:</strong> <a href="#Approve">Approve transaksi</a> ketika <code>fraud_status</code> = "challenge" untuk menerima transaksi atau transaksi akan gagal secara otomatis ketika settlement.</p>
 </div>
 <p><br /></p>
+
+<h4 id="cicilan-offline">Cicilan Offline</h4>
+
+<p>Cicilan Offline adalah fitur yang memungkinkan merchant melakukan perubahan transaksi menjadi cicilan untuk bank yang tidak bisa mengeluarkan MID cicilan <br />Untuk melakukan charge cicilan offline di VT-Direct, atribut yang harus ditambahkan adalah <code>installment</code> dengan kombinasi <code>bin_filter</code>. Tujuan dari penambahan atribut <code>bin_filter</code> adalah untuk membatasi hanya kartu-kartu tertentu yang dapat diubah menjadi cicilan sesuai dengan kesepakatan antara merchant dengan bank.</p>
+
+<p>Di bawah ini adalah request charge untuk cicilan offline
+<br /></p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="c1">// Required</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+
+  <span class="c1">// Required</span>
+  <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"C17550"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+  <span class="p">},</span>
+
+  <span class="c1">// Required</span>
+  <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>                     
+    <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Installment Token ID from Get Token</span>
+    <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>            <span class="c1">// &lt;-- Field to set installment</span>
+    <span class="s2">"bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>  <span class="c1">// &lt;-- Field to set BIN Promo</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<h4 id="respon-charge-installment">Respon Charge Installment</h4>
+
+<p>Respon Installment Charge adalah di bawah ini:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card Installment transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2a913000-4ed6-4c91-aff1-94e5ffb1b737"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"201404231811"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-04-23 18:11:44"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+    <span class="s2">"installment_term"</span><span class="p">:</span> <span class="s2">"12"</span><span class="p">,</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"140540"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"10000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><br />
+<br /></p>
 
 <h4 id="fitur-card-payment-pre-authorization">Fitur Card Payment: Pre-Authorization</h4>
 
@@ -8003,9 +8071,7 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
 
 <h2 id="Expire">Transaksi Expire</h2>
 
-<h3 id="card-payment-2">Card Payment</h3>
-
-<p>Pembayaran Card Payment dapat dibuat expire dengan metode transaksi expire apabila transaksi masih ber-status pending.</p>
+<p>Status transaksi dapat dirubah menjadi <em>expire</em> jika pelanggan belum menyelesaikan pembayaran. order id yang sudah <em>expire</em> dapat menggunakan kembali lagi dengan metode pembayaran yang sama atau berbeda.</p>
 
 <h4 id="metode-transaksi-expire">Metode Transaksi expire</h4>
 
@@ -8680,6 +8746,10 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
         });
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        mixpanel.track('id docs page viewed',{
+          'url' : location.href
         });
       });
     </script>

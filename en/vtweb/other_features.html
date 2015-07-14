@@ -22,13 +22,13 @@
     <title>Docs - Veritrans Indonesia</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
-    <!-- Start Alexa Certify Javascript -->
-    <script type="text/javascript">
-    _atrk_opts = { atrk_acct:"0VtQk1a4SBe05T", domain:"veritrans.co.id",dynamic: true};
-    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("f93e9c92cf8729b32c4491fb6794689b", {cross_subdomain_cookie : false﻿});
     </script>
-    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=0VtQk1a4SBe05T" style="display:none" height="1" width="1" alt="" /></noscript>
-    <!-- End Alexa Certify Javascript -->
+    <!-- end mixpanel -->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -301,7 +301,7 @@
       <tbody>
         <tr>
           <td><a href="#credit-card">Credit Card</a></td>
-          <td><a href="#mandiri-clickpay">Mandiri ClickPay</a></td>
+          <td><a href="#mandiri-clickpay">Mandiri Clickpay</a></td>
           <td><a href="#tcash">Telkomsel Cash</a></td>
           <td><a href="#virtual-account">Virtual Account</a></td>
           <td><a href="#indomaret">Indomaret</a></td>
@@ -322,8 +322,8 @@
         </tr>
         <tr>
           <td> </td>
-          <td><a href="#dompetku">Indosat Dompetku</a></td>
           <td> </td>
+          <td><a href="#dompetku">Indosat Dompetku</a></td>
           <td> </td>
           <td> </td>
         </tr>
@@ -371,14 +371,14 @@ On <a href="integration_php.html#step1">VT-Web – Integration</a> section, all 
 
     <hr />
 
-    <h3 id="mandiri-clickpay">Mandiri ClickPay</h3>
+    <h3 id="mandiri-clickpay">Mandiri Clickpay</h3>
 
-    <p>Mandiri ClickPay is one of the payment features from Mandiri Debit. This method allows customer to perform a transaction by inserting the 16 digits Mandiri Debit Card and PIN Token for transaction validation.</p>
+    <p>Mandiri Clickpay is one of the payment features from Mandiri Debit. This method allows customer to perform a transaction by inserting the 16 digits Mandiri Debit Card and PIN Token for transaction validation.</p>
 
-    <p>To activate Mandiri ClickPay method of payment (automatically active on Sandbox mode), merchant needs to:</p>
+    <p>To activate Mandiri Clickpay method of payment (automatically active on Sandbox mode), merchant needs to:</p>
 
     <ol>
-      <li>Sign on for Mandiri ClickPay method of payment by contacting Veritrans sales representative.</li>
+      <li>Sign on for Mandiri Clickpay method of payment by contacting Veritrans sales representative.</li>
       <li>Add the <code>mandiri_clickpay</code>  parameter on variable <code>enabled_payments</code>.</li>
     </ol>
 
@@ -406,7 +406,7 @@ On <a href="integration_php.html#step1">VT-Web – Integration</a> section, all 
 </code></pre>
 
     <p><br />
-The Mandiri ClickPay tab will be shown at the VT-Web payment page. Information and procedure to perform Mandiri ClickPay transaction is displayed on the figure below.
+The Mandiri Clickpay tab will be shown at the VT-Web payment page. Information and procedure to perform Mandiri Clickpay transaction is displayed on the figure below.
 <br /><br />
 <img alt="vtweb_mandiri" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri.png" /></p>
 
@@ -817,9 +817,9 @@ The Indosat Dompetku tab will be shown at the VT-Web payment page. Information a
 
     <h3 id="installment">Installment</h3>
 
-    <p>To activate installment feature, merchant has to make an agreement with the acquiring bank. The merchant also needs to contact a Veritrans sales representative if the MID for installment is ready. If MID is ready, merchant simply has to add the parameter <code>installment</code> during redirect VT-Web URL request.</p>
+    <p>To activate installment feature, merchant has to make an agreement with the  bank. For online installment, bank will issue special MID for installment. By using this installment MID, the transaction will be converted automatically into installment. At this moment, only BNI and Mandiri which can issue Installment MID. The merchant also needs to contact a Veritrans sales representative if the MID for installment is ready. If MID is ready, merchant simply has to add the parameter <code>installment</code> during redirect VT-Web URL request.</p>
 
-    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /></p>
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:  </p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -856,7 +856,7 @@ The Indosat Dompetku tab will be shown at the VT-Web payment page. Information a
     <div class="alert alert-info" role="alert">
       <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <span class="sr-only">Info:</span>
-<strong>Info</strong>:<br /> Please refer to our <a href="../api/methods.html#vtwebinstallment">API Documentation - VT-Web Installment</a> for more info on the JSON attributes.</p>
+<strong>Info</strong>:<br />Please refer to our <a href="../api/methods.html#vtwebinstallment">API Documentation - VT-Web Installment</a> for more info on the JSON attributes.</p>
     </div>
 
     <p><br /></p>
@@ -870,7 +870,7 @@ The Indosat Dompetku tab will be shown at the VT-Web payment page. Information a
 
     <h3 id="bin-promo">BIN Promo</h3>
 
-    <p>BIN (Bank Identification Number) is the <strong>first 1-8 digit</strong> of a credit card, which identifies the bank that issues the card. A bank generally has more than one BIN. BIN promo is a feature that allows merchant to advertise bank a promotion according to the credit card issued by the bank.   </p>
+    <p>BIN (Bank Identification Number) is the <strong>first 1-6 digit</strong> of a credit card, which identifies the bank that issues the card. A bank generally has more than one BIN. BIN promo is a feature that allows merchant to advertise bank a promotion according to the credit card issued by the bank.   </p>
 
     <p>To use this feature, merchant needs to accumulate the list of BIN that currently receives promotion. This list of BIN will then become a transaction parameter <code>credit_card_bins</code>. This transaction can only be performed exclusively by the credit card that is included in the BIN list.</p>
 
@@ -1278,6 +1278,10 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>, and 
         });
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        mixpanel.track('en docs page viewed',{
+          'url' : location.href
         });
       });
     </script>
