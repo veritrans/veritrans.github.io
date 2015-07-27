@@ -19,7 +19,7 @@
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Docs - Veritrans Indonesia</title>
+    <title>Veritrans - API Documentation</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
     <!-- start Mixpanel -->
@@ -347,15 +347,15 @@ Refer to <a href="../welcome/pluginlibrary.html">Library &amp; Plugin</a> page f
                 </tr>
                 <tr>
                   <td>Finish Redirect URL</td>
-                  <td>http://[your shop’s homepage]/index.php?route=checkout/success&amp;</td>
+                  <td>http://[your shop’s homepage]/index.php?route=payment/veritrans/landing_redir&amp;</td>
                 </tr>
                 <tr>
                   <td>Error Redirect URL</td>
-                  <td>http://[your shop’s homepage]/index.php</td>
+                  <td>http://[your shop’s homepage]/index.php?route=payment/veritrans/landing_redir&amp;</td>
                 </tr>
                 <tr>
                   <td>Unfinish Redirect URL</td>
-                  <td>http://[your shop’s homepage]/index.php</td>
+                  <td>http://[your shop’s homepage]/index.php?route=payment/veritrans/landing_redir&amp;</td>
                 </tr>
               </tbody>
             </table>
@@ -619,5 +619,8 @@ Refer to <a href="../welcome/pluginlibrary.html">Library &amp; Plugin</a> page f
         });
       });
     </script>
+    <!-- Optimizely -->
+    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
+    <!-- end Optimizely -->
   </body>
 </html><!-- Veritrans.3.0-20150423 -->

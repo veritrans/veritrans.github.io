@@ -20,7 +20,7 @@
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Docs - Veritrans Indonesia</title>
+    <title>Veritrans - API Documentation</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
     <!-- start Mixpanel -->
@@ -634,9 +634,9 @@ Pada contoh di atas, installment response disimpan pada variable <code>$result</
 
     <h2 id="bin-promo">BIN Promo</h2>
 
-    <p>BIN (Bank Identification Number) promo adalah fitur yang memungkinkan anda untuk menawarkan promosi berdasarkan bank penerbit kartu kredit tertentu yang dimiliki pelanggan anda. Bank penerbit kartu kredit dapat ditentukan dengan menggunakan BIN, BIN merupakan <strong>6 digit</strong> pertama dari kartu kredit. Sebagai alternatif, anda bisa menggunakan <strong>1-8</strong> digit pertama kartu kredit yang akan digunakan pada fitur BIN Promo.</p>
+    <p>BIN (Bank Identification Number) promo adalah fitur yang memungkinkan anda untuk menawarkan promosi berdasarkan bank penerbit kartu kredit tertentu yang dimiliki pelanggan anda. Bank penerbit kartu kredit dapat ditentukan dengan menggunakan BIN, BIN merupakan <strong>6 digit</strong> pertama dari kartu kredit. Sebagai alternatif, anda bisa menggunakan <strong>1-8</strong> digit pertama kartu kredit yang akan digunakan atau nama bank penerbit kartu pada fitur BIN Promo.</p>
 
-    <p>Untuk menggunakan fitur ini, anda terlebih dahulu mengumpulkan daftar BIN yang menerima promo. Daftar BIN tersebut menjadi parameter transaksi <code>bins</code>, transaksi hanya dapat dilakukan oleh kartu kredit yang termasuk dalam daftar BIN.  Gunakan daftar BIN yang anda miliki sebagai nilai dari atribut <code>bins</code> saat charge transaksi.</p>
+    <p>Untuk menggunakan fitur ini, anda terlebih dahulu mengumpulkan daftar BIN yang menerima promo atau cukup menggunakan nama bank penerbit kartu. Daftar BIN tersebut menjadi parameter transaksi <code>bins</code>, transaksi hanya dapat dilakukan oleh kartu kredit yang termasuk dalam daftar BIN atau kartu yang diterbitkan bank tertentu.  Gunakan daftar BIN yang anda miliki atau nama bank penerbit kartu sebagai nilai dari atribut <code>bins</code> saat charge transaksi.</p>
 
     <p>Menggunakan transaksi yang sama dengan bagian integrasi, contoh kode PHP yang dapat digunakan adalah sebagai berikut:
 <br /><br /></p>
@@ -651,7 +651,7 @@ Pada contoh di atas, installment response disimpan pada variable <code>$result</
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
     <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
-    <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
+    <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
@@ -668,7 +668,7 @@ Pada contoh di atas, installment response disimpan pada variable <code>$result</
 </code></pre>
 
     <p><br />
-Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, charge transaksi akan gagal dan terjadi <em>exception</em>.</p>
+Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, <code>5</code>, <code>bni</code>, dan <code>mandiri</code>. Jika kartu kredit dengan BIN "411111" atau kartu kredit yang tidak diterbitkan oleh bni atau mandiri coba digunakan, charge transaksi akan gagal dan terjadi <em>exception</em>.</p>
 
   </div>
   <div class="tab-pane" id="one-click">
@@ -1412,5 +1412,8 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
         });
       });
     </script>
+    <!-- Optimizely -->
+    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
+    <!-- end Optimizely -->
   </body>
 </html><!-- Veritrans.3.0-20150423 -->

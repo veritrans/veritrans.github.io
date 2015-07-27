@@ -20,7 +20,7 @@
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Docs - Veritrans Indonesia</title>
+    <title>Veritrans - API Documentation</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
     <!-- start Mixpanel -->
@@ -1864,7 +1864,7 @@ Untuk mengkonfigurasi fitur BIN Promo di VT-Web:</p>
         </tr>
         <tr>
           <td>credit_card_bins<em>JSON Array</em> <strong>Required</strong></td>
-          <td>Daftar dari BIN (Bank Identification Number) kartu kredit yang dapat dipakai di VT-Web.<br />Semua BIN mempunyai 1 sampai 8 angka.</td>
+          <td>Daftar dari BIN (Bank Identification Number) kartu kredit atau nama bank penerbit kartu yang dapat dipakai di VT-Web.<br />Semua BIN mempunyai 1 sampai 8 angka.<br />Bank yang mungkin:<code>"bni"</code>,<code>"mandiri"</code>,<code>"cimb"</code>.</td>
         </tr>
       </tbody>
     </table>
@@ -1886,7 +1886,7 @@ Untuk mengkonfigurasi fitur BIN Promo di VT-Web:</p>
    <span class="c1">// Required</span>
   <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cimb_clicks"</span><span class="p">,</span> <span class="s2">"bank_transfer"</span><span class="p">,</span> <span class="s2">"credit_card"</span><span class="p">],</span>
-    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to set BIN Promo</span>
+    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to set BIN Promo</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
   
@@ -8754,5 +8754,8 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
         });
       });
     </script>
+    <!-- Optimizely -->
+    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
+    <!-- end Optimizely -->
   </body>
 </html><!-- Veritrans.3.0-20150423 -->

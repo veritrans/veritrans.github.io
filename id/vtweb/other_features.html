@@ -20,7 +20,7 @@
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Docs - Veritrans Indonesia</title>
+    <title>Veritrans - API Documentation</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
 
     <!-- start Mixpanel -->
@@ -870,9 +870,9 @@ Tab Indosat Dompetku dapat digunakan oleh pelanggan untuk melakukan transaksi. F
 
     <h3 id="bin-promo">BIN Promo</h3>
 
-    <p>BIN (Bank Identification Number) promo adalah fitur yang memungkinkan anda untuk menawarkan promosi berdasarkan bank penerbit kartu kredit tertentu yang dimiliki pelanggan anda. Bank penerbit kartu kredit dapat ditentukan hanya dengan menggunakan BIN. BIN merupakan <strong>6 digit</strong> pertama dari kartu kredit. Sebagai alternatif, anda juga boleh menggunakan <strong>1-8</strong> digit pertama kartu kredit yang akan digunakan pada fitur BIN Promo.</p>
+    <p>BIN (Bank Identification Number) promo adalah fitur yang memungkinkan anda untuk menawarkan promosi berdasarkan bank penerbit kartu kredit tertentu yang dimiliki pelanggan anda. Bank penerbit kartu kredit dapat ditentukan dengan menggunakan BIN atau nama bank penerbit kartu. BIN merupakan <strong>6 digit</strong> pertama dari kartu kredit. Sebagai alternatif, anda juga boleh menggunakan <strong>1-8</strong> digit pertama kartu kredit atau nama penerbit kartu yang akan digunakan pada fitur BIN Promo.</p>
 
-    <p>Untuk menggunakan fitur ini, anda terlebih dahulu mengumpulkan daftar BIN yang menerima promo. Daftar BIN tersebut menjadi parameter transaksi <code>credit_card_bins</code>, transaksi hanya dapat dilakukan oleh kartu kredit yang termasuk dalam daftar BIN.  Gunakan daftar BIN yang anda miliki sebagai nilai dari atribut <code>credit_card_bins</code> saat charge transaksi.</p>
+    <p>Untuk menggunakan fitur ini, anda terlebih dahulu mengumpulkan daftar BIN yang menerima promo atau bisa menggunakan nama bank penerbit kartu. Daftar BIN atau nama bank tersebut menjadi parameter transaksi <code>credit_card_bins</code>, transaksi hanya dapat dilakukan oleh kartu kredit yang termasuk dalam daftar BIN atau kartu yang diterbitkan oleh bank tersebut.  Gunakan daftar BIN yang anda miliki sebagai nilai dari atribut <code>credit_card_bins</code> saat charge transaksi.</p>
 
     <p><br /></p>
 
@@ -888,7 +888,7 @@ Tab Indosat Dompetku dapat digunakan oleh pelanggan untuk melakukan transaksi. F
           <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
           <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
           <span class="c1">//Register BIN list
-</span>          <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
+</span>          <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">8033</span><span class="p">,</span>
@@ -910,7 +910,7 @@ Tab Indosat Dompetku dapat digunakan oleh pelanggan untuk melakukan transaksi. F
     </div>
 
     <p><br />
-Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, dan <code>5</code>. Jika kartu kredit dengan BIN "411111" coba digunakan, transaksi akan ditolak dengan pesan error sebagai berikut:
+Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>3111</code>, <code>5</code>, <code>bni</code>, <code>mandiri</code>. Jika kartu kredit dengan BIN "411111" atau kartu kredit yang tidak diterbitkan bank tersebut coba digunakan, transaksi akan ditolak dengan pesan error sebagai berikut:
 <br />
 <img alt="VT-Web BIN Error" class="img-responsive img-thumbnail" src="../../images/vtweb_bin.png" /></p>
 
@@ -1283,5 +1283,8 @@ Secara default, redirection URL dapat dikonfigurasi melalui MAP Veritrans melalu
         });
       });
     </script>
+    <!-- Optimizely -->
+    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
+    <!-- end Optimizely -->
   </body>
 </html><!-- Veritrans.3.0-20150423 -->

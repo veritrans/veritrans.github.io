@@ -19,7 +19,7 @@
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Docs - Veritrans Indonesia</title>
+    <title>Veritrans - API Documentation</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
     <!-- start Mixpanel -->
@@ -336,20 +336,18 @@
                 </tr>
                 <tr>
                   <td>Finish Redirect URL</td>
-                  <td>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</td>
+                  <td>http://[your-site-url]/index.php?fc=module&amp;module=veritranspay&amp;controller=success</td>
                 </tr>
                 <tr>
                   <td>Error Redirect URL</td>
-                  <td>http://[your_shop’s_homepage]/index.php?fc=module&amp;module=veritranspay&amp;controller=confirmation</td>
+                  <td>http://[your-site-url]/index.php?fc=module&amp;module=veritranspay&amp;controller=failure</td>
                 </tr>
                 <tr>
                   <td>Unfinish Redirect URL</td>
-                  <td>http://[your_shop’s_homepage]/index.php</td>
+                  <td>http://[your-site-url]/index.php?fc=module&amp;module=veritranspay&amp;controller=back</td>
                 </tr>
               </tbody>
             </table>
-
-            <p><img alt="Prestashop URL" class="img-responsive img-thumbnail" src="../../images/presta01.png" /></p>
           </li>
         </ol>
 
@@ -619,5 +617,8 @@
         });
       });
     </script>
+    <!-- Optimizely -->
+    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
+    <!-- end Optimizely -->
   </body>
 </html><!-- Veritrans.3.0-20150423 -->

@@ -19,7 +19,7 @@
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Docs - Veritrans Indonesia</title>
+    <title>Veritrans - API Documentation</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
     <!-- start Mixpanel -->
@@ -870,9 +870,9 @@ The Indosat Dompetku tab will be shown at the VT-Web payment page. Information a
 
     <h3 id="bin-promo">BIN Promo</h3>
 
-    <p>BIN (Bank Identification Number) is the <strong>first 1-6 digit</strong> of a credit card, which identifies the bank that issues the card. A bank generally has more than one BIN. BIN promo is a feature that allows merchant to advertise bank a promotion according to the credit card issued by the bank.   </p>
+    <p>BIN promo is a feature that allows merchant to advertise bank a promotion according to the credit card issued by the bank. BIN (Bank Identification Number) is the <strong>first 1-6 digit</strong> of a credit card, which identifies the bank that issues the card. A bank generally has more than one BIN.   </p>
 
-    <p>To use this feature, merchant needs to accumulate the list of BIN that currently receives promotion. This list of BIN will then become a transaction parameter <code>credit_card_bins</code>. This transaction can only be performed exclusively by the credit card that is included in the BIN list.</p>
+    <p>To use this feature, merchant needs to accumulate the list of BIN that currently receives promotion or simply using issuing bank name. This list of BIN or issuing bank name will then become a transaction parameter <code>credit_card_bins</code>. This transaction can only be performed exclusively by the credit card that is included in the BIN list or BIN under particular defined issuing bank.</p>
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /></p>
 
@@ -886,7 +886,7 @@ The Indosat Dompetku tab will be shown at the VT-Web payment page. Information a
           <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
           <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
           <span class="c1">//Register BIN list
-</span>          <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
+</span>          <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">8033</span><span class="p">,</span>
@@ -908,7 +908,7 @@ The Indosat Dompetku tab will be shown at the VT-Web payment page. Information a
     </div>
 
     <p><br />
-The example above adds BIN number <code>48111111</code>, <code>3111</code>, and <code>5</code> to the BIN list. If credit card with BIN number “411111” is used, transaction will be denied with an error message as followed:
+The example above adds BIN number <code>48111111</code>, <code>3111</code>,<code>5</code>, and issuing bank name to the BIN list. If credit card with BIN number “411111” is used or credit card doesn't belong to <code>BNI</code> or <code>Mandiri</code> BIN, transaction will be denied with an error message as followed:
 <br />
 <img alt="VT-Web BIN Error" class="img-responsive img-thumbnail" src="../../images/vtweb_bin.png" /></p>
 
@@ -1286,5 +1286,8 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>, and 
         });
       });
     </script>
+    <!-- Optimizely -->
+    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
+    <!-- end Optimizely -->
   </body>
 </html><!-- Veritrans.3.0-20150423 -->

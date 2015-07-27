@@ -19,7 +19,7 @@
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Docs - Veritrans Indonesia</title>
+    <title>Veritrans - API Documentation</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
     <!-- start Mixpanel -->
@@ -1748,7 +1748,7 @@ To configure the BIN Promo feature in VT-Web:</p>
         </tr>
         <tr>
           <td>credit_card_bins<em>JSON Array</em> <strong>Required</strong></td>
-          <td>List of credit card's BIN (Bank Identification Number) that can be used on VT-Web. <br />All BIN can have 1 to 8 digits.</td>
+          <td>List of credit card's BIN (Bank Identification Number) or issuing bank name that can be used on VT-Web.<br />All BIN can have 1 to 8 digits. <br />Possible value banks: <code>"bni"</code>,<code>"mandiri"</code>,<code>"cimb"</code>.</td>
         </tr>
       </tbody>
     </table>
@@ -1770,7 +1770,7 @@ To configure the BIN Promo feature in VT-Web:</p>
    <span class="c1">// Required</span>
   <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cimb_clicks"</span><span class="p">,</span> <span class="s2">"bank_transfer"</span><span class="p">,</span> <span class="s2">"credit_card"</span><span class="p">],</span>
-    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to set BIN Promo</span>
+    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to set BIN Promo</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
   
@@ -8765,5 +8765,8 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
         });
       });
     </script>
+    <!-- Optimizely -->
+    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
+    <!-- end Optimizely -->
   </body>
 </html><!-- Veritrans.3.0-20150423 -->

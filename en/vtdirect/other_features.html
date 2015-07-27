@@ -19,7 +19,7 @@
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Docs - Veritrans Indonesia</title>
+    <title>Veritrans - API Documentation</title>
 		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
     
     <!-- start Mixpanel -->
@@ -636,9 +636,9 @@ In the above example, the charge response is saved in the variable <code>$result
 
     <h2 id="bin-promo">BIN Promo</h2>
 
-    <p>BIN (Bank Identification Number) is the first <strong>6 digit</strong> number of a credit card. The issuing bank for the credit card can be identified from these numbers. BIN promo is the feature that allows merchant to give out the deal based on the promotion given by the issuing bank. Merchant can use the first <strong>1-8</strong> digits of the credit card to utilize the BIN Promo feature.</p>
+    <p>BIN promo is the feature that allows merchant to give out the deal based on the promotion given by the issuing bank. Merchant can use the first <strong>1-8</strong> digits of the credit card or simply using the bank name to utilize the BIN Promo feature. BIN (Bank Identification Number) is the first <strong>6 digit</strong> number of a credit card. The issuing bank for the credit card can be identified from these numbers. </p>
 
-    <p>To use this feature, you have to first list out the BIN that offers a promotion. The BIN list will become the transaction parameter <code>bins</code>. Transactions can only be performed by credit cards that are included in the BIN list. Use the BIN list as a value from the attribute <code>bins</code> during the charge transaction.</p>
+    <p>To use this feature, you have to first list out the BIN that offers a promotion or using the issuing bank name. The BIN list or issuer bank name will become the transaction parameter <code>bins</code>. Transactions can only be performed by credit cards that are included in the BIN list or credit card issued by defined bank. Use the BIN list or issuing bank name as a value from the attribute <code>bins</code> during the charge transaction.</p>
 
     <p>Following the same transaction in credit card integration, the sample PHP script that can be used is as followed:
 <br /><br /></p>
@@ -653,7 +653,7 @@ In the above example, the charge response is saved in the variable <code>$result
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
     <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
-    <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
+    <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
@@ -668,7 +668,7 @@ In the above example, the charge response is saved in the variable <code>$result
 </code></pre>
 
     <p><br />
-On the above example, the BIN that is listed is <code>48111111</code>, <code>3111</code>, and <code>5</code>. If a card with the BIN "411111" is used, charge transaction will fail.</p>
+On the above example, the BIN that is listed is <code>48111111</code>, <code>3111</code>, <code>5</code>, <code>bni</code>, and <code>mandiri</code>. If a card with the BIN "411111" is used or card doesn't belong to bni or mandiri, charge transaction will fail.</p>
 
   </div>
   <div class="tab-pane" id="one-click">
@@ -1411,5 +1411,8 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
         });
       });
     </script>
+    <!-- Optimizely -->
+    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
+    <!-- end Optimizely -->
   </body>
 </html><!-- Veritrans.3.0-20150423 -->
