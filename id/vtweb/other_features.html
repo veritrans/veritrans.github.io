@@ -87,10 +87,6 @@
             <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
                Sign Up
             </a>
-            <!-- B -->
-            <!-- <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
-            </a> -->
           </div>
         </li>
       </ul>
@@ -98,6 +94,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+
 <!-- LOGIN MODAL -->
 <div id="login-modal" class="modal fade">
   <div class="modal-dialog modal-lg">
@@ -334,6 +331,13 @@
           <td> </td>
           <td> </td>
           <td><a href="#dompetku">Indosat Dompetku</a></td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td><a href="#mandiriecash">Mandiri E-cash</a></td>
           <td> </td>
           <td> </td>
         </tr>
@@ -786,6 +790,49 @@ Halaman pembayaran Indomaret akan muncul di VT-Web. Informasi dan petunjuk pemba
 Tab Indosat Dompetku dapat digunakan oleh pelanggan untuk melakukan transaksi. Form beserta petunjuk pembayaran menggunakan Indosat Dompetku akan ditampilkan pada halaman ini.
 <br /><br />
 <img alt="vtweb_tcash" class="img-responsive img-thumbnail" src="../../images/vtweb_dompetku.png" /></p>
+
+    <p><br /></p>
+
+    <hr />
+
+    <h3 id="mandiriecash">Mandiri E-cash</h3>
+
+    <p>Mandiri E-cash merupakan layanan uang elektronik (E-money) yang disediakan oleh Bank Mandiri yang memberikan kemudahan bagi customer dalam melakukan pembayaran online. Customer harus melakukan registrasi Mandiri E-cash dan mengisi saldo terlebih dahulu sebelum menggunakannya untuk transaksi Mandiri E-cash.</p>
+
+    <p>Untuk mengaktifkan metode pembayaran Mandiri E-cash (otomatis aktif pada mode Sandbox), merchant perlu:</p>
+
+    <ol>
+      <li>Daftarkan metode pembayaran Mandiri E-cash dengan menghubungi sales representative Veritrans.</li>
+      <li>Menambahkan parameter <code>mandiri_ecash</code> pada variabel <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Menggunakan contoh transaksi pada bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"mandiri_ecash"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. Form beserta petunjuk pembayaran menggunakan Mandiri E-cash akan ditampilkan pada halaman ini.
+<br /><br />
+<img alt="vtweb_mandiriecash" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_ecash.png" /></p>
 
     <p><br /></p>
 

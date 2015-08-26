@@ -86,10 +86,6 @@
             <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
                Sign Up
             </a>
-            <!-- B -->
-            <!-- <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
-            </a> -->
           </div>
         </li>
       </ul>
@@ -97,6 +93,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+
 <!-- LOGIN MODAL -->
 <div id="login-modal" class="modal fade">
   <div class="modal-dialog modal-lg">
@@ -335,6 +332,13 @@
           <td> </td>
           <td> </td>
           <td><a href="#dompetku">Indosat Dompetku</a></td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td><a href="#mandiriecash">Mandiri E-cash</a></td>
           <td> </td>
           <td> </td>
         </tr>
@@ -790,6 +794,47 @@ The Indomaret page will be shown at the VT-Web. Information and procedure to per
 The Indosat Dompetku tab will be shown at the VT-Web payment page. Information and procedure to perform Indosat Dompetku transaction is displayed on the figure below.
 <br /><br />
 <img alt="vtweb_dompetku" class="img-responsive img-thumbnail" src="../../images/vtweb_dompetku.png" /></p>
+
+    <hr />
+
+    <h3 id="mandiriecash">Mandiri E-cash</h3>
+
+    <p>Mandiri E-cash is an electronic money (E-money) from Mandiri Bank, that allows customers to pay online transactions. This method needs the customer to register to Mandiri E-cash and top up the balance.</p>
+
+    <p>To activate Mandiri E-cash method of payment (automatically active on Sandbox mode), merchant needs to:</p>
+
+    <ol>
+      <li>Sign on for Mandiri E-cash method of payment by contacting Veritrans sales representative.</li>
+      <li>Add the <code>mandiri_ecash</code> parameter on variable <code>enabled_payments</code>.</li>
+    </ol>
+
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"mandiri_ecash"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p><br />
+The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and procedure to perform Mandiri E-cash transaction is displayed on the figure below.
+<br /><br />
+<img alt="vtweb_mandiriecash" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_ecash.png" /></p>
 
     <hr />
 

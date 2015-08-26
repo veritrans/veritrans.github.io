@@ -87,10 +87,6 @@
             <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
                Sign Up
             </a>
-            <!-- B -->
-            <!-- <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
-            </a> -->
           </div>
         </li>
       </ul>
@@ -98,6 +94,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+
 <!-- LOGIN MODAL -->
 <div id="login-modal" class="modal fade">
   <div class="modal-dialog modal-lg">
@@ -538,6 +535,7 @@ Daftar status code lengkap dapat dilihat di <a href="../api/status_code.html">Re
   <li><a href="#mbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#indomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
   <li><a href="#dompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
+  <li><a href="#mandiriecash" data-toggle="tab-code" data-lang="mandiriecash">Mandiri E-cash</a></li>
 </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="testcc">
@@ -970,6 +968,58 @@ Klik tombol <strong>Confirm Payment</strong>, hasil status pembayaran VT-Web aka
 
           </div>
           <!-- end of step Indosat Dompetku-->
+
+          <div class="tab-pane" id="mandiriecash">
+            <!-- step Mandiri E-cash-->
+
+            <h3 id="mandiri-e-cash">Mandiri E-cash</h3>
+            <p>Kami akan mensimulasikan transaksi Mandiri E-cash yang berhasil. <br />Berikut di bawah ini adalah data testing yang dapat digunakan:<br /></p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Fields</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nomor Berhasil</td>
+                  <td>08123456789</td>
+                </tr>
+                <tr>
+                  <td>PIN</td>
+                  <td>12345</td>
+                </tr>
+                <tr>
+                  <td>OTP</td>
+                  <td>12123434</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br />
+<br />
+Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
+<br />
+<img alt="VT-Web mandiriecash Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_ecash.png" />
+<br /><br />
+Klik tombol Confirm Payment dan anda akan diarahkan ke halaman pembayaran Mandiri E-cash untuk login dengan nomor telepon dan PIN
+<br />
+<img alt="VT-Web mandirecash Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiriecash_test1.png" />
+<br /><br />
+Masukkan OTP untuk menyelesaikan pembayaran
+<br />
+<img alt="VT-Web mandirecash Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiriecash_test2.png" />
+<br /><br />
+Halaman konfirmasi pembayaran berhasil
+<br />
+<img alt="VT-Web mandirecash Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiriecash_test3.png" />
+<br /></p>
+
+          </div>
+          <!-- end of step Mandiri E-cash-->
+
         </div>
         <!-- end of tab-content u/ testing-->
       </div>
@@ -1037,6 +1087,7 @@ Klik tombol <strong>Confirm Payment</strong>, hasil status pembayaran VT-Web aka
   <li><a href="#statusmbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
   <li><a href="#statusdompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
+  <li><a href="#statusmandiriecash" data-toggle="tab-code" data-lang="mandiriecash">Mandiri E-cash</a></li>
 </ul>
 
         <div class="tab-content">
@@ -2272,6 +2323,115 @@ PUT PHP CODE
 
           </div>
           <!-- End of Indosat Dompetku Status -->
+
+          <div class="tab-pane" id="statusmandiriecash">
+            <!-- Mandiri E-cash Status -->
+
+            <h3 id="mandiri-e-cash-1">Mandiri E-cash</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Mandiri E-cash yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b7696f1-f9ca-4f4b-a389-ede2c2dddb5c"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtecash03"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"mandiri_ecash"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-06-24 11:20:24"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"73c70c8354e0705a16bd5d47d0ab3029a70b79bef0fe3b29161557110205d3679f0ea177101f56fe6313a887f340be7d302750ce8a4e0f67753c70548159895e"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Note</strong>:<br />Untuk informasi lebih lanjut mengenai respon pembayaran Mandiri E-cash, silahkan cek ke <a href="../api/methods.html#mandiriecash">sini</a>.</p>
+
+            </div>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-11">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'success'.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>expired</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- LIST OF STATUS THAT IS AVAILABLE IN THE FUTURE
+|refund | Transaction is fully refunded to the customer.|
+|partial_refund | Transaction is partially refunded to the customer.|
+-->
+
+            <p><br /></p>
+
+            <!--Update PLEASE
+#### Handling HTTP(S) Notification
+The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing **Veritrans-PHP** library. This PHP code is executed when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br />
+~~~ php
+PUT PHP CODE
+~~~
+-->
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-11">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Mandiri E-cash:
+<img alt="VT-Web mandiriecash Test 3" class="img-responsive img-thumbnail" src="../../images/mandiriecash_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri E-cash adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'success'.</td>
+                </tr>
+                <tr>
+                  <td>Success</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Mandiri E-cash Status -->
+
         </div>
         <!-- End of Tab-Content u/ Status -->
 

@@ -86,10 +86,6 @@
             <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
                Sign Up
             </a>
-            <!-- B -->
-            <!-- <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
-            </a> -->
           </div>
         </li>
       </ul>
@@ -97,6 +93,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
+
 <!-- LOGIN MODAL -->
 <div id="login-modal" class="modal fade">
   <div class="modal-dialog modal-lg">
@@ -542,6 +539,7 @@ The list of status codes can be found in <a href="../api/status_code.html">Refer
   <li><a href="#mbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#indomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
   <li><a href="#dompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
+  <li><a href="#mandiriecash" data-toggle="tab-code" data-lang="mandiriecash">Mandiri E-cash</a></li>
 </ul>
         <div class="tab-content">
 
@@ -979,6 +977,58 @@ Click Confirm Payment and a VT-Web result payment page will be displayed.
 
           </div>
           <!-- end of step dompetku-->
+
+          <div class="tab-pane" id="mandiriecash">
+            <!-- step Mandiri E-cash-->
+
+            <h3 id="mandiri-e-cash">Mandiri E-cash</h3>
+            <p>We will try to perform a successful Mandiri E-cash transaction.<br />The dummy Mandiri E-cash credentials that can be used for success transaction is:<br /></p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Fields</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Phone number</td>
+                  <td>0987654321</td>
+                </tr>
+                <tr>
+                  <td>PIN</td>
+                  <td>12345</td>
+                </tr>
+                <tr>
+                  <td>OTP</td>
+                  <td>12123434</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br />
+<br />
+Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
+<br />
+<img alt="VT-Web mandiriecash Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiri_ecash.png" />
+<br /><br />
+Click Confirm Payment and user will be redirected to payment page below to login with phone number and PIN
+<br />
+<img alt="VT-Web mandirecash Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiriecash_test1.png" />
+<br /><br />
+Enter OTP to complete the transaction
+<br />
+<img alt="VT-Web mandirecash Test 3" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiriecash_test2.png" />
+<br /><br />
+Success confirmation page
+<br />
+<img alt="VT-Web mandirecash Test 4" class="img-responsive img-thumbnail" src="../../images/vtweb_mandiriecash_test3.png" />
+<br /></p>
+
+          </div>
+          <!-- end of step mandiriecash-->
+
         </div>
         <!-- end of tab-content u/ testing-->
       </div>
@@ -1046,6 +1096,7 @@ Click Confirm Payment and a VT-Web result payment page will be displayed.
   <li><a href="#statusmbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
   <li><a href="#statusdompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
+  <li><a href="#statusmandiriecash" data-toggle="tab-code" data-lang="mandiriecash">Mandiri Ecash</a></li>
 </ul>
 
         <div class="tab-content">
@@ -2281,6 +2332,108 @@ PUT PHP CODE
 
           </div>
           <!-- End of dompetku Status -->
+
+          <div class="tab-pane" id="statusmandiriecash">
+            <!-- Mandiri E-cash Status -->
+
+            <h3 id="mandiri-e-cash-1">Mandiri E-cash</h3>
+
+            <p>HTTP Notification example of a successful Mandiri E-cash transaction:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b7696f1-f9ca-4f4b-a389-ede2c2dddb5c"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtecash03"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"mandiri_ecash"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-06-24 11:20:24"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"73c70c8354e0705a16bd5d47d0ab3029a70b79bef0fe3b29161557110205d3679f0ea177101f56fe6313a887f340be7d302750ce8a4e0f67753c70548159895e"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Note</strong>:<br />For more information about Mandiri E-cash response, please check <a href="../api/methods.html#mandiriecash">here</a>.</p>
+
+            </div>
+
+            <p><br /></p>
+
+            <h4 id="available-https-post-notification-status-11">Available HTTP(S) POST Notification Status</h4>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
+                </tr>
+                <tr>
+                  <td>Expired</td>
+                  <td>Failure transaction caused by pending Transaction has not been paid and is expired.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- LIST OF STATUS THAT IS AVAILABLE IN THE FUTURE
+|refund | Transaction is fully refunded to the customer.|
+|partial_refund | Transaction is partially refunded to the customer.|
+-->
+
+            <p><br /></p>
+
+            <!--Update PLEASE
+#### Handling HTTP(S) Notification
+The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing **Veritrans-PHP** library. This PHP code is executed when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br />
+~~~ php
+PUT PHP CODE
+~~~
+-->
+
+            <hr />
+
+            <h3 id="merchant-admin-portalmap-transaction-status-11">Merchant Admin Portal(MAP) Transaction Status</h3>
+
+            <p>Merchant can check the transactions status from <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> menu on MAP.</p>
+
+            <p>Example of a successful transaction status for Mandiri E-cash:
+<img alt="VT-Web mandiriecash Test 3" class="img-responsive img-thumbnail" src="../../images/mandiriecash_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>List of available MAP transaction status for Mandiri E-cash is described below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
+                </tr>
+                <tr>
+                  <td>Success</td>
+                  <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Failure transaction can be caused by pending Transaction has not been paid and is expired.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of mandiriecash Status -->
 
         </div>
         <!-- End of Tab-Content u/ Status -->
