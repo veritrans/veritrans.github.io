@@ -77,13 +77,13 @@
           <a href="https://veritrans.co.id/career.html">Career</a>
         </li>
         <li>
-          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
             Log In
           </a>
         </li>
         <li>
           <div>
-            <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
                Sign Up
             </a>
           </div>
@@ -94,41 +94,6 @@
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
 
-<!-- LOGIN MODAL -->
-<div id="login-modal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="row">
-          <div class="col-sm-6 col-xs-12">
-            <div class="production-box">
-              <!-- <img src="images/banner-about.png"> -->
-              <h5>PRODUCTION</h5>
-              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
-              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12">
-            <div class="sandbox-box">
-              <!-- <img src="images/banner-sandbox.png"> -->
-              <h5>SANDBOX</h5>
-              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
-            </div>
-          </div>
-        </div>
-        <br/><br/>
-        <div class="row">
-          <div class="col-xs-12 text-left">
-            <div class="register-box">
-              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
-            </div>
-          </div>
-        </div>  
-      </div>
-    </div>
-  </div>
-</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -873,7 +838,11 @@ The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and
 
     <h3 id="installment">Installment</h3>
 
+    <h4 id="online-installment">Online Installment</h4>
+
     <p>To activate installment feature, merchant has to make an agreement with the  bank. For online installment, bank will issue special MID for installment. By using this installment MID, the transaction will be converted automatically into installment. At this moment, only BNI and Mandiri which can issue Installment MID. The merchant also needs to contact a Veritrans sales representative if the MID for installment is ready. If MID is ready, merchant simply has to add the parameter <code>installment</code> during redirect VT-Web URL request.</p>
+
+    <p>Furthermore, in order to limit only eligible card can do installment transaction, merchant needs to implement BIN promo feature along with installment. Please refer to BIN Promo documentation for further details.</p>
 
     <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:  </p>
 
@@ -895,7 +864,8 @@ The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and
                       <span class="s2">"mandiri"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
                     <span class="p">)</span>
                 <span class="p">)</span>
-            <span class="p">)</span>
+            <span class="p">),</span>
+          <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
@@ -922,6 +892,51 @@ The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and
 <img alt="VT-Web Installment" class="img-responsive img-thumbnail" src="../../images/vtweb_installment.png" /></p>
 
   </div>
+
+  <h4 id="offline-installment">Offline Installment</h4>
+
+  <p>To allow installment feature with banks which doesn't issue MID Installment, merchant can use feature offline installment. With offline installment feature, the transaction will be charged in full amount and the transaction will be converted into installment later. For more information and support, merchant can contact Veritrans Sales Representative. Merchant simply has to add the parameter <code>offline_installment_term</code> during redirect VT-Web URL request with combination bin filter feature. The purpose of bin filter is to limit only certain cards will be allowed to do offline installment based on the agreement between merchant and issuing banks.</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="c1">// Add installment payment option
+</span>          <span class="s2">"payment_options"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+              <span class="s2">"installment"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                  <span class="s2">"required"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+                  <span class="s2">"installment_terms"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                      <span class="s2">"bni"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
+                      <span class="s2">"mandiri"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+                    <span class="p">),</span>
+                  <span class="s2">"offline_installment_term"</span><span class="o">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">),</span>
+          <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+
+</code></pre>
+
+  <div class="alert alert-info" role="alert">
+    <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Info</strong>:<br />Please refer to our <a href="../api/methods.html#vtwebinstallment">API Documentation - VT-Web Installment</a> for more info on the JSON attributes.</p>
+  </div>
+
   <div class="tab-pane" id="bin-promo">
 
     <h3 id="bin-promo">BIN Promo</h3>
@@ -1134,6 +1149,7 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>,<code
 
     <span class="c1">//Set Custom Expiry
 </span>    <span class="s1">'custom_expiry'</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span> 
+      <span class="s2">"order_time"</span> <span class="o">=&gt;</span> <span class="s2">"2015-09-08 11:06:53 +0700"</span><span class="p">,</span>
       <span class="s2">"expiry_duration"</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"unit"</span> <span class="o">=&gt;</span> <span class="s2">"minute"</span>
   <span class="p">)</span>

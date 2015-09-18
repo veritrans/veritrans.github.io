@@ -77,13 +77,13 @@
           <a href="https://veritrans.co.id/career.html">Career</a>
         </li>
         <li>
-          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
             Log In
           </a>
         </li>
         <li>
           <div>
-            <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
                Sign Up
             </a>
           </div>
@@ -94,41 +94,6 @@
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
 
-<!-- LOGIN MODAL -->
-<div id="login-modal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="row">
-          <div class="col-sm-6 col-xs-12">
-            <div class="production-box">
-              <!-- <img src="images/banner-about.png"> -->
-              <h5>PRODUCTION</h5>
-              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
-              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12">
-            <div class="sandbox-box">
-              <!-- <img src="images/banner-sandbox.png"> -->
-              <h5>SANDBOX</h5>
-              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
-            </div>
-          </div>
-        </div>
-        <br/><br/>
-        <div class="row">
-          <div class="col-xs-12 text-left">
-            <div class="register-box">
-              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
-            </div>
-          </div>
-        </div>  
-      </div>
-    </div>
-  </div>
-</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -878,6 +843,10 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
           <tr>
             <td><a data-toggle="collapse" href="#installment_attr">installment</a>  <em>JSON Object</em></td>
             <td>Installment feature details on VT-Web.</td>
+          </tr>
+          <tr>
+            <td>offline_installment_term  <em>JSON Array</em><strong>Required</strong></td>
+            <td>List of offline installment term on VT-Web.</td>
           </tr>
         </tbody>
       </table>
@@ -1745,7 +1714,7 @@ To select the specific payment method displayed on VT-Web, set the following att
 <span class="p">}</span>
 </code></pre>
 
-<p id="vtwebbinpromo"><br /></p>
+<p><br /></p>
 
 <h4 id="vt-web-features-bin-promo">VT-Web Features: BIN Promo</h4>
 
@@ -1815,7 +1784,9 @@ To configure the BIN Promo feature in VT-Web:</p>
 
 <h4 id="vt-web-features-installment">VT-Web Features: Installment</h4>
 
-<p>Installment feature is only available for Card Payment. (Acquiring Bank: BNI or Mandiri)<br />
+<h5 id="online-installment">Online Installment</h5>
+
+<p>Installment feature is only available for Card Payment. For online Installment, acquiring bank will issue special MID for installment (Acquiring Bank: BNI or Mandiri)<br />
 To configure the installment feature in VT-Web:</p>
 
 <div class="table-wrapper">
@@ -1905,8 +1876,6 @@ To configure the installment feature in VT-Web:</p>
   </div>
 </div>
 
-<p>&lt;/div&gt;</p>
-
 <pre><code class="highlight json"><span class="p">{</span>
   <span class="c1">// Required</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"vtweb"</span><span class="p">,</span>
@@ -1932,6 +1901,136 @@ To configure the installment feature in VT-Web:</p>
           <span class="p">}</span>
         <span class="p">}</span>
       <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p><br /></p>
+
+<h5 id="offline-installment">Offline Installment</h5>
+
+<p>Offline Installment feature is available for Card Payment which doesn't have special installment MID.
+<br />
+To configure the offline installment feature in VT-Web:</p>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>JSON Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a data-toggle="collapse" href="#vtweb_attr_installment2">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td>VT-Web installment configuration.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="vtweb_attr_installment2" class="tb-nest-1 collapse">
+    <table>
+      <tbody>
+        <tr>
+          <td>enabled_payments <em>JSON Array</em><strong>Optional</strong></td>
+          <td>List of payment methods that is enabled in VT-Web.<br />Array element string that is allowed: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, and <code>"echannel"</code>. <br /><strong>Note:</strong> If this attribute is undefined, all payment methods registered to merchant will automatically used.</td>
+        </tr>
+        <tr>
+          <td>credit_card_3d_secure <em>Boolean</em> <strong>Required</strong></td>
+          <td>Status to indicate whether 3D secure is used or not.<br /> If acquiring Bank is BNI, set value to <code>false</code>.<br /> If acquiring Bank is Mandiri, set value to <code>true</code>.</td>
+        </tr>
+        <tr>
+          <td>credit_card_bins<em>JSON Array</em> <strong>Optional</strong></td>
+          <td>List of credit card's BIN (Bank Identification Number) that can be used on VT-Web. <br />All BIN can have 1 to 8 digits.</td>
+        </tr>
+        <tr>
+          <td><a data-toggle="collapse" href="#payment_options_installment2">payment_options</a>  <em>JSON Object</em> <strong>Required</strong></td>
+          <td>Payment features that can be used on VT-Web. Example: installment.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="payment_options_installment2" class="tb-nest-2 collapse">
+
+      <table>
+        <tbody>
+          <tr>
+            <td><a data-toggle="collapse" href="#installment_vtweb2">installment</a>  <em>JSON Object</em> <strong>Required</strong></td>
+            <td>Installment feature details on VT-Web.</td>
+          </tr>
+          <tr>
+            <td>offline_installment_term  <em>JSON Array</em><strong>Required</strong></td>
+            <td>List of offline installment term on VT-Web.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div id="installment_vtweb2" class="tb-nest-3 collapse">
+
+        <table>
+          <tbody>
+            <tr>
+              <td>required <em>Boolean</em> <strong>Required</strong></td>
+              <td>Status to indicate for full or installment payment. <br /> <code>true</code> means transaction can only be paid by installment. <br /> <code>false</code> means transaction can be paid by both full payment and installment.</td>
+            </tr>
+            <tr>
+              <td><a data-toggle="collapse" href="#installment_terms_vtweb2">installment_terms</a>  <em>JSON Object</em> <strong>Optional</strong></td>
+              <td>Bank options and installment period. <br /> <strong>Note:</strong> If left undefined, all available installment terms will be displayed.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div id="installment_terms_vtweb2" class="tb-nest-4 collapse">
+
+        <table>
+          <tbody>
+            <tr>
+              <td>bni <em>JSON Array</em> <strong>Optional</strong></td>
+              <td>List of installment periods with BNI Bank.<br /><strong>Note:</strong> In Sandbox environment, valid array elements are <code>6</code> and <code>12</code>. If array is empty, all valid installment period will be shown.</td>
+            </tr>
+            <tr>
+              <td>mandiri <em>JSON Array</em> <strong>Optional</strong></td>
+              <td>List of installment periods with Mandiri Bank.<br /><strong>Note:</strong> In Sandbox environment, valid array elements are <code>6</code> and <code>12</code>. If array is empty, all valid installment period will be shown.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="c1">// Required</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"vtweb"</span><span class="p">,</span>
+
+  <span class="c1">// Required</span>
+  <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"A17550"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
+  <span class="p">},</span>
+
+   <span class="c1">// Required</span>
+  <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"credit_card"</span><span class="p">],</span>
+
+    <span class="c1">//Field to configure installment</span>
+    <span class="s2">"payment_options"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"installment"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"required"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">"installment_terms"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"bni"</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">"mandiri"</span><span class="p">:[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+          <span class="p">},</span>
+        <span class="s2">"offline_installment_term"</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
@@ -2673,7 +2772,7 @@ The following attributes can be used to perform a charge transaction with a cred
 <strong>NOTE:</strong> <a href="#Approve">Approve transaction</a> when <code>fraud_status</code> = "challenge" to accept it or transaction will auto cancel during settlement.</p>
 </div>
 
-<h4 id="offline-installment">Offline Installment</h4>
+<h4 id="offline-installment-1">Offline Installment</h4>
 
 <p>Offline installment feature allow merchant to do installment conversion for transactions which is not supported by MID installment. <br />To charge the offline installment feature in VT-Direct, additional attributes <code>installment</code> will be required with combination <code>bin_filter</code>. The purpose of <code>bin_filter</code> is to limit only certain cards can be used depends on the agreement between merchant and banks.</p>
 
@@ -8828,7 +8927,7 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="nv">$orderId</span> <span class="o">=</span> <span class="s2">"1111"</span><span class="p">;</span>
 <span class="nv">$statusCode</span> <span class="o">=</span> <span class="s2">"200"</span><span class="p">;</span>
-<span class="nv">$grossAmount</span> <span class="o">=</span> <span class="s2">"100000"</span><span class="p">;</span>
+<span class="nv">$grossAmount</span> <span class="o">=</span> <span class="s2">"100000.00"</span><span class="p">;</span>
 <span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"askvnoibnosifnboseofinbofinfgbiufglnbfg"</span><span class="p">;</span>
 <span class="nv">$input</span> <span class="o">=</span> <span class="nv">$orderId</span><span class="o">.</span><span class="nv">$statusCode</span><span class="o">.</span><span class="nv">$grossAmount</span><span class="o">.</span><span class="nv">$serverKey</span><span class="p">;</span>
 <span class="nv">$signature</span> <span class="o">=</span> <span class="nb">openssl_digest</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="s1">'sha512'</span><span class="p">);</span>

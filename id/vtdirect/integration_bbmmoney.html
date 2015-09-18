@@ -78,13 +78,13 @@
           <a href="https://veritrans.co.id/career.html">Career</a>
         </li>
         <li>
-          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
             Log In
           </a>
         </li>
         <li>
           <div>
-            <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
                Sign Up
             </a>
           </div>
@@ -95,41 +95,6 @@
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
 
-<!-- LOGIN MODAL -->
-<div id="login-modal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="row">
-          <div class="col-sm-6 col-xs-12">
-            <div class="production-box">
-              <!-- <img src="images/banner-about.png"> -->
-              <h5>PRODUCTION</h5>
-              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
-              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12">
-            <div class="sandbox-box">
-              <!-- <img src="images/banner-sandbox.png"> -->
-              <h5>SANDBOX</h5>
-              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
-            </div>
-          </div>
-        </div>
-        <br/><br/>
-        <div class="row">
-          <div class="col-xs-12 text-left">
-            <div class="register-box">
-              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
-            </div>
-          </div>
-        </div>  
-      </div>
-    </div>
-  </div>
-</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -603,10 +568,11 @@ Link BBM Money <strong>HANYA</strong> akan tampil pada Android.</p>
 
     <h3 id="BB10">IOS and BB10 - Link BBM Money Link</h3>
 
-    <p>Di Platform IOS and BB10, Link BBM Money tidak dapat digenerate secara otomatis. Pelanggan harus memasukkan secara manual kode pembayaran ke aplikasi BBM Money. Berikut di bawah ini adalah langkah-langkah untuk menyelesaikan pembayaran di Platform IOS dan BB10:</p>
+    <p>Di Platform IOS and BB10, Link BBM™ Money tidak dapat digenerate secara otomatis. Namun merchant dapat membukan aplikasi BBM Money untuk memudahkan pelanggan melakukan pembayaran. Setelah itu pelanggan harus memasukkan secara manual kode pembayaran ke aplikasi BBM Money. Berikut di bawah ini adalah langkah-langkah untuk menyelesaikan pembayaran di Platform IOS dan BB10:</p>
 
     <ol>
-      <li>Buka atau install aplikasi BBM™ Money di ponsel Anda  </li>
+      <li>Pastika aplikasi BBM™ Money sudah terinstall di ponsel Anda</li>
+      <li>Gunakan link bbmmoney://api/deviceMessage untuk membuka aplikasi BBM™ Money  </li>
       <li>Login ke akun BBM™ Money anda dan pilih <strong>Kirim ke perusahaan</strong></li>
       <li>Pilih <strong>Belanja Online</strong> pada menu biller lalu masukkan Kode Pembayaran ke dalam tempat <strong>Kode Pembayaran</strong>. Kode pembayaran bisa didapatkan dari respon charge bagian <code>permata_va_number</code>.  </li>
       <li>Masukkan nominal dengan angka pas sejumlah transaksi ke dalam tempat <strong>Jumlah</strong></li>

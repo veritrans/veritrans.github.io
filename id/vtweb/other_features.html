@@ -78,13 +78,13 @@
           <a href="https://veritrans.co.id/career.html">Career</a>
         </li>
         <li>
-          <a id="logInHeader" class="uppercase text-bold" href="#" data-toggle="modal" data-target="#login-modal">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
             Log In
           </a>
         </li>
         <li>
           <div>
-            <a id="signUpHeader" href="https://my.sandbox.veritrans.co.id/register" class="btn btn-yellow">
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
                Sign Up
             </a>
           </div>
@@ -95,41 +95,6 @@
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
 
-<!-- LOGIN MODAL -->
-<div id="login-modal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="row">
-          <div class="col-sm-6 col-xs-12">
-            <div class="production-box">
-              <!-- <img src="images/banner-about.png"> -->
-              <h5>PRODUCTION</h5>
-              <p class="text-left">Jika Anda sudah terintegrasi dengan Veritrans. Log In untuk masuk ke Merchant Administration Portal Anda.</p>
-              <a class="btn btn-trans-blue btn-med" href="https://my.veritrans.co.id">LOG IN<span class="arr-out">→</span></a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12">
-            <div class="sandbox-box">
-              <!-- <img src="images/banner-sandbox.png"> -->
-              <h5>SANDBOX</h5>
-              <p>Environment testing Veritrans untuk keperluan development dan uji coba Merchant Administration Portal. <a href="https://my.sandbox.veritrans.co.id" class="text-blue">Log In<span class="arr-out">→</span></a></p>
-            </div>
-          </div>
-        </div>
-        <br/><br/>
-        <div class="row">
-          <div class="col-xs-12 text-left">
-            <div class="register-box">
-              Belum terdaftar? <a id="signUpModal" href="https://my.sandbox.veritrans.co.id/register" class="text-blue signup-modal">Sign Up<span class="arr-out">→</span></a>
-            </div>
-          </div>
-        </div>  
-      </div>
-    </div>
-  </div>
-</div>
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -875,7 +840,11 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
 
     <h3 id="fitur-cicilan">Fitur Cicilan</h3>
 
-    <p>Untuk mengaktifkan fitur cicilan, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Acquiring bank akan menerbitkan MID Cicilan yang memungkinkan transaksi diubah menjadi cicilan secara otomatis. Saat ini bank yang sudah support adalah BNI dan Mandiri. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant cukup menambahkan parameter transaksi <code>installment</code> saat request URL VT-Web. </p>
+    <h4 id="cicilan-online">Cicilan Online</h4>
+
+    <p>Untuk mengaktifkan fitur cicilan online, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Acquiring bank akan menerbitkan MID Cicilan yang memungkinkan transaksi diubah menjadi cicilan secara otomatis. Saat ini bank yang sudah support adalah BNI dan Mandiri. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant cukup menambahkan parameter transaksi <code>installment</code> saat request URL VT-Web. </p>
+
+    <p>Selain itu, untuk menjaga agar customer hanya memasukkan nomor kartu yang berlaku untuk program cicilan, merchant perlu mengimplementasikan fitur BIN Promo bersama dengan fitur cicilan ini. Untuk informasi mengenai fitur BIN Promo, bisa dicek di bagian BIN Promo.  </p>
 
     <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /><br /></p>
 
@@ -897,7 +866,8 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
                       <span class="s2">"mandiri"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
                     <span class="p">)</span>
                 <span class="p">)</span>
-            <span class="p">)</span>
+            <span class="p">),</span>
+          <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
@@ -924,6 +894,57 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
 <img alt="VT-Web Installment" class="img-responsive img-thumbnail" src="../../images/vtweb_installment.png" /></p>
 
   </div>
+
+  <h4 id="cicilan-offline">Cicilan Offline</h4>
+
+  <p>Apabila merchant ingin menggunakan fitur cicilan dengan bank yang tidak bisa mengeluarkan MID Installment, merchant dapat menggunakan fitur cicilan offline. Dengan fitur cicilan offline ini, charge transaksi akan dilakukan secara full amount dan perubahan menjadi cicilan akan dilakukan setelahnya. Untuk informasi lebih lanjut dan bantuan, merchant bisa menghubungi Sales Representatif Veritrans.</p>
+
+  <p>Untuk menggunakan fitur cicilan offline, merchant cukup menambahkan parameter transaksi <code>offline_installment_term</code> saat request URL VT-Web dan fitur bin filter. Tujuan dari implementasi fitur bin filter adalah membatasi hanya kartu-kartu tertentu saja yang bisa menggukana fitur cicilan offline ini sesuai dengan kesepakatan antara merchant dengan bank penerbit kartu.</p>
+
+  <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="c1">// Add installment payment option
+</span>          <span class="s2">"payment_options"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+              <span class="s2">"installment"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                  <span class="s2">"required"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+                  <span class="s2">"installment_terms"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                      <span class="s2">"bni"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
+                      <span class="s2">"mandiri"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+                    <span class="p">),</span>
+                  <span class="s2">"offline_installment_term"</span><span class="o">:</span> <span class="p">[</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">12</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">),</span>
+           <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+
+</code></pre>
+
+  <div class="alert alert-info" role="alert">
+    <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Info</strong>:<br /> Silahkan lihat <a href="../api/methods.html#vtwebinstallment">API Documentation - VT-Web Cicilan</a> untuk informasi lebih mengenai atribut JSON.</p>
+  </div>
+
+  <p><br /></p>
+
   <div class="tab-pane" id="bin-promo">
 
     <h3 id="bin-promo">BIN Promo</h3>
