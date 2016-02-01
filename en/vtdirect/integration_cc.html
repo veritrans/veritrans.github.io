@@ -47,53 +47,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -292,7 +293,8 @@
 <ol>
   <li>Acquire Token</li>
   <li>Perform Charge Transaction</li>
-  <li>Check Transaction Status
+  <li>Check Transaction Status</li>
+  <li>Settlement Process
 <br /><br /></li>
 </ol>
 
@@ -301,6 +303,7 @@
   <li class="active"><a href="#step1" data-toggle="tab"><span>Step 1</span>Acquire Token</a></li>
   <li><a href="#step2" data-toggle="tab"><span>Step 2</span>Perform Charge Transaction</a></li>
   <li><a href="#step3" data-toggle="tab"><span>Step 3</span>Check Transaction Status</a></li>
+  <li><a href="#step4" data-toggle="tab"><span>Step 4</span>Settlement Process</a></li>
 </ul>
 
 <div class="tab-content">
@@ -803,6 +806,8 @@ The complete list of status codes can be found at <a href="../api/status_code.ht
 </code></pre>
     <p><br /></p>
 
+    <p>Please take note parameter "eci" only available for 3DS transaction. For normal transaction, there is no "eci" parameter.</p>
+
     <h3 id="failure-response">Failure Response</h3>
 
 <pre><code class="highlight php">$result = array(
@@ -883,6 +888,36 @@ One of the most important information details in the JSON response is the status
 
   </div>
   <!-- end of step 3-->
+
+  <div class="tab-pane" id="step4">
+    <!-- step 4-->
+
+    <!-- Four -->
+    <p><br /></p>
+
+    <h2 id="settlement-process">Settlement Process</h2>
+
+    <p>By default, all credit card transactions from 00.00 until 23.59, will be settled on the day after at 16.00. The transaction status will be updated from capture into settlement. If there is any unapproved challenged transaction, Veritrans will cancel the transaction automatically. Veritrans will also send HTTP POST notification to merchant endpoint as follow below:</p>
+
+    <p><br /></p>
+
+<pre><code class="highlight php">$result = array(
+    "transaction_id" =&gt; "93c6a0ff-b270-4b00-adba-f1738ff90261",
+    "order_id" =&gt; "201303131610",
+    "gross_amount" =&gt; 10000.00,
+    "payment_type" =&gt; "credit_card",
+    "transaction_time" =&gt; "2014-03-13 16:10:15",
+    "transaction_status" =&gt; "settlement",
+    "fraud_status" =&gt; "accept",
+    "masked_card" =&gt; "481111-1114",
+    "status_code" =&gt; "200",
+    "status_message" =&gt; "Veritrans payment notification"
+);
+</code></pre>
+    <p><br /></p>
+
+  </div>
+  <!-- end of step 4-->
 </div>
 <!-- end of tab-content-->
 
@@ -1014,7 +1049,7 @@ One of the most important information details in the JSON response is the status
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>

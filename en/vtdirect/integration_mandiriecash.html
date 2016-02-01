@@ -47,53 +47,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -383,6 +384,10 @@ When your customer click this payment button, charge transaction process will be
 <span class="c1">// Data that will be sent for charge transaction request with Mandiri E-cash.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'mandiri_ecash'</span><span class="p">,</span>
+  <span class="c1">// Required for Mandiri E-cash configuration
+</span>  <span class="s1">'mandiri_ecash'</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="s1">'Transaction Description'</span>
+  <span class="p">)</span>
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
@@ -516,7 +521,7 @@ The complete list of status code can be found at <a href="../api/status_code.htm
 
     <h2 id="transaction-status">Transaction Status</h2>
 
-    <p>When charge transaction is successful, the transaction status will still be pending. Customer has to complete the transaction in the Mandiri E-cash page. When this process is completed, the transaction status will be changed into <code>success</code>. You can check the transaction status change through MAP.</p>
+    <p>When charge transaction is successful, the transaction status will still be pending. Customer has to complete the transaction in the Mandiri E-cash page. When this process is completed, the transaction status will be changed either into <code>settlement</code> or <code>deny</code>.  If the customer doesn't complete the payment, the transaction will become <code>expired</code>. You can check the transaction status change through MAP.</p>
 
     <p>The status on MAP when payment is not yet completed in Mandiri E-cash page is as followed:
 <br /><br />
@@ -678,7 +683,7 @@ The other alternative to check transaction status is to use the command on <a hr
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>

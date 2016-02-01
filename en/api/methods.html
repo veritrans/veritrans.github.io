@@ -47,53 +47,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -231,7 +232,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>POST <br /> https://api.veritrans.co.id/v2/<a href="#Get_Token">token</a></td>
+        <td>GET <br /> https://api.veritrans.co.id/v2/<a href="#Get_Token">token</a></td>
         <td>Tokenize Credit Card information before being charged</td>
       </tr>
       <tr>
@@ -274,7 +275,7 @@
 
 <h2 id="get-token">Get Token</h2>
 
-<p>Token ID is a unique value that is associated with the customer credit card information during a transaction. </p>
+<p>Token ID is a unique value that is associated with the customer credit card information during a transaction.</p>
 
 <p>Get Token method sends the credit card info via <a href="https://api.veritrans.co.id/v2/assets/js/veritrans.min.js">Veritrans.min.js</a> to Veritrans server and returns token ID to the merchant be charged.</p>
 
@@ -492,8 +493,8 @@ To utilize this library, please add the following line of code at your payment p
 
 <p><br /></p>
 
-<pre><code class="highlight javascript"><span class="cm">/*Create the callback response function. 
-NOTE: This example utilizes JQuery Fancybox. 
+<pre><code class="highlight javascript"><span class="cm">/*Create the callback response function.
+NOTE: This example utilizes JQuery Fancybox.
 You can use other javascript framework to display 3DS dialog*/</span>
 
 <span class="kd">function</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -542,7 +543,7 @@ You can use other javascript framework to display 3DS dialog*/</span>
 </code></pre>
 
 <p id="Charge"><br />
-<br /> </p>
+<br /></p>
 
 <h2 id="charge-transaction">Charge Transaction</h2>
 
@@ -749,7 +750,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em></td>
+            <td>country_code <em>String(3)</em></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -795,7 +796,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em></td>
+            <td>country_code <em>String(3)</em></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -809,7 +810,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
     <table>
       <tbody>
         <tr>
-          <td><a data-toggle="collapse" href="#vtweb_attr">vtweb</a> <em>JSON Array</em></td>
+          <td><a data-toggle="collapse" href="#vtweb_attr">vtweb</a> <em>JSON Object</em></td>
           <td>VT-Web feature configuration.</td>
         </tr>
       </tbody>
@@ -1257,6 +1258,10 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
 
 <p>Charging Transaction in VT-Web will return a link to Veritrans website to complete transaction.</p>
 
+<h4 id="vt-web-features-enable-3ds-transaction">VT-Web Features: Enable 3DS transaction</h4>
+
+<p>In order to activate 3DS transaction, a parameter needs to be added in VTWeb Object which is <code>credit_card_3d_secure</code> with value <code>true</code>.</p>
+
 <div class="table-wrapper">
 
   <table>
@@ -1309,7 +1314,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
     <table>
       <tbody>
         <tr>
-          <td><a data-toggle="collapse" href="#vtweb_attr_normal">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+          <td><a data-toggle="collapse" href="#vtweb_attr_normal">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
           <td>VT-Web feature configuration.</td>
         </tr>
       </tbody>
@@ -1446,7 +1451,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -1496,7 +1501,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -1521,7 +1526,7 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
   <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">},</span>
-  
+
   <span class="c1">// Optional</span>
   <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
@@ -1671,7 +1676,7 @@ To select the specific payment method displayed on VT-Web, set the following att
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_choose">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_choose">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>VT-Web payment methods enabled configuration.</td>
       </tr>
     </tbody>
@@ -1710,7 +1715,7 @@ To select the specific payment method displayed on VT-Web, set the following att
     <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cimb_clicks"</span><span class="p">,</span> <span class="s2">"bank_transfer"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to choose VT-Web payment methods</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
-  
+
 <span class="p">}</span>
 </code></pre>
 
@@ -1718,7 +1723,7 @@ To select the specific payment method displayed on VT-Web, set the following att
 
 <h4 id="vt-web-features-bin-promo">VT-Web Features: BIN Promo</h4>
 
-<p>BIN Promo is only available for Card Payment.<br /> 
+<p>BIN Promo is only available for Card Payment.<br />
 To configure the BIN Promo feature in VT-Web:</p>
 
 <div class="table-wrapper">
@@ -1732,7 +1737,7 @@ To configure the BIN Promo feature in VT-Web:</p>
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_bin">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_bin">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>VT-Web BIN Promo configuration.</td>
       </tr>
     </tbody>
@@ -1776,7 +1781,7 @@ To configure the BIN Promo feature in VT-Web:</p>
     <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to set BIN Promo</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
-  
+
 <span class="p">}</span>
 </code></pre>
 
@@ -1800,7 +1805,7 @@ To configure the installment feature in VT-Web:</p>
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_installment">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_installment">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>VT-Web installment configuration.</td>
       </tr>
     </tbody>
@@ -1925,7 +1930,7 @@ To configure the offline installment feature in VT-Web:</p>
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_installment2">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_installment2">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>VT-Web installment configuration.</td>
       </tr>
     </tbody>
@@ -2028,7 +2033,7 @@ To configure the offline installment feature in VT-Web:</p>
           <span class="s2">"bni"</span><span class="p">:</span> <span class="p">[],</span>
           <span class="s2">"mandiri"</span><span class="p">:[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
           <span class="p">},</span>
-        <span class="s2">"offline_installment_term"</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+        <span class="s2">"offline_installment_terms"</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -2040,7 +2045,7 @@ To configure the offline installment feature in VT-Web:</p>
 
 <h4 id="SetRedirect">VT-Web Features: Set Redirection URL</h4>
 
-<p>You can change the redirection URL per transaction to overide the redirection URL from MAP.<br /> 
+<p>You can change the redirection URL per transaction to overide the redirection URL from MAP.<br />
 To configure the Set Redirection URL feature in VT-Web:</p>
 
 <div class="table-wrapper">
@@ -2054,7 +2059,7 @@ To configure the Set Redirection URL feature in VT-Web:</p>
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_seturl">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_seturl">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>VT-Web set redirection URL configuration.</td>
       </tr>
     </tbody>
@@ -2107,13 +2112,13 @@ To configure the Set Redirection URL feature in VT-Web:</p>
    <span class="c1">// Required</span>
   <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cimb_clicks"</span><span class="p">,</span> <span class="s2">"bank_transfer"</span><span class="p">,</span> <span class="s2">"credit_card"</span><span class="p">],</span>
-    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">],</span> 
+    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">],</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"finish_redirect_url"</span><span class="p">:</span> <span class="s2">"http://www.sneekers.co.id/payment/finish"</span><span class="p">,</span> 
+    <span class="s2">"finish_redirect_url"</span><span class="p">:</span> <span class="s2">"http://www.sneekers.co.id/payment/finish"</span><span class="p">,</span>
     <span class="s2">"unfinish_redirect_url"</span><span class="p">:</span> <span class="s2">"http://www.sneekers.co.id/payment/unfinish"</span><span class="p">,</span>
     <span class="s2">"error_redirect_url"</span><span class="p">:</span> <span class="s2">"http://www.sneekers.co.id/payment/error"</span>
   <span class="p">}</span>
-  
+
 <span class="p">}</span>
 </code></pre>
 <p><br />
@@ -2333,7 +2338,7 @@ The following attributes can be used to perform a charge transaction with a cred
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -2383,7 +2388,7 @@ The following attributes can be used to perform a charge transaction with a cred
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -2736,7 +2741,7 @@ The following attributes can be used to perform a charge transaction with a cred
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>                     
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Installment Token ID from Get Token</span>
     <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span>             <span class="c1">// &lt;-- Field to set installment</span>
   <span class="p">}</span>
@@ -2791,7 +2796,7 @@ The following attributes can be used to perform a charge transaction with a cred
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>                     
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Installment Token ID from Get Token</span>
     <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>            <span class="c1">// &lt;-- Field to set installment</span>
     <span class="s2">"bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>  <span class="c1">// &lt;-- Field to set BIN Promo</span>
@@ -2879,7 +2884,7 @@ To configure the Pre-Authorization feature in VT-Direct, an additional attribute
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>                     
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Authorize Token ID from Get Token</span>
     <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"authorize"</span>                <span class="c1">// &lt;-- Field to set pre-authorize</span>
   <span class="p">}</span>
@@ -2894,7 +2899,7 @@ To configure the Pre-Authorization feature in VT-Direct, an additional attribute
 <div class="alert alert-info" role="alert">
   <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <span class="sr-only">Info:</span>
-<strong>Note</strong>: </p>
+<strong>Note</strong>:</p>
 
   <ul>
     <li>Charge method in a Pre-Authorized transaction will only check and block a card limit.</li>
@@ -2910,7 +2915,7 @@ To configure the Pre-Authorization feature in VT-Direct, an additional attribute
 
 <h4 id="two-clicks-initial-charge">1. Two Clicks Initial Charge</h4>
 
-<p>You need a Token from <a href="#Get_Token">Get Token</a> for initial charge with Two Clicks feature.<br /> 
+<p>You need a Token from <a href="#Get_Token">Get Token</a> for initial charge with Two Clicks feature.<br />
 Add this additional attribute when charging the initial transaction for Two Clicks feature:</p>
 
 <div class="table-wrapper">
@@ -3020,7 +3025,7 @@ Add this additional attribute when charging the initial transaction for Two Clic
 <strong>NOTE:</strong></p>
 
   <ul>
-    <li>When initial transaction is successful, save the <code>saved_token_id</code> in your database. </li>
+    <li>When initial transaction is successful, save the <code>saved_token_id</code> in your database.</li>
     <li>This value is required for <a href="#Feature_Get_Token">Two Clicks Get Token</a> in every following transaction.</li>
   </ul>
 </div>
@@ -3069,7 +3074,7 @@ Add this additional attribute when charging the initial transaction for Two Clic
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
     <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// New Token Generated from Two Clicks Get Token</span>
-        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"481111-1114-7baba36c-5698-47cf-9170-80efd6a2e973"</span><span class="p">,</span>   
+        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"481111-1114-7baba36c-5698-47cf-9170-80efd6a2e973"</span><span class="p">,</span>
         <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span>
     <span class="p">},</span>
     <span class="c1">// Required</span>
@@ -3092,7 +3097,7 @@ Add this additional attribute when charging the initial transaction for Two Clic
 
 <h4 id="one-click-initial-charge">1. One Click Initial Charge</h4>
 
-<p>You need a Token from <a href="#Get_Token">Get Token</a> for initial charge with One Click feature.<br /> 
+<p>You need a Token from <a href="#Get_Token">Get Token</a> for initial charge with One Click feature.<br />
 Add this additional attribute when charging the initial transaction for One Click feature:</p>
 
 <div class="table-wrapper">
@@ -3202,7 +3207,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 <strong>NOTE:</strong></p>
 
   <ul>
-    <li>When initial transaction is successful, save the <code>saved_token_id</code> in your database. </li>
+    <li>When initial transaction is successful, save the <code>saved_token_id</code> in your database.</li>
     <li>This value is required for One Click Charge in every following one click transaction.</li>
   </ul>
 </div>
@@ -3251,7 +3256,7 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
     <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// New Token Generated from One Click Clicks Initial Charge Response</span>
-        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"44811117d16c884-2cc7-4624-b0a8-10273b7f6cc8"</span><span class="p">,</span>   
+        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"44811117d16c884-2cc7-4624-b0a8-10273b7f6cc8"</span><span class="p">,</span>
         <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span>
     <span class="p">},</span>
     <span class="c1">// Required</span>
@@ -3464,7 +3469,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -3514,7 +3519,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -3878,7 +3883,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -3928,7 +3933,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -3941,7 +3946,7 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">//Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
 
     <span class="c1">//Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
@@ -3949,7 +3954,7 @@ Add this additional attribute when charging the initial transaction for One Clic
         <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
         <span class="p">},</span>
 
-    <span class="c1">//Required    </span>
+    <span class="c1">//Required</span>
     <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
@@ -3968,7 +3973,7 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="c1">//Required</span>
     <span class="s2">"echannel"</span> <span class="p">:</span> <span class="p">{</span>
         <span class="s2">"bill_info1"</span> <span class="p">:</span> <span class="s2">"Payment For:"</span><span class="p">,</span>
-        <span class="s2">"bill_info2"</span> <span class="p">:</span> <span class="s2">"debt"</span> 
+        <span class="s2">"bill_info2"</span> <span class="p">:</span> <span class="s2">"debt"</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -4044,13 +4049,13 @@ Add this additional attribute when charging the initial transaction for One Clic
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Mandiri Bill transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span> 
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1421816431"</span><span class="p">,</span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
     <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015­01­21 12:00:31"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span> 
-    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span> 
-    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000182"</span><span class="p">,</span> 
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span>
+    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000182"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"400000.00"</span>
 <span class="p">}</span>
 </code></pre>
@@ -4268,7 +4273,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -4318,7 +4323,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -4662,7 +4667,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -4712,7 +4717,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -5029,7 +5034,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -5079,7 +5084,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -5394,19 +5399,19 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span>
 
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"orderid­01"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">11000</span> 
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">11000</span>
         <span class="p">},</span>
 
-    <span class="c1">// Required    </span>
+    <span class="c1">// Required</span>
     <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
-        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span> 
-        <span class="s2">"price"</span><span class="p">:</span> <span class="mi">11000</span><span class="p">,</span> 
-        <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+        <span class="s2">"price"</span><span class="p">:</span> <span class="mi">11000</span><span class="p">,</span>
+        <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Mobil "</span>
         <span class="p">}</span> <span class="p">],</span>
 
@@ -5483,15 +5488,15 @@ Add this additional attribute when charging the initial transaction for One Clic
 </div>
 
 <pre><code class="highlight json"><span class="p">{</span><span class="err"> </span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"279232280e944366b057a1e60c777a4c"</span><span class="p">,</span> 
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"279232280e944366b057a1e60c777a4c"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388998673486"</span><span class="p">,</span><span class="err"> </span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span><span class="err"> </span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span><span class="err"> </span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"20140219 08:22:06"</span><span class="p">,</span> 
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"20140219 08:22:06"</span><span class="p">,</span>
     <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
     <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritans.co.id/v2/redirect/27923228- 0e944366b057a1e60c777a4c"</span><span class="p">,</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span><span class="err"> </span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do BCA KlikPay transaction, please go to redirect_url"</span> 
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do BCA KlikPay transaction, please go to redirect_url"</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -5700,7 +5705,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -5750,7 +5755,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -5801,13 +5806,13 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> 
-        <span class="s2">"telkomsel_cash"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span>
+        <span class="s2">"telkomsel_cash"</span><span class="p">,</span>
 
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span> 
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span>
         <span class="p">},</span>
 
     <span class="c1">// Optional</span>
@@ -5821,9 +5826,9 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="c1">// Optional</span>
     <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"obet.supriadi@gmail.com"</span><span class="p">,</span>
-        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span> 
+        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
         <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
-        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span> 
+        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span>
         <span class="p">},</span>
 
     <span class="c1">// Required for T-Cash configuration</span>
@@ -5831,7 +5836,7 @@ Add this additional attribute when charging the initial transaction for One Clic
         <span class="s2">"customer"</span><span class="p">:</span> <span class="s2">"0811111111"</span><span class="p">,</span>
         <span class="s2">"promo"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
         <span class="s2">"is_reversal"</span><span class="p">:</span> <span class="mi">0</span>
-    <span class="p">}</span> 
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -5894,11 +5899,11 @@ Add this additional attribute when charging the initial transaction for One Clic
 </div>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2f46643d­3d3f­4971­a329­de9113fb9361"</span><span class="p">,</span> 
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2f46643d­3d3f­4971­a329­de9113fb9361"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"telkomsel_cash"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014­01­27 14:12:30"</span><span class="p">,</span> 
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014­01­27 14:12:30"</span><span class="p">,</span>
     <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, T­Cash transaction is successful"</span>
@@ -6074,7 +6079,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -6124,7 +6129,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -6474,7 +6479,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -6524,7 +6529,7 @@ Add this additional attribute when charging the initial transaction for One Clic
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -6910,7 +6915,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -6960,7 +6965,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -7011,13 +7016,13 @@ example: http://example.com/checkstatus?order_id=12345</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> 
-        <span class="s2">"indosat_dompetku"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span>
+        <span class="s2">"indosat_dompetku"</span><span class="p">,</span>
 
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span> 
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span>
         <span class="p">},</span>
 
     <span class="c1">// Optional</span>
@@ -7031,15 +7036,15 @@ example: http://example.com/checkstatus?order_id=12345</p>
     <span class="c1">// Optional</span>
     <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"obet.supriadi@gmail.com"</span><span class="p">,</span>
-        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span> 
+        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
         <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
-        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span> 
+        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span>
         <span class="p">},</span>
 
     <span class="c1">// Required for Indosat Dompetku configuration</span>
     <span class="s2">"indosat_dompetku"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"msisdn"</span><span class="p">:</span> <span class="s2">"08123456789"</span>
-    <span class="p">}</span> 
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -7308,7 +7313,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -7358,7 +7363,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -7409,13 +7414,13 @@ example: http://example.com/checkstatus?order_id=12345</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> 
-        <span class="s2">"mandiri_ecash"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span>
+        <span class="s2">"mandiri_ecash"</span><span class="p">,</span>
 
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span> 
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span>
         <span class="p">},</span>
 
     <span class="c1">// Optional</span>
@@ -7429,15 +7434,15 @@ example: http://example.com/checkstatus?order_id=12345</p>
     <span class="c1">// Optional</span>
     <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"obet.supriadi@gmail.com"</span><span class="p">,</span>
-        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span> 
+        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
         <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
-        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span> 
+        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span>
         <span class="p">},</span>
 
     <span class="c1">// Required for Mandiri E-cash configuration</span>
     <span class="s2">"mandiri_ecash"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Transaction Description"</span>
-    <span class="p">}</span> 
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -7756,7 +7761,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
             <td>Phone number of the billing address. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the billing address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -7806,7 +7811,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
             <td>Phone number of the shipping address. <br /><strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>Country ID of the shipping address. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -7819,7 +7824,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
 
 <pre><code class="highlight php">{
     //Required
-    "payment_type": "cstore", 
+    "payment_type": "cstore",
 
     //Required
     "transaction_details": {
@@ -7830,7 +7835,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
     //Required
     "cstore" : {
         "store" : "indomaret",
-        "message" : "mangga" 
+        "message" : "mangga"
         }
 }
 </code></pre>
@@ -8074,7 +8079,7 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
   <span class="p">},</span>
 
   <span class="c1">// Required</span>
-  <span class="s2">"custom_expiry"</span><span class="p">:</span> <span class="p">{</span> 
+  <span class="s2">"custom_expiry"</span><span class="p">:</span> <span class="p">{</span>
       <span class="s2">"order_time"</span><span class="p">:</span> <span class="err">“yyyy-MM-dd</span> <span class="err">hh:mm:ss</span> <span class="err">Z”</span><span class="p">,</span>
       <span class="s2">"expiry_duration"</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
       <span class="s2">"unit"</span><span class="p">:</span> <span class="s2">"minute"</span>
@@ -9247,7 +9252,7 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>

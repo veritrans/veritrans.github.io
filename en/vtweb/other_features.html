@@ -47,53 +47,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -245,9 +246,9 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
   <li class="active"><a href="#payment-options" data-toggle="tab">Choose The Method of Payment</a></li>
-  <li><a href="#set-redirect" data-toggle="tab">Set Redirect URL</a></li>  
-  <li><a href="#custom-field" data-toggle="tab">Custom Fields</a></li>  
-  <li><a href="#custom-expiry" data-toggle="tab">Custom Expiry</a></li>  
+  <li><a href="#set-redirect" data-toggle="tab">Set Redirect URL</a></li>
+  <li><a href="#custom-field" data-toggle="tab">Custom Fields</a></li>
+  <li><a href="#custom-expiry" data-toggle="tab">Custom Expiry</a></li>
   <li><a href="#three-D-secure" data-toggle="tab">Inactivate 3D Secure</a></li>
   <li><a href="#installment" data-toggle="tab">Installment</a></li>
   <li><a href="#bin-promo" data-toggle="tab">BIN Promo</a></li>
@@ -599,7 +600,7 @@ The XL Tunai will be shown at the VT-Web payment page. Information and procedure
 
     <h3 id="mbill">Mandiri Bill Payment</h3>
 
-    <p>Mandiri bill payment is a feature provided by Bank mandiri for their customer to easily make payments using a debit account. By using this, customers can pay bills anytime (24 hours) </p>
+    <p>Mandiri bill payment is a feature provided by Bank mandiri for their customer to easily make payments using a debit account. By using this, customers can pay bills anytime (24 hours)</p>
 
     <p>To activate Mandiri Bill Payment method of payment (automatically active on Sandbox mode), merchant needs to:</p>
 
@@ -640,7 +641,7 @@ The Mandiri Bill Payment will be shown at the VT-Web payment page. Information a
 
     <h3 id="bbmmoney">BBM Money</h3>
 
-    <p>BBM Money payment is a feature provided by Permata Bank to simplify mobile transaction. </p>
+    <p>BBM Money payment is a feature provided by Permata Bank to simplify mobile transaction.</p>
 
     <p>To activate BBM Money payment method (automatically active on Sandbox mode), merchant needs to:</p>
 
@@ -814,7 +815,7 @@ The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
-<span class="o">...</span> 
+<span class="o">...</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
@@ -844,7 +845,7 @@ The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and
 
     <p>Furthermore, in order to limit only eligible card can do installment transaction, merchant needs to implement BIN promo feature along with installment. Please refer to BIN Promo documentation for further details.</p>
 
-    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:  </p>
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:</p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -887,15 +888,15 @@ The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and
 
     <p><br /></p>
 
-    <p>The following figure displays the VT-Web payment page with instalment feature:
+    <p>The following figure displays the VT-Web payment page with online installment feature:
 <br />
 <img alt="VT-Web Installment" class="img-responsive img-thumbnail" src="../../images/vtweb_installment.png" /></p>
 
-  </div>
+    <hr />
 
-  <h4 id="offline-installment">Offline Installment</h4>
+    <h4 id="offline-installment">Offline Installment</h4>
 
-  <p>To allow installment feature with banks which doesn't issue MID Installment, merchant can use feature offline installment. With offline installment feature, the transaction will be charged in full amount and the transaction will be converted into installment later. For more information and support, merchant can contact Veritrans Sales Representative. Merchant simply has to add the parameter <code>offline_installment_term</code> during redirect VT-Web URL request with combination bin filter feature. The purpose of bin filter is to limit only certain cards will be allowed to do offline installment based on the agreement between merchant and issuing banks.</p>
+    <p>To allow installment feature with banks which doesn't issue MID Installment, merchant can use feature offline installment. With offline installment feature, the transaction will be charged in full amount and the transaction will be converted into installment later. For more information and support, merchant can contact Veritrans Sales Representative. Merchant simply has to add the parameter <code>offline_installment_term</code> during redirect VT-Web URL request with combination bin filter feature. The purpose of bin filter is to limit only certain cards will be allowed to do offline installment based on the agreement between merchant and issuing banks.</p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -910,11 +911,8 @@ The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and
 </span>          <span class="s2">"payment_options"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
               <span class="s2">"installment"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
                   <span class="s2">"required"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">"installment_terms"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-                      <span class="s2">"bni"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
-                      <span class="s2">"mandiri"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-                    <span class="p">),</span>
-                  <span class="s2">"offline_installment_term"</span><span class="o">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+                  <span class="s1">'installment_terms'</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="k">stdClass</span><span class="p">(),</span>
+                  <span class="s2">"offline_installment_terms"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
                 <span class="p">)</span>
             <span class="p">),</span>
           <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
@@ -931,17 +929,24 @@ The Mandiri E-cash tab will be shown at the VT-Web payment page. Information and
 
 </code></pre>
 
-  <div class="alert alert-info" role="alert">
-    <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+    <div class="alert alert-info" role="alert">
+      <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <span class="sr-only">Info:</span>
 <strong>Info</strong>:<br />Please refer to our <a href="../api/methods.html#vtwebinstallment">API Documentation - VT-Web Installment</a> for more info on the JSON attributes.</p>
-  </div>
+    </div>
 
+    <p>The following figure displays the VT-Web payment page with offline installment feature:
+<br />
+<img alt="VT-Web Installment" class="img-responsive img-thumbnail" src="../../images/vtweb_offline_installment.png" /></p>
+
+    <hr />
+
+  </div>
   <div class="tab-pane" id="bin-promo">
 
     <h3 id="bin-promo">BIN Promo</h3>
 
-    <p>BIN promo is a feature that allows merchant to advertise bank a promotion according to the credit card issued by the bank. BIN (Bank Identification Number) is the <strong>first 1-6 digit</strong> of a credit card, which identifies the bank that issues the card. A bank generally has more than one BIN.   </p>
+    <p>BIN promo is a feature that allows merchant to advertise bank a promotion according to the credit card issued by the bank. BIN (Bank Identification Number) is the <strong>first 1-6 digit</strong> of a credit card, which identifies the bank that issues the card. A bank generally has more than one BIN.</p>
 
     <p>To use this feature, merchant needs to accumulate the list of BIN that currently receives promotion or simply using issuing bank name. This list of BIN or issuing bank name will then become a transaction parameter <code>credit_card_bins</code>. This transaction can only be performed exclusively by the credit card that is included in the BIN list or BIN under particular defined issuing bank.</p>
 
@@ -1006,12 +1011,11 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>,<code
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
           <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
           <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+          
           <span class="c1">//Set Redirection URL Manually
-</span>          <span class="s2">"finish_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.sneekers.co.id/payment/finish"</span><span class="p">,</span> 
-          <span class="s2">"unfinish_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.sneekers.co.id/payment/unfinish"</span><span class="p">,</span>
-          <span class="s2">"error_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.sneekers.co.id/payment/error"</span>
-  <span class="p">}</span>
-
+</span>          <span class="s2">"finish_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.example.co.id/payment/finish"</span><span class="p">,</span>
+          <span class="s2">"unfinish_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.example.co.id/payment/unfinish"</span><span class="p">,</span>
+          <span class="s2">"error_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.example.co.id/payment/error"</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">8033</span><span class="p">,</span>
@@ -1057,9 +1061,7 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>,<code
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
           <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
-          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="p">}</span>
-
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">3033</span><span class="p">,</span>
@@ -1138,9 +1140,7 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>,<code
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
           <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"vtweb"</span><span class="p">),</span>
-          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="p">}</span>
-
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">8033</span><span class="p">,</span>
@@ -1148,11 +1148,11 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>,<code
         <span class="p">),</span>
 
     <span class="c1">//Set Custom Expiry
-</span>    <span class="s1">'custom_expiry'</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span> 
+</span>    <span class="s1">'custom_expiry'</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
       <span class="s2">"order_time"</span> <span class="o">=&gt;</span> <span class="s2">"2015-09-08 11:06:53 +0700"</span><span class="p">,</span>
       <span class="s2">"expiry_duration"</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"unit"</span> <span class="o">=&gt;</span> <span class="s2">"minute"</span>
-  <span class="p">)</span>
+      <span class="p">)</span>
     <span class="p">);</span>
 
 <span class="nv">$vtweb_url</span> <span class="o">=</span> <span class="nx">Veritrans_Vtweb</span><span class="o">::</span><span class="na">getRedirectionUrl</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
@@ -1299,7 +1299,7 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>,<code
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>

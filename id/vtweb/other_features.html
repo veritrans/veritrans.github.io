@@ -48,53 +48,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -245,7 +246,7 @@
 <ul class="nav nav-tabs">
   <li class="active"><a href="#payment-options" data-toggle="tab">Memilih Metode Pembayaran</a></li>
   <li><a href="#set-redirect" data-toggle="tab">Set Redirect URL</a></li>
-  <li><a href="#custom-field" data-toggle="tab">Custom Fields</a></li>  
+  <li><a href="#custom-field" data-toggle="tab">Custom Fields</a></li>
   <li><a href="#custom-expiry" data-toggle="tab">Custom Expiry</a></li>
   <li><a href="#three-D-secure" data-toggle="tab">Menon-aktifkan 3D Secure</a></li>
   <li><a href="#installment" data-toggle="tab">Cicilan</a></li>
@@ -432,7 +433,7 @@ Tab CIMB Clicks akan muncul pada halaman pembayaran VT-Web. Informasi dan petunj
 
     <h3 id="virtual-account">Virtual Account</h3>
 
-    <p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah virtual account, saat ini Veritrans sudah terintegrasi dengan Bank Permata untuk proses virtual account. Dengan menggunakan layanan ini, pelanggan anda akan memiliki pilihan untuk melakukan pembayaran melalui transfer bank ke rekening virtual account Bank Permata. </p>
+    <p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah virtual account, saat ini Veritrans sudah terintegrasi dengan Bank Permata untuk proses virtual account. Dengan menggunakan layanan ini, pelanggan anda akan memiliki pilihan untuk melakukan pembayaran melalui transfer bank ke rekening virtual account Bank Permata.</p>
 
     <p>Untuk mengaktifkan metode pembayaran virtual account (otomatis aktif pada mode Sandbox), merchant perlu:</p>
 
@@ -670,7 +671,7 @@ Halaman pembayaran Mandiri Bill Payment akan muncul di VT-Web. Informasi dan pet
 </code></pre>
 
     <p><br />
-Halaman pembayaran BBM Money Payment akan muncul di VT-Web.<br /> Informasi dan petunjuk pembayaran menggunakan metode BBM Money payment ditampilkan secara rinci pada halaman ini. 
+Halaman pembayaran BBM Money Payment akan muncul di VT-Web.<br /> Informasi dan petunjuk pembayaran menggunakan metode BBM Money payment ditampilkan secara rinci pada halaman ini.
 <br /><br />
 <img alt="vtweb_bbmoney" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" /></p>
 
@@ -801,8 +802,6 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
 
     <p><br /></p>
 
-    <hr />
-
   </div>
   <div class="tab-pane" id="three-D-secure">
     <h3 id="menon-aktifkan-3d-secure">Menon-aktifkan 3D Secure</h3>
@@ -814,7 +813,7 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
-<span class="o">...</span> 
+<span class="o">...</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
@@ -842,9 +841,9 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
 
     <h4 id="cicilan-online">Cicilan Online</h4>
 
-    <p>Untuk mengaktifkan fitur cicilan online, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Acquiring bank akan menerbitkan MID Cicilan yang memungkinkan transaksi diubah menjadi cicilan secara otomatis. Saat ini bank yang sudah support adalah BNI dan Mandiri. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant cukup menambahkan parameter transaksi <code>installment</code> saat request URL VT-Web. </p>
+    <p>Untuk mengaktifkan fitur cicilan online, merchant harus memiliki kesepakatan dengan acquiring bank terlebih dahulu. Acquiring bank akan menerbitkan MID Cicilan yang memungkinkan transaksi diubah menjadi cicilan secara otomatis. Saat ini bank yang sudah support adalah BNI dan Mandiri. Merchant juga perlu menanyakan kepada sales representative Veritrans apakah MID untuk cicilan sudah siap. Jika sudah siap, merchant cukup menambahkan parameter transaksi <code>installment</code> saat request URL VT-Web.</p>
 
-    <p>Selain itu, untuk menjaga agar customer hanya memasukkan nomor kartu yang berlaku untuk program cicilan, merchant perlu mengimplementasikan fitur BIN Promo bersama dengan fitur cicilan ini. Untuk informasi mengenai fitur BIN Promo, bisa dicek di bagian BIN Promo.  </p>
+    <p>Selain itu, untuk menjaga agar customer hanya memasukkan nomor kartu yang berlaku untuk program cicilan, merchant perlu mengimplementasikan fitur BIN Promo bersama dengan fitur cicilan ini. Untuk informasi mengenai fitur BIN Promo, bisa dicek di bagian BIN Promo.</p>
 
     <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /><br /></p>
 
@@ -889,19 +888,19 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
 
     <p><br /></p>
 
-    <p>Berikut adalah contoh tampilan halaman VT-Web dengan fitur cicilan:
+    <p>Berikut adalah contoh tampilan halaman VT-Web dengan fitur cicilan online:
 <br />
 <img alt="VT-Web Installment" class="img-responsive img-thumbnail" src="../../images/vtweb_installment.png" /></p>
 
-  </div>
+    <hr />
 
-  <h4 id="cicilan-offline">Cicilan Offline</h4>
+    <h4 id="cicilan-offline">Cicilan Offline</h4>
 
-  <p>Apabila merchant ingin menggunakan fitur cicilan dengan bank yang tidak bisa mengeluarkan MID Installment, merchant dapat menggunakan fitur cicilan offline. Dengan fitur cicilan offline ini, charge transaksi akan dilakukan secara full amount dan perubahan menjadi cicilan akan dilakukan setelahnya. Untuk informasi lebih lanjut dan bantuan, merchant bisa menghubungi Sales Representatif Veritrans.</p>
+    <p>Apabila merchant ingin menggunakan fitur cicilan dengan bank yang tidak bisa mengeluarkan MID Installment, merchant dapat menggunakan fitur cicilan offline. Dengan fitur cicilan offline ini, charge transaksi akan dilakukan secara full amount dan perubahan menjadi cicilan akan dilakukan setelahnya. Untuk informasi lebih lanjut dan bantuan, merchant bisa menghubungi Sales Representatif Veritrans.</p>
 
-  <p>Untuk menggunakan fitur cicilan offline, merchant cukup menambahkan parameter transaksi <code>offline_installment_term</code> saat request URL VT-Web dan fitur bin filter. Tujuan dari implementasi fitur bin filter adalah membatasi hanya kartu-kartu tertentu saja yang bisa menggukana fitur cicilan offline ini sesuai dengan kesepakatan antara merchant dengan bank penerbit kartu.</p>
+    <p>Untuk menggunakan fitur cicilan offline, merchant cukup menambahkan parameter transaksi <code>offline_installment_term</code> saat request URL VT-Web dan fitur bin filter. Tujuan dari implementasi fitur bin filter adalah membatasi hanya kartu-kartu tertentu saja yang bisa menggukana fitur cicilan offline ini sesuai dengan kesepakatan antara merchant dengan bank penerbit kartu.</p>
 
-  <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /><br /></p>
+    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
@@ -916,12 +915,9 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
 </span>          <span class="s2">"payment_options"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
               <span class="s2">"installment"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
                   <span class="s2">"required"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-                  <span class="s2">"installment_terms"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-                      <span class="s2">"bni"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
-                      <span class="s2">"mandiri"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-                    <span class="p">),</span>
-                  <span class="s2">"offline_installment_term"</span><span class="o">:</span> <span class="p">[</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">12</span><span class="p">]</span>
-                <span class="p">)</span>
+                  <span class="s1">'installment_terms'</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="k">stdClass</span><span class="p">(),</span>
+                  <span class="s2">"offline_installment_terms"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+              <span class="p">)</span>
             <span class="p">),</span>
            <span class="s2">"credit_card_bins"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
         <span class="p">),</span>
@@ -937,14 +933,21 @@ Tab Mandiri E-cash dapat digunakan oleh pelanggan untuk melakukan transaksi. For
 
 </code></pre>
 
-  <div class="alert alert-info" role="alert">
-    <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+    <div class="alert alert-info" role="alert">
+      <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <span class="sr-only">Info:</span>
 <strong>Info</strong>:<br /> Silahkan lihat <a href="../api/methods.html#vtwebinstallment">API Documentation - VT-Web Cicilan</a> untuk informasi lebih mengenai atribut JSON.</p>
+    </div>
+
+    <p><br /></p>
+
+    <p>Berikut adalah contoh tampilan halaman VT-Web dengan fitur cicilan offline:
+<br />
+<img alt="VT-Web Installment" class="img-responsive img-thumbnail" src="../../images/vtweb_offline_installment.png" /></p>
+
+    <hr />
+
   </div>
-
-  <p><br /></p>
-
   <div class="tab-pane" id="bin-promo">
 
     <h3 id="bin-promo">BIN Promo</h3>
@@ -1014,12 +1017,11 @@ Secara default, redirection URL dapat dikonfigurasi melalui MAP Veritrans melalu
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
           <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
           <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+          
           <span class="c1">//Set Redirection URL Manually
-</span>          <span class="s2">"finish_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.sneekers.co.id/payment/finish"</span><span class="p">,</span> 
-          <span class="s2">"unfinish_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.sneekers.co.id/payment/unfinish"</span><span class="p">,</span>
-          <span class="s2">"error_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.sneekers.co.id/payment/error"</span>
-  <span class="p">}</span>
-
+</span>          <span class="s2">"finish_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.example.co.id/payment/finish"</span><span class="p">,</span>
+          <span class="s2">"unfinish_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.example.co.id/payment/unfinish"</span><span class="p">,</span>
+          <span class="s2">"error_redirect_url"</span> <span class="o">=&gt;</span> <span class="s2">"http://www.example.co.id/payment/error"</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">8033</span><span class="p">,</span>
@@ -1065,9 +1067,7 @@ Secara default, redirection URL dapat dikonfigurasi melalui MAP Veritrans melalu
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
           <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"credit_card"</span><span class="p">),</span>
-          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="p">}</span>
-
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">3033</span><span class="p">,</span>
@@ -1146,9 +1146,7 @@ Secara default, redirection URL dapat dikonfigurasi melalui MAP Veritrans melalu
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
           <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"vtweb"</span><span class="p">),</span>
-          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="p">}</span>
-
+          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span>
         <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="mi">8033</span><span class="p">,</span>
@@ -1156,10 +1154,11 @@ Secara default, redirection URL dapat dikonfigurasi melalui MAP Veritrans melalu
         <span class="p">),</span>
 
     <span class="c1">//Set Custom Expiry
-</span>    <span class="s1">'custom_expiry'</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span> 
+</span>    <span class="s1">'custom_expiry'</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+      <span class="s2">"order_time"</span> <span class="o">=&gt;</span> <span class="s2">"2015-09-08 11:06:53 +0700"</span><span class="p">,</span>
       <span class="s2">"expiry_duration"</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"unit"</span> <span class="o">=&gt;</span> <span class="s2">"minute"</span>
-  <span class="p">)</span>
+      <span class="p">)</span>
     <span class="p">);</span>
 
 <span class="nv">$vtweb_url</span> <span class="o">=</span> <span class="nx">Veritrans_Vtweb</span><span class="o">::</span><span class="na">getRedirectionUrl</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
@@ -1305,7 +1304,7 @@ Secara default, redirection URL dapat dikonfigurasi melalui MAP Veritrans melalu
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>

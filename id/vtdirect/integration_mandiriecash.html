@@ -48,53 +48,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -381,6 +382,10 @@
 <span class="c1">// Data yang akan dikirim untuk request charge transaction dengan Mandiri E-cash.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'mandiri_ecash'</span><span class="p">,</span>
+  <span class="c1">// Diperlukan Untuk konfigurasi Mandiri E-cash
+</span>  <span class="s1">'mandiri_ecash'</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="s1">'Deskripsi transaksi'</span>
+  <span class="p">)</span>
   <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
@@ -443,7 +448,7 @@ Dua informasi penting dalam respon JSON adalah <code>status_code</code> dan <cod
 </code></pre>
 
     <p><br />
-Informasi terkait nilai transaksi, order ID, dan keterangan transaksi akan ditampilkan pada halaman redirect URL. Pada environment sandbox, halaman pembayaran Mandiri E-cash bersifat dummy. Pelanggan anda cukup menekan tombol bayar untuk menyelesaikan proses transaksi. </p>
+Informasi terkait nilai transaksi, order ID, dan keterangan transaksi akan ditampilkan pada halaman redirect URL. Pada environment sandbox, halaman pembayaran Mandiri E-cash bersifat dummy. Pelanggan anda cukup menekan tombol bayar untuk menyelesaikan proses transaksi.</p>
 
     <p>Ketika transaksi selesai, pelanggan anda dapat kembali ke website anda. Untuk melakukan hal ini, anda perlu mengisi konfigurasi callback URL di MAP (Merchant Administration Portal). Berikut adalah tampilan halaman pembayaran environment sandbox:</p>
 
@@ -513,7 +518,7 @@ Daftar status code lengkap dapat dilihat di <a href="../api/status_code.html">Re
 
     <h2 id="status-transaksi">Status Transaksi</h2>
 
-    <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih <code>pending</code>, pelanggan anda harus menyelesaikan pembayaran. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>success</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
+    <p>Pada saat charge transaksi berhasil, status transaksi tersebut masih <code>pending</code>, pelanggan anda harus menyelesaikan pembayaran. Begitu proses ini selesai, status transaksi akan berubah menjadi <code>settlement</code> atau <code>deny</code>. Apabila pelanggan tidak menyelesaikan pembayaran, maka status transaksi akan menjadi <code>expired</code>. Anda dapat mengetahui perubahan status transaksi melalui MAP.</p>
 
     <p>Status pada MAP saat pembayaran belum selesai dilakukan di halaman Mandiri E-cash adalah seperti gambar berikut:
 <br /><br />
@@ -675,7 +680,7 @@ Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a hr
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>

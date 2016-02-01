@@ -48,53 +48,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -230,7 +231,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>POST <br /> https://api.veritrans.co.id/v2/<a href="#Get_Token">token</a></td>
+        <td>GET <br /> https://api.veritrans.co.id/v2/<a href="#Get_Token">token</a></td>
         <td>Tokenisasi informasi Kartu Kredit sebelum charge transaksi</td>
       </tr>
       <tr>
@@ -494,8 +495,8 @@ Untuk menggunakan library tersebut, tambahkan kode berikut didalam tag <code>&lt
 
 <p><br /></p>
 
-<pre><code class="highlight javascript"><span class="cm">/*Create the callback response function. 
-NOTE: This example utilizes JQuery Fancybox. 
+<pre><code class="highlight javascript"><span class="cm">/*Create the callback response function.
+NOTE: This example utilizes JQuery Fancybox.
 You can use other javascript framework to display 3DS dialog*/</span>
 
 <span class="kd">function</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -544,7 +545,7 @@ You can use other javascript framework to display 3DS dialog*/</span>
 </code></pre>
 
 <p id="Charge"><br />
-<br /> </p>
+<br /></p>
 
 <h2 id="charge-transaction">Charge Transaction</h2>
 
@@ -760,7 +761,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
             <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (space), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em></td>
+            <td>country_code <em>String(3)</em></td>
             <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -810,7 +811,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
             <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (space), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em></td>
+            <td>country_code <em>String(3)</em></td>
             <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -824,7 +825,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
     <table>
       <tbody>
         <tr>
-          <td><a data-toggle="collapse" href="#vtweb_attr">vtweb</a> <em>JSON Array</em></td>
+          <td><a data-toggle="collapse" href="#vtweb_attr">vtweb</a> <em>JSON Object</em></td>
           <td>Konfigurasi fitur VT-Web.</td>
         </tr>
       </tbody>
@@ -1294,6 +1295,10 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
 
 <p>Apabila Anda melakukan charge transaksi di VT-Web, Anda akan diberikan link ke halaman Veritrans untuk menyelesaikan transaksi.</p>
 
+<h4 id="fitur-vt-web-mengaktifkan-3ds">Fitur VT-Web: Mengaktifkan 3DS</h4>
+
+<p>Untuk mengaktifkan mode 3DS, Anda perlu menambahkan 1 parameter <code>credit_card_3d_secure</code> di dalam object <code>vtweb</code>.</p>
+
 <div class="table-wrapper">
 
   <table>
@@ -1346,7 +1351,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
     <table>
       <tbody>
         <tr>
-          <td><a data-toggle="collapse" href="#vtweb_attr_normal">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+          <td><a data-toggle="collapse" href="#vtweb_attr_normal">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
           <td>Konfigurasi fitur VT-Web.</td>
         </tr>
       </tbody>
@@ -1483,7 +1488,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
             <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -1533,7 +1538,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
             <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
           </tr>
           <tr>
-            <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+            <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
             <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
           </tr>
         </tbody>
@@ -1558,7 +1563,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
   <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">},</span>
-  
+
   <span class="c1">// Optional</span>
   <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
@@ -1707,7 +1712,7 @@ Untuk memilih metode pembayaran tertentu yang ditampilkan di VT-Web, masukkan at
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_choose">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_choose">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>Informasi charge transaksi untuk fitur pemilihan metode pembayaran di VT-Web.</td>
       </tr>
     </tbody>
@@ -1746,7 +1751,7 @@ Untuk memilih metode pembayaran tertentu yang ditampilkan di VT-Web, masukkan at
     <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cimb_clicks"</span><span class="p">,</span> <span class="s2">"bank_transfer"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to choose VT-Web payment methods</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
-  
+
 <span class="p">}</span>
 </code></pre>
 
@@ -1754,7 +1759,7 @@ Untuk memilih metode pembayaran tertentu yang ditampilkan di VT-Web, masukkan at
 
 <h4 id="SetRedirect">Fitur VT-Web: Pengaturan Pengalihan URL</h4>
 
-<p>Anda dapat mengesampingkan pengalihan URL di MAP dengan pengalihan URL per transaksi.<br /> 
+<p>Anda dapat mengesampingkan pengalihan URL di MAP dengan pengalihan URL per transaksi.<br />
 Untuk mengkonfigurasi fitur pengalihan URL di VT-Web:</p>
 
 <div class="table-wrapper">
@@ -1768,7 +1773,7 @@ Untuk mengkonfigurasi fitur pengalihan URL di VT-Web:</p>
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_seturl">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_seturl">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>Informasi charge transaksi untuk fitur Konfigurasi pengalihan URL di VT-Web.</td>
       </tr>
     </tbody>
@@ -1821,20 +1826,20 @@ Untuk mengkonfigurasi fitur pengalihan URL di VT-Web:</p>
    <span class="c1">// Required</span>
   <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cimb_clicks"</span><span class="p">,</span> <span class="s2">"bank_transfer"</span><span class="p">,</span> <span class="s2">"credit_card"</span><span class="p">],</span>
-    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">],</span> 
+    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">],</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"finish_redirect_url"</span><span class="p">:</span> <span class="s2">"http://www.sneekers.co.id/payment/finish"</span><span class="p">,</span> 
+    <span class="s2">"finish_redirect_url"</span><span class="p">:</span> <span class="s2">"http://www.sneekers.co.id/payment/finish"</span><span class="p">,</span>
     <span class="s2">"unfinish_redirect_url"</span><span class="p">:</span> <span class="s2">"http://www.sneekers.co.id/payment/unfinish"</span><span class="p">,</span>
     <span class="s2">"error_redirect_url"</span><span class="p">:</span> <span class="s2">"http://www.sneekers.co.id/payment/error"</span>
   <span class="p">}</span>
-  
+
 <span class="p">}</span>
 </code></pre>
 <p><br /></p>
 
 <h4 id="fitur-vt-web-bin-promo">Fitur VT-Web: BIN Promo</h4>
 
-<p>BIN Promo hanya berlaku untuk pembayaran Card Payment.<br /> 
+<p>BIN Promo hanya berlaku untuk pembayaran Card Payment.<br />
 Untuk mengkonfigurasi fitur BIN Promo di VT-Web:</p>
 
 <div class="table-wrapper">
@@ -1848,7 +1853,7 @@ Untuk mengkonfigurasi fitur BIN Promo di VT-Web:</p>
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_bin">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_bin">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>Informasi charge transaksi untuk fitur BIN Promo di VT-Web.</td>
       </tr>
     </tbody>
@@ -1892,7 +1897,7 @@ Untuk mengkonfigurasi fitur BIN Promo di VT-Web:</p>
     <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to set BIN Promo</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
-  
+
 <span class="p">}</span>
 </code></pre>
 
@@ -1916,7 +1921,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_installment">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_installment">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>Informasi charge transaksi untuk fitur cicilan di VT-Web.</td>
       </tr>
     </tbody>
@@ -2040,7 +2045,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
     </thead>
     <tbody>
       <tr>
-        <td><a data-toggle="collapse" href="#vtweb_attr_installment2">vtweb</a> <em>JSON Array</em> <strong>Required</strong></td>
+        <td><a data-toggle="collapse" href="#vtweb_attr_installment2">vtweb</a> <em>JSON Object</em> <strong>Required</strong></td>
         <td>Informasi charge transaksi untuk fitur cicilan di VT-Web.</td>
       </tr>
     </tbody>
@@ -2141,7 +2146,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
           <span class="s2">"bni"</span><span class="p">:</span> <span class="p">[],</span>
           <span class="s2">"mandiri"</span><span class="p">:[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
           <span class="p">},</span>
-        <span class="s2">"offline_installment_term"</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.6</span><span class="err">.</span><span class="mi">12</span><span class="p">]</span>
+        <span class="s2">"offline_installment_terms"</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -2364,7 +2369,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -2414,7 +2419,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -2765,7 +2770,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>                     
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Installment Token ID from Get Token</span>
     <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span>             <span class="c1">// &lt;-- Field to set installment</span>
   <span class="p">}</span>
@@ -2821,7 +2826,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>                     
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Installment Token ID from Get Token</span>
     <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>            <span class="c1">// &lt;-- Field to set installment</span>
     <span class="s2">"bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>  <span class="c1">// &lt;-- Field to set BIN Promo</span>
@@ -2910,7 +2915,7 @@ Untuk mengkonfigurasi fitur pre-authorization di VT-Direct, atribut berikut dibu
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>                     
+    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Authorize Token ID from Get Token</span>
     <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"authorize"</span>                <span class="c1">// &lt;-- Field to set pre-authorize</span>
   <span class="p">}</span>
@@ -2925,7 +2930,7 @@ Untuk mengkonfigurasi fitur pre-authorization di VT-Direct, atribut berikut dibu
   <div class="alert alert-info" role="alert">
     <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <span class="sr-only">Info:</span>
-<strong>Note</strong>: </p>
+<strong>Note</strong>:</p>
 
     <ul>
       <li>Metode Charge di transaksi Pre-Authorization hanya mengecek dan blok limit kartu kredit.</li>
@@ -2940,7 +2945,7 @@ Untuk mengkonfigurasi fitur pre-authorization di VT-Direct, atribut berikut dibu
 
   <h4 id="charge-awal-two-clicks">1. Charge Awal Two Clicks</h4>
 
-  <p>Anda membutuhkan token dari <a href="#Get_Token">Get Token</a> untuk charge awal dengan fitur Two Clicks.<br /> 
+  <p>Anda membutuhkan token dari <a href="#Get_Token">Get Token</a> untuk charge awal dengan fitur Two Clicks.<br />
 Atribut berikut dibutuhkan ketika charge awal dengan fitur Two Clicks:</p>
 
   <div class="table-wrapper">
@@ -3101,7 +3106,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur Two Clicks:</p>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
     <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// New Token Generated from Two Clicks Get Token</span>
-        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"481111-1114-7baba36c-5698-47cf-9170-80efd6a2e973"</span><span class="p">,</span>   
+        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"481111-1114-7baba36c-5698-47cf-9170-80efd6a2e973"</span><span class="p">,</span>
         <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span>
     <span class="p">},</span>
     <span class="c1">// Required</span>
@@ -3123,7 +3128,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur Two Clicks:</p>
 
   <h4 id="charge-awal-one-click">1. Charge Awal One Click</h4>
 
-  <p>Anda membutuhkan token dari <a href="#Get_Token">Get Token</a> untuk charge awal dengan fitur One Click.<br /> 
+  <p>Anda membutuhkan token dari <a href="#Get_Token">Get Token</a> untuk charge awal dengan fitur One Click.<br />
 Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
 
   <div class="table-wrapper">
@@ -3285,7 +3290,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
     <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// New Token Generated from One Click Clicks Initial Charge Response</span>
-        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"44811117d16c884-2cc7-4624-b0a8-10273b7f6cc8"</span><span class="p">,</span>   
+        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"44811117d16c884-2cc7-4624-b0a8-10273b7f6cc8"</span><span class="p">,</span>
         <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span>
     <span class="p">},</span>
     <span class="c1">// Required</span>
@@ -3497,7 +3502,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -3547,7 +3552,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -3912,7 +3917,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -3962,7 +3967,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -3975,7 +3980,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">//Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
 
     <span class="c1">//Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
@@ -3983,7 +3988,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
         <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
         <span class="p">},</span>
 
-    <span class="c1">//Required    </span>
+    <span class="c1">//Required</span>
     <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
@@ -4002,7 +4007,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
     <span class="c1">//Required</span>
     <span class="s2">"echannel"</span> <span class="p">:</span> <span class="p">{</span>
         <span class="s2">"bill_info1"</span> <span class="p">:</span> <span class="s2">"Payment For:"</span><span class="p">,</span>
-        <span class="s2">"bill_info2"</span> <span class="p">:</span> <span class="s2">"debt"</span> 
+        <span class="s2">"bill_info2"</span> <span class="p">:</span> <span class="s2">"debt"</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -4078,13 +4083,13 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Mandiri Bill transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span> 
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1421816431"</span><span class="p">,</span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
     <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015­01­21 12:00:31"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span> 
-    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span> 
-    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000182"</span><span class="p">,</span> 
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span>
+    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000182"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"400000.00"</span>
 <span class="p">}</span>
 </code></pre>
@@ -4302,7 +4307,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -4352,7 +4357,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -4697,7 +4702,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -4747,7 +4752,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -5064,7 +5069,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -5114,7 +5119,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -5429,19 +5434,19 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span>
 
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"orderid­01"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">11000</span> 
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">11000</span>
         <span class="p">},</span>
 
-    <span class="c1">// Required    </span>
+    <span class="c1">// Required</span>
     <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
-        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span> 
-        <span class="s2">"price"</span><span class="p">:</span> <span class="mi">11000</span><span class="p">,</span> 
-        <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+        <span class="s2">"price"</span><span class="p">:</span> <span class="mi">11000</span><span class="p">,</span>
+        <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Mobil "</span>
         <span class="p">}</span> <span class="p">],</span>
 
@@ -5518,15 +5523,15 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
   </div>
 
 <pre><code class="highlight json"><span class="p">{</span><span class="err"> </span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"279232280e944366b057a1e60c777a4c"</span><span class="p">,</span> 
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"279232280e944366b057a1e60c777a4c"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388998673486"</span><span class="p">,</span><span class="err"> </span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span><span class="err"> </span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span><span class="err"> </span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"20140219 08:22:06"</span><span class="p">,</span> 
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"20140219 08:22:06"</span><span class="p">,</span>
     <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
     <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritans.co.id/v2/redirect/27923228- 0e944366b057a1e60c777a4c"</span><span class="p">,</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span><span class="err"> </span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do BCA KlikPay transaction, please go to redirect_url"</span> 
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, success do BCA KlikPay transaction, please go to redirect_url"</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -5735,7 +5740,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -5785,7 +5790,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -5836,13 +5841,13 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> 
-        <span class="s2">"telkomsel_cash"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span>
+        <span class="s2">"telkomsel_cash"</span><span class="p">,</span>
 
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span> 
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span>
         <span class="p">},</span>
 
     <span class="c1">// Optional</span>
@@ -5856,9 +5861,9 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
     <span class="c1">// Optional</span>
     <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"obet.supriadi@gmail.com"</span><span class="p">,</span>
-        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span> 
+        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
         <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
-        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span> 
+        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span>
         <span class="p">},</span>
 
     <span class="c1">// Required for T-Cash configuration</span>
@@ -5866,7 +5871,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
         <span class="s2">"customer"</span><span class="p">:</span> <span class="s2">"0811111111"</span><span class="p">,</span>
         <span class="s2">"promo"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
         <span class="s2">"is_reversal"</span><span class="p">:</span> <span class="mi">0</span>
-    <span class="p">}</span> 
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -5929,11 +5934,11 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
   </div>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2f46643d­3d3f­4971­a329­de9113fb9361"</span><span class="p">,</span> 
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2f46643d­3d3f­4971­a329­de9113fb9361"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"telkomsel_cash"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014­01­27 14:12:30"</span><span class="p">,</span> 
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014­01­27 14:12:30"</span><span class="p">,</span>
     <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, T­Cash transaction is successful"</span>
@@ -6109,7 +6114,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -6159,7 +6164,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -6509,7 +6514,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -6559,7 +6564,7 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -6700,7 +6705,7 @@ Callback URL:</p>
       <p>check_status : Ketika pembayaran transaksi berhasil atau gagal, BBM Money app akan kembali ke URL ini. Merchant harus selalu monitor status transaksi. Apabila pembayaran gagal, merchant mungkin ingin menunjukkan informasi bagaimana cara melanjutkan pembayaran lagi.</p>
     </li>
     <li>
-      <p>before_payment_error : Ketika terjadi error di app (gagal login, masalah koneksi, dsb) atau masalah dengan penagihan ketika pembayaran belum berlangsung, BBM Money akan kembali ke URL ini. Merchant mungkin ingin menunjukkan informasi bagaimana cara melanjutkan pembayaran lagi. </p>
+      <p>before_payment_error : Ketika terjadi error di app (gagal login, masalah koneksi, dsb) atau masalah dengan penagihan ketika pembayaran belum berlangsung, BBM Money akan kembali ke URL ini. Merchant mungkin ingin menunjukkan informasi bagaimana cara melanjutkan pembayaran lagi.</p>
     </li>
     <li>
       <p>user_cancel : Ketika pelanggan klik tombol "cancel" di layar pembayaran BBM Money, BBM money akan kembali ke URL ini. Merchant mungkin ingin menunjukkan informasi bagaimana cara melanjutkan pembayaran, atau membatalkan pesanan.<br /></p>
@@ -6940,7 +6945,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -6990,7 +6995,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -7041,13 +7046,13 @@ example: http://example.com/checkstatus?order_id=12345</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> 
-        <span class="s2">"indosat_dompetku"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span>
+        <span class="s2">"indosat_dompetku"</span><span class="p">,</span>
 
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span> 
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span>
         <span class="p">},</span>
 
     <span class="c1">// Optional</span>
@@ -7061,15 +7066,15 @@ example: http://example.com/checkstatus?order_id=12345</p>
     <span class="c1">// Optional</span>
     <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"obet.supriadi@gmail.com"</span><span class="p">,</span>
-        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span> 
+        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
         <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
-        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span> 
+        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span>
         <span class="p">},</span>
 
     <span class="c1">// Required for Indosat Dompetku Transaction</span>
     <span class="s2">"indosat_dompetku"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"msisdn"</span><span class="p">:</span> <span class="s2">"08123456789"</span>
-    <span class="p">}</span> 
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -7338,7 +7343,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -7388,7 +7393,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -7439,13 +7444,13 @@ example: http://example.com/checkstatus?order_id=12345</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="c1">// Required</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> 
-        <span class="s2">"mandiri_ecash"</span><span class="p">,</span> 
+    <span class="s2">"payment_type"</span><span class="p">:</span>
+        <span class="s2">"mandiri_ecash"</span><span class="p">,</span>
 
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1388"</span><span class="p">,</span>
-        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span> 
+        <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">100000</span>
         <span class="p">},</span>
 
     <span class="c1">// Optional</span>
@@ -7459,15 +7464,15 @@ example: http://example.com/checkstatus?order_id=12345</p>
     <span class="c1">// Optional</span>
     <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"obet.supriadi@gmail.com"</span><span class="p">,</span>
-        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span> 
+        <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Obet"</span><span class="p">,</span>
         <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
-        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span> 
+        <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081311874839"</span>
         <span class="p">},</span>
 
     <span class="c1">// Required for Mandiri E-cash Transaction</span>
     <span class="s2">"mandiri_ecash"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Transaction description"</span>
-    <span class="p">}</span> 
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -7786,7 +7791,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
               <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -7836,7 +7841,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
               <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
             </tr>
             <tr>
-              <td>country_code <em>String(10)</em> <strong>Optional</strong></td>
+              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
               <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
             </tr>
           </tbody>
@@ -7849,7 +7854,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
 
 <pre><code class="highlight php">{
     //Required
-    "payment_type": "cstore", 
+    "payment_type": "cstore",
 
     //Required
     "transaction_details": {
@@ -7860,7 +7865,7 @@ example: http://example.com/checkstatus?order_id=12345</p>
     //Required
     "cstore" : {
         "store" : "indomaret",
-        "message" : "mangga" 
+        "message" : "mangga"
         }
 }
 </code></pre>
@@ -8104,7 +8109,7 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
   <span class="p">},</span>
 
   <span class="c1">// Required</span>
-  <span class="s2">"custom_expiry"</span><span class="p">:</span> <span class="p">{</span> 
+  <span class="s2">"custom_expiry"</span><span class="p">:</span> <span class="p">{</span>
       <span class="s2">"order_time"</span><span class="p">:</span> <span class="err">“yyyy-MM-dd</span> <span class="err">hh:mm:ss</span> <span class="err">Z”</span><span class="p">,</span>
       <span class="s2">"expiry_duration"</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
       <span class="s2">"unit"</span><span class="p">:</span> <span class="s2">"minute"</span>
@@ -9238,7 +9243,7 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>

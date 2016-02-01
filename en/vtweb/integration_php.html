@@ -47,53 +47,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -241,6 +242,11 @@
       <a href="integration_woocommerce.html"><img src="../../images/woocommerce_gray.jpg" /></a>
     </div>
   </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Drupal" data-placement="bottom">
+    <a href="integration_drupal.html"><img src="../../images/drupal_grey.jpg" /></a>
+    </div>
+  </div>
 </div>
 
 <div class="tab-content">
@@ -286,20 +292,23 @@
         <p><br />
 The example below shows a sample PHP Code for an order with a random Transaction ID with a total nominal of Rp. 10.000,00.</p>
 
-<pre><code class="highlight php"><span class="cp">&lt;?php</span> 
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-
-<span class="c1">// Use sandbox account
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
 <span class="c1">// Set our server key
 </span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your server key&gt;'</span><span class="p">;</span>
 
+<span class="c1">// Uncomment for production environment
+// Veritrans_Config::$isProduction = true;
+</span>
+<span class="c1">// Uncomment to enable sanitization
+// Veritrans_Config::$isSanitized = true;
+</span>
+<span class="c1">// Uncomment to enable 3D-Secure
+// Veritrans_Config::$is3ds = true;
+</span>
 <span class="c1">// Fill transaction data
 </span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">"credit_card_3d_secure"</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
         <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span><span class="p">,</span> <span class="c1">// no decimal allowed for creditcard
@@ -308,17 +317,14 @@ The example below shows a sample PHP Code for an order with a random Transaction
 
 <span class="nv">$vtweb_url</span> <span class="o">=</span> <span class="nx">Veritrans_Vtweb</span><span class="o">::</span><span class="na">getRedirectionUrl</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
 
-<span class="c1">// Redirect 
+<span class="c1">// Redirect
 </span><span class="nb">header</span><span class="p">(</span><span class="s1">'Location: '</span> <span class="o">.</span> <span class="nv">$vtweb_url</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
         <p><br />
-The sample code above utilizes the <strong>Veritrans-PHP</strong> library that can been downloaded at [ <a href="https://github.com/veritrans/veritrans-php">Github</a> | <a href="https://github.com/veritrans/veritrans-php/archive/master.zip">Zip</a> ].</p>
+The sample code above utilizes the <strong>Veritrans-PHP</strong> library that can been downloaded at [ <a href="https://github.com/veritrans/veritrans-php">Github</a> | <a href="https://github.com/veritrans/veritrans-php/archive/master.zip">Zip</a> ] and using sandbox/test environment.</p>
 
-        <p><code>Veritrans.php</code> file is assumed to be located in the same directory with the source code.
-<code>Veritrans_Config::$isProduction</code> is set to <code>false</code> because testing is on Sandbox mode.</p>
-
-        <p><code>server_key</code> value been explained on <a href="../welcome/preparation.html#step3">Getting Started - Preparation</a></p>
+        <p><code>Veritrans.php</code> file is assumed to be located in the same directory with the source code. <code>server_key</code> value been explained on <a href="../welcome/preparation.html#step3">Getting Started - Preparation</a></p>
 
         <p>By default, all available payment methods will be displayed in VT-Web page.<br />To enable only specifics payment methods, follow the steps in <a href="other_features.html">VT-Web - Other Features</a>.</p>
 
@@ -342,20 +348,25 @@ PHP sample code that includes all transaction data is shown as follow:<br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+<span class="c1">//Set Your server key
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;your server key&gt;"</span><span class="p">;</span>
 
-<span class="c1">// Set our server key
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your server key&gt;'</span><span class="p">;</span>
-
-<span class="c1">// Use sandbox account
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-
+<span class="c1">// Uncomment for production environment
+// Veritrans_Config::$isProduction = true;
+</span>
+<span class="c1">// Uncomment to enable sanitization
+// Veritrans_Config::$isSanitized = true;
+</span>
+<span class="c1">// Uncomment to enable 3D-Secure
+// Veritrans_Config::$is3ds = true;
+</span>
 <span class="c1">// Required
 </span><span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
   <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">145000</span><span class="p">,</span> <span class="c1">// no decimal allowed for creditcard
 </span>  <span class="p">);</span>
 
-<span class="c1">// Optional
+<span class="c1">// Optional, mandatory for mandiri bill payment
 </span><span class="nv">$item1_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a1'</span><span class="p">,</span>
     <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">50000</span><span class="p">,</span>
@@ -371,7 +382,7 @@ PHP sample code that includes all transaction data is shown as follow:<br /></p>
     <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s2">"Orange"</span>
     <span class="p">);</span>
 
-<span class="c1">// Optional
+<span class="c1">// Optional, mandatory for mandiri bill payment
 </span><span class="nv">$item_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
 
 <span class="c1">// Optional
@@ -408,10 +419,6 @@ PHP sample code that includes all transaction data is shown as follow:<br /></p>
 
 <span class="c1">// Fill transaction details
 </span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'payment_type'</span> <span class="o">=&gt;</span> <span class="s1">'vtweb'</span><span class="p">,</span>
-    <span class="s1">'vtweb'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">'credit_card_3d_secure'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="p">),</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
     <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
     <span class="s1">'item_details'</span> <span class="o">=&gt;</span> <span class="nv">$item_details</span><span class="p">,</span>
@@ -479,7 +486,7 @@ The list of status codes can be found in <a href="../api/status_code.html">Refer
 
         <h2 id="transaction-test">Transaction Test</h2>
 
-        <p>On this step, we will try to perform a test transaction in VT-Web.<br /> Please use our dummy <a href="../api/test_credentials.html">transaction credentials</a> for testing purposes. </p>
+        <p>On this step, we will try to perform a test transaction in VT-Web.<br /> Please use our dummy <a href="../api/test_credentials.html">transaction credentials</a> for testing purposes.</p>
 
         <div class="alert alert-warning" role="alert">
           <p><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
@@ -548,17 +555,13 @@ Referring to the steps on Obtain VT-Web URL, the displayed VT-Web page is as fol
 <br />
 <img alt="vtweb_test1" class="img-responsive img-thumbnail" src="../../images/vtweb_test.png" />
 <br /><br />
-Click Confirm Payment and a VT-Web confirmation payment page will then be displayed.
-<br /><br />
-<img alt="vtweb_test2" class="img-responsive img-thumbnail" src="../../images/vtweb_test2.png" />
-<br /><br />
 Click <strong>Pay</strong> and you will be redirected to the 3D Secure page. An authentication page will pop out that prompts the customer to click Authenticate. The following figure displays the 3D Secure authentication page on sandbox.
 <br /><br />
 <img alt="VT-Web 3D Secure" width="784" class="img-responsive img-thumbnail" src="../../images/vtweb_3ds.png" />
 <br /><br />
 After authentication process is completed, payment status will be displayed.
 <br /><br />
-<img alt="vtweb_test3" width="784" class="img-responsive img-thumbnail" src="../../images/vtweb_test3.png" />
+<img alt="vtweb_test3" width="784" class="img-responsive img-thumbnail" src="../../images/vtweb_test1.png" />
 <br /></p>
 
           </div>
@@ -570,7 +573,7 @@ After authentication process is completed, payment status will be displayed.
             <!-- Virtual Account -->
 
             <h3 id="permata-virtual-account">Permata Virtual Account</h3>
-            <p>We will try to perform a Virtual Account transaction. </p>
+            <p>We will try to perform a Virtual Account transaction.</p>
 
             <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
@@ -658,7 +661,7 @@ Click Confirm Payment and a VT-Web confirmation payment page will be displayed.
             <!-- cimb -->
 
             <h3 id="cimb-clicks">CIMB Clicks</h3>
-            <p>We will try to perform a successful CIMB Clicks transaction. </p>
+            <p>We will try to perform a successful CIMB Clicks transaction.</p>
 
             <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
@@ -742,7 +745,7 @@ Click Confirm Payment and a VT-Web result payment page will be displayed.
             <!-- XL Tunai -->
 
             <h3 id="xl-tunai">XL Tunai</h3>
-            <p>We will try to perform a XL Tunai transaction. </p>
+            <p>We will try to perform a XL Tunai transaction.</p>
 
             <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
@@ -758,7 +761,7 @@ Click <strong>Pay Now</strong> button to display the XL Tunai order id, the amou
 
             <h3 id="payment-simulation-1">Payment Simulation</h3>
 
-            <p>To facilitate the payment process, we provide a <a href="https://api.sandbox.veritrans.co.id:7676/xl/tunai/index">payment simulator</a> for sandbox Environment. </p>
+            <p>To facilitate the payment process, we provide a <a href="https://api.sandbox.veritrans.co.id:7676/xl/tunai/index">payment simulator</a> for sandbox Environment.</p>
 
             <p>Enter <code>12345</code> as dummy merchant id and XL Tunai order id number obtained to check whether there is a pending transaction.
 <br />
@@ -782,11 +785,15 @@ XL Tunai payment simulation is successful.
             <!-- BBM Money -->
 
             <h3 id="bbm-money-desktop">BBM Money: Desktop</h3>
-            <p>We will try to perform BBM Money transaction from the desktop. </p>
+            <p>We will try to perform BBM Money transaction from the desktop.</p>
 
             <p>Referring to the transaction on Obtain VT-Web URL, the VT-Web page that is displayed is shown below:
 <br />
 <img alt="VT-Web BBM Money" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" />
+<br /><br />
+Click Confirm Payment button to display the payment code.
+<br />
+<img alt="VT-Web BBM Money" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test2.png" />
 <br /><br /></p>
 
             <div class="alert alert-info" role="alert">
@@ -854,7 +861,7 @@ Click <strong>Show Payment Code</strong> button to display the company code and 
 
             <h3 id="payment-simulation-2">Payment Simulation</h3>
 
-            <p>To facilitate the payment process, we provide a <a href="https://api.sandbox.veritrans.co.id:7676/mandiri/bill/index">payment simulator</a> for sandbox Environment. </p>
+            <p>To facilitate the payment process, we provide a <a href="https://api.sandbox.veritrans.co.id:7676/mandiri/bill/index">payment simulator</a> for sandbox Environment.</p>
 
             <p>Enter the payment code number obtained to check whether there is a pending transaction.
 <br />
@@ -895,7 +902,7 @@ Click <strong>Confirm Payment</strong> button to display the payment code number
 
             <h3 id="payment-simulation-3">Payment Simulation</h3>
 
-            <p>To facilitate the payment process, we provide a <a href="https://api.sandbox.veritrans.co.id:7676/indomaret/index">payment simulator</a> for sandbox environment. </p>
+            <p>To facilitate the payment process, we provide a <a href="https://api.sandbox.veritrans.co.id:7676/indomaret/index">payment simulator</a> for sandbox environment.</p>
 
             <p>Enter the payment code number obtained to check whether there is a pending transaction.
 <br />
@@ -1022,7 +1029,7 @@ Success confirmation page
         <div class="alert alert-info" role="alert">
           <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <span class="sr-only">Info:</span>
-<strong>Info</strong>:<br /> For multiple emails, please use comma as a separator. Example : Andri@myemail.com, litani@myemail.com </p>
+<strong>Info</strong>:<br /> For multiple emails, please use comma as a separator. Example : Andri@myemail.com, litani@myemail.com</p>
         </div>
 
         <p><br /></p>
@@ -1078,7 +1085,7 @@ Success confirmation page
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"3a351906-2a89-47b6-8b88-d890e626ba4d"</span><span class="p">,</span>
   <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"Test-Order1"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTCC001"</span><span class="p">,</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 14:29:32"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
@@ -1217,11 +1224,11 @@ Success confirmation page
   <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"9a31e442-951f-490d-9b9c-9e618ec98874"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"Test-Order-2"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTVA001"</span><span class="p">,</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 14:39:16"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
-  <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778003989378805"</span><span class="p">,</span>
+  <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778006776893528"</span><span class="p">,</span>
   <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"31b482e796c35153e829a85c59d831313694cd0c7cecdbb85a7a33474f431fbea75f440f57d09608ea1889a9eedd950017f1162ae37a2ec9b00084d932fb5309"</span><span class="p">,</span>
   <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
 <span class="p">}</span>
@@ -1329,7 +1336,7 @@ PUT PHP CODE
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"fdb6322d-2fef-42c5-a956-d6b575247f0b"</span><span class="p">,</span>
   <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"411111-1111"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"Test-Order-3"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTMC001"</span><span class="p">,</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"mandiri_clickpay"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 14:44:38"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
@@ -1429,7 +1436,7 @@ PUT PHP CODE
   <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"47c11d2a-a8ca-4337-8681-8837ad023d65"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"Mike-4"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTCimb001"</span><span class="p">,</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 14:58:01"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
@@ -1517,7 +1524,7 @@ PUT PHP CODE
               <tbody>
                 <tr>
                   <td>Pending</td>
-                  <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'success'.</td>
+                  <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into 'settlement'.</td>
                 </tr>
                 <tr>
                   <td>Settlement</td>
@@ -1544,7 +1551,7 @@ PUT PHP CODE
   <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"3479c572-1d36-49c0-b5b1-22c876df411f"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"Mike-5"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTEB001"</span><span class="p">,</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bri_epay"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 15:04:48"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
@@ -1761,7 +1768,7 @@ PUT PHP CODE
   <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1731610c-cbe5-4f59-a976-8206f3a59bc0"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"Mike-7"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtimage07"</span><span class="p">,</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"xl_tunai"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 15:20:40"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
@@ -1984,13 +1991,13 @@ PUT PHP CODE
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Mandiri Bill transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span> 
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1421816431"</span><span class="p">,</span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
     <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015­01­21 12:00:31"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span> 
-    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span> 
-    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000857123456"</span><span class="p">,</span> 
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span>
+    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000857123456"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"400000.00"</span>
 <span class="p">}</span>
 </code></pre>
@@ -2096,12 +2103,12 @@ PUT PHP CODE
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
     <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, CSTORE transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span> 
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span>
     <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtindomrt01"</span><span class="p">,</span>
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cstore"</span><span class="p">,</span>
     <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015­01­21 12:00:31"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span> 
-    <span class="s2">"payment_code"</span><span class="p">:</span> <span class="s2">"741122334455"</span><span class="p">,</span> 
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"payment_code"</span><span class="p">:</span> <span class="s2">"741122334455"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
 <span class="p">}</span>
 </code></pre>
@@ -2420,6 +2427,7 @@ PUT PHP CODE
 
 <span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 <span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your serverkey&gt;'</span><span class="p">;</span>
 <span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
@@ -2434,7 +2442,7 @@ PUT PHP CODE
       <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
 </span>      <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
 </span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
-      <span class="p">}</span> 
+      <span class="p">}</span>
       <span class="k">else</span> <span class="p">{</span>
       <span class="c1">// TODO set payment status in merchant's database to 'Success'
 </span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
@@ -2444,14 +2452,18 @@ PUT PHP CODE
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
   <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
 </span>  <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> 
+  <span class="p">}</span>
   <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
   <span class="c1">// TODO set payment status in merchant's database to 'Pending'
 </span>  <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
-  <span class="p">}</span> 
+  <span class="p">}</span>
   <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// TODO set payment status in merchant's database to 'Denied'
 </span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'cancel'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
+</span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is canceled."</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
 
@@ -2600,7 +2612,7 @@ PUT PHP CODE
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>

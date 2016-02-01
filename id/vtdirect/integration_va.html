@@ -48,53 +48,54 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span>Menu &#x2304;</span>
       </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id"></a>
+      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
+      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
+        Sign Up
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
-        <li><a class="uppercase" href="https://www.veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/product_pricing.html">Product & Pricing</a></li>
-        <li><a class="uppercase" href="https://www.veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
+        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
+
+        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active">
-          <a href="http://docs.veritrans.co.id">Docs</a>
+        <li>
+          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
         </li>
         <li>
-          <a href="https://www.veritrans.co.id/contact.html">Contact</a>
+          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
         </li>
         <li>
-          <a href="https://blog.veritrans.co.id">Blog</a>
+          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
         </li>
         <li>
-          <a href="https://veritrans.co.id/career.html">Career</a>
+          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
         </li>
-        <li>
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/login">
+        <li class="login-li">
+          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
             Log In
           </a>
         </li>
-        <li>
+        <li class="signup-li">
           <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow">
-               Sign Up
+            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
+              Sign Up
             </a>
           </div>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="nav-overlay visible-sm visible-xs"></div>
-
 
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -287,7 +288,7 @@
 <hr />
 <p><br /></p>
 
-<p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah virtual account, saat ini Veritrans sudah terintegrasi dengan Bank Permata untuk proses virtual account. Dengan menggunakan layanan ini, pelanggan anda akan memiliki pilihan untuk melakukan pembayaran melalui transfer bank ke rekening virtual account Bank Permata. </p>
+<p>Salah satu metode pembayaran yang di tawarkan oleh Veritrans adalah virtual account, saat ini Veritrans sudah terintegrasi dengan Bank Permata untuk proses virtual account. Dengan menggunakan layanan ini, pelanggan anda akan memiliki pilihan untuk melakukan pembayaran melalui transfer bank ke rekening virtual account Bank Permata.</p>
 
 <p>Untuk mengaktifkan metode pembayaran Virtual Account (otomatis aktif pada mode Sandbox), anda perlu menghubungi sales representative Veritrans.</p>
 
@@ -544,6 +545,27 @@ Status pada MAP saat pembayaran sudah selesai dilakukan adalah seperti gambar be
 }
 </code></pre>
 
+    <p><br /></p>
+
+    <p>Apabila ada permintaan reversal dari bank Permata bank karena masalah teknis, Veritrans akan mengirimkan kembali notifikasi kepada merchant untuk mengupdate status transaksi.
+Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:</p>
+
+    <p><br /></p>
+
+<pre><code class="highlight php">{
+    "status_code": "202",
+    "status_message": "Veritrans payment notification",
+    "transaction_id": "93c6a0ff-b270-4b00-adba-f1738ff90261",
+    "order_id": "2014110701",
+    "payment_type": "bank_transfer",
+    "transaction_time": "2014-11-07 10:45:43",
+    "transaction_status": "deny",
+    "permata_va_number" : "8778999933221111",
+    "signature_key": "4533rbaf612267f5da81a17ff9ab8b86d39de8a1877e6125f39782baac3fe211469532f20e7bf5cc88eb51dfc36eca098578503c3cc5a880a0245e733579afc3",
+    "gross_amount": 145000.00
+}
+</code></pre>
+
     <p><br />
 Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html">get status</a>.</p>
 
@@ -677,7 +699,7 @@ Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a hr
     </div>
     <div class="copyright text-center">
       <br/>
-      &copy; 2015 PT Midtrans
+      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
       <br/>
       <br/>
     </div>
