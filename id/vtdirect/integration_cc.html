@@ -61,8 +61,7 @@
       <ul class="nav navbar-nav">
         <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
         <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
-
-        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="partnerHeader" href="https://veritrans.co.id/partners.html">Partners</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -431,9 +430,7 @@ Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fanc
 </code></pre>
     <p><br /></p>
 
-    <p>Untuk meningkatkan keamanan transaksi online, kami sangat menyarankan anda untuk mengaktifkan fitur 3D Secure. Ada 2 informasi yang perlu diberikan agar fitur ini dapat digunakan: acquiring bank (Bank Penerbit Kartu Kredit Merchant) dan nilai transaksi.</p>
-
-    <p>Jika anda menggunakan environment sandbox, acquiring bank adalah BNI, dan nilai transaksi adalah Rp 200.000,00, contoh script yang ditambahkan ke dalam tag <code>body</code> file <code>form_vtdirect.html</code>:
+    <p>Untuk meningkatkan keamanan transaksi online, kami sangat menyarankan anda untuk mengaktifkan fitur 3D Secure. Jika anda menggunakan environment sandbox, contoh script yang ditambahkan ke dalam tag <code>body</code> file <code>form_vtdirect.html</code> adalah:
 <br /><br /></p>
 
 <pre><code class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
@@ -451,9 +448,8 @@ Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fanc
       <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_cvv'</span>        <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
 
-      <span class="c1">// Set 'secure', 'bank', and 'gross_amount', if the merchant wants transaction to be processed with 3D Secure</span>
+      <span class="c1">// Set 'secure', and 'gross_amount', if the merchant wants transaction to be processed with 3D Secure</span>
       <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="c1">// no decimal allowed for creditcard</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -621,8 +617,7 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span>
+    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="p">);</span>
@@ -704,8 +699,7 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span>    <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'token_id'</span>      <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>          <span class="o">=&gt;</span> <span class="s1">'bni'</span>
+    <span class="s1">'token_id'</span>      <span class="o">=&gt;</span> <span class="nv">$token_id</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'item_details'</span>          <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">,</span>
@@ -936,6 +930,9 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status code. S
           </li>
           <li>
             <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/partners.html">Partners</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

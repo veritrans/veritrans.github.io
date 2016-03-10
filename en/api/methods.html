@@ -60,8 +60,7 @@
       <ul class="nav navbar-nav">
         <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
         <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
-
-        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="partnerHeader" href="https://veritrans.co.id/partners.html">Partners</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -1778,7 +1777,7 @@ To configure the BIN Promo feature in VT-Web:</p>
    <span class="c1">// Required</span>
   <span class="s2">"vtweb"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"enabled_payments"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cimb_clicks"</span><span class="p">,</span> <span class="s2">"bank_transfer"</span><span class="p">,</span> <span class="s2">"credit_card"</span><span class="p">],</span>
-    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">],</span>   <span class="c1">// &lt;-- Field  to set BIN Promo</span>
+    <span class="s2">"credit_card_bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">],</span>   <span class="c1">// Field  to set BIN Promo</span>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
 
@@ -2411,7 +2410,6 @@ The following attributes can be used to perform a charge transaction with a cred
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span> <span class="c1">// Token ID from Get Token</span>
   <span class="p">},</span>
 
@@ -2665,7 +2663,6 @@ The following attributes can be used to perform a charge transaction with a cred
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>  <span class="c1">// Token ID from Get Token</span>
     <span class="s2">"bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>  <span class="c1">// &lt;-- Field to set BIN Promo</span>
   <span class="p">}</span>
@@ -2741,9 +2738,8 @@ The following attributes can be used to perform a charge transaction with a cred
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-    <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Installment Token ID from Get Token</span>
-    <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span>             <span class="c1">// &lt;-- Field to set installment</span>
+    <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// Installment Token ID from Get Token</span>
+    <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span>             <span class="c1">// Field to set installment</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -2796,7 +2792,6 @@ The following attributes can be used to perform a charge transaction with a cred
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
     <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Installment Token ID from Get Token</span>
     <span class="s2">"installment_term"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>            <span class="c1">// &lt;-- Field to set installment</span>
     <span class="s2">"bins"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">]</span>  <span class="c1">// &lt;-- Field to set BIN Promo</span>
@@ -2884,9 +2879,8 @@ To configure the Pre-Authorization feature in VT-Direct, an additional attribute
 
   <span class="c1">// Required</span>
   <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-    <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// &lt;-- Authorize Token ID from Get Token</span>
-    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"authorize"</span>                <span class="c1">// &lt;-- Field to set pre-authorize</span>
+    <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"&lt; your token ID &gt;"</span><span class="p">,</span>   <span class="c1">// Authorize Token ID from Get Token</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"authorize"</span>                <span class="c1">// Field to set pre-authorize</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -2962,8 +2956,7 @@ Add this additional attribute when charging the initial transaction for Two Clic
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
     <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"4811117d16c884-2cc7-4624-b0a8-10273b7f6cc8"</span><span class="p">,</span>
-        <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-        <span class="s2">"save_token_id"</span><span class="p">:</span> <span class="kc">true</span>     <span class="c1">// &lt;-- To flag that token is saved during initial charge</span>
+        <span class="s2">"save_token_id"</span><span class="p">:</span> <span class="kc">true</span>     <span class="c1">// To flag that token is saved during initial charge</span>
     <span class="p">},</span>
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
@@ -3074,8 +3067,7 @@ Add this additional attribute when charging the initial transaction for Two Clic
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
     <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// New Token Generated from Two Clicks Get Token</span>
-        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"481111-1114-7baba36c-5698-47cf-9170-80efd6a2e973"</span><span class="p">,</span>
-        <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span>
+        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"481111-1114-7baba36c-5698-47cf-9170-80efd6a2e973"</span>
     <span class="p">},</span>
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
@@ -3144,7 +3136,6 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
     <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"4811117d16c884-2cc7-4624-b0a8-10273b7f6cc8"</span><span class="p">,</span>
-        <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
         <span class="s2">"save_token_id"</span><span class="p">:</span> <span class="kc">true</span>     <span class="c1">// &lt;-- To flag that token is saved during initial charge</span>
     <span class="p">},</span>
     <span class="c1">// Required</span>
@@ -3256,8 +3247,7 @@ Add this additional attribute when charging the initial transaction for One Clic
     <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
     <span class="s2">"credit_card"</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// New Token Generated from One Click Clicks Initial Charge Response</span>
-        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"44811117d16c884-2cc7-4624-b0a8-10273b7f6cc8"</span><span class="p">,</span>
-        <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span>
+        <span class="s2">"token_id"</span><span class="p">:</span> <span class="s2">"44811117d16c884-2cc7-4624-b0a8-10273b7f6cc8"</span>
     <span class="p">},</span>
     <span class="c1">// Required</span>
     <span class="s2">"transaction_details"</span><span class="p">:</span> <span class="p">{</span>
@@ -9148,6 +9138,9 @@ Convention of a custom field can be set from Veritrans Merchant Admin Portal, de
           </li>
           <li>
             <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/partners.html">Partners</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

@@ -60,8 +60,7 @@
       <ul class="nav navbar-nav">
         <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
         <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
-
-        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="partnerHeader" href="https://veritrans.co.id/partners.html">Partners</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -434,9 +433,7 @@ Make sure the javascript file path and CSS fancy box follows in accordance to yo
 </code></pre>
 
     <p><br />
-To improve the security of online transaction, we recommend you to activate the 3D Secure feature. There are 2 information components that need to be added for this feature to be utilized: acquiring bank (Merchant’s Bank) and transaction value.</p>
-
-    <p>If you are using sandbox environment, the acquiring bank is BNI and the transaction value is Rp 200.000,00. The sample script that we add in the tag <code>body</code> at the file <code>form_vtdirect.html</code>:
+To improve the security of online transaction, we recommend you to activate the 3D Secure feature. If you are using sandbox environment, the sample script that we add in the tag <code>body</code> at the file <code>form_vtdirect.html</code>:
 <br /><br /></p>
 
 <pre><code class="highlight html"><span class="c">&lt;!-- Javascript to generate token and show 3DSecure Dialog --&gt;</span>
@@ -454,9 +451,8 @@ To improve the security of online transaction, we recommend you to activate the 
       <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_cvv'</span>        <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
 
-      <span class="c1">// Set 'secure', 'bank', and 'gross_amount', if the merchant wants transaction to be processed with 3D Secure</span>
+      <span class="c1">// Set 'secure', and 'gross_amount', if the merchant wants transaction to be processed with 3D Secure</span>
       <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -625,8 +621,7 @@ The first three components can be obtained from <em>field</em> in <code>form_che
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span>
+    <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="p">);</span>
@@ -712,8 +707,7 @@ Sample script <code>checkout.php</code> to perform charge transaction (full tran
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
   <span class="s1">'payment_type'</span>    <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'token_id'</span>      <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>          <span class="o">=&gt;</span> <span class="s1">'bni'</span>
+    <span class="s1">'token_id'</span>      <span class="o">=&gt;</span> <span class="nv">$token_id</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'item_details'</span>          <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">,</span>
@@ -945,6 +939,9 @@ One of the most important information details in the JSON response is the status
           </li>
           <li>
             <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/partners.html">Partners</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

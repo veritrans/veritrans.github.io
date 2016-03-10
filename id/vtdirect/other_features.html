@@ -61,8 +61,7 @@
       <ul class="nav navbar-nav">
         <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
         <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
-
-        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="partnerHeader" href="https://veritrans.co.id/partners.html">Partners</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -286,7 +285,6 @@ Saat ini VT-Direct memiliki fitur tambahan untuk metode pembayaran dengan kartu 
       <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
 
       <span class="c1">// Ask for pre-authorization token id</span>
@@ -312,7 +310,6 @@ Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan pre-authoriza
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
 
     <span class="c1">// Authorize instead of normal charge operation
 </span>    <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'authorize'</span>
@@ -455,7 +452,6 @@ Menggunakan contoh yang sama dengan charge transaksi kartu kredit, modifikasi sc
       <span class="s1">'installment'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
       <span class="s1">'installment_term'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
       
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -478,7 +474,6 @@ Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan charge transa
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'installment_term'</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">,</span>
     <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
     <span class="p">),</span>
@@ -544,7 +539,6 @@ Menggunakan contoh yang sama dengan charge transaksi kartu kredit, modifikasi sc
       <span class="s1">'installment'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
       <span class="s1">'installment_term'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
       
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -567,7 +561,6 @@ Token yang diperoleh dapat anda simpan dan gunakan untuk melakukan charge transa
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'installment_term'</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">,</span>
     <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
     <span class="p">),</span>
@@ -627,7 +620,6 @@ Pada contoh di atas, installment response disimpan pada variable <code>$result</
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -693,7 +685,6 @@ Pada contoh di atas, BIN yang didaftarkan adalah <code>48111111</code>, <code>31
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'save_token_id'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -754,7 +745,6 @@ Dua atribut penting pada one click response yang sukses adalah <code>saved_token
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$saved_token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
@@ -822,7 +812,7 @@ Struktur dan contoh state <code>$result</code> sama dengan dengan proses charge 
 
     <h3 id="transaksi-pertama-1">Transaksi Pertama</h3>
 
-    <p>Implementasi transaksi pertama mirip dengan charge transaksi kartu kredit biasa. Anda cukup menambahkan atribut <code>saved_token_id</code> saat charge transaksi. Jika transaksi berhasil, token dapat disimpan untuk transaksi pelanggan tersebut selanjutnya.
+    <p>Implementasi transaksi pertama mirip dengan charge transaksi kartu kredit biasa. Anda cukup menambahkan atribut <code>save_token_id</code> saat charge transaksi. Jika transaksi berhasil, token dapat disimpan untuk transaksi pelanggan tersebut selanjutnya.
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
@@ -834,7 +824,6 @@ Struktur dan contoh state <code>$result</code> sama dengan dengan proses charge 
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'save_token_id'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -903,7 +892,6 @@ Dua atribut penting pada two clicks response yang sukses adalah <code>saved_toke
 
       <span class="s1">'two_click'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s1">'secure'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span> <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -928,7 +916,6 @@ Tahap charge transaksi kedua dan selanjutnya pada two clicks sama dengan proses 
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
@@ -1118,7 +1105,6 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
       <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -1179,7 +1165,6 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'point_redeem_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span> <span class="c1">// Tidak boleh melebihi point balance yang dimiliki
 </span>    <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -1228,6 +1213,9 @@ Struktur dan contoh <em>state</em> <code>$result</code> sama dengan dengan prose
           </li>
           <li>
             <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/partners.html">Partners</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>

@@ -60,8 +60,7 @@
       <ul class="nav navbar-nav">
         <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
         <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
-
-        <li><a class="uppercase" id="promoHeader" href="https://veritrans.co.id/promo.html">Promo</a></li>
+        <li><a class="uppercase" id="partnerHeader" href="https://veritrans.co.id/partners.html">Partners</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -289,7 +288,6 @@ Currently, VT-Direct has additional features for credit card payment method whic
       <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'secure'</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
 
       <span class="c1">// Ask for pre-authorization token id</span>
@@ -315,7 +313,6 @@ The acquired token can be saved and used to perform pre-authorization during cha
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
 
     <span class="c1">// Authorize instead of normal charge operation
 </span>    <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'authorize'</span>
@@ -422,12 +419,6 @@ On the above example, the capture response is saved in the variable <code>$resul
           <td>Explanation</td>
         </tr>
         <tr>
-          <td><code>bank</code></td>
-          <td>String(50)</td>
-          <td>Yes</td>
-          <td>Acquiring Bank that provides installment. In the moment, the valid value is <code>"bni"</code> or <code>"mandiri"</code></td>
-        </tr>
-        <tr>
           <td><code>installment_term</code></td>
           <td>Array Integer</td>
           <td>Yes</td>
@@ -458,7 +449,6 @@ Using the same example in credit card charge transaction, script that is modifie
       <span class="s1">'installment'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
       <span class="s1">'installment_term'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
       
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -481,7 +471,6 @@ The acquired token can be saved and then used to perform the charge transaction.
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'installment_term'</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">,</span>
     <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"mandiri"</span><span class="p">,</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
     <span class="p">),</span>
@@ -546,7 +535,6 @@ Using the same example in credit card charge transaction, script that is modifie
       <span class="s1">'installment'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
       <span class="s1">'installment_term'</span> <span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
       
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -569,7 +557,6 @@ The acquired token can be saved and then used to perform the charge transaction.
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'installment_term'</span> <span class="o">=&gt;</span> <span class="mi">12</span><span class="p">,</span>
     <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"bni"</span><span class="p">,</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">)</span>
     <span class="p">),</span>
@@ -629,7 +616,6 @@ In the above example, the charge response is saved in the variable <code>$result
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'bins'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"48111111"</span><span class="p">,</span> <span class="s2">"3111"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"bni"</span><span class="p">,</span> <span class="s2">"mandiri"</span><span class="p">)</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -694,7 +680,6 @@ On the above example, the BIN that is listed is <code>48111111</code>, <code>311
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'save_token_id'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -755,7 +740,6 @@ Two important attributes for a successful one click response is <code>saved_toke
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$saved_token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
@@ -821,7 +805,7 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
 
     <h3 id="initial-transaction-1">Initial Transaction</h3>
 
-    <p>Initial transaction implementation is similar to standard credit card charge transaction. You simply have to add the attribute <code>saved_token_id</code> during charge transaction. When transaction is successful, the token is saved for the following transaction.
+    <p>Initial transaction implementation is similar to standard credit card charge transaction. You simply have to add the attribute <code>save_token_id</code> during charge transaction. When transaction is successful, the token is saved for the following transaction.
 <br /><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
@@ -833,7 +817,6 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'save_token_id'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -902,7 +885,6 @@ With a successful two clicks response, the <code>saved_token_id</code> along wit
 
       <span class="s1">'two_click'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s1">'secure'</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s1">'bank'</span> <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -927,7 +909,6 @@ The following charge transaction in two clicks is the same with the standard pro
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
   <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
@@ -1115,7 +1096,6 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
       <span class="s1">'card_exp_month'</span>  <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-month"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_exp_year'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-expiry-year"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
       <span class="s1">'card_cvv'</span>      <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#card-cvv"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-      <span class="s1">'bank'</span>       <span class="p">:</span> <span class="s1">'bni'</span><span class="p">,</span>
       <span class="s1">'gross_amount'</span>   <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#price"</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="c1">// no decimal allowed for creditcard</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -1176,7 +1156,6 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
   <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span><span class="p">,</span>
-    <span class="s1">'bank'</span>    <span class="o">=&gt;</span> <span class="s1">'bni'</span><span class="p">,</span>
     <span class="s1">'point_redeem_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span> <span class="c1">// should not exceed the balance point
 </span>    <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
@@ -1225,6 +1204,9 @@ Structure and example of <em>state</em> <code>$result</code> is the same with th
           </li>
           <li>
             <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
+          </li>
+          <li>
+            <a href="https://www.veritrans.co.id/partners.html">Partners</a>
           </li>
           <li>
             <a href="https://www.veritrans.co.id/promo.html">Promo</a>
