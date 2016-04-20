@@ -1400,11 +1400,11 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
           <td>Customer's last name.</td>
         </tr>
         <tr>
-          <td>email <em>String(45)</em> <strong>Optional</strong></td>
+          <td>email <em>String(45)</em> <strong>required</strong></td>
           <td>Customer's Email.<br /> <strong>Note:</strong> There will be validation check for the email address format.</td>
         </tr>
         <tr>
-          <td>phone <em>String(19)</em> <strong>Optional</strong></td>
+          <td>phone <em>String(19)</em> <strong>required</strong></td>
           <td>Customer's phone number. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
         </tr>
       </tbody>
@@ -1528,12 +1528,11 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
     <span class="s2">"credit_card_3d_secure"</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">},</span>
 
-  <span class="c1">// Optional</span>
   <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
-    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
-    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
-    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+    <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span> <span class="c1">//optional</span>
+    <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">//optional</span>
+    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span> <span class="c1">//required</span>
+    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span> <span class="c1">//required</span>
 
   <span class="c1">// Optional</span>
   <span class="s2">"item_details"</span><span class="p">:</span> <span class="p">[</span>
@@ -2287,11 +2286,11 @@ The following attributes can be used to perform a charge transaction with a cred
           <td>Customer's last name.</td>
         </tr>
         <tr>
-          <td>email <em>String(45)</em> <strong>Optional</strong></td>
+          <td>email <em>String(45)</em> <strong>required</strong></td>
           <td>Customer's Email.<br /> <strong>Note:</strong> There will be validation check for the email address format.</td>
         </tr>
         <tr>
-          <td>phone <em>String(19)</em> <strong>Optional</strong></td>
+          <td>phone <em>String(19)</em> <strong>required</strong></td>
           <td>Customer's phone number. <br /> <strong>Note:</strong> Minimum length is 5. Only accepts numeric and symbols +, -, (space), and ( ).<br />The + symbol can only be placed in front.</td>
         </tr>
       </tbody>
@@ -2431,12 +2430,11 @@ The following attributes can be used to perform a charge transaction with a cred
     <span class="p">}</span>
   <span class="p">],</span>
 
-  <span class="c1">// Optional</span>
   <span class="s2">"customer_details"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
     <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>
-    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span>
-    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+    <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span> <span class="c1">//required</span>
+    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"081122334455"</span><span class="p">,</span> <span class="c1">//required</span>
     <span class="s2">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Andri"</span><span class="p">,</span>
         <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"Litani"</span><span class="p">,</span>

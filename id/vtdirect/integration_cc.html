@@ -362,11 +362,11 @@ Tahap ini mencakup langkah 1-3 dari diagram alur proses VT-Direct. Pada tahap in
       <span class="nt">&lt;span&gt;</span> / <span class="nt">&lt;/span&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"card-expiry-year"</span> <span class="na">size=</span><span class="s">"4"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"2020"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-      
+
       <span class="nt">&lt;label&gt;</span>CVV<span class="nt">&lt;/label&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"card-cvv"</span> <span class="na">size=</span><span class="s">"3"</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">"123"</span><span class="nt">/&gt;</span>
       <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-      
+
       <span class="c">&lt;!-- Additional Field --&gt;</span>
       <span class="nt">&lt;label&gt;</span>Harga<span class="nt">&lt;/label&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"price"</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"200500"</span><span class="nt">/&gt;</span>
@@ -459,7 +459,7 @@ Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fanc
   <span class="c1">// handler when user click the 'Pay' button.</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">'#submit-button'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
     <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">,</span> <span class="s2">"disabled"</span><span class="p">);</span> 
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"disabled"</span><span class="p">,</span> <span class="s2">"disabled"</span><span class="p">);</span>
     <span class="nx">Veritrans</span><span class="p">.</span><span class="nx">token</span><span class="p">(</span><span class="nx">card</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
   <span class="p">});</span>
@@ -511,7 +511,7 @@ Script kedua yang digunakan adalah <strong>jQuery fancybox</strong>. jQuery fanc
 </code></pre>
     <p><br /></p>
 
-    <p>Ketika pelanggan menekan tombol <code>Pay</code>, javascript akan mengumpulkan nilai <em>field</em> <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, <code>cvv</code>,  dan <code>amount</code> dari form HTML. Nilai dari <em>field-field</em> ini kemudian dikirim secara aman ke server Veritrans. Jika nilai <em>field</em> yang dikirimkan valid, server Veritrans akan mengembalikan sebuah token ID yang dapat digunakan untuk melakukan charge transaksi. </p>
+    <p>Ketika pelanggan menekan tombol <code>Pay</code>, javascript akan mengumpulkan nilai <em>field</em> <code>card_number</code>, <code>card_exp_month</code>, <code>card_exp_year</code>, <code>cvv</code>,  dan <code>amount</code> dari form HTML. Nilai dari <em>field-field</em> ini kemudian dikirim secara aman ke server Veritrans. Jika nilai <em>field</em> yang dikirimkan valid, server Veritrans akan mengembalikan sebuah token ID yang dapat digunakan untuk melakukan charge transaksi.</p>
 
     <p>Ketika token ID diperoleh, <em>hidden field</em> <code>token_id</code> akan otomatis terisi dan dikirimkan ke server merchant. Perlu diperhatikan bahwa data sensitif pelanggan tidak dikirim ke server merchant (tidak memiliki atribut <code>name</code>). Server anda hanya menerima data <code>amount</code> dan <code>token_id</code>.</p>
 
@@ -585,7 +585,7 @@ Tahap ini membahas cara charge transaksi menggunakan VT-Direct, implementasi cha
     </ol>
 
     <p><br />
-Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada <code>form_checkout.html</code>. Server key dapat anda peroleh di halaman <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Order ID adalah nilai unik dari suatu transaksi yang bebas anda ditentukan. </p>
+Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada <code>form_checkout.html</code>. Server key dapat anda peroleh di halaman <a href="https://my.sandbox.veritrans.co.id/settings/config_info">Merchant Administration Portal</a>. Order ID adalah nilai unik dari suatu transaksi yang bebas anda ditentukan.</p>
 
     <p>Data transaksi dapat berisi informasi tentang barang dan pelanggan anda. Data transaksi akan disimpan di dalam server Veritrans dan dapat anda ambil sewaktu-waktu. Data ini bersifat opsional.  Umumnya, data transaksi diperoleh dengan menambahkan field yang ada di <code>form_checkout.html</code>. Detail struktur dan keterangan data transaksi dapat dilihat di <a href="../api/methods.html">sini</a>.</p>
 
@@ -596,7 +596,7 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">]))</span> 
+<span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">]))</span>
 <span class="p">{</span>
   <span class="k">echo</span> <span class="s2">"Empty token-id."</span><span class="p">;</span>
   <span class="k">exit</span><span class="p">;</span>
@@ -615,13 +615,19 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
   <span class="s1">'gross_amount'</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span> <span class="c1">// no decimal allowed for creditcard
 </span><span class="p">);</span>
 
+<span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'email'</span>    <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span>
+  <span class="s1">'phone'</span>  <span class="o">=&gt;</span> <span class="nv">$phone_number</span>
+<span class="p">);</span>
+
 <span class="c1">// Data yang akan dikirim untuk request charge transaction dengan credit card.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
+  <span class="s1">'payment_type'</span>      <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span>
   <span class="s1">'credit_card'</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>  <span class="o">=&gt;</span> <span class="nv">$token_id</span>
     <span class="p">),</span>
   <span class="s1">'transaction_details'</span>   <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+  <span class="s1">'customer_details'</span>      <span class="o">=&gt;</span> <span class="nv">$customer_details</span>
   <span class="p">);</span>
 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nx">Veritrans_VtDirect</span><span class="o">::</span><span class="na">charge</span><span class="p">(</span><span class="nv">$transaction_data</span><span class="p">);</span>
@@ -637,7 +643,7 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
 
 <span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">]))</span> 
+<span class="k">if</span><span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'token-id'</span><span class="p">]))</span>
 <span class="p">{</span>
   <span class="k">echo</span> <span class="s2">"Empty token-id."</span><span class="p">;</span>
   <span class="k">exit</span><span class="p">;</span>
@@ -699,7 +705,7 @@ Tiga komponen pertama dapat diperoleh berdasarkan informasi <em>field</em> pada 
 
 <span class="c1">// Data that will be send for credit card charge transaction request.
 </span><span class="nv">$transaction_data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">'payment_type'</span>    <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span> 
+  <span class="s1">'payment_type'</span>    <span class="o">=&gt;</span> <span class="s1">'credit_card'</span><span class="p">,</span>
   <span class="s1">'credit_card'</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'token_id'</span>      <span class="o">=&gt;</span> <span class="nv">$token_id</span>
     <span class="p">),</span>
@@ -869,7 +875,7 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status code. S
 </code></pre>
     <p><br /></p>
 
-    <p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Jika nilai <code>status_code</code> adalah <code>200</code>, kartu kredit pelanggan anda sudah di-charge ke akun anda. Selain menyampaikan status transaksi ke pelanggan, anda juga dapat menggunakan kode di atas untuk meng-update database terkait, misalnya menandai bahwa transaksi dengan <code>order_id</code> tersebut telah terbayar. </p>
+    <p>Sampai di sini, proses pembayaran suatu transaksi telah selesai. Jika nilai <code>status_code</code> adalah <code>200</code>, kartu kredit pelanggan anda sudah di-charge ke akun anda. Selain menyampaikan status transaksi ke pelanggan, anda juga dapat menggunakan kode di atas untuk meng-update database terkait, misalnya menandai bahwa transaksi dengan <code>order_id</code> tersebut telah terbayar.</p>
 
     <p>Status transaksi juga dapat anda ketahui di Merchant Administration Portal(MAP). Anda perlu untuk login ke MAP untuk melihat detail informasi transaksi tersebut. Alternatif lain untuk melihat status transaksi adalah menggunakan perintah <a href="other_commands.html">VT-Direct - Perintah Lain</a>.</p>
 
@@ -907,7 +913,6 @@ Salah satu informasi yang paling penting dalam respon JSON adalah status code. S
   <!-- end of step 4-->
 </div>
 <!-- end of tab-content-->
-
 
 
             <div class="pagination">
