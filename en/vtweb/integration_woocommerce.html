@@ -274,7 +274,7 @@
         <ol>
           <li>An online store with WordPress and WooCommerce infrastructure. This plugin is tested with WordPress Version 3.9.1 and WooCommerce Version 2.1.11.</li>
           <li>PHP minimum version 5.4.</li>
-          <li>Veritrans plugin for WooCommerce [ <a href="https://github.com/veritrans/veritrans-woocommerce">Github</a> | <a href="https://github.com/veritrans/veritrans-woocommerce/archive/v2.2.1.zip">Zip</a> ].</li>
+          <li>Veritrans plugin for WooCommerce [ <a href="https://github.com/veritrans/veritrans-woocommerce">Github</a> | <a href="https://github.com/veritrans/veritrans-woocommerce/archive/v2.2.3.zip">Zip</a> ].</li>
         </ol>
 
         <div class="alert alert-info" role="alert">
@@ -291,9 +291,7 @@ Refer to <a href="../welcome/pluginlibrary.html">Library &amp; Plugin</a> page f
         <ol>
           <li>Extract .zip file that you have previously downloaded.</li>
           <li>Upload the .zip extraction folder into WordPress installation directory <code>wp-content/plugins/</code></li>
-          <li>Activate Veritrans plugin from Plugin menu in your WordPress admin page.</li>
-          <li>Insert <code>http://[your web]/?wc-api=WC_Gateway_Veritrans</code> link as the Payment Notification URL in your MAP configuration.</li>
-          <li>Insert <code>http://[your web]/?wc-api=WC_Gateway_Veritrans</code> link as Finish/Unfinish/Error Redirect URL in your MAP configuration.
+          <li>Activate Veritrans plugin from Plugin menu in your WordPress admin page.
 <br /></li>
         </ol>
 
@@ -305,11 +303,44 @@ Refer to <a href="../welcome/pluginlibrary.html">Library &amp; Plugin</a> page f
           <li>Access your WordPress admin page.</li>
           <li>Go to <strong>WooCommerce - Settings - Checkout</strong> menu in the WordPress admin page.</li>
           <li>In Payment Gateway option, pick Veritrans then click <strong>settings</strong>.</li>
-          <li>Insert required fields following the figure below.
+          <li>
+            <p>Insert required fields following the figure below.
 <br /><br />
  <img alt="WooCommerce Setting" class="img-responsive img-thumbnail" src="../../images/woocomm00.png" />
-<br /><br /></li>
+<br /><br /></p>
+          </li>
+          <li>
+            <p>Login to MAP portal to configure a few options below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your web]/?wc-api=WC_Gateway_Veritrans</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your web]/?wc-api=WC_Gateway_Veritrans</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your web]/?wc-api=WC_Gateway_Veritrans</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your web]/?wc-api=WC_Gateway_Veritrans</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
         </ol>
+
       </div>
 
       <div class="tab-pane" id="woo-step2">

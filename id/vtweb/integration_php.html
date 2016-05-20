@@ -503,7 +503,6 @@ Daftar status code lengkap dapat dilihat di <a href="../api/status_code.html">Re
   <li><a href="#bripay" data-toggle="tab-code" data-lang="bri">ePay BRI</a></li>
   <li><a href="#tcash" data-toggle="tab-code" data-lang="telkomsel">Telkomsel Cash</a></li>
   <li><a href="#xltunai" data-toggle="tab-code" data-lang="xl">XL Tunai</a></li>
-  <li><a href="#bbmmoney" data-toggle="tab-code" data-lang="bbm">BBM Money</a></li>
   <li><a href="#mbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#indomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
   <li><a href="#dompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
@@ -772,58 +771,6 @@ Simulasi pembayaran XL Tunai berhasil.
 
           </div>
           <!-- end of step xltunai-->
-          <div class="tab-pane" id="bbmmoney">
-            <!-- step BBM Money -->
-
-            <!-- BBM Money -->
-
-            <h3 id="bbm-money-desktop">BBM Money: Desktop</h3>
-            <p>Kami akan mencoba transaksi BBM Money yang berhasil melalui Desktop.</p>
-
-            <p>Mengacu pada petunjuk di tab Mendapatkan URL VT-Web, tampilan halaman VT-Web adalah sebagai berikut:
-<br />
-<img alt="VT-Web BBM Money Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" />
-<br /><br />
-Klik tombol Confirm Payment untuk menampilkan kode pembayaran.
-<br />
-<img alt="VT-Web BBM Money Test 2" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test2.png" />
-<br /><br /></p>
-
-            <div class="alert alert-info" role="alert">
-              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-  <span class="sr-only">Info:</span>
-<strong>Note</strong>:<br />Catat nomor akun dan lakukan pembayaran melalui apps BBM Money.</p>
-            </div>
-
-            <p>Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. <br />Status transaksi akan berubah menjadi <em>success</em> saat pelanggan anda selesai melakukan pembayaran.</p>
-
-            <hr />
-
-            <h3 id="bbm-money-mobile">BBM Money: Mobile</h3>
-
-            <p>Kami akan mencoba transaksi BBM Money yang berhasil melalui mobile web.</p>
-
-            <p>Halaman VT-Web yang ditampilkan adalah sebagai berikut:
-<br /></p>
-
-            <div class="text-center">
-              <p><img alt="VT-Web BBM Money Mobile Test 1" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test2.png" /></p>
-            </div>
-
-            <p><br /><br />
-klik <strong>'Pay with BBM Money'</strong> dan pelanggan akan dialihkan ke Apps BBM Money untuk menyelesaikan transaksi.</p>
-
-            <div class="alert alert-info" role="alert">
-              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-  <span class="sr-only">Info:</span>
-<strong>Note</strong>:<br />Pelanggan butuh mengunduh aplikasi BBM Money dari Google Play Store untuk menyelesaikan pembayaran.</p>
-            </div>
-
-            <p>Sampai tahap ini, transaksi sudah tersimpan di MAP dengan status <em>pending</em>. <br />Status transaksi akan berubah menjadi <em>success</em> saat pelanggan anda selesai melakukan pembayaran.
-<br /><br /></p>
-
-          </div>
-          <!-- end of step bbm money-->
           <div class="tab-pane" id="mbill">
             <!-- step Mandiri bill payment -->
 
@@ -1055,7 +1002,6 @@ Halaman konfirmasi pembayaran berhasil
   <li><a href="#statusbriepay" data-toggle="tab-code" data-lang="bri">ePay BRI</a></li>
   <li><a href="#statustcash" data-toggle="tab-code" data-lang="telkomsel">Telkomsel Cash</a></li>
   <li><a href="#statusxltunai" data-toggle="tab-code" data-lang="xl">XL Tunai</a></li>
-  <li><a href="#statusbbmmoney" data-toggle="tab-code" data-lang="bbm">BBM Money</a></li>
   <li><a href="#statusmbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
   <li><a href="#statusdompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
@@ -1862,116 +1808,6 @@ PUT PHP CODE
 
           </div>
           <!-- End of XL Tunai Status -->
-          <div class="tab-pane" id="statusbbmmoney">
-            <!-- BBM Money Status -->
-
-            <h3 id="bbm-money">BBM Money</h3>
-
-            <p>Contoh Notifikasi HTTP untuk transaksi BBM Money yang berhasil:</p>
-
-<pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, BBM transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"6473c4e2-1300-4ac7-b8f5-7abac12cd225"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order1521"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bbm_money"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-21 11:02:04"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-    <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778001554702840"</span><span class="p">,</span>
-    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"200000.00"</span>
-<span class="p">}</span>
-</code></pre>
-
-            <div class="alert alert-info" role="alert">
-              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-  <span class="sr-only">Info:</span>
-<strong>Note</strong>:<br />Untuk informasi lebih lanjut mengenai respon pembayaran BBM Money silahkan mengalih ke <a href="../api/methods.html#BBMmoneyresponse">sini</a>.</p>
-            </div>
-
-            <p><br /></p>
-
-            <h4 id="status-notifikasi-https-post-yang-tersedia-7">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>transaction_status</th>
-                  <th>Definisi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>pending</td>
-                  <td>Transaksi belum terproses dan masi menunggu untuk diselesaikan.</td>
-                </tr>
-                <tr>
-                  <td>cancel</td>
-                  <td>Transaksi telah dibatalkan. Nomor BBM Account sudah tidak valid.</td>
-                </tr>
-                <tr>
-                  <td>expire</td>
-                  <td>Transaksi belum diselesaikan setelah waktu berlaku, Nomor BBM Account sudah tidak valid.</td>
-                </tr>
-                <tr>
-                  <td>settlement</td>
-                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- LIST OF STATUS THAT IS AVAILABLE IN THE FUTURE
-|refund | Transaction is fully refunded to the customer.|
-|partial_refund | Transaction is partially refunded to the customer.|
--->
-
-            <p><br /></p>
-
-            <!--Update PLEASE
-#### Handling HTTP(S) Notification
-The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing **Veritrans-PHP** library. This PHP code is executed when notification URL endpoint (http://sneekers.com/payment/notification) is accessed.<br />
-~~~ php
-PUT PHP CODE
-~~~
--->
-
-            <hr />
-
-            <h3 id="status-transaksi-merchant-admin-portalmap-7">Status Transaksi Merchant Admin Portal(MAP)</h3>
-
-            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">Transaction</a> di MAP.</p>
-
-            <p>Contoh transaksi status yang sukses untuk pembayaran BBM Money:
-<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/bbm_status.png" /></p>
-
-            <p><br /></p>
-
-            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran BBM Money adalah sebagai berikut:</p>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Transaction Status</th>
-                  <th>Definisi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Pending</td>
-                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'success'.</td>
-                </tr>
-                <tr>
-                  <td>Success</td>
-                  <td>Transaksi diterima dan sudah diproses untuk settlement.<br />Beralih ke Penggunaan Dashboard untuk mengetahui lebih lanjut tentang <a href="../dashboard/index.html#Settlement">Settlement</a>.</td>
-                </tr>
-                <tr>
-                  <td>Failure</td>
-                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
-                </tr>
-              </tbody>
-            </table>
-
-          </div>
-          <!-- End of BBM Money Status -->
           <div class="tab-pane" id="statusmbill">
             <!-- Mandiri BillPayment Status -->
 
@@ -2001,7 +1837,7 @@ PUT PHP CODE
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-8">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-7">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -2047,7 +1883,7 @@ PUT PHP CODE
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-8">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-7">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">Transaction</a> di MAP.</p>
 
@@ -2114,7 +1950,7 @@ PUT PHP CODE
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-9">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-8">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -2160,7 +1996,7 @@ PUT PHP CODE
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-9">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-8">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> di MAP.</p>
 
@@ -2225,7 +2061,7 @@ PUT PHP CODE
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-10">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-9">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -2263,7 +2099,7 @@ PUT PHP CODE
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-10">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-9">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> di MAP.</p>
 
@@ -2325,7 +2161,7 @@ PUT PHP CODE
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-11">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-10">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -2367,7 +2203,7 @@ PUT PHP CODE
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-11">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-10">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://my.sandbox.veritrans.co.id/payments">payments</a> di MAP.</p>
 

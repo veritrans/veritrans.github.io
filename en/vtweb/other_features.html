@@ -291,7 +291,7 @@
         <tr>
           <td> </td>
           <td><a href="#bri-pay">e-Pay BRI</a></td>
-          <td><a href="#bbmmoney">BBM Money</a></td>
+          <td><a href="#mandiriecash">Mandiri E-cash</a></td>
           <td> </td>
           <td> </td>
         </tr>
@@ -305,7 +305,7 @@
         <tr>
           <td> </td>
           <td> </td>
-          <td><a href="#mandiriecash">Mandiri E-cash</a></td>
+          <td> </td>
           <td> </td>
           <td> </td>
         </tr>
@@ -637,48 +637,6 @@ The XL Tunai will be shown at the VT-Web payment page. Information and procedure
 The Mandiri Bill Payment will be shown at the VT-Web payment page. Information and procedure to perform Mandiri Bill Payment transaction is displayed on the figure below.
 <br /><br />
 <img alt="vtweb_mbill" class="img-responsive img-thumbnail" src="../../images/vtweb_mbill.png" /></p>
-
-    <hr />
-
-    <h3 id="bbmmoney">BBM Money</h3>
-
-    <p>BBM Money payment is a feature provided by Permata Bank to simplify mobile transaction.</p>
-
-    <p>To activate BBM Money payment method (automatically active on Sandbox mode), merchant needs to:</p>
-
-    <ol>
-      <li>Sign on BBM Money payment method by contacting Veritrans sales representative.</li>
-      <li>Add the <code>bbm_money</code> parameter on variable <code>enabled_payments</code>.</li>
-    </ol>
-
-    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /><br /></p>
-
-<pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">include_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-
-<span class="o">...</span>
-
-<span class="c1">// Fill transaction details
-</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">"vtweb"</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s2">"enabled_payments"</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"bbm_money"</span><span class="p">)</span>
-        <span class="p">),</span>
-    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
-        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
-        <span class="p">)</span>
-    <span class="p">);</span>
-
-<span class="o">...</span>
-
-<span class="cp">?&gt;</span>
-</code></pre>
-
-    <p><br /></p>
-
-    <p>The BBM Money will be shown at the VT-Web payment page. Information and procedure to perform BBM Money Payment transaction is displayed on the figure below.
-<br /><br />
-<img alt="vtweb_bbmmoney" class="img-responsive img-thumbnail" src="../../images/vtweb_bbmmoney_test1.png" /></p>
 
     <hr />
 
@@ -1127,7 +1085,7 @@ The example above adds BIN number <code>48111111</code>, <code>3111</code>,<code
     <ul>
       <li>Bank Transfer: Permata Virtual Account, Mandiri Bill Payment</li>
       <li>Direct Debit: CIMB Clicks, e-pay BRI, BCA KlikPay</li>
-      <li>e-Wallet: XL Tunai, BBM Money</li>
+      <li>e-Wallet: XL Tunai</li>
       <li>Convenience Store : Indomaret
 <br /></li>
     </ul>

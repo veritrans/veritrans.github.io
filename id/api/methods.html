@@ -565,7 +565,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
     <tbody>
       <tr>
         <td>payment_type <em>String</em></td>
-        <td>Pilih metode pembayaran yang diinginkan. <br /> <strong>VT-Direct</strong>: <code>credit_card</code>, <code>bank_transfer</code>, <code>mandiri_clickpay</code>, <code>cimb_clicks</code>, <code>bca_klikpay</code>, <code>bri_epay</code>, <code>telkomsel_cash</code>, <code>xl_tunai</code>,<code>echannel</code>, <code>bbm_money</code>, <code>cstore</code> atau <code>indosat_dompetku</code>.<br /><strong>VT-WEB</strong>: <code>vtweb</code>.</td>
+        <td>Pilih metode pembayaran yang diinginkan. <br /> <strong>VT-Direct</strong>: <code>credit_card</code>, <code>bank_transfer</code>, <code>mandiri_clickpay</code>, <code>cimb_clicks</code>, <code>bca_klikpay</code>, <code>bri_epay</code>, <code>telkomsel_cash</code>, <code>xl_tunai</code>,<code>echannel</code>, <code>cstore</code> atau <code>indosat_dompetku</code>.<br /><strong>VT-WEB</strong>: <code>vtweb</code>.</td>
       </tr>
       <tr>
         <td>custom_field1 <em>String</em></td>
@@ -840,7 +840,7 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
       <tbody>
         <tr>
           <td>enabled_payments <em>JSON Array</em></td>
-          <td>Daftar metode pambayaran yang diaktifkan di VT-Web.<br />Array string yang diperbolehkan: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, <code>"bbm_money"</code>, <code>"echannel"</code> dan <code>"cstore"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
+          <td>Daftar metode pambayaran yang diaktifkan di VT-Web.<br />Array string yang diperbolehkan: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, <code>"echannel"</code> dan <code>"cstore"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure <em>Boolean</em></td>
@@ -1723,7 +1723,7 @@ Untuk memilih metode pembayaran tertentu yang ditampilkan di VT-Web, masukkan at
       <tbody>
         <tr>
           <td>enabled_payments <em>JSON Array</em><strong>Required</strong></td>
-          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, <code>"bbm_money"</code>, <code>"mandiri_ecash"</code>, dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
+          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, <code>"mandiri_ecash"</code>, dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure <em>Boolean</em> <strong>Required</strong></td>
@@ -1784,7 +1784,7 @@ Untuk mengkonfigurasi fitur pengalihan URL di VT-Web:</p>
       <tbody>
         <tr>
           <td>enabled_payments <em>JSON Array</em><strong>Optional</strong></td>
-          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, <code>"bbm_money"</code> dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
+          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure <em>Boolean</em> <strong>Required</strong></td>
@@ -1864,7 +1864,7 @@ Untuk mengkonfigurasi fitur BIN Promo di VT-Web:</p>
       <tbody>
         <tr>
           <td>enabled_payments <em>JSON Array</em><strong>Optional</strong></td>
-          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, <code>"bbm_money"</code> dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
+          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure <em>Boolean</em> <strong>Required</strong></td>
@@ -1932,7 +1932,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
       <tbody>
         <tr>
           <td>enabled_payments <em>JSON Array</em><strong>Optional</strong></td>
-          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, <code>"bbm_money"</code> dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
+          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure <em>Boolean</em> <strong>Required</strong></td>
@@ -2056,7 +2056,7 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
       <tbody>
         <tr>
           <td>enabled_payments <em>JSON Array</em><strong>Optional</strong></td>
-          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, <code>"bbm_money"</code> dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
+          <td>Daftar metode pembayaran yang diaktifkan di VT-Web.<br />Array element string yang berlaku: <code>"credit_card"</code>, <code>"bank_transfer"</code>, <code>"cimb_clicks"</code>, <code>"mandiri_clickpay"</code>, <code>"bri_epay"</code>, <code>"telkomsel_cash"</code>, <code>"xl_tunai"</code>, dan <code>"echannel"</code>. <br /><strong>Note:</strong> Apabila attribut ini tidak dicantumkan, semua metode pembayaran yang diregister oleh merchant akan ditampilkan.</td>
         </tr>
         <tr>
           <td>credit_card_3d_secure <em>Boolean</em> <strong>Required</strong></td>
@@ -6346,449 +6346,6 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
   <p><br />
 <br /></p>
 
-  <h4 id="bbm_money">e-Wallet: BBM Money</h4>
-
-  <p>Charge Transaksi dengan BBM Money di VT-Direct membutuhkan atribut sebagai berikut:</p>
-
-  <div class="table-wrapper">
-
-    <table>
-      <thead>
-        <tr>
-          <th>JSON Attribute</th>
-          <th>Deskripsi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>payment_type <em>String</em> <strong>Required</strong></td>
-          <td>Penerapan metode pembayaran BBM Money. <br /> Nilai: <code>"bbm_money"</code>.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="nested-table-wrapper">
-
-      <table>
-        <tbody>
-          <tr>
-            <td><a data-toggle="collapse" href="#transaction_details_bbmmoney">transaction_details</a> <em>JSON Object</em> <strong>Required</strong></td>
-            <td>Informasi pembayaran pelanggan.</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <div id="transaction_details_bbmmoney" class="tb-nest-1 collapse">
-
-      <table>
-        <tbody>
-          <tr>
-            <td>order_id <em>String(50)</em> <strong>Required</strong></td>
-            <td>Order ID dari transaksi.</td>
-          </tr>
-          <tr>
-            <td>gross_amount <em>Long</em> <strong>Required</strong></td>
-            <td>Jumlah nilai dari transaksi.</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <div class="nested-table-wrapper">
-
-      <table>
-        <tbody>
-          <tr>
-            <td><a data-toggle="collapse" href="#item_details_bbmmoney">item_details</a> <em>JSON Array</em> <strong>Optional</strong></td>
-            <td>Detail barang yang harus dibayar pelanggan.</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <div id="item_details_bbmmoney" class="tb-nest-1 collapse">
-
-      <table>
-        <tbody>
-          <tr>
-            <td>id <em>String(50)</em> <strong>required</strong></td>
-            <td>Item ID.</td>
-          </tr>
-          <tr>
-            <td>price <em>Number</em> <strong>required</strong></td>
-            <td>Harga dari suatu item.</td>
-          </tr>
-          <tr>
-            <td>quantity <em>Number</em> <strong>required</strong></td>
-            <td>Kuantiti item yang dibeli.</td>
-          </tr>
-          <tr>
-            <td>name <em>String(50)</em> <strong>required</strong></td>
-            <td>Nama dari suatu item.</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <div class="nested-table-wrapper">
-
-      <table>
-        <tbody>
-          <tr>
-            <td><a data-toggle="collapse" href="#customer_details_bbmmoney">customer_details</a> <em>JSON Object</em> <strong>Optional</strong></td>
-            <td>Data pelanggan yang melakukan pembayaran.</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <div id="customer_details_bbmmoney" class="tb-nest-1 collapse">
-
-      <table>
-        <tbody>
-          <tr>
-            <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
-            <td>Nama depan pelanggan.</td>
-          </tr>
-          <tr>
-            <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
-            <td>Nama belakang pelanggan.</td>
-          </tr>
-          <tr>
-            <td>email <em>String(45)</em> <strong>Optional</strong></td>
-            <td>Email pelanggan.<br /> <strong>Note:</strong> Akan ada cek validasi untuk format email.</td>
-          </tr>
-          <tr>
-            <td>phone <em>String(19)</em> <strong>Optional</strong></td>
-            <td>Nomor telepon pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="nested-table-wrapper">
-
-        <table>
-          <tbody>
-            <tr>
-              <td><a data-toggle="collapse" href="#billing_add_bbmmoney">billing_address</a> <em>JSON Object</em> <strong>Optional</strong></td>
-              <td>Alamat penagihan pelanggan.</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-
-      <div id="billing_add_bbmmoney" class="tb-nest-2 collapse">
-
-        <table>
-          <tbody>
-            <tr>
-              <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
-              <td>Nama depan dari Alamat penagihan pelanggan.<br /><strong>Note:</strong> Tidak diperlukan apabila sama dengan nama depan pelanggan.</td>
-            </tr>
-            <tr>
-              <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
-              <td>Nama belakang dari Alamat penagihan pelanggan.</td>
-            </tr>
-            <tr>
-              <td>address <em>String(200)</em> <strong>Optional</strong></td>
-              <td>Alamat penagihan pelanggan.</td>
-            </tr>
-            <tr>
-              <td>city <em>String(100)</em> <strong>Optional</strong></td>
-              <td>Kota dari alamat penagihan pelanggan.</td>
-            </tr>
-            <tr>
-              <td>postal_code <em>String(10)</em> <strong>Optional</strong></td>
-              <td>Kode pos alamat penagihan pelanggan.<br /><strong>Note:</strong> Format yang diterima alpha-numeric. Juga menerima “-” dan spasi.</td>
-            </tr>
-            <tr>
-              <td>phone <em>String(19)</em> <strong>Optional</strong></td>
-              <td>Nomor telepon dari alamat penagihan pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
-            </tr>
-            <tr>
-              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
-              <td>ID negara dari alamat penagihan pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-
-      <div class="nested-table-wrapper">
-
-        <table>
-          <tbody>
-            <tr>
-              <td><a data-toggle="collapse" href="#shipping_add_bbmmoney">shipping_address</a> <em>JSON Object</em> <strong>Optional</strong></td>
-              <td>Alamat pengiriman pelanggan.</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-
-      <div id="shipping_add_bbmmoney" class="tb-nest-2 collapse">
-
-        <table>
-          <tbody>
-            <tr>
-              <td>first_name <em>String(20)</em> <strong>Optional</strong></td>
-              <td>Nama depan dari Alamat pengiriman pelanggan.<br /><strong>Note:</strong> Tidak diperlukan apabila sama dengan nama depan pelanggan.</td>
-            </tr>
-            <tr>
-              <td>last_name <em>String(20)</em> <strong>Optional</strong></td>
-              <td>Nama belakang dari Alamat pengiriman pelanggan.</td>
-            </tr>
-            <tr>
-              <td>address <em>String(200)</em> <strong>Optional</strong></td>
-              <td>Alamat pengiriman pelanggan.</td>
-            </tr>
-            <tr>
-              <td>city <em>String(100)</em> <strong>Optional</strong></td>
-              <td>Kota dari alamat pengiriman pelanggan.</td>
-            </tr>
-            <tr>
-              <td>postal_code <em>String(10)</em> <strong>Optional</strong></td>
-              <td>Kode pos alamat pengiriman pelanggan.<br /><strong>Note:</strong> Format yang diterima alpha-numeric. Juga menerima “-” dan spasi.</td>
-            </tr>
-            <tr>
-              <td>phone <em>String(19)</em> <strong>Optional</strong></td>
-              <td>Nomor telepon dari alamat pengiriman pelanggan. <br /> <strong>Note:</strong> Panjang minimum adalah 5. Hanya menerima numerik dan simbol +, -, (spasi), and ( ).<br />Simbol + hanya bisa dipakai di depan.</td>
-            </tr>
-            <tr>
-              <td>country_code <em>String(3)</em> <strong>Optional</strong></td>
-              <td>ID negara dari alamat pengiriman pelanggan. (e.g: IDN) <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3</a>.</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-    </div>
-
-  </div>
-
-<pre><code class="highlight json"><span class="p">{</span>
-  <span class="c1">// Required</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bbm_money"</span>     <span class="c1">// &lt;-- To flag that BBM Money is used</span>
-
-  <span class="c1">// Required</span>
-  <span class="s2">"transaction_details"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
-    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="mi">145000</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-  <h4 id="BBMmoneyresponse">Respon BBM Money</h4>
-
-  <div class="table-wrapper">
-
-    <table>
-      <thead>
-        <tr>
-          <th>JSON Attribute</th>
-          <th>Data Type</th>
-          <th>Deskripsi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>status_code</td>
-          <td>String</td>
-          <td>Kode status dari respon charge transaksi. Daftar isi kode status dapat ditemukan <a href="status_code.html">disini</a></td>
-        </tr>
-        <tr>
-          <td>status_message</td>
-          <td>String</td>
-          <td>Pesan dari respon charge transaksi</td>
-        </tr>
-        <tr>
-          <td>transaction_id</td>
-          <td>String</td>
-          <td>ID Transaksi yang diberi oleh Veritrans</td>
-        </tr>
-        <tr>
-          <td>order_id</td>
-          <td>String</td>
-          <td>Order ID yang diberi oleh merchant</td>
-        </tr>
-        <tr>
-          <td>payment_type</td>
-          <td>String</td>
-          <td>Metode pembayaran transaksi</td>
-        </tr>
-        <tr>
-          <td>transaction_time</td>
-          <td>String</td>
-          <td>Waktu transaksi</td>
-        </tr>
-        <tr>
-          <td>transaction_status</td>
-          <td>String</td>
-          <td>Status transaksi setelah Charge transaksi BBM Money. <br /> Nilai yang berlaku adalah<br /> <code>pending</code> : Nomor BBM Money sudah diberikan. Menunggu proses transaksi.</td>
-        </tr>
-        <tr>
-          <td>permata_va_number</td>
-          <td>String</td>
-          <td>Virtual account number. Customer have to know this number for completing the payment process</td>
-        </tr>
-        <tr>
-          <td>gross_amount</td>
-          <td>String</td>
-          <td>Jumlah nilai transaksi</td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-
-<pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, BBM transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"6473c4e2-1300-4ac7-b8f5-7abac12cd225"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order1521"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bbm_money"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-21 11:02:04"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-    <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778001554702840"</span><span class="p">,</span>
-    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"200000.00"</span>
-<span class="p">}</span>
-</code></pre>
-
-  <h4 id="penanganan-respon-bbm-money">Penanganan Respon BBM Money</h4>
-
-  <p>Merchant dapat membuat Link BBM Money App dengan informasi <code>permata_va_number</code> dan <code>callback URL</code> melalui panggilan API yang berbeda.</p>
-
-  <p>URL: <strong>bbmmoney://api/payment/imp?data=<a href="#bbmmoneywrap"><code>Data URL encoded JSON</code></a></strong></p>
-
-  <p>Objek URL encoded JSON:</p>
-
-  <div class="table-wrapper">
-
-    <table>
-      <thead>
-        <tr>
-          <th>JSON Attribute</th>
-          <th>Data Type</th>
-          <th>Deskripsi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>reference</td>
-          <td>String</td>
-          <td>Nomor referensi pembayaran. Nilai adalah <code>permata_va_number</code> dari respon charge transaksi BBM Money.</td>
-        </tr>
-        <tr>
-          <td>callback_url</td>
-          <td>String</td>
-          <td>Menampung callback URL yang dijelaskan di bagian selanjutnya.</td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-
-  <p><br />
-Callback URL:</p>
-
-  <ul>
-    <li>
-      <p>check_status : Ketika pembayaran transaksi berhasil atau gagal, BBM Money app akan kembali ke URL ini. Merchant harus selalu monitor status transaksi. Apabila pembayaran gagal, merchant mungkin ingin menunjukkan informasi bagaimana cara melanjutkan pembayaran lagi.</p>
-    </li>
-    <li>
-      <p>before_payment_error : Ketika terjadi error di app (gagal login, masalah koneksi, dsb) atau masalah dengan penagihan ketika pembayaran belum berlangsung, BBM Money akan kembali ke URL ini. Merchant mungkin ingin menunjukkan informasi bagaimana cara melanjutkan pembayaran lagi.</p>
-    </li>
-    <li>
-      <p>user_cancel : Ketika pelanggan klik tombol "cancel" di layar pembayaran BBM Money, BBM money akan kembali ke URL ini. Merchant mungkin ingin menunjukkan informasi bagaimana cara melanjutkan pembayaran, atau membatalkan pesanan.<br /></p>
-    </li>
-  </ul>
-
-  <div class="alert alert-info" role="alert">
-    <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-  <span class="sr-only">Info:</span>
-<strong>Note</strong>:<br /> The merchant may want to embed order information (e.g. order_id, etc) in the callback url for easy lookup. For
-example: http://example.com/checkstatus?order_id=12345</p>
-  </div>
-
-  <p>Untuk membuat Data URL encoded JSON:</p>
-
-  <ul>
-    <li><strong>Buat JSON</strong></li>
-  </ul>
-
-<pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"reference"</span><span class="p">:</span><span class="s2">"8744000000000091"</span><span class="p">,</span> <span class="c1">// permata_va_number</span>
-
-  <span class="s2">"callback_url"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"check_status"</span><span class="p">:</span><span class="s2">"https://example.com/order/check_status.html"</span><span class="p">,</span>
-    <span class="s2">"before_payment_error"</span><span class="p">:</span><span class="s2">"https://example.com/order/unfinish.html"</span><span class="p">,</span>
-    <span class="s2">"user_cancel"</span><span class="p">:</span><span class="s2">"https://example.com/order/cancel.html"</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-  <ul>
-    <li><strong>URL encodes JSON</strong></li>
-  </ul>
-
-<pre><code class="highlight plaintext">%7B%22reference%22%3A%228744000000000091%22%2C%22callback_url%22%3A%7B%22check_status%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcheck_status.html%22%2C%22before_payment_error%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Funfinish.html%22%2C%22user_cancel%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcancel.html%22%7D%7D
-</code></pre>
-
-  <ul>
-    <li><strong>Final URL</strong></li>
-  </ul>
-
-<pre><code class="highlight plaintext">bbmmoney://api/payment/imp?data=%7B%22reference%22%3A%228744000000000091%22%2C%22callback_url%22%3A%7B%22check_status%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcheck_status.html%22%2C%22before_payment_error%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Funfinish.html%22%2C%22user_cancel%22%3A%22https%3A%2F%2Fexample.com%2Forder%2Fcancel.html%22%7D%7D
-</code></pre>
-
-  <h4 id="respon-error-bbm-money">Respon Error BBM Money</h4>
-
-  <div class="table-wrapper">
-
-    <table>
-      <thead>
-        <tr>
-          <th>Error Code</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>400</code> Validation error</td>
-          <td>Error validasi, merchant mengirimkan data yang salah; Error validasi, Tipe transaksi yang tidak berlaku, dsb.</td>
-        </tr>
-        <tr>
-          <td><code>401</code> Access Denied</td>
-          <td>Client key atau server key tidak berlaku.</td>
-        </tr>
-        <tr>
-          <td><code>402</code> Access Denied</td>
-          <td>Merchant tidak mempunyai akses untuk tipe pembayaran tersebut.</td>
-        </tr>
-        <tr>
-          <td><code>406</code> Duplicate Order ID</td>
-          <td>Order ID sudah pernah dipakai atau transaksi sudah terbayar.</td>
-        </tr>
-        <tr>
-          <td><code>410</code> Account Inactive</td>
-          <td>Akun merchant sudah tidak berlaku atau tidak aktif pada waktu yang lama.</td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-
-  <p><br />
-<br /></p>
-
   <h4 id="dompetku">e-Wallet: Indosat Dompetku</h4>
 
   <p>Charge Transaksi dengan Indosat Dompetku di VT-Direct membutuhkan atribut sebagai berikut:</p>
@@ -8050,7 +7607,7 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
   <ul>
     <li>Bank Transfer: Permata Virtual Account, Mandiri Bill Payment</li>
     <li>Direct Debit: CIMB Clicks, e-pay BRI, BCA KlikPay</li>
-    <li>e-Wallet: XL Tunai, BBM Money</li>
+    <li>e-Wallet: XL Tunai,</li>
   </ul>
 
   <p><br /></p>
@@ -9034,10 +8591,6 @@ Label dari custom field dapat diatur di Merchant Admin Portal Veritrans, dijelas
                       
                         <li>    
                           <a href="#xl-tunai">XL Tunai</a>
-                        </li>
-                      
-                        <li>    
-                          <a href="#bbm_money">BBM Money</a>
                         </li>
                       
                         <li>    
