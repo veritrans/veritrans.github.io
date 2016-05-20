@@ -273,7 +273,7 @@
         <ol>
           <li>Sebuah toko online berbasis Wordpress dan WooCommerce. Plugin ini di-test dengan Wordpress versi 3.9.1 dan WooCommerce 2.1.11.</li>
           <li>PHP versi minimal 5.4.</li>
-          <li>Plugin Veritrans untuk WooCommerce [ <a href="https://github.com/veritrans/veritrans-woocommerce">Github</a> ] | <a href="https://github.com/veritrans/veritrans-woocommerce/archive/v2.2.1.zip">Zip</a> ].</li>
+          <li>Plugin Veritrans untuk WooCommerce [ <a href="https://github.com/veritrans/veritrans-woocommerce">Github</a> ] | <a href="https://github.com/veritrans/veritrans-woocommerce/archive/v2.2.3.zip">Zip</a> ].</li>
         </ol>
 
         <div class="alert alert-info" role="alert">
@@ -290,9 +290,7 @@ Silahkan menuju halaman <a href="../welcome/pluginlibrary.html">Library &amp; Pl
         <ol>
           <li>Ekstrak file .zip yang sudah anda unduh sebelumnya.</li>
           <li>Upload folder hasil ekstrak .zip ke dalam direktori instalasi Wordpress <code>wp-content/plugins/</code></li>
-          <li>Aktifkan plugin Veritrans dari menu Plugins yang ada di halaman admin WordPress anda.</li>
-          <li>Masukkan link <code>http://[web anda]/?wc-api=WC_Gateway_Veritrans</code> sebagai Payment Notification URL pada konfigurasi MAP anda.</li>
-          <li>Masukan link <code>http://[your web]/?wc-api=WC_Gateway_Veritrans</code> sebagai Finish/Unfinish/Error Redirect URL pada konfigurasi MAP anda.
+          <li>Aktifkan plugin Veritrans dari menu Plugins yang ada di halaman admin WordPress anda.
 <br /></li>
         </ol>
 
@@ -304,11 +302,44 @@ Silahkan menuju halaman <a href="../welcome/pluginlibrary.html">Library &amp; Pl
           <li>Masuk ke halaman admin Wordpress anda.</li>
           <li>Buka menu <em>WooCommerce - Settings - Checkout</em> pada halaman admin WordPres.</li>
           <li>Pada bagian Payment Gateway pilih Veritrans lalu tekan tombol <em>settings</em>.</li>
-          <li>Masukkan data-data yang diperlukan seperti gambar di bawah ini.
+          <li>
+            <p>Masukkan data-data yang diperlukan seperti gambar di bawah ini.
 <br /><br />
  <img alt="WooCommerce Setting" class="img-responsive img-thumbnail" src="../../images/woocomm00.png" />
-<br /><br /></li>
+<br /><br /></p>
+          </li>
+          <li>
+            <p>Login ke portal MAP untuk mengubah beberapa opsi berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[web anda]/?wc-api=WC_Gateway_Veritrans</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your web]/?wc-api=WC_Gateway_Veritrans</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your web]/?wc-api=WC_Gateway_Veritrans</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your web]/?wc-api=WC_Gateway_Veritrans</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
         </ol>
+
       </div>
       <div class="tab-pane" id="woo-step2">
         <p><br /></p>
