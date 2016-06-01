@@ -675,7 +675,19 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
         </tr>
         <tr>
           <td>name <em>String(50)</em></td>
-          <td>Name of the item</td>
+          <td>Name of the item.</td>
+        </tr>
+        <tr>
+          <td>brand <em>String(50)</em></td>
+          <td>Brand of the item.</td>
+        </tr>
+        <tr>
+          <td>category <em>String(50)</em></td>
+          <td>Category of the item.</td>
+        </tr>
+        <tr>
+          <td>merchant_name <em>String(50)</em></td>
+          <td>Merchant name of the item.</td>
         </tr>
       </tbody>
     </table>
@@ -1540,14 +1552,14 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
       <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
       <span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
       <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
-    <span class="p">},</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span><span class="p">,</span>
+    <span class="err">}</span><span class="p">,</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
       <span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
       <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
-    <span class="p">}</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span><span class="p">,</span>
+    <span class="err">}</span>
     <span class="p">]</span>
   <span class="p">},</span>
 
@@ -2255,6 +2267,18 @@ The following attributes can be used to perform a charge transaction with a cred
           <td>name <em>String(50)</em> <strong>required</strong></td>
           <td>Name of the item</td>
         </tr>
+        <tr>
+          <td>brand <em>String(50)</em> <strong>optional</strong></td>
+          <td>Brand of the item.</td>
+        </tr>
+        <tr>
+          <td>category <em>String(50)</em> <strong>optional</strong></td>
+          <td>Category of the item.</td>
+        </tr>
+        <tr>
+          <td>merchant_name <em>String(50)</em> <strong>optional</strong></td>
+          <td>Merchant name of the item.</td>
+        </tr>
       </tbody>
     </table>
 
@@ -2420,13 +2444,19 @@ The following attributes can be used to perform a charge transaction with a cred
       <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
       <span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
       <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span><span class="p">,</span>
+      <span class="s2">"brand"</span><span class="p">:</span> <span class="s2">"Fuji Apple"</span><span class="p">,</span>
+      <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Fruit"</span><span class="p">,</span>
+      <span class="s2">"merchant_name"</span><span class="p">:</span> <span class="s2">"Fruit-store"</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
       <span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
       <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+      <span class="s2">"brand"</span><span class="err">:</span> <span class="s2">"Mandarin Orange"</span><span class="p">,</span>
+      <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Fruit"</span><span class="p">,</span>
+      <span class="s2">"merchant_name"</span><span class="p">:</span> <span class="s2">"Fruit-store"</span>
     <span class="p">}</span>
   <span class="p">],</span>
 
@@ -3601,10 +3631,11 @@ Add this additional attribute when charging the initial transaction for One Clic
 
 <pre><code class="highlight json"><span class="p">{</span>
   <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, PERMATA transaction is successful"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Bank Transfer transaction is created"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"7db5f75a-8f41-4266-b4cb-01cd97c3c339"</span><span class="p">,</span>
   <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"permata"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:58:44"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
   <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778999933221111"</span><span class="p">,</span>

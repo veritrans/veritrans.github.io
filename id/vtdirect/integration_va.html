@@ -406,10 +406,11 @@ Pada contoh di atas, kita menggunakan data Virtual Account, transaksi, dan pelan
 
 <pre><code class="highlight php">$result = array(
   "status_code" =&gt; "201",
-  "status_message" =&gt; "Success, PERMATA VA transaction is successful",
+  "status_message" =&gt; "OK, Bank Transfer transaction is created",
   "transaction_id" =&gt; "ff05337c-6c94-4f70-8e81-35acd89b688e",
   "order_id" =&gt; "201404141421",
   "payment_type" =&gt; "bank_transfer",
+  "bank" =&gt; "permata",
   "transaction_time" =&gt; "2014-04-14 16:03:51",
   "transaction_status" =&gt; "pending",
   "permata_va_number =&gt; "8778999933221111",
@@ -533,6 +534,7 @@ Status pada MAP saat pembayaran sudah selesai dilakukan adalah seperti gambar be
     "transaction_id": "93c6a0ff-b270-4b00-adba-f1738ff90261",
     "order_id": "2014110701",
     "payment_type": "bank_transfer",
+    "bank": "permata",
     "transaction_time": "2014-11-07 10:43:17",
     "transaction_status": "settlement",
     "permata_va_number": "8778999933221111",
@@ -554,6 +556,7 @@ Contoh respon JSON yang dikirimkan oleh Veritrans adalah sebagai berikut:</p>
     "transaction_id": "93c6a0ff-b270-4b00-adba-f1738ff90261",
     "order_id": "2014110701",
     "payment_type": "bank_transfer",
+    "bank": "permata",
     "transaction_time": "2014-11-07 10:45:43",
     "transaction_status": "deny",
     "permata_va_number" : "8778999933221111",
