@@ -679,6 +679,18 @@ Atribut yang dipakai tergantung oleh metode pembayaran yang diinginkan.<br /></p
           <td>name <em>String(50)</em></td>
           <td>Nama dari suatu item.</td>
         </tr>
+        <tr>
+          <td>brand <em>String(50)</em></td>
+          <td>Merk dari suatu item.</td>
+        </tr>
+        <tr>
+          <td>category <em>String(50)</em></td>
+          <td>Kategori dari suatu item.</td>
+        </tr>
+        <tr>
+          <td>merchant_name <em>String(50)</em></td>
+          <td>Nama penjual dari suatu item.</td>
+        </tr>
       </tbody>
     </table>
 
@@ -2275,8 +2287,8 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
             <td>Item ID.</td>
           </tr>
           <tr>
-            <td>price <em>Number</em> <strong>required</strong></td>
-            <td>Harga dari suatu item.</td>
+            <td>price <em>Number</em> <strong>required</strong> Harga dari suatu item.</td>
+            <td> </td>
           </tr>
           <tr>
             <td>quantity <em>Number</em> <strong>required</strong></td>
@@ -2285,6 +2297,18 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
           <tr>
             <td>name <em>String(50)</em> <strong>required</strong></td>
             <td>Nama dari suatu item.</td>
+          </tr>
+          <tr>
+            <td>brand <em>String(50)</em> <strong>optional</strong></td>
+            <td>Merk dari suatu item.</td>
+          </tr>
+          <tr>
+            <td>category <em>String(50)</em> <strong>optional</strong></td>
+            <td>Kategori dari suatu item.</td>
+          </tr>
+          <tr>
+            <td>merchant_name <em>String(50)</em> <strong>optional</strong></td>
+            <td>Nama penjual dari suatu item.</td>
           </tr>
         </tbody>
       </table>
@@ -2452,13 +2476,19 @@ Untuk mengkonfigurasi fitur cicilan di VT-Web:</p>
       <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a1"</span><span class="p">,</span>
       <span class="s2">"price"</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
       <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Apel"</span><span class="p">,</span>
+      <span class="s2">"brand"</span><span class="p">:</span> <span class="s2">"Fuji Apple"</span><span class="p">,</span>
+      <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Fruit"</span><span class="p">,</span>
+      <span class="s2">"merchant_name"</span><span class="p">:</span> <span class="s2">"Fruit-store"</span>
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"a2"</span><span class="p">,</span>
       <span class="s2">"price"</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span>
       <span class="s2">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span>
+      <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jeruk"</span><span class="p">,</span>
+      <span class="s2">"brand"</span><span class="p">:</span> <span class="s2">"Mandarin Orange"</span><span class="p">,</span>
+      <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"Fruit"</span><span class="p">,</span>
+      <span class="s2">"merchant_name"</span><span class="p">:</span> <span class="s2">"Fruit-store"</span>
     <span class="p">}</span>
   <span class="p">],</span>
 
@@ -3644,10 +3674,11 @@ Atribut berikut dibutuhkan ketika charge awal dengan fitur One Click:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
   <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, PERMATA transaction is successful"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Bank Transfer transaction is created"</span><span class="p">,</span>
   <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"7db5f75a-8f41-4266-b4cb-01cd97c3c339"</span><span class="p">,</span>
   <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"H17550"</span><span class="p">,</span>
   <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"permata"</span><span class="p">,</span>
   <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2014-08-24 15:58:44"</span><span class="p">,</span>
   <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
   <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778999933221111"</span><span class="p">,</span>
