@@ -597,10 +597,15 @@ The attribute that is used is dependent on the payment method desired.<br /></p>
 
     <table>
       <tbody>
-        <tr>
-          <td>order_time <em>String(50)</em></td>
-          <td>Time when the order is created in merchant website.<br /> <strong>Format:</strong> <code>yyyy-MM-dd hh:mm:ss Z</code> <br /><strong>NOTE:</strong> If attribute undefined, expiry time starts from transaction time.</td>
-        </tr>
+      <tr>
+          <td>order_time <em>String(50)</em> <strong>Optional</strong></td>
+          <td>Time when the order is created in merchant website.<br /> <strong>Format:</strong>
+              <code>yyyy-MM-dd HH:mm:ss Z</code>
+              <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html">Date format symbol help</a>
+              <br />
+
+              <strong>NOTE:</strong> If attribute is undefined, expiry time starts from transaction time.</td>
+      </tr>
         <tr>
           <td>expiry_duration <em>Integer</em></td>
           <td>Time duration the payment will remain valid.</td>
