@@ -7,11 +7,11 @@
     <!-- Google Webmaster Validate -->
     <meta name="google-site-verification" content="uUeOdHBzl0nbyvdyeRHKGIHPxnIpJDTTnWv-QfgkxRs" />
     <!-- FB OG -->
-    <meta property="og:title" content="Docs || Online Payment Gateway for Indonesia eCommerce"/>
-    <meta property="og:site_name" content="Veritrans"/>
-    <meta property="og:description" content="Payment Gateway Solution for eCommerce merchants in Indonesia to send and receive online payment with credit/debit card, internet and mobile banking"/>
+    <meta property="og:title" content="Midtrans Payments || Tech Docs for online payment system"/>
+    <meta property="og:site_name" content="Midtrans"/>
+    <meta property="og:description" content="Technical Documentation to implement online payment system. Available for various payment methods, in various website programming language."/>
     <meta property="fb:app_id" content="404252079606310"/>
-    <meta property="og:image" content="http://veritrans.co.id/images/veritrans-og.png"/>
+    <meta property="og:image" content="//docs.midtrans.com/images/midtrans/favicon/apple-touch-icon-120x120.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
     <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
@@ -19,10 +19,24 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
     
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../stylesheets/materialize.css" media="screen" rel="stylesheet" type="text/css" />
     
-    <title>Veritrans - API Documentation</title>
-		<link rel="icon" type="image/x-icon" href="/favicon/veritrans.ico" />
+    <title>Midtrans Payments - Tech Docs for online payment system</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/midtrans/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/midtrans/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/midtrans/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/midtrans/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/midtrans/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/midtrans/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/midtrans/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/midtrans/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/midtrans/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/midtrans/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/midtrans/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/midtrans/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="https://midtrans.com/assets/images/favicon.ico">
     <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="../../javascripts/materialize.min.js" type="text/javascript"></script>
 
     <!-- start Mixpanel -->
     <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
@@ -30,10 +44,6 @@
         mixpanel.init("f93e9c92cf8729b32c4491fb6794689b");
     </script>
     <!-- end mixpanel -->
-
-    <!-- Optimizely -->
-    <script src="//cdn.optimizely.com/js/2982491356.js"></script>
-    <!-- end Optimizely -->
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -43,59 +53,222 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-fixed-top with-shadow">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span>Menu &#x2304;</span>
-      </button>
-      <a class="navbar-brand logo" href="https://veritrans.co.id/"></a>
-      <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-sm hidden-md hidden-lg">
-        Sign Up
-      </a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav">
-        <li><a class="uppercase" id="paymentHeader" href="https://veritrans.co.id/payment_channels.html">Payments</a></li>
-        <li><a class="uppercase" id="pricingHeader" href="https://veritrans.co.id/product_pricing.html">Product &amp; Pricing</a></li>
-        <li><a class="uppercase" id="partnerHeader" href="https://veritrans.co.id/partners.html">Partners</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a id="docsHeader" href="http://docs.veritrans.co.id">Docs</a>
-        </li>
-        <li>
-          <a id="contactHeader" href="https://veritrans.co.id/contact.html">Contact</a>
-        </li>
-        <li>
-          <a id="blogHeader" href="https://blog.veritrans.co.id">Blog</a>
-        </li>
-        <li>
-          <a id="careerHeader" href="https://veritrans.co.id/career.html">Career</a>
-        </li>
-        <li class="login-li">
-          <a id="logInHeader" class="uppercase text-bold" href="https://my.veritrans.co.id/">
-            Log In
-          </a>
-        </li>
-        <li class="signup-li">
-          <div>
-            <a id="signUpHeader" href="https://my.veritrans.co.id/register" class="btn btn-yellow hidden-xs">
-              Sign Up
-            </a>
+    <header class="md-header position-fixed-top header-white affix-top">
+  <div class="container position-static">
+    <div class="row position-static">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 position-static">
+        <a class="logo-midtrans" href="https://midtrans.com/">Midtrans</a>
+        <div id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-wrapper collapse" id="main-nav" aria-expanded="false">
+          <div class="inner-wrapper">
+            <ul class="mobile-nav">
+              <li><span class="nav-title">SERVICES</span></li>
+              <li>
+                <a href="https://midtrans.com/payments">
+                  <img class="logo-image" src="../../images/midtrans/logo-midtrans-white.png" alt="midtrans"/>
+                </a>
+              </li>
+              <li>
+                <a href="https://midtrans.com/aegis">
+                  <img class="logo-image" src="../../images/midtrans/logo-aegis-white.png" alt="aegis"/>
+                </a>
+              </li>
+              <li>
+                <a href="https://midtrans.com/iris">
+                  <img class="logo-image" src="../../images/midtrans/logo-iris-white.png" alt="iris"/>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.prismapp.io/">
+                  <img class="logo-image prism" src="../../images/midtrans/logo-prism-white.png" alt="prism"/>
+                </a>
+              </li>
+              <li><span class="nav-space"></span></li>
+              <li class="half"><a href="https://midtrans.com/payments/pricing">Pricing</a></li>
+              <li class="half"><a href="https://midtrans.com/contact">Contact Us</a></li>
+              <li class="half"><a href="https://midtrans.com/developers">Documentation</a></li>
+              <li class="half"><a href="https://midtrans.com/developers">FAQ</a></li>
+              <li class="half"><a href="https://support.midtrans.com/hc/en-us">Clients</a></li>
+              <li><span class="nav-space" /></li>
+              <li>
+                <a class="login" href="https://account.midtrans.com/login" target="_blank" rel="noopener noreferrer">login</a>
+              </li>
+              <li>
+                <a class="signup" href="https://account.midtrans.com/register" target="_blank" rel="noopener noreferrer">
+                  SIGN UP
+                </a>
+              </li>
+            </ul>
           </div>
-          
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<div class="nav-overlay visible-sm visible-xs"></div>
-
+        </div>
+        <ul class="md-nav">
+          <li class="dropdown">
+            <a>
+              Our Services
+              <span class="fa fa-angle-down"></span>
+            </a>
+            <div class="dropdown-menu md-dd-nav">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-description services">
+                          <h3>Services</h3>
+                          <p>Midtrans menyediakan beragam solusi untuk bisnis online Anda.</p>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/payments">
+                            <img class="image" src="../../images/midtrans/logo-midtrans-color.png" alt="">
+                            <p>Sistem pembayaran online yang terhubung dengan berbagai metode pembayaran di Indonesia.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/payments">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/aegis">
+                            <img class="image" src="../../images/midtrans/logo-aegis.png" alt="">
+                            <p>Sistem deteksi fraud untuk menganalisis dan mencegah penipuan di eCommerce Anda.</p>
+                          </a>
+                          <a class="link">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/iris">
+                            <img class="image" src="../../images/midtrans/logo-iris.png" alt="">
+                            <p>Sistem distribusi pembayaran untuk kemudahan pengiriman dana ke semua bank di Indonesia.</p>
+                          </a>
+                          <a target="_blank" class="link" href="https://www.prismapp.io/">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a target="_blank" class="summary" href="https://www.prismapp.io/">
+                            <img class="image" src="../../images/midtrans/logo-prism.png" alt="">
+                            <p>Sistem chat commerce yang mengubah chat menjadi transaksi.</p>
+                          </a>
+                          <a target="_blank" class="link" href="https://www.prismapp.io/">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a>
+              Getting Started
+              <span class="fa fa-angle-down"></span>
+            </a>
+            <div class="dropdown-menu md-dd-nav">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-description">
+                          <h3>Getting Started</h3>
+                          <p>Berbagai informasi yang dibutuhkan untuk terhubung dengan layanan Midtrans.</p>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/pricing">
+                            <h4>Pricing</h4>
+                            <p>Informasi tentang harga dari berbagai layanan Midtrans.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/payments/pricing">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/developers">
+                            <h4>Documentation</h4>
+                            <p>Dokumentasi teknis yang terbuka dari berbagai layanan Midtrans.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/developers">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/clients">
+                            <h4>Clients</h4>
+                            <p>Kisah sukses berbagai bisnis online yang terhubung dengan Midtrans.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/clients">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a>
+              Support
+              <span class="fa fa-angle-down"></span>
+            </a>
+            <div class="dropdown-menu md-dd-nav">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-description">
+                          <h3>Support</h3>
+                          <p>Bantuan teknis dari tim Midtrans untuk memudahkan proses integrasi Anda.</p>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/pricing">
+                            <h4>Contact Us</h4>
+                            <p>Hubungi tim support Midtrans untuk pertanyaan lebih lanjut.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/contact">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/developers">
+                            <h4>FAQ</h4>
+                            <p>Informasi penting mengenai layanan dan proses integrasi dengan Midtrans.</p>
+                          </a>
+                          <a class="link" href="https://support.midtrans.com/hc/en-us">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a class="login" href="https://account.midtrans.com/login" target="_blank" rel="noopener noreferrer">
+              login
+            </a>
+          </li>
+          <li>
+            <a class="signup" href="https://account.midtrans.com/register" target="_blank" rel="noopener noreferrer">
+              SIGN UP
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay"></div>
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
@@ -118,21 +291,25 @@
               
                 <li class=""><a href="pluginlibrary.html">Library & Plugin</a></li>
               
+                <li class=""><a href="partner_integ.html">Platform Affiliasi</a></li>
+              
             </ul>
           
         </li>
       
         <li>
           
-            <a class="parent">VT-Web</a>
+            <a class="parent">SNAP</a>
             <b class="caret"></b>
             <ul class="child-menu">
               
-                <li class=""><a href="../vtweb/integration.html">Integrasi</a></li>
+                <li class=""><a href="../snap/integration.html">Integrasi</a></li>
               
-                <li class=""><a href="../vtweb/other_features.html">Fitur Tambahan</a></li>
+                <li class=""><a href="../snap/other_features.html">Fitur Tambahan</a></li>
               
-                <li class=""><a href="../vtweb/going_live.html">Going Live</a></li>
+                <li class=""><a href="../snap/going_live.html">Going Live</a></li>
+              
+                <li class=""><a href="http://snap-docs.midtrans.com">Snap API</a></li>
               
             </ul>
           
@@ -140,65 +317,29 @@
       
         <li>
           
-            <a class="parent">VT-Direct</a>
+            <a class="parent" href="http://mobile-docs.midtrans.com">Mobile SDK</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">Referensi</a>
             <b class="caret"></b>
             <ul class="child-menu">
               
-                <li class=""><a href="../vtdirect/integration.html">Integrasi</a></li>
+                <li class=""><a href="http://api-docs.midtrans.com">Referensi Core API</a></li>
               
-                <li class=""><a href="../vtdirect/other_features.html">Fitur Tambahan</a></li>
+                <li class=""><a href="../reference/test.html">Testing Credential</a></li>
               
-                <li class=""><a href="../vtdirect/other_commands.html">Perintah Lain</a></li>
+                <li class=""><a href="../reference/address.html">Alamat IP</a></li>
               
-                <li class=""><a href="../vtdirect/going_live.html">Going Live</a></li>
+                <li class=""><a href="../reference/security.html">Keamanan</a></li>
               
-            </ul>
-          
-        </li>
-      
-        <li>
-          
-            <a class="parent" href="../vtlink/index.html">VT-Link</a>
-          
-        </li>
-      
-        <li>
-          
-            <a class="parent" href="../mobile/index.html">Mobile</a>
-          
-        </li>
-      
-        <li>
-          
-            <a class="parent">Referensi API</a>
-            <b class="caret"></b>
-            <ul class="child-menu">
+                <li class=""><a href="../reference/docslog.html">Log Dokumentasi</a></li>
               
-                <li class=""><a href="../api/introduction.html">Perkenalan</a></li>
-              
-                <li class=""><a href="../api/methods.html">API Methods</a></li>
-              
-                <li class=""><a href="../api/status_code.html">Status Kode</a></li>
+                <li class=""><a href="https://support.midtrans.com">FAQ</a></li>
               
             </ul>
-          
-        </li>
-      
-        <li>
-          
-            <a class="parent" href="../api/test_credentials.html">Testing</a>
-          
-        </li>
-      
-        <li>
-          
-            <a class="parent" href="../dashboard/index.html">Dashboard</a>
-          
-        </li>
-      
-        <li>
-          
-            <a class="parent" href="http://support.veritrans.co.id">FAQ</a>
           
         </li>
       
@@ -216,37 +357,29 @@
           <div class="id-welcome-index">
             <h2 id="selamat-datang">Selamat Datang</h2>
 <hr />
-<p>Integrasi pembayaran online melalui Veritrans sangat mudah. Anda bisa langsung terima berbagai metode pembayaran online dari pelanggan Anda. Silahkan cek produk dan metode yang tersedia di bawah ini:</p>
+<p>Integrasi pembayaran online melalui Midtrans sangat mudah. Anda bisa langsung terima berbagai metode pembayaran online dari pelanggan Anda. Silahkan cek produk dan metode yang tersedia di bawah ini:</p>
 
-<h3 id="vt-webidvtwebintegrationhtml"><a href="../vtweb/integration.html">VT-Web</a></h3>
+<h3 id="snapidsnapintegrationhtml"><a href="../snap/integration.html">SNAP</a></h3>
 
-<p>VT-Web merupakan portal pembayaran yang memungkinkan merchant untuk menggunakan sistem pembayaran Veritrans dengan mengalihkan pelanggan ke halaman pembayaran Veritrans. Setup-nya mudah dan tidak dikenakan tagihan bulanan. VT-Web cocok untuk bisnis skala kecil dan menengah.</p>
+<p>SNAP merupakan portal pembayaran yang memungkinkan merchant untuk menggunakan sistem pembayaran Midtrans dengan memunculkan halaman pembayaran Midtrans langsung dihalaman pembayaran Anda. Setup-nya mudah dan tidak dikenakan tagihan bulanan, cocok untuk bisnis skala kecil dan menengah. Silahkan klik <a href="https://demo.midtrans.com">tautan</a> berikut untuk melihat demo.</p>
 
-<p><img alt="vtweb step" class="img-responsive img-thumbnail" src="../../images/steps_vtweb.png" /></p>
-
-<p><br /></p>
-
-<h3 id="vt-directidvtdirectintegrationhtml"><a href="../vtdirect/integration.html">VT-Direct</a></h3>
-
-<p>VT-Direct adalah produk Veritrans yang memungkinkan Anda untuk menggunakan sistem pembayaran kami secara langsung di website Anda. Setup-nya mudah dan tersedia dengan biaya minimum bulanan. VT-Direct cocok untuk perusahaan skala menengah.</p>
-
-<p><img alt="vtdirect step" class="img-responsive img-thumbnail" src="../../images/steps_vtdirect.png" /></p>
+<p><img alt="vtweb step" class="img-responsive img-thumbnail" src="../../images/welcome/steps_snap.png" /></p>
 
 <p><br /></p>
 
-<h3 id="vt-linkidvtlinkindexhtml"><a href="../vtlink/index.html">VT-Link</a></h3>
+<h3 id="mobilehttpsmobile-docsmidtranscom"><a href="https://mobile-docs.midtrans.com">Mobile</a></h3>
 
-<p>VT-Link memungkinkan merchant yang tidak memiliki website e-commerce untuk melakukan transaksi. Veritrans akan menyediakan link yang akan mengalihkan pelanggan ke halaman pembayaran Veritrans. VT-Link tidak memerlukan integrasi teknis dan cocok untuk pengusaha bisnis kecil yang berjualan melalui sosial media.</p>
+<p>Midtrans yakin akan masa depan aplikasi mobile pada sektor e-commerce. Merchant yang berbisnis melalui iOs dan aplikasi GooglePlay sekarang dapat menggunakan jasa kami untuk memproses transaksi.</p>
 
-<p><img alt="vtlink step" class="img-responsive img-thumbnail" src="../../images/steps_vtlink.png" /></p>
+<p><img alt="mobile step" class="img-responsive img-thumbnail" src="../../images/welcome/steps_mobile.png" /></p>
 
 <p><br /></p>
 
-<h3 id="mobile">Mobile</h3>
+<h3 id="core-apihttpsapi-docsmidtranscom"><a href="https://api-docs.midtrans.com">Core API</a></h3>
 
-<p>Veritrans yakin akan masa depan pembangunan mobile pertama pada sektor e-commerce. Merchant yang berbisnis melalui iOs dan aplikasi GooglePlay sekarang dapat menggunakan jasa kami untuk memproses transaksi.</p>
+<p>Core API adalah produk Midtrans yang memungkinkan Anda untuk menggunakan sistem pembayaran kami secara langsung di website Anda. Setup-nya mudah dan tersedia dengan biaya minimum bulanan. VT-Direct cocok untuk perusahaan skala menengah.</p>
 
-<p><img alt="mobile step" class="img-responsive img-thumbnail" src="../../images/steps_mobile.png" /></p>
+<p><img alt="vtdirect step" class="img-responsive img-thumbnail" src="../../images/welcome/steps_vtdirect.png" /></p>
 
 
             <div class="pagination">
@@ -257,154 +390,119 @@
       </div><!--/row-->
     </div><!--/.container-->
 
-    <footer>
+    <footer class="wrapper">
   <div class="container">
-    <div class="row footer-content">
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-        <h4 class="text-gray">Veritrans</h4>
-        <ul>
-          <li>
-            <a href="https://www.veritrans.co.id/">Home</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/payment_channels.html">Payment Channels</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/product_pricing.html">Product &amp; Pricing</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/partners.html">Partners</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/promo.html">Promo</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/case_study.html">Case Study</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/aegis.html">Aegis</a>
-          </li>
-        </ul>
-        <!-- <h4 class="text-gray">Shopping</h4>
-        <ul>
-          <li>
-            <a href="event.html">Promo</a>
-          </li>
-          <li>
-            <a href="directory.html">Directory</a>
-          </li>
-        </ul> -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/about">About Us</a></li>
+              <li><a href="https://blog.midtrans.com" target="_blank">Blog</a></li>
+              <li><a href="https://midtrans.com/campaigns">Campaigns</a></li>
+              <li><a href="https://midtrans.com/careers">Careers</a></li>
+              <li><a href="https://midtrans.com/clients">Clients</a></li>
+              <li><a href="https://midtrans.com/contact">Contact</a></li>
+              <li><a href="https://midtrans.com/developers">Developers</a></li>
+              <li><a href="https://midtrans.com/security">Security</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="https://midtrans.com/payments"><img src="../../images/midtrans/logo-midtrans-color.png" class="logo" alt="midtrans logo"/></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/payments/how-to">How-to</a></li>
+              <li><a href="https://midtrans.com/payments/manage">Merchant Administration Portal</a></li>
+              <li><a href="https://midtrans.com/payments/payment-channels">Payment Channels</a></li>
+              <li><a href="https://midtrans.com/payments/pricing">Pricing</a></li>
+              <li><a href="https://docs.midtrans.com" target="_blank">Technical Documentation</a></li>
+              <li><a href="https://support.midtrans.com" target="_blank">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-        <h4 class="text-gray">Devs</h4>
-        <ul>
-          <li>
-            <a href="http://docs.veritrans.co.id">Documentations</a>
-          </li>
-        </ul>
-        <h4 class="text-gray about-footer">About</h4>
-        <ul>
-          <li>
-            <a href="https://www.veritrans.co.id/about.html">Team</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/career.html">Career</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/press.html">Press</a>
-          </li>
-        </ul>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="row">
+          <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+            <a href="https://midtrans.com/iris"><img src="../../images/midtrans/logo-iris.png" class="logo" alt="iris logo"/></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/iris">Features</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+            <a href="https://midtrans.com/aegis"><img src="../../images/midtrans/logo-aegis.png" class="logo" alt="aegis logo"/></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/aegis/features">Features</a></li>
+              <li><a href="https://midtrans.com/aegis/use-cases">Use Cases</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+            <a href="https://www.prismapp.io"><img src="../../images/midtrans/logo-prism.png" class="logo prism" alt="prism logo"/></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://www.prismapp.io/features">Features</a></li>
+              <li><a href="https://www.prismapp.io/pricing">Pricing</a></li>
+              <li><a href="https://www.prismapp.io/docs">Technical Documentation</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-        <h4 class="text-gray">Help</h4>
-        <ul>
-          <li>
-            <a href="https://blog.veritrans.co.id">Blog</a>
-          </li>
-          <li>
-            <a href="http://support.veritrans.co.id">FAQ</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/contact.html">Contact</a>
-          </li>
-          <li>
-            <a href="https://www.veritrans.co.id/privacy_policy.html">Privacy Policy</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 find-us-footer">
-        <h4 class="text-gray">Find Us</h4>
-        <ul>
-          <li>
-            <a href="https://www.facebook.com/veritransID">Facebook</a>
-          </li>
-          <li>
-            <a href="https://twitter.com/veritransid">Twitter</a>
-          </li>
-          <li>
-            <a href="https://instagram.com/veritransid">Instagram</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/company/pt-midtrans">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/channel/UCtPNqTFgR1aXpEFA9B_djnw">YouTube</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <h4 class="text-gray with-subtitle">
-          Subscribe
-        </h4>
-        <small>
-          tips &amp; berita terbaru seputar eCommerce
-        </small>
-        <div id="mc_embed_signup">
-          <form action="//veritrans.us9.list-manage.com/subscribe/post?u=4ed5f88335112571098a4a51c&amp;id=12315939d2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <h3>
+          Berlangganan newsletter Midtrans
+        </h3>
+        <p>
+          Dapatkan ide, informasi, dan tips menarik seputar eCommerce.
+        </p>
+        <div id="mc_embed_signup" class="subcriber-form">
+          <form action="//veritrans.us9.list-manage.com/subscribe/post?u=4ed5f88335112571098a4a51c&amp;id=12315939d2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-horizontal validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll" class="input-field">
               <div class="mc-field-group">
-                  <input type="email" value="" name="EMAIL" class="required email search-input" id="mce-EMAIL" placeholder="EMAIL" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required/>
+                <input type="email" value="" name="EMAIL" class="required email validate" id="mce-EMAIL" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required/>
+                <label for="mce-EMAIl">Email Anda</label>
               </div>
+              <button type="submit" class="btn btn-subscribe">&#8594;</button>
               <div id="mce-responses" class="clear">
-                  <div class="response" id="mce-error-response" style="display:none"></div>
-                  <div class="response" id="mce-success-response" style="display:none"></div>
-            </div>   
-              <div style="position: absolute; left: -5000px;"><input type="text" name="b_4ed5f88335112571098a4a51c_12315939d2" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-search"/></div>
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
               </div>
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_4ed5f88335112571098a4a51c_12315939d2" tabindex="-1" value=""></div>
+            </div>
           </form>
+        </div>
+        <div class="social-media">
+          <ul class="list-inline">
+            <li><a href="https://www.facebook.com/Midtranscom/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.linkedin.com/company/midtrans" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://www.instagram.com/midtrans_com/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="copyright text-center">
-      <br/>
-      &copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans
-      <br/>
-      <br/>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 credit">
+        <ul class="list-inline credit-link">
+          <li><a href="https://midtrans.com/press">Press</li>
+          <li><a href="https://midtrans.com/privacy-policy">Privacy Policy</li>
+          <li class="hide"><a href="https://midtrans.com/terms-conditions">Terms &amp; Conditions</a></li>
+          <li class="copy">&copy; 
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script> 
+            Midtrans (PT Midtrans)
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+  <!--  <Snackbar
+    action="Dismiss" active={store.notification.show}
+    icon={<FontAwesome name="comments-o" size="2x" />}
+    label={store.notification.message} timeout={5000}
+    onClick={this.handleDismissNotif}
+    onTimeout={this.handleDismissNotif}
+    type={store.notification.type} /> -->
 </footer>
-<div class="modal fade" id="underConstruction" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title text-center" id="myModalLabel">Sorry!</h4>
-      </div>
-      <div class="modal-body text-center">
-        We're still building this web page.<br/>
-        Be the first to know when it's done by <a class="dotted" href="https://veritrans.us9.list-manage.com/subscribe/post?u=4ed5f88335112571098a4a51c&id=12315939d2">subscribing</a> to our newsletter.
-      </div>
-    </div>
-  </div>
-</div>
-<script language="javascript" type="text/javascript">
-  function popitup(url) {
-    newwindow=window.open(url,'name','height=430,width=540');
-    if (window.focus) {newwindow.focus()}
-    return false;
-  }
-</script>
     <script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../javascripts/dropdown.js" type="text/javascript"></script>
 <script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
@@ -413,12 +511,13 @@
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-32232768-12', 'auto');
+      ga('create', 'UA-85529823-1', 'auto');
       ga('send', 'pageview');
+
     </script>
     <script>
       $(document).ready(function() {
@@ -428,7 +527,39 @@
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
         });
+        
+        $('body, .nav-overlay').bind('click', e => {
+          if ($(e.target).closest('.nav-wrapper').length == 0) {
+            // click happened outside of .navbar, so hide
+            var opened = $('.nav-wrapper').hasClass('in');
+            if (opened === true) {
+              $('.nav-wrapper').collapse('hide');
+            }
+          }
+          if ($(e.target).closest('.sub-nav-wrapper').length == 0) {
+            // click happened outside of .navbar, so hide
+            var opened = $('.sub-nav-wrapper').hasClass('in');
+            if (opened === true) {
+              $('.sub-nav-wrapper').collapse('hide');
+            }
+          }
+        });
 
+        /* PAGE OVERLAY ON NAV-TOGGLE OPEN */
+        $('.nav-wrapper').on('show.bs.collapse', () => {
+          $('.nav-overlay').addClass('active');
+        });
+        $('.nav-wrapper').on('hide.bs.collapse', () => {
+          $('.nav-overlay').removeClass('active');
+        });
+
+        /* PAGE OVERLAY ON NAV-TOGGLE OPEN */
+        $('.sub-nav-wrapper').on('show.bs.collapse', function () {
+          $('.nav-overlay').addClass('active');
+        });
+        $('.sub-nav-wrapper').on('hide.bs.collapse', function () {
+          $('.nav-overlay').removeClass('active');
+        });
         mixpanel.track('id docs page viewed',{
           'url' : location.href
         });
