@@ -278,7 +278,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../../id/snap/integration_php.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../../id/snap/integration_php_wizard.html">Bahasa Indonesia</a></div>
         <ul class="sidebar">
             
                 <li>
@@ -363,7 +363,7 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="en-snap-integration-php">
+          <div class="en-snap-integration-php-wizard">
             <div class="row">
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
@@ -401,13 +401,124 @@
   <div class="tab-pane active">
     <p><!-- Beginning of header--></p>
 
-    <h2 id="snap-php-integration-methods">Snap PHP Integration Methods</h2>
+    <h2 id="snap-php-integration-using-wizard-or-setup-assistant">Snap PHP Integration Using Wizard (or Setup Assistant)</h2>
 
-    <h4 id="integrate-snap-using-a-wizard-or-setup-assistant">1. Integrate Snap using a wizard (or setup assistant)</h4>
-    <p><a href="integration_php_wizard.html"><strong>Click here</strong></a> to integrate Snap with your code, with the help of bot programmer (powered by Devsupport AI).</p>
+    <div class="alert alert-success" role="alert">
+      <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>NEW</strong>:<br />Midtrans is happy to launch <a href="https://goo.gl/9KC2JB"><em>Devsupport AI</em></a> – a bot programmer that integrates Midtrans’ API with your code in a matter of minutes, fully guided.</p>
+    </div>
 
-    <h4 id="integrate-snap-with-our-step-by-step-guide">2. Integrate Snap with our step-by-step guide</h4>
-    <p><a href="integration_php_manual.html"><strong>Click here</strong></a> to follow a detailed step-by-step guide to integrate Snap.</p>
+    <h3 id="introduction">Introduction</h3>
+    <p>This Snap PHP integration is going to be assisted by Devsupport AI. There are 3 main steps to complete:</p>
+
+    <ol>
+      <li><a href="#preparation">Preparation</a></li>
+      <li><a href="#integration-using-devsupport-ai">Integration using Devsupport AI</a></li>
+      <li><a href="#notification-handling">Notification Handling</a></li>
+    </ol>
+
+    <h3 id="preparation">Preparation</h3>
+    <p>Before proceeding any further, please make sure that you have followed the <a href="../welcome/preparation.html">Getting Started - Preparation</a> guide. Please also have your Access Keys (<strong>Client Key</strong> and <strong>Server Key</strong>) readily available.</p>
+
+    <p>You can find your Access Keys in the <a href="https://dashboard.sandbox.midtrans.com">Merchant Administration Portal (MAP)</a> at <strong>Settings &gt; Access Keys</strong>. Please follow <a href="https://dashboard.sandbox.midtrans.com/settings/config_info">this link to find your access key</a>.</p>
+
+    <h3 id="integration-using-devsupport-ai">Integration using Devsupport AI</h3>
+    <p>Please follow the following steps for integration using Devsupport AI:</p>
+
+    <ol>
+      <li>Download the <a href="https://goo.gl/9KC2JB">Devsupport AI app</a>. Please choose the file according to your system:
+        <ul>
+          <li>Windows : <strong>devsupport-ai-setup-[x.x.x].exe</strong></li>
+          <li>Mac : <strong>devsupport-ai-[x.x.x]-mac.zip</strong> (extract zip first, then open the app.)</li>
+          <li>Linux : <strong>devsupport-ai_[x.x.x]_amd64.deb</strong></li>
+        </ul>
+      </li>
+      <li>
+        <p>Install and open the App, you should see a screen below:
+   <img alt="App Screen" class="img-responsive img-thumbnail" src="../../images/snap/devsupport-screen1.png" /></p>
+      </li>
+      <li>Create a folder on your computer and create an <code>index.php</code> or <code>index.html</code> file in the folder.</li>
+      <li>Drop the folder in the app as instructed on the Devsupport AI app.</li>
+      <li>Type/Search for <strong>"Midtrans"</strong> when asked for the product you would like to integrate</li>
+      <li>Click on <strong>"Midtrans PHP Snap Integration"</strong></li>
+      <li>Enter your Sandbox <strong>Client Key</strong> and <strong>Server Key</strong> then <strong>Proceed</strong>. <em>If you enter wrong key combination, the app will let you know the keys are incorrect.</em></li>
+      <li>The app will then give you 3 files, all of which have your credentials set.
+        <ul>
+          <li><code>Veritrans.php</code></li>
+          <li><code>checkout.php</code></li>
+          <li><code>handle_notification.php</code></li>
+        </ul>
+      </li>
+      <li>Host them on your server and keep their URLs ready.</li>
+      <li>
+        <p>The app will also provide you an HTML tag for you to initiate a payment. The tag looks like the following:</p>
+
+<pre><code class="highlight html"><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"pay-button"</span><span class="nt">&gt;</span>Pay!<span class="nt">&lt;/button&gt;</span>
+<span class="c">&lt;!-- TODO: Remove ".sandbox" from script src URL for production environment. Also input your client key in "data-client-key" --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://app.sandbox.midtrans.com/snap/snap.js"</span> <span class="na">data-client-key=</span><span class="s">"[YOUR_CLIENT_KEY]"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'pay-button'</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="c1">// This is minimal request body as example.</span>
+<span class="c1">// Please refer to docs for all available options: </span>
+<span class="c1">// https://snap-docs.midtrans.com/#json-parameter-request-body</span>
+<span class="c1">// TODO: you should change this gross_amount and order_id to your desire. </span>
+<span class="kd">var</span> <span class="nx">requestBody</span> <span class="o">=</span> 
+<span class="p">{</span>
+  <span class="na">transaction_details</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">gross_amount</span><span class="p">:</span> <span class="mi">123000</span><span class="p">,</span>
+    <span class="c1">// as example we use timestamp as order ID</span>
+    <span class="na">order_id</span><span class="p">:</span> <span class="s1">'T-'</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> 
+  <span class="p">},</span>  
+  <span class="na">credit_card</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">secure</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">getSnapToken</span><span class="p">(</span><span class="nx">requestBody</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="nx">snap</span><span class="p">.</span><span class="nx">pay</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">token</span><span class="p">);</span>
+<span class="p">})</span>
+  <span class="p">};</span>
+  <span class="cm">/**
+  * Send AJAX POST request to checkout.php, then call callback with the API response
+  * @param {object} requestBody: request body to be sent to SNAP API
+  * @param {function} callback: callback function to pass the response
+  */</span>
+  <span class="kd">function</span> <span class="nx">getSnapToken</span><span class="p">(</span><span class="nx">requestBody</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">xmlHttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"post"</span><span class="p">,</span> <span class="s2">"[YOUR_CHECKOUT.PHP_URL]"</span><span class="p">);</span>
+<span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">requestBody</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+
+        <div class="alert alert-info" role="alert">
+          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+Please modify the <strong>gross_amount</strong> and <strong>order_id</strong> accordingly.</p>
+        </div>
+      </li>
+      <li>
+        <p>If everything went smoothly, you can test the payment page by clicking the <strong>pay</strong> button. The Snap payment page will look like the following:</p>
+
+        <p><img alt="snap" class="img-responsive img-thumbnail" src="../../images/snap/snap01.png" /></p>
+      </li>
+    </ol>
+
+    <h3 id="notification-handling">Notification Handling</h3>
+    <p>Please ensure that all notifications are handled properly in the <code>handle_notification.php</code> file. Please refer to the <a href="integration_php_manual.html#step4">Handling HTTP(S) Notification</a> documentation page for more details.</p>
+
+    <h3 id="references">References</h3>
+    <p>For more details about PHP Snap integration, please refer to our <a href="integration_php_manual.html">step-by-step integration guide</a>.</p>
+
+    <h3 id="let-us-know-your-thoughts">Let Us Know Your Thoughts</h3>
+    <p>Is our wizard (or setup assistant, using Devsupport AI) helpful? Do you have any feedback? Please share your feedback <a href="https://goo.gl/hTxHkh">here</a>.</p>
 
   </div>
   <!-- end of header-->

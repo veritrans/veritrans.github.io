@@ -318,13 +318,13 @@
       
         <li>
           
-            <a class="parent" href="http://mobile-docs.midtrans.com">Mobile SDK</a>
+            <a class="parent" href="https://mobile-docs.midtrans.com">Mobile SDK</a>
           
         </li>
       
         <li>
           
-            <a class="parent" href="http://api-docs.midtrans.com">Core API</a>
+            <a class="parent" href="https://api-docs.midtrans.com">Core API</a>
           
         </li>
       
@@ -339,6 +339,8 @@
                 <li class=""><a href="../reference/address.html">Alamat IP</a></li>
               
                 <li class=""><a href="../reference/security.html">Keamanan</a></li>
+              
+                <li class=""><a href="https://status.midtrans.com">Status Sistem</a></li>
               
                 <li class=""><a href="../reference/docslog.html">Log Dokumentasi</a></li>
               
@@ -643,32 +645,21 @@
         <p>
           Dapatkan ide, informasi, dan tips menarik seputar eCommerce.
         </p>
-        <div id="mc_embed_signup" class="subcriber-form">
-          <form action="//veritrans.us9.list-manage.com/subscribe/post?u=4ed5f88335112571098a4a51c&amp;id=12315939d2" method="post"
-            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-horizontal validate" target="_blank"
-            novalidate="">
-            <div id="mc_embed_signup_scroll" class="input-field">
-              <div class="mc-field-group">
-                <input type="email" value="" name="EMAIL" class="required email validate" id="mce-EMAIL" pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-                  required="">
-                <label for="mce-EMAIl">Email Anda</label>
-              </div>
-              <button type="submit" class="btn btn-subscribe">→</button>
-              <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>
-              <div style="position: absolute; left: -5000px;"><input type="text" name="b_4ed5f88335112571098a4a51c_12315939d2" tabindex="-1" value=""></div>
-            </div>
-          </form>
-        </div>
+        <form class="form-horizontal validate" id="subscriber-form" action="https://veritrans.us9.list-manage.com/subscribe/post-json?u=4ed5f88335112571098a4a51c&amp;id=12315939d2" method="get">
+          <div class="input-field clearfix">
+            <input type="email" value="" name="EMAIL" class="subscribe-input required email validate"
+                   required="" placeholder="Email Anda">
+            <button type="submit" class="btn btn-subscribe">→</button>
+          </div>
+          <div id="subscriber-result"></div>
+        </form>
         <div class="social-media">
           <ul class="list-inline">
             <li><a href="https://www.facebook.com/Midtranscom/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://twitter.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="https://www.linkedin.com/company/midtrans" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="https://www.instagram.com/midtrans_com/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="https://www.youtube.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
+            <li><a href="https://twitter.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/midtrans" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/midtrans_com/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
           </ul>
         </div>
       </div>
@@ -750,6 +741,76 @@
         mixpanel.track('id docs page viewed',{
           'url' : location.href
         });
+
+        ajaxMailChimpForm($("#subscriber-form"), $("#subscriber-result"));
+
+        // Turn the given MailChimp form into an ajax version of it.
+        // If resultElement is given, the subscribe result is set as html to
+        // that element.
+        function ajaxMailChimpForm($form, $resultElement){
+
+          // Hijack the submission. We'll submit the form manually.
+          $form.submit(function(e) {
+            e.preventDefault();
+
+            if (!isValidEmail($form)) {
+              var error =  "Email Anda tidak valid. Mohon memberikan email lain.";
+              $resultElement.html(error);
+            } else {
+              $resultElement.html("Subscribing...");
+              submitSubscribeForm($form, $resultElement);
+            }
+          });
+        }
+        
+        // Validate the email address in the form
+        function isValidEmail($form) {
+          // If email is empty, show error message.
+          // contains just one @
+          var email = $form.find("input[type='email']").val();
+          if (!email || !email.length) {
+            return false;
+          } else if (email.indexOf("@") == -1) {
+            return false;
+          }
+
+          return true;
+        }
+
+        // Submit the form with an ajax/jsonp request.
+        // Based on http://stackoverflow.com/a/15120409/215821
+        function submitSubscribeForm($form, $resultElement) {
+          $.ajax({
+            type: "GET",
+            url: $form.attr("action"),
+            data: $form.serialize(),
+            cache: false,
+            dataType: "jsonp",
+            jsonp: "c", // trigger MailChimp to return a JSONP response
+            contentType: "application/json; charset=utf-8",
+
+            error: function(error){
+              // According to jquery docs, this is never called for cross-domain JSONP requests
+            },
+
+            success: function(data){
+              if (data.result != "success") {
+                var message = data.msg || "Maaf, sistem sedang error. Silahkan mencoba beberapa saat lagi.";
+
+
+                if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                  message = "Anda sudah berlangganan newsletter kami.";
+
+                }
+
+                $resultElement.html(message);
+
+              } else {
+                $resultElement.html("Terima kasih telah berlangganan newsletter kami!");
+              }
+            }
+          });
+        }
       });
     </script>
   </body>

@@ -1,0 +1,2467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Bing Validate -->
+    <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651"/>
+    <!-- Google Webmaster Validate -->
+    <meta name="google-site-verification" content="uUeOdHBzl0nbyvdyeRHKGIHPxnIpJDTTnWv-QfgkxRs" />
+    <!-- FB OG -->
+    <meta property="og:title" content="Midtrans Payments || Tech Docs for online payment system"/>
+    <meta property="og:site_name" content="Midtrans"/>
+    <meta property="og:description" content="Technical Documentation to implement online payment system. Available for various payment methods, in various website programming language."/>
+    <meta property="fb:app_id" content="404252079606310"/>
+    <meta property="og:image" content="//docs.midtrans.com/images/midtrans/favicon/apple-touch-icon-120x120.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
+    <meta name="google-site-verification" content="uUeOdHBzl0nbyvdyeRHKGIHPxnIpJDTTnWv-QfgkxRs" />
+    <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
+    
+    <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../stylesheets/materialize.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <title>Midtrans Payments - Tech Docs for online payment system</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/midtrans/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/midtrans/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/midtrans/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/midtrans/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/midtrans/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/midtrans/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/midtrans/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/midtrans/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/midtrans/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/midtrans/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/midtrans/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/midtrans/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="https://midtrans.com/assets/images/favicon.ico">
+    <script src="../../javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="../../javascripts/materialize.min.js" type="text/javascript"></script>
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("f93e9c92cf8729b32c4491fb6794689b");
+    </script>
+    <!-- end mixpanel -->
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header class="md-header position-fixed-top header-white affix">
+  <div class="container position-static">
+    <div class="row position-static">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 position-static">
+        <a class="logo-midtrans" href="https://midtrans.com/">Midtrans</a>
+        <div id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-wrapper collapse" id="main-nav" aria-expanded="false">
+          <div class="inner-wrapper">
+            <ul class="mobile-nav">
+              <li><span class="nav-title">SERVICES</span></li>
+              <li>
+                <a href="https://midtrans.com/payments">
+                  <img class="logo-image" src="../../images/midtrans/logo-midtrans-white.png" alt="midtrans"/>
+                </a>
+              </li>
+              <li>
+                <a href="https://midtrans.com/aegis">
+                  <img class="logo-image" src="../../images/midtrans/logo-aegis-white.png" alt="aegis"/>
+                </a>
+              </li>
+              <li>
+                <a href="https://midtrans.com/iris">
+                  <img class="logo-image" src="../../images/midtrans/logo-iris-white.png" alt="iris"/>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.prismapp.io/">
+                  <img class="logo-image prism" src="../../images/midtrans/logo-prism-white.png" alt="prism"/>
+                </a>
+              </li>
+              <li><span class="nav-space"></span></li>
+              <li class="half"><a href="https://midtrans.com/payments/pricing">Pricing</a></li>
+              <li class="half"><a href="https://midtrans.com/contact">Contact Us</a></li>
+              <li class="half"><a href="https://midtrans.com/developers">Documentation</a></li>
+              <li class="half"><a href="https://midtrans.com/developers">FAQ</a></li>
+              <li class="half"><a href="https://support.midtrans.com/hc/en-us">Clients</a></li>
+              <li><span class="nav-space" /></li>
+              <li>
+                <a class="login" href="https://account.midtrans.com/login" target="_blank" rel="noopener noreferrer">login</a>
+              </li>
+              <li>
+                <a class="signup" href="https://account.midtrans.com/register" target="_blank" rel="noopener noreferrer">
+                  SIGN UP
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul class="md-nav">
+          <li class="dropdown">
+            <a>
+              Our Services
+              <span class="fa fa-angle-down"></span>
+            </a>
+            <div class="dropdown-menu md-dd-nav">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-description services">
+                          <h3>Services</h3>
+                          <p>Midtrans menyediakan beragam solusi untuk bisnis online Anda.</p>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/payments">
+                            <img class="image" src="../../images/midtrans/logo-midtrans-color.png" alt="">
+                            <p>Sistem pembayaran online yang terhubung dengan berbagai metode pembayaran di Indonesia.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/payments">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/aegis">
+                            <img class="image" src="../../images/midtrans/logo-aegis.png" alt="">
+                            <p>Sistem deteksi fraud untuk menganalisis dan mencegah penipuan di eCommerce Anda.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/aegis">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/iris">
+                            <img class="image" src="../../images/midtrans/logo-iris.png" alt="">
+                            <p>Sistem distribusi pembayaran untuk kemudahan pengiriman dana ke semua bank di Indonesia.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/iris">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a target="_blank" class="summary" href="https://www.prismapp.io/">
+                            <img class="image" src="../../images/midtrans/logo-prism.png" alt="">
+                            <p>Sistem chat commerce yang mengubah chat menjadi transaksi.</p>
+                          </a>
+                          <a target="_blank" class="link" href="https://www.prismapp.io/">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a>
+              Getting Started
+              <span class="fa fa-angle-down"></span>
+            </a>
+            <div class="dropdown-menu md-dd-nav">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-description">
+                          <h3>Getting Started</h3>
+                          <p>Berbagai informasi yang dibutuhkan untuk terhubung dengan layanan Midtrans.</p>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/pricing">
+                            <h4>Pricing</h4>
+                            <p>Informasi tentang harga dari berbagai layanan Midtrans.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/payments/pricing">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/developers">
+                            <h4>Documentation</h4>
+                            <p>Dokumentasi teknis yang terbuka dari berbagai layanan Midtrans.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/developers">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/clients">
+                            <h4>Clients</h4>
+                            <p>Kisah sukses berbagai bisnis online yang terhubung dengan Midtrans.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/clients">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a>
+              Support
+              <span class="fa fa-angle-down"></span>
+            </a>
+            <div class="dropdown-menu md-dd-nav">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-description">
+                          <h3>Support</h3>
+                          <p>Bantuan teknis dari tim Midtrans untuk memudahkan proses integrasi Anda.</p>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/pricing">
+                            <h4>Contact Us</h4>
+                            <p>Hubungi tim support Midtrans untuk pertanyaan lebih lanjut.</p>
+                          </a>
+                          <a class="link" href="https://midtrans.com/contact">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <div class="submenu-link">
+                          <a class="summary" href="https://midtrans.com/developers">
+                            <h4>FAQ</h4>
+                            <p>Informasi penting mengenai layanan dan proses integrasi dengan Midtrans.</p>
+                          </a>
+                          <a class="link" href="https://support.midtrans.com/hc/en-us">Selengkapnya &rarr;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a class="login" href="https://account.midtrans.com/login" target="_blank" rel="noopener noreferrer">
+              login
+            </a>
+          </li>
+          <li>
+            <a class="signup" href="https://account.midtrans.com/register" target="_blank" rel="noopener noreferrer">
+              SIGN UP
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay"></div>
+
+    <div class="custom-container container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
+  <div class="documentation-sidebar affix">
+    <div class="docs-logo">
+      <span>DOCS</span>
+    </div>
+    <div class="language-toggle"> <a href="../../en/snap/integration_php_manual.html">English</a> / Bahasa Indonesia</div>
+    <ul class="sidebar">
+      
+        <li>
+          
+            <a class="parent">Langkah Awal</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../welcome/index.html">Perkenalan</a></li>
+              
+                <li class=""><a href="../welcome/preparation.html">Persiapan Awal</a></li>
+              
+                <li class=""><a href="../welcome/pluginlibrary.html">Library & Plugin</a></li>
+              
+                <li class=""><a href="../welcome/partner_integ.html">Platform Affiliasi</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">SNAP</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class="active"><a href="integration.html">Integrasi</a></li>
+              
+                <li class=""><a href="other_features.html">Fitur Tambahan</a></li>
+              
+                <li class=""><a href="going_live.html">Going Live</a></li>
+              
+                <li class=""><a href="http://snap-docs.midtrans.com">Snap API</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="https://mobile-docs.midtrans.com">Mobile SDK</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="https://api-docs.midtrans.com">Core API</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">Referensi</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../reference/test.html">Testing Credential</a></li>
+              
+                <li class=""><a href="../reference/address.html">Alamat IP</a></li>
+              
+                <li class=""><a href="../reference/security.html">Keamanan</a></li>
+              
+                <li class=""><a href="https://status.midtrans.com">Status Sistem</a></li>
+              
+                <li class=""><a href="../reference/docslog.html">Log Dokumentasi</a></li>
+              
+                <li class=""><a href="https://support.midtrans.com">FAQ</a></li>
+              
+            </ul>
+          
+        </li>
+      
+    </ul>
+    <p class="question">
+      Anda merasa ada yang kurang dari dokumentasi ini?<br>
+      <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+    </p>
+  </div>
+</div><!--/span-->
+        <div class="col-xs-12 col-sm-8 col-md-9" id="bodier">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+          <div class="id-snap-integration-php-manual">
+            <div class="row">
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
+    <a href="integration_php.html"><img src="../../images/snap/php.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
+    <a href="integration_prestashop.html"><img src="../../images/snap/prestashop_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
+    <a href="integration_magento.html"><img src="../../images/snap/magento_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
+    <a href="integration_opencart.html"><img src="../../images/snap/opencart_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
+    <a href="integration_woocommerce.html"><img src="../../images/snap/woocommerce_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="WHMCS" data-placement="bottom">
+    <a href="integration_whmcs.html"><img src="../../images/snap/whmcs_gray.png" /></a>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content">
+  <div class="tab-pane active">
+
+    <h3 id="tahapan-integrasi-snap">Tahapan Integrasi Snap</h3>
+
+    <ol>
+  <li>Mendapatkan Snap Token</li>
+  <li>Menampilkan Halaman Pembayaran Snap</li>
+  <li>Status Transaksi</li>
+  <li>Menangani Notifikasi</li>
+  <li>Proses Get Status</li>
+</ol>
+
+    <div class="alert alert-info" role="alert">
+      <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Info</strong>:<br />Silahkan melihat <a href="../../en/welcome/pluginlibrary.html">halaman berikut</a> untuk daftar plugin &amp; library lebih lengkap.</p>
+    </div>
+
+    <p><br /></p>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+  <li class="active"><a href="#step1" data-toggle="tab"><span>Tahap 1</span>Mendapatkan Snap Token</a></li>
+  <li><a href="#step2" data-toggle="tab"><span>Tahap 2</span>Menampilkan Halaman Pembayaran</a></li>
+  <li><a href="#step3" data-toggle="tab"><span>Tahap 3</span>Status Transaksi</a></li>
+  <li><a href="#step4" data-toggle="tab"><span>Tahap 4</span>Menangani Notifikasi</a></li>
+  <li><a href="#step5" data-toggle="tab"><span>Tahap 5</span>Proses Get Status</a></li>
+</ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="step1">
+        <!-- step 1-->
+        <!-- satu -->
+
+        <h2 id="mendapatkan-snap-token">Mendapatkan Snap Token</h2>
+
+        <p>Pada tahap ini, kita akan mencoba memperoleh Snap token untuk suatu pemesanan. Setidaknya ada 3 informasi yang dibutuhkan untuk mendapatkan Snap token, yaitu:</p>
+
+        <ol>
+          <li><code>server key</code></li>
+          <li>ID transaksi</li>
+          <li>Nominal transaksi</li>
+        </ol>
+
+        <p><br />
+Contoh kode PHP berikut digunakan untuk mendapatkan Snap token.</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="c1">//Set Your server key
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your ServerKey here&gt;"</span><span class="p">;</span>
+
+<span class="c1">// Uncomment for production environment
+// Veritrans_Config::$isProduction = true;
+</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="s2">"&lt;your order_id&gt;"</span><span class="p">,</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span> <span class="c1">// no decimal allowed
+</span>        <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">Veritrans_Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+        <p><br /></p>
+
+        <p>Contoh kode di atas memanfaatkan library <strong>Veritrans-PHP</strong> yang dapat diunduh di [<a href="https://github.com/veritrans/veritrans-php/tree/snap">Github</a> - <a href="https://github.com/veritrans/veritrans-php/archive/snap.zip">Zip</a>] dan menggunakan mode sandbox/test.</p>
+
+        <p>File <code>Veritrans.php</code> diasumsikan berada pada direktori yang sama dengan kode sumber. Nilai <code>server_key</code> sudah dijelaskan di <a href="../welcome/preparation.html#step3">Langkah Awal - Persiapan Awal</a></p>
+
+        <p>Secara <em>default</em>, semua metode pembayaran yang Anda miliki akan ditampilkan di halaman Snap. Jika anda bermaksud menentukan metode pembayaran yang ditampilkan, ikuti petunjuk di <a href="other_features.html">Snap - Fitur Tambahan</a>. <br /></p>
+
+        <hr />
+
+        <h2 id="menambahkan-informasi-transaksi-opsional">Menambahkan Informasi Transaksi (Opsional)</h2>
+
+        <p>Merchant dapat menambahkan berbagai data tambahan ke dalam variabel transaksi <code>$transaction</code>, seperti data pembeli, data pesanan barang, dan metode pembayaran. Data tambahan ini akan mempengaruhi halaman pembayaran Snap dan log transaksi pada MAP (Merchant Administration Portal).</p>
+
+        <p>Sebagian besar field pada form halaman Snap akan otomatis terisi dan Informasi terkait daftar barang serta lokasi pengiriman akan ditampilkan. Keterangan dan struktur lengkap data transaksi dalam bentuk JSON dapat dilihat di <a href="https://snap-docs.midtrans.com">Snap API Reference</a>.</p>
+
+        <p>Contoh kode PHP yang mengikutsertakan semua data transaksi adalah sebagai berikut:<br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'Veritrans.php'</span><span class="p">);</span>
+
+<span class="c1">//Set Your server key
+</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your ServerKey here&gt;"</span><span class="p">;</span>
+
+<span class="c1">// Uncomment for production environment
+// Veritrans_Config::$isProduction = true;
+</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+  <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">145000</span><span class="p">,</span> <span class="c1">// no decimal allowed
+</span><span class="p">);</span>
+
+<span class="c1">// Mandatory for Mandiri bill payment and BCA KlikPay
+// Optional for other payment methods
+</span><span class="nv">$item1_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a1'</span><span class="p">,</span>
+    <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">50000</span><span class="p">,</span>
+    <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s2">"Apple"</span>
+    <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$item2_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="s1">'a2'</span><span class="p">,</span>
+    <span class="s1">'price'</span> <span class="o">=&gt;</span> <span class="mi">45000</span><span class="p">,</span>
+    <span class="s1">'quantity'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s2">"Orange"</span>
+    <span class="p">);</span>
+
+<span class="nv">$item_details</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span><span class="nv">$item1_details</span><span class="p">,</span> <span class="nv">$item2_details</span><span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$billing_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">"Mangga 20"</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">"16602"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span><span class="p">,</span>
+    <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
+    <span class="p">);</span>
+
+<span class="c1">// Optional
+</span><span class="nv">$shipping_address</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Obet"</span><span class="p">,</span>
+    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Supriadi"</span><span class="p">,</span>
+    <span class="s1">'address'</span>       <span class="o">=&gt;</span> <span class="s2">"Manggis 90"</span><span class="p">,</span>
+    <span class="s1">'city'</span>          <span class="o">=&gt;</span> <span class="s2">"Jakarta"</span><span class="p">,</span>
+    <span class="s1">'postal_code'</span>   <span class="o">=&gt;</span> <span class="s2">"16601"</span><span class="p">,</span>
+    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"08113366345"</span><span class="p">,</span>
+    <span class="s1">'country_code'</span>  <span class="o">=&gt;</span> <span class="s1">'IDN'</span>
+    <span class="p">);</span>
+
+<span class="nv">$customer_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'first_name'</span>    <span class="o">=&gt;</span> <span class="s2">"Andri"</span><span class="p">,</span> <span class="c1">//optional
+</span>    <span class="s1">'last_name'</span>     <span class="o">=&gt;</span> <span class="s2">"Litani"</span><span class="p">,</span> <span class="c1">//optional
+</span>    <span class="s1">'email'</span>         <span class="o">=&gt;</span> <span class="s2">"andri@litani.com"</span><span class="p">,</span> <span class="c1">//mandatory
+</span>    <span class="s1">'phone'</span>         <span class="o">=&gt;</span> <span class="s2">"081122334455"</span><span class="p">,</span> <span class="c1">//mandatory
+</span>    <span class="s1">'billing_address'</span>  <span class="o">=&gt;</span> <span class="nv">$billing_address</span><span class="p">,</span> <span class="c1">//optional
+</span>    <span class="s1">'shipping_address'</span> <span class="o">=&gt;</span> <span class="nv">$shipping_address</span> <span class="c1">//optional
+</span>    <span class="p">);</span>
+
+<span class="c1">// Fill transaction details
+</span><span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="nv">$transaction_details</span><span class="p">,</span>
+    <span class="s1">'customer_details'</span> <span class="o">=&gt;</span> <span class="nv">$customer_details</span><span class="p">,</span>
+    <span class="s1">'item_details'</span> <span class="o">=&gt;</span> <span class="nv">$item_details</span><span class="p">,</span>
+    <span class="p">);</span>
+
+<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">Veritrans_Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+        <p><br /></p>
+
+        <hr />
+
+        <h2 id="respons-saat-request-snap-token">Respons saat Request Snap Token</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Keterangan</th>
+              <th>Contoh</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>201</code></td>
+              <td>Sukses mendapatkan Snap Token.</td>
+              <td>"token": "d379aa71-99eb-4dd1-b9bb-eefe813746e9"</td>
+            </tr>
+            <tr>
+              <td><code>400</code></td>
+              <td>Gagal. Salah parameter.</td>
+              <td>"transaction_details.gross_amount is not equal to the sum of item_details"</td>
+            </tr>
+            <tr>
+              <td><code>401</code></td>
+              <td>Gagal. Salah akses key.</td>
+              <td>"Access denied, please check client or server key"</td>
+            </tr>
+            <tr>
+              <td><code>500</code></td>
+              <td>Gagal. Sistem error.</td>
+              <td>"Sorry, we encountered internal server error. We will fix this soon."</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <!-- end of step 1-->
+
+      <div class="tab-pane" id="step2">
+        <!-- step 2-->
+
+        <!-- dua -->
+
+        <h2 id="menampilkan-halaman-pembayaran-snap">Menampilkan Halaman pembayaran Snap</h2>
+
+        <p>Di tahap ini, kita akan mencoba untuk menampilkan halaman pembayaran Snap. Setidaknya ada 3 informasi yang dibutuhkan untuk menampilkan halaman pembayaran Snap.</p>
+
+        <ol>
+          <li><code>Client Key</code></li>
+          <li>Snap.js</li>
+          <li>Snap token</li>
+        </ol>
+
+        <p>Masukan <code>snap.js</code> di dalam halaman Anda sehingga modul Snap akan tersedia. Jangan lupa untuk mengisi <code>Client Key</code> sebagai nilai dari atribut data-client-key.</p>
+
+<pre><code class="highlight html"><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span>
+            <span class="na">src=</span><span class="s">"https://app.sandbox.midtrans.com/snap/snap.js"</span>
+            <span class="na">data-client-key=</span><span class="s">"&lt;Set Your Client Key Here&gt;"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"pay-button"</span><span class="nt">&gt;</span>Pay!<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+      <span class="kd">var</span> <span class="nx">payButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'pay-button'</span><span class="p">);</span>
+      <span class="nx">payButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">snap</span><span class="p">.</span><span class="nx">pay</span><span class="p">(</span><span class="s1">'&lt;?php echo $snap_Token; ?&gt;'</span><span class="p">);</span> <span class="c1">// store your snap token here</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+
+        <p><br /></p>
+
+        <p>Mengacu pada langkah di atas, halaman Snap yang ditampilkan adalah sebagai berikut:</p>
+
+        <p><img alt="snap" class="img-responsive img-thumbnail" src="../../images/snap/snap01.png" /></p>
+
+      </div>
+      <!-- end of step 2-->
+
+      <div class="tab-pane" id="step3">
+        <!-- step 3-->
+
+        <!-- Three -->
+
+        <h2 id="status-transaksi">Status Transaksi</h2>
+
+        <p>Midtrans menyediakan tiga cara agar merchant dapat mengetahui status transaksi.</p>
+
+        <ol>
+          <li>Notifikasi Email</li>
+          <li>Notifikasi HTTP(S)</li>
+          <li>Merchant Administration Portal</li>
+        </ol>
+
+        <h3 id="notifikasi-email">Notifikasi Email</h3>
+
+        <p>Setting notifikasi email dapat dikonfigurasi di <a href="https://dashboard.sandbox.midtrans.com/settings/email_notifications">Settings - Email Notification</a> pada MAP.</p>
+
+        <p><img alt="config_payment" class="img-responsive img-thumbnail" src="../../images/snap/vtweb-emailnotif.png" /></p>
+
+        <div class="alert alert-info" role="alert">
+          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info</span>
+  <span class="sr-only">Info:</span><br />
+  Gunakan koma sebagai pemisah apabila email lebih dari satu. Contoh : me@tokoecomm.com, you@tokoecomm.com</p>
+        </div>
+
+        <p><br /></p>
+
+        <hr />
+
+        <h3 id="notifikasi-https-post">Notifikasi HTTP(S) POST</h3>
+        <p>Notifikasi melalui HTTP(S) POST akan dikirimkan ke server merchant ketika pelanggan menyelesaikan proses pembayaran. Anda dapat memakai <em>Notifikasi HTTP(S) POST</em> untuk memperbaharui status pembayaran atau mengirimkan barang transaksi secara langsung.</p>
+
+        <p>Endpoint notifikasi bisa di-set melalui MAP, di halaman <a title="Midtrans VT-Web configuration page" href="https://dashboard.sandbox.midtrans.com/settings/vtweb_configuration/">Settings - Configuration</a>.
+<br />
+<img alt="config_payment" class="img-responsive img-thumbnail" src="../../images/snap/vtweb-httpnotif.png" />
+<br /></p>
+
+        <div class="alert alert-warning" role="alert">
+          <p><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"> Note</span>
+  <span class="sr-only">Peringatan:</span><br />
+Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat localhost.</p>
+        </div>
+
+        <p><br /></p>
+
+        <p>Isi dari notifikasi HTTP(S) POST berupa JSON object.<br />Contoh notifikasi yang dikirimkan adalah sebagai berikut:</p>
+
+        <ul class="nav nav-tabs">
+  <li class="active"><a href="#statuscc" data-toggle="tab-code" data-lang="cc">Credit Card</a></li>
+  <li><a href="#statuspermatava" data-toggle="tab-code" data-lang="permata">Permata VA</a></li>
+  <li><a href="#statusmandiri" data-toggle="tab-code" data-lang="mandiri">Mandiri ClickPay</a></li>
+  <li><a href="#statuscimb" data-toggle="tab-code" data-lang="cimb">CIMB Clicks</a></li>
+  <li><a href="#statusbriepay" data-toggle="tab-code" data-lang="bri">ePay BRI</a></li>
+  <!-- hidden for a moment
+  <li><a href="#statustcash" data-toggle="tab-code" data-lang="telkomsel">Telkomsel Cash</a></li>
+  <li><a href="#statusxltunai" data-toggle="tab-code" data-lang="xl">XL Tunai</a></li> -->
+  <li><a href="#statusmbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
+  <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
+  <li><a href="#statusdompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
+  <li><a href="#statusmandiriecash" data-toggle="tab-code" data-lang="mandiriecash">Mandiri Ecash</a></li>
+  <li><a href="#statusbcava" data-toggle="tab-code" data-lang="bcava">BCA VA</a></li>
+  <li><a href="#statusbcaklikpay" data-toggle="tab-code" data-lang="bcaklikpay">BCA KlikPay</a></li>
+  <li><a href="#statusklikbca" data-toggle="tab-code" data-lang="klikbca">Klik BCA</a></li>
+</ul>
+
+        <div class="tab-content">
+          <!-- Status Tab Content-->
+          <div class="tab-pane active" id="statuscc">
+            <!-- step cc-->
+
+            <h3 id="credit-card">Credit Card</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi kartu kredit yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"3a351906-2a89-47b6-8b88-d890e626ba4d"</span><span class="p">,</span>
+  <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTCC001"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 14:29:32"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1430119773366"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"e192d421a3a4ad5c53d866d6591d75c3982e4019cd6f8954a0aa0d9387af44b983ca182c9c8b0fdfd5ba1ec2d10057f37b6dfb86742f5657800fa82282993e68"</span><span class="p">,</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"mandiri"</span><span class="p">,</span>
+  <span class="s2">"eci"</span><span class="p">:</span> <span class="s2">"05"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>capture</td>
+                  <td>Transaksi berhasil dan siap untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi dibatalkan dan tidak akan diproses untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi ditolak oleh bank atau Sistem Deteksi Penipuan(FDS) Midtrans.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>fraud_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>accept</td>
+                  <td>Transaksi diterima oleh FDS Midtrans.</td>
+                </tr>
+                <tr>
+                  <td>challenge</td>
+                  <td>Transaksi dianggap mencurigakan oleh FDS. Merchant harus menerima atau menolak transaksi secara manual.</td>
+                </tr>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi ditolak oleh FDS Midtrans.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <p>Hasil transaksi antara transaction_status dan fraud_status</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>fraud_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>capture</td>
+                  <td><strong>accept</strong></td>
+                  <td>Transaksi berhasil</td>
+                </tr>
+                <tr>
+                  <td>capture</td>
+                  <td><strong>challenge</strong></td>
+                  <td>Transaksi challenge (hit our FDS). Merchant harus <code>menerima</code> atau <code>menolak</code> transaksi secara manual.</td>
+                </tr>
+                <tr>
+                  <td>deny</td>
+                  <td><strong>any</strong></td>
+                  <td>Transaksi ditolak</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran kartu kredit:
+<img alt="map_transaction" class="img-responsive img-thumbnail" src="../../images/snap/map_transaction.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Kartu Kredit adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Status Transaksi</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Success</td>
+                  <td>Transaksi diterima dan akan diproses untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>Challenge</td>
+                  <td>Transaksi kartu kredit dianggap mencurigakan oleh Sistem Deteksi Penipuan (FDS) Midtrans. Merchant harus menerima atau menolak transaksi secara manual melalui Midtrans Dashboard.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Kartu Kredit ditolak oleh FDS Midtrans.</td>
+                </tr>
+                <tr>
+                  <td>Cancel</td>
+                  <td>Transaksi Cancel dapat diakibatkan oleh:<br />1. Transaksi yang sukses, dibatalkan sebelum proses Settlement.<br />2. Transaksi Challenge ditolak oleh merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <p><!-- End of Credit Card Status --></p>
+
+          <div class="tab-pane" id="statuspermatava">
+            <!-- Permata VA Status -->
+
+            <h3 id="permata-virtual-account">Permata Virtual Account</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Permata Virtual Account yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"9a31e442-951f-490d-9b9c-9e618ec98874"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTVA001"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 14:39:16"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"8778006776893528"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"31b482e796c35153e829a85c59d831313694cd0c7cecdbb85a7a33474f431fbea75f440f57d09608ea1889a9eedd950017f1162ae37a2ec9b00084d932fb5309"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-1">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi pembayaran belum terproses dan masih menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi sudah dibatalkan. Nomor VA Permata sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi belum diselesaikan dan sudah melewati masa berlaku. Nomor VA Permata sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-1">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Permata Virtual Account:
+<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/snap/transfer_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Permata Virtual Account adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Permata VA Status -->
+          <div class="tab-pane" id="statusmandiri">
+            <!-- Mandiri Status -->
+
+            <h3 id="mandiri-clickpay">Mandiri Clickpay</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Mandiri clickpay yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"fdb6322d-2fef-42c5-a956-d6b575247f0b"</span><span class="p">,</span>
+  <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"411111-1111"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTMC001"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"mandiri_clickpay"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 14:44:38"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1430120681256"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"6dfe98c7e8e1cc4725fa10d82e696816a04c5c0fdf819af3fef65d825b4b1cad0c024a3f1813f3cb590657d8cd3edabfb4e91dbb4376344f7460ed00637cd967"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-2">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi ditolak oleh bank.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-2">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Mandiri clickpay:
+<img alt="VT-Web Mandiri Test 3" class="img-responsive img-thumbnail" src="../../images/snap/mandiri_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri Clickpay adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi ditolak oleh Bank.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Mandiri Status -->
+          <div class="tab-pane" id="statuscimb">
+            <!-- CIMB Status -->
+
+            <h3 id="cimb-clicks">CIMB Clicks</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi CIMB Clicks yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"47c11d2a-a8ca-4337-8681-8837ad023d65"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTCimb001"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 14:58:01"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1430121525724"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"d70a32353c173b543b7580f8927a3c46c547ef4486457ca8b61f44eb644e7a76cccbbd244ec6f188d3ef8cc164950a02f8350e7d305fd635795b909aa0188975"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-3">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>transaction_status</td>
+                  <td>Definisi</td>
+                </tr>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi belum terproses dan masih menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi CIMB Clicks telah dibatalkan.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi CIMB Clicks belum diselesaikan setelah 2 jam.</td>
+                </tr>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi CIMB Clicks ditolak oleh bank.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-3">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran CIMB Clicks:
+<img alt="VT-Web CIMB Test 4" class="img-responsive img-thumbnail" src="../../images/snap/cimb_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran CIMB Clicks adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of CIMB Status -->
+
+          <div class="tab-pane" id="statusbriepay">
+            <!-- BRI E-Pay Status -->
+
+            <h3 id="e-pay-bri">e-Pay BRI</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi e-Pay BRI yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"3479c572-1d36-49c0-b5b1-22c876df411f"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"VTEB001"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bri_epay"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 15:04:48"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1430121888862"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"39ec591fbf754982e0fb83d125b60ff1863b41878799d1adada69476d6f3b746631addce8bf51a9d7bb76d92cea5a4291d57ed4626c0dc8cfefa5f3112887bcd"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-4">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi belum terproses dan masi menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi e-Pay BRI telah dibatalkan.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi e-Pay BRI belum diselesaikan setelah 2 jam.</td>
+                </tr>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi e-Pay BRI ditolak oleh bank.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-4">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran e-Pay BRI:
+<img alt="VT-Web epay Test 4" class="img-responsive img-thumbnail" src="../../images/snap/epay_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran e-Pay BRI adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+          </div>
+          <!-- End of BRI E-Pay Status -->
+          <div class="tab-pane" id="statustcash">
+            <!-- T-Cash Status -->
+
+            <h3 id="telkomsel-cash">Telkomsel Cash</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Telkomsel Cash yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"ee925bec-3bef-43a6-bb10-cbe8ab8fa68a"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"Test-Order-6"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"telkomsel_cash"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 15:08:21"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"a1ea0f3fd4690896464752a311fe0d7e53c9f75138f06c1cdd4d4d8bf7664214ff9ef2966a966e9507709041d6403f81ea2b3b76ce67f1437bc5e82913c4c545"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-5">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi Telkomsel Cash ditolak oleh provider.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-5">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Telkomsel Cash:
+<img alt="VT-Web Tcash Test 3" class="img-responsive img-thumbnail" src="../../images/snap/tcash_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Telkomsel Cash adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima dan sudah diproses untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank. <br />2. Transaksi pending tidak dibayar hingga waktu expire tiba.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of T-Cash Status -->
+          <div class="tab-pane" id="statusxltunai">
+            <!-- XL Tunai Status -->
+
+            <h3 id="xl-tunai">XL Tunai</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi XL Tunai yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1731610c-cbe5-4f59-a976-8206f3a59bc0"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtimage07"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"xl_tunai"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-04-27 15:20:40"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"288f5b0f069d5d15383d1e0a13c34944c8681f5d0d1168727e9a3678581bda48736780b558567d16d35be9ee09f552f9a008f04980a5afef6bfc57a6df180f78"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-6">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi belum terproses dan masi menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi XL Tunai telah dibatalkan.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi XL Tunai belum diselesaikan setelah 2 jam.</td>
+                </tr>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi XL Tunai ditolak oleh bank.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-6">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran XL Tunai:
+<img alt="VT-Web transfer Test 3" class="img-responsive img-thumbnail" src="../../images/snap/xl_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran XL Tunai adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima dan sudah diproses untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of XL Tunai Status -->
+          <div class="tab-pane" id="statusmbill">
+            <!-- Mandiri BillPayment Status -->
+
+            <h3 id="mandiri-bill-payment">Mandiri Bill Payment</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Mandiri Bill Payment yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Mandiri Bill transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b53c7dc­e63c­4bbc­a371­6b1ca5c925c7"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1421816431"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015­01­21 12:00:31"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span>
+    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"000857123456"</span><span class="p">,</span>
+    <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"e04f6657ee37f44c625282ac0a505cc1ea776901e51708823fe63921f47e24277868fc6f1e3ea1071074ab32455d679b47b20b4ad56a4ecba1d1dc9bbfa3aa80"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"400000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-7">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi belum terproses dan masih menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi telah dibatalkan. Nomor Mandiri Bill sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi belum diselesaikan setelah waktu berlaku. Nomor Mandiri Bill sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-7">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">Transaction</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Mandiri Bill Payment:
+<img alt="VT-Web mbill Test 3" class="img-responsive img-thumbnail" src="../../images/snap/mbill_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri Bill Payment adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima dan sudah diproses untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Mandiri BillPayment Status -->
+
+          <div class="tab-pane" id="statusindomrt">
+            <!-- Indomaret Status -->
+
+            <h3 id="indomaret">Indomaret</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Indomaret yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"f8e2c3f8-e210-45ab-88ec-c0be989b0631"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"0900099957582"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"149000.00"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cstore"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2017-01-19 14:39:01"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"09211701070999568803"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"4a14241267ff535503c65074407beb98fa81a2c031435afe5a5d523905d3ba3222427831945719ff285738dd28c4d32afeb7aca32f026070c58b9fa4520b3"</span><span class="p">,</span>
+  <span class="s2">"payment_code"</span><span class="p">:</span> <span class="s2">"63756290009995"</span><span class="p">,</span>
+  <span class="s2">"store"</span><span class="p">:</span> <span class="s2">"indomaret"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-8">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi belum terproses dan masih menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi telah dibatalkan. Nomor kode pembayaran Indomaret sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi belum diselesaikan setelah waktu berlaku. Nomor kode pembayaran Indomaret sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-8">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Indomaret:
+<img alt="VT-Web indomrt3" class="img-responsive img-thumbnail" src="../../images/snap/indomrt_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri Bill Payment adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima dan sudah diproses untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of indomaret Status -->
+          <div class="tab-pane" id="statusdompetku">
+            <!-- Indosat Dompetku Status -->
+
+            <h3 id="indosat-dompetku">Indosat Dompetku</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Indosat Dompetku yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b7696f1-f9ca-4f4b-a389-ede2c2dddb5c"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtdompetku03"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"indosat_dompetku"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-06-24 11:20:24"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"73c70c8354e0705a16bd5d47d0ab3029a70b79bef0fe3b29161557110205d3679f0ea177101f56fe6313a887f340be7d302750ce8a4e0f67753c70548159895e"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-9">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi Indosat Dompetku ditolak oleh Indosat.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-9">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Indosat Dompetku:
+<img alt="VT-Web dompetku Test 3" class="img-responsive img-thumbnail" src="../../images/snap/dompetku_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Indosat Dompetku adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi berhasil dan sudah diproses</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure karena ditolak oleh provider.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Indosat Dompetku Status -->
+
+          <div class="tab-pane" id="statusmandiriecash">
+            <!-- Mandiri E-cash Status -->
+
+            <h3 id="mandiri-e-cash">Mandiri E-cash</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Mandiri E-cash yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0b7696f1-f9ca-4f4b-a389-ede2c2dddb5c"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"vtecash03"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"mandiri_ecash"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2015-06-24 11:20:24"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"73c70c8354e0705a16bd5d47d0ab3029a70b79bef0fe3b29161557110205d3679f0ea177101f56fe6313a887f340be7d302750ce8a4e0f67753c70548159895e"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"145000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-10">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Proses pembayaran belum diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>expired</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-10">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Mandiri E-cash:
+<img alt="VT-Web mandiriecash" class="img-responsive img-thumbnail" src="../../images/snap/mandiriecash_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri E-cash adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Mandiri E-cash Status -->
+
+          <div class="tab-pane" id="statusbcava">
+            <!-- BCA VA Status -->
+
+            <h3 id="bca-va">BCA VA</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi BCA VA yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bca"</span><span class="p">,</span>
+            <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"05028708961"</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2017-01-19 17:36:33"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"9000.00"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"test-1484822143"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+    <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"cf2da321a084528d6bd4e66ee813212cb2ad0532ddfe2ac40c2cd38385b625ab20d426dbfa7d8729aeac36bb0f1c556a476d25945bc8b258f22f99895dade602"</span><span class="p">,</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"30bd8825-4673-488a-a03d-1ceda4930b15"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-11">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Proses pembayaran belum diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>expired</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-11">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran BCA VA:
+<img alt="Snap bcava" class="img-responsive img-thumbnail" src="../../images/snap/bcava_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri E-cash adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of BCA VA Status -->
+
+          <div class="tab-pane" id="statusbcaklikpay">
+            <!-- BCA KlikPay Status -->
+
+            <h3 id="bca-klikpay">BCA KlikPay</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi BCA KlikPay yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"112233"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2017-01-19 15:40:43"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"33000.00"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"bcaklikpay01"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span>
+    <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"644e39ab19d830b9ebcd2b4ae9f28c2dfaab06a33dd47d3fe2a94f2229b2478eb0606c43eec16e9836294b479b2e9867c309aad7a93a2d32d8b2f81c731f3379"</span><span class="p">,</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1e22e73d-b496-41d6-a7b0-3acb763d2020"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-12">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Proses pembayaran belum diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>expired</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-12">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran BCA KlikPay:
+<img alt="Snap bcaklikpay" class="img-responsive img-thumbnail" src="../../images/snap/klikpay_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri E-cash adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of BCA KlikPay Status -->
+
+          <div class="tab-pane" id="statusklikbca">
+            <!-- Klik BCA Status -->
+
+            <h3 id="klik-bca">Klik BCA</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Klik BCA yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"63d28e4d-870a-43ea-a0ef-7739e0104f9a"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"jktrs11715"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"99000.00"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikbca"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2017-01-13 14:50:02"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"aius11715"</span><span class="p">,</span>
+    <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"a2a6e288d6ab8e6d9101c99b4df1ee285d62fdd9e160a66a2d7463521dfc2a928224256a932963c2f4d8ee486d90123cfcef770651afc55a5fb8af00100477d4"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-13">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Proses pembayaran belum diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>expired</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-13">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Klik BCA:
+<img alt="Snap klikbca" class="img-responsive img-thumbnail" src="../../images/snap/klikbca_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri E-cash adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Klik BCA Status -->
+
+        </div>
+        <!-- End of Tab-Content u/ Status -->
+
+      </div>
+      <!-- end of step 3-->
+
+      <div class="tab-pane" id="step4">
+        <!-- step 4-->
+
+        <h2 id="menangani-https-notifikasi">Menangani HTTP(S) Notifikasi</h2>
+
+        <p>Berikut adalah contoh kode untuk menerima HTTP (POST) dan JSON object menggunakan Library <strong>Veritrans-PHP</strong>.<br /> File ini adalah file PHP yang akan di eksekusi ketika URL endpoint notifikasi (https://tokoecomm.com/notification) diakses.<br /></p>
+
+        <p><br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+
+<span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your serverkey&gt;'</span><span class="p">;</span>
+<span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+<span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
+<span class="nv">$order_id</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">;</span>
+<span class="nv">$fraud</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">fraud_status</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'capture'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// For credit card transaction, we need to check whether transaction is challenge by FDS or not
+</span>  <span class="k">if</span> <span class="p">(</span><span class="nv">$type</span> <span class="o">==</span> <span class="s1">'credit_card'</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$fraud</span> <span class="o">==</span> <span class="s1">'challenge'</span><span class="p">){</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Challenge by FDS'
+</span>      <span class="c1">// TODO merchant should decide whether this transaction is authorized or not in MAP
+</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" is challenged by FDS"</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// TODO set payment status in merchant's database to 'Success'
+</span>      <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully captured using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'settlement'</span><span class="p">){</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Settlement'
+</span>  <span class="k">echo</span> <span class="s2">"Transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span><span class="s2">" successfully transfered using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'pending'</span><span class="p">){</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Pending'
+</span>  <span class="k">echo</span> <span class="s2">"Waiting customer to finish transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" using "</span> <span class="o">.</span> <span class="nv">$type</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'deny'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
+</span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is denied."</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'expire'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'expire'
+</span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is expired."</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$transaction</span> <span class="o">==</span> <span class="s1">'cancel'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// TODO set payment status in merchant's database to 'Denied'
+</span>  <span class="k">echo</span> <span class="s2">"Payment using "</span> <span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s2">" for transaction order_id: "</span> <span class="o">.</span> <span class="nv">$order_id</span> <span class="o">.</span> <span class="s2">" is canceled."</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+
+</code></pre>
+
+        <div class="alert alert-info" role="alert">
+          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info</span>
+  <span class="sr-only">Info:</span><br />
+  Untuk keamanan, jika Merchant menggunakan <em>Veritrans_Notification</em> seperti pada contoh di Library PHP, proses <a href="https://snap-docs.midtrans.com/#handling-notifications">challenge status</a> sudah dilakukan.</p>
+        </div>
+
+        <p><br /><br /></p>
+
+      </div>
+      <!-- end of step 4-->
+      <div class="tab-pane" id="step5">
+        <!-- step 5-->
+
+        <!-- Lima - Get status -->
+
+        <h2 id="proses-get-status">Proses Get Status</h2>
+
+        <p>Di tahap ini, kita akan mencoba untuk melakukan proses mengambil informasi dari suatu transaksi yang telah terjadi. Berikut adalah contoh kode untuk melakukan proses get status menggunakan library <strong>Veritrans-PHP</strong>.</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/veritrans/Veritrans.php'</span><span class="p">);</span> <span class="c1">//include PHP library
+</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
+</span><span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="p">);</span>
+<span class="nv">$status</span> <span class="o">=</span> <span class="nv">$order_status_obj</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+        <p><br />
+Berikut contoh kode untuk melakukan proses get status setelah durasi waktu tertentu. Kode ini bisa dijalankan pada interval tertentu (misalnya setiap 6 menit) atau dijalankan manual.</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span> 
+<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/veritrans/Veritrans.php'</span><span class="p">);</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
+</span>
+<span class="sd">/**
+ * Assume we can load order data from database to $orders array
+ * Each $order is an object, with property of:
+ * $order-&gt;timestamp : unix timestamp when order is created (timestamp)
+ * $order-&gt;order_id  : order_id that is sent to Midtrans API (string)
+ * $order-&gt;transaction_status : status of the order (string)
+ * $order-&gt;set_status($status): update order status according to parameter (string)
+ * $order-&gt;save()    : save the order to database
+ */</span>
+<span class="nv">$orders</span> <span class="o">=</span> <span class="cm">/* LOAD FROM DATABASE AS ARRAY */</span> <span class="p">;</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$orders</span> <span class="k">as</span> <span class="nv">$order</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//determine how long the order has been made (in seconds).
+</span>  <span class="nv">$duration_since_order</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">timestamp</span><span class="p">;</span>
+  
+  <span class="c1">//check If the order after 360 seconds (6 minutes), and still no pending/capture/settlement/deny/cancel/failure status.
+</span>  <span class="k">if</span> <span class="p">(</span> <span class="nv">$duration_since_order</span> <span class="o">&gt;</span> <span class="mi">360</span> <span class="o">&amp;&amp;</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">===</span> <span class="kc">null</span> <span class="p">){</span>
+    <span class="c1">//Do get status for that order
+</span>    <span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">);</span>
+    <span class="nv">$status</span> <span class="o">=</span> <span class="nv">$order_status_obj</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
+    
+    <span class="c1">//Update order status &amp; save to database
+</span>    <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">set_status</span><span class="p">(</span><span class="nv">$status</span><span class="p">);</span>
+    <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+        <p><br /></p>
+
+        <h3 id="respon-untuk-proses-get-status">Respon untuk proses get status</h3>
+
+        <h4 id="respon-berhasil">Respon Berhasil</h4>
+
+<pre><code class="highlight json"><span class="p">{</span>
+ <span class="s2">"status_code"</span> <span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span> <span class="p">:</span> <span class="s2">"Success, transaction found"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span> <span class="p">:</span> <span class="s2">"249fc620-6017-4540-af7c-5a1c25788f46"</span><span class="p">,</span>
+  <span class="s2">"masked_card"</span> <span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span> <span class="p">:</span> <span class="s2">"example-1424936368"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span> <span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span> <span class="p">:</span> <span class="s2">"2015-02-26 14:39:33"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span> <span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span> <span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span> <span class="p">:</span> <span class="s2">"1424936374393"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span> <span class="p">:</span> <span class="s2">"2802a264cb978fbc59f631c68d120cbda8dc853f5dfdc52301c615cf4f14e7a0b09aa..."</span><span class="p">,</span>
+  <span class="s2">"bank"</span> <span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span> <span class="p">:</span> <span class="s2">"30000.00"</span>
+<span class="p">}</span>
+</code></pre>
+
+        <p><br /></p>
+
+        <h4 id="respon-gagal">Respon Gagal</h4>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"404"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"The requested resource is not found"</span>
+<span class="p">}</span>
+</code></pre>
+
+        <p>Untuk informasi lebih lengkap mengenai API getStatus, kunjungi halaman berikut: <a href="https://api-docs.midtrans.com/#get-transaction-status">API getStatus</a>.</p>
+
+        <h3 id="mengapa-merchant-perlu-melakukan-proses-getstatus">Mengapa merchant perlu melakukan proses getStatus</h3>
+
+        <p>Merchant perlu menggunakan getStatus API jika notifikasi http(s) yg dikirimkan oleh Midtrans dirasa terlambat diterima oleh merchant.</p>
+
+      </div>
+      <!-- end of step 5-->
+    </div>
+    <!-- end of STEPS tab-content-->
+  </div>
+  <!-- end of header-->
+</div>
+
+
+            <div class="pagination">
+              <ul><li class="left">« Sebelumnya: <a href="../welcome/partner_integ.html">Langkah Awal : Platform Affiliasi</a></li><li class="right">Selanjutnya: <a href="other_features.html">SNAP : Fitur Tambahan</a> »</li></ul>
+            </div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+    </div><!--/.container-->
+
+    <footer class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/about">About Us</a></li>
+              <li><a href="https://blog.midtrans.com" target="_blank">Blog</a></li>
+              <li><a href="https://midtrans.com/campaigns">Campaigns</a></li>
+              <li><a href="https://midtrans.com/careers">Careers</a></li>
+              <li><a href="https://midtrans.com/clients">Clients</a></li>
+              <li><a href="https://midtrans.com/contact">Contact</a></li>
+              <li><a href="https://midtrans.com/developers">Developers</a></li>
+              <li><a href="https://midtrans.com/security">Security</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="https://midtrans.com/payments"><img src="../../images/midtrans/logo-midtrans-color.png" class="logo" alt="midtrans logo"/></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/payments/how-to">How-to</a></li>
+              <li><a href="https://midtrans.com/payments/manage">Merchant Administration Portal</a></li>
+              <li><a href="https://midtrans.com/payments/payment-channels">Payment Channels</a></li>
+              <li><a href="https://midtrans.com/payments/pricing">Pricing</a></li>
+              <li><a href="https://docs.midtrans.com" target="_blank">Technical Documentation</a></li>
+              <li><a href="https://support.midtrans.com" target="_blank">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="row">
+          <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+            <a href="https://midtrans.com/iris"><img src="../../images/midtrans/logo-iris.png" class="logo" alt="iris logo"/></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/iris">Features</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+            <a href="https://midtrans.com/aegis"><img src="../../images/midtrans/logo-aegis.png" class="logo" alt="aegis logo"/></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/aegis/features">Features</a></li>
+              <li><a href="https://midtrans.com/aegis/use-cases">Use Cases</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+            <a href="https://www.prismapp.io"><img src="../../images/midtrans/logo-prism.png" class="logo" alt="prism logo"/></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="https://www.prismapp.io/features">Features</a></li>
+              <li><a href="https://www.prismapp.io/pricing">Pricing</a></li>
+              <li><a href="https://docs.prismapp.io">Technical Documentation</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <h3>
+          Berlangganan newsletter Midtrans
+        </h3>
+        <p>
+          Dapatkan ide, informasi, dan tips menarik seputar eCommerce.
+        </p>
+        <form class="form-horizontal validate" id="subscriber-form" action="https://veritrans.us9.list-manage.com/subscribe/post-json?u=4ed5f88335112571098a4a51c&amp;id=12315939d2" method="get">
+          <div class="input-field clearfix">
+            <input type="email" value="" name="EMAIL" class="subscribe-input required email validate"
+                   required="" placeholder="Email Anda">
+            <button type="submit" class="btn btn-subscribe">→</button>
+          </div>
+          <div id="subscriber-result"></div>
+        </form>
+        <div class="social-media">
+          <ul class="list-inline">
+            <li><a href="https://www.facebook.com/Midtranscom/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/midtrans" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/midtrans_com/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 credit">
+        <ul class="list-inline credit-link">
+          <li><a href="https://midtrans.com/press">Press</li>
+          <li><a href="https://midtrans.com/privacy-policy">Privacy Policy</li>
+          <li class="hide"><a href="https://midtrans.com/terms-conditions">Terms &amp; Conditions</a></li>
+          <li class="copy">&copy; 
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script> 
+            Midtrans (PT Midtrans)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../javascripts/dropdown.js" type="text/javascript"></script>
+<script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
+<script src="../../javascripts/useragent.js" type="text/javascript"></script>
+<script src="../../javascripts/mixpanel_tracking.js" type="text/javascript"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-85529823-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <script>
+      $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+          $('.row-offcanvas').toggleClass('active');
+        });
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+        
+        $('body, .nav-overlay').bind('click', e => {
+          if ($(e.target).closest('.nav-wrapper').length == 0) {
+            // click happened outside of .navbar, so hide
+            var opened = $('.nav-wrapper').hasClass('in');
+            if (opened === true) {
+              $('.nav-wrapper').collapse('hide');
+            }
+          }
+          if ($(e.target).closest('.sub-nav-wrapper').length == 0) {
+            // click happened outside of .navbar, so hide
+            var opened = $('.sub-nav-wrapper').hasClass('in');
+            if (opened === true) {
+              $('.sub-nav-wrapper').collapse('hide');
+            }
+          }
+        });
+
+        /* PAGE OVERLAY ON NAV-TOGGLE OPEN */
+        $('.nav-wrapper').on('show.bs.collapse', () => {
+          $('.nav-overlay').addClass('active');
+        });
+        $('.nav-wrapper').on('hide.bs.collapse', () => {
+          $('.nav-overlay').removeClass('active');
+        });
+
+        /* PAGE OVERLAY ON NAV-TOGGLE OPEN */
+        $('.sub-nav-wrapper').on('show.bs.collapse', function () {
+          $('.nav-overlay').addClass('active');
+        });
+        $('.sub-nav-wrapper').on('hide.bs.collapse', function () {
+          $('.nav-overlay').removeClass('active');
+        });
+        mixpanel.track('id docs page viewed',{
+          'url' : location.href
+        });
+
+        ajaxMailChimpForm($("#subscriber-form"), $("#subscriber-result"));
+
+        // Turn the given MailChimp form into an ajax version of it.
+        // If resultElement is given, the subscribe result is set as html to
+        // that element.
+        function ajaxMailChimpForm($form, $resultElement){
+
+          // Hijack the submission. We'll submit the form manually.
+          $form.submit(function(e) {
+            e.preventDefault();
+
+            if (!isValidEmail($form)) {
+              var error =  "Email Anda tidak valid. Mohon memberikan email lain.";
+              $resultElement.html(error);
+            } else {
+              $resultElement.html("Subscribing...");
+              submitSubscribeForm($form, $resultElement);
+            }
+          });
+        }
+        
+        // Validate the email address in the form
+        function isValidEmail($form) {
+          // If email is empty, show error message.
+          // contains just one @
+          var email = $form.find("input[type='email']").val();
+          if (!email || !email.length) {
+            return false;
+          } else if (email.indexOf("@") == -1) {
+            return false;
+          }
+
+          return true;
+        }
+
+        // Submit the form with an ajax/jsonp request.
+        // Based on http://stackoverflow.com/a/15120409/215821
+        function submitSubscribeForm($form, $resultElement) {
+          $.ajax({
+            type: "GET",
+            url: $form.attr("action"),
+            data: $form.serialize(),
+            cache: false,
+            dataType: "jsonp",
+            jsonp: "c", // trigger MailChimp to return a JSONP response
+            contentType: "application/json; charset=utf-8",
+
+            error: function(error){
+              // According to jquery docs, this is never called for cross-domain JSONP requests
+            },
+
+            success: function(data){
+              if (data.result != "success") {
+                var message = data.msg || "Maaf, sistem sedang error. Silahkan mencoba beberapa saat lagi.";
+
+
+                if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                  message = "Anda sudah berlangganan newsletter kami.";
+
+                }
+
+                $resultElement.html(message);
+
+              } else {
+                $resultElement.html("Terima kasih telah berlangganan newsletter kami!");
+              }
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html><!-- Veritrans.3.0-20150423 -->

@@ -319,13 +319,13 @@
             
                 <li>
                     
-                        <a class="parent" href="http://mobile-docs.midtrans.com">Mobile SDK</a>
+                        <a class="parent" href="https://mobile-docs.midtrans.com">Mobile SDK</a>
                     
                 </li>
             
                 <li>
                     
-                        <a class="parent" href="http://api-docs.midtrans.com">Core API</a>
+                        <a class="parent" href="https://api-docs.midtrans.com">Core API</a>
                     
                 </li>
             
@@ -340,6 +340,8 @@
                             <li class=""><a href="../reference/address.html">IP Adresses</a></li>
                             
                             <li class=""><a href="../reference/security.html">Security</a></li>
+                            
+                            <li class=""><a href="https://status.midtrans.com">System Status</a></li>
                             
                             <li class=""><a href="../reference/docslog.html">Docs Changelog</a></li>
                             
@@ -366,74 +368,67 @@
 <h2 id="preparation">Preparation</h2>
 <hr />
 
-<h5 id="goal-merchants-complete-the-pre-requisite-before-integrating-with-midtrans"><strong><em>Goal:</em></strong> <em>Merchants complete the pre-requisite before integrating with Midtrans</em></h5>
+<h5 id="goal-to-complete-all-the-pre-requisites-before-integrating-with-midtrans"><strong><em>Goal:</em></strong> <em>To complete all the pre-requisites before integrating with Midtrans</em></h5>
 <hr />
 
-<p>There are a few pre-requisite before integrating with Midtrans:</p>
+<p>There are some pre-requisites you need to do before integrating with Midtrans:</p>
 
-<h3 id="step1">1. Register to Midtrans Sandbox/Production account.</h3>
+<h3 id="step1">1. Register to Midtrans’ Sandbox (and Production) account.</h3>
 
-<p>Midtrans has one central login to access both production and sandbox account. Sandbox is utilized for development period while production is utilized when the merchant has completed the integration process and want to go live. Data and transaction made on sandbox account will not trigger an actual purchase while in production account will trigger an actual process. Register for Midtrans Sandbox/Production account <a href="https://account.midtrans.com/register">here</a>. </p>
+<p>Please register to Midtrans by completing your information <a href="https://account.midtrans.com/register">here</a>. You will then be given access to your Merchant Administration Portal (MAP), where you shall have access to both sandbox and production environment. You can use the sandbox environment during your development phase of integrating Midtrans’ payments system. You can also test dummy transactions on sandbox environment. The production environment is also available, but your production credentials will only be ready once you have completed all the necessary administrative steps.  </p>
 
-<p>Once logged in, there will be a small button on the header of the dashboard that shows you on whether you are in the production or sandbox environment. The color of nagivation sidebar are also set different between Production (light blue) and Sandbox (dark blue) for further clarity.</p>
+<p>You can toggle between sandbox and production environment from the button on the top left of your MAP. The light and dark shade of blue indicate production and sandbox mode respectively.</p>
 
 <p><img alt="production" class="img-responsive img-thumbnail" src="../../images/welcome/production.png" />
 <br />
-<img alt="sandbox" class="img-responsive img-thumbnail" src="../../images/welcome/sandbox.png" /></p>
+<img alt="sandbox" class="img-responsive img-thumbnail" src="../../images/welcome/sandbox.png" />
+<br /><br /></p>
 
-<p><br /></p>
+<h3 id="step2">2. Complete the required information in your Merchant Administration Portal (MAP)</h3>
 
-<h3 id="step2">2. Fill in the required information in Merchant Admin Portal (MAP).</h3>
-
-<p>The required fields can be found under <a title="General Settings" href="https://dashboard.sandbox.midtrans.com/settings/general_info">Settings - General Settings</a>.<br /></p>
+<p>Please complete the required information in the General Settings menu <a title="General Settings" href="https://dashboard.sandbox.midtrans.com/settings/general_info">Settings &gt; General Settings</a>.<br /></p>
 
 <p><img alt="General Setting" class="img-responsive img-thumbnail" src="../../images/welcome/gen_set.png" /></p>
 
-<div class="alert alert-danger" role="alert">
-  <p><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"><strong>Warning!</strong> </span>
-  <span class="sr-only">Warning!</span></p>
-
-  <ul>
-    <li>Merchant Name: <strong>DO NOT</strong> input symbols.</li>
-    <li>Valid Merchant URL: 
-      <ul>Lesser than 25 char.</ul>
-      <ul>Accepted symbols are ':', '/', '.'.</ul>
-    </li>
-  </ul>
-
+<div class="alert alert-info" role="alert">
+  <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Note:</span>
+  <span class="sr-only"> Note:</span>
+ <br /> - Please do not use any symbols in Merchant Name.
+ <br /> - Please use less than 25 characters for Merchant URL.</p>
 </div>
+
 <p><br /></p>
 
-<h3 id="step3">3. Take note of your account Access Keys.</h3>
+<h3 id="step3">3. Please take note of your Access Keys</h3>
 
-<p>Your account keys can be found under <a title="Access Keys" href="https://dashboard.sandbox.midtrans.com/settings/config_info">Settings - Access Keys</a><br /></p>
+<p>Access Keys are used to access Midtrans’ API. You can find them in <a title="Access Keys" href="https://dashboard.sandbox.midtrans.com/settings/config_info">Settings &gt; Access Keys</a>.<br /></p>
 
 <p><img alt="Access Keys" class="img-responsive img-thumbnail" src="../../images/welcome/access_key.png" /></p>
 
-<div class="alert alert-warning" role="alert">
-  <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"><strong>Caution!</strong></span>
-  <span class="sr-only">Caution:</span>
- <br />Be discreet on your 'Server Key'.</p>
+<div class="alert alert-danger" role="alert">
+  <p><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"> Warning!</span>
+  <span class="sr-only">Warning!</span>
+ <br />The Access Keys are unique for every merchant. Please always keep it confidential.</p>
 </div>
 
 <p><br /></p>
 
 <h3 id="step4">4. Configure Redirection URL</h3>
 
-<p>Customer will be returned to your website after payment process is completed. </p>
+<p>Redirection URL is used to redirect your customer after the payment process through Midtrans is completed. Please refer to the diagram below on how redirection URLs are being handled.</p>
 
 <p><img alt="vtweb-diagram" class="img-responsive img-thumbnail" src="../../images/welcome/vtweb-diagram.png" /></p>
 
-<p>Go to <a href="https://dashboard.sandbox.midtrans.com/settings/vtweb_configuration">Settings - Configuration</a> menu to manage the redirection URL.
+<p>To set your redirection URL, please go to <a href="https://dashboard.sandbox.midtrans.com/settings/vtweb_configuration">Settings &gt; Configuration</a>.
 <br />
 <img alt="redirect_url" class="img-responsive img-thumbnail" src="../../images/welcome/redirect_url.png" />
 <br /></p>
 
-<div class="alert alert-danger" role="alert">
-  <p><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"><strong>Warning!</strong> </span>
-  <span class="sr-only">Warning!</span></p>
+<div class="alert alert-info" role="alert">
+  <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Note:</span>
+  <span class="sr-only">Info:</span></p>
 
-  <p>Please fill the URL with http:// or https://</p>
+  <p>Do not forget to use http:// or https:// when you fill in your redirection URL.</p>
 
 </div>
 <p><br /></p>
@@ -509,32 +504,21 @@
         <p>
           Dapatkan ide, informasi, dan tips menarik seputar eCommerce.
         </p>
-        <div id="mc_embed_signup" class="subcriber-form">
-          <form action="//veritrans.us9.list-manage.com/subscribe/post?u=4ed5f88335112571098a4a51c&amp;id=12315939d2" method="post"
-            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-horizontal validate" target="_blank"
-            novalidate="">
-            <div id="mc_embed_signup_scroll" class="input-field">
-              <div class="mc-field-group">
-                <input type="email" value="" name="EMAIL" class="required email validate" id="mce-EMAIL" pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-                  required="">
-                <label for="mce-EMAIl">Email Anda</label>
-              </div>
-              <button type="submit" class="btn btn-subscribe">→</button>
-              <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>
-              <div style="position: absolute; left: -5000px;"><input type="text" name="b_4ed5f88335112571098a4a51c_12315939d2" tabindex="-1" value=""></div>
-            </div>
-          </form>
-        </div>
+        <form class="form-horizontal validate" id="subscriber-form" action="https://veritrans.us9.list-manage.com/subscribe/post-json?u=4ed5f88335112571098a4a51c&amp;id=12315939d2" method="get">
+          <div class="input-field clearfix">
+            <input type="email" value="" name="EMAIL" class="subscribe-input required email validate"
+                   required="" placeholder="Email Anda">
+            <button type="submit" class="btn btn-subscribe">→</button>
+          </div>
+          <div id="subscriber-result"></div>
+        </form>
         <div class="social-media">
           <ul class="list-inline">
             <li><a href="https://www.facebook.com/Midtranscom/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://twitter.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="https://www.linkedin.com/company/midtrans" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="https://www.instagram.com/midtrans_com/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="https://www.youtube.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
+            <li><a href="https://twitter.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/midtrans" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/midtrans_com/" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/midtrans_com" target="_blank" rel="nofollow noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
           </ul>
         </div>
       </div>
@@ -619,6 +603,76 @@
         mixpanel.track('en docs page viewed',{
           'url' : location.href
         });
+
+        ajaxMailChimpForm($("#subscriber-form"), $("#subscriber-result"));
+
+        // Turn the given MailChimp form into an ajax version of it.
+        // If resultElement is given, the subscribe result is set as html to
+        // that element.
+        function ajaxMailChimpForm($form, $resultElement){
+
+          // Hijack the submission. We'll submit the form manually.
+          $form.submit(function(e) {
+            e.preventDefault();
+
+            if (!isValidEmail($form)) {
+              var error =  "Email Anda tidak valid. Mohon memberikan email lain.";
+              $resultElement.html(error);
+            } else {
+              $resultElement.html("Subscribing...");
+              submitSubscribeForm($form, $resultElement);
+            }
+          });
+        }
+        
+        // Validate the email address in the form
+        function isValidEmail($form) {
+          // If email is empty, show error message.
+          // contains just one @
+          var email = $form.find("input[type='email']").val();
+          if (!email || !email.length) {
+            return false;
+          } else if (email.indexOf("@") == -1) {
+            return false;
+          }
+
+          return true;
+        }
+
+        // Submit the form with an ajax/jsonp request.
+        // Based on http://stackoverflow.com/a/15120409/215821
+        function submitSubscribeForm($form, $resultElement) {
+          $.ajax({
+            type: "GET",
+            url: $form.attr("action"),
+            data: $form.serialize(),
+            cache: false,
+            dataType: "jsonp",
+            jsonp: "c", // trigger MailChimp to return a JSONP response
+            contentType: "application/json; charset=utf-8",
+
+            error: function(error){
+              // According to jquery docs, this is never called for cross-domain JSONP requests
+            },
+
+            success: function(data){
+              if (data.result != "success") {
+                var message = data.msg || "Maaf, sistem sedang error. Silahkan mencoba beberapa saat lagi.";
+
+
+                if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                  message = "Anda sudah berlangganan newsletter kami.";
+
+                }
+
+                $resultElement.html(message);
+
+              } else {
+                $resultElement.html("Terima kasih telah berlangganan newsletter kami!");
+              }
+            }
+          });
+        }
       });
     </script>
 
