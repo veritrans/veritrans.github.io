@@ -277,7 +277,7 @@
     <div class="docs-logo">
       <span>DOCS</span>
     </div>
-    <div class="language-toggle"> <a href="../../en/snap/going_live.html">English</a> / Bahasa Indonesia</div>
+    <div class="language-toggle"> <a href="../../en/payment_link/index.html">English</a> / Bahasa Indonesia</div>
     <ul class="sidebar">
       
         <li>
@@ -304,11 +304,11 @@
             <b class="caret"></b>
             <ul class="child-menu">
               
-                <li class=""><a href="integration.html">Integrasi</a></li>
+                <li class=""><a href="../snap/integration.html">Integrasi</a></li>
               
-                <li class=""><a href="other_features.html">Fitur Tambahan</a></li>
+                <li class=""><a href="../snap/other_features.html">Fitur Tambahan</a></li>
               
-                <li class="active"><a href="going_live.html">Going Live</a></li>
+                <li class=""><a href="../snap/going_live.html">Going Live</a></li>
               
                 <li class=""><a href="http://snap-docs.midtrans.com">Snap API</a></li>
               
@@ -324,7 +324,7 @@
       
         <li>
           
-            <a class="parent" href="../payment_link/index.html">Payment Link</a>
+            <a class="parent" href="index.html">Payment Link</a>
           
         </li>
       
@@ -367,173 +367,59 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="id-snap-going-live">
-            <h2 id="going-live-dengan-snap">Going Live dengan Snap</h2>
+          <div class="id-payment-link-index">
+            <h2 id="payment-link">Payment Link</h2>
+
 <hr />
 
-<h5 id="tutorial-berikut-akan-membantu-anda-melakukan-perubahan-konfigurasi-dari-sandbox-ke-mode-production-silahkan-pilih-metode-integrasi-yang-digunakan-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportmidtranscommailtosupportmidtranscom-email-support-atau-kunjungi-halaman-support-kamihttpsupportmidtranscom-midtrans-support"><em>Tutorial berikut akan membantu anda melakukan perubahan konfigurasi dari Sandbox ke mode Production, Silahkan pilih metode integrasi yang digunakan. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;</a> atau kunjungi <a title="Midtrans Support" href="http://support.midtrans.com">halaman support kami</a>.</em></h5>
+<h5 id="tutorial-berikut-akan-membantu-anda-melakukan-integrasi-ke-midtrans-dengan-payment-link-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportveritranscoidmailtosupportmidtranscom-email-support-atau-kunjungi-support-pagehttpsupportmidtranscom-midtrans-support"><em>Tutorial berikut akan membantu Anda melakukan integrasi ke Midtrans dengan Payment Link. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;">support@veritrans.co.id</a> atau kunjungi <a title="Midtrans Support" href="http://support.midtrans.com">support page</a>.</em></h5>
 <hr />
 
-<p><br /></p>
+<h3 id="overview">Overview</h3>
 
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#php" data-toggle="tab">PHP</a></li>
-  <li><a href="#magento" data-toggle="tab">Magento</a></li>
-  <li><a href="#opencart" data-toggle="tab">Opencart</a></li>
-  <li><a href="#prestashop" data-toggle="tab">Prestashop</a></li>
-  <li><a href="#woocommerce" data-toggle="tab">Woocommerce</a></li>
-</ul>
+<p>Payment Link membantu Anda menerima pembayaran barang atau jasa kepada pelanggan Anda dengan membuat link ke halaman pembayaran Midtrans. Tidak perlu integrasi teknikal di sisi merchant, Anda bisa membuat Payment Link dan mengirimkan ke pelanggan lewat email atau chat message. Ketika pembayaran telah dilakukan oleh customer Anda akan menerima notifikasi untuk transaksi tersebut.</p>
 
-<p><br /></p>
+<h3 id="membuat-payment-link">Membuat Payment Link</h3>
 
-<p>Jika Anda sudah selesai melakukan testing dan sudah siap untuk go live di mode production, ada beberapa hal yang perlu dipastikan:</p>
+<p>Untuk membuat Payment Link, click ‘Payment Link’ di menu bar sebelah kiri. Lalu klik tombol “Create Payment Link”.</p>
 
-<div class="alert alert-danger" role="alert">
-  <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"> Penting!</span>
-  <span class="sr-only">Warning!</span>
-<br />Pastikan metode pembayaran yang diinginkan sudah aktif pada mode production<br />
-1. Masuk ke halaman <a href="https://dashboard.midtrans.com/settings/snap_preference">berikut</a>, pilih tab "Payment Channels" untuk mengetahui metode pembayaran yang sudah aktif.<br />
-2. Hubungi Solutions Officer Anda atau <a href="mailto: support@midtrans.com">Midtrans Support</a> untuk pertanyaan lebih lanjut.
-</div>
+<p><img alt="paymentlink new" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_new.png" /></p>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="php">
-    <!-- PHP-->
+<p>Pada halaman ini, berikut kolom yang perlu diisi untuk membuat Link:</p>
 
-    <h4 id="mendapatkan-snap-token">Mendapatkan Snap Token</h4>
+<ol>
+  <li><code>Order ID</code> - Order ID dari Payment Link</li>
+  <li><code>Payment Link ID</code> - Alamat URL dari Payment Link</li>
+  <li><code>Usage Limit</code> - Berapa banyak jumlah order Payment Link yang dapat digunakan</li>
+  <li><code>Item Name</code> - Nama dari barang atau jasa yang akan Anda jual</li>
+  <li><code>Item Price</code> - Harga dari barang atau yang akan Anda jual</li>
+</ol>
 
-    <ul>
-      <li>Mengubah Veritrans-PHP library ke Production Environment. Ini dapat dilakukan dengan mengubah nilai <code>Veritrans_Config::$isProduction</code> menjadi <code>true</code>.</li>
-      <li>
-        <p>Merubah ServerKey dari sandbox menjadi production.</p>
+<p><img alt="paymentlink create" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_create.png" /></p>
 
-<pre><code class="highlight plaintext">
-&lt;?php
-require_once(dirname(__FILE__) . 'Veritrans.php');
+<p>Opsi tambahan tersedia apabila Anda ingin (a) mengirimkan Payment Link ke pelanggan tertentu atau (b) menentukan masa berakhir dari Link tersebut.</p>
 
-//Set Your server key
-Veritrans_Config::$serverKey = "&lt;Set your Production ServerKey here&gt;";
+<p><img alt="paymentlink options" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_options.png" /></p>
 
-// Uncomment for production environment
-Veritrans_Config::$isProduction = true;
+<p>Apabila transaksi ditujukan untuk pelanggan tertentu, mereka akan menerima email dengan Payment Link tersebut. Masa berakhir adalah hari terakhir Payment Link tersebut dapat digunakan.</p>
 
-Veritrans_Config::$isSanitized = true;
-Veritrans_Config::$is3ds = true;
+<h3 id="mengatur-payment-link">Mengatur Payment Link</h3>
 
-$transaction = array(
-    'transaction_details' =&gt; array(
-        'order_id' =&gt; "&lt;your order_id&gt;",
-        'gross_amount' =&gt; 10000 // no decimal allowed
-        )
-    );
+<p>Setelah Anda membuat Payment Link, maka Anda akan diarahkan kembali ke halaman daftar Payment Link yang mana Anda dapat melihat seluruh Payment Link yang telah Anda buat. Anda dapat menyalin dan membagikan setiap link ke pelanggan Anda. Anda juga dapat melihat detail dan menghapus link tersebut.</p>
 
-$snapToken = Veritrans_Snap::getSnapToken($transaction);
-?&gt;
+<p><img alt="paymentlink list" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_list.png" /></p>
 
-</code></pre>
-        <p><br /></p>
-      </li>
-    </ul>
+<p>Ketika Anda memilih opsi “Details” pada payment link, maka Anda akan menemukan sebuah halaman dengan seluruh detail dari payment link.  Anda juga dapat melihat jumlah “orders” dari payment link dan dapat melihat pesanan pada halaman transaksi.</p>
 
-    <h4 id="menampilkan-halaman-pembayaran">Menampilkan halaman pembayaran</h4>
+<p><img alt="paymentlink details" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_details.png" /></p>
 
-    <ul>
-      <li>Rubah URL <code>snap.js</code> ke endpoint production. <code>https://app.midtrans.com/snap/snap.js</code></li>
-      <li>
-        <p>Merubah ClientKey dari sandbox menjadi production.</p>
+<h3 id="halaman-payment-link">Halaman Payment Link</h3>
 
-<pre><code class="highlight html">
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span>
-          <span class="na">src=</span><span class="s">"https://app.midtrans.com/snap/snap.js"</span>
-          <span class="na">data-client-key=</span><span class="s">"&lt;Set Your Production Client Key Here&gt;"</span><span class="nt">&gt;&lt;/script&gt;</span> 
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"pay-button"</span><span class="nt">&gt;</span>Pay!<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-      <span class="kd">var</span> <span class="nx">payButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'pay-button'</span><span class="p">);</span>
-      <span class="nx">payButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">snap</span><span class="p">.</span><span class="nx">pay</span><span class="p">(</span><span class="s1">'&lt;?php echo $snap_Token; ?&gt;'</span><span class="p">);</span> <span class="c1">// store your snap token here</span>
-      <span class="p">});</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-
-</code></pre>
-      </li>
-    </ul>
-
-    <p>Selamat bertransaksi menggunakan Midtrans!
-<br /><br /></p>
-  </div>
-  <!-- end of PHP-->
-
-  <div class="tab-pane" id="magento">
-    <!-- Magento-->
-    <ul>
-      <li>Mengubah <code>setting environment</code> di plugin Midtrans dari development menjadi production.</li>
-      <li>Merubah <code>Server Key</code> dan <code>Client Key</code> dari sandbox menjadi production.
-<img alt="Magento production" class="img-responsive img-thumbnail" src="../../images/snap/snap-mag2.png" /></li>
-    </ul>
-
-    <p>Selamat bertransaksi menggunakan Midtrans!
-<br /><br /></p>
-  </div>
-  <!-- end of Magento-->
-
-  <div class="tab-pane" id="opencart">
-    <!-- Opencart-->
-    <ul>
-      <li>Mengubah <code>setting environment</code> di plugin Midtrans dari development menjadi production.</li>
-      <li>Merubah <code>Server Key</code> dan <code>Client Key</code> dari sandbox menjadi production.
-<img alt="OpenCart production" class="img-responsive img-thumbnail" src="../../images/snap/snap-open2.png" /></li>
-    </ul>
-
-    <p>Selamat bertransaksi menggunakan Midtrans!
-<br /><br /></p>
-  </div>
-  <!-- end of Opencart-->
-
-  <div class="tab-pane" id="prestashop">
-    <!-- Prestashop -->
-    <ul>
-      <li>Mengubah <code>setting environment</code> di plugin Midtrans dari development menjadi production.</li>
-      <li>Merubah <code>Server Key</code> dan <code>Client Key</code> dari sandbox menjadi production.
-<img alt="Prestashop production" class="img-responsive img-thumbnail" src="../../images/snap/snap-presta2.png" /></li>
-    </ul>
-
-    <p>Selamat bertransaksi menggunakan Midtrans!
-<br /><br /></p>
-  </div>
-  <!-- end of Prestashop -->
-
-  <div class="tab-pane" id="woocommerce">
-    <!-- Woocommerce -->
-    <ul>
-      <li>Mengubah <code>setting environment</code> di plugin Midtrans dari development menjadi production.</li>
-      <li>Merubah <code>Server Key</code> dan <code>Client Key</code> dari sandbox menjadi production.
-<img alt="Woo production" class="img-responsive img-thumbnail" src="../../images/snap/snap-woo2.png" /></li>
-    </ul>
-
-    <p>Selamat bertransaksi menggunakan Midtrans!
-<br /><br /></p>
-  </div>
-  <!-- end of Woocommerce -->
-
-  <div class="alert alert-info" role="alert">
-    <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-  <span class="sr-only">Info:</span>
-<strong>Info</strong>:<br />Jumlah minimum untuk melakukan transaksi pada mode Production adalah Rp 10.000.</p>
-
-  </div>
-</div>
-<!-- end of tab-content-->
+<p>Ketika Anda mengirim payment link ke pelanggan, mereka dapat membuka link dan akan melihat halaman Midtrans Payment. Apabila tidak terdapat data pelanggan khusus, maka pelanggan harus memasukkan detail mereka (nama, nomer telepon, dan alamat email) untuk melanjutkan pembayaran. Pengguna harus memilih metode pembayaran dan mengikuti instruksi yang diberikan. Ketika pelanggan telah menyelesaikan pembayaran, maka Anda akan menerima notifikasi dari transaksi tersebut.</p>
 
 
             <div class="pagination">
-              <ul><li class="left">« Sebelumnya: <a href="other_features.html">SNAP : Fitur Tambahan</a></li><li class="right">Selanjutnya: <a href="http://snap-docs.midtrans.com">SNAP : Snap API</a> »</li></ul>
+              <ul><li class="left">« Sebelumnya: <a href="https://mobile-docs.midtrans.com">Mobile SDK : Integrasi</a></li><li class="right">Selanjutnya: <a href="https://api-docs.midtrans.com">Core API : Core API</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->
