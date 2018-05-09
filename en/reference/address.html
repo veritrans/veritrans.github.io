@@ -377,13 +377,19 @@
           <div class="en-reference-address">
             <h2 id="ip-addresses">IP Addresses</h2>
 
-<p>Midtrans sends payment notifications to merchants from several IP addresses. In case your system whitelists IP addresses, please add Midtrans Production CIDR below to your whitelist:</p>
+<p>Midtrans sends payment notifications to merchants from several IP addresses. In case your system whitelists IP addresses, please add Midtrans CIDR below to your whitelist:</p>
 
-<pre><code class="highlight plaintext">103.208.23.0/24
+<pre><code class="highlight plaintext">Production Environment:
+103.208.23.0/24
 182.253.221.152/32
 
-Sandbox Environment
+Sandbox Environment:
 103.58.103.177
+
+Port:
+80
+443
+8080
 </code></pre>
 
 <p>In any case you are unable to communicate with Midtrans, please ensure that you already whitelisted the IPs above.</p>
