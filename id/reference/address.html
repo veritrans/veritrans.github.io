@@ -375,13 +375,19 @@
           <div class="id-reference-address">
             <h2 id="alamat-ip">Alamat IP</h2>
 
-<p>Midtrans mengirimkan notifikasi pembayaran kepada merchant dari beberapa IP Address. Apabila sistem Anda melakukan whitelist terhadap IP Address, mohon tambahkan Midtrans Production CIDR kepada daftar whitelist Anda:</p>
+<p>Midtrans mengirimkan notifikasi pembayaran kepada merchant dari beberapa IP Address. Apabila sistem Anda melakukan whitelist terhadap IP Address, mohon tambahkan Midtrans CIDR kepada daftar whitelist Anda:</p>
 
-<pre><code class="highlight plaintext">103.208.23.0/24
+<pre><code class="highlight plaintext">Production Environment:
+103.208.23.0/24
 182.253.221.152/32
 
-Sandbox Environment
+Sandbox Environment:
 103.58.103.177
+
+Port:
+80
+443
+8080
 </code></pre>
 
 <p>Apabila terjadi situasi dimana Anda tidak dapat terkoneksi dengan Midtrans, mohon pastikan bahwa Anda telah melakukan whitelist pada alamat IP di atas.</p>
