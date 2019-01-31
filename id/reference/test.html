@@ -464,6 +464,27 @@
 
       <p><br /></p>
 
+      <table>
+        <thead>
+          <tr>
+            <th>AMEX</th>
+            <th>Deskripsi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Authentikasi Penuh <br /> <em>Pemegang kartu terdaftar 3DS</em></td>
+            <td><strong>Transaksi Berhasil:</strong> 3701 9216 9722 458 <br /> <strong>Transaksi Gagal oleh Bank:</strong> 3742 9635 4400 881</td>
+          </tr>
+          <tr>
+            <td>Authentikasi Sebagian <br /> <em>Pemegang kartu tidak <br /> terdaftar 3DS</em></td>
+            <td><strong>Transaksi Berhasil:</strong> 3737 4772 6661 940 <br /> <strong>Transaksi Challenge oleh FDS:</strong> 3706 6568 4049 309 <br /> <strong>Transaksi Gagal oleh FDS:</strong> 3780 9621 8340 018 <br /> <strong>Transaksi Gagal oleh Bank:</strong> 3703 5609 7975 856</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><br /></p>
+
       <p><strong>PENTING</strong>: Saat mencoba kartu JCB, param <code>bank</code> harus dikirimkan dengan nilai <code>bca</code> atau <code>bni</code> ketika memanggil endpoint <code>/v2/token</code> di Core API
 <a href="https://api-docs.midtrans.com/#get-token">https://api-docs.midtrans.com/#get-token</a></p>
 

@@ -466,6 +466,27 @@
 
       <p><br /></p>
 
+      <table>
+        <thead>
+          <tr>
+            <th>AMEX</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Full Authentication <br /> <em>Cardholder is 3DS ready</em></td>
+            <td><strong>Accept Transaction:</strong> 3701 9216 9722 458 <br /> <strong>Denied by Bank Transaction:</strong> 3742 9635 4400 881</td>
+          </tr>
+          <tr>
+            <td>Attempted Authentication <br /> <em>Cardholder is not  <br />  enrolled for 3DS</em></td>
+            <td><strong>Accept Transaction:</strong> 3737 4772 6661 940 <br /> <strong>Challenge by FDS Transaction:</strong> 3706 6568 4049 309 <br /> <strong>Denied by FDS Transaction:</strong> 3780 9621 8340 018 <br /> <strong>Denied by Bank Transaction:</strong> 3703 5609 7975 856</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><br /></p>
+
       <p><strong>IMPORTANT</strong>: Testing with JCB Card, you must send param <code>bank</code> with value <code>bca</code> or <code>bni</code> when request endpoint <code>/v2/token</code> on Core API
 <a href="https://api-docs.midtrans.com/#get-token">https://api-docs.midtrans.com/#get-token</a></p>
 
