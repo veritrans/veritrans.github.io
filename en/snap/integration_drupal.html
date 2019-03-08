@@ -264,7 +264,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../../id/snap/going_live.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../../id/snap/integration_drupal.html">Bahasa Indonesia</a></div>
         <div class="sidebar-search">
           <form>
             <input type="search" name="q" id="search-field" placeholder="Search">
@@ -296,11 +296,11 @@
                         <b class="caret"></b>
                         <ul class="child-menu">
                             
-                            <li class=""><a href="integration.html">Integration</a></li>
+                            <li class="active"><a href="integration.html">Integration</a></li>
                             
                             <li class=""><a href="other_features.html">Other Features</a></li>
                             
-                            <li class="active"><a href="going_live.html">Going Live</a></li>
+                            <li class=""><a href="going_live.html">Going Live</a></li>
                             
                             <li class=""><a href="http://snap-docs.midtrans.com">Snap API</a></li>
                             
@@ -360,188 +360,229 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="en-snap-going-live">
-            <h2 id="going-live-with-snap">Going Live with Snap</h2>
-<hr />
-
-<h5 id="the-tutorial-below-will-assist-you-in-changing-the-configuration-from-sandbox-to-production-please-choose-the-following-integration-method-if-further-assistance-is-required-please-contact-us-at-supportmidtranscommailtosupportmidtranscom-email-support-or-visit-our-support-pagehttpsupportmidtranscom-midtrans-support"><em>The tutorial below will assist you in changing the configuration from Sandbox to Production. Please choose the following integration method. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;</a> or visit our <a title="Midtrans Support" href="http://support.midtrans.com">support page</a>.</em></h5>
-<hr />
-
-<p><br /></p>
-
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#php" data-toggle="tab">PHP</a></li>
-  <li><a href="#magento" data-toggle="tab">Magento</a></li>
-  <li><a href="#opencart" data-toggle="tab">Opencart</a></li>
-  <li><a href="#prestashop" data-toggle="tab">Prestashop</a></li>
-  <li><a href="#woocommerce" data-toggle="tab">Woocommerce</a></li>
-  <li><a href="#drupal" data-toggle="tab">Drupal</a></li>
-</ul>
-
-<p><br /></p>
-
-<p>If you have completed integrating in Sandbox (Testing Environment) and are ready to go live in Production Environment, there are a few steps that need to be made:</p>
-
-<div class="alert alert-danger" role="alert">
-  <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"> Important!</span>
-  <span class="sr-only">Warning!</span>
-  <br />Please make sure that your production credentials for the payment methods (i.e. Merchant ID, Merchant Key) are active.<br />
-  1. To check, please click <a href="https://dashboard.midtrans.com/settings/snap_preference">here</a> and choose "Payment Channels" tab to see your active payment methods;<br />
-2. Please contact your Solutions Officer or <a href="mailto: support@midtrans.com">Midtrans Support</a> for further questions.
+          <div class="en-snap-integration-drupal">
+            <div class="row">
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
+      <a href="integration_php.html"><img src="../../images/snap/php_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
+      <a href="integration_prestashop.html"><img src="../../images/snap/prestashop_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
+      <a href="integration_magento.html"><img src="../../images/snap/magento_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
+      <a href="integration_opencart.html"><img src="../../images/snap/opencart_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
+      <a href="integration_woocommerce.html"><img src="../../images/snap/woocommerce_gray.jpg" /></a>
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="WHMCS" data-placement="bottom">
+    <a href="integration_whmcs.html"><img src="../../images/snap/whmcs_gray.png" /></a
+    </div>
+  </div>
+  <div class="col-md-2 col-sm-3 col-xs-12">
+    <div class="thumbnail" data-toggle="tooltip" title="Drupal" data-placement="bottom">
+    <a href="integration_drupal.html"><img src="../../images/snap/drupal.png" /></a>
+    </div>
+  </div>
 </div>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="php">
-    <!-- PHP-->
+  <div class="tab-pane active">
+    <h3 id="snap-drupal-integration-steps">Snap Drupal Integration Steps</h3>
+    <ol>
+  <li>Plugin Installation</li>
+  <li>Transaction Test</li>
+</ol>
 
-    <h4 id="obtain-snap-token">Obtain Snap Token</h4>
+    <p><br /></p>
 
-    <ul>
-      <li>Set Veritrans-PHP library to Production Environment. This can be done by changing the <code>Veritrans_Config::$isProduction</code> value into <code>true</code>.</li>
-      <li>
-        <p>Change your ServerKey from Sandbox to production credential.</p>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+  <li class="active"><a href="#drupal-step1" data-toggle="tab"><span>Step 1</span>Plugin Installation</a></li>
+  <li><a href="#drupal-step2" data-toggle="tab"><span>Step 2</span>Transaction Test</a></li>
+</ul>
 
-<pre><code class="highlight plaintext">
-&lt;?php
-require_once(dirname(__FILE__) . 'Veritrans.php');
+    <div class="tab-content">
+      <div class="tab-pane active" id="drupal-step1">
 
-//Set Your server key
-Veritrans_Config::$serverKey = "&lt;Set your Production ServerKey here&gt;";
+        <h4 id="requirements">Requirements</h4>
 
-// Uncomment for production environment
-Veritrans_Config::$isProduction = true;
+        <ol>
+          <li>Drupal v8.x</li>
+          <li>Drupal Commerce 8.x-2.xx</li>
+          <li>PHP v5.4 or greater</li>
+          <li>MySQL v5.0 or greater</li>
+          <li>
+            <p>Midtrans plugin for Drupal v8.x [ <a href="https://github.com/Midtrans/Midtrans-Drupal8">Github</a> | <a href="https://github.com/Midtrans/Midtrans-Drupal8/archive/master.zip">Zip</a> ] </a> ]</p>
 
-Veritrans_Config::$isSanitized = true;
-Veritrans_Config::$is3ds = true;
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+   <span class="sr-only">Info:</span>
+ <strong>Info</strong>:
+ <br />For Drupal 7 v7.x <a href="https://github.com/Midtrans/Midtrans-Drupal7">follow this guide</a>
+ <br />Check <a href="../welcome/pluginlibrary.html">this page</a> for complete list of supported Midtrans plugin &amp; library.</p>
+            </div>
+          </li>
+        </ol>
 
-$transaction = array(
-    'transaction_details' =&gt; array(
-        'order_id' =&gt; "&lt;your order_id&gt;",
-        'gross_amount' =&gt; 10000 // no decimal allowed
-        )
-    );
+        <h4 id="installation-process">Installation Process</h4>
 
-$snapToken = Veritrans_Snap::getSnapToken($transaction);
-?&gt;
+        <ol>
+          <li>Download the plugin file to your computer and unzip it, rename folder to <strong>commerce_midtrans</strong>.</li>
+          <li>Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your Drupal modules installation's <strong>[Drupal folder]/modules/contrib/</strong> directory.</li>
+          <li>Open drupal admin page, open menu <strong>Extend</strong>.</li>
+          <li>Look for <strong>Commerce Midtrans</strong> modules under COMMERCE (CONTRIB) group, enable by ticking the checkboxes.</li>
+          <li>Scroll down and click <strong>Install</strong>.</li>
+          <li>Go to <strong>Commerce > Configuration > Payment > Payment gateways</strong>.</li>
+          <li>Look for <string>Midtrans</string> and click it.</li>
+          <li>
+            <p>Fill the following config fields as instructed on each settings description.</p>
 
-</code></pre>
+            <ul>
+              <li>Fill <strong>Display Name</strong> with text button that you want to display to customer.</li>
+              <li>Select <strong>Mode</strong>, <code>Sandbox</code> for testing transaction and <code>Production</code> for real transaction.</li>
+              <li>Fill <strong>Client and Server key</strong>. You can find this credential on Midtrans MAP Dashboard.
+              <li>Other configuration are optional, you may leave it as is.</li>
+  <br />
+ <img alt="Drupal Config" class="img-responsive img-thumbnail" src="../../images/snap/snap-drupal1.png" />
+<br /><br /></li>
+            </ul>
+          </li>
+          <li>
+            <p>Login to MAP portal to configure a few options below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your website url]/payment/notify/midtrans</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+          </li>
+        </ol>
+
         <p><br /></p>
-      </li>
-    </ul>
 
-    <h4 id="show-snap-payment-page">Show Snap payment page</h4>
+      </div>
 
-    <ul>
-      <li>Set <code>snap.js</code> URL to production endpoint. <code>https://app.midtrans.com/snap/snap.js</code></li>
-      <li>
-        <p>Change your Client key from Sandbox to production credential.</p>
+      <div class="tab-pane" id="drupal-step2">
+        <p><br /></p>
 
-<pre><code class="highlight html">
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span>
-          <span class="na">src=</span><span class="s">"https://app.midtrans.com/snap/snap.js"</span>
-          <span class="na">data-client-key=</span><span class="s">"&lt;Set Your Production Client Key Here&gt;"</span><span class="nt">&gt;&lt;/script&gt;</span> 
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"pay-button"</span><span class="nt">&gt;</span>Pay!<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-      <span class="kd">var</span> <span class="nx">payButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'pay-button'</span><span class="p">);</span>
-      <span class="nx">payButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">snap</span><span class="p">.</span><span class="nx">pay</span><span class="p">(</span><span class="s1">'&lt;?php echo $snap_Token; ?&gt;'</span><span class="p">);</span> <span class="c1">// store your snap token here</span>
-      <span class="p">});</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+        <ol>
+          <li>
+            <p>Perform successful transaction in your online store by inputing a dummy credit card number as followed (Sandbox Mode):</p>
 
-</code></pre>
-      </li>
-    </ul>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Visa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Card Number</td>
+                  <td>4811 1111 1111 1114</td>
+                </tr>
+                <tr>
+                  <td>CVV</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>Exp. Month</td>
+                  <td>01</td>
+                </tr>
+                <tr>
+                  <td>Exp. Year</td>
+                  <td>2020</td>
+                </tr>
+              </tbody>
+            </table>
 
-    <p>You are now live with Midtrans and ready to start processing your transactions!
-<br /><br /></p>
+            <p><br /></p>
+          </li>
+          <li>
+            <p>Examine a few points below to ensure plugin is installed and performs properly.</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Check Point</th>
+                  <th>Expected Result</th>
+                  <th>When Unexpected Result Occurs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Check order status in Drupal back end</td>
+                  <td>Order status turns into <strong>processing</strong></td>
+                  <td>Check endpoint/payment notification URL setting in MAP</td>
+                </tr>
+                <tr>
+                  <td>Merchant receives email notification</td>
+                  <td>Receive notification</td>
+                  <td>Check MAP menu setting - email notification</td>
+                </tr>
+                <tr>
+                  <td>Customer receives email notification</td>
+                  <td>Receive notification</td>
+                  <td>Check MAP menu setting - email notification</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ol>
+
+        <p><br /></p>
+
+        <div class="alert alert-warning" role="alert">
+          <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+  <span class="sr-only">Note: </span>
+  <br />- Please check our <a href="../reference/test.html">testing credential menu</a> for other testing number.</p>
+        </div>
+
+      </div>
+    </div>
   </div>
-  <!-- end of PHP-->
-
-  <div class="tab-pane" id="magento">
-    <!-- Magento-->
-    <ul>
-      <li>Change <code>setting environment</code> in Midtrans plugin from development into production.</li>
-      <li>Change your <code>Client Key</code> and <code>Server Key</code> from Sandbox to production credential.
-<img alt="Magento production" class="img-responsive img-thumbnail" src="../../images/snap/snap-mag2.png" /></li>
-    </ul>
-
-    <p>You are now live with Midtrans and ready to start processing your transactions!
-<br /><br /></p>
-  </div>
-  <!-- end of Magento-->
-
-  <div class="tab-pane" id="opencart">
-    <!-- Opencart-->
-    <ul>
-      <li>Change <code>setting environment</code> in Midtrans plugin from development into production.</li>
-      <li>Change your <code>Client Key</code> and <code>Server Key</code> from Sandbox to production credential.
-<img alt="OpenCart production" class="img-responsive img-thumbnail" src="../../images/snap/snap-open2.png" /></li>
-    </ul>
-
-    <p>You are now live with Midtrans and ready to start processing your transactions!
-<br /><br /></p>
-  </div>
-  <!-- end of Opencart-->
-
-  <div class="tab-pane" id="prestashop">
-    <!-- Prestashop -->
-    <ul>
-      <li>Change <code>setting environment</code> in Midtrans plugin from development into production.</li>
-      <li>Change your <code>Client Key</code> and <code>Server Key</code> from Sandbox to production credential.
-<img alt="Prestashop production" class="img-responsive img-thumbnail" src="../../images/snap/snap-presta2.png" /></li>
-    </ul>
-
-    <p>You are now live with Midtrans and ready to start processing your transactions!
-<br /><br /></p>
-  </div>
-  <!-- end of Prestashop -->
-
-  <div class="tab-pane" id="woocommerce">
-    <!-- Woocommerce -->
-    <ul>
-      <li>Change <code>setting environment</code> in Midtrans plugin from development into production.</li>
-      <li>Change your <code>Client Key</code> and <code>Server Key</code> from Sandbox to production credential.
-<img alt="Woo production" class="img-responsive img-thumbnail" src="../../images/snap/snap-woo2.png" /></li>
-    </ul>
-
-    <p>You are now live with Midtrans and ready to start processing your transactions!
-<br /><br /></p>
-  </div>
-  <!-- end of Woocommerce -->
-
-  <div class="tab-pane" id="drupal">
-    <!-- Drupal -->
-    <ul>
-      <li>Change <code>setting environment</code> in Midtrans plugin from development into production.</li>
-      <li>Change your <code>Client Key</code> and <code>Server Key</code> from Sandbox to production credential.
-<img alt="Drupal production" class="img-responsive img-thumbnail" src="../../images/snap/snap-drupal2.png" /></li>
-    </ul>
-
-    <p>You are now live with Midtrans and ready to start processing your transactions!
-<br /><br /></p>
-  </div>
-  <!-- end of Drupak -->  
-
-  <div class="alert alert-info" role="alert">
-    <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-  <span class="sr-only">Info:</span>
-<strong>Info</strong>:<br />Minimum transaction value on production mode is Rp 10,000.00</p>
-  </div>
-
 </div>
-<!-- end of tab-content-->
-
 
 
             <div class="pagination">
-              <ul><li class="left">« Previous: <a href="other_features.html">SNAP : Other Features</a></li><li class="right">Next: <a href="http://snap-docs.midtrans.com">SNAP : Snap API</a> »</li></ul>
+              <ul><li class="left">« Previous: <a href="../welcome/partner_integ.html">Getting Started : Affiliated Platforms</a></li><li class="right">Next: <a href="other_features.html">SNAP : Other Features</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->
