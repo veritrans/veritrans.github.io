@@ -6,6 +6,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651"/>
     <!-- Google Webmaster Validate -->
     <meta name="google-site-verification" content="uUeOdHBzl0nbyvdyeRHKGIHPxnIpJDTTnWv-QfgkxRs" />
+    <!-- FB OG -->
     <meta property="og:title" content="Midtrans Payments || Tech Docs for online payment system"/>
     <meta property="og:site_name" content="Midtrans"/>
     <meta property="og:description" content="Technical Documentation to implement online payment system. Available for various payment methods, in various website programming language."/>
@@ -13,15 +14,14 @@
     <meta property="og:image" content="//docs.midtrans.com/images/midtrans/favicon/apple-touch-icon-120x120.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
-    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
     <meta name="google-site-verification" content="uUeOdHBzl0nbyvdyeRHKGIHPxnIpJDTTnWv-QfgkxRs" />
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
-
+    
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="../../stylesheets/materialize.css" media="screen" rel="stylesheet" type="text/css" />
-
+    
     <title>Midtrans Payments - Tech Docs for online payment system</title>
-    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/images/midtrans/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/midtrans/favicon/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/midtrans/favicon/apple-touch-icon-72x72.png">
@@ -44,7 +44,7 @@
         mixpanel.init("f93e9c92cf8729b32c4491fb6794689b");
     </script>
     <!-- end mixpanel -->
-
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -259,164 +259,325 @@
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
-
-    <div class="documentation-sidebar affix">
-        <div class="docs-logo">
-            <span>DOCS</span>
-        </div>
-        <div class="language-toggle"> English / <a href="../../id/snap/integration.html">Bahasa Indonesia</a></div>
-        <div class="sidebar-search">
-          <form>
-            <input type="search" name="q" id="search-field" placeholder="Search">
-          </form>
-        </div>
-        <ul class="sidebar">
-            
-                <li>
-                    
-                        <a class="parent">Getting Started</a>
-                        <b class="caret"></b>
-                        <ul class="child-menu">
-                            
-                            <li class=""><a href="../welcome/index.html">Introduction</a></li>
-                            
-                            <li class=""><a href="../welcome/preparation.html">Preparation</a></li>
-                            
-                            <li class=""><a href="../welcome/pluginlibrary.html">Library & Plugin</a></li>
-                            
-                            <li class=""><a href="../welcome/partner_integ.html">Affiliated Platforms</a></li>
-                            
-                        </ul>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent">SNAP</a>
-                        <b class="caret"></b>
-                        <ul class="child-menu">
-                            
-                            <li class="active"><a href="integration.html">Integration</a></li>
-                            
-                            <li class=""><a href="other_features.html">Other Features</a></li>
-                            
-                            <li class=""><a href="going_live.html">Going Live</a></li>
-                            
-                            <li class=""><a href="http://snap-docs.midtrans.com">Snap API</a></li>
-                            
-                        </ul>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent" href="https://mobile-docs.midtrans.com">Mobile SDK</a>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent" href="../payment_link/index.html">Payment Link</a>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent" href="https://api-docs.midtrans.com">Core API</a>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent">Reference</a>
-                        <b class="caret"></b>
-                        <ul class="child-menu">
-                            
-                            <li class=""><a href="../reference/test.html">Testing Credential</a></li>
-                            
-                            <li class=""><a href="../reference/address.html">IP Adresses</a></li>
-                            
-                            <li class=""><a href="../reference/security.html">Security</a></li>
-                            
-                            <li class=""><a href="https://status.midtrans.com">System Status</a></li>
-                            
-                            <li class=""><a href="../reference/docslog.html">Docs Changelog</a></li>
-                            
-                            <li class=""><a href="https://support.midtrans.com">FAQ</a></li>
-                            
-                        </ul>
-                    
-                </li>
-            
-        </ul>
-        <p class="question">
-            Something is missing from the docs?<br>
-            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
-        </p>
+  <div class="documentation-sidebar affix">
+    <div class="docs-logo">
+      <span>DOCS</span>
     </div>
-</div>
-
+    <div class="language-toggle"> <a href="../../en/snap/integration_drupal.html">English</a> / Bahasa Indonesia</div>
+    <div class="sidebar-search">
+      <form>
+        <input type="search" name="q" id="search-field" placeholder="Pencarian">
+      </form>
+    </div>
+    <ul class="sidebar">
+      
+        <li>
+          
+            <a class="parent">Langkah Awal</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../welcome/index.html">Perkenalan</a></li>
+              
+                <li class=""><a href="../welcome/preparation.html">Persiapan Awal</a></li>
+              
+                <li class=""><a href="../welcome/pluginlibrary.html">Library & Plugin</a></li>
+              
+                <li class=""><a href="../welcome/partner_integ.html">Platform Affiliasi</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">SNAP</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class="active"><a href="integration.html">Integrasi</a></li>
+              
+                <li class=""><a href="other_features.html">Fitur Tambahan</a></li>
+              
+                <li class=""><a href="going_live.html">Going Live</a></li>
+              
+                <li class=""><a href="http://snap-docs.midtrans.com">Snap API</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="https://mobile-docs.midtrans.com">Mobile SDK</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="../payment_link/index.html">Payment Link</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="https://api-docs.midtrans.com">Core API</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">Referensi</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../reference/test.html">Testing Credential</a></li>
+              
+                <li class=""><a href="../reference/address.html">Alamat IP</a></li>
+              
+                <li class=""><a href="../reference/security.html">Keamanan</a></li>
+              
+                <li class=""><a href="https://status.midtrans.com">Status Sistem</a></li>
+              
+                <li class=""><a href="../reference/docslog.html">Log Dokumentasi</a></li>
+              
+                <li class=""><a href="https://support.midtrans.com">FAQ</a></li>
+              
+            </ul>
+          
+        </li>
+      
+    </ul>
+    <p class="question">
+      Anda merasa ada yang kurang dari dokumentasi ini?<br>
+      <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+    </p>
+  </div>
+</div><!--/span-->
         <div class="col-xs-12 col-sm-8 col-md-9" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="en-snap-integration">
-            <h2 id="snap-integration">SNAP Integration</h2>
-<hr />
-
-<h5 id="the-tutorial-below-will-assist-you-in-integrating-snap-please-choose-your-desired-integration-method-if-further-assistance-is-required-please-contact-us-at-supportmidtranscommailtosupportmidtranscom-email-support-or-visit-our-support-pagehttpsupportmidtranscom-midtrans-support"><em>The tutorial below will assist you in integrating Snap. Please choose your desired integration method. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;</a> or visit our <a title="Midtrans Support" href="http://support.midtrans.com">support page</a>.</em></h5>
-<hr />
-<p><br /></p>
-
-<div class="row">
-  <div class="col-md-2 col-sm-3 col-xs-12">
-    <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
-      <a href="integration_php.html"><img src="../../images/snap/php.jpg" /></a>    </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-12">
-    <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
-      <a href="integration_prestashop.html"><img src="../../images/snap/prestashop.jpg" /></a>
-    </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-12">
-    <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
-      <a href="integration_magento.html"><img src="../../images/snap/magento.jpg" /></a>
-    </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-12">
-    <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
-      <a href="integration_opencart.html"><img src="../../images/snap/opencart.jpg" /></a>
-    </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-12">
-    <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
-      <a href="integration_woocommerce.html"><img src="../../images/snap/woocommerce.jpg" /></a>
-    </div>
-  </div>
-  <div class="col-md-2 col-sm-3 col-xs-12">
-    <div class="thumbnail" data-toggle="tooltip" title="WHMCS" data-placement="bottom">
-    <a href="integration_whmcs.html"><img src="../../images/snap/whmcs.png" /></a>
-    </div>
-  </div>
+          <div class="id-snap-integration-drupal">
+            <div class="row">
+	<div class="col-md-2 col-sm-3 col-xs-12">
+		<div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
+		<a href="integration_php.html"><img src="../../images/snap/php_gray.jpg" /></a>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 col-xs-12">
+		<div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
+		<a href="integration_prestashop.html"><img src="../../images/snap/prestashop_gray.jpg" /></a>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 col-xs-12">
+		<div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
+		<a href="integration_magento.html"><img src="../../images/snap/magento_gray.jpg" /></a>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 col-xs-12">
+		<div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
+		<a href="integration_opencart.html"><img src="../../images/snap/opencart.jpg" /></a>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 col-xs-12">
+		<div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
+		<a href="integration_woocommerce.html"><img src="../../images/snap/woocommerce_gray.jpg" /></a>
+		</div>
+	</div>
+	<div class="col-md-2 col-sm-3 col-xs-12">
+		<div class="thumbnail" data-toggle="tooltip" title="WHMCS" data-placement="bottom">
+		<a href="integration_whmcs.html"><img src="../../images/snap/whmcs_gray.png" /></a>
+		</div>
+	</div>
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="Drupal Commerce" data-placement="bottom">
     <a href="integration_drupal.html"><img src="../../images/snap/drupal.jpg" /></a>
     </div>
   </div>
 </div>
-<p><br /></p>
 
-<div class="alert alert-info" role="alert">
-  <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Note:</span>
-  <span class="sr-only">Info:</span><br />
-- Please complete the steps in <a href="../welcome/preparation.html">Preparation</a> before starting technical integration.<br />
-- For more programming language or framework visit our <a href="../welcome/pluginlibrary.html">library &amp; plugin page</a>.<br />
-- If you are using programming language or framework that are not covered, please visit our <a href="https://api-docs.midtrans.com/">API documentation</a> page to start the integration process via API.</p>
+<div class="tab-content">
+  <div class="tab-pane active">
+    <h3 id="tahapan-integrasi-snap-drupal">Tahapan Integrasi Snap Drupal Commerce</h3>
+    <ol>
+  <li>Instalasi Plugin</li>
+  <li>Tes Transaksi</li>
+</ol>
+
+    <p><br /></p>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+  <li class="active"><a href="#drupal-step1" data-toggle="tab"><span>Tahap 1</span>Instalasi Plugin</a></li>
+  <li><a href="#drupal-step2" data-toggle="tab"><span>Tahap 2</span>Tes Transaksi</a></li>
+</ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="drupal-step1">
+
+        <h4 id="apa-yang-diperlukan">Apa yang Diperlukan</h4>
+
+        <ol>
+          <li>Drupal v8.x</li>
+          <li>Drupal Commerce 8.x-2.xx</li>
+          <li>PHP minimal v5.4.</li>
+          <li>MySQL minimal v5.0.</li>
+          <li>
+            <p>Plugin Midtrans untuk Drupal Commerce [ <a href="https://github.com/Midtrans/Midtrans-Drupal8">Github</a> | <a href="https://github.com/Midtrans/Midtrans-Drupal8/archive/master.zip">Zip</a> ].</p>
+
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+   <span class="sr-only">Info:</span>
+ <br />Untuk Drupal Commerce v7.x <a href="https://github.com/Midtrans/Midtrans-Drupal7">ikuti petunjuk ini</a>
+ <br />Silahkan melihat <a href="../../en/welcome/pluginlibrary.html">halaman berikut</a> untuk daftar plugin &amp; library lebih lengkap.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h4 id="proses-instalasi">Proses Instalasi</h4>
+
+        <ol>
+          <li>Ekstrak plugin yang sudah di download, rubah nama folder menjadi <strong>commerce_midtrans</strong>.</li>         
+          <li>Masuk ke direktori Drupal Anda melalui koneksi FTP. Upload folder tersebut ke <strong>[Drupal folder]/modules/contrib/</strong>.</li> 
+          <li>Masuk ke halaman administrasi Drupal Anda, akses menu <strong>Extend</strong>.</li>
+          <li>Cari modul <strong>Commerce Midtrans</strong> dibawah grup COMMERCE (CONTRIB), klik pada field checkbox.</li>
+          <li>Scroll kebawah dan klik <strong>Install</strong>.</li> 
+          <li>Masuk ke <strong>Commerce > Configuration > Payment > Payment gateways</strong>.</li>
+          <li>Cari <string>Midtrans</string> dan klik.</li>          
+          <li>
+            <p>Pada Midtrans modul, klik <strong>Edit</strong> untuk masuk ke halaman plugin, lalu masukan data-data yang diperlukan.</p>
+
+            <ul>
+              <li>Isi <strong>Display Name</strong> dengan text yang akan ditampilkan kepada pelanggan.</li>
+              <li>Pilih <strong>Mode</strong>. <code>Sandbox</code> untuk test transaksi dan <code>Production</code> untuk transaksi asli.</li>
+              <li>Isi <strong>Client and Server key</strong>. Anda dapat menemukan ini di Midtrans MAP Dashboard.
+              <li>Konfigurasi lainnya adalah opsional.</li>
+  <br />
+ <img alt="Drupal Config" class="img-responsive img-thumbnail" src="../../images/snap/snap-drupal1.png" />
+<br /><br /></li>
+            </ul>
+          </li>
+          <li>
+            <p>Login ke portal MAP untuk mengubah isi pada beberapa opsi berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your website url]/payment/notify/midtrans</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ol>
+
+        <p><br /></p>
+
+      </div>
+
+      <div class="tab-pane" id="drupal-step2">
+        <p><br /></p>
+
+        <ol>
+          <li>
+            <p>Lakukan transaksi sukses di toko Anda dengan menggunakan nomor kartu kredit dummy berikut (sandbox mode):</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Jenis</th>
+                  <th>Visa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nomor Kartu</td>
+                  <td>4811 1111 1111 1114</td>
+                </tr>
+                <tr>
+                  <td>CVV</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>Exp. Month</td>
+                  <td>01</td>
+                </tr>
+                <tr>
+                  <td>Exp. Year</td>
+                  <td>2020</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+          </li>
+          <li>
+            <p>Cek beberapa poin berikut untuk memastikan plugin sudah ter-install dan bekerja dengan baik.</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Cek Point</th>
+                  <th>Hasil yang diharapkan</th>
+                  <th>Bila hasil tidak sesuai dengan yang diharapkan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cek order status di back end Drupal</td>
+                  <td>Order status berubah menjadi <strong>processing</strong></td>
+                  <td>Cek setting endpoint/payment notification URL di MAP</td>
+                </tr>
+                <tr>
+                  <td>Merchant mendapatkan email notifikasi</td>
+                  <td>Dapat</td>
+                  <td>Cek setting di MAP menu setting - email notification</td>
+                </tr>
+                <tr>
+                  <td>Customer mendapat email notifikasi</td>
+                  <td>Dapat</td>
+                  <td>Cek setting di MAP menu setting - email notification</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+          </li>
+        </ol>
+
+        <div class="alert alert-warning" role="alert">
+          <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+  <span class="sr-only">Note: </span>
+  <br />- Silahkan melihat <a href="../../en/reference/test.html">halaman berikut</a> untuk daftar nomor test yang lebih lengkap.
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
 
             <div class="pagination">
-              <ul><li class="left">« Previous: <a href="../welcome/partner_integ.html">Getting Started : Affiliated Platforms</a></li><li class="right">Next: <a href="other_features.html">SNAP : Other Features</a> »</li></ul>
+              <ul><li class="left">« Sebelumnya: <a href="../welcome/partner_integ.html">Langkah Awal : Platform Affiliasi</a></li><li class="right">Selanjutnya: <a href="other_features.html">SNAP : Fitur Tambahan</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->
@@ -514,8 +675,6 @@
   </div>
 </footer>
 
-
-
     <script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../javascripts/dropdown.js" type="text/javascript"></script>
 <script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
@@ -530,7 +689,7 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-85529823-1', 'auto');
-      ga('send', 'pageview'); 
+      ga('send', 'pageview');
 
     </script>
     <script>
@@ -541,7 +700,7 @@
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
         });
-
+        
         $('body, .nav-overlay').bind('click', e => {
           if ($(e.target).closest('.nav-wrapper').length == 0) {
             // click happened outside of .navbar, so hide
@@ -574,8 +733,7 @@
         $('.sub-nav-wrapper').on('hide.bs.collapse', function () {
           $('.nav-overlay').removeClass('active');
         });
-
-        mixpanel.track('en docs page viewed',{
+        mixpanel.track('id docs page viewed',{
           'url' : location.href
         });
 
