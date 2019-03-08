@@ -82,11 +82,6 @@
                   <img class="logo-image" src="../../images/midtrans/logo-iris-white.png" alt="iris"/>
                 </a>
               </li>
-              <li>
-                <a target="_blank" href="https://www.prismapp.io/">
-                  <img class="logo-image prism" src="../../images/midtrans/logo-prism-white.png" alt="prism"/>
-                </a>
-              </li>
               <li><span class="nav-space"></span></li>
               <li class="half"><a href="https://midtrans.com/payments/pricing">Pricing</a></li>
               <li class="half"><a href="https://midtrans.com/contact">Contact Us</a></li>
@@ -98,7 +93,7 @@
                 <a class="login" href="https://account.midtrans.com/login" target="_blank" rel="noopener noreferrer">login</a>
               </li>
               <li>
-                <a class="signup" href="https://account.midtrans.com/register" target="_blank" rel="noopener noreferrer">
+                <a class="signup" href="https://midtrans.com/tentang-passport" target="_blank" rel="noopener noreferrer">
                   SIGN UP
                 </a>
               </li>
@@ -117,7 +112,7 @@
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="row">
                       <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                        <div class="submenu-description services">
+                        <div class="submenu-description">
                           <h3>Services</h3>
                           <p>Midtrans menyediakan beragam solusi untuk bisnis online Anda.</p>
                         </div>
@@ -147,15 +142,6 @@
                             <p>Sistem distribusi pembayaran untuk kemudahan pengiriman dana ke semua bank di Indonesia.</p>
                           </a>
                           <a class="link" href="https://midtrans.com/iris">Selengkapnya &rarr;</a>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                        <div class="submenu-link">
-                          <a target="_blank" class="summary" href="https://www.prismapp.io/">
-                            <img class="image" src="../../images/midtrans/logo-prism.png" alt="">
-                            <p>Sistem chat commerce yang mengubah chat menjadi transaksi.</p>
-                          </a>
-                          <a target="_blank" class="link" href="https://www.prismapp.io/">Selengkapnya &rarr;</a>
                         </div>
                       </div>
                     </div>
@@ -259,7 +245,7 @@
             </a>
           </li>
           <li>
-            <a class="signup" href="https://account.midtrans.com/register" target="_blank" rel="noopener noreferrer">
+            <a class="signup" href="https://midtrans.com/tentang-passport" target="_blank" rel="noopener noreferrer">
               SIGN UP
             </a>
           </li>
@@ -466,6 +452,27 @@
 
       <p><br /></p>
 
+      <table>
+        <thead>
+          <tr>
+            <th>AMEX</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Full Authentication <br /> <em>Cardholder is 3DS ready</em></td>
+            <td><strong>Accept Transaction:</strong> 3701 9216 9722 458 <br /> <strong>Denied by Bank Transaction:</strong> 3742 9635 4400 881</td>
+          </tr>
+          <tr>
+            <td>Attempted Authentication <br /> <em>Cardholder is not  <br />  enrolled for 3DS</em></td>
+            <td><strong>Accept Transaction:</strong> 3737 4772 6661 940 <br /> <strong>Challenge by FDS Transaction:</strong> 3706 6568 4049 309 <br /> <strong>Denied by FDS Transaction:</strong> 3780 9621 8340 018 <br /> <strong>Denied by Bank Transaction:</strong> 3703 5609 7975 856</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><br /></p>
+
       <p><strong>IMPORTANT</strong>: Testing with JCB Card, you must send param <code>bank</code> with value <code>bca</code> or <code>bni</code> when request endpoint <code>/v2/token</code> on Core API
 <a href="https://api-docs.midtrans.com/#get-token">https://api-docs.midtrans.com/#get-token</a></p>
 
@@ -481,6 +488,7 @@
             <th>Bank</th>
             <th>Card Number</th>
             <th><span></span></th>
+            <th> </th>
           </tr>
         </thead>
         <tbody>
@@ -488,81 +496,103 @@
             <td><strong>Mandiri</strong> <br /> <em>Full Authentication</em></td>
             <td><br /> 4617 0069 5974 6656</td>
             <td><br /> 5573 3810 7219 6900</td>
+            <td> </td>
           </tr>
           <tr>
             <td><em>Attempted Authentication</em></td>
             <td>4617 0017 4194 2101</td>
             <td>5573 3819 9982 5417</td>
+            <td> </td>
           </tr>
           <tr>
-            <td><em>Mandiri Debit</em></td>
-            <td>4097 6658 2970 8136</td>
+            <td><strong>Mandiri Debit</strong> <br /> <em>Full Authentication</em></td>
+            <td><br /> 4097 6611 1111 1113</td>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><em>Attempted Authentication</em></td>
+            <td>4097 6611 1111 1139</td>
+            <td> </td>
             <td> </td>
           </tr>
           <tr>
             <td><strong>CIMB</strong> <br /> <em>Full Authentication</em></td>
             <td><br /> 4599 2078 8712 2414</td>
             <td><br /> 5481 1698 1883 2479</td>
+            <td> </td>
           </tr>
           <tr>
             <td><em>Attempted Authentication</em></td>
             <td>4599 2039 9705 2898</td>
             <td>5481 1671 2103 2563</td>
+            <td> </td>
           </tr>
           <tr>
             <td><strong>BNI</strong> <br /> <em>Full Authentication</em></td>
             <td><br /> 4105 0586 8948 1467</td>
             <td><br /> 5264 2210 3887 4659</td>
+            <td> </td>
           </tr>
           <tr>
             <td><em>Attempted Authentication</em></td>
             <td>4105 0525 4151 2148</td>
             <td>5264 2249 7176 1016</td>
+            <td> </td>
           </tr>
           <tr>
             <td><em>BNI Private Label</em></td>
             <td>1946 4159 8148 7684</td>
+            <td> </td>
             <td> </td>
           </tr>
           <tr>
             <td><strong>BCA</strong> <br /> <em>Full Authentication</em></td>
             <td><br /> 4773 7760 5705 1650</td>
             <td><br /> 5229 9031 3685 3172</td>
+            <td> </td>
           </tr>
           <tr>
             <td><em>Attempted Authentication</em></td>
             <td>4773 7738 1098 1190</td>
             <td>5229 9073 6430 3610</td>
+            <td> </td>
           </tr>
           <tr>
             <td><strong>BRI</strong> <br /> <em>Full Authentication</em></td>
             <td><br /> 4365 0263 3573 7199</td>
             <td><br /> 5520 0298 7089 9100</td>
+            <td> </td>
           </tr>
           <tr>
             <td><em>Attempted Authentication</em></td>
             <td>4365 0278 6723 2690</td>
             <td>5520 0254 8646 8439</td>
+            <td> </td>
           </tr>
           <tr>
             <td><strong>MEGA</strong> <br /> <em>Full Authentication</em></td>
             <td><br /> 4201 9100 0000 0009</td>
             <td><br /> 5221 0300 0000 0009</td>
+            <td> </td>
           </tr>
           <tr>
             <td><em>Attempted Authentication</em></td>
             <td>4201 9100 0000 0017</td>
             <td>5221 0300 0000 0017</td>
+            <td> </td>
           </tr>
           <tr>
             <td><strong>Maybank</strong> <br /> <em>Full Authentication</em></td>
             <td><br /> 4055 7720 2603 6004</td>
             <td><br /> 5520 0867 5210 2334</td>
+            <td> </td>
           </tr>
           <tr>
             <td><em>Attempted Authentication</em></td>
             <td>4055 7713 3514 4012</td>
             <td>5520 0867 7490 8452</td>
+            <td> </td>
           </tr>
         </tbody>
       </table>
@@ -782,6 +812,10 @@
             <td>Midtrans will generate a dummy Indomaret Payment Code. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/indomaret/index">Indomaret Simulator</a>.</td>
           </tr>
           <tr>
+            <td>Alfamart</td>
+            <td>Midtrans will generate a dummy Alfamart Payment Code. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/alfamart/index">Alfamart Simulator</a>.</td>
+          </tr>
+          <tr>
             <td>Kioson</td>
             <td>Midtrans will generate a dummy Kioson Payment Code. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/kioson/index">Kioson Simulator</a>.</td>
           </tr>
@@ -824,6 +858,7 @@
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="https://midtrans.com/payments"><img src="../../images/midtrans/logo-midtrans-color.png" class="logo" alt="midtrans logo"/></a>
             <ul class="list-unstyled footer-nav">
+              <li><a href="https://midtrans.com/payments/payment-channels/gopay">GO-PAY</a></li>
               <li><a href="https://midtrans.com/payments/manage">Merchant Administration Portal</a></li>
               <li><a href="https://midtrans.com/payments/payment-channels">Payment Channels</a></li>
               <li><a href="https://midtrans.com/payments/pricing">Pricing</a></li>
@@ -846,14 +881,6 @@
             <ul class="list-unstyled footer-nav">
               <li><a href="https://midtrans.com/aegis/features">Features</a></li>
               <li><a href="https://midtrans.com/aegis/use-cases">Use Cases</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-            <a href="https://www.prismapp.io"><img src="../../images/midtrans/logo-prism.png" class="logo" alt="prism logo"/></a>
-            <ul class="list-unstyled footer-nav">
-              <li><a href="https://www.prismapp.io/features">Features</a></li>
-              <li><a href="https://www.prismapp.io/pricing">Pricing</a></li>
-              <li><a href="https://docs.prismapp.io">Technical Documentation</a></li>
             </ul>
           </div>
         </div>
