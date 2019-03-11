@@ -264,7 +264,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../../id/snap/integration.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../../id/snap/integration_drupal.html">Bahasa Indonesia</a></div>
         <div class="sidebar-search">
           <form>
             <input type="search" name="q" id="search-field" placeholder="Search">
@@ -360,42 +360,36 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="en-snap-integration">
-            <h2 id="snap-integration">SNAP Integration</h2>
-<hr />
-
-<h5 id="the-tutorial-below-will-assist-you-in-integrating-snap-please-choose-your-desired-integration-method-if-further-assistance-is-required-please-contact-us-at-supportmidtranscommailtosupportmidtranscom-email-support-or-visit-our-support-pagehttpsupportmidtranscom-midtrans-support"><em>The tutorial below will assist you in integrating Snap. Please choose your desired integration method. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;</a> or visit our <a title="Midtrans Support" href="http://support.midtrans.com">support page</a>.</em></h5>
-<hr />
-<p><br /></p>
-
-<div class="row">
+          <div class="en-snap-integration-drupal">
+            <div class="row">
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
-      <a href="integration_php.html"><img src="../../images/snap/php.jpg" /></a>    </div>
+      <a href="integration_php.html"><img src="../../images/snap/php_gray.jpg" /></a>
+    </div>
   </div>
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="Prestashop" data-placement="bottom">
-      <a href="integration_prestashop.html"><img src="../../images/snap/prestashop.jpg" /></a>
+      <a href="integration_prestashop.html"><img src="../../images/snap/prestashop_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="Magento" data-placement="bottom">
-      <a href="integration_magento.html"><img src="../../images/snap/magento.jpg" /></a>
+      <a href="integration_magento.html"><img src="../../images/snap/magento_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="Opencart" data-placement="bottom">
-      <a href="integration_opencart.html"><img src="../../images/snap/opencart.jpg" /></a>
+      <a href="integration_opencart.html"><img src="../../images/snap/opencart_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="Woocommerce" data-placement="bottom">
-      <a href="integration_woocommerce.html"><img src="../../images/snap/woocommerce.jpg" /></a>
+      <a href="integration_woocommerce.html"><img src="../../images/snap/woocommerce_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="WHMCS" data-placement="bottom">
-    <a href="integration_whmcs.html"><img src="../../images/snap/whmcs.png" /></a>
+    <a href="integration_whmcs.html"><img src="../../images/snap/whmcs_gray.png" /></a>
     </div>
   </div>
   <div class="col-md-2 col-sm-3 col-xs-12">
@@ -404,14 +398,186 @@
     </div>
   </div>
 </div>
-<p><br /></p>
 
-<div class="alert alert-info" role="alert">
-  <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Note:</span>
-  <span class="sr-only">Info:</span><br />
-- Please complete the steps in <a href="../welcome/preparation.html">Preparation</a> before starting technical integration.<br />
-- For more programming language or framework visit our <a href="../welcome/pluginlibrary.html">library &amp; plugin page</a>.<br />
-- If you are using programming language or framework that are not covered, please visit our <a href="https://api-docs.midtrans.com/">API documentation</a> page to start the integration process via API.</p>
+<div class="tab-content">
+  <div class="tab-pane active">
+    <h3 id="snap-drupal-integration-steps">Snap Drupal Commerce Integration Steps</h3>
+    <ol>
+  <li>Plugin Installation</li>
+  <li>Transaction Test</li>
+</ol>
+
+    <p><br /></p>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+  <li class="active"><a href="#drupal-step1" data-toggle="tab"><span>Step 1</span>Plugin Installation</a></li>
+  <li><a href="#drupal-step2" data-toggle="tab"><span>Step 2</span>Transaction Test</a></li>
+</ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="drupal-step1">
+
+        <h4 id="requirements">Requirements</h4>
+
+        <ol>
+          <li>Drupal v8.x</li>
+          <li>Drupal Commerce 8.x-2.xx</li>
+          <li>PHP v5.4 or greater</li>
+          <li>MySQL v5.0 or greater</li>
+          <li>
+            <p>Midtrans plugin for Drupal v8.x [ <a href="https://github.com/Midtrans/Midtrans-Drupal8">Github</a> | <a href="https://github.com/Midtrans/Midtrans-Drupal8/archive/master.zip">Zip</a> ] </a> ]</p>
+
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+   <span class="sr-only">Info:</span>
+ <strong>Info</strong>:
+ <br />For Drupal 7 v7.x <a href="https://github.com/Midtrans/Midtrans-Drupal7">follow this guide</a>
+ <br />Check <a href="../welcome/pluginlibrary.html">this page</a> for complete list of supported Midtrans plugin &amp; library.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h4 id="installation-process">Installation Process</h4>
+
+        <ol>
+          <li>Download the plugin file to your computer and unzip it, rename folder to <strong>commerce_midtrans</strong>.</li>
+          <li>Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your Drupal modules installation's <strong>[Drupal folder]/modules/contrib/</strong> directory.</li>
+          <li>Open drupal admin page, open menu <strong>Extend</strong>.</li>
+          <li>Look for <strong>Commerce Midtrans</strong> modules under COMMERCE (CONTRIB) group, enable by ticking the checkboxes.</li>
+          <li>Scroll down and click <strong>Install</strong>.</li>
+          <li>Go to <strong>Commerce > Configuration > Payment > Payment gateways</strong>.</li>
+          <li>Look for <string>Midtrans</string> and click it.</li>
+          <li>
+            <p>Fill the following config fields as instructed on each settings description.</p>
+
+            <ul>
+              <li>Fill <strong>Display Name</strong> with text button that you want to display to customer.</li>
+              <li>Select <strong>Mode</strong>, <code>Sandbox</code> for testing transaction and <code>Production</code> for real transaction.</li>
+              <li>Fill <strong>Client and Server key</strong>. You can find this credential on Midtrans MAP Dashboard.
+              <li>Other configuration are optional, you may leave it as is.</li>
+  <br />
+ <img alt="Drupal Config" class="img-responsive img-thumbnail" src="../../images/snap/snap-drupal1.png" />
+<br /><br /></li>
+            </ul>
+          </li>
+          <li>
+            <p>Login to MAP portal to configure a few options below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your website url]/payment/notify/midtrans</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+          </li>
+        </ol>
+
+        <p><br /></p>
+
+      </div>
+
+      <div class="tab-pane" id="drupal-step2">
+        <p><br /></p>
+
+        <ol>
+          <li>
+            <p>Perform successful transaction in your online store by inputing a dummy credit card number as followed (Sandbox Mode):</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Visa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Card Number</td>
+                  <td>4811 1111 1111 1114</td>
+                </tr>
+                <tr>
+                  <td>CVV</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>Exp. Month</td>
+                  <td>01</td>
+                </tr>
+                <tr>
+                  <td>Exp. Year</td>
+                  <td>2020</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+          </li>
+          <li>
+            <p>Examine a few points below to ensure plugin is installed and performs properly.</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Check Point</th>
+                  <th>Expected Result</th>
+                  <th>When Unexpected Result Occurs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Check order status in Drupal back end</td>
+                  <td>Order status turns into <strong>complete</strong></td>
+                  <td>Check endpoint/payment notification URL setting in MAP</td>
+                </tr>
+                <tr>
+                  <td>Merchant receives email notification</td>
+                  <td>Receive notification</td>
+                  <td>Check MAP menu setting - email notification</td>
+                </tr>
+                <tr>
+                  <td>Customer receives email notification</td>
+                  <td>Receive notification</td>
+                  <td>Check MAP menu setting - email notification</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ol>
+
+        <p><br /></p>
+
+        <div class="alert alert-warning" role="alert">
+          <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+  <span class="sr-only">Note: </span>
+  <br />- Please check our <a href="../reference/test.html">testing credential menu</a> for other testing number.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
 
