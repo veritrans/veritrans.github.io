@@ -706,8 +706,11 @@ Make sure your Payment Notification URL is not the same as your localhost addres
         <ul class="nav nav-tabs">
   <li class="active"><a href="#statuscc" data-toggle="tab-code" data-lang="cc">Credit Card</a></li>
   <li><a href="#statuspermatava" data-toggle="tab-code" data-lang="permata">Permata VA</a></li>
+  <li><a href="#statusbcava" data-toggle="tab-code" data-lang="bcava">BCA VA</a></li>
+  <li><a href="#statusbniva" data-toggle="tab-code" data-lang="bniva">BNI VA</a></li>
   <li><a href="#statusmandiri" data-toggle="tab-code" data-lang="mandiri">Mandiri ClickPay</a></li>
   <li><a href="#statuscimb" data-toggle="tab-code" data-lang="cimb">CIMB Clicks</a></li>
+  <li><a href="#statusgopay" data-toggle="tab-code" data-lang="gopay">GO-PAY</a></li>
   <li><a href="#statusbriepay" data-toggle="tab-code" data-lang="bri">ePay BRI</a></li>
   <!-- hidden for a moment 
   <li><a href="#statustcash" data-toggle="tab-code" data-lang="telkomsel">Telkomsel Cash</a></li>
@@ -716,7 +719,6 @@ Make sure your Payment Notification URL is not the same as your localhost addres
   <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
   <li><a href="#statusdompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
   <li><a href="#statusmandiriecash" data-toggle="tab-code" data-lang="mandiriecash">Mandiri Ecash</a></li>
-  <li><a href="#statusbcava" data-toggle="tab-code" data-lang="bcava">BCA VA</a></li>
   <li><a href="#statusbcaklikpay" data-toggle="tab-code" data-lang="bcaklikpay">BCA KlikPay</a></li>
   <li><a href="#statusklikbca" data-toggle="tab-code" data-lang="klikbca">Klik BCA</a></li>
 </ul>
@@ -1248,6 +1250,98 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
           </div>
           <!-- End of BRI E-Pay Status -->
+
+          <div class="tab-pane" id="statusgopay">
+            <!-- GO-PAY Status -->
+
+            <h3 id="go-pay">GO-PAY</h3>
+
+            <p>HTTP Notification example of a successful GO-PAY transaction:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1c28dbbb-8596-48e4-85d7-9f1382db8a1f"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order03"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"275000.00"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"gopay"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2016-06-19 15:54:42"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"973d175e6368ad844b5817882489e6b22934d796a41a0573c066b1e64532dc0001087b87d877a3eac37cba20a733e1305f5e62739e65ff501d5d33c5ac62530f"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="available-https-post-notification-status-5">Available HTTP(S) POST Notification Status</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>QR/Link created, but transaction has not been paid by customer and is waiting to be completed.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>GO-PAY transaction has been cancelled.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>GO-PAY Transaction has not been completed after 15 minutes (can be customized).</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Funds from the transaction has moved from customer to merchant's account.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="merchant-admin-portalmap-transaction-status-5">Merchant Admin Portal(MAP) Transaction Status</h3>
+
+            <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
+
+            <p><br /></p>
+
+            <p>List of available MAP transaction status for GO-PAY is described below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into <code>Settlement</code>.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaction is accepted and has been settled.<br />Refer to Dashboard Operation to know more about <a href="/en/dashboard/index.html#Settlement">Settlement</a>.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Failure transaction can be caused by various reasons:<br /> 1. Transaction is denied by the Provider.<br />2. Pending Transaction has not been paid and is expired.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+          </div>
+          <!-- End of GO-PAY Status -->
+
           <div class="tab-pane" id="statustcash">
             <!-- T-Cash Status -->
 
@@ -1270,7 +1364,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-5">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-6">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <thead>
@@ -1295,7 +1389,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-5">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-6">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
 
@@ -1349,7 +1443,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-6">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-7">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <thead>
@@ -1386,7 +1480,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-6">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-7">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
 
@@ -1448,7 +1542,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-7">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-8">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <thead>
@@ -1481,7 +1575,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-7">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-8">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
 
@@ -1543,7 +1637,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-8">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-9">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <thead>
@@ -1576,7 +1670,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-8">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-9">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status under <a href="https://dashboard.sandbox.midtrans.com/payments">Transaction menu</a> on MAP.</p>
 
@@ -1634,7 +1728,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-9">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-10">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <thead>
@@ -1659,7 +1753,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-9">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-10">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
 
@@ -1714,7 +1808,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-10">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-11">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <tbody>
@@ -1737,7 +1831,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-10">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-11">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
 
@@ -1803,7 +1897,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-11">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-12">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <tbody>
@@ -1826,7 +1920,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-11">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-12">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
 
@@ -1863,6 +1957,101 @@ Make sure your Payment Notification URL is not the same as your localhost addres
           </div>
           <!-- End of BCA VA Status -->
 
+          <div class="tab-pane" id="statusbniva">
+            <!-- BNI VA Status -->
+
+            <h3 id="bni-va">BNI VA</h3>
+
+            <p>HTTP Notification example of a successful BNI VA transaction:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+      <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"8578000000111111"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"payment_amounts"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"paid_at"</span><span class="p">:</span> <span class="s2">"2016-06-19 20:12:22"</span><span class="p">,</span>
+      <span class="s2">"amount"</span><span class="p">:</span> <span class="s2">"20000.00"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2016-06-19 19:12:22"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"20000.00"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1466323342"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"fe5f725ea770c451017e9d6300af72b830a668d2f7d5da9b778ec2c4f9177efe5127d492d9ddfbcf6806ea5cd7dc1a7337c674d6139026b28f49ad0ea1ce5107"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"9aed5972-5b6a-401e-894b-a32c91ed1a3a"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="available-https-post-notification-status-13">Available HTTP(S) POST Notification Status</h4>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaction that has not been completed.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaction is accepted and has been settled.</td>
+                </tr>
+                <tr>
+                  <td>Expired</td>
+                  <td>Failure transaction caused by pending Transaction has not been paid and is expired.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="merchant-admin-portalmap-transaction-status-13">Merchant Admin Portal(MAP) Transaction Status</h3>
+
+            <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
+
+            <p>Example of a successful transaction status for BNI VA:
+<img alt="Snap bniva" class="img-responsive img-thumbnail" src="../../images/snap/bniva_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>List of available MAP transaction status for BNI VA is described below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaction that has not been completed will generate a Pending status.<br />Once customer complete the transaction, the status will turn into <code>Settlement</code>.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaction is accepted and has been settled.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Failure transaction can be caused by pending Transaction has not been paid and is expired.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of BNI VA Status -->
+
           <div class="tab-pane" id="statusbcaklikpay">
             <!-- BCA KlikPay Status -->
 
@@ -1887,7 +2076,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-12">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-14">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <tbody>
@@ -1910,7 +2099,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-12">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-14">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
 
@@ -1970,7 +2159,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <p><br /></p>
 
-            <h4 id="available-https-post-notification-status-13">Available HTTP(S) POST Notification Status</h4>
+            <h4 id="available-https-post-notification-status-15">Available HTTP(S) POST Notification Status</h4>
 
             <table>
               <tbody>
@@ -1993,7 +2182,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
             <hr />
 
-            <h3 id="merchant-admin-portalmap-transaction-status-13">Merchant Admin Portal(MAP) Transaction Status</h3>
+            <h3 id="merchant-admin-portalmap-transaction-status-15">Merchant Admin Portal(MAP) Transaction Status</h3>
 
             <p>Merchant can check the transactions status from <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> menu on MAP.</p>
 
