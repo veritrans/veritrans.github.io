@@ -702,8 +702,11 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
         <ul class="nav nav-tabs">
   <li class="active"><a href="#statuscc" data-toggle="tab-code" data-lang="cc">Credit Card</a></li>
   <li><a href="#statuspermatava" data-toggle="tab-code" data-lang="permata">Permata VA</a></li>
+  <li><a href="#statusbcava" data-toggle="tab-code" data-lang="bcava">BCA VA</a></li>
+  <li><a href="#statusbniva" data-toggle="tab-code" data-lang="bniva">BNI VA</a></li>
   <li><a href="#statusmandiri" data-toggle="tab-code" data-lang="mandiri">Mandiri ClickPay</a></li>
   <li><a href="#statuscimb" data-toggle="tab-code" data-lang="cimb">CIMB Clicks</a></li>
+  <li><a href="#statusgopay" data-toggle="tab-code" data-lang="gopay">GO-PAY</a></li>
   <li><a href="#statusbriepay" data-toggle="tab-code" data-lang="bri">ePay BRI</a></li>
   <!-- hidden for a moment
   <li><a href="#statustcash" data-toggle="tab-code" data-lang="telkomsel">Telkomsel Cash</a></li>
@@ -712,7 +715,6 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
   <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
   <li><a href="#statusdompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
   <li><a href="#statusmandiriecash" data-toggle="tab-code" data-lang="mandiriecash">Mandiri Ecash</a></li>
-  <li><a href="#statusbcava" data-toggle="tab-code" data-lang="bcava">BCA VA</a></li>
   <li><a href="#statusbcaklikpay" data-toggle="tab-code" data-lang="bcaklikpay">BCA KlikPay</a></li>
   <li><a href="#statusklikbca" data-toggle="tab-code" data-lang="klikbca">Klik BCA</a></li>
 </ul>
@@ -1244,6 +1246,98 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
           </div>
           <!-- End of BRI E-Pay Status -->
+
+          <div class="tab-pane" id="statusgopay">
+            <!-- GO-PAY Status -->
+
+            <h3 id="go-pay">GO-PAY</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi GO-PAY yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1c28dbbb-8596-48e4-85d7-9f1382db8a1f"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order03"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"275000.00"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"gopay"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2016-06-19 15:54:42"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"973d175e6368ad844b5817882489e6b22934d796a41a0573c066b1e64532dc0001087b87d877a3eac37cba20a733e1305f5e62739e65ff501d5d33c5ac62530f"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-5">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>QR/Link sudah terbuat, tapi transaksi belum dibayar customer dan masih menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi GO-PAY telah dibatalkan.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi GO-PAY belum diselesaikan setelah 15 menit (bisa dicustom).</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-5">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran GO-PAY adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Provider.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+          </div>
+          <!-- End of GO-PAY Status -->
+
           <div class="tab-pane" id="statustcash">
             <!-- T-Cash Status -->
 
@@ -1266,7 +1360,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-5">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-6">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1291,7 +1385,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-5">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-6">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1345,7 +1439,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-6">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-7">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1382,7 +1476,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-6">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-7">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1443,7 +1537,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-7">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-8">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1476,7 +1570,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-7">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-8">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">Transaction</a> di MAP.</p>
 
@@ -1538,7 +1632,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-8">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-9">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1571,7 +1665,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-8">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-9">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1629,7 +1723,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-9">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-10">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1654,7 +1748,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-9">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-10">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1709,7 +1803,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-10">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-11">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1738,7 +1832,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-10">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-11">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1804,7 +1898,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-11">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-12">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1833,7 +1927,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-11">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-12">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1870,31 +1964,42 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
           </div>
           <!-- End of BCA VA Status -->
 
-          <div class="tab-pane" id="statusbcaklikpay">
-            <!-- BCA KlikPay Status -->
+          <div class="tab-pane" id="statusbniva">
+            <!-- BNI VA Status -->
 
-            <h3 id="bca-klikpay">BCA KlikPay</h3>
+            <h3 id="bni-va">BNI VA</h3>
 
-            <p>Contoh Notifikasi HTTP untuk transaksi BCA KlikPay yang berhasil:</p>
+            <p>Contoh Notifikasi HTTP untuk transaksi BNI VA yang berhasil:</p>
 
 <pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"112233"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2017-01-19 15:40:43"</span><span class="p">,</span>
-    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"33000.00"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"bcaklikpay01"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span>
-    <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"644e39ab19d830b9ebcd2b4ae9f28c2dfaab06a33dd47d3fe2a94f2229b2478eb0606c43eec16e9836294b479b2e9867c309aad7a93a2d32d8b2f81c731f3379"</span><span class="p">,</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1e22e73d-b496-41d6-a7b0-3acb763d2020"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
-    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span>
+  <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+      <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"8578000000111111"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"payment_amounts"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"paid_at"</span><span class="p">:</span> <span class="s2">"2016-06-19 20:12:22"</span><span class="p">,</span>
+      <span class="s2">"amount"</span><span class="p">:</span> <span class="s2">"20000.00"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2016-06-19 19:12:22"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"20000.00"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1466323342"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"fe5f725ea770c451017e9d6300af72b830a668d2f7d5da9b778ec2c4f9177efe5127d492d9ddfbcf6806ea5cd7dc1a7337c674d6139026b28f49ad0ea1ce5107"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"9aed5972-5b6a-401e-894b-a32c91ed1a3a"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span>
 <span class="p">}</span>
 </code></pre>
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-12">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-13">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1923,7 +2028,97 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-12">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-13">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran BNI VA:
+<img alt="Snap bniva" class="img-responsive img-thumbnail" src="../../images/snap/bniva_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri E-cash adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi 'Settlement'.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of BNI VA Status -->
+
+          <div class="tab-pane" id="statusbcaklikpay">
+            <!-- BCA KlikPay Status -->
+
+            <h3 id="bca-klikpay">BCA KlikPay</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi BCA KlikPay yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"112233"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2017-01-19 15:40:43"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"33000.00"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"bcaklikpay01"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span>
+    <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"644e39ab19d830b9ebcd2b4ae9f28c2dfaab06a33dd47d3fe2a94f2229b2478eb0606c43eec16e9836294b479b2e9867c309aad7a93a2d32d8b2f81c731f3379"</span><span class="p">,</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1e22e73d-b496-41d6-a7b0-3acb763d2020"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Veritrans payment notification"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-14">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Proses pembayaran belum diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Pelanggan sudah menyelesaikan pembayaran dan berhasil.</td>
+                </tr>
+                <tr>
+                  <td>expired</td>
+                  <td>Pelanggan tidak menyelesaikan sampai batas waktu yang ditentukan.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-14">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1983,7 +2178,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-13">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-15">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -2012,7 +2207,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-13">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-15">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
