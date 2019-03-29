@@ -718,6 +718,8 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
   <li><a href="#statusxltunai" data-toggle="tab-code" data-lang="xl">XL Tunai</a></li> -->
   <li><a href="#statusmbill" data-toggle="tab-code" data-lang="mandiribill">Mandiri Bill Payment</a></li>
   <li><a href="#statusindomrt" data-toggle="tab-code" data-lang="indomaret">Indomaret</a></li>
+  <li><a href="#statusalfamart" data-toggle="tab-code" data-lang="alfamart">Alfamart</a></li>
+  <li><a href="#statusakulaku" data-toggle="tab-code" data-lang="akulaku">Akulaku</a></li>
   <li><a href="#statusdompetku" data-toggle="tab-code" data-lang="dompetku">Indosat Dompetku</a></li>
   <li><a href="#statusmandiriecash" data-toggle="tab-code" data-lang="mandiriecash">Mandiri Ecash</a></li>
   <li><a href="#statusbcaklikpay" data-toggle="tab-code" data-lang="bcaklikpay">BCA KlikPay</a></li>
@@ -1679,7 +1681,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Mandiri Bill Payment adalah sebagai berikut:</p>
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Indomaret adalah sebagai berikut:</p>
 
             <table>
               <thead>
@@ -1706,6 +1708,191 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
           </div>
           <!-- End of indomaret Status -->
+
+          <div class="tab-pane" id="statusalfamart">
+            <!-- Alfamart Status -->
+
+            <h3 id="alfamart">Alfamart</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Alfamart yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"991af93c-1049-4973-b38f-d6052c72e367"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order04"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"162500.00"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cstore"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2016-06-20 11:44:07"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"59061607081045705101"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"a198f93ac43cf98171dcb4bd0323c7e3afbee77a162a09e2381f0a218c761a4ef0254d7650602971735c486fea2e8e9c6d41ee65d6a53d65a12fb1c824e86f9f"</span><span class="p">,</span>
+  <span class="s2">"payment_code"</span><span class="p">:</span> <span class="s2">"25709650945026"</span><span class="p">,</span>
+  <span class="s2">"store"</span><span class="p">:</span> <span class="s2">"alfamart"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-10">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi belum terproses dan masih menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>cancel</td>
+                  <td>Transaksi telah dibatalkan. Nomor kode pembayaran Alfamart sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>expire</td>
+                  <td>Transaksi belum diselesaikan setelah waktu berlaku. Nomor kode pembayaran Alfamart sudah tidak valid.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-10">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Alfamart:
+<img alt="VT-Web indomrt3" class="img-responsive img-thumbnail" src="../../images/snap/alfamart_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Alfamart adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi <code>Settlement</code>.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima dan sudah diproses untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Alfamart Status -->
+
+          <div class="tab-pane" id="statusakulaku">
+            <!-- Akulaku Status -->
+
+            <h3 id="akulaku">Akulaku</h3>
+
+            <p>Contoh Notifikasi HTTP untuk transaksi Akulaku yang berhasil:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2018-08-24 16:20:36"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"11000.00"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"orderid-01"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"akulaku"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"35c4111539e184b268b7c1cd62a9c254e5d27c992c8fd55084f930b69b09eaafcfe14b0d512c697648295fdb45de777e1316b401f4729846a91b3de88cde3f05"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"b3a40398-d95d-4bb9-afe8-9a57bc0786ea"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span>
+<span class="p">}</span>
+</code></pre>
+
+            <p><br /></p>
+
+            <h4 id="status-notifikasi-https-post-yang-tersedia-11">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>transaction_status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pending</td>
+                  <td>Transaksi belum terproses dan masih menunggu untuk diselesaikan.</td>
+                </tr>
+                <tr>
+                  <td>deny</td>
+                  <td>Transaksi ditolak oleh Akulaku.</td>
+                </tr>
+                <tr>
+                  <td>settlement</td>
+                  <td>Dana transaksi berpindah dari akun pelanggan ke akun merchant.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+
+            <hr />
+
+            <h3 id="status-transaksi-merchant-admin-portalmap-11">Status Transaksi Merchant Admin Portal(MAP)</h3>
+
+            <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
+
+            <p>Contoh transaksi status yang sukses untuk pembayaran Akulaku:
+<img alt="VT-Web indomrt3" class="img-responsive img-thumbnail" src="../../images/snap/akulaku_status.png" /></p>
+
+            <p><br /></p>
+
+            <p>Daftar status transaksi yang tersedia di MAP untuk pembayaran Akulaku adalah sebagai berikut:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction Status</th>
+                  <th>Definisi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pending</td>
+                  <td>Transaksi belum diselesaikan dan akan menghasilkan status Pending.<br />Ketika pelanggan menyelesaikan pembayaran, status akan berubah menjadi <code>Settlement</code>.</td>
+                </tr>
+                <tr>
+                  <td>Settlement</td>
+                  <td>Transaksi diterima dan sudah diproses untuk settlement.</td>
+                </tr>
+                <tr>
+                  <td>Failure</td>
+                  <td>Transaksi Failure dapat diakibatkan oleh:<br /> 1. Transaksi ditolak oleh Bank.<br />2. Transaksi Pending belum dibayar dan sudah melewati masa berlaku.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- End of Akulaku Status -->
+
           <div class="tab-pane" id="statusdompetku">
             <!-- Indosat Dompetku Status -->
 
@@ -1728,7 +1915,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-10">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-12">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1753,7 +1940,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-10">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-12">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1808,7 +1995,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-11">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-13">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1837,7 +2024,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-11">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-13">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -1903,7 +2090,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-12">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-14">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -1932,7 +2119,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-12">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-14">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -2004,7 +2191,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-13">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-15">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -2033,7 +2220,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-13">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-15">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -2094,7 +2281,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-14">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-16">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -2123,7 +2310,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-14">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-16">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
@@ -2183,7 +2370,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <p><br /></p>
 
-            <h4 id="status-notifikasi-https-post-yang-tersedia-15">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
+            <h4 id="status-notifikasi-https-post-yang-tersedia-17">Status Notifikasi HTTP(S) POST Yang Tersedia</h4>
 
             <table>
               <thead>
@@ -2212,7 +2399,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
             <hr />
 
-            <h3 id="status-transaksi-merchant-admin-portalmap-15">Status Transaksi Merchant Admin Portal(MAP)</h3>
+            <h3 id="status-transaksi-merchant-admin-portalmap-17">Status Transaksi Merchant Admin Portal(MAP)</h3>
 
             <p>Merchant dapat memeriksa status transaksi melalui menu <a href="https://dashboard.sandbox.midtrans.com/payments">payments</a> di MAP.</p>
 
