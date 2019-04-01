@@ -264,7 +264,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../../id/snap/integration_php_wizard.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../../id/snap/integration_edd.html">Bahasa Indonesia</a></div>
         <div class="sidebar-search">
           <form>
             <input type="search" name="q" id="search-field" placeholder="Search">
@@ -360,11 +360,11 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="en-snap-integration-php-wizard">
+          <div class="en-snap-integration-edd">
             <div class="row">
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="PHP" data-placement="bottom">
-      <a href="integration_php.html"><img src="../../images/snap/php.jpg" /></a>
+      <a href="integration_php.html"><img src="../../images/snap/php_gray.jpg" /></a>
     </div>
   </div>
   <div class="col-md-2 col-sm-3 col-xs-12">
@@ -399,136 +399,190 @@
   </div>
   <div class="col-md-2 col-sm-3 col-xs-12">
     <div class="thumbnail" data-toggle="tooltip" title="Easy Digital Downloads" data-placement="bottom">
-    <a href="integration_edd.html"><img src="../../images/snap/edd_gray.png" /></a>
+    <a href="integration_edd.html"><img src="../../images/snap/edd.png" /></a>
     </div>
   </div>
 </div>
 
 <div class="tab-content">
   <div class="tab-pane active">
-    <p><!-- Beginning of header--></p>
-
-    <h2 id="snap-php-integration-using-wizard-or-setup-assistant">Snap PHP Integration Using Wizard (or Setup Assistant)</h2>
-
-    <div class="alert alert-success" role="alert">
-      <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-  <span class="sr-only">Info:</span>
-<strong>NEW</strong>:<br />Midtrans is happy to launch <a href="https://goo.gl/9KC2JB"><em>Devsupport AI</em></a> – a bot programmer that integrates Midtrans’ API with your code in a matter of minutes, fully guided.</p>
-    </div>
-
-    <h3 id="introduction">Introduction</h3>
-    <p>This Snap PHP integration is going to be assisted by Devsupport AI. There are 3 main steps to complete:</p>
-
+    <h3 id="snap-easy-digital-downloads-integration-steps">Snap Easy Digital Downloads Integration Steps</h3>
     <ol>
-      <li><a href="#preparation">Preparation</a></li>
-      <li><a href="#integration-using-devsupport-ai">Integration using Devsupport AI</a></li>
-      <li><a href="#notification-handling">Notification Handling</a></li>
-    </ol>
+  <li>Plugin Installation</li>
+  <li>Transaction Test</li>
+</ol>
 
-    <h3 id="preparation">Preparation</h3>
-    <p>Before proceeding any further, please make sure that you have followed the <a href="../welcome/preparation.html">Getting Started - Preparation</a> guide. Please also have your Access Keys (<strong>Client Key</strong> and <strong>Server Key</strong>) readily available.</p>
+    <p><br /></p>
 
-    <p>You can find your Access Keys in the <a href="https://dashboard.sandbox.midtrans.com">Merchant Administration Portal (MAP)</a> at <strong>Settings &gt; Access Keys</strong>. Please follow <a href="https://dashboard.sandbox.midtrans.com/settings/config_info">this link to find your access key</a>.</p>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+  <li class="active"><a href="#edd-step1" data-toggle="tab"><span>Step 1</span>Plugin Installation</a></li>
+  <li><a href="#edd-step2" data-toggle="tab"><span>Step 2</span>Transaction Test</a></li>
+</ul>
 
-    <h3 id="integration-using-devsupport-ai">Integration using Devsupport AI</h3>
-    <p>Please follow the following steps for integration using Devsupport AI:</p>
+    <div class="tab-content">
+      <div class="tab-pane active" id="edd-step1">
 
-    <ol>
-      <li>Download the <a href="https://goo.gl/9KC2JB">Devsupport AI app</a>. Please choose the file according to your system:
-        <ul>
-          <li>Windows : <strong>devsupport-ai-setup-[x.x.x].exe</strong></li>
-          <li>Mac : <strong>devsupport-ai-[x.x.x]-mac.zip</strong> (extract zip first, then open the app.)</li>
-          <li>Linux : <strong>devsupport-ai_[x.x.x]_amd64.deb</strong></li>
-        </ul>
-      </li>
-      <li>
-        <p>Install and open the App, you should see a screen below:
-   <img alt="App Screen" class="img-responsive img-thumbnail" src="../../images/snap/devsupport-screen1.png" /></p>
-      </li>
-      <li>Create a folder on your computer and create an <code>index.php</code> or <code>index.html</code> file in the folder.</li>
-      <li>Drop the folder in the app as instructed on the Devsupport AI app.</li>
-      <li>Type/Search for <strong>"Midtrans"</strong> when asked for the product you would like to integrate</li>
-      <li>Click on <strong>"Midtrans PHP Snap Integration"</strong></li>
-      <li>Enter your Sandbox <strong>Client Key</strong> and <strong>Server Key</strong> then <strong>Proceed</strong>. <em>If you enter wrong key combination, the app will let you know the keys are incorrect.</em></li>
-      <li>The app will then give you 3 files, all of which have your credentials set.
-        <ul>
-          <li><code>Veritrans.php</code></li>
-          <li><code>checkout.php</code></li>
-          <li><code>handle_notification.php</code></li>
-        </ul>
-      </li>
-      <li>Host them on your server and keep their URLs ready.</li>
-      <li>
-        <p>The app will also provide you an HTML tag for you to initiate a payment. The tag looks like the following:</p>
+        <h4 id="requirements">Requirements</h4>
 
-<pre><code class="highlight html"><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"pay-button"</span><span class="nt">&gt;</span>Pay!<span class="nt">&lt;/button&gt;</span>
-<span class="c">&lt;!-- TODO: Remove ".sandbox" from script src URL for production environment. Also input your client key in "data-client-key" --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://app.sandbox.midtrans.com/snap/snap.js"</span> <span class="na">data-client-key=</span><span class="s">"[YOUR_CLIENT_KEY]"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'pay-button'</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-<span class="c1">// This is minimal request body as example.</span>
-<span class="c1">// Please refer to docs for all available options: </span>
-<span class="c1">// https://snap-docs.midtrans.com/#json-parameter-request-body</span>
-<span class="c1">// TODO: you should change this gross_amount and order_id to your desire. </span>
-<span class="kd">var</span> <span class="nx">requestBody</span> <span class="o">=</span> 
-<span class="p">{</span>
-  <span class="na">transaction_details</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">gross_amount</span><span class="p">:</span> <span class="mi">123000</span><span class="p">,</span>
-    <span class="c1">// as example we use timestamp as order ID</span>
-    <span class="na">order_id</span><span class="p">:</span> <span class="s1">'T-'</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> 
-  <span class="p">},</span>  
-  <span class="na">credit_card</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">secure</span><span class="p">:</span> <span class="kc">true</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+        <ol>
+          <li>Wordpress v3.9.1 or greater</li>
+          <li>Easy Digital Downloads v2.0 or greater</li>
+          <li>PHP v5.4 or greater</li>
+          <li>MySQL v5.0 or greater</li>
+          <li>
+            <p>Midtrans plugin for Easy Digital Downloads [ <a href="https://github.com/Midtrans/midtrans-edd">Github</a> | <a href="https://github.com/Midtrans/midtrans-edd/archive/master.zip">Zip</a> ]</p>
 
-<span class="nx">getSnapToken</span><span class="p">(</span><span class="nx">requestBody</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
-  <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-  <span class="nx">snap</span><span class="p">.</span><span class="nx">pay</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">token</span><span class="p">);</span>
-<span class="p">})</span>
-  <span class="p">};</span>
-  <span class="cm">/**
-  * Send AJAX POST request to checkout.php, then call callback with the API response
-  * @param {object} requestBody: request body to be sent to SNAP API
-  * @param {function} callback: callback function to pass the response
-  */</span>
-  <span class="kd">function</span> <span class="nx">getSnapToken</span><span class="p">(</span><span class="nx">requestBody</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-<span class="kd">var</span> <span class="nx">xmlHttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span><span class="p">(</span><span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">callback</span><span class="p">(</span><span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"post"</span><span class="p">,</span> <span class="s2">"[YOUR_CHECKOUT.PHP_URL]"</span><span class="p">);</span>
-<span class="nx">xmlHttp</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">requestBody</span><span class="p">));</span>
-  <span class="p">}</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre>
+            <div class="alert alert-info" role="alert">
+              <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+   <span class="sr-only">Info:</span>
+ <strong>Info</strong>:
+ <br />Check <a href="../welcome/pluginlibrary.html">this page</a> for complete list of supported Midtrans plugin &amp; library.</p>
+            </div>
+          </li>
+        </ol>
 
-        <div class="alert alert-info" role="alert">
-          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-  <span class="sr-only">Info:</span>
-Please modify the <strong>gross_amount</strong> and <strong>order_id</strong> accordingly.</p>
+        <h4 id="installation-process">Installation Process</h4>
+
+        <ol>
+          <li>Download the plugin file to your computer and unzip it, rename folder to <strong>midtrans-edd</strong>.</li>
+          <li>Upload the unzipped plugin folder to your WordPress installation's <code>wp-content/plugins/</code> directory.</li>
+          <li>Install and activate the plugin from plugins menu within the WordPress admin panel.</li>
+          <li>Go to <strong>Downloads - Settings - Payment Gateways - General</strong> menu, fill the configuration fields.</li>
+          <li>
+            <p>Fill the following config fields as instructed on each settings description.</p>
+
+            <ul>
+              <li>Check <strong>Test Mode</strong> for testing transaction and uncheck for real transaction.</li>
+              <li>Check <code>Midtrans</code> on <strong>Payment Gateways</strong> field.</li>
+              <li>Select <code>Midtrans</code>on <strong>Default Gateway</strong> field.
+  <br />
+ <img alt="Edd Config" class="img-responsive img-thumbnail" src="../../images/snap/snap-edd1.png" />
+<br /><br /></li>
+            </ul>
+          </li>
+          <li>
+            <p>Fill the following config fields as instructed on <code>Midtrans</code> section.</p>
+
+            <ul>
+              <li>Fill <strong>Client and Server Key</strong>. You can find this credential on Midtrans MAP Dashboard.</li>
+              <li>Check <strong>Enable 3D Secure</strong>.
+  <br />
+ <img alt="Edd Config" class="img-responsive img-thumbnail" src="../../images/snap/snap-edd3.png" />
+<br /><br /></li>
+            </ul>
+          </li>
+          <li>
+            <p>Login to <a href="../welcome/preparation.html#step4">MAP portal to configure</a> few options below:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>URL Role</th>
+                  <th>Redirect URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Notification URL</td>
+                  <td>http://[your website url].com/?edd-listener=midtrans</td>
+                </tr>
+                <tr>
+                  <td>Finish Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+                <tr>
+                  <td>Error Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+                <tr>
+                  <td>Unfinish Redirect URL</td>
+                  <td>http://[your website url]</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><br /></p>
+          </li>
+        </ol>
+
+        <p><br /></p>
+
+      </div>
+
+      <div class="tab-pane" id="edd-step2">
+
+        <p><br />
+1. Perform successful transaction in your online store by inputing a dummy credit card number as followed (Sandbox Mode):</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Visa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Card Number</td>
+              <td>4811 1111 1111 1114</td>
+            </tr>
+            <tr>
+              <td>CVV</td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>Exp. Month</td>
+              <td>01</td>
+            </tr>
+            <tr>
+              <td>Exp. Year</td>
+              <td>2020</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><br />
+2. Examine a few points below to ensure plugin is installed and performs properly.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Check Point</th>
+              <th>Expected Result</th>
+              <th>When Unexpected Result Occurs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Check order status in Edd back end</td>
+              <td>Order status turns into <strong>complete</strong></td>
+              <td>Check endpoint/payment notification URL setting in MAP</td>
+            </tr>
+            <tr>
+              <td>Merchant receives email notification</td>
+              <td>Receive notification</td>
+              <td>Check MAP menu setting - email notification</td>
+            </tr>
+            <tr>
+              <td>Customer receives email notification</td>
+              <td>Receive notification</td>
+              <td>Check MAP menu setting - email notification</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><br /></p>
+
+        <div class="alert alert-warning" role="alert">
+          <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+  <span class="sr-only">Note: </span>
+  <br />- Please check our <a href="../reference/test.html">testing credential menu</a> for other testing number.</p>
         </div>
-      </li>
-      <li>
-        <p>If everything went smoothly, you can test the payment page by clicking the <strong>pay</strong> button. The Snap payment page will look like the following:</p>
 
-        <p><img alt="snap" class="img-responsive img-thumbnail" src="../../images/snap/snap01.png" /></p>
-      </li>
-    </ol>
-
-    <h3 id="notification-handling">Notification Handling</h3>
-    <p>Please ensure that all notifications are handled properly in the <code>handle_notification.php</code> file. Please refer to the <a href="integration_php_manual.html#step4">Handling HTTP(S) Notification</a> documentation page for more details.</p>
-
-    <h3 id="references">References</h3>
-    <p>For more details about PHP Snap integration, please refer to our <a href="integration_php_manual.html">step-by-step integration guide</a>.</p>
-
-    <h3 id="let-us-know-your-thoughts">Let Us Know Your Thoughts</h3>
-    <p>Is our wizard (or setup assistant, using Devsupport AI) helpful? Do you have any feedback? Please share your feedback <a href="https://goo.gl/hTxHkh">here</a>.</p>
-
+      </div>
+    </div>
   </div>
-  <!-- end of header-->
 </div>
 
 
