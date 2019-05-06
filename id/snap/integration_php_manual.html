@@ -2501,8 +2501,14 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
 </code></pre>
 
+        <div class="alert alert-warning" role="alert">
+          <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Note:</span>
+  <span class="sr-only">Note:</span>
+ <br />Dimohon tidak menggunakan port yang tidak biasa pada endpoint URL notifikasi Anda (contoh, jangan menggunakan https://tokoecomm.com:<code>20070</code>/notification), layanan Notifikasi midtrans tidak dapat mengirimkan notifikasi ke port yang tidak biasa.</p>
+        </div>
+
         <div class="alert alert-info" role="alert">
-          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info</span>
+          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info:</span>
   <span class="sr-only">Info:</span><br />
   Untuk keamanan, jika Merchant menggunakan <em>Veritrans_Notification</em> seperti pada contoh di Library PHP, proses <a href="https://snap-docs.midtrans.com/#handling-notifications">challenge status</a> sudah dilakukan.</p>
         </div>
