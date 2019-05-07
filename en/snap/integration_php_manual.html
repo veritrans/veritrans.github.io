@@ -2473,8 +2473,14 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
 </code></pre>
 
+        <div class="alert alert-warning" role="alert">
+          <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Note:</span>
+  <span class="sr-only">Note:</span>
+ <br />Please do not use unusual port on your notification URL endpoint (e.g: do not use https://tokoecomm.com:<code>20070</code>/notification ), our Notification service will not able to send notification to unusual port.</p>
+        </div>
+
         <div class="alert alert-info" role="alert">
-          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info</span>
+          <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info:</span>
   <span class="sr-only">Info:</span><br /> For security reason, if you using <em>Veritrans_Notification class</em> like the example. Our veritrans php library is already doing the <a href="https://snap-docs.midtrans.com/#handling-notifications">challenge notification</a> process.</p>
         </div>
 
