@@ -366,12 +366,23 @@
 <pre><code class="highlight plaintext">Production Environment:
 103.208.23.0/24
 182.253.221.152/32
+103.127.17.6
 
 Sandbox Environment:
 103.58.103.177
 </code></pre>
 
-<p>Apabila terjadi situasi dimana Anda tidak dapat terkoneksi dengan Midtrans, mohon pastikan bahwa Anda telah melakukan whitelist pada alamat IP di atas.</p>
+<p>Apabila terjadi situasi dimana Anda tidak dapat menerima notifikasi dari Midtrans, mohon pastikan bahwa Anda telah melakukan whitelist pada alamat IP di atas.</p>
+
+<h2 id="endpoint-api">Endpoint API</h2>
+
+<p>API endpoint Midtrans terdistribusi dan dilindungi keamanan berlapis, jadi tidak punya IP spesifik. Sebagai gantinya, mohon whitelist API domain kami:</p>
+
+<pre><code class="highlight plaintext">api.midtrans.com
+app.midtrans.com
+</code></pre>
+
+<p>Apabila terjadi situasi dimana Anda tidak dapat mengirim request ke Midtrans, mohon pastikan bahwa Anda telah melakukan whitelist pada domain di atas.</p>
 
 
             <div class="pagination">
