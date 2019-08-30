@@ -444,15 +444,20 @@
           <li>Download dan ekstrak plugin dari repositori ini.</li>
           <li>Masuk ke direktori Opencart Anda melalui koneksi FTP.</li>
           <li>Upload/copy folder <code>admin</code>, <code>catalog</code> dan <code>system</code> yang baru diekstrak ke dalam direktori OpenCart Anda.</li>
-          <li>Buka menu <strong>Extension - Payments</strong> pada halaman administrasi OpenCart.</li>
-          <li>Cari dan install modul Midtrans untuk mengaktifkan plugin.</li>
-          <li>
-            <p>Pada Midtrans modul, klik <strong>Edit</strong> untuk masuk ke halaman plugin, lalu masukan data-data yang diperlukan.</p>
-
+          <li>Buka menu <strong>Extensions</strong> - <strong>Extensions</strong> pada halaman administrasi OpenCart.</li>
+          <li>Filter by <strong>Payments</strong>, scroll kebawah sampai anda menemukan <code>Midtrans</code>.</li>
+          <li>Tekan tombol <strong>Install</strong> yang bewarna hijau dan edit plugin itu.</li>
+          <li>Pada Midtrans modul, klik <strong>Edit</strong> untuk masuk ke halaman plugin, lalu masukan data-data yang diperlukan.
             <ul>
-              <li>Isi <strong>Title</strong> dengan text yang akan ditampilkan kepada pelanggan.</li>
+              <li>Isi <strong>Display name</strong> dengan tulisan yang akan ditampilkan kepada pelanggan anda.</li>
+              <li>Isi <strong>Merchant Id</strong> dengan Merchant Id anda yang ada di Midtrans   account](https://dashboard.midtrans.com/settings/config_info/).</li>
               <li>Pilih <strong>Environment</strong>. <code>Sandbox</code> untuk test transaksi dan <code>Production</code> untuk transaksi asli.</li>
-              <li>Isi <strong>Client and Server key</strong>. Anda dapat menemukan ini di Midtrans MAP Dashboard.
+              <li>Isi <strong>Client and Server key</strong>. Anda dapat menemukan ini di <a href="https://dashboard.midtrans.com/settings/config_info/">Midtrans   account</a>.</li>
+              <li>Catatan: key untuk Sandbox &amp; Production berbeda, pastikan anda menggunakannya dengan benar.</li>
+              <li><strong>SUCCESS Order Status</strong> pilih status pesanan yang anda inginkan ketika pembayaran berhasil (disarankan: Processing).</li>
+              <li><strong>PENDING Order Status</strong> pilih status pesanan yang Anda inginkan ketika pembayaran gagal (disarankan: Pending).</li>
+              <li><strong>FAILURE Order Status</strong> pilih status pesanan yang Anda inginkan ketika pembayaran masih menunggu (pending) (disarankan: Canceled).</li>
+              <li>Konfigurasi lainnya bersifat opsional, Anda dapat membiarkannya sebagai default.
   <br />
  <img alt="OpenCart Config" class="img-responsive img-thumbnail" src="../../images/snap/snap-open1.png" />
 <br /><br /></li>

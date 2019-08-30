@@ -446,17 +446,22 @@
           <li>Download and extract the plugin from this repository.</li>
           <li>Locate the root OpenCart directory of your shop via FTP connection.</li>
           <li>Copy the <strong>admin, catalog</strong> and <strong>system</strong> folders to your OpenCart's root folder, and merge it.</li>
-          <li>Go to <strong>Extension - Payments</strong> menu in OpenCart admin page.</li>
-          <li>Find and install Midtrans module to activate plugin.</li>
-          <li>
-            <p>In Midtrans module, click <strong>Edit</strong> to enter plugin page.</p>
-
+          <li>In your OpenCart admin area, go to <strong>Extensions</strong> - <strong>Extensions</strong>.</li>
+          <li>Filter by <strong>Payments</strong>, scroll down untill you find <code>Midtrans</code>.</li>
+          <li>Click the <strong>Install</strong> green button and edit the plugin.</li>
+          <li>Insert your merchant details.
             <ul>
-              <li>Fill <strong>Title</strong> with text button that you want to display to customer.</li>
-              <li>Select <strong>Environment</strong>. <code>Sandbox</code> for testing transaction and <code>Production</code> for real transaction. </li>
-              <li>Fill <strong>Client and Server key</strong>. You can find this credential on Midtrans MAP Dashboard.
+              <li>Fill <strong>Display name</strong> with text button that you want to display to customer.</li>
+              <li>Fill <strong>Merchant Id</strong> with your Merchant Id <a href="https://dashboard.midtrans.com/settings/config_info/">Midtrans   account</a>.</li>
+              <li>Select <strong>Environment</strong>, <code>Sandbox</code> is for testing transaction, <code>Production</code> is for real transaction.</li>
+              <li>Fill in the <strong>client key</strong> &amp; <strong>server key</strong> with your corresonding <a href="https://dashboard.midtrans.com/settings/config_info/">Midtrans   account</a>.</li>
+              <li>Note: key for Sandbox &amp; Production is different, make sure you use the correct one.</li>
+              <li><strong>SUCCESS Order Status</strong> select your desired order status when payment is success (recommended: Processing).</li>
+              <li><strong>PENDING Order Status</strong> select your desired order status when payment is failure (recommended: Pending).</li>
+              <li><strong>FAILURE Order Status</strong> select your desired order status when payment is pending (recommended: Canceled).</li>
+              <li>Other configuration are optional, you can leave it as default.
 <br />
-  <img alt="OpenCart Setting" class="img-responsive img-thumbnail" src="../../images/snap/snap-open1.png" />
+<img alt="OpenCart Setting" class="img-responsive img-thumbnail" src="../../images/snap/snap-open1.png" />
 <br /><br /></li>
             </ul>
           </li>
