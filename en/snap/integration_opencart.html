@@ -426,16 +426,19 @@
         <h4 id="requirements">Requirements</h4>
 
         <ol>
-          <li>An online store with OpenCart infrastructure. This plugin is tested with OpenCart v2.0, v2.1, and v2.2.</li>
+          <li>An online store with OpenCart infrastructure. This plugin is tested with <strong>OpenCart v3.0.3.2</strong>.</li>
           <li>PHP v5.4 or greater.</li>
           <li>MySQL v5.0 or greater.</li>
           <li>
-            <p>Midtrans plugin for OpenCart [ <a href="https://github.com/veritrans/SNAP-Opencart">Github</a> | <a href="https://github.com/veritrans/SNAP-Opencart/archive/master.zip">Zip</a> ].</p>
+            <p>Midtrans plugin for OpenCart v3.x [ <a href="https://github.com/Midtrans/Midtrans-Opencart3/">Github</a> | <a href="https://github.com/Midtrans/Midtrans-Opencart3/archive/master.zip">Zip</a> ].</p>
 
             <div class="alert alert-info" role="alert">
               <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
    <span class="sr-only">Info:</span>
- <strong>Info</strong>:<br />Check <a href="../welcome/pluginlibrary.html">this page</a> for complete list of supported Midtrans plugin &amp; library.</p>
+ <strong>Info</strong>:
+ <br />For OpenCart v2.0, v2.1, v2.2 <a href="https://github.com/veritrans/SNAP-Opencart">follow this guide</a>.
+ <br />For OpenCart v2.3 <a href="https://github.com/Midtrans/SNAP-Opencart-2.3">follow this guide</a>.
+ <br />Check <a href="../welcome/pluginlibrary.html">this page</a> for complete list of supported Midtrans plugin &amp; library.</p>
             </div>
           </li>
         </ol>
@@ -456,9 +459,9 @@
               <li>Select <strong>Environment</strong>, <code>Sandbox</code> is for testing transaction, <code>Production</code> is for real transaction.</li>
               <li>Fill in the <strong>client key</strong> &amp; <strong>server key</strong> with your corresonding <a href="https://dashboard.midtrans.com/settings/config_info/">Midtrans   account</a>.</li>
               <li>Note: key for Sandbox &amp; Production is different, make sure you use the correct one.</li>
-              <li><strong>SUCCESS Order Status</strong> select your desired order status when payment is success (recommended: Processing).</li>
-              <li><strong>PENDING Order Status</strong> select your desired order status when payment is failure (recommended: Pending).</li>
-              <li><strong>FAILURE Order Status</strong> select your desired order status when payment is pending (recommended: Canceled).</li>
+              <li><strong>SUCCESS Order Status</strong> select your desired order status when payment is success (recommended: <code>Processing</code>).</li>
+              <li><strong>PENDING Order Status</strong> select your desired order status when payment is failure (recommended: <code>Pending</code>).</li>
+              <li><strong>FAILURE Order Status</strong> select your desired order status when payment is pending (recommended: <code>Canceled</code>).</li>
               <li>Other configuration are optional, you can leave it as default.
 <br />
 <img alt="OpenCart Setting" class="img-responsive img-thumbnail" src="../../images/snap/snap-open1.png" />
@@ -478,19 +481,19 @@
               <tbody>
                 <tr>
                   <td>Payment Notification URL</td>
-                  <td>http://[your-site-url]/index.php?route=payment/snap/payment_notification</td>
+                  <td>http://[your-site-url]/index.php?route=extension/payment/snap/payment_notification</td>
                 </tr>
                 <tr>
                   <td>Finish Redirect URL</td>
-                  <td>http://[your-site-url]/index.php?route=payment/snap/landing_redir&amp;</td>
+                  <td>http://[your-site-url]/index.php?route=extension/payment/snap/landing_redir&amp;</td>
                 </tr>
                 <tr>
                   <td>Error Redirect URL</td>
-                  <td>http://[your-site-url]/index.php?route=payment/snap/landing_redir&amp;</td>
+                  <td>http://[your-site-url]/index.php?route=extension/payment/snap/landing_redir&amp;</td>
                 </tr>
                 <tr>
                   <td>Unfinish Redirect URL</td>
-                  <td>http://[your-site-url]/index.php?route=payment/snap/landing_redir&amp;</td>
+                  <td>http://[your-site-url]/index.php?route=extension/payment/snap/landing_redir&amp;</td>
                 </tr>
               </tbody>
             </table>
@@ -499,11 +502,11 @@
 
         <p><br /></p>
 
-        <div class="alert alert-warning" role="alert">
-          <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+        <!-- <div class="alert alert-warning" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
   <span class="sr-only">Note: </span>
- <br />Please check our <a href="https://github.com/veritrans/SNAP-Opencart/wiki">Snap-Opencart Repo Wiki</a> for other advanced features tutorial.</p>
-        </div>
+ <br>Please check our [Snap-Opencart Repo Wiki](https://github.com/veritrans/SNAP-Opencart/wiki) for other advanced features tutorial.
+</div> -->
       </div>
 
       <div class="tab-pane" id="opencart-step2">
@@ -580,7 +583,7 @@
           <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
   <span class="sr-only">Note: </span>
   <br />- Please check our <a href="../reference/test.html">testing credential menu</a> for other testing number.
- <br />- Please check our <a href="https://github.com/veritrans/SNAP-Opencart/wiki">Snap-Opencart Repo Wiki</a> for other advanced features tutorial.</p>
+<!--  <br>- Please check our [Snap-Opencart Repo Wiki](https://github.com/veritrans/SNAP-Opencart/wiki) for other advanced features tutorial. --></p>
         </div>
 
       </div>
