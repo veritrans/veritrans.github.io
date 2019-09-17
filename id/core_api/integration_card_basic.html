@@ -263,7 +263,7 @@
     <div class="docs-logo">
       <span>DOCS</span>
     </div>
-    <div class="language-toggle"> <a href="../../en/payment_link/index.html">English</a> / Bahasa Indonesia</div>
+    <div class="language-toggle"> <a href="../../en/core_api/integration_card_basic.html">English</a> / Bahasa Indonesia</div>
     <div class="sidebar-search">
       <form>
         <input type="search" name="q" id="search-field" placeholder="Pencarian">
@@ -315,7 +315,7 @@
       
         <li>
           
-            <a class="parent" href="index.html">Payment Link</a>
+            <a class="parent" href="../payment_link/index.html">Payment Link</a>
           
         </li>
       
@@ -327,7 +327,7 @@
               
                 <li class=""><a href="https://api-docs.midtrans.com">Core API Docs</a></li>
               
-                <li class=""><a href="../core_api/integration_card_basic.html">Pembayaran Kartu</a></li>
+                <li class="active"><a href="integration_card_basic.html">Pembayaran Kartu</a></li>
               
             </ul>
           
@@ -366,59 +366,381 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="id-payment-link-index">
-            <h2 id="payment-link">Payment Link</h2>
+          <div class="id-core-api-integration-card-basic">
+            <h2 id="integrasi-pembayaran-kartu">Integrasi Pembayaran Kartu</h2>
 
-<hr />
+<p>Proses integrasi dasar untuk pembayaran kartu akan dijelaskan di bawah.</p>
 
-<h5 id="tutorial-berikut-akan-membantu-anda-melakukan-integrasi-ke-midtrans-dengan-payment-link-apabila-butuh-bantuan-silahkan-hubungi-kami-di-supportmidtranscommailtosupportmidtranscom-email-support-atau-kunjungi-support-pagehttpsupportmidtranscom-midtrans-support"><em>Tutorial berikut akan membantu Anda melakukan integrasi ke Midtrans dengan Payment Link. Apabila butuh bantuan, silahkan hubungi kami di <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;</a> atau kunjungi <a title="Midtrans Support" href="http://support.midtrans.com">support page</a>.</em></h5>
-<hr />
+<h3 id="environment-sandbox">Environment Sandbox</h3>
+<p>Semua langkah di bawah menggunakan <strong>Sandbox</strong> environment Midtrans, bukan Production, untuk memudahkan testing proses integrasi. Pastikan Anda sudah mengubah ke mode Sandbox pada <a href="https://account.midtrans.com">dashboard akun Midtrans</a> Anda saat mendapatkan Server Key dan Client Key. Dijelaskan pada <a href="../welcome/preparation.html#step3">Langkah Awal - Persiapan</a></p>
 
-<h3 id="overview">Overview</h3>
+<p>Server Key dan Client Key bisa didapatkan pada menu <code>Settings &gt; Access Keys</code></p>
 
-<p>Payment Link membantu Anda menerima pembayaran barang atau jasa kepada pelanggan Anda dengan membuat link ke halaman pembayaran Midtrans. Tidak perlu integrasi teknikal di sisi merchant, Anda bisa membuat Payment Link dan mengirimkan ke pelanggan lewat email atau chat message. Ketika pembayaran telah dilakukan oleh customer Anda akan menerima notifikasi untuk transaksi tersebut.</p>
+<h3 id="testing-pembayaran">Testing Pembayaran</h3>
+<p>Untuk mengetest transaksi sebagai customer, silahkan gunakan <a href="../reference/test.html">kredensial testing di sini</a>. Contoh, kartu untuk skenario sukses:</p>
 
-<h3 id="membuat-payment-link">Membuat Payment Link</h3>
+<pre><code class="highlight plaintext">Card Number: 4811 1111 1111 1114 
+CVV: 123 
+Expiry: &lt;tanggal berapapun di masa depan&gt;
+</code></pre>
 
-<p>Untuk membuat Payment Link, klik <code>Payment Link</code> di menu bar sebelah kiri. Lalu klik tombol <code>Create Payment Link</code>.</p>
+<h3 id="diagram">Diagram</h3>
+<p>Gambaran dari flow transaksi dalam sequence diagaram:</p>
 
-<p><img alt="paymentlink new" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_new.png" /></p>
+<p><img alt="flow transaksi kartu" class="img-responsive img-thumbnail" src="../../images/core_api/card_transaction_3ds.png" />
+.
+<br /><br /></p>
 
-<p>Pada halaman ini, berikut kolom yang perlu diisi untuk membuat Link:</p>
-
+<h2 id="langkah-integrasi">Langkah Integrasi</h2>
 <ol>
-  <li><code>Order ID</code> - Order ID dari Payment Link</li>
-  <li><code>Payment Link ID</code> - Alamat URL dari Payment Link</li>
-  <li><code>Usage Limit</code> - Berapa banyak jumlah order Payment Link yang dapat digunakan</li>
-  <li><code>Item Name</code> - Nama dari barang atau jasa yang akan Anda jual</li>
-  <li><code>Item Price</code> - Harga dari barang atau yang akan Anda jual</li>
+  <li>Dapatkan token kartu, melalui frontend.</li>
+  <li>Kirim data traksaksi ke API Charge dengan token kartu, melalui backend.</li>
+  <li>(Kondisional) jika transaksi 3DS, buka redirect_url 3DS dengan popup/redirect, melalui frontend.</li>
+  <li>Terima notifikasi transaksi, pada backend.
+<br /><br /></li>
 </ol>
 
-<p><img alt="paymentlink create" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_create.png" /></p>
+<h2 id="dapatkan-token-kartu">1. Dapatkan Token Kartu</h2>
+<p><code>token_id</code> kartu adalah representasi dari data kartu customer, yang akan digunakan untuk transaksi. <code>token_id</code> didapatkan menggunakan <a href="https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js">Library JS MidtransNew3ds</a> pada frontend website merchant, data kartu akan dikirimkan dengan aman dari javascript frontend ke API Midtrans untuk ditukar dengan <code>token_id</code> kartu, untuk menghindari risiko jika data kartu dikirim dari backend merchant.</p>
 
-<p>Opsi tambahan tersedia apabila Anda ingin (a) mengirimkan Payment Link ke pelanggan tertentu atau (b) menentukan masa berakhir dari Link tersebut.</p>
+<h3 id="gunakan-midtrans-js">Gunakan Midtrans JS</h3>
+<p><strong>Client Key</strong> (dari <a href="https://account.midtrans.com">Dashboard</a>) diperlukan untuk tahap ini. Gunakan JS library Midtrans pada halaman pembayaran, dengan menambahkan script tag:</p>
 
-<p><img alt="paymentlink options" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_options.png" /></p>
+<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">id=</span><span class="s">"midtrans-script"</span> <span class="na">type=</span><span class="s">"text/javascript"</span>
+<span class="na">src=</span><span class="s">"https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js"</span> 
+<span class="na">data-environment=</span><span class="s">"sandbox"</span> 
+<span class="na">data-client-key=</span><span class="s">"&lt;MASUKKAN CLIENT KEY ANDA DISINI&gt;"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
 
-<p>Apabila transaksi ditujukan untuk pelanggan tertentu, mereka akan menerima email dengan Payment Link tersebut. Masa berakhir adalah hari terakhir Payment Link tersebut dapat digunakan.</p>
+<p><strong>Penting</strong>: Ganti attribute berikut.</p>
 
-<h3 id="mengatur-payment-link">Mengatur Payment Link</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Nilai</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>data-environment</code></td>
+      <td>Masukkan <code>sandbox</code> atau <code>production</code> (API environment)</td>
+    </tr>
+    <tr>
+      <td><code>data-client-key</code></td>
+      <td>Masukkan <strong>client key</strong> dari <a href="https://account.midtrans.com">Dashboard akun</a> Anda.</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Setelah Anda membuat Payment Link, maka Anda akan diarahkan kembali ke halaman daftar Payment Link yang mana Anda dapat melihat seluruh Payment Link yang telah Anda buat. Anda dapat menyalin dan membagikan setiap link ke pelanggan Anda. Anda juga dapat melihat detail dan menghapus link tersebut.</p>
+<p>Tautan: <a href="https://api-docs.midtrans.com/#get-token"><em>Definisi lebih detail</em></a></p>
 
-<p><img alt="paymentlink list" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_list.png" /></p>
+<h3 id="implementasi-js-untuk-mendapatkan-token-kartu">Implementasi JS Untuk Mendapatkan Token Kartu</h3>
+<p>Untuk mendapatkan <code>token_id</code> kartu, kita akan menggunakan function <code>MidtransNew3ds.getCardToken</code>. Implementasikan Javascript berikut pada halaman pembayaran.</p>
 
-<p>Ketika Anda memilih opsi <code>Details</code> pada payment link, maka Anda akan menemukan sebuah halaman dengan seluruh detail dari payment link.  Anda juga dapat melihat jumlah <code>orders</code> dari payment link dan dapat melihat pesanan pada halaman transaksi.</p>
+<pre><code class="highlight javascript"><span class="c1">// data kartu dari input customer, contohnya</span>
+<span class="kd">var</span> <span class="nx">cardData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"card_number"</span><span class="p">:</span> <span class="mi">4811111111111114</span><span class="p">,</span>
+  <span class="s2">"card_exp_month"</span><span class="p">:</span> <span class="mi">02</span><span class="p">,</span>
+  <span class="s2">"card_exp_year"</span><span class="p">:</span> <span class="mi">2025</span><span class="p">,</span>
+  <span class="s2">"card_cvv"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+<span class="p">};</span>
 
-<p><img alt="paymentlink details" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_details.png" /></p>
+<span class="c1">// callback functions</span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">onSuccess</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// Sukses mendapatkan token_id kartu, implementasi sesuai kebutuhan</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Success to get card token_id, response:'</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">token_id</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_id</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'This is the card token_id:'</span><span class="p">,</span> <span class="nx">token_id</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">onFailure</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// Gagal mendapatkan token_id kartu, implementasi sesuai kebutuhan</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Fail to get card token_id, response:'</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
 
-<h3 id="halaman-payment-link">Halaman Payment Link</h3>
+<span class="c1">// panggil function `getCardToken`</span>
+<span class="nx">MidtransNew3ds</span><span class="p">.</span><span class="nx">getCardToken</span><span class="p">(</span><span class="nx">cardData</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre>
+<p>Jika semua lancar, kita akan mendapatkan <code>token_id</code> kartu di dalam callback function <code>onSuccess</code>. Yang akan digunakan sebagai salah satu parameter JSON untuk request API <code>/charge</code>.</p>
 
-<p>Ketika Anda mengirim payment link ke pelanggan, mereka dapat membuka link dan akan melihat halaman Midtrans Payment. Apabila tidak terdapat data pelanggan khusus, maka pelanggan harus memasukkan detail mereka (nama, nomer telepon, dan alamat email) untuk melanjutkan pembayaran. Pengguna harus memilih metode pembayaran dan mengikuti instruksi yang diberikan. Ketika pelanggan telah menyelesaikan pembayaran, maka Anda akan menerima notifikasi dari transaksi tersebut.</p>
+<p><code>token_id</code> akan butuh untuk dikirimkan dari frontend ke backend pada tahap selanjutnya, bisa dilakukan menggunakan Ajax (dengan javascript) atau form HTML (dengan HTTP POST), dsb. Merchant bebas mengimplementasikan.</p>
+
+<blockquote>
+  <p><strong>Catatan:</strong> <code>token_id</code> ini hanya valid untuk 1 transaksi. Setiap transaksi diharuskan melalui proses ini lagi, untuk membantu memastikan data kartu dikirimkan dengan aman. Jika Anda ingin untuk menyimpan token kartu, Anda bisa gunakan fitur <a href="https://api-docs.midtrans.com/#card-features-one-click">One-click</a>/<a href="https://api-docs.midtrans.com/#card-features-two-clicks">Two-clicks</a>.</p>
+</blockquote>
+
+<p><br /><br /></p>
+
+<h2 id="kirim-data-transaksi-ke-api-charge">2. Kirim Data Transaksi ke API Charge</h2>
+
+<p>Request API charge akan dilakukan melalui backend Merchant. <strong>Server Key</strong> (dari <a href="https://account.midtrans.com">Dashboard</a> dashboard Anda) akan dibutuhkan untuk <a href="https://api-docs.midtrans.com/#http-s-header">meng-otentikasi request</a>.</p>
+
+<h3 id="request-charge-api">Request Charge API</h3>
+<p>Berikut contoh dari request API <code>/charge</code> dalam Curl, silahkan implementasikan sesuai bahasa pemrograman backend Anda (Anda juga bisa cek <a href="../welcome/pluginlibrary.html">library-library</a> pemrograman yang tersedia). Gunakan <code>token_id</code> yang didapat sebelumnya.</p>
+
+<pre><code class="highlight shell"><span class="c"># contoh charge dalam CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;SERVER KEY ANDA ENCODED dalam Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "credit_card",
+  "transaction_details": {
+    "order_id": "order102",
+    "gross_amount": 789000
+  },
+  "credit_card": {
+    "token_id": "&lt;token_id yang didapat dari langkah sebelumnya&gt;",
+    "authentication": true,
+  }
+}'</span>
+</code></pre>
+
+<p>Opsional: kita bisa kustomisasi object <code>credit_card</code> untuk <a href="https://api-docs.midtrans.com/#credit-card">fitur-fitur yg lebih kompleks</a>. Contohnya:</p>
+
+<pre><code class="highlight javascript"><span class="p">...</span>
+  <span class="s2">"credit_card"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"token_id"</span><span class="err">:</span> <span class="s2">"&lt;token_id yang didapat dari langkah sebelumnya&gt;"</span><span class="p">,</span>
+    <span class="s2">"authentication"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">//set true untuk 3DS, false jika punya acquiring non 3DS</span>
+    <span class="s2">"save_token_id"</span><span class="err">:</span> <span class="kc">true</span> <span class="c1">//opsional, untuk fitur one/two click</span>
+    <span class="s2">"installment_term"</span><span class="err">:</span> <span class="mi">12</span><span class="p">,</span> <span class="c1">//opsional, untuk fitur installment</span>
+    <span class="s2">"bank"</span><span class="err">:</span> <span class="s2">"bca"</span><span class="p">,</span> <span class="c1">//opsional, untuk spesifik bank acquiring</span>
+  <span class="p">}</span>
+<span class="p">...</span>
+</code></pre>
+
+<p>Opsional: kita bisa kustomisasi <a href="https://api-docs.midtrans.com/#json-object">data transaction_details</a>. Untuk menyertakan data seperti customer_details, item_details, dsb. Disarankan untuk mengirim data sebanyak mungkin agar nantinya report/dashboard menampilkan informasi tersebut.</p>
+
+<h3 id="response-charge-api">Response Charge API</h3>
+<p>Kita akan mendapat <strong>response API</strong> seperti ini.</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card transaction is successful"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0bb563a9-ebea-41f7-ae9f-d99ec5f9700a"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order102"</span><span class="p">,</span>
+  <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/token/rba/redirect/481111-1114-0bb563a9-ebea-41f7-ae9f-d99ec5f9700a"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"789000.00"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-08-27 15:50:54"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+  <span class="s2">"card_type"</span><span class="p">:</span> <span class="s2">"credit"</span>
+<span class="p">}</span>
+</code></pre>
+
+<ul>
+  <li>
+    <p>Jika <code>transaction_status</code> adalah <code>capture</code> dan <code>fraud_status</code> adalah <code>accept</code>, artinya transaksinya tidak butuh 3DS, dan sekarang sudah selesai dengan sukses.</p>
+  </li>
+  <li>
+    <p>Jika <code>transaction_status</code> adalah <code>pending</code> dan terdapat <code>redirect_url</code>, artinya transaksinya membutuhkan 3DS, dan akan butuh untuk dilanjutkan ke tahap selanjutnya, membuka halaman 3DS authentication.
+<br /><br /></p>
+  </li>
+</ul>
+
+<h2 id="buka-halaman-3ds-authentication">3. Buka Halaman 3DS Authentication</h2>
+
+<p>Dari response API, sekarang kita punya <code>redirect_url</code>. Untuk dibuka (ditampilkan ke customer) menggunakan <a href="https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js">library JS MidtransNew3ds</a> pada frontend website merchant.</p>
+
+<p>Untuk membuka halaman 3DS kita bisa gunakan function <code>MidtransNew3ds.authenticate</code> atau <code>MidtransNew3ds.redirect</code>. Masukkan <code>redirect_url</code> yang didapatkan sebelumnya.</p>
+
+<h3 id="implementasi-js-untuk-buka-halaman-3ds-authenticate">Implementasi JS Untuk Buka Halaman 3DS Authenticate</h3>
+
+<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">redirect_url</span> <span class="o">=</span> <span class="s1">'&lt;redirect_url didapatkan dari response Charge&gt;'</span><span class="p">;</span>
+
+<span class="c1">// callback functions</span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">performAuthentication</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">redirect_url</span><span class="p">){</span>
+    <span class="c1">// Implementasikan bagaimana anda akan membuka iframe untuk menampilkan redirect_url 3DS authentication ke customer</span>
+    <span class="nx">popupModal</span><span class="p">.</span><span class="nx">openPopup</span><span class="p">(</span><span class="nx">redirect_url</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">onSuccess</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// 3ds authentication sukses, implementasikan skenario sukses</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'response:'</span><span class="p">,</span><span class="nx">response</span><span class="p">);</span>
+    <span class="nx">popupModal</span><span class="p">.</span><span class="nx">closePopup</span><span class="p">();</span>
+  <span class="p">},</span>
+  <span class="nx">onFailure</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// 3ds authentication gagal, implementasikan skenario gagal</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'response:'</span><span class="p">,</span><span class="nx">response</span><span class="p">);</span>
+    <span class="nx">popupModal</span><span class="p">.</span><span class="nx">closePopup</span><span class="p">();</span>
+  <span class="p">},</span>
+  <span class="nx">onPending</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+    <span class="c1">// transaksi pending, hasil transaksi akan dikirimkan nanti melalui POST notification, implementasikan sesuai kebutuhan</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'response:'</span><span class="p">,</span><span class="nx">response</span><span class="p">);</span>
+    <span class="nx">popupModal</span><span class="p">.</span><span class="nx">closePopup</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// panggil function `authenticate`</span>
+<span class="nx">MidtransNew3ds</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="nx">redirect_url</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+
+
+
+<span class="cm">/**
+ * Contoh helper function untuk membuka Iframe popup, Anda bisa ubah implementasi dengan metode anda sendiri.
+ * Contoh menggunakan library PicoModal:
+ * &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/picomodal/3.0.0/picoModal.js"&gt;&lt;/script&gt;
+ */</span>
+<span class="kd">var</span> <span class="nx">popupModal</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">modal</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">openPopup</span><span class="p">(</span><span class="nx">url</span><span class="p">){</span>
+      <span class="nx">modal</span> <span class="o">=</span> <span class="nx">picoModal</span><span class="p">({</span>
+        <span class="na">content</span><span class="p">:</span><span class="s1">'&lt;iframe frameborder="0" width="100%" height="100%" src="'</span><span class="o">+</span><span class="nx">url</span><span class="o">+</span><span class="s1">'"&gt;&lt;/iframe&gt;'</span><span class="p">,</span>
+        <span class="na">width</span><span class="p">:</span> <span class="s2">"75%"</span><span class="p">,</span> 
+        <span class="na">closeButton</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> 
+        <span class="na">overlayClose</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">escCloses</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}).</span><span class="nx">show</span><span class="p">();</span>
+    <span class="p">},</span>
+    <span class="nx">closePopup</span><span class="p">(){</span>
+      <span class="k">try</span><span class="p">{</span>
+        <span class="nx">modal</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}());</span>
+
+<span class="cm">/**
+ * Atau alternatifnya, anda bisa redirect customer dengan: 
+ * MidtransNew3ds.redirect(redirect_url, { callbackUrl : 'https://mywebsite.com/finish_3ds' });
+ **/</span>
+</code></pre>
+
+<h3 id="json-response-3ds-authenticate">JSON Response 3DS Authenticate</h3>
+<p>Pada callback function JS, kita akan mendapatkan JSON dari hasil transaksi seperi berikut.</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card transaction is successful"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"226ba26f-b050-4fc5-aa25-b7f8169bc67b"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order102"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"789000.00"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-08-27 17:22:08"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1566901334936"</span><span class="p">,</span>
+  <span class="s2">"eci"</span><span class="p">:</span> <span class="s2">"05"</span><span class="p">,</span>
+  <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+  <span class="s2">"card_type"</span><span class="p">:</span> <span class="s2">"credit"</span><span class="p">,</span>
+  <span class="s2">"channel_response_code"</span><span class="p">:</span> <span class="s2">"00"</span><span class="p">,</span>
+  <span class="s2">"channel_response_message"</span><span class="p">:</span> <span class="s2">"Approved"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Jika <code>transaction_status</code> adalah <code>capture</code> dan <code>fraud_status</code> adalah <code>accept</code>, berarti transaksinya sukses, dan sudah selesai.</p>
+
+<blockquote>
+  <p><strong>CATATAN PENTING:</strong> Untuk update status transaksi di backend/database Anda, JANGAN hanya mengandalkan callback dari frontend! Untuk alasan keamanan, dengan memastikan status transaksi berasal dari Midtrans, sebaiknya gunakan HTTP Notification atau <a href="https://api-docs.midtrans.com/#get-transaction-status">API Get Status</a> untuk update status transaksi.</p>
+</blockquote>
+
+<p><br /><br /></p>
+
+<h2 id="terima-http-notification">4. Terima HTTP Notification</h2>
+
+<p>HTTP notification dari Midtrans ke backend Merchant akan dikirimkan pada saat terjadi perubahan <code>transaction_status</code>, untuk memastikan Mercahant mendapat informasi secara aman. Termasuk pada saat status transaksi berubah jadi success atau denied. Jadi selain JSON pada callback di atas, Merchant juga akan menerima notifikasi dari Midtrans.</p>
+
+<p>Request HTTP POST dengan body JSON akan dikirimkan ke <strong>notification url</strong> Merchant yang dikonfigurasi pada <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), berikut contoh body JSON yang akan diterima Merchant:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-08-27 17:22:08"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"226ba26f-b050-4fc5-aa25-b7f8169bc67b"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"9b67a07a82d592bc493f3b775eaae5b1862a8bbaa051cdd31a0a81566c84f2c4d306fe2712c86f8167c4faa594a0e2cbe6ae898491bfaebaf849681ae92264d5"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order102"</span><span class="p">,</span>
+  <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"789000.00"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"eci"</span><span class="p">:</span> <span class="s2">"05"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+  <span class="s2">"channel_response_message"</span><span class="p">:</span> <span class="s2">"Approved"</span><span class="p">,</span>
+  <span class="s2">"channel_response_code"</span><span class="p">:</span> <span class="s2">"00"</span><span class="p">,</span>
+  <span class="s2">"card_type"</span><span class="p">:</span> <span class="s2">"credit"</span><span class="p">,</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1566901334936"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Lihat <a href="https://api-docs.midtrans.com/#handing-notifications">disni untuk lebih lengkap dalam menangani HTTP Notification</a>.
+<br /><br /></p>
+
+<h2 id="mengubah-ke-production">Mengubah Ke Production</h2>
+
+<p>Untuk menggunakan environment production (menerima pembayaran dari customer sesungguhnya), silahkan pastikan:</p>
+
+<ol>
+  <li>Ubah domain API URL dari <code>api.sandbox.midtrans.com</code> menjadi <code>api.midtrans.com</code></li>
+  <li>Ubah Client Key dan Server Key dari Dashboard sandbox, dengan key dari Dashboard production.
+<br /><br /></li>
+</ol>
+
+<h2 id="selesai">Selesai</h2>
+
+<p>Integrasi pembayaran kartu sekarang selesai. Berikut beberapa referensi tambahan.
+<br /><br /></p>
+
+<h2 id="deskripsi">Deskripsi</h2>
+
+<p>Nilai <code>transaction_status</code> dalam transaksi kartu:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status Transaksi</th>
+      <th>Deskripsi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>capture</code></td>
+      <td>Transaksi sukses, dana berhasil dipotong</td>
+    </tr>
+    <tr>
+      <td><code>pending</code></td>
+      <td>Transaksi terbuat dan menunggu tindakan (3DS diselesaikan oleh customer)</td>
+    </tr>
+    <tr>
+      <td><code>deny</code></td>
+      <td>Transaksi ditolak, cek lebih lanjut <code>channel_response_message</code> atau <code>fraud_status</code></td>
+    </tr>
+    <tr>
+      <td><code>expire</code></td>
+      <td>Transaksi gagal karena customer tidak menyelesaikan 3DS dalam waktu tertentu</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>Definisi lebih detail transaction_status</em></a></p>
+
+<p>Link: <a href="https://api-docs.midtrans.com/#fraud-status"><em>Definisi lebih detail fraud_status</em></a></p>
+
+<h4 id="referensi">Referensi</h4>
+
+<p>Anda juga bisa lihat contoh implementasi berikut:</p>
+
+<ul>
+  <li><a href="https://github.com/Midtrans/midtrans-nodejs-client/blob/master/examples/expressApp/views/simple_core_api_checkout.ejs">NodeJs - Express</a></li>
+  <li><a href="https://github.com/Midtrans/midtrans-python-client/blob/master/examples/flask_app/templates/simple_core_api_checkout.html">Python - Flask</a></li>
+</ul>
+
+<p>Untuk lebih detail: <a href="https://api-docs.midtrans.com/">Dokumentasi lengkap Core API</a></p>
 
 
             <div class="pagination">
-              <ul><li class="left">« Sebelumnya: <a href="https://mobile-docs.midtrans.com">Mobile SDK : Integrasi</a></li><li class="right">Selanjutnya: <a href="https://api-docs.midtrans.com">Core API : Core API Docs</a> »</li></ul>
+              <ul><li class="left">« Sebelumnya: <a href="https://api-docs.midtrans.com">Core API : Core API Docs</a></li><li class="right">Selanjutnya: <a href="../reference/test.html">Referensi : Testing Credential</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->
