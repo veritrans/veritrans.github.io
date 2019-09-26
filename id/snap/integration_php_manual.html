@@ -459,16 +459,16 @@
 Contoh kode PHP berikut digunakan untuk mendapatkan Snap token.</p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'Veritrans.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span>
 
 <span class="c1">//Set Your server key
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your ServerKey here&gt;"</span><span class="p">;</span>
+</span><span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your ServerKey here&gt;"</span><span class="p">;</span>
 
 <span class="c1">// Uncomment for production environment
-// Veritrans_Config::$isProduction = true;
+// \Midtrans\Config::$isProduction = true;
 </span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
@@ -477,15 +477,15 @@ Contoh kode PHP berikut digunakan untuk mendapatkan Snap token.</p>
 </span>        <span class="p">)</span>
     <span class="p">);</span>
 
-<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">Veritrans_Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
+<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">\Midtrans\Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
 
         <p><br /></p>
 
-        <p>Contoh kode di atas memanfaatkan library <strong>Veritrans-PHP</strong> yang dapat diunduh di [<a href="https://github.com/veritrans/veritrans-php">Github</a> - <a href="https://github.com/veritrans/veritrans-php/archive/master.zip">Zip</a>] dan menggunakan mode sandbox/test.</p>
+        <p>Contoh kode di atas memanfaatkan library <strong>Midtrans-PHP</strong> yang dapat diunduh di [<a href="https://github.com/Midtrans/midtrans-php">Github</a> - <a href="https://github.com/Midtrans/midtrans-php/archive/master.zip">Zip</a>] dan menggunakan mode sandbox/test.</p>
 
-        <p>File <code>Veritrans.php</code> diasumsikan berada pada direktori yang sama dengan kode sumber. Nilai <code>server_key</code> sudah dijelaskan di <a href="../welcome/preparation.html#step3">Langkah Awal - Persiapan Awal</a></p>
+        <p>File <code>Midtrans.php</code> diasumsikan berada pada direktori yang sama dengan kode sumber. Nilai <code>server_key</code> sudah dijelaskan di <a href="../welcome/preparation.html#step3">Langkah Awal - Persiapan Awal</a></p>
 
         <p>Secara <em>default</em>, semua metode pembayaran yang Anda miliki akan ditampilkan di halaman Snap. Jika anda bermaksud menentukan metode pembayaran yang ditampilkan, ikuti petunjuk di <a href="other_features.html">Snap - Fitur Tambahan</a>. <br /></p>
 
@@ -500,16 +500,16 @@ Contoh kode PHP berikut digunakan untuk mendapatkan Snap token.</p>
         <p>Contoh kode PHP yang mengikutsertakan semua data transaksi adalah sebagai berikut:<br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'Veritrans.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span>
 
 <span class="c1">//Set Your server key
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your ServerKey here&gt;"</span><span class="p">;</span>
+</span><span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your ServerKey here&gt;"</span><span class="p">;</span>
 
 <span class="c1">// Uncomment for production environment
-// Veritrans_Config::$isProduction = true;
+// \Midtrans\Config::$isProduction = true;
 </span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
 <span class="c1">// Fill transaction details
 </span><span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -574,7 +574,7 @@ Contoh kode PHP berikut digunakan untuk mendapatkan Snap token.</p>
     <span class="s1">'item_details'</span> <span class="o">=&gt;</span> <span class="nv">$item_details</span><span class="p">,</span>
     <span class="p">);</span>
 
-<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">Veritrans_Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
+<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">\Midtrans\Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
 
@@ -2455,16 +2455,16 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
         <h2 id="menangani-https-notifikasi">Menangani HTTP(S) Notifikasi</h2>
 
-        <p>Berikut adalah contoh kode untuk menerima HTTP (POST) dan JSON object menggunakan Library <strong>Veritrans-PHP</strong>.<br /> File ini adalah file PHP yang akan di eksekusi ketika URL endpoint notifikasi (https://tokoecomm.com/notification) diakses.<br /></p>
+        <p>Berikut adalah contoh kode untuk menerima HTTP (POST) dan JSON object menggunakan Library <strong>Midtrans-PHP</strong>.<br /> File ini adalah file PHP yang akan di eksekusi ketika URL endpoint notifikasi (https://tokoecomm.com/notification) diakses.<br /></p>
 
         <p><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
-<span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your serverkey&gt;'</span><span class="p">;</span>
-<span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your serverkey&gt;'</span><span class="p">;</span>
+<span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Midtrans\Notification</span><span class="p">();</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
 <span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
@@ -2518,7 +2518,7 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
         <div class="alert alert-info" role="alert">
           <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info:</span>
   <span class="sr-only">Info:</span><br />
-  Untuk keamanan, jika Merchant menggunakan <em>Veritrans_Notification</em> seperti pada contoh di Library PHP, proses <a href="https://snap-docs.midtrans.com/#handling-notifications">challenge status</a> sudah dilakukan.</p>
+  Untuk keamanan, jika Merchant menggunakan <em>\Midtrans\Notification</em> seperti pada contoh di Library PHP, proses <a href="https://snap-docs.midtrans.com/#handling-notifications">challenge status</a> sudah dilakukan.</p>
         </div>
 
         <p><br /><br /></p>
@@ -2532,14 +2532,14 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 
         <h2 id="proses-get-status">Proses Get Status</h2>
 
-        <p>Di tahap ini, kita akan mencoba untuk melakukan proses mengambil informasi dari suatu transaksi yang telah terjadi. Berikut adalah contoh kode untuk melakukan proses get status menggunakan library <strong>Veritrans-PHP</strong>.</p>
+        <p>Di tahap ini, kita akan mencoba untuk melakukan proses mengambil informasi dari suatu transaksi yang telah terjadi. Berikut adalah contoh kode untuk melakukan proses get status menggunakan library <strong>Midtrans-PHP</strong>.</p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/veritrans/Veritrans.php'</span><span class="p">);</span> <span class="c1">//include PHP library
+<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span> <span class="c1">//include PHP library
 </span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
-</span><span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="p">);</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
+</span><span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">\Midtrans\Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="p">);</span>
 <span class="nv">$status</span> <span class="o">=</span> <span class="nv">$order_status_obj</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre>
@@ -2548,9 +2548,9 @@ Pastikan alamat notifikasi HTTP POST yang anda masukan tidak berupa alamat local
 Berikut contoh kode untuk melakukan proses get status setelah durasi waktu tertentu. Kode ini bisa dijalankan pada interval tertentu (misalnya setiap 6 menit) atau dijalankan manual.</p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span> 
-<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/veritrans/Veritrans.php'</span><span class="p">);</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
+<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
 </span>
 <span class="sd">/**
  * Assume we can load order data from database to $orders array
@@ -2569,7 +2569,7 @@ Berikut contoh kode untuk melakukan proses get status setelah durasi waktu terte
   <span class="c1">//check If the order after 360 seconds (6 minutes), and still no pending/capture/settlement/deny/cancel/failure status.
 </span>  <span class="k">if</span> <span class="p">(</span> <span class="nv">$duration_since_order</span> <span class="o">&gt;</span> <span class="mi">360</span> <span class="o">&amp;&amp;</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">===</span> <span class="kc">null</span> <span class="p">){</span>
     <span class="c1">//Do get status for that order
-</span>    <span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">);</span>
+</span>    <span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">\Midtrans\Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">);</span>
     <span class="nv">$status</span> <span class="o">=</span> <span class="nv">$order_status_obj</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
     
     <span class="c1">//Update order status &amp; save to database

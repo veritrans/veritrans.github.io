@@ -464,16 +464,16 @@
 The example below shows a sample PHP Code to obtain Snap token.</p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'Veritrans.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span>
 
 <span class="c1">//Set Your server key
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your Sandbox ServerKey here&gt;"</span><span class="p">;</span>
+</span><span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your Sandbox ServerKey here&gt;"</span><span class="p">;</span>
 
 <span class="c1">// Uncomment for production environment
-// Veritrans_Config::$isProduction = true;
+// \Midtrans\Config::$isProduction = true;
 </span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
@@ -482,14 +482,14 @@ The example below shows a sample PHP Code to obtain Snap token.</p>
 </span>        <span class="p">)</span>
     <span class="p">);</span>
 
-<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">Veritrans_Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
+<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">\Midtrans\Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
 
         <p><br />
-The sample code above utilizes the <strong>Veritrans-PHP</strong> library that can been downloaded at [<a href="https://github.com/veritrans/veritrans-php">Github</a> - <a href="https://github.com/veritrans/veritrans-php/archive/master.zip">Zip</a>] and used at the sandbox/test environment.</p>
+The sample code above utilizes the <strong>Midtrans-PHP</strong> library that can been downloaded at [<a href="https://github.com/Midtrans/midtrans-php">Github</a> - <a href="https://github.com/Midtrans/midtrans-php/archive/master.zip">Zip</a>] and used at the sandbox/test environment.</p>
 
-        <p><code>Veritrans.php</code> file is assumed to be located in the same directory as the source code. <code>server_key</code> value has been explained on <a href="../welcome/preparation.html#step3">Getting Started - Preparation</a>.</p>
+        <p><code>Midtrans.php</code> file is assumed to be located in the same directory as the source code. <code>server_key</code> value has been explained on <a href="../welcome/preparation.html#step3">Getting Started - Preparation</a>.</p>
 
         <p>By default, all available payment methods will be displayed on the Snap page. To enable only specifics payment methods, follow the steps in <a href="other_features.html">Snap - Other Features</a>.</p>
 
@@ -504,16 +504,16 @@ The sample code above utilizes the <strong>Veritrans-PHP</strong> library that c
         <p>PHP sample code that includes all transaction data is shown as follow:<br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'Veritrans.php'</span><span class="p">);</span>
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span>
 
 <span class="c1">//Set Your server key
-</span><span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your Sandbox ServerKey here&gt;"</span><span class="p">;</span>
+</span><span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s2">"&lt;Set your Sandbox ServerKey here&gt;"</span><span class="p">;</span>
 
 <span class="c1">// Uncomment for production environment
-// Veritrans_Config::$isProduction = true;
+// \Midtrans\Config::$isProduction = true;
 </span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isSanitized</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$is3ds</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
 <span class="c1">// Fill transaction details
 </span><span class="nv">$transaction_details</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -578,7 +578,7 @@ The sample code above utilizes the <strong>Veritrans-PHP</strong> library that c
     <span class="s1">'item_details'</span> <span class="o">=&gt;</span> <span class="nv">$item_details</span><span class="p">,</span>
     <span class="p">);</span>
 
-<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">Veritrans_Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
+<span class="nv">$snapToken</span> <span class="o">=</span> <span class="nx">\Midtrans\Snap</span><span class="o">::</span><span class="na">getSnapToken</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">);</span>
 <span class="cp">?&gt;</span>
 </code></pre>
 
@@ -2427,16 +2427,16 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
         <h2 id="handling-https-notification">Handling HTTP(S) Notification</h2>
 
-        <p>The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing <strong>Veritrans-PHP</strong> library. This PHP code is executed when notification URL endpoint (https://tokoecomm.com/notification) is accessed.<br /></p>
+        <p>The following figure is a sample code for merchant to receive HTTP(S) POST and JSON object by utilizing <strong>Midtrans-PHP</strong> library. This PHP code is executed when notification URL endpoint (https://tokoecomm.com/notification) is accessed.<br /></p>
 
         <p><br /></p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
 
-<span class="k">require_once</span><span class="p">(</span><span class="s1">'Veritrans.php'</span><span class="p">);</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your serverkey&gt;'</span><span class="p">;</span>
-<span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Veritrans_Notification</span><span class="p">();</span>
+<span class="k">require_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="s1">'&lt;your serverkey&gt;'</span><span class="p">;</span>
+<span class="nv">$notif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Midtrans\Notification</span><span class="p">();</span>
 
 <span class="nv">$transaction</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
 <span class="nv">$type</span> <span class="o">=</span> <span class="nv">$notif</span><span class="o">-&gt;</span><span class="na">payment_type</span><span class="p">;</span>
@@ -2489,7 +2489,7 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
         <div class="alert alert-info" role="alert">
           <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> Info:</span>
-  <span class="sr-only">Info:</span><br /> For security reason, if you using <em>Veritrans_Notification class</em> like the example. Our veritrans php library is already doing the <a href="https://snap-docs.midtrans.com/#handling-notifications">challenge notification</a> process.</p>
+  <span class="sr-only">Info:</span><br /> For security reason, if you using <em>\Midtrans\Notification class</em> like the example. Our midtrans php library is already doing the <a href="https://snap-docs.midtrans.com/#handling-notifications">challenge notification</a> process.</p>
         </div>
 
         <p><br /><br /></p>
@@ -2503,14 +2503,14 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 
         <h2 id="get-status-process">Get Status Process</h2>
 
-        <p>In this step, we will try using get status process to retrieving information from a transaction that has occured. Here is a sample code to perform the get status process using <strong>Veritrans-php</strong> library. </p>
+        <p>In this step, we will try using get status process to retrieving information from a transaction that has occured. Here is a sample code to perform the get status process using <strong>Midtrans-php</strong> library. </p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span>
-<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/veritrans/Veritrans.php'</span><span class="p">);</span> <span class="c1">//include PHP library
+<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span> <span class="c1">//include PHP library
 </span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
-</span><span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="p">);</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
+</span><span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">\Midtrans\Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="p">);</span>
 <span class="nv">$status</span> <span class="o">=</span> <span class="nv">$order_status_obj</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 </code></pre>
@@ -2519,9 +2519,9 @@ Make sure your Payment Notification URL is not the same as your localhost addres
 Here's a sample code to do the get status process after a certain time duration. This code can run at certain interval (eg: every 6 minutes) or run manually.</p>
 
 <pre><code class="highlight php"><span class="cp">&lt;?php</span> 
-<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/veritrans/Veritrans.php'</span><span class="p">);</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="nx">Veritrans_Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
+<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'/Midtrans.php'</span><span class="p">);</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$serverKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Your</span> <span class="nx">Server</span> <span class="nx">Key</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">\Midtrans\Config</span><span class="o">::</span><span class="nv">$isProduction</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kc">true</span> <span class="o">/</span> <span class="kc">false</span><span class="o">&gt;</span><span class="p">;</span>   <span class="c1">// false = sandbox
 </span>
 <span class="sd">/**
  * Assume we can load order data from database to $orders array
@@ -2540,7 +2540,7 @@ Here's a sample code to do the get status process after a certain time duration.
   <span class="c1">//check If the order after 360 seconds (6 minutes), and still no pending/capture/settlement/deny/cancel/failure status.
 </span>  <span class="k">if</span> <span class="p">(</span> <span class="nv">$duration_since_order</span> <span class="o">&gt;</span> <span class="mi">360</span> <span class="o">&amp;&amp;</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">transaction_status</span> <span class="o">===</span> <span class="kc">null</span> <span class="p">){</span>
     <span class="c1">//Do get status for that order
-</span>    <span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">Veritrans_Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">);</span>
+</span>    <span class="nv">$order_status_obj</span> <span class="o">=</span> <span class="nx">\Midtrans\Transaction</span><span class="o">::</span><span class="na">status</span><span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">);</span>
     <span class="nv">$status</span> <span class="o">=</span> <span class="nv">$order_status_obj</span><span class="o">-&gt;</span><span class="na">transaction_status</span><span class="p">;</span>
     
     <span class="c1">//Update order status &amp; save to database

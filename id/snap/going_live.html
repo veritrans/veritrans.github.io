@@ -405,22 +405,22 @@
     <h4 id="mendapatkan-snap-token">Mendapatkan Snap Token</h4>
 
     <ul>
-      <li>Mengubah Veritrans-PHP library ke Production Environment. Ini dapat dilakukan dengan mengubah nilai <code>Veritrans_Config::$isProduction</code> menjadi <code>true</code>.</li>
+      <li>Mengubah Midtrans-PHP library ke Production Environment. Ini dapat dilakukan dengan mengubah nilai <code>\Midtrans\Config::$isProduction</code> menjadi <code>true</code>.</li>
       <li>
         <p>Merubah ServerKey dari sandbox menjadi production.</p>
 
 <pre><code class="highlight plaintext">
 &lt;?php
-require_once(dirname(__FILE__) . 'Veritrans.php');
+require_once(dirname(__FILE__) . '/Midtrans.php');
 
 //Set Your server key
-Veritrans_Config::$serverKey = "&lt;Set your Production ServerKey here&gt;";
+\Midtrans\Config::$serverKey = "&lt;Set your Production ServerKey here&gt;";
 
 // Uncomment for production environment
-Veritrans_Config::$isProduction = true;
+\Midtrans\Config::$isProduction = true;
 
-Veritrans_Config::$isSanitized = true;
-Veritrans_Config::$is3ds = true;
+\Midtrans\Config::$isSanitized = true;
+\Midtrans\Config::$is3ds = true;
 
 $transaction = array(
     'transaction_details' =&gt; array(
@@ -429,7 +429,7 @@ $transaction = array(
         )
     );
 
-$snapToken = Veritrans_Snap::getSnapToken($transaction);
+$snapToken = \Midtrans\Snap::getSnapToken($transaction);
 ?&gt;
 
 </code></pre>

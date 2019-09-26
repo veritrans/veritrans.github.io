@@ -9,1313 +9,268 @@
 
 <url>
   <loc>https://docs.midtrans.com/</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/welcome/index.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/welcome/index.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/welcome/preparation.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/welcome/pluginlibrary.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/welcome/partner_integ.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/other_features.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/going_live.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/payment_link/index.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://docs.midtrans.com/en/core_api/integration_card_basic.html</loc>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/reference/test.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/reference/address.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/reference/security.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/reference/docslog.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/welcome/preparation.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/welcome/pluginlibrary.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/welcome/partner_integ.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/other_features.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/going_live.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/payment_link/index.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://docs.midtrans.com/id/core_api/integration_card_basic.html</loc>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/reference/test.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/reference/address.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/reference/security.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/reference/docslog.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/index.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/welcome/integration_sirclo.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/welcome/integration_shopify.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/welcome/integration_jejualan.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_php.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_prestashop.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_magento.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_opencart.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_woocommerce.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_whmcs.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_drupal.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_edd.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/welcome/integration_sirclo.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/welcome/integration_shopify.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/welcome/integration_jejualan.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_php.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_prestashop.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_magento.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_opencart.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_woocommerce.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_whmcs.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_drupal.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_edd.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/sequence_diagram/index.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/sample_app/index.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/release_notes/index.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/VtGatewayConfig.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/VtGatewayConfigBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/config/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/config/EnvironmentType.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/config/ProxyConfig.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/config/ProxyConfigBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/VtGatewayFactory.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/VtDirect.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/VtDirectChargeRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/VtResponse.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/BankTransferRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/BriEpayRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/CimbClicksRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/CreditCardRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/MandiriClickpayRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/BcaKlikpayRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/KlikBcaRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/BankTransfer.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CimbClicks.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CreditCard.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/MandiriClickpay.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/BcaKlikpay.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/KlikBca.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/VtWeb.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_php_wizard.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/en/snap/integration_php_manual.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_php_wizard.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
   <loc>https://docs.midtrans.com/id/snap/integration_php_manual.html</loc>
-  <lastmod>2019-09-06T09:38:18+00:00</lastmod>
+  <lastmod>2019-09-25T07:07:48+00:00</lastmod>
   <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/overview-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/overview-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/allclasses-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/deprecated-list.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index-all.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/help-doc.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/VtGatewayConfig.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/allclasses-noframe.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/VtGatewayConfigBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/constant-values.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/config/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/exception/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/config/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/config/EnvironmentType.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/config/ProxyConfig.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/config/ProxyConfigBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/VtGatewayFactory.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/VtGateway.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/VtDirect.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/impl/DefaultVtDirect.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/exception/RestClientException.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/OrderStatus.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/VtDirectChargeRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/AbstractVtRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/VtRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/CreditCardFullPanRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/TransactionDetails.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/CustomerDetails.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/TransactionItem.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/VtResponse.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CreditCard.Bank.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/exception/JsonDeserializeException.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/BankTransferRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/BriEpayRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/CimbClicksRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/CreditCardRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/MandiriClickpayRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/BcaKlikpayRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/KlikBcaRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/impl/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/builder/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/Address.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/GetStatusParameter.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/StatusRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/FraudStatus.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/PaymentMethod.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/TransactionStatus.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/BankTransfer.Bank.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/BankTransfer.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CimbClicks.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CreditCard.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CreditCard.TransactionType.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/MandiriClickpay.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/BcaKlikpay.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CreditCardFullPan.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/KlikBca.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/VtGatewaySession.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/VtWeb.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/impl/DefaultVtWeb.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/VtWebChargeRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/overview-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?overview-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/helper/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/net/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/config/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/exception/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/impl/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/builder/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/helper/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/net/package-frame.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/builder/CreditCardBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/impl/DefaultVtGateway.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/impl/DefaultVtGatewaySession.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/builder/GetStatusParameterBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/Installment.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/Installment.Term.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/helper/JsonUtil.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/exception/NetworkException.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/PaymentOption.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/builder/StatusRequestBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/helper/StringConstant.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/helper/ValidationUtil.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/exception/VtException.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/net/VtRestClient.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/VtWebParam.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?deprecated-list.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?index-all.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?help-doc.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?constant-values.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/exception/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/config/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/exception/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/impl/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/VtGateway.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/impl/DefaultVtDirect.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/exception/RestClientException.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/serialized-form.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/OrderStatus.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/builder/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/AbstractVtRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/VtRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/CreditCardFullPanRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/TransactionDetails.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/CustomerDetails.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/TransactionItem.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CreditCard.Bank.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/exception/JsonDeserializeException.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/impl/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/builder/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/Address.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/GetStatusParameter.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/StatusRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/FraudStatus.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/PaymentMethod.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/TransactionStatus.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/BankTransfer.Bank.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CreditCard.TransactionType.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtdirect/paymentmethod/CreditCardFullPan.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/VtGatewaySession.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/impl/DefaultVtWeb.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/VtWebChargeRequest.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?overview-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/helper/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/id/co/veritrans/mdk/v1/net/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/helper/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/net/package-summary.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/builder/CreditCardBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/impl/DefaultVtGateway.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/impl/DefaultVtGatewaySession.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/builder/GetStatusParameterBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/Installment.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/Installment.Term.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/helper/JsonUtil.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/exception/NetworkException.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/PaymentOption.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/builder/StatusRequestBuilder.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/helper/StringConstant.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/helper/ValidationUtil.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/exception/VtException.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/net/VtRestClient.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/VtWebParam.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/exception/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/impl/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?serialized-form.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/builder/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/gateway/model/vtweb/paymentoption/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.17</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/helper/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.17</priority>
-</url>
-<url>
-  <loc>https://docs.midtrans.com/veritrans-java/site/javadoc/index.html?id/co/veritrans/mdk/v1/net/package-tree.html</loc>
-  <lastmod>2017-03-20T08:47:40+00:00</lastmod>
-  <priority>0.17</priority>
 </url>
 
 
