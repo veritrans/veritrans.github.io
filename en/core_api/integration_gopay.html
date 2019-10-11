@@ -264,7 +264,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../../id/payment_link/index.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../../id/core_api/integration_gopay.html">Bahasa Indonesia</a></div>
         <div class="sidebar-search">
           <form>
             <input type="search" name="q" id="search-field" placeholder="Search">
@@ -316,7 +316,7 @@
             
                 <li>
                     
-                        <a class="parent" href="index.html">Payment Link</a>
+                        <a class="parent" href="../payment_link/index.html">Payment Link</a>
                     
                 </li>
             
@@ -326,9 +326,9 @@
                         <b class="caret"></b>
                         <ul class="child-menu">
                             
-                            <li class=""><a href="../core_api/integration_card_basic.html">Card Payment Basic</a></li>
+                            <li class=""><a href="integration_card_basic.html">Card Payment Basic</a></li>
                             
-                            <li class=""><a href="../core_api/integration_gopay.html">GoPay Integration</a></li>
+                            <li class="active"><a href="integration_gopay.html">GoPay Integration</a></li>
                             
                             <li class=""><a href="https://api-docs.midtrans.com">Core API Docs</a></li>
                             
@@ -370,59 +370,295 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="en-payment-link-index">
-            <h2 id="payment-link">Payment Link</h2>
+          <div class="en-core-api-integration-gopay">
+            <h2 id="gopay-integration">GoPay Integration</h2>
 
-<hr />
-
-<h5 id="the-tutorial-below-will-assist-you-in-integrating-payment-link-if-further-assistance-is-required-please-contact-us-at-supportmidtranscommailtosupportmidtranscom-email-support-or-visit-our-support-pagehttpsupportmidtranscom-midtrans-support"><em>The tutorial below will assist you in integrating Payment Link. If further assistance is required, please contact us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#109;&#105;&#100;&#116;&#114;&#097;&#110;&#115;&#046;&#099;&#111;&#109;</a> or visit our <a title="Midtrans Support" href="http://support.midtrans.com">support page</a>.</em></h5>
-<hr />
-
-<h3 id="overview">Overview</h3>
-
-<p>Payment Link facilitates payments for you by redirecting the customer directly to Midtrans' payment page. No technical integration is required, simply create a Payment Link and send it to your customer via email or chat message. You will receive a notification once the customer has completed the payment.</p>
-
-<h3 id="creating-payment-link">Creating Payment Link</h3>
-
-<p>To create a Payment Link, click the <code>Payment Link</code> menu on the left sidebar, then click the <code>Create Payment Link</code> button.</p>
-
-<p><img alt="paymentlink new" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_new.png" /></p>
-
-<p>On the Create Payment Link page, the following fields are required for Link Creation:</p>
+<p>GoPay is an e-Wallet payment method by Gojek. Users will pay using the Gojek apps. The user flow varies when using a web browser (on a computer or a tablet) compared to a SmartPhone:</p>
 
 <ol>
-  <li><code>Order ID</code> - Unique ID for each Payment Link. You can search for created Payment Links using this ID</li>
-  <li><code>Payment Link ID</code> - The URL address of the Payment Link, for ease of sharing</li>
-  <li><code>Usage Limit</code> - The maximum number of times the Payment Link can be used</li>
-  <li><code>Item Name</code> - The name of the product or service you are selling</li>
-  <li><code>Item Price</code> - The price of the product or service you are charging</li>
+  <li><strong>QR Code</strong> - This is the user flow on a web browser (on a computer or a tablet). User is shown a QR code and asked to scan using the Gojek apps.</li>
+  <li><strong>Deeplink</strong> - This is the user flow on a SmartPhone/mobile device. User gets redirected to the Gojek apps to finish payment.</li>
 </ol>
 
-<p><img alt="paymentlink create" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_create.png" /></p>
+<p>Basic integration process of GoPay will be explained below.</p>
 
-<p>Additional options are available if (a) you want to send the Payment Link to a specific customer or (b) you want to include an expiration time and date.</p>
+<h3 id="sandbox-environment">Sandbox Environment</h3>
+<p>All the steps below are using Midtrans <strong>Sandbox</strong> environment, not Production, to easily test the integration process. Make sure you are switching to Sandbox mode on your <a href="https://account.midtrans.com">Midtrans account dashboard</a> while retrieving Server Key and Client Key. Explained in <a href="../welcome/preparation.html#step3">Getting Started - Preparation</a></p>
 
-<p><img alt="paymentlink options" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_options.png" /></p>
+<p>Server Key and Client Key can be retrieved on menu <code>Settings &gt; Access Keys</code></p>
 
-<p>If the transaction is directed towards a specific customer, the Payment Link will be sent straight to the specified customer’s email address. Expiration Date is the last day the Payment Link can be used and accessed.</p>
+<h3 id="testing-payment">Testing Payment</h3>
+<p>If you use <code>Deeplink</code>, you will be auto redirected to Gopay Simulator.</p>
 
-<h3 id="managing-payment-link">Managing Payment Link</h3>
+<p>If you use <code>QR Code</code>, copy the QR Code image URL then use this <a href="https://simulator.sandbox.midtrans.com/gopay/ui/index">Gopay Simulator</a>.</p>
 
-<p>After creating the Payment Link, you will be redirected to the Payment Link List page where you can view a list of Payment Links created. You can copy and share any of your links to your customers. You can also see details and delete your links from this page.</p>
+<h3 id="diagram">Diagram</h3>
+<p><strong>QR Code Mode:</strong>
+<br />
+<img alt="card transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr.png" />
+.
+<br />
+<strong>Deeplink Mode:</strong>
+<br />
+<img alt="card transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_deeplink.png" />
+.
+<br /><br /></p>
 
-<p><img alt="paymentlink list" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_list.png" /></p>
+<h2 id="integration-step">Integration Step</h2>
+<ol>
+  <li>Send transaction data to API Charge.</li>
+  <li>Alter payment flow depending on the device used:
+    <ul>
+      <li>Show QR code image (on a computer or a tablet).</li>
+      <li>Create redirect link to Gojek apps (on SmartPhone).</li>
+      <li>Implementing GoPay deeplink callback.</li>
+    </ul>
+  </li>
+  <li>Handle transaction notification.
+<br /><br /></li>
+</ol>
 
-<p>When you click <code>Details</code>, you will be shown a page with all of the details of the Payment Link. Here you can also view the number of <code>Orders</code> of the Payment Link and clicking the number will show you the orders on the transaction page.</p>
+<h2 id="send-transaction-data-to-api-charge">1. Send Transaction Data to API Charge</h2>
+<p>Charge API request should be done from Merchant's backend. <strong>Server Key</strong> (from your account's <a href="https://account.midtrans.com">Dashboard</a>) will be needed to <a href="https://api-docs.midtrans.com/#http-s-header">authenticate the request</a>.</p>
 
-<p><img alt="paymentlink details" class="img-responsive img-thumbnail" src="../../images/payment_link/paymentlink_details.png" /></p>
+<h3 id="charge-api-request">Charge API request</h3>
+<p>This is example of <code>/charge</code> API request in Curl, please implement according to your backend language (you can also check our available <a href="../welcome/pluginlibrary.html">language libraries</a>).</p>
 
-<h3 id="payment-link-page">Payment Link Page</h3>
+<pre><code class="highlight shell"><span class="o">{</span>
+    <span class="s2">"payment_type"</span>: <span class="s2">"gopay"</span>,
+    <span class="s2">"transaction_details"</span>: <span class="o">{</span>
+        <span class="s2">"gross_amount"</span>: 44000,
+        <span class="s2">"order_id"</span>: <span class="s2">"order-101"</span>
+    <span class="o">}</span>
+    <span class="s2">"gopay"</span>: <span class="o">{</span>
+        <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,                //optional
+        <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>   //optional
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
 
-<p>When you send the Payment Link to customers, they can open the link and it will direct them to Midtrans' Payment Page. If there is no specified customer, the customer will first need to input their details (Name, Phone, and Email) to continue. Next, the user will need to choose a payment method and follow the payment instructions. Once the customer has completed the payment, you will receive a notification of the transaction.</p>
+<p>Optional: you can customize <a href="https://api-docs.midtrans.com/#json-object">transaction_details data</a>. To include data like customer_details, item_details, etc. It's recommended to send as much detail so on report/dashboard those information will be included.</p>
+
+<h3 id="charge-api-response">Charge API response</h3>
+<p>You will get the <strong>API response</strong> like the following.</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"GO-PAY transaction is created"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"231c79c5-e39e-4993-86da-cadcaee56c1d"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101h-1570513296"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"gopay"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-08 12:41:36"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"actions"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"generate-qr-code"</span><span class="p">,</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/gopay/231c79c5-e39e-4993-86da-cadcaee56c1d/qr-code"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"deeplink-redirect"</span><span class="p">,</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://simulator.sandbox.midtrans.com/gopay/ui/checkout?referenceid=Y0xwjoQ9uy&amp;callback_url=someapps%3A%2F%2Fcallback%3Forder_id%3Dorder-101h-1570513296"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"get-status"</span><span class="p">,</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/231c79c5-e39e-4993-86da-cadcaee56c1d/status"</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"cancel"</span><span class="p">,</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/231c79c5-e39e-4993-86da-cadcaee56c1d/cancel"</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<p>You will get the <code>actions</code> attribute which can be performed this transaction.</p>
+
+<p><br /></p>
+
+<h2 id="alter-payment-flow-depending-on-the-device-used">2. Alter payment flow depending on the device used</h2>
+
+<p>The user flow varies when using a web browser (on a computer or a tablet) compared to a SmartPhone.</p>
+
+<h3 id="show-qr-code-image-on-computer-or-tablet">Show QR Code Image (on computer or tablet)</h3>
+
+<p>Get the QR Code Image from API Response, use <code>generate-qr-code</code> to render the QR code image (PNG format).</p>
+
+<p>Instruction Example for <strong>QR Code</strong> :</p>
+
+<ol>
+  <li>Tap <strong>Pay using GoPay</strong></li>
+  <li>QR code will appear on the next page</li>
+  <li>Open <strong>Gojek</strong> app on your mobile phone</li>
+  <li>Tap <strong>Pay</strong> then scan the QR Code</li>
+  <li>Check and verify your payment details then tap <strong>PAY</strong></li>
+  <li>Enter your security <strong>PIN</strong></li>
+  <li>Your transaction is finished</li>
+</ol>
+
+<p><img alt="GoPay QR Instruction" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr_pay.png" /></p>
+
+<h3 id="create-redirect-link-to-gojek-apps-on-smartphone">Create Redirect Link to Gojek Apps (on SmartPhone)</h3>
+<p>Get the Deeplink from API Response, use <code>deeplink-redirect</code> to redirect to Gojek apps.</p>
+
+<p>Instruction Example for <strong>Deeplink</strong> :</p>
+
+<ol>
+  <li>Tap <strong>Pay using GoPay</strong></li>
+  <li>You will be redirected to <strong>Gojek</strong> app</li>
+  <li>Check and verify your payment details then tap <strong>Pay</strong></li>
+  <li>Enter your security <strong>PIN</strong></li>
+  <li>Your transaction is finished</li>
+</ol>
+
+<p><img alt="GoPay Deeplink Instruction" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_deeplink_pay.png" /></p>
+
+<h3 id="implementing-gopay-deeplink-callback">Implementing GoPay Deeplink Callback</h3>
+
+<p>In addition to the standard mobile apps flow, you may opt to implement a deeplink callback to redirect customer back from Gojek to their apps.</p>
+
+<p>Please add gopay parameter in the <code>/charge</code> API request</p>
+
+<pre><code class="highlight shell">  <span class="s2">"gopay"</span>: <span class="o">{</span>
+      <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,
+      <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>
+  <span class="o">}</span>
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>JSON Attribute</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>enable_callback</td>
+      <td>Boolean</td>
+      <td>To determine appending callback url in the deeplink. Default value: <code>false</code>.</td>
+    </tr>
+    <tr>
+      <td>callback_url</td>
+      <td>String</td>
+      <td>To determine where Gojek apps will redirect after successful payment. Can be HTTP or deeplink url. Default value: <code>callback_url</code> in dashboard settings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>You needs to prepare a <code>callback_url</code> which accept two query parameters</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>order_id</td>
+      <td>String</td>
+      <td>Order ID sent on the Charge Request.</td>
+    </tr>
+    <tr>
+      <td>result</td>
+      <td>String</td>
+      <td>Result of the transaction to decide what kind of page to show to customer. Possible values: <code>success</code> or <code>failure</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<div class="alert alert-warning" role="alert">
+  <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"> IMPORTANT!</span>
+  <span class="sr-only">Warning!</span>
+ <br />To update transaction status on your backend/database, DO NOT solely rely on frontend callbacks! For security reason to make sure the status is authentically coming from Midtrans, only update transaction status based on HTTP Notification or <a href="https://api-docs.midtrans.com/#get-transaction-status">API Get Status</a>.
+</div>
+<p><br /></p>
+
+<h2 id="handle-http-notification">3. Handle HTTP Notification</h2>
+
+<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if card transaction success or denied. So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
+
+<p>HTTP POST request with JSON body will be sent to Merchant's <strong>notification url</strong> configured on <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), this is the sample JSON body that will be received by Merchant:</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"1c28dbbb-8596-48e4-85d7-9f1382db8a1f"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order03"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"275000.00"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"gopay"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2016-06-19 15:54:42"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"973d175e6368ad844b5817882489e6b22934d796a41a0573c066b1e64532dc0001087b87d877a3eac37cba20a733e1305f5e62739e65ff501d5d33c5ac62530f"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Refer <a href="https://api-docs.midtrans.com/#handing-notifications">here on more details of how to handle HTTP Notification</a>.
+<br /><br /></p>
+
+<h2 id="switching-to-production">Switching To Production</h2>
+
+<p>To use Midtrans production environment (accept real payment from real customer), please make sure to:</p>
+
+<ol>
+  <li>Switch the API domain URL from <code>api.sandbox.midtrans.com</code> to <code>api.midtrans.com</code></li>
+  <li>Switch the Client Key and Server Key from sandbox Dashboard, with keys from production Dashboard.
+<br /><br /></li>
+</ol>
+
+<h2 id="done">Done</h2>
+
+<p>The GoPay payment integration guide is now complete. Below are some further references.
+<br /><br /></p>
+
+<h2 id="description">Description</h2>
+
+<p><code>transaction_status</code> value description for GoPay transaction:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Transaction Status</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>settlement</code></td>
+      <td>Transaction successful, customer has been completed the transaction</td>
+    </tr>
+    <tr>
+      <td><code>pending</code></td>
+      <td>The transaction has successfully created to GoPay but has not been completed by the customer.</td>
+    </tr>
+    <tr>
+      <td><code>expire</code></td>
+      <td>Transaction failure because customer did not complete the payment within allowed time</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detailed definition of transaction_status</em></a></p>
+
+<p>For more detail: <a href="https://api-docs.midtrans.com/">Complete Core API documentation</a></p>
 
 
             <div class="pagination">
-              <ul><li class="left">« Previous: <a href="https://mobile-docs.midtrans.com">Mobile SDK : Integration</a></li><li class="right">Next: <a href="../core_api/integration_card_basic.html">Core API : Card Payment Basic</a> »</li></ul>
+              <ul><li class="left">« Previous: <a href="integration_card_basic.html">Core API : Card Payment Basic</a></li><li class="right">Next: <a href="https://api-docs.midtrans.com">Core API : Core API Docs</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->
