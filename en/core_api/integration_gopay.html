@@ -638,7 +638,7 @@
   <tbody>
     <tr>
       <td><code>settlement</code></td>
-      <td>Transaction successful, customer has been completed the transaction</td>
+      <td>Transaction successful, customer has been completed the transaction.</td>
     </tr>
     <tr>
       <td><code>pending</code></td>
@@ -646,7 +646,19 @@
     </tr>
     <tr>
       <td><code>expire</code></td>
-      <td>Transaction failure because customer did not complete the payment within allowed time</td>
+      <td>Transaction failure because customer did not complete the payment within allowed time.</td>
+    </tr>
+    <tr>
+      <td><code>cancel</code></td>
+      <td>Transaction is canceled by trigger from Merchant.</td>
+    </tr>
+    <tr>
+      <td><code>deny</code></td>
+      <td>Payment provider rejected the payment code/id creation.</td>
+    </tr>
+    <tr>
+      <td><code>refund</code></td>
+      <td>Transaction is refunded by trigger from Merchant.</td>
     </tr>
   </tbody>
 </table>
