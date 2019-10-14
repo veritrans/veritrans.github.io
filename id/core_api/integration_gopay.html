@@ -623,6 +623,39 @@
 <p>Integrasi pembayaran GoPay sekarang selesai. Berikut beberapa referensi tambahan.
 <br /><br /></p>
 
+<h2 id="catatan-tambahan">Catatan Tambahan</h2>
+
+<p>Jika anda menggunakan GoPay deeplink pada aplikasi SmartPhone (Android / iOS), terdapat konfigurasi yang mungkin perlu ditambahkan untuk memastikan aplikasi anda dapat redirect langsung ke aplikasi Gojek.</p>
+
+<p>Pada <strong>Android</strong> jika menggunakan Webview, pastikan bahwa Webview mengizinkan untuk membuka deeplink <code>gojek://</code>.</p>
+
+<p>Anda perlu memodifikasi function <code>shouldOverrideUrlLoading</code> seperti berikut:</p>
+
+<pre><code class="highlight java"> <span class="nd">@Override</span>
+ <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">shouldOverrideUrlLoading</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">LogUtils</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"shouldOverrideUrlLoading: "</span> <span class="o">+</span> <span class="n">url</span><span class="o">);</span>
+        <span class="n">Intent</span> <span class="kt">int</span><span class="n">ent</span><span class="o">;</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">url</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">"gojek://"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="kt">int</span><span class="n">ent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_VIEW</span><span class="o">);</span>
+            <span class="kt">int</span><span class="n">ent</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">url</span><span class="o">));</span>
+            <span class="n">startActivity</span><span class="o">(</span><span class="kt">int</span><span class="n">ent</span><span class="o">);</span>
+
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span> 
+ <span class="o">}</span>
+</code></pre>
+
+<p>Pada <strong>iOS</strong>, anda perlu menambahkan <code>LSApplicationQueriesSchemes</code> key ke app's <code>Info.plist</code>.</p>
+
+<pre><code class="highlight xml"><span class="nt">&lt;key&gt;</span>LSApplicationQueriesSchemes<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;array&gt;</span>
+<span class="nt">&lt;string&gt;</span>gojek<span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;/array&gt;</span>
+</code></pre>
+
+<p><br /></p>
+
 <h2 id="deskripsi">Deskripsi</h2>
 
 <p>Nilai <code>transaction_status</code> dalam transaksi kartu:</p>

@@ -624,6 +624,39 @@
 <p>The GoPay payment integration guide is now complete. Below are some further references.
 <br /><br /></p>
 
+<h2 id="additional-notes">Additional Notes</h2>
+
+<p>If GoPay deeplink is being used on SmartPhone application (Android/iOS app), there are additional configurations you may need to add to ensure your app able to redirect customer to Gojek app.</p>
+
+<p>On <strong>Android</strong> if using Webview, please make sure that the Webview allow opening <code>gojek://</code> deeplink protocol.</p>
+
+<p>You need to modify your web view <code>shouldOverrideUrlLoading</code> functions as follows:</p>
+
+<pre><code class="highlight java"> <span class="nd">@Override</span>
+ <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">shouldOverrideUrlLoading</span><span class="o">(</span><span class="n">WebView</span> <span class="n">view</span><span class="o">,</span> <span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">LogUtils</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"shouldOverrideUrlLoading: "</span> <span class="o">+</span> <span class="n">url</span><span class="o">);</span>
+        <span class="n">Intent</span> <span class="kt">int</span><span class="n">ent</span><span class="o">;</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">url</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">"gojek://"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="kt">int</span><span class="n">ent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_VIEW</span><span class="o">);</span>
+            <span class="kt">int</span><span class="n">ent</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">url</span><span class="o">));</span>
+            <span class="n">startActivity</span><span class="o">(</span><span class="kt">int</span><span class="n">ent</span><span class="o">);</span>
+
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span> 
+ <span class="o">}</span>
+</code></pre>
+
+<p>On <strong>iOS</strong>, you will need to add <code>LSApplicationQueriesSchemes</code> key to your app's <code>Info.plist</code>.</p>
+
+<pre><code class="highlight xml"><span class="nt">&lt;key&gt;</span>LSApplicationQueriesSchemes<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;array&gt;</span>
+<span class="nt">&lt;string&gt;</span>gojek<span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;/array&gt;</span>
+</code></pre>
+
+<p><br /></p>
+
 <h2 id="description">Description</h2>
 
 <p><code>transaction_status</code> value description for GoPay transaction:</p>
