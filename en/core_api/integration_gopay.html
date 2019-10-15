@@ -535,10 +535,10 @@ curl -X POST <span class="se">\</span>
 
 <p>Please add gopay parameter in the <code>/charge</code> API request</p>
 
-<pre><code class="highlight shell">  <span class="s2">"gopay"</span>: <span class="o">{</span>
-      <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,
-      <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>
-  <span class="o">}</span>
+<pre><code class="highlight json">  <span class="s2">"gopay"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"enable_callback"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"callback_url"</span><span class="p">:</span> <span class="s2">"someapps://callback"</span> <span class="c1">//you can also use web url like https://myshop.com/finish</span>
+  <span class="p">}</span>
 </code></pre>
 
 <table>
