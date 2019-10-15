@@ -511,7 +511,10 @@ curl -X POST <span class="se">\</span>
 <p><img alt="Instruksi kode QR GoPay" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr_pay.png" /></p>
 
 <h3 id="buat-link-ke-aplikasi-gojek-smartphone">Buat link ke aplikasi Gojek (SmartPhone)</h3>
-<p>Dari response API, sekarang kita punya <code>deeplink-redirect</code> supaya kita diarahkan menuju aplikasi Gojek.</p>
+
+<p>Untuk mengarahkan customer ke aplikasi Gojek, gunakan url dari <code>deeplink-redirect</code> yang didapat dari respons API.</p>
+
+<p>Kemudian customer dapat diarahkan melalui server-side redirect, menggunakan javascript seperti <code>window.location = [URL DEEPLINK]</code>, atau menggunakan link HTML <code>&lt;a href="[DEEPLINK URL]"&gt; Bayar dengan GoPay &lt;/a&gt;</code>.</p>
 
 <p>Contoh instruksi untuk <strong>Deeplink</strong> :</p>
 
