@@ -424,17 +424,23 @@
 <h3 id="charge-api-request">Charge API request</h3>
 <p>This is example of <code>/charge</code> API request in Curl, please implement according to your backend language (you can also check our available <a href="../welcome/pluginlibrary.html">language libraries</a>).</p>
 
-<pre><code class="highlight shell"><span class="o">{</span>
-    <span class="s2">"payment_type"</span>: <span class="s2">"gopay"</span>,
-    <span class="s2">"transaction_details"</span>: <span class="o">{</span>
-        <span class="s2">"gross_amount"</span>: 44000,
-        <span class="s2">"order_id"</span>: <span class="s2">"order-101"</span>
-    <span class="o">}</span>
-    <span class="s2">"gopay"</span>: <span class="o">{</span>
-        <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,                //optional
-        <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>   //optional
-    <span class="o">}</span>
-<span class="o">}</span>
+<pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "gopay",
+  "transaction_details": {
+      "order_id": "order-101",
+      "gross_amount": 44000
+  }
+  "gopay": {
+      "enable_callback": true,                //optional
+      "callback_url": "someapps://callback"   //optional
+  }
+}'</span>
 </code></pre>
 
 <p>Optional: you can customize <a href="https://api-docs.midtrans.com/#json-object">transaction_details data</a>. To include data like customer_details, item_details, etc. It's recommended to send as much detail so on report/dashboard those information will be included.</p>

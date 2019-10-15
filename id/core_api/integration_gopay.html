@@ -423,17 +423,23 @@
 <h3 id="request-charge-api">Request Charge API</h3>
 <p>Berikut contoh dari request API <code>/charge</code> dalam Curl, silahkan implementasikan sesuai bahasa pemrograman backend Anda (Anda juga bisa cek <a href="../welcome/pluginlibrary.html">library-library</a> pemrograman yang tersedia).</p>
 
-<pre><code class="highlight shell"><span class="o">{</span>
-    <span class="s2">"payment_type"</span>: <span class="s2">"gopay"</span>,
-    <span class="s2">"transaction_details"</span>: <span class="o">{</span>
-        <span class="s2">"gross_amount"</span>: 44000,
-        <span class="s2">"order_id"</span>: <span class="s2">"order-101"</span>
-    <span class="o">}</span>
-    <span class="s2">"gopay"</span>: <span class="o">{</span>
-        <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,                //optional
-        <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>   //optional
-    <span class="o">}</span>
-<span class="o">}</span>
+<pre><code class="highlight shell"><span class="c"># contoh charge dalam CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;SERVER KEY ANDA ENCODED dalam Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "gopay",
+  "transaction_details": {
+      "order_id": "order-101",
+      "gross_amount": 44000
+  }
+  "gopay": {
+      "enable_callback": true,                //optional
+      "callback_url": "someapps://callback"   //optional
+  }
+}'</span>
 </code></pre>
 
 <p>Opsional: anda bisa kustomisasi <a href="https://api-docs.midtrans.com/#json-object">data transaction_details</a>. Untuk menyertakan data seperti customer_details, item_details, dsb. Disarankan untuk mengirim data sebanyak mungkin agar nantinya report/dashboard menampilkan informasi tersebut.</p>
