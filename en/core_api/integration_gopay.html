@@ -493,7 +493,9 @@ curl -X POST <span class="se">\</span>
 
 <h3 id="show-qr-code-image-on-computer-or-tablet">Show QR Code Image (on computer or tablet)</h3>
 
-<p>Get the QR Code Image from API Response, use <code>generate-qr-code</code> to render the QR code image (PNG format).</p>
+<p>To display transaction QR Code image, use the url from <code>generate-qr-code</code> actions retrieved from API response. Simplest way is to <strong>"hotlink"</strong> the image url, if the frontend is HTML, put the url in image tag <code>&lt;img src="[QR CODE URL]"&gt;</code>, or display it on a similar component without downloading.</p>
+
+<p>If the frontend does not support such scenario, download the QR code image from that url, then display it on frontend.</p>
 
 <p>Instruction Example for <strong>QR Code</strong> :</p>
 

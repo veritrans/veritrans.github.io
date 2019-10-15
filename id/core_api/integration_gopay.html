@@ -492,7 +492,9 @@ curl -X POST <span class="se">\</span>
 
 <h3 id="tampilkan-kode-qr-komputer-atau-tab">Tampilkan kode QR (komputer atau tab)</h3>
 
-<p>Dari response API, sekarang kita punya <code>generate-qr-code</code> untuk menampilkan kode QR (format PNG) ke customer di frontend website merchant.</p>
+<p>Untuk menampilkan Kode QR, gunakan url dari <code>generate-qr-code</code> yang didapat dari respons API. Cara termudah adalah dengan <strong>"hotlink"</strong> url, jika frontend menggunakan HTML, masukkan url ke dalam tag img <code>&lt;img src="[URL KODE QR]"&gt;</code>, atau tampilkan komponen yang serupa tanpa harus mendownload.</p>
+
+<p>Jika frontend anda tidak mendukung hal tersebut, download Kode QR dari url tersebut, lalu tampilkan langsung di frontend.</p>
 
 <p>Contoh instruksi untuk <strong>QR Code</strong>:</p>
 
