@@ -325,9 +325,11 @@
             <b class="caret"></b>
             <ul class="child-menu">
               
-                <li class=""><a href="integration_card_basic.html">Pembayaran Kartu</a></li>
+                <li class=""><a href="integration_card_basic.html">Integrasi Pembayaran Kartu</a></li>
               
                 <li class="active"><a href="integration_gopay.html">Integrasi GoPay</a></li>
+              
+                <li class=""><a href="https://api-docs.midtrans.com">Channel Pembayaran Lain</a></li>
               
                 <li class=""><a href="https://api-docs.midtrans.com">Core API Docs</a></li>
               
@@ -423,17 +425,23 @@
 <h3 id="request-charge-api">Request Charge API</h3>
 <p>Berikut contoh dari request API <code>/charge</code> dalam Curl, silahkan implementasikan sesuai bahasa pemrograman backend Anda (Anda juga bisa cek <a href="../welcome/pluginlibrary.html">library-library</a> pemrograman yang tersedia).</p>
 
-<pre><code class="highlight shell"><span class="o">{</span>
-    <span class="s2">"payment_type"</span>: <span class="s2">"gopay"</span>,
-    <span class="s2">"transaction_details"</span>: <span class="o">{</span>
-        <span class="s2">"gross_amount"</span>: 44000,
-        <span class="s2">"order_id"</span>: <span class="s2">"order-101"</span>
-    <span class="o">}</span>
-    <span class="s2">"gopay"</span>: <span class="o">{</span>
-        <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,                //optional
-        <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>   //optional
-    <span class="o">}</span>
-<span class="o">}</span>
+<pre><code class="highlight shell"><span class="c"># contoh charge dalam CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;SERVER KEY ANDA ENCODED dalam Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "gopay",
+  "transaction_details": {
+      "order_id": "order-101",
+      "gross_amount": 44000
+  }
+  "gopay": {
+      "enable_callback": true,                //optional
+      "callback_url": "someapps://callback"   //optional
+  }
+}'</span>
 </code></pre>
 
 <p>Opsional: anda bisa kustomisasi <a href="https://api-docs.midtrans.com/#json-object">data transaction_details</a>. Untuk menyertakan data seperti customer_details, item_details, dsb. Disarankan untuk mengirim data sebanyak mungkin agar nantinya report/dashboard menampilkan informasi tersebut.</p>
@@ -486,7 +494,9 @@
 
 <h3 id="tampilkan-kode-qr-komputer-atau-tab">Tampilkan kode QR (komputer atau tab)</h3>
 
-<p>Dari response API, sekarang kita punya <code>generate-qr-code</code> untuk menampilkan kode QR (format PNG) ke customer di frontend website merchant.</p>
+<p>Untuk menampilkan Kode QR, gunakan url dari <code>generate-qr-code</code> yang didapat dari respons API. Cara termudah adalah dengan <strong>"hotlink"</strong> url, jika frontend menggunakan HTML, masukkan url ke dalam tag img <code>&lt;img src="[URL KODE QR]"&gt;</code>, atau tampilkan komponen yang serupa tanpa harus mendownload.</p>
+
+<p>Jika frontend anda tidak mendukung hal tersebut, download Kode QR dari url tersebut, lalu tampilkan langsung di frontend.</p>
 
 <p>Contoh instruksi untuk <strong>QR Code</strong>:</p>
 
@@ -503,7 +513,10 @@
 <p><img alt="Instruksi kode QR GoPay" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr_pay.png" /></p>
 
 <h3 id="buat-link-ke-aplikasi-gojek-smartphone">Buat link ke aplikasi Gojek (SmartPhone)</h3>
-<p>Dari response API, sekarang kita punya <code>deeplink-redirect</code> supaya kita diarahkan menuju aplikasi Gojek.</p>
+
+<p>Untuk mengarahkan customer ke aplikasi Gojek, gunakan url dari <code>deeplink-redirect</code> yang didapat dari respons API.</p>
+
+<p>Kemudian customer dapat diarahkan melalui server-side redirect, menggunakan javascript seperti <code>window.location = [URL DEEPLINK]</code>, atau menggunakan link HTML <code>&lt;a href="[DEEPLINK URL]"&gt; Bayar dengan GoPay &lt;/a&gt;</code>.</p>
 
 <p>Contoh instruksi untuk <strong>Deeplink</strong> :</p>
 
@@ -523,10 +536,10 @@
 
 <p>Tambahkan parameter gopay di request API <code>/charge</code></p>
 
-<pre><code class="highlight shell">  <span class="s2">"gopay"</span>: <span class="o">{</span>
-      <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,
-      <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>
-  <span class="o">}</span>
+<pre><code class="highlight json">  <span class="s2">"gopay"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"enable_callback"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"callback_url"</span><span class="p">:</span> <span class="s2">"someapps://callback"</span> <span class="c1">//anda juga dapat menggunakan url web seperti "https://myshop.com/finish"</span>
+  <span class="p">}</span>
 </code></pre>
 
 <table>
@@ -702,7 +715,7 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>Definisi l
 
 
             <div class="pagination">
-              <ul><li class="left">« Sebelumnya: <a href="integration_card_basic.html">Core API : Pembayaran Kartu</a></li><li class="right">Selanjutnya: <a href="https://api-docs.midtrans.com">Core API : Core API Docs</a> »</li></ul>
+              <ul><li class="left">« Sebelumnya: <a href="integration_card_basic.html">Core API : Integrasi Pembayaran Kartu</a></li><li class="right">Selanjutnya: <a href="https://api-docs.midtrans.com">Core API : Channel Pembayaran Lain</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->

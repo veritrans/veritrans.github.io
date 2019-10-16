@@ -326,9 +326,11 @@
                         <b class="caret"></b>
                         <ul class="child-menu">
                             
-                            <li class=""><a href="integration_card_basic.html">Card Payment Basic</a></li>
+                            <li class=""><a href="integration_card_basic.html">Card Payment Integration</a></li>
                             
                             <li class="active"><a href="integration_gopay.html">GoPay Integration</a></li>
+                            
+                            <li class=""><a href="https://api-docs.midtrans.com">Other Payment Channel</a></li>
                             
                             <li class=""><a href="https://api-docs.midtrans.com">Core API Docs</a></li>
                             
@@ -424,17 +426,23 @@
 <h3 id="charge-api-request">Charge API request</h3>
 <p>This is example of <code>/charge</code> API request in Curl, please implement according to your backend language (you can also check our available <a href="../welcome/pluginlibrary.html">language libraries</a>).</p>
 
-<pre><code class="highlight shell"><span class="o">{</span>
-    <span class="s2">"payment_type"</span>: <span class="s2">"gopay"</span>,
-    <span class="s2">"transaction_details"</span>: <span class="o">{</span>
-        <span class="s2">"gross_amount"</span>: 44000,
-        <span class="s2">"order_id"</span>: <span class="s2">"order-101"</span>
-    <span class="o">}</span>
-    <span class="s2">"gopay"</span>: <span class="o">{</span>
-        <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,                //optional
-        <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>   //optional
-    <span class="o">}</span>
-<span class="o">}</span>
+<pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "gopay",
+  "transaction_details": {
+      "order_id": "order-101",
+      "gross_amount": 44000
+  }
+  "gopay": {
+      "enable_callback": true,                //optional
+      "callback_url": "someapps://callback"   //optional
+  }
+}'</span>
 </code></pre>
 
 <p>Optional: you can customize <a href="https://api-docs.midtrans.com/#json-object">transaction_details data</a>. To include data like customer_details, item_details, etc. It's recommended to send as much detail so on report/dashboard those information will be included.</p>
@@ -487,7 +495,9 @@
 
 <h3 id="show-qr-code-image-on-computer-or-tablet">Show QR Code Image (on computer or tablet)</h3>
 
-<p>Get the QR Code Image from API Response, use <code>generate-qr-code</code> to render the QR code image (PNG format).</p>
+<p>To display transaction QR Code image, use the url from <code>generate-qr-code</code> actions retrieved from API response. Simplest way is to <strong>"hotlink"</strong> the image url, if the frontend is HTML, put the url in image tag <code>&lt;img src="[QR CODE URL]"&gt;</code>, or display it on a similar component without downloading.</p>
+
+<p>If the frontend does not support such scenario, download the QR code image from that url, then display it on frontend.</p>
 
 <p>Instruction Example for <strong>QR Code</strong> :</p>
 
@@ -504,7 +514,10 @@
 <p><img alt="GoPay QR Instruction" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr_pay.png" /></p>
 
 <h3 id="create-redirect-link-to-gojek-apps-on-smartphone">Create Redirect Link to Gojek Apps (on SmartPhone)</h3>
-<p>Get the Deeplink from API Response, use <code>deeplink-redirect</code> to redirect to Gojek apps.</p>
+
+<p>To redirect customer to Gojek app, use the url from <code>deeplink-redirect</code> actions retrieved from API response.</p>
+
+<p>Then customer can be redirected via server-side redirect, using javascript like <code>window.location=[DEEPLINK URL]</code>, or using HTML link <code>&lt;a href="[DEEPLINK URL]"&gt;Pay with GoPay&lt;/a&gt;</code>.</p>
 
 <p>Instruction Example for <strong>Deeplink</strong> :</p>
 
@@ -524,10 +537,10 @@
 
 <p>Please add gopay parameter in the <code>/charge</code> API request</p>
 
-<pre><code class="highlight shell">  <span class="s2">"gopay"</span>: <span class="o">{</span>
-      <span class="s2">"enable_callback"</span>: <span class="nb">true</span>,
-      <span class="s2">"callback_url"</span>: <span class="s2">"someapps://callback"</span>
-  <span class="o">}</span>
+<pre><code class="highlight json">  <span class="s2">"gopay"</span><span class="err">:</span> <span class="p">{</span>
+      <span class="s2">"enable_callback"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"callback_url"</span><span class="p">:</span> <span class="s2">"someapps://callback"</span> <span class="c1">//you can also use web url like https://myshop.com/finish</span>
+  <span class="p">}</span>
 </code></pre>
 
 <table>
@@ -703,7 +716,7 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detai
 
 
             <div class="pagination">
-              <ul><li class="left">« Previous: <a href="integration_card_basic.html">Core API : Card Payment Basic</a></li><li class="right">Next: <a href="https://api-docs.midtrans.com">Core API : Core API Docs</a> »</li></ul>
+              <ul><li class="left">« Previous: <a href="integration_card_basic.html">Core API : Card Payment Integration</a></li><li class="right">Next: <a href="https://api-docs.midtrans.com">Core API : Other Payment Channel</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->
