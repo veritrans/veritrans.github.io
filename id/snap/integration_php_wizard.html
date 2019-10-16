@@ -550,6 +550,15 @@ Silahkan ganti <strong>gross_amount</strong> dan <strong>order_id</strong> sesua
       </div><!--/row-->
     </div><!--/.container-->
 
+    <!-- attempt force redirect to HTTPS -->
+    <script type="text/javascript">
+      if (window.location.hostname == 'docs.midtrans.com' && 
+        window.location.protocol == "http:") {
+        console.log("attempt to change protocol to https");
+        window.location.protocol = "https:";
+      }
+    </script>
+
     <footer class="wrapper">
   <div class="container">
     <div class="row">
