@@ -264,7 +264,7 @@
         <div class="docs-logo">
             <span>DOCS</span>
         </div>
-        <div class="language-toggle"> English / <a href="../../id/core_api/integration_card_basic.html">Bahasa Indonesia</a></div>
+        <div class="language-toggle"> English / <a href="../../id/core_api/integration_bank_transfer.html">Bahasa Indonesia</a></div>
         <div class="sidebar-search">
           <form>
             <input type="search" name="q" id="search-field" placeholder="Search">
@@ -326,11 +326,11 @@
                         <b class="caret"></b>
                         <ul class="child-menu">
                             
-                            <li class="active"><a href="integration_card_basic.html">Card Payment Integration</a></li>
+                            <li class=""><a href="integration_card_basic.html">Card Payment Integration</a></li>
                             
                             <li class=""><a href="integration_gopay.html">GoPay Integration</a></li>
                             
-                            <li class=""><a href="integration_bank_transfer.html">Bank Transfer Integration</a></li>
+                            <li class="active"><a href="integration_bank_transfer.html">Bank Transfer Integration</a></li>
                             
                             <li class=""><a href="https://api-docs.midtrans.com">Other Payment Channel</a></li>
                             
@@ -374,121 +374,92 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="en-core-api-integration-card-basic">
-            <h2 id="card-payment-integration">Card Payment Integration</h2>
+          <div class="en-core-api-integration-bank-transfer">
+            <h2 id="bank-transfer-integration">Bank Transfer Integration</h2>
 
-<p>Basic integration process of Card Fullpayment (3DS) will be explained below.</p>
+<p>One of the payment method offered by Midtrans is Bank Transfer. By using this payment method, customers will have the option to make a payment via bank transfer and Midtrans will send real time notification when the customer complete the payment.</p>
+
+<p>At this moment, Midtrans has integrated with 4 different bank transfer payment methods:</p>
+
+<ol>
+  <li>Permata Virtual Account</li>
+  <li>BCA Virtual Account</li>
+  <li>Mandiri Bill Payment</li>
+  <li>BNI Virtual Account</li>
+</ol>
+
+<p>Basic integration process of Bank Transfer will be explained below.
+<br /><br /></p>
 
 <h3 id="sandbox-environment">Sandbox Environment</h3>
-<p>All the steps below are using Midtrans <strong>Sandbox</strong> environment, not Production, to easily test the integration process. Make sure you are switching to Sandbox mode on your <a href="https://account.midtrans.com">Midtrans account dashboard</a> while retrieving Server Key and Client Key. Explained in <a href="../welcome/preparation.html#step3">Getting Started - Preparation</a></p>
+<p>All the steps below are using Midtrans <strong>Sandbox</strong> environment, not Production, to easily test the integration process. Make sure you are switching to Sandbox mode on your <a href="https://account.midtrans.com">Midtrans account dashboard</a> while retrieving Server Key and Client Key. Explained in <a href="../welcome/preparation.html#step3">Getting Started - Preparation</a>.</p>
 
-<p>Server Key and Client Key can be retrieved on menu <code>Settings &gt; Access Keys</code></p>
+<p>Server Key and Client Key can be retrieved on menu <code>Settings &gt; Access Keys</code>.
+<br /><br /></p>
 
 <h3 id="testing-payment">Testing Payment</h3>
-<p>To test card transaction as a customer, please use <a href="../reference/test.html">testing credentials described here</a>. Example, card for success scenario: </p>
 
-<pre><code class="highlight plaintext">Card Number: 4811 1111 1111 1114 
-CVV: 123 
-Expiry: &lt;any future date&gt;
-</code></pre>
+<p>Here is a list of a test transaction that can be used in the <code>Sandbox Environment</code>, please note that this simulator will not work on Production mode.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Payment Methods</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BCA Virtual Account</td>
+      <td>Midtrans will generate a dummy BCA Virtual Account Number. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/bca/va/index">BCA  Virtual Account Simulator</a>.</td>
+    </tr>
+    <tr>
+      <td>Mandiri Bill Payment</td>
+      <td>Midtrans will generate a Payment Code to complete payment via Mandiri e-channel (Internet Banking, SMS Banking, Mandiri ATM). To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/mandiri/bill/index">Mandiri Bill Payment Simulator</a>.</td>
+    </tr>
+    <tr>
+      <td>BNI Virtual Account</td>
+      <td>Midtrans will generate a dummy BNI Virtual Account Number. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/bni/va/index">BNI Virtual Account Simulator</a>.</td>
+    </tr>
+    <tr>
+      <td>Permata Virtual Account</td>
+      <td>Midtrans will generate a dummy Permata Virtual Account Number. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/permata/va/index">Permata Virtual Account Simulator</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /><br /></p>
 
 <h3 id="diagram">Diagram</h3>
-<p>Overview of the transaction flow in sequence diagram:</p>
-
-<p><img alt="card transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/card_transaction_3ds.png" />
+<p>Overview of the transaction flow in sequence diagram:
+<br />
+<img alt="bank transfer transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/bank_transfer.png" />
 .
 <br /><br /></p>
 
 <h2 id="integration-step">Integration Step</h2>
 <ol>
-  <li>Get card token, via frontend.</li>
-  <li>Send transaction data to API Charge using card token, via backend.</li>
-  <li>(Conditional) if transaction is 3DS, open 3DS redirect_url with popup/redirect, via frontend.</li>
-  <li>Handle transaction notification, on backend.
+  <li>Send transaction data to API Charge.</li>
+  <li>Display virtual account number and expiry time.</li>
+  <li>Handle transaction notification.
 <br /><br /></li>
 </ol>
 
-<h2 id="get-card-token">1. Get Card Token</h2>
-<p>Card <code>token_id</code> is representation of customer's card data, that will be used during a transaction. <code>token_id</code> should be retrieved using <a href="https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js">MidtransNew3ds JS library</a> on merchant's website frontend, card data will be securely transmitted by frontend javascript to Midtrans API in exchange of card <code>token_id</code>, to avoid risk involved if card data being transmitted to merchant's backend.</p>
-
-<h3 id="include-midtrans-js">Include Midtrans JS</h3>
-<p><strong>Client Key</strong> (from your account's <a href="https://account.midtrans.com">Dashboard</a>) is required for this step. Include Midtrans JS library to our payment page, by adding this script tag:</p>
-
-<pre><code class="highlight html"><span class="nt">&lt;script </span><span class="na">id=</span><span class="s">"midtrans-script"</span> <span class="na">type=</span><span class="s">"text/javascript"</span>
-<span class="na">src=</span><span class="s">"https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js"</span> 
-<span class="na">data-environment=</span><span class="s">"sandbox"</span> 
-<span class="na">data-client-key=</span><span class="s">"&lt;INSERT YOUR CLIENT KEY HERE&gt;"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
-
-<p><strong>Important</strong>: Change the following attributes.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>data-environment</code></td>
-      <td>Input <code>sandbox</code> or <code>production</code> (API environment)</td>
-    </tr>
-    <tr>
-      <td><code>data-client-key</code></td>
-      <td>Input <strong>client key</strong> from your account's <a href="https://account.midtrans.com">Dashboard</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Link: <a href="https://api-docs.midtrans.com/#get-token"><em>More detailed definition</em></a></p>
-
-<h3 id="get-card-token-js-implementation">Get Card Token JS Implementation</h3>
-<p>To retrieve card <code>token_id</code>, we will be using <code>MidtransNew3ds.getCardToken</code> function. Implement the following Javascript on our payment page.</p>
-
-<pre><code class="highlight javascript"><span class="c1">// card data from customer input, for example</span>
-<span class="kd">var</span> <span class="nx">cardData</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"card_number"</span><span class="p">:</span> <span class="mi">4811111111111114</span><span class="p">,</span>
-  <span class="s2">"card_exp_month"</span><span class="p">:</span> <span class="mi">02</span><span class="p">,</span>
-  <span class="s2">"card_exp_year"</span><span class="p">:</span> <span class="mi">2025</span><span class="p">,</span>
-  <span class="s2">"card_cvv"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
-<span class="p">};</span>
-
-<span class="c1">// callback functions</span>
-<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">onSuccess</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
-    <span class="c1">// Success to get card token_id, implement as you wish here</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Success to get card token_id, response:'</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">token_id</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">token_id</span><span class="p">;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'This is the card token_id:'</span><span class="p">,</span> <span class="nx">token_id</span><span class="p">);</span>
-  <span class="p">},</span>
-  <span class="nx">onFailure</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
-    <span class="c1">// Fail to get card token_id, implement as you wish here</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Fail to get card token_id, response:'</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="c1">// trigger `getCardToken` function</span>
-<span class="nx">MidtransNew3ds</span><span class="p">.</span><span class="nx">getCardToken</span><span class="p">(</span><span class="nx">cardData</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-</code></pre>
-
-<p>If all goes well, we will be able to get card <code>token_id</code> inside <code>onSuccess</code> callback function. It will be used as one of JSON parameter for <code>/charge</code> API request.</p>
-
-<p><code>token_id</code> will need to be passed from frontend to backend for next step, it can be done using AJAX via Javascript, or html form POST, etc. Merchant are free to implement.</p>
-
-<blockquote>
-  <p><strong>Note:</strong> This <code>token_id</code> is only valid for 1 transaction. For each card transaction it is required to go through this process, to help ensure card data is transmitted securely. If you are looking to persist/save card token, you may use <a href="https://api-docs.midtrans.com/#card-features-one-click">One-click</a>/<a href="https://api-docs.midtrans.com/#card-features-two-clicks">Two-clicks</a> feature.</p>
-</blockquote>
-
-<p><br /><br /></p>
-
-<h2 id="send-transaction-data-to-api-charge">2. Send Transaction Data to API Charge</h2>
-
+<h2 id="send-transaction-data-to-api-charge">1. Send Transaction Data to API Charge</h2>
 <p>Charge API request should be done from Merchant's backend. <strong>Server Key</strong> (from your account's <a href="https://account.midtrans.com">Dashboard</a>) will be needed to <a href="https://api-docs.midtrans.com/#http-s-header">authenticate the request</a>.</p>
 
 <h3 id="charge-api-request">Charge API request</h3>
-<p>This is example of <code>/charge</code> API request in Curl, please implement according to your backend language (you can also check our available <a href="../welcome/pluginlibrary.html">language libraries</a>). Input <code>token_id</code> retrieved previously.</p>
+<p>This is example of basic <code>/charge</code> API request in Curl, please implement according to your backend language (you can also check our available <a href="../welcome/pluginlibrary.html">language libraries</a>).</p>
 
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#bca-req" data-toggle="tab">BCA</a></li>
+  <li><a href="#mandiri-req" data-toggle="tab">Mandiri</a></li>
+  <li><a href="#bni-req" data-toggle="tab">BNI</a></li>
+  <li><a href="#permata-req" data-toggle="tab">Permata</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="bca-req">
 <pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
 curl -X POST <span class="se">\</span>
   https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
@@ -496,261 +467,396 @@ curl -X POST <span class="se">\</span>
   -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
-  "payment_type": "credit_card",
+  "payment_type": "bank_transfer",
   "transaction_details": {
-    "order_id": "order102",
-    "gross_amount": 789000
-  },
-  "credit_card": {
-    "token_id": "&lt;token_id from Get Card Token Step&gt;",
-    "authentication": true,
+      "order_id": "order-101",
+      "gross_amount": 44000
+  }
+  "bank_transfer":{
+      "bank": "bca"
   }
 }'</span>
 </code></pre>
+  </div>
 
-<p>Optional: we can customize <code>credit_card</code> object for other <a href="https://api-docs.midtrans.com/#credit-card">advanced features</a>. For example:</p>
-
-<pre><code class="highlight javascript"><span class="p">...</span>
-  <span class="s2">"credit_card"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"token_id"</span><span class="err">:</span> <span class="s2">"&lt;token_id from Get Card Token Step&gt;"</span><span class="p">,</span>
-    <span class="s2">"authentication"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">//set true for 3DS, false if you have non 3DS acquiring</span>
-    <span class="s2">"save_token_id"</span><span class="err">:</span> <span class="kc">true</span> <span class="c1">//optional, to use one/two click feature</span>
-    <span class="s2">"installment_term"</span><span class="err">:</span> <span class="mi">12</span><span class="p">,</span> <span class="c1">//optional, to allow installment</span>
-    <span class="s2">"bank"</span><span class="err">:</span> <span class="s2">"bca"</span><span class="p">,</span> <span class="c1">//optional, to specify acquiring bank</span>
-  <span class="p">}</span>
-<span class="p">...</span>
+  <div class="tab-pane" id="mandiri-req">
+<pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "echannel",
+  "transaction_details": {
+      "order_id": "order-101",
+      "gross_amount": 44000
+  }
+}'</span>
 </code></pre>
+  </div>
 
-<p>Optional: we can customize <a href="https://api-docs.midtrans.com/#json-object">transaction_details data</a>. To include data like customer_details, item_details, etc. It's recommended to send as much detail so on report/dashboard those information will be included.</p>
+  <div class="tab-pane" id="bni-req">
+<pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "bank_transfer",
+  "transaction_details": {
+      "order_id": "order-101",
+      "gross_amount": 44000
+  }
+  "bank_transfer":{
+      "bank": "bni"
+  }
+}'</span>
+</code></pre>
+  </div>
+
+  <div class="tab-pane" id="permata-req">
+<pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "permata",
+  "transaction_details": {
+      "order_id": "order-101",
+      "gross_amount": 44000
+  }
+}'</span>
+</code></pre>
+  </div>
+</div>
+
+<p>Optional: you can customize <a href="https://api-docs.midtrans.com/#json-object">transaction_details data</a>. To include data like customer_details, item_details, etc. It's recommended to send as much detail so on report/dashboard those information will be included.</p>
 
 <h3 id="charge-api-response">Charge API response</h3>
-<p>We will get the <strong>API response</strong> like the following.</p>
+<p>You will get the <strong>API response</strong> like the following.</p>
 
-<pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card transaction is successful"</span><span class="p">,</span>
-  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"0bb563a9-ebea-41f7-ae9f-d99ec5f9700a"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order102"</span><span class="p">,</span>
-  <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/token/rba/redirect/481111-1114-0bb563a9-ebea-41f7-ae9f-d99ec5f9700a"</span><span class="p">,</span>
-  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"789000.00"</span><span class="p">,</span>
-  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
-  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-08-27 15:50:54"</span><span class="p">,</span>
-  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-  <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
-  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-  <span class="s2">"card_type"</span><span class="p">:</span> <span class="s2">"credit"</span>
-<span class="p">}</span>
-</code></pre>
-
-<ul>
-  <li>
-    <p>If the <code>transaction_status</code> is <code>capture</code> and <code>fraud_status</code> is <code>accept</code>, it means the transaction require no 3DS, and is successfuly complete.</p>
-  </li>
-  <li>
-    <p>If the <code>transaction_status</code> is <code>pending</code> and <code>redirect_url</code> exists, it means the transaction require 3DS, and we will need to proceed to next step, opening 3DS authentication page.
-<br /><br /></p>
-  </li>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#bca-res" data-toggle="tab">BCA</a></li>
+  <li><a href="#mandiri-res" data-toggle="tab">Mandiri</a></li>
+  <li><a href="#bni-res" data-toggle="tab">BNI</a></li>
+  <li><a href="#permata-res" data-toggle="tab">Permata</a></li>
 </ul>
-
-<h2 id="open-3ds-authentication-page">3. Open 3DS Authentication Page</h2>
-
-<p>As part of API response, we now have <code>redirect_url</code>. It should be opened (displayed to customer) using <a href="https://api.midtrans.com/v2/assets/js/midtrans-new-3ds.min.js">MidtransNew3ds JS library</a> on merchant's website frontend.</p>
-
-<p>To open 3DS page we can use <code>MidtransNew3ds.authenticate</code> or <code>MidtransNew3ds.redirect</code> function. Input the <code>redirect_url</code> retrieved previously.</p>
-
-<h3 id="open-3ds-authenticate-page-js-implementation">Open 3DS Authenticate Page JS Implementation</h3>
-
-<pre><code class="highlight javascript"><span class="kd">var</span> <span class="nx">redirect_url</span> <span class="o">=</span> <span class="s1">'&lt;redirect_url Retrieved from Charge Response&gt;'</span><span class="p">;</span>
-
-<span class="c1">// callback functions</span>
-<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">performAuthentication</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">redirect_url</span><span class="p">){</span>
-    <span class="c1">// Implement how you will open iframe to display 3ds authentication redirect_url to customer</span>
-    <span class="nx">popupModal</span><span class="p">.</span><span class="nx">openPopup</span><span class="p">(</span><span class="nx">redirect_url</span><span class="p">);</span>
-  <span class="p">},</span>
-  <span class="nx">onSuccess</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
-    <span class="c1">// 3ds authentication success, implement payment success scenario</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'response:'</span><span class="p">,</span><span class="nx">response</span><span class="p">);</span>
-    <span class="nx">popupModal</span><span class="p">.</span><span class="nx">closePopup</span><span class="p">();</span>
-  <span class="p">},</span>
-  <span class="nx">onFailure</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
-    <span class="c1">// 3ds authentication failure, implement payment failure scenario</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'response:'</span><span class="p">,</span><span class="nx">response</span><span class="p">);</span>
-    <span class="nx">popupModal</span><span class="p">.</span><span class="nx">closePopup</span><span class="p">();</span>
-  <span class="p">},</span>
-  <span class="nx">onPending</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
-    <span class="c1">// transaction is pending, transaction result will be notified later via POST notification, implement as you wish here</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'response:'</span><span class="p">,</span><span class="nx">response</span><span class="p">);</span>
-    <span class="nx">popupModal</span><span class="p">.</span><span class="nx">closePopup</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="c1">// trigger `authenticate` function</span>
-<span class="nx">MidtransNew3ds</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="nx">redirect_url</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-
-
-
-<span class="cm">/**
- * Example helper functions to open Iframe popup, you may replace this with your own method to open iframe
- * PicoModal library is used:
- * &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/picomodal/3.0.0/picoModal.js"&gt;&lt;/script&gt;
- */</span>
-<span class="kd">var</span> <span class="nx">popupModal</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="kd">var</span> <span class="nx">modal</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">openPopup</span><span class="p">(</span><span class="nx">url</span><span class="p">){</span>
-      <span class="nx">modal</span> <span class="o">=</span> <span class="nx">picoModal</span><span class="p">({</span>
-        <span class="na">content</span><span class="p">:</span><span class="s1">'&lt;iframe frameborder="0" width="100%" height="100%" src="'</span><span class="o">+</span><span class="nx">url</span><span class="o">+</span><span class="s1">'"&gt;&lt;/iframe&gt;'</span><span class="p">,</span>
-        <span class="na">width</span><span class="p">:</span> <span class="s2">"75%"</span><span class="p">,</span> 
-        <span class="na">closeButton</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> 
-        <span class="na">overlayClose</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="na">escCloses</span><span class="p">:</span> <span class="kc">false</span>
-      <span class="p">}).</span><span class="nx">show</span><span class="p">();</span>
-    <span class="p">},</span>
-    <span class="nx">closePopup</span><span class="p">(){</span>
-      <span class="k">try</span><span class="p">{</span>
-        <span class="nx">modal</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
-      <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}());</span>
-
-<span class="cm">/**
- * Alternatively instead of opening 3ds authentication redirect_url using iframe,
- * you can also redirect customer using: 
- * MidtransNew3ds.redirect(redirect_url, { callbackUrl : 'https://mywebsite.com/finish_3ds' });
- **/</span>
-</code></pre>
-
-<h3 id="ds-authenticate-json-response">3DS Authenticate JSON Response</h3>
-<p>On the JS callback function, we will get JSON of the transaction result like below.</p>
-
+<div class="tab-content">
+  <div class="tab-pane active" id="bca-res">
 <pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
-  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Credit Card transaction is successful"</span><span class="p">,</span>
-  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"226ba26f-b050-4fc5-aa25-b7f8169bc67b"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order102"</span><span class="p">,</span>
-  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"789000.00"</span><span class="p">,</span>
-  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
-  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-08-27 17:22:08"</span><span class="p">,</span>
-  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
-  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1566901334936"</span><span class="p">,</span>
-  <span class="s2">"eci"</span><span class="p">:</span> <span class="s2">"05"</span><span class="p">,</span>
-  <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
-  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-  <span class="s2">"card_type"</span><span class="p">:</span> <span class="s2">"credit"</span><span class="p">,</span>
-  <span class="s2">"channel_response_code"</span><span class="p">:</span> <span class="s2">"00"</span><span class="p">,</span>
-  <span class="s2">"channel_response_message"</span><span class="p">:</span> <span class="s2">"Approved"</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Bank Transfer transaction is created"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"be03df7d-2f97-4c8c-a53c-8959f1b67295"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823229"</span><span class="p">,</span>
+    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:33:49"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bca"</span><span class="p">,</span>
+            <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"812785002530231"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span>
 <span class="p">}</span>
 </code></pre>
+    <p>You will get the <code>va_numbers</code> attribute which can be performed this transaction.
+<br /></p>
+  </div>
 
-<p>If the <code>transaction_status</code> is <code>capture</code> and <code>fraud_status</code> is <code>accept</code>, it means the transaction is success, and is now complete.</p>
+  <div class="tab-pane" id="mandiri-res">
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Mandiri Bill transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"abb2d93f-dae3-4183-936d-4145423ad72f"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823332"</span><span class="p">,</span>
+    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:35:31"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"778347787706"</span><span class="p">,</span>
+    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span>
+<span class="p">}</span>
+</code></pre>
+    <p>You will get the <code>bill_key</code> and <code>bill_code</code> attribute which can be performed this transaction.
+<br /></p>
+  </div>
 
-<blockquote>
-  <p><strong>IMPORTANT NOTE:</strong> To update transaction status on your backend/database, DO NOT solely rely on frontend callbacks! For security reason to make sure the status is authentically coming from Midtrans, only update transaction status based on HTTP Notification or <a href="https://api-docs.midtrans.com/#get-transaction-status">API Get Status</a>.</p>
-</blockquote>
+  <div class="tab-pane" id="bni-res">
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Bank Transfer transaction is created"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2194a77c-a412-4fd8-8ec8-121ff64fbfee"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823369"</span><span class="p">,</span>
+    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:36:08"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+            <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"9888500212345678"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span>
+<span class="p">}</span>
+</code></pre>
+    <p>You will get the <code>va_numbers</code> attribute which can be performed this transaction.
+<br /></p>
+  </div>
 
-<p><br /><br /></p>
+  <div class="tab-pane" id="permata-res">
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, PERMATA VA transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"035ca76c-b814-4264-9e63-68142351df83"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823410"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:36:49"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+    <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"850003072869607"</span><span class="p">,</span>
+    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span>
+<span class="p">}</span>
+</code></pre>
+    <p>You will get the <code>permata_va_number</code> attribute which can be performed this transaction.
+<br /></p>
+  </div>
+</div>
 
-<h2 id="handle-http-notification">4. Handle HTTP Notification</h2>
+<h2 id="display-virtual-account-number-and-expiry-time">2. Display Virtual Account Number and Expiry Time</h2>
 
-<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if card transaction success or denied. So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
+<p>To display the virtual account number, use <code>va_number</code> that retrieved from API response.</p>
+
+<p>By default the expiry time for Bank Transfer / VA is <strong>24 hours</strong>, please check <a href="https://api-docs.midtrans.com/#charge-features">this section under "Set Custom Expiry"</a> if you wanna customize the expiry time.
+<br /><br /></p>
+
+<h2 id="handle-http-notification">3. Handle HTTP Notification</h2>
+
+<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if transaction success or expired (not paid). So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
 
 <p>HTTP POST request with JSON body will be sent to Merchant's <strong>notification url</strong> configured on <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), this is the sample JSON body that will be received by Merchant:</p>
 
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#bca-not" data-toggle="tab">BCA</a></li>
+  <li><a href="#mandiri-not" data-toggle="tab">Mandiri</a></li>
+  <li><a href="#bni-not" data-toggle="tab">BNI</a></li>
+  <li><a href="#permata-not" data-toggle="tab">Permata</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="bca-not">
 <pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-08-27 17:22:08"</span><span class="p">,</span>
-  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"capture"</span><span class="p">,</span>
-  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"226ba26f-b050-4fc5-aa25-b7f8169bc67b"</span><span class="p">,</span>
+  <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"812785002530231"</span><span class="p">,</span>
+      <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bca"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:33:49"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"be03df7d-2f97-4c8c-a53c-8959f1b67295"</span><span class="p">,</span>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
-  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
-  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"9b67a07a82d592bc493f3b775eaae5b1862a8bbaa051cdd31a0a81566c84f2c4d306fe2712c86f8167c4faa594a0e2cbe6ae898491bfaebaf849681ae92264d5"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"credit_card"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order102"</span><span class="p">,</span>
-  <span class="s2">"masked_card"</span><span class="p">:</span> <span class="s2">"481111-1114"</span><span class="p">,</span>
-  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"789000.00"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"b07e6b0c6e7786363f9d7c1502e1171143fefe38e1a2bb93bce87e0fb64dd2ddfbbc8c7d60c6dcd7d6d8edb22169fd46e2250a6a547aa9f3f6da206a63334360"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+  <span class="s2">"payment_amounts"</span><span class="p">:</span> <span class="p">[</span>
+
+  <span class="p">],</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823229"</span><span class="p">,</span>
+  <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
   <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-  <span class="s2">"eci"</span><span class="p">:</span> <span class="s2">"05"</span><span class="p">,</span>
-  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
-  <span class="s2">"channel_response_message"</span><span class="p">:</span> <span class="s2">"Approved"</span><span class="p">,</span>
-  <span class="s2">"channel_response_code"</span><span class="p">:</span> <span class="s2">"00"</span><span class="p">,</span>
-  <span class="s2">"card_type"</span><span class="p">:</span> <span class="s2">"credit"</span><span class="p">,</span>
-  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1566901334936"</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span>
 <span class="p">}</span>
 </code></pre>
+  </div>
 
-<p>Refer <a href="https://api-docs.midtrans.com/#handing-notifications">here on more details of how to handle HTTP Notification</a>.
+  <div class="tab-pane" id="mandiri-not">
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:35:31"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"abb2d93f-dae3-4183-936d-4145423ad72f"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"ac6c542806820cd5abe218fadc4f2d150e6e6c9ea6cc24a56c78f3625c19ae0eb4bbf0e26059d2bc6879752e9a1f2b673c3158a34f7e96651d621a0be8258ca9"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823332"</span><span class="p">,</span>
+  <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+  <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span>
+  <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"778347787706"</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <div class="tab-pane" id="bni-not">
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"9888500212345678"</span><span class="p">,</span>
+      <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:36:08"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2194a77c-a412-4fd8-8ec8-121ff64fbfee"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"9eea61a37704a010c0665fbd738eade7bb08ecb8096ee4d3f08def1eb4f9e1f86f0717c3b79b3c41ff36c67c17bb0124e9f567589eba341aae1ad899fecf2ef3"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+  <span class="s2">"payment_amounts"</span><span class="p">:</span> <span class="p">[</span>
+
+  <span class="p">],</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823369"</span><span class="p">,</span>
+  <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <div class="tab-pane" id="permata-not">
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:36:49"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"035ca76c-b814-4264-9e63-68142351df83"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"386ef32b70e611a41062db75ce2d3770a3e9861df50b0f9e49e56f5d64d74fc4acdef5e16a12955bb232b08384eb43aea22400aa591f658197c69f8ffe8e04f3"</span><span class="p">,</span>
+  <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"850003072869607"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823410"</span><span class="p">,</span><span class="err">https</span><span class="p">:</span><span class="c1">//open.spotify.com/track/7McZS9J6h0SKoZBR6cfcFe</span>
+  <span class="s2">"merchant_id"</span><span class="err">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <p>Refer <a href="https://api-docs.midtrans.com/#handing-notifications">here on more details of how to handle HTTP Notification</a>.
 <br /><br /></p>
 
-<h2 id="switching-to-production">Switching To Production</h2>
+  <h2 id="switching-to-production">Switching To Production</h2>
 
-<p>To use Midtrans production environment (accept real payment from real customer), please make sure to:</p>
+  <p>To use Midtrans production environment (accept real payment from real customer), please make sure to:</p>
 
-<ol>
-  <li>Switch the API domain URL from <code>api.sandbox.midtrans.com</code> to <code>api.midtrans.com</code></li>
-  <li>Switch the Client Key and Server Key from sandbox Dashboard, with keys from production Dashboard.
+  <ol>
+    <li>Switch the API domain URL from <code>api.sandbox.midtrans.com</code> to <code>api.midtrans.com</code></li>
+    <li>Switch the Client Key and Server Key from sandbox Dashboard, with keys from production Dashboard.
 <br /><br /></li>
-</ol>
+  </ol>
 
-<h2 id="done">Done</h2>
+  <h2 id="done">Done</h2>
 
-<p>The card payment integration guide is now complete. Below are some further references.
+  <p>The Bank Transfer payment integration guide is now complete. Below are some further references.
 <br /><br /></p>
 
-<h2 id="description">Description</h2>
+  <h2 id="custom-virtual-account-number">Custom Virtual Account Number</h2>
 
-<p><code>transaction_status</code> value description for card transaction:</p>
+  <p>A virtual account number contains two parts. The first part is the company code and the second part is the unique code. The second part can be customized for <strong>BCA</strong>, <strong>BNI</strong> and <strong>Permata</strong> (Only supported for b2b transactions) payment types.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Transaction Status</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>capture</code></td>
-      <td>Transaction successful, fund has been deducted</td>
-    </tr>
-    <tr>
-      <td><code>pending</code></td>
-      <td>Transaction is initiated and waiting for further action (3DS by customer)</td>
-    </tr>
-    <tr>
-      <td><code>deny</code></td>
-      <td>Transaction is denied, further check <code>channel_response_message</code> or <code>fraud_status</code></td>
-    </tr>
-    <tr>
-      <td><code>expire</code></td>
-      <td>Transaction failure because customer did not complete 3DS within allowed time</td>
-    </tr>
-  </tbody>
-</table>
+  <p>If the number provided is already utilized for another order, then a <strong>different unique number will be used instead</strong>.<br />
+If the number provided is longer than required, then the unnecessary digits in the end will be trimmed.<br />
+If the number provided is shorter than required, then the number will be prefixed with zeros.<br /></p>
 
-<p>Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detailed definition of transaction_status</em></a></p>
+  <p>Please add <strong>bank_transfer</strong> parameter in the <code>/charge</code> API request:</p>
 
-<p>Link: <a href="https://api-docs.midtrans.com/#fraud-status"><em>More detailed definition of fraud_status</em></a></p>
-
-<h4 id="reference">Reference</h4>
-
-<p>You can also refer to this sample implementation:</p>
-
-<ul>
-  <li><a href="https://github.com/Midtrans/midtrans-nodejs-client/blob/master/examples/expressApp/views/simple_core_api_checkout.ejs">NodeJs - Express</a></li>
-  <li><a href="https://github.com/Midtrans/midtrans-python-client/blob/master/examples/flask_app/templates/simple_core_api_checkout.html">Python - Flask</a></li>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+  <li class="active"><a href="#bca-custom-va" data-toggle="tab">BCA</a></li>
+  <li><a href="#bni-custom-va" data-toggle="tab">BNI</a></li>
+  <li><a href="#permata-custom-va" data-toggle="tab">Permata</a></li>
 </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="bca-custom-va">
+<pre><code class="highlight json"><span class="s2">"bank_transfer"</span><span class="err">:</span><span class="p">{</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bca"</span><span class="p">,</span>
+  <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"12345678911"</span> <span class="c1">//Length should be within 1 to 11</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
 
-<p>For more detail: <a href="https://api-docs.midtrans.com/">Complete Core API documentation</a></p>
+    <div class="tab-pane" id="bni-custom-va">
+<pre><code class="highlight json"><span class="s2">"bank_transfer"</span><span class="err">:</span><span class="p">{</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
+  <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"12345678"</span> <span class="c1">//Length should be within 1 to 8</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+
+    <div class="tab-pane" id="permata-custom-va">
+<pre><code class="highlight json"><span class="s2">"bank_transfer"</span><span class="err">:</span><span class="p">{</span>
+  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"permata"</span><span class="p">,</span>
+  <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"1234567890"</span> <span class="c1">//Length should be 10. Only supported for b2b transactions</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </div>
+
+  <h2 id="description">Description</h2>
+
+  <p><code>transaction_status</code> value description for Bank Transfer transaction:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Transaction Status</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>settlement</code></td>
+        <td>Transaction successful, customer has been completed the transaction.</td>
+      </tr>
+      <tr>
+        <td><code>pending</code></td>
+        <td>The transaction has successfully created but has not been completed by the customer.</td>
+      </tr>
+      <tr>
+        <td><code>expire</code></td>
+        <td>Transaction failure because customer did not complete the payment within allowed time.</td>
+      </tr>
+      <tr>
+        <td><code>cancel</code></td>
+        <td>Transaction is canceled by trigger from Merchant.</td>
+      </tr>
+      <tr>
+        <td><code>deny</code></td>
+        <td>The bank rejected the transaction.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><br />
+Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detailed definition of transaction_status</em></a></p>
+
+  <p>For more detail: <a href="https://api-docs.midtrans.com/">Complete Core API documentation</a></p>
+</div>
 
 
             <div class="pagination">
-              <ul><li class="left">« Previous: <a href="../payment_link/index.html">Payment Link : Payment Link</a></li><li class="right">Next: <a href="integration_gopay.html">Core API : GoPay Integration</a> »</li></ul>
+              <ul><li class="left">« Previous: <a href="integration_gopay.html">Core API : GoPay Integration</a></li><li class="right">Next: <a href="https://api-docs.midtrans.com">Core API : Other Payment Channel</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->

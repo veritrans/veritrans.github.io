@@ -330,6 +330,8 @@
                             
                             <li class="active"><a href="integration_gopay.html">GoPay Integration</a></li>
                             
+                            <li class=""><a href="integration_bank_transfer.html">Bank Transfer Integration</a></li>
+                            
                             <li class=""><a href="https://api-docs.midtrans.com">Other Payment Channel</a></li>
                             
                             <li class=""><a href="https://api-docs.midtrans.com">Core API Docs</a></li>
@@ -397,12 +399,12 @@
 <h3 id="diagram">Diagram</h3>
 <p><strong>QR Code Mode:</strong>
 <br />
-<img alt="card transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr.png" />
+<img alt="qr transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr.png" />
 .
 <br />
 <strong>Deeplink Mode:</strong>
 <br />
-<img alt="card transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_deeplink.png" />
+<img alt="deeplink transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_deeplink.png" />
 .
 <br /><br /></p>
 
@@ -602,7 +604,7 @@ curl -X POST <span class="se">\</span>
 
 <h2 id="handle-http-notification">3. Handle HTTP Notification</h2>
 
-<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if card transaction success or denied. So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
+<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if transaction success or expired (not paid). So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
 
 <p>HTTP POST request with JSON body will be sent to Merchant's <strong>notification url</strong> configured on <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), this is the sample JSON body that will be received by Merchant:</p>
 
@@ -716,7 +718,7 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detai
 
 
             <div class="pagination">
-              <ul><li class="left">« Previous: <a href="integration_card_basic.html">Core API : Card Payment Integration</a></li><li class="right">Next: <a href="https://api-docs.midtrans.com">Core API : Other Payment Channel</a> »</li></ul>
+              <ul><li class="left">« Previous: <a href="integration_card_basic.html">Core API : Card Payment Integration</a></li><li class="right">Next: <a href="integration_bank_transfer.html">Core API : Bank Transfer Integration</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->

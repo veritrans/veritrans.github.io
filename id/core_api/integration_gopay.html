@@ -329,6 +329,8 @@
               
                 <li class="active"><a href="integration_gopay.html">Integrasi GoPay</a></li>
               
+                <li class=""><a href="integration_bank_transfer.html">Integrasi Transfer Bank</a></li>
+              
                 <li class=""><a href="https://api-docs.midtrans.com">Channel Pembayaran Lain</a></li>
               
                 <li class=""><a href="https://api-docs.midtrans.com">Core API Docs</a></li>
@@ -601,7 +603,7 @@ curl -X POST <span class="se">\</span>
 
 <h2 id="terima-http-notification">3. Terima HTTP Notification</h2>
 
-<p>HTTP notification dari Midtrans ke backend Merchant akan dikirimkan pada saat terjadi perubahan <code>transaction_status</code>, untuk memastikan Mercahant mendapat informasi secara aman. Termasuk pada saat status transaksi berubah jadi success atau denied. Jadi selain JSON pada callback di atas, Merchant juga akan menerima notifikasi dari Midtrans.</p>
+<p>HTTP notification dari Midtrans ke backend Merchant akan dikirimkan pada saat terjadi perubahan <code>transaction_status</code>, untuk memastikan Mercahant mendapat informasi secara aman. Termasuk pada saat status transaksi berubah jadi success atau expired (tidak dibayarkan). Jadi selain JSON pada callback di atas, Merchant juga akan menerima notifikasi dari Midtrans.</p>
 
 <p>Request HTTP POST dengan body JSON akan dikirimkan ke <strong>notification url</strong> Merchant yang dikonfigurasi pada <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), berikut contoh body JSON yang akan diterima Merchant:</p>
 
@@ -671,7 +673,7 @@ curl -X POST <span class="se">\</span>
 
 <h2 id="deskripsi">Deskripsi</h2>
 
-<p>Nilai <code>transaction_status</code> dalam transaksi kartu:</p>
+<p>Nilai <code>transaction_status</code> dalam transaksi GoPay:</p>
 
 <table>
   <thead>
@@ -715,7 +717,7 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>Definisi l
 
 
             <div class="pagination">
-              <ul><li class="left">« Sebelumnya: <a href="integration_card_basic.html">Core API : Integrasi Pembayaran Kartu</a></li><li class="right">Selanjutnya: <a href="https://api-docs.midtrans.com">Core API : Channel Pembayaran Lain</a> »</li></ul>
+              <ul><li class="left">« Sebelumnya: <a href="integration_card_basic.html">Core API : Integrasi Pembayaran Kartu</a></li><li class="right">Selanjutnya: <a href="integration_bank_transfer.html">Core API : Integrasi Transfer Bank</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->
