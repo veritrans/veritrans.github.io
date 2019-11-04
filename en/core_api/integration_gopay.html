@@ -399,12 +399,12 @@
 <h3 id="diagram">Diagram</h3>
 <p><strong>QR Code Mode:</strong>
 <br />
-<img alt="card transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr.png" />
+<img alt="qr transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_qr.png" />
 .
 <br />
 <strong>Deeplink Mode:</strong>
 <br />
-<img alt="card transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_deeplink.png" />
+<img alt="deeplink transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/gopay_deeplink.png" />
 .
 <br /><br /></p>
 
@@ -604,7 +604,7 @@ curl -X POST <span class="se">\</span>
 
 <h2 id="handle-http-notification">3. Handle HTTP Notification</h2>
 
-<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if card transaction success or denied. So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
+<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if transaction success or expired (not paid). So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
 
 <p>HTTP POST request with JSON body will be sent to Merchant's <strong>notification url</strong> configured on <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), this is the sample JSON body that will be received by Merchant:</p>
 

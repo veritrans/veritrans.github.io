@@ -603,7 +603,7 @@ curl -X POST <span class="se">\</span>
 
 <h2 id="terima-http-notification">3. Terima HTTP Notification</h2>
 
-<p>HTTP notification dari Midtrans ke backend Merchant akan dikirimkan pada saat terjadi perubahan <code>transaction_status</code>, untuk memastikan Mercahant mendapat informasi secara aman. Termasuk pada saat status transaksi berubah jadi success atau denied. Jadi selain JSON pada callback di atas, Merchant juga akan menerima notifikasi dari Midtrans.</p>
+<p>HTTP notification dari Midtrans ke backend Merchant akan dikirimkan pada saat terjadi perubahan <code>transaction_status</code>, untuk memastikan Mercahant mendapat informasi secara aman. Termasuk pada saat status transaksi berubah jadi success atau expired (tidak dibayarkan). Jadi selain JSON pada callback di atas, Merchant juga akan menerima notifikasi dari Midtrans.</p>
 
 <p>Request HTTP POST dengan body JSON akan dikirimkan ke <strong>notification url</strong> Merchant yang dikonfigurasi pada <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), berikut contoh body JSON yang akan diterima Merchant:</p>
 
@@ -673,7 +673,7 @@ curl -X POST <span class="se">\</span>
 
 <h2 id="deskripsi">Deskripsi</h2>
 
-<p>Nilai <code>transaction_status</code> dalam transaksi kartu:</p>
+<p>Nilai <code>transaction_status</code> dalam transaksi GoPay:</p>
 
 <table>
   <thead>
