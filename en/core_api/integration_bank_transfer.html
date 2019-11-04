@@ -388,7 +388,7 @@
   <li>BNI Virtual Account</li>
 </ol>
 
-<p>Basic integration process of GoPay will be explained below.
+<p>Basic integration process of Bank Transfer will be explained below.
 <br /><br /></p>
 
 <h3 id="sandbox-environment">Sandbox Environment</h3>
@@ -399,7 +399,7 @@
 
 <h3 id="testing-payment">Testing Payment</h3>
 
-<p>Here is a list of a test transaction that can be used in the <code>Sandbox Environment</code>, please make sure you not use this on Production mode.</p>
+<p>Here is a list of a test transaction that can be used in the <code>Sandbox Environment</code>, please note that this simulator will not work on Production mode.</p>
 
 <table>
   <thead>
@@ -643,12 +643,12 @@ curl -X POST <span class="se">\</span>
 
 <p>To display the virtual account number, use <code>va_number</code> that retrieved from API response.</p>
 
-<p>By default the expiry time for Bank Transfer / VA is <strong>24 hours</strong>, please check <a href="../snap/other_features.html#custom-expiry">this page</a> if you wanna customize the expiry time.
+<p>By default the expiry time for Bank Transfer / VA is <strong>24 hours</strong>, please check <a href="https://api-docs.midtrans.com/#charge-features">this section under "Set Custom Expiry"</a> if you wanna customize the expiry time.
 <br /><br /></p>
 
 <h2 id="handle-http-notification">3. Handle HTTP Notification</h2>
 
-<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if card transaction success or denied. So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
+<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if transaction success or expired (not paid). So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
 
 <p>HTTP POST request with JSON body will be sent to Merchant's <strong>notification url</strong> configured on <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), this is the sample JSON body that will be received by Merchant:</p>
 
