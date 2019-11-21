@@ -403,6 +403,8 @@
   <li><a href="#custom-expiry" data-toggle="tab">Custom Expiry</a></li>
   <li><a href="#installment" data-toggle="tab">Cicilan</a></li>
   <li><a href="#bin-promo" data-toggle="tab">BIN Promo</a></li>
+  <li><a href="#save-card" data-toggle="tab">Simpan Kartu</a></li>
+  <li><a href="#recurring" data-toggle="tab">Recurring/Subscription</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="payment-options">
@@ -681,6 +683,92 @@ Berikut adalah contoh tampilan halaman Snap dengan fitur BIN Filter:</p>
 <br /><strong>Valid card number</strong>, karena <code>481111</code> termasuk dalam nilai untuk parameter whitelist_bins.</p>
 
     <p><br /></p>
+
+  </div>
+
+  <div class="tab-pane" id="save-card">
+    <h3 id="simpan-kartu">Simpan Kartu</h3>
+
+    <p>Anda bisa memperbolehkan customer untuk menyimpan kredensial kartu dalam halaman pembayaran Snap, untuk memudahkan dan mempercepat transaksi selanjutnya. Kredensial kartu akan disimpan dengan aman di sisi Midtrans, dan tidak memerlukan merchant untuk menyimpannya.</p>
+
+    <p>Merchant hanya perlu untuk menyimpan dan mengasosiasikan setiap customer dengan <code>user_id</code> yang didefine oleh merchant.</p>
+
+    <p>Menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Midtrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+    <span class="p">),</span>
+
+    <span class="s1">'credit_card'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'secure'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s1">'save_card'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
+    <span class="p">),</span>
+
+    <span class="s1">'user_id'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;UniqueUserIdForEachUser&gt;'</span>
+<span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p>Pastikan untuk menggunakan <code>user_id</code> yang sama untuk customer tersebut pada transaksi selanjutnya. Kartu customer akan terdapat pada halaman pembayaran kartu Snap, pada transaksi selanjutnya.</p>
+
+    <p><img alt="Snap Save Card" class="img-responsive img-thumbnail" src="../../images/snap/other-save-card1.jpg" /></p>
+
+    <p>Untuk memahami lebih jauh penggunaan skenario ini, anda juga bisa merefer ke <a href="https://support.midtrans.com/hc/en-us/articles/360002419153-One-Click-Two-Clicks-and-Recurring-Transaction">artikel ini</a>.</p>
+
+  </div>
+
+  <div class="tab-pane" id="recurring">
+    <h3 id="subscription--recurring-flow">Subscription / Recurring Flow</h3>
+
+    <p>Snap bisa digunakan untuk menginisiasi pembayaran jenis subscription atau recurring. Perhatikan bahwa:
+- Anda membutuhkan Core API untuk transaksi <a href="../core_api/integration_card_basic.html">charge</a> recurring.
+- Saat ini, recurring hanya berlaku untuk transaksi kartu.</p>
+
+    <p>Silahkan merefer ke sequence berikut untuk memahami flow yang dianjurkan:</p>
+
+    <p><img alt="Snap Recurring Flow" class="img-responsive img-thumbnail" src="../../images/snap/snap_recurring_sequence.png" /></p>
+
+    <p>Pada transaksi pertama, menggunakan transaksi yang sama dengan bagian <a href="integration_php.html#step1">Integrasi</a>, contoh kode PHP yang dapat digunakan adalah sebagai berikut:<br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Midtrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+    <span class="p">),</span>
+
+    <span class="s1">'credit_card'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'secure'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s1">'save_card'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
+    <span class="p">),</span>
+
+    <span class="s1">'user_id'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;UniqueUserIdForEachUser&gt;'</span>
+<span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p>Setelah transaksi pertama berhasil, Anda akan mendapat <code>saved_token_id</code> di JSON pada notifikasi HTTP. <code>saved_token_id</code> adalah unik untuk setiap kartu customer, Anda perlu untuk menyimpannya di databae dan mengasosiasikan card token dengan customer Anda.</p>
+
+    <p>Ketika Anda ingin melakukan charge pada customer tersebut, Anda akan butuh melakukan proses <code>/charge</code> API melalui <a href="../core_api/integration_card_basic.html">Core API</a>. Transaksi recurring adalah transaksi non 3DS dan akan memotong langsung dana customer dari kartu tersebut.</p>
+
+    <p>Untuk memahami lebih jauh penggunaan skenario ini, anda juga bisa merefer ke <a href="https://support.midtrans.com/hc/en-us/articles/360002419153-One-Click-Two-Clicks-and-Recurring-Transaction">artikel ini</a>.</p>
 
   </div>
 </div>
