@@ -405,6 +405,8 @@
   <li><a href="#custom-expiry" data-toggle="tab">Custom Expiry</a></li>
   <li><a href="#installment" data-toggle="tab">Installment</a></li>
   <li><a href="#bin-promo" data-toggle="tab">BIN Filter</a></li>
+  <li><a href="#save-card" data-toggle="tab">Save Card</a></li>
+  <li><a href="#recurring" data-toggle="tab">Recurring/Subscription</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="payment-options">
@@ -682,6 +684,95 @@ The following figure displays the Snap payment page with BIN Filter feature:</p>
 <br /><strong>Valid card number</strong>, because <code>481111</code> include in whitelist_bins value.</p>
 
     <p><br /></p>
+
+  </div>
+
+  <div class="tab-pane" id="save-card">
+    <h3 id="save-card">Save Card</h3>
+
+    <p>You can allow customer to save their card credentials within Snap payment page, for easier and faster future transactions. Card credentials will be saved securely on Midtrans side, and will not require merchant to manage the card data. </p>
+
+    <p>Merchant will only need to store and associate each unique customer with unique <code>user_id</code> defined by merchant.</p>
+
+    <p>Following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Midtrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+    <span class="p">),</span>
+
+    <span class="s1">'credit_card'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'secure'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s1">'save_card'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
+    <span class="p">),</span>
+
+    <span class="s1">'user_id'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;UniqueUserIdForEachUser&gt;'</span>
+<span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p>Be sure to use the same <code>user_id</code> for that particular customer on future transactions. Their card will be previewed on Snap card payment page, on future transactions.</p>
+
+    <p><img alt="Snap Save Card" class="img-responsive img-thumbnail" src="../../images/snap/other-save-card1.jpg" /></p>
+
+    <p>To better understand the use cases, you an also further refer to <a href="https://support.midtrans.com/hc/en-us/articles/360002419153-One-Click-Two-Clicks-and-Recurring-Transaction">this article</a>.</p>
+
+  </div>
+
+  <div class="tab-pane" id="recurring">
+    <h3 id="subscription--recurring-flow">Subscription / Recurring Flow</h3>
+
+    <p>Snap can be utilized to initialize subscription or recurring payment flow. Note that:</p>
+
+    <ul>
+      <li>You will <strong>require Core API</strong> to do the recurring <a href="../core_api/integration_card_basic.html">charge</a>.</li>
+      <li>Currently, recurring only support card transaction.</li>
+    </ul>
+
+    <p>Please refer to sequence below to understand the recommended flow:</p>
+
+    <p><img alt="Snap Recurring Flow" class="img-responsive img-thumbnail" src="../../images/snap/snap_recurring_sequence.png" /></p>
+
+    <p>During the first transaction, following the test transaction on <a href="integration_php.html#step1">integration</a>, the sample PHP code that we can make use of is:<br /></p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span><span class="p">(</span><span class="s1">'Midtrans.php'</span><span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="nv">$transaction</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'transaction_details'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'order_id'</span> <span class="o">=&gt;</span> <span class="nb">rand</span><span class="p">(),</span>
+        <span class="s1">'gross_amount'</span> <span class="o">=&gt;</span> <span class="mi">10000</span>
+    <span class="p">),</span>
+
+    <span class="s1">'credit_card'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'secure'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s1">'save_card'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
+    <span class="p">),</span>
+
+    <span class="s1">'user_id'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;UniqueUserIdForEachUser&gt;'</span>
+<span class="p">);</span>
+
+<span class="o">...</span>
+
+<span class="cp">?&gt;</span>
+</code></pre>
+
+    <p>As result of successful first transaction, you will receive <code>saved_token_id</code> in the JSON of HTTP notification. <code>saved_token_id</code> is unique for each customer's card, you will need to store on your database and associate that card token to your customer.</p>
+
+    <p>When you want to charge that particular customer, you will need to proceed with <code>/charge</code> API via <a href="../core_api/integration_card_basic.html">Core API</a>. The recurring transaction is non 3DS and will directly deduct customer fund associated with the card.</p>
+
+    <p>To better understand the use cases, you an also further refer to <a href="https://support.midtrans.com/hc/en-us/articles/360002419153-One-Click-Two-Clicks-and-Recurring-Transaction">this article</a>.</p>
 
   </div>
 </div>
