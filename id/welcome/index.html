@@ -383,6 +383,28 @@
 
 <p><img alt="vtweb step" class="img-responsive img-thumbnail" src="../../images/welcome/steps_snap.png" /></p>
 
+<p><strong>Demo:</strong></p>
+
+<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="VT-client-yrHf-c8Sxr-ck8tx"></script>
+
+<div class="row text-center">
+	<div type="button" class="btn btn-primary" onclick="
+	event.target.innerText = `Processing...`;
+	fetch(`https://cors-anywhere.herokuapp.com/https://midtrans.com/api/request_snap_token`)
+		.then(res=&gt;res.json())
+		.then(res=&gt;{
+			let snapToken = res.token;
+			snap.pay(snapToken,{
+				onSuccess: function(res){ console.log('Snap result:',res) },
+				onPending: function(res){ console.log('Snap result:',res) },
+				onError: function(res){ console.log('Snap result:',res) },
+			});
+		})
+		.catch( e=&gt;console.error(e) )
+		.finally( e=&gt;{ event.target.innerText = `Pay with Snap &#9099;` })
+	">Pay with Snap &#9099;</div>
+</div>
+
 <p><br /></p>
 
 <h3 id="mobilehttpsmobile-docsmidtranscom"><a href="https://mobile-docs.midtrans.com">Mobile</a></h3>
@@ -403,7 +425,7 @@
 
 <h3 id="core-api">Core API</h3>
 
-<p>Core API adalah produk Midtrans yang memungkinkan Anda untuk menggunakan sistem pembayaran kami secara langsung di website Anda. Setup-nya mudah dan tersedia dengan biaya minimum bulanan. VT-Direct cocok untuk perusahaan skala menengah.</p>
+<p>Core API adalah produk Midtrans yang memungkinkan Anda untuk menggunakan sistem pembayaran kami secara langsung di website Anda. Setup-nya mudah. VT-Direct cocok untuk perusahaan skala menengah.</p>
 
 <ul>
   <li><a href="../../en/core_api/integration_card_basic.html">Integrasi Dasar Pembayaran Kartu</a></li>
