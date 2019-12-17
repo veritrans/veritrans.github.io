@@ -6,6 +6,7 @@
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651"/>
     <!-- Google Webmaster Validate -->
     <meta name="google-site-verification" content="uUeOdHBzl0nbyvdyeRHKGIHPxnIpJDTTnWv-QfgkxRs" />
+    <!-- FB OG -->
     <meta property="og:title" content="Midtrans Payments || Tech Docs for online payment system"/>
     <meta property="og:site_name" content="Midtrans"/>
     <meta property="og:description" content="Technical Documentation to implement online payment system. Available for various payment methods, in various website programming language."/>
@@ -13,15 +14,14 @@
     <meta property="og:image" content="//docs.midtrans.com/images/midtrans/favicon/apple-touch-icon-120x120.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Veritrans API Documentation. Payment Gateway Indonesia, transaksi online lebih aman, mudah, cepat! Veritrans memberi solusi sistem payment gateway terbaik untuk e-commerce di Indonesia.">
-    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online">
+    <meta name="keywords" content="Veritrans, Veritrans Indonesia, payment gateway indonesia, Pembayaran Online Indonesia, online payment Indonesia, sistem transaksi online"> 
     <meta name="google-site-verification" content="uUeOdHBzl0nbyvdyeRHKGIHPxnIpJDTTnWv-QfgkxRs" />
     <meta name="msvalidate.01" content="846642D2B12ABB4747D70776D2056651">
-
+    
     <link href="../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="../../stylesheets/materialize.css" media="screen" rel="stylesheet" type="text/css" />
-
+    
     <title>Midtrans Payments - Tech Docs for online payment system</title>
-    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/images/midtrans/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/midtrans/favicon/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/midtrans/favicon/apple-touch-icon-72x72.png">
@@ -44,7 +44,7 @@
         mixpanel.init("f93e9c92cf8729b32c4491fb6794689b");
     </script>
     <!-- end mixpanel -->
-
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -259,209 +259,177 @@
     <div class="custom-container container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
-
-    <div class="documentation-sidebar affix">
-        <div class="docs-logo">
-            <span>DOCS</span>
-        </div>
-        <div class="language-toggle"> English / <a href="../../id/core_api/integration_bank_transfer.html">Bahasa Indonesia</a></div>
-        <div class="sidebar-search">
-          <form>
-            <input type="search" name="q" id="search-field" placeholder="Search">
-          </form>
-        </div>
-        <ul class="sidebar">
-            
-                <li>
-                    
-                        <a class="parent">Getting Started</a>
-                        <b class="caret"></b>
-                        <ul class="child-menu">
-                            
-                            <li class=""><a href="../welcome/index.html">Introduction</a></li>
-                            
-                            <li class=""><a href="../welcome/preparation.html">Preparation</a></li>
-                            
-                            <li class=""><a href="../welcome/pluginlibrary.html">Library & Plugin</a></li>
-                            
-                            <li class=""><a href="../welcome/partner_integ.html">Affiliated Platforms</a></li>
-                            
-                        </ul>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent">SNAP</a>
-                        <b class="caret"></b>
-                        <ul class="child-menu">
-                            
-                            <li class=""><a href="../snap/integration.html">Integration</a></li>
-                            
-                            <li class=""><a href="../snap/other_features.html">Other Features</a></li>
-                            
-                            <li class=""><a href="../snap/going_live.html">Going Live</a></li>
-                            
-                            <li class=""><a href="http://snap-docs.midtrans.com">Snap API</a></li>
-                            
-                        </ul>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent" href="https://mobile-docs.midtrans.com">Mobile SDK</a>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent" href="../payment_link/index.html">Payment Link</a>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent">Core API</a>
-                        <b class="caret"></b>
-                        <ul class="child-menu">
-                            
-                            <li class=""><a href="integration_card_basic.html">Card Payment Integration</a></li>
-                            
-                            <li class=""><a href="integration_gopay.html">GoPay Integration</a></li>
-                            
-                            <li class="active"><a href="integration_bank_transfer.html">Bank Transfer Integration</a></li>
-                            
-                            <li class=""><a href="integration_direct_debit.html">Direct Debit Integration</a></li>
-                            
-                            <li class=""><a href="https://api-docs.midtrans.com">Other Payment Channel</a></li>
-                            
-                            <li class=""><a href="https://api-docs.midtrans.com">Core API Docs</a></li>
-                            
-                        </ul>
-                    
-                </li>
-            
-                <li>
-                    
-                        <a class="parent">Reference</a>
-                        <b class="caret"></b>
-                        <ul class="child-menu">
-                            
-                            <li class=""><a href="../reference/test.html">Testing Credential</a></li>
-                            
-                            <li class=""><a href="../reference/address.html">IP Adresses</a></li>
-                            
-                            <li class=""><a href="../reference/security.html">Security</a></li>
-                            
-                            <li class=""><a href="https://status.midtrans.com">System Status</a></li>
-                            
-                            <li class=""><a href="../reference/docslog.html">Docs Changelog</a></li>
-                            
-                            <li class=""><a href="https://support.midtrans.com">FAQ</a></li>
-                            
-                        </ul>
-                    
-                </li>
-            
-        </ul>
-        <p class="question">
-            Something is missing from the docs?<br>
-            <a href="https://github.com/veritrans/veritrans.github.io">Open an issue or contribute to the docs on Github</a>
-        </p>
+  <div class="documentation-sidebar affix">
+    <div class="docs-logo">
+      <span>DOCS</span>
     </div>
-</div>
-
+    <div class="language-toggle"> <a href="../../en/core_api/integration_direct_debit.html">English</a> / Bahasa Indonesia</div>
+    <div class="sidebar-search">
+      <form>
+        <input type="search" name="q" id="search-field" placeholder="Pencarian">
+      </form>
+    </div>
+    <ul class="sidebar">
+      
+        <li>
+          
+            <a class="parent">Langkah Awal</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../welcome/index.html">Perkenalan</a></li>
+              
+                <li class=""><a href="../welcome/preparation.html">Persiapan Awal</a></li>
+              
+                <li class=""><a href="../welcome/pluginlibrary.html">Library & Plugin</a></li>
+              
+                <li class=""><a href="../welcome/partner_integ.html">Platform Affiliasi</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">SNAP</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../snap/integration.html">Integrasi</a></li>
+              
+                <li class=""><a href="../snap/other_features.html">Fitur Tambahan</a></li>
+              
+                <li class=""><a href="../snap/going_live.html">Going Live</a></li>
+              
+                <li class=""><a href="http://snap-docs.midtrans.com">Snap API</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="https://mobile-docs.midtrans.com">Mobile SDK</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent" href="../payment_link/index.html">Payment Link</a>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">Core API</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="integration_card_basic.html">Integrasi Pembayaran Kartu</a></li>
+              
+                <li class=""><a href="integration_gopay.html">Integrasi GoPay</a></li>
+              
+                <li class=""><a href="integration_bank_transfer.html">Integrasi Transfer Bank</a></li>
+              
+                <li class="active"><a href="integration_direct_debit.html">Integrasi Direct Debit</a></li>
+              
+                <li class=""><a href="https://api-docs.midtrans.com">Channel Pembayaran Lain</a></li>
+              
+                <li class=""><a href="https://api-docs.midtrans.com">Core API Docs</a></li>
+              
+            </ul>
+          
+        </li>
+      
+        <li>
+          
+            <a class="parent">Referensi</a>
+            <b class="caret"></b>
+            <ul class="child-menu">
+              
+                <li class=""><a href="../reference/test.html">Testing Credential</a></li>
+              
+                <li class=""><a href="../reference/address.html">Alamat IP</a></li>
+              
+                <li class=""><a href="../reference/security.html">Keamanan</a></li>
+              
+                <li class=""><a href="https://status.midtrans.com">Status Sistem</a></li>
+              
+                <li class=""><a href="../reference/docslog.html">Log Dokumentasi</a></li>
+              
+                <li class=""><a href="https://support.midtrans.com">FAQ</a></li>
+              
+            </ul>
+          
+        </li>
+      
+    </ul>
+    <p class="question">
+      Anda merasa ada yang kurang dari dokumentasi ini?<br>
+      <a href="https://github.com/veritrans/veritrans.github.io">Buka issue atau ikut berkontribusi di Github</a>
+    </p>
+  </div>
+</div><!--/span-->
         <div class="col-xs-12 col-sm-8 col-md-9" id="bodier">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
           </p>
-          <div class="en-core-api-integration-bank-transfer">
-            <h2 id="bank-transfer-integration">Bank Transfer Integration</h2>
+          <div class="id-core-api-integration-direct-debit">
+            <h2 id="integrasi-direct-debit">Integrasi Direct Debit</h2>
 
-<p>One of the payment method offered by Midtrans is Bank Transfer. By using this payment method, customers will have the option to make a payment via bank transfer and Midtrans will send real time notification when the customer complete the payment.</p>
+<p>Dengan menggunakan metode pembayaran Direct Debit, customer akan mempunyai pilihan untuk melakukan pembayaran melalui website bank dan Midtrans akan mengirimkan notifikasi pemberitahuan secara real time setelah customer menyelesaikan pembayarannya.</p>
 
-<p>At this moment, Midtrans has integrated with 4 different bank transfer payment methods:</p>
+<p>Saat ini, Midtrans telah terintegrasi dengan 4 metode pembayaran Direct Debit yang berbeda:</p>
 
 <ol>
-  <li>Permata Virtual Account</li>
-  <li>BCA Virtual Account</li>
-  <li>Mandiri Bill Payment</li>
-  <li>BNI Virtual Account</li>
+  <li>BCA Klikpay</li>
+  <li>CIMB Clicks</li>
+  <li>Danamon Online</li>
+  <li>e-Pay BRI</li>
+  <li>Akulaku</li>
 </ol>
 
-<p>Basic integration process of Bank Transfer will be explained below.
+<p>Proses integrasi dasar untuk pembayaran Direct Debit akan dijelaskan di bawah.
 <br /><br /></p>
 
-<h3 id="sandbox-environment">Sandbox Environment</h3>
-<p>All the steps below are using Midtrans <strong>Sandbox</strong> environment, not Production, to easily test the integration process. Make sure you are switching to Sandbox mode on your <a href="https://account.midtrans.com">Midtrans account dashboard</a> while retrieving Server Key and Client Key. Explained in <a href="../welcome/preparation.html#step3">Getting Started - Preparation</a>.</p>
+<h3 id="environment-sandbox">Environment Sandbox</h3>
+<p>Semua langkah di bawah menggunakan <strong>Sandbox</strong> environment Midtrans, bukan Production, untuk memudahkan testing proses integrasi. Pastikan Anda sudah mengubah ke mode Sandbox pada <a href="https://account.midtrans.com">dashboard akun Midtrans</a> Anda saat mendapatkan Server Key dan Client Key. Dijelaskan pada <a href="../welcome/preparation.html#step3">Langkah Awal - Persiapan</a></p>
 
-<p>Server Key and Client Key can be retrieved on menu <code>Settings &gt; Access Keys</code>.
+<p>Server Key dan Client Key bisa didapatkan pada menu <code>Settings &gt; Access Keys</code>
 <br /><br /></p>
-
-<h3 id="testing-payment">Testing Payment</h3>
-
-<p>Here is a list of a test transaction that can be used in the <code>Sandbox Environment</code>, please note that this simulator will not work on Production mode.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Payment Methods</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>BCA Virtual Account</td>
-      <td>Midtrans will generate a dummy BCA Virtual Account Number. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/bca/va/index">BCA  Virtual Account Simulator</a>.</td>
-    </tr>
-    <tr>
-      <td>Mandiri Bill Payment</td>
-      <td>Midtrans will generate a Payment Code to complete payment via Mandiri e-channel (Internet Banking, SMS Banking, Mandiri ATM). To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/mandiri/bill/index">Mandiri Bill Payment Simulator</a>.</td>
-    </tr>
-    <tr>
-      <td>BNI Virtual Account</td>
-      <td>Midtrans will generate a dummy BNI Virtual Account Number. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/bni/va/index">BNI Virtual Account Simulator</a>.</td>
-    </tr>
-    <tr>
-      <td>Permata Virtual Account</td>
-      <td>Midtrans will generate a dummy Permata Virtual Account Number. To perform a test transaction, use the <a href="https://simulator.sandbox.midtrans.com/permata/va/index">Permata Virtual Account Simulator</a>.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><br /><br /></p>
 
 <h3 id="diagram">Diagram</h3>
-<p>Overview of the transaction flow in sequence diagram:
+<p>Gambaran dari flow transaksi dalam sequence diagram:
 <br />
-<img alt="bank transfer transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/bank_transfer.png" />
+<img alt="direct debit transaction flow" class="img-responsive img-thumbnail" src="../../images/core_api/direct_debit.png" />
 .
 <br /><br /></p>
 
-<h2 id="integration-step">Integration Step</h2>
+<h2 id="langkah-integrasi">Langkah Integrasi</h2>
 <ol>
-  <li>Send transaction data to API Charge.</li>
-  <li>Display virtual account number and expiry time.</li>
-  <li>Handle transaction notification.
+  <li>Kirim data traksaksi ke API Charge.</li>
+  <li>Mengarahkan customer menuju website bank.</li>
+  <li>Membuat landing page setelah customer menyelesaikan pembayaran.</li>
+  <li>Terima notifikasi transaksi.
 <br /><br /></li>
 </ol>
 
-<h2 id="send-transaction-data-to-api-charge">1. Send Transaction Data to API Charge</h2>
-<p>Charge API request should be done from Merchant's backend. <strong>Server Key</strong> (from your account's <a href="https://account.midtrans.com">Dashboard</a>) will be needed to <a href="https://api-docs.midtrans.com/#http-s-header">authenticate the request</a>.</p>
+<h2 id="kirim-data-traksaksi-ke-api-charge">1. Kirim Data Traksaksi ke API Charge</h2>
+<p>Request API charge akan dilakukan melalui backend Merchant. <strong>Server Key</strong> (dari <a href="https://account.midtrans.com">Dashboard</a> dashboard Anda) akan dibutuhkan untuk <a href="https://api-docs.midtrans.com/#http-s-header">meng-otentikasi request</a>.</p>
 
-<h3 id="charge-api-request">Charge API request</h3>
-<p>This is example of basic <code>/charge</code> API request in Curl, please implement according to your backend language (you can also check our available <a href="../welcome/pluginlibrary.html">language libraries</a>).</p>
+<h3 id="request-charge-api">Request Charge API</h3>
+<p>Berikut contoh dari request API <code>/charge</code> dalam Curl, silahkan implementasikan sesuai bahasa pemrograman backend Anda (Anda juga bisa cek <a href="../welcome/pluginlibrary.html">library-library</a> pemrograman yang tersedia).</p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#bca-req" data-toggle="tab">BCA</a></li>
-  <li><a href="#mandiri-req" data-toggle="tab">Mandiri</a></li>
-  <li><a href="#bni-req" data-toggle="tab">BNI</a></li>
-  <li><a href="#permata-req" data-toggle="tab">Permata</a></li>
+  <li class="active"><a href="#bcaklikpay-req" data-toggle="tab">BCA Klikpay</a></li>
+  <li><a href="#cimbclicks-req" data-toggle="tab">CIMB Clicks</a></li>
+  <li><a href="#danamon-req" data-toggle="tab">Danamon Online Banking</a></li>
+  <li><a href="#epay-req" data-toggle="tab">e-Pay BRI</a></li>
+  <li><a href="#akulaku-req" data-toggle="tab">Akulaku</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="bca-req">
+  <div class="tab-pane active" id="bcaklikpay-req">
 <pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
 curl -X POST <span class="se">\</span>
   https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
@@ -469,19 +437,19 @@ curl -X POST <span class="se">\</span>
   -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
-  "payment_type": "bank_transfer",
+  "payment_type": "bca_klikpay",
   "transaction_details": {
       "order_id": "order-101",
       "gross_amount": 44000
   }
-  "bank_transfer":{
-      "bank": "bca"
+  "bca_klikpay": {
+    "description": "Pembelian Barang"
   }
 }'</span>
 </code></pre>
   </div>
 
-  <div class="tab-pane" id="mandiri-req">
+  <div class="tab-pane" id="cimbclicks-req">
 <pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
 curl -X POST <span class="se">\</span>
   https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
@@ -489,7 +457,27 @@ curl -X POST <span class="se">\</span>
   -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
-  "payment_type": "echannel",
+  "payment_type": "cimb_clicks",
+  "transaction_details": {
+      "order_id": "order-101",
+      "gross_amount": 44000
+  },
+  "cimb_clicks": {
+      "description": "Purchase of a Food Delivery"
+  }
+}'</span>
+</code></pre>
+  </div>
+
+  <div class="tab-pane" id="danamon-req">
+<pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
+curl -X POST <span class="se">\</span>
+  https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "payment_type": "danamon_online",
   "transaction_details": {
       "order_id": "order-101",
       "gross_amount": 44000
@@ -498,7 +486,7 @@ curl -X POST <span class="se">\</span>
 </code></pre>
   </div>
 
-  <div class="tab-pane" id="bni-req">
+  <div class="tab-pane" id="epay-req">
 <pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
 curl -X POST <span class="se">\</span>
   https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
@@ -506,19 +494,16 @@ curl -X POST <span class="se">\</span>
   -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
-  "payment_type": "bank_transfer",
+  "payment_type": "bri_epay",
   "transaction_details": {
       "order_id": "order-101",
       "gross_amount": 44000
-  }
-  "bank_transfer":{
-      "bank": "bni"
   }
 }'</span>
 </code></pre>
   </div>
 
-  <div class="tab-pane" id="permata-req">
+  <div class="tab-pane" id="akulaku-req">
 <pre><code class="highlight shell"><span class="c"># sample charge in CURL</span>
 curl -X POST <span class="se">\</span>
   https://api.sandbox.midtrans.com/v2/charge <span class="se">\</span>
@@ -526,298 +511,347 @@ curl -X POST <span class="se">\</span>
   -H <span class="s1">'Authorization: Basic &lt;YOUR SERVER KEY ENCODED in Base64&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
-  "payment_type": "permata",
+  "payment_type": "akulaku",
   "transaction_details": {
       "order_id": "order-101",
-      "gross_amount": 44000
+      "gross_amount": 11000
   }
 }'</span>
 </code></pre>
   </div>
 </div>
 
-<p>Optional: you can customize <a href="https://api-docs.midtrans.com/#json-object">transaction_details data</a>. To include data like customer_details, item_details, etc. It's recommended to send as much detail so on report/dashboard those information will be included.</p>
+<p>Opsional: anda bisa kustomisasi <a href="https://api-docs.midtrans.com/#json-object">data transaction_details</a>. Untuk menyertakan data seperti customer_details, item_details, dsb. Disarankan untuk mengirim data sebanyak mungkin agar nantinya report/dashboard menampilkan informasi tersebut.</p>
 
-<h3 id="charge-api-response">Charge API response</h3>
-<p>You will get the <strong>API response</strong> like the following.</p>
+<h3 id="response-charge-api">Response Charge API</h3>
+<p>Anda akan mendapat <strong>response API</strong> seperti berikut:</p>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#bca-res" data-toggle="tab">BCA</a></li>
-  <li><a href="#mandiri-res" data-toggle="tab">Mandiri</a></li>
-  <li><a href="#bni-res" data-toggle="tab">BNI</a></li>
-  <li><a href="#permata-res" data-toggle="tab">Permata</a></li>
+  <li class="active"><a href="#bcaklikpay-res" data-toggle="tab">BCA Klikpay</a></li>
+  <li><a href="#cimbclicks-res" data-toggle="tab">CIMB Clicks</a></li>
+  <li><a href="#danamon-res" data-toggle="tab">Danamon Online Banking</a></li>
+  <li><a href="#epay-res" data-toggle="tab">e-Pay BRI</a></li>
+  <li><a href="#akulaku-res" data-toggle="tab">Akulaku</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="bca-res">
+  <div class="tab-pane active" id="bcaklikpay-res">
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Bank Transfer transaction is created"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"be03df7d-2f97-4c8c-a53c-8959f1b67295"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823229"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, BCA KlikPay transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"d19a4bcd-ae30-49dc-bde7-57749aede090"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101"</span><span class="p">,</span>
+    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v3/bca/klikpay/redirect/d19a4bcd-ae30-49dc-bde7-57749aede090"</span><span class="p">,</span>
     <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
     <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:33:49"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-    <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bca"</span><span class="p">,</span>
-            <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"812785002530231"</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span>
-<span class="p">}</span>
-</code></pre>
-    <p>You will get the <code>va_numbers</code> attribute which can be performed this transaction.
-<br /></p>
-  </div>
-
-  <div class="tab-pane" id="mandiri-res">
-<pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"OK, Mandiri Bill transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"abb2d93f-dae3-4183-936d-4145423ad72f"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823332"</span><span class="p">,</span>
-    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
-    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
-    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:35:31"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-12-12 11:03:55"</span><span class="p">,</span>
     <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
     <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-    <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"778347787706"</span><span class="p">,</span>
-    <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span>
-<span class="p">}</span>
-</code></pre>
-    <p>You will get the <code>bill_key</code> and <code>bill_code</code> attribute which can be performed this transaction.
-<br /></p>
-  </div>
-
-  <div class="tab-pane" id="bni-res">
-<pre><code class="highlight json"><span class="p">{</span>
-    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Bank Transfer transaction is created"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2194a77c-a412-4fd8-8ec8-121ff64fbfee"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823369"</span><span class="p">,</span>
-    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
-    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
-    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:36:08"</span><span class="p">,</span>
-    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-    <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-            <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"9888500212345678"</span>
+    <span class="s2">"redirect_data"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://simulator.sandbox.midtrans.com/bca/klikpay/index"</span><span class="p">,</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"post"</span><span class="p">,</span>
+        <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"klikPayCode"</span><span class="p">:</span> <span class="s2">"03KHAN816197673"</span><span class="p">,</span>
+            <span class="s2">"transactionNo"</span><span class="p">:</span> <span class="s2">"92396"</span><span class="p">,</span>
+            <span class="s2">"totalAmount"</span><span class="p">:</span> <span class="s2">"44000"</span><span class="p">,</span>
+            <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+            <span class="s2">"payType"</span><span class="p">:</span> <span class="s2">"01"</span><span class="p">,</span>
+            <span class="s2">"callback"</span><span class="p">:</span> <span class="s2">"https://example.com?id=d19a4bcd-ae30-49dc-bde7-57749aede090"</span><span class="p">,</span>
+            <span class="s2">"transactionDate"</span><span class="p">:</span> <span class="s2">"11/11/2019 11:03:55"</span><span class="p">,</span>
+            <span class="s2">"descp"</span><span class="p">:</span> <span class="s2">"Pembelian Barang"</span><span class="p">,</span>
+            <span class="s2">"miscFee"</span><span class="p">:</span> <span class="s2">"0.00"</span><span class="p">,</span>
+            <span class="s2">"signature"</span><span class="p">:</span> <span class="s2">"239297204"</span>
         <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-    <p>You will get the <code>va_numbers</code> attribute which can be performed this transaction.
-<br /></p>
   </div>
 
-  <div class="tab-pane" id="permata-res">
+  <div class="tab-pane" id="cimbclicks-res">
 <pre><code class="highlight json"><span class="p">{</span>
     <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, PERMATA VA transaction is successful"</span><span class="p">,</span>
-    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"035ca76c-b814-4264-9e63-68142351df83"</span><span class="p">,</span>
-    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823410"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, CIMB Clicks transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/cimb-clicks/request?id=2e8f8ddd-c61a-4d5f-83ad-429432383057"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2e8f8ddd-c61a-4d5f-83ad-429432383057"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101i-1576124787"</span><span class="p">,</span>
     <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
     <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
-    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
-    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:36:49"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-11-11 11:26:27"</span><span class="p">,</span>
     <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-    <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"850003072869607"</span><span class="p">,</span>
     <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span>
 <span class="p">}</span>
 </code></pre>
-    <p>You will get the <code>permata_va_number</code> attribute which can be performed this transaction.
-<br /></p>
   </div>
-</div>
 
-<h2 id="display-virtual-account-number-and-expiry-time">2. Display Virtual Account Number and Expiry Time</h2>
-
-<p>To display the virtual account number, use <code>va_number</code> that retrieved from API response.</p>
-
-<p>By default the expiry time for Bank Transfer / VA is <strong>24 hours</strong>, please check <a href="https://api-docs.midtrans.com/#charge-features">this section under "Set Custom Expiry"</a> if you wanna customize the expiry time.
-<br /><br /></p>
-
-<h2 id="handle-http-notification">3. Handle HTTP Notification</h2>
-
-<p>HTTP notification from Midtrans to Merchant backend will also be triggered on event of <code>transaction_status</code> getting updated, to ensure merchant is securely informed. Including if transaction success or expired (not paid). So apart of JSON result above, Merchant backend will be notified by Midtrans.</p>
-
-<p>HTTP POST request with JSON body will be sent to Merchant's <strong>notification url</strong> configured on <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), this is the sample JSON body that will be received by Merchant:</p>
-
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#bca-not" data-toggle="tab">BCA</a></li>
-  <li><a href="#mandiri-not" data-toggle="tab">Mandiri</a></li>
-  <li><a href="#bni-not" data-toggle="tab">BNI</a></li>
-  <li><a href="#permata-not" data-toggle="tab">Permata</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="bca-not">
+  <div class="tab-pane" id="danamon-res">
 <pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"812785002530231"</span><span class="p">,</span>
-      <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bca"</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:33:49"</span><span class="p">,</span>
-  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"be03df7d-2f97-4c8c-a53c-8959f1b67295"</span><span class="p">,</span>
-  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
-  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"b07e6b0c6e7786363f9d7c1502e1171143fefe38e1a2bb93bce87e0fb64dd2ddfbbc8c7d60c6dcd7d6d8edb22169fd46e2250a6a547aa9f3f6da206a63334360"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
-  <span class="s2">"payment_amounts"</span><span class="p">:</span> <span class="p">[</span>
-
-  <span class="p">],</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823229"</span><span class="p">,</span>
-  <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
-  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
-  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Danamon Online transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"9da1c095-81b2-40d3-8285-8d27c60ae56e"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101p-1576124871"</span><span class="p">,</span>
+    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v2/danamon/online/redirect/9da1c095-81b2-40d3-8285-8d27c60ae56e"</span><span class="p">,</span>
+    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"danamon_online"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-11-11 11:27:50"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span>
 <span class="p">}</span>
 </code></pre>
   </div>
 
-  <div class="tab-pane" id="mandiri-not">
+  <div class="tab-pane" id="epay-res">
 <pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:35:31"</span><span class="p">,</span>
-  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"abb2d93f-dae3-4183-936d-4145423ad72f"</span><span class="p">,</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, BRI E-Pay transaction is successful"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"01c03b08-5e77-40d3-b1df-972f20a92e09"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101"</span><span class="p">,</span>
+    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.veritrans.co.id/v3/bri/epay/redirect/01c03b08-5e77-40d3-b1df-972f20a92e09"</span><span class="p">,</span>
+    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bri_epay"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-11-11 15:09:35"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <div class="tab-pane" id="akulaku-res">
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"Success, Akulaku transaction is created"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"f80b0974-46d6-480c-9278-8b0d473857e1"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101s"</span><span class="p">,</span>
+    <span class="s2">"redirect_url"</span><span class="p">:</span> <span class="s2">"https://api.sandbox.midtrans.com/v2/akulaku/redirect/f80b0974-46d6-480c-9278-8b0d473857e1"</span><span class="p">,</span>
+    <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"11000.00"</span><span class="p">,</span>
+    <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"akulaku"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-11-11 12:19:54"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
+    <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+  <p>You will get the <strong>redirect_url</strong> attribute which can be performed this transaction.</p>
+</div>
+
+<h2 id="mengarahkan-customer-menuju-website-bank">2. Mengarahkan Customer Menuju Website Bank</h2>
+<p>Anda dapat menggunakan <strong>redirect_url</strong> yang didapatkan dari respons API untuk mengarahkan customer ke website bank.</p>
+
+<p>Kemudian customer dapat diarahkan melalui server-side redirect, menggunakan javascript seperti <code>window.location = [URL REDIRECT]</code>, atau menggunakan link HTML <code>&lt;a href="[REDIRECT URL]"&gt; Bayar disini! &lt;/a&gt;</code>.</p>
+
+<p><br /></p>
+
+<h2 id="membuat-landing-page-setelah-customer-menyelesaikan-pembayaran">3. Membuat Landing Page Setelah Customer Menyelesaikan Pembayaran</h2>
+<p>Setelah customer menyelesaikan pembayaran melalui website bank, customer akan diarahkan ke endpoint <code>Finish Redirect URL</code> yang dapat dikonfigurasi pada MAP (dashboard Midtrans).</p>
+
+<p>Anda harus <a href="https://account.midtrans.com/login">login ke MAP</a>. Pilih menu Setting -&gt; configuration, dan isi <code>Finish Redirect URL</code> dengan endpoint landing page Anda.</p>
+
+<p><img alt="MAP settings" class="img-responsive img-thumbnail" src="../../images/core_api/direct_debit_map.png" /></p>
+
+<p>Midtrans akan mengirimkan response yang perlu didapatkan di script pada Finish Redirect URL. Pastikan endpoint <code>Finish Redirect URL</code> anda dapat menerima <strong>POST</strong>. Contoh code dibawah dibuat dalam PHP native. Silahkan sesuaikan dengan environment website anda.</p>
+
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="nv">$raw_response</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'response'</span><span class="p">];</span> <span class="c1">//get the json response
+</span><span class="nv">$response</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/\\\\/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'raw_response'</span><span class="p">]);</span> <span class="c1">//clean up response from backslash
+</span><span class="nv">$decoded_response</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
+<span class="nv">$order_id</span> <span class="o">=</span> <span class="nv">$decoded_response</span><span class="o">-&gt;</span><span class="na">order_id</span><span class="p">;</span><span class="c1">//how to access
+</span><span class="cp">?&gt;</span>
+</code></pre>
+
+<p>Response akan dikirim dalam format JSON, dalam beberapa kasus terjadi adanya penambahakn backslash () dan tanda petik ("). Berikut contoh response yang mungkin diterima.</p>
+
+<pre><code class="highlight plaintext">{
+    \"status_code\" : \"200\",
+    \"status_message\" : \"Success, transaction is found\",
+    \"transaction_id\" : \"58b48d1c-3e51-46f8-a2fb-ad5fa668f534\",
+    \"order_id\" : \"34\",
+    \"gross_amount\" : \"19999998.00\",
+    \"payment_type\" : \"cimb_clicks\",
+    \"transaction_time\" : \"2018-01-26 08:57:45\",
+    \"transaction_status\" : \"settlement\",
+    \"approval_code\" : \"1516957074590\",
+    \"signature_key\" : \"30b048ffff95e08c34cf265268224f0b6460d7716b3d70424a7203609a78b335280fe6137a9938cd3af24533fdafcfe8771203f6f30f21fd141a378bba1685fb\"
+}
+</code></pre>
+
+<p>Jika response yang didapatkan seperti itu, maka perlu dibersihkan terlebih dahulu sehingga menjadi seperti ini.</p>
+
+<pre><code class="highlight json"><span class="p">{</span>
+    <span class="s2">"status_code"</span> <span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+    <span class="s2">"status_message"</span> <span class="p">:</span> <span class="s2">"Success, transaction is found"</span><span class="p">,</span>
+    <span class="s2">"transaction_id"</span> <span class="p">:</span> <span class="s2">"58b48d1c-3e51-46f8-a2fb-ad5fa668f534"</span><span class="p">,</span>
+    <span class="s2">"order_id"</span> <span class="p">:</span> <span class="s2">"34"</span><span class="p">,</span>
+    <span class="s2">"gross_amount"</span> <span class="p">:</span> <span class="s2">"19999998.00"</span><span class="p">,</span>
+    <span class="s2">"payment_type"</span> <span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
+    <span class="s2">"transaction_time"</span> <span class="p">:</span> <span class="s2">"2018-01-26 08:57:45"</span><span class="p">,</span>
+    <span class="s2">"transaction_status"</span> <span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+    <span class="s2">"approval_code"</span> <span class="p">:</span> <span class="s2">"1516957074590"</span><span class="p">,</span>
+    <span class="s2">"signature_key"</span> <span class="p">:</span> <span class="s2">"30b048ffff95e08c34cf265268224f0b6460d7716b3d70424a7203609a78b335280fe6137a9938cd3af24533fdafcfe8771203f6f30f21fd141a378bba1685fb"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Kemudian dilakukan decode dari json tersebut sehingga bisa di baca oleh PHP. Berikut hasil <code>decode_response</code> tersebut:</p>
+
+<pre><code class="highlight plaintext">(
+   [status_code] =&gt; 200
+   [status_message] =&gt; Success, transaction is found
+   [transaction_id] =&gt; 58b48d1c-3e51-46f8-a2fb-ad5fa668f534
+   [order_id] =&gt; 34
+   [gross_amount] =&gt; 19999998.00
+   [payment_type] =&gt; cimb_clicks
+   [transaction_time] =&gt; 2018-01-26 08:57:45
+   [transaction_status] =&gt; settlement
+   [approval_code] =&gt; 1516957074590
+   [signature_key] =&gt; 30b048ffff95e08c34cf265268224f0b6460d7716b3d70424a7203609a78b335280fe6137a9938cd3af24533fdafcfe8771203f6f30f21fd141a378bba1685fb
+)
+</code></pre>
+
+<p>Sekarang kira dapat menggunakan response tersebut untuk memberikan informasi kepada customer.</p>
+
+<p><br /></p>
+
+<h2 id="terima-http-notification">3. Terima HTTP Notification</h2>
+
+<p>HTTP notification dari Midtrans ke backend Merchant akan dikirimkan pada saat terjadi perubahan <code>transaction_status</code>, untuk memastikan Mercahant mendapat informasi secara aman. Termasuk pada saat status transaksi berubah jadi success atau expired (tidak dibayarkan). Jadi selain JSON pada callback di atas, Merchant juga akan menerima notifikasi dari Midtrans.</p>
+
+<p>Request HTTP POST dengan body JSON akan dikirimkan ke <strong>notification url</strong> Merchant yang dikonfigurasi pada <a href="https://account.midtrans.com">dashboard</a> (Settings &gt; Configuration &gt; Notification URL), berikut contoh body JSON yang akan diterima Merchant:</p>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#bcaklikpay-not" data-toggle="tab">BCA Klikpay</a></li>
+  <li><a href="#cimbclicks-not" data-toggle="tab">CIMB Clicks</a></li>
+  <li><a href="#danamon-not" data-toggle="tab">Danamon Online Banking</a></li>
+  <li><a href="#epay-not" data-toggle="tab">e-Pay BRI</a></li>
+  <li><a href="#akulaku-not" data-toggle="tab">Akulaku</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="bcaklikpay-not">
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-12-11 16:20:48"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"34be81bd-1e4f-46b6-80f0-3e0f29776c63"</span><span class="p">,</span>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
-  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"ac6c542806820cd5abe218fadc4f2d150e6e6c9ea6cc24a56c78f3625c19ae0eb4bbf0e26059d2bc6879752e9a1f2b673c3158a34f7e96651d621a0be8258ca9"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"echannel"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823332"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"f75192079b47bb2a55d8307d443388f418d139bd13b447b2521fd9fe7b33ffddf9435afaa212f4ef67452fb2f2f109c1852ddd7567bb2d74cefeb2f5aa995de6"</span><span class="p">,</span>
+  <span class="s2">"settlement_time"</span><span class="p">:</span> <span class="s2">"2019-12-11 16:21:38"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bca_klikpay"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101"</span><span class="p">,</span>
   <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
   <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
   <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
   <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
-  <span class="s2">"biller_code"</span><span class="p">:</span> <span class="s2">"70012"</span><span class="p">,</span>
-  <span class="s2">"bill_key"</span><span class="p">:</span> <span class="s2">"778347787706"</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"112233"</span>
 <span class="p">}</span>
 </code></pre>
   </div>
 
-  <div class="tab-pane" id="bni-not">
+  <div class="tab-pane" id="cimbclicks-not">
 <pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"va_numbers"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"9888500212345678"</span><span class="p">,</span>
-      <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:36:08"</span><span class="p">,</span>
-  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"2194a77c-a412-4fd8-8ec8-121ff64fbfee"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-12-11 16:23:18"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"89cb0bfd-675b-4d4a-942c-7e19ba66d442"</span><span class="p">,</span>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
-  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"9eea61a37704a010c0665fbd738eade7bb08ecb8096ee4d3f08def1eb4f9e1f86f0717c3b79b3c41ff36c67c17bb0124e9f567589eba341aae1ad899fecf2ef3"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
-  <span class="s2">"payment_amounts"</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"65e02e423cca2618a8d9ec201768438684bbf7218b27ab6f05a2197ce5b3c44fc9f4a157dce5a42d49f3ed6b88ac7a163f7e6b532d876d57a4a9297c5802639c"</span><span class="p">,</span>
+  <span class="s2">"settlement_time"</span><span class="p">:</span> <span class="s2">"2019-12-11 16:24:00"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"cimb_clicks"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101"</span><span class="p">,</span>
+  <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1576142640542"</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
 
-  <span class="p">],</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823369"</span><span class="p">,</span>
+  <div class="tab-pane" id="danamon-not">
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-12-11 16:25:34"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"e7eb187b-c54c-4960-8558-a995253d61ca"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"928775783adf67b0578340dc616a30d2c2b307350475fbfbcc5bc1a5ac94892bb6bb972b7fe2394509c32fd431fd3494a358f25e24456f7414b473989ab1e66f"</span><span class="p">,</span>
+  <span class="s2">"settlement_time"</span><span class="p">:</span> <span class="s2">"2019-12-11 16:25:49"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"danamon_online"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101p-1576142735"</span><span class="p">,</span>
   <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
   <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
   <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
-  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"uRaSu1XAnIm56i"</span>
 <span class="p">}</span>
 </code></pre>
   </div>
 
-  <div class="tab-pane" id="permata-not">
+  <div class="tab-pane" id="epay-not">
 <pre><code class="highlight json"><span class="p">{</span>
-  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-10-23 16:36:49"</span><span class="p">,</span>
-  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"pending"</span><span class="p">,</span>
-  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"035ca76c-b814-4264-9e63-68142351df83"</span><span class="p">,</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-11-11 15:09:35"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"01c03b08-5e77-40d3-b1df-972f20a92e09"</span><span class="p">,</span>
   <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
-  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
-  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"386ef32b70e611a41062db75ce2d3770a3e9861df50b0f9e49e56f5d64d74fc4acdef5e16a12955bb232b08384eb43aea22400aa591f658197c69f8ffe8e04f3"</span><span class="p">,</span>
-  <span class="s2">"permata_va_number"</span><span class="p">:</span> <span class="s2">"850003072869607"</span><span class="p">,</span>
-  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bank_transfer"</span><span class="p">,</span>
-  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"1571823410"</span><span class="p">,</span><span class="err">https</span><span class="p">:</span><span class="c1">//open.spotify.com/track/7McZS9J6h0SKoZBR6cfcFe</span>
-  <span class="s2">"merchant_id"</span><span class="err">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"f0abe6507f42019839e028f9c5da723ff7c220c962af1f1f8fc25ac5a773c1123fd680602443e7cece83d059b9f9c13078d74cc4a79948214059394ec5d18c4b"</span><span class="p">,</span>
+  <span class="s2">"settlement_time"</span><span class="p">:</span> <span class="s2">"2019-11-11 15:13:51"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"bri_epay"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101h-1576483775"</span><span class="p">,</span>
+  <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
   <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"44000.00"</span><span class="p">,</span>
+  <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
+  <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span><span class="p">,</span>
+  <span class="s2">"approval_code"</span><span class="p">:</span> <span class="s2">"1576483775235"</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+  <div class="tab-pane" id="akulaku-not">
+<pre><code class="highlight json"><span class="p">{</span>
+  <span class="s2">"transaction_time"</span><span class="p">:</span> <span class="s2">"2019-11-11 12:30:35"</span><span class="p">,</span>
+  <span class="s2">"transaction_status"</span><span class="p">:</span> <span class="s2">"settlement"</span><span class="p">,</span>
+  <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="s2">"be30d5f1-3dfa-42a0-bc23-4d48207e71f0"</span><span class="p">,</span>
+  <span class="s2">"status_message"</span><span class="p">:</span> <span class="s2">"midtrans payment notification"</span><span class="p">,</span>
+  <span class="s2">"status_code"</span><span class="p">:</span> <span class="s2">"200"</span><span class="p">,</span>
+  <span class="s2">"signature_key"</span><span class="p">:</span> <span class="s2">"1ab3eb28bc4833d193871ad911a0d96d45cc0d68cdfe30c6d5a61728593aa7129b6500090b95da1606956767473806102066d090eda72e4b2ee3f082df3ba731"</span><span class="p">,</span>
+  <span class="s2">"settlement_time"</span><span class="p">:</span> <span class="s2">"2019-12-13 12:30:48"</span><span class="p">,</span>
+  <span class="s2">"payment_type"</span><span class="p">:</span> <span class="s2">"akulaku"</span><span class="p">,</span>
+  <span class="s2">"order_id"</span><span class="p">:</span> <span class="s2">"order-101"</span><span class="p">,</span>
+  <span class="s2">"merchant_id"</span><span class="p">:</span> <span class="s2">"G812785002"</span><span class="p">,</span>
+  <span class="s2">"gross_amount"</span><span class="p">:</span> <span class="s2">"11000.00"</span><span class="p">,</span>
   <span class="s2">"fraud_status"</span><span class="p">:</span> <span class="s2">"accept"</span><span class="p">,</span>
   <span class="s2">"currency"</span><span class="p">:</span> <span class="s2">"IDR"</span>
 <span class="p">}</span>
 </code></pre>
   </div>
 
-  <p>Refer <a href="https://api-docs.midtrans.com/#handing-notifications">here on more details of how to handle HTTP Notification</a>.
+  <p>Lihat <a href="https://api-docs.midtrans.com/#handing-notifications">disni untuk lebih lengkap dalam menangani HTTP Notification</a>.
 <br /><br /></p>
 
-  <h2 id="switching-to-production">Switching To Production</h2>
+  <h2 id="mengubah-ke-production">Mengubah Ke Production</h2>
 
-  <p>To use Midtrans production environment (accept real payment from real customer), please make sure to:</p>
+  <p>Untuk menggunakan environment production (menerima pembayaran dari customer sesungguhnya), silahkan pastikan:</p>
 
   <ol>
-    <li>Switch the API domain URL from <code>api.sandbox.midtrans.com</code> to <code>api.midtrans.com</code></li>
-    <li>Switch the Client Key and Server Key from sandbox Dashboard, with keys from production Dashboard.
+    <li>Ubah domain API URL dari <code>api.sandbox.midtrans.com</code> menjadi <code>api.midtrans.com</code></li>
+    <li>Ubah Client Key dan Server Key dari Dashboard sandbox, dengan key dari Dashboard production.
 <br /><br /></li>
   </ol>
 
-  <h2 id="done">Done</h2>
+  <h2 id="selesai">Selesai</h2>
 
-  <p>The Bank Transfer payment integration guide is now complete. Below are some further references.
+  <p>Integrasi pembayaran Direct Debit sekarang selesai. Berikut beberapa referensi tambahan.
 <br /><br /></p>
 
-  <h2 id="custom-virtual-account-number">Custom Virtual Account Number</h2>
+  <h2 id="deskripsi">Deskripsi</h2>
 
-  <p>A virtual account number contains two parts. The first part is the company code and the second part is the unique code. The second part can be customized for <strong>BCA</strong>, <strong>BNI</strong> and <strong>Permata</strong> (Only supported for b2b transactions) payment types.</p>
-
-  <p>If the number provided is already utilized for another order, then a <strong>different unique number will be used instead</strong>.<br />
-If the number provided is longer than required, then the unnecessary digits in the end will be trimmed.<br />
-If the number provided is shorter than required, then the number will be prefixed with zeros.<br /></p>
-
-  <p>Please add <strong>bank_transfer</strong> parameter in the <code>/charge</code> API request:</p>
-
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs">
-  <li class="active"><a href="#bca-custom-va" data-toggle="tab">BCA</a></li>
-  <li><a href="#bni-custom-va" data-toggle="tab">BNI</a></li>
-  <li><a href="#permata-custom-va" data-toggle="tab">Permata</a></li>
-</ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="bca-custom-va">
-<pre><code class="highlight json"><span class="s2">"bank_transfer"</span><span class="err">:</span><span class="p">{</span>
-  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bca"</span><span class="p">,</span>
-  <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"12345678911"</span> <span class="c1">//Length should be within 1 to 11</span>
-<span class="p">}</span>
-</code></pre>
-    </div>
-
-    <div class="tab-pane" id="bni-custom-va">
-<pre><code class="highlight json"><span class="s2">"bank_transfer"</span><span class="err">:</span><span class="p">{</span>
-  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"bni"</span><span class="p">,</span>
-  <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"12345678"</span> <span class="c1">//Length should be within 1 to 8</span>
-<span class="p">}</span>
-</code></pre>
-    </div>
-
-    <div class="tab-pane" id="permata-custom-va">
-<pre><code class="highlight json"><span class="s2">"bank_transfer"</span><span class="err">:</span><span class="p">{</span>
-  <span class="s2">"bank"</span><span class="p">:</span> <span class="s2">"permata"</span><span class="p">,</span>
-  <span class="s2">"va_number"</span><span class="p">:</span> <span class="s2">"1234567890"</span> <span class="c1">//Length should be 10. Only supported for b2b transactions</span>
-<span class="p">}</span>
-</code></pre>
-    </div>
-  </div>
-
-  <h2 id="description">Description</h2>
-
-  <p><code>transaction_status</code> value description for Bank Transfer transaction:</p>
+  <p>Nilai <code>transaction_status</code> dalam transaksi direct debit:</p>
 
   <table>
     <thead>
@@ -829,36 +863,36 @@ If the number provided is shorter than required, then the number will be prefixe
     <tbody>
       <tr>
         <td><code>settlement</code></td>
-        <td>Transaction successful, customer has been completed the transaction.</td>
+        <td>Transaksi sukses, customer telah berhasil menyelesaikan/membayar transaksi.</td>
       </tr>
       <tr>
         <td><code>pending</code></td>
-        <td>The transaction has successfully created but has not been completed by the customer.</td>
+        <td>Transaksi telah berhasil dibuat tetapi belum dibayarkan oleh customer.</td>
       </tr>
       <tr>
         <td><code>expire</code></td>
-        <td>Transaction failure because customer did not complete the payment within allowed time.</td>
+        <td>Transaksi gagal karena customer tidak menyelesaikan pembayaran dalam waktu tertentu.</td>
       </tr>
       <tr>
         <td><code>cancel</code></td>
-        <td>Transaction is canceled by trigger from Merchant.</td>
+        <td>Transaksi dibatalkan oleh Merchant.</td>
       </tr>
       <tr>
         <td><code>deny</code></td>
-        <td>The bank rejected the transaction.</td>
+        <td>Bank menolak transaksi tersebut.</td>
       </tr>
     </tbody>
   </table>
 
   <p><br />
-Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detailed definition of transaction_status</em></a></p>
+Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>Definisi lebih detail transaction_status</em></a></p>
 
-  <p>For more detail: <a href="https://api-docs.midtrans.com/">Complete Core API documentation</a></p>
+  <p>Untuk lebih detail: <a href="https://api-docs.midtrans.com/">Dokumentasi lengkap Core API</a></p>
 </div>
 
 
             <div class="pagination">
-              <ul><li class="left">« Previous: <a href="integration_gopay.html">Core API : GoPay Integration</a></li><li class="right">Next: <a href="integration_direct_debit.html">Core API : Direct Debit Integration</a> »</li></ul>
+              <ul><li class="left">« Sebelumnya: <a href="integration_bank_transfer.html">Core API : Integrasi Transfer Bank</a></li><li class="right">Selanjutnya: <a href="https://api-docs.midtrans.com">Core API : Channel Pembayaran Lain</a> »</li></ul>
             </div>
           </div>
         </div><!--/span-->
@@ -965,8 +999,6 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detai
   </div>
 </footer>
 
-
-
     <script src="../../javascripts/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../javascripts/dropdown.js" type="text/javascript"></script>
 <script src="../../javascripts/tab_custom.js" type="text/javascript"></script>
@@ -981,7 +1013,7 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detai
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-85529823-1', 'auto');
-      ga('send', 'pageview'); 
+      ga('send', 'pageview');
 
     </script>
     <script>
@@ -992,7 +1024,7 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detai
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
         });
-
+        
         $('body, .nav-overlay').bind('click', e => {
           if ($(e.target).closest('.nav-wrapper').length == 0) {
             // click happened outside of .navbar, so hide
@@ -1025,8 +1057,7 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>More detai
         $('.sub-nav-wrapper').on('hide.bs.collapse', function () {
           $('.nav-overlay').removeClass('active');
         });
-
-        mixpanel.track('en docs page viewed',{
+        mixpanel.track('id docs page viewed',{
           'url' : location.href
         });
 
