@@ -395,6 +395,12 @@
 	</div>
 </div>
 
+<div class="alert alert-info" role="alert">
+  <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+  <span class="sr-only">Info:</span>
+<strong>Info</strong>:<br />Please <a href="https://beta-docs.midtrans.com/en/snap/platform/overview?id=shopify">visit this page</a> for more advanced and updated guide.</p>
+</div>
+
 <h3 id="midtrans-integration-with-shopify">Midtrans Integration with Shopify</h3>
 
 <p>Please complete the following steps in advance:</p>
@@ -424,10 +430,19 @@
     <p><img alt="Setting" class="img-responsive img-thumbnail" src="../../images/welcome/redirect_url_production.png" />
  <br /><br /></p>
 
-    <p>Fill <strong>Payment Notification URL</strong> with: <code>http://vt-pixels.herokuapp.com/veritrans/callback_url</code>.<br />
- Fill <strong>Finish Redirect URL</strong> with: <code>&lt;your_website&gt;</code>.<br />
- Fill <strong>Unfinish Redirect URL</strong> with: <code>&lt;your_website&gt;</code>.<br />
- Fill <strong>Error Redirect URL</strong> with: <code>&lt;your_website&gt;</code>.</p>
+    <p>On <strong>Production</strong> mode:</p>
+
+    <p>Fill <strong>Payment Notification URL</strong> with: <code>http://vt-pixels.midtrans.com/veritrans/callback_url</code><br />
+ Fill <strong>Finish Redirect URL</strong> with: <code>&lt;your_website&gt;</code><br />
+ Fill <strong>Unfinish Redirect URL</strong> with: <code>&lt;your_website&gt;</code><br />
+ Fill <strong>Error Redirect URL</strong> with: <code>&lt;your_website&gt;</code></p>
+
+    <p>On <strong>Sandbox</strong> mode:</p>
+
+    <p>Fill <strong>Payment Notification URL</strong> with: <code>http://vt-pixels.sandbox.midtrans.com/veritrans/callback_url</code><br />
+ Fill <strong>Finish Redirect URL</strong> with: <code>&lt;your_website&gt;</code><br />
+ Fill <strong>Unfinish Redirect URL</strong> with: <code>&lt;your_website&gt;</code><br />
+ Fill <strong>Error Redirect URL</strong> with: <code>&lt;your_website&gt;</code></p>
   </li>
   <li>
     <p>Choose <strong>Settings - Access Keys</strong>.</p>
