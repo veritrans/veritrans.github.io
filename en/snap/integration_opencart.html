@@ -853,6 +853,28 @@
       });
     </script>
 
+    <script src="../../javascripts/bootstrap-notify.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $.notify(
+        {
+          // options
+          icon: 'glyphicon glyphicon-warning-sign',
+          title: '',
+          message: '<b>Heads Up, New Improved Docs!</b><br> We recommend our brand new up-to-date, improved, & easier to understand documentation that will help you find what you need! <a href="https://beta-docs.midtrans.com">Click this banner to check it out!</a>',
+          url: 'https://beta-docs.midtrans.com',
+          target: '_blank'
+        },
+        {
+          type: 'danger',
+          delay: 0,
+          placement: 
+            { from: "top", align: "right" },
+          offset: 
+            { x: 50, y: 70 }
+        }
+      );
+    </script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
   </body>
 </html><!-- Veritrans.3.0-20150423 -->
