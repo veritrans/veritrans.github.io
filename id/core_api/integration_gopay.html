@@ -960,6 +960,28 @@ Link: <a href="https://api-docs.midtrans.com/#transaction-status"><em>Definisi l
       });
     </script>
 
+    <script src="../../javascripts/bootstrap-notify.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $.notify(
+        {
+          // options
+          icon: 'glyphicon glyphicon-warning-sign',
+          title: '',
+          message: '<b>Dokumentasi Baru!</b><br> Kami sarankan dokumentasi baru kami yang ter-update, diperbagus, & lebih mudah dimengerti. Untuk membantu kamu menemukan yang kamu cari! <a href="https://beta-docs.midtrans.com">Klik notifikasi ini untuk melihatnya!</a>',
+          url: 'https://beta-docs.midtrans.com',
+          target: '_blank'
+        },
+        {
+          type: 'danger',
+          delay: 0,
+          placement: 
+            { from: "top", align: "right" },
+          offset: 
+            { x: 50, y: 70 }
+        }
+      );
+    </script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
   </body>
 </html><!-- Veritrans.3.0-20150423 -->
