@@ -421,13 +421,44 @@
     <p>Choose <strong>Settings - Configuration</strong>.</p>
 
     <p><img alt="Setting" class="img-responsive img-thumbnail" src="../../images/welcome/affiliate/sirclo02.png" />
- <br /><br /></p>
+ <br /></p>
 
-    <p>Fill <strong>Payment Notification URL</strong> with: <code>&lt;your_website&gt;</code>.<br /><strong>E.g</strong> : if your website is http://abc.jejualan.com, so your Payment Notification URL should be filled with “http://abc.jejualan.com”.<br /></p>
+    <table>
+      <thead>
+        <tr>
+          <th>URL Role</th>
+          <th>Redirect URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Payment Notification URL</td>
+          <td>[your-site-url]</td>
+        </tr>
+        <tr>
+          <td>Finish Redirect URL</td>
+          <td>[your-site-url]/store/payment/veritrans/success</td>
+        </tr>
+        <tr>
+          <td>Error Redirect URL</td>
+          <td>[your-site-url]/store/payment/veritrans/failed</td>
+        </tr>
+        <tr>
+          <td>Unfinish Redirect URL</td>
+          <td>[your-site-url]/store/payment/</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p>Fill <strong>Finish Redirect URL</strong> with: <code>&lt;your_website&gt;/store/payment/veritrans/success</code>.<br />
- Fill <strong>Unfinish Redirect URL</strong> with: <code>&lt;your_website&gt;/store/payment/</code>.<br />
- Fill <strong>Error Redirect URL</strong> with: <code>&lt;your_website&gt;/store/payment/veritrans/failed</code>.</p>
+    <p><br /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+   <span class="sr-only">Note: </span>
+   <br />Do not forget to use <strong>http://</strong> or <strong>https://</strong> when you fill Notification URL and Redirect URL.</p>
+    </div>
+
+    <p><br /></p>
   </li>
   <li>
     <p>Choose <strong>Settings - Access Keys</strong>.</p>

@@ -420,14 +420,44 @@
     <p>Pilih <strong>Settings - Configuration</strong>.</p>
 
     <p><img alt="Setting" class="img-responsive img-thumbnail" src="../../images/welcome/affiliate/sirclo02.png" />
- <br /><br /></p>
+ <br /></p>
 
-    <p>Isi <strong>Payment Notification URL</strong> dengan : <code>&lt;website_anda&gt;</code>.<br />
- Contoh, jika website Anda adalah http://abc.jejualan.com, maka Payment Notification URL harus diisi dengan “http://abc.jejualan.com”.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>URL Role</th>
+          <th>Redirect URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Payment Notification URL</td>
+          <td>[your-site-url]</td>
+        </tr>
+        <tr>
+          <td>Finish Redirect URL</td>
+          <td>[your-site-url]/store/payment/veritrans/success</td>
+        </tr>
+        <tr>
+          <td>Error Redirect URL</td>
+          <td>[your-site-url]/store/payment/veritrans/failed</td>
+        </tr>
+        <tr>
+          <td>Unfinish Redirect URL</td>
+          <td>[your-site-url]/store/payment/</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p>Isi <strong>Finish Redirect URL</strong> dengan: <code>&lt;website_anda&gt;/store/payment/veritrans/success</code>.<br />
- Isi <strong>Unfinish Redirect URL</strong> dengan: <code>&lt;website_anda&gt;/store/payment/</code>.<br />
- Isi <strong>Error Redirect URL</strong> dengan: <code>&lt;website_anda&gt;/store/payment/veritrans/failed</code>.</p>
+    <p><br /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+   <span class="sr-only">Note: </span>
+   <br />Mohon lengkapi URL dengan <strong>http://</strong> atau <strong>https://</strong> ketika mengisi Notification URL and Redirect URL.</p>
+    </div>
+
+    <p><br /></p>
   </li>
   <li>
     <p>Pilih <strong>Settings - Access Keys</strong></p>
