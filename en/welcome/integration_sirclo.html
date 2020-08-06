@@ -422,14 +422,44 @@
     <p>Choose <strong>Settings - Configuration</strong>.</p>
 
     <p><img alt="Setting" class="img-responsive img-thumbnail" src="../../images/welcome/affiliate/sirclo02.png" />
- <br /><br /></p>
+ <br /></p>
 
-    <p>Fill <strong>Payment Notification URL</strong> with : <code>&lt;your_website&gt;/payment_ipn/veritrans/notify</code>.<br />
- E.g: If your website is www.abc.com, so your Payment Notification URL should be filled with “http://www.abc.com/payment_ipn/veritrans/notify”.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>URL Role</th>
+          <th>Redirect URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Payment Notification URL</td>
+          <td>[your-site-url]/payment_ipn/veritrans/notify</td>
+        </tr>
+        <tr>
+          <td>Finish Redirect URL</td>
+          <td>[your-site-url]/payment_ipn/veritrans/completed</td>
+        </tr>
+        <tr>
+          <td>Error Redirect URL</td>
+          <td>[your-site-url]/payment_ipn/veritrans/error</td>
+        </tr>
+        <tr>
+          <td>Unfinish Redirect URL</td>
+          <td>[your-site-url]/payment_ipn/veritrans/unfinish</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p>Fill <strong>Finish Redirect URL</strong> with: <code>&lt;your_website&gt;/payment_ipn/veritrans/completed</code>.<br />
- Fill <strong>Unfinish Redirect URL</strong> with: <code>&lt;your_website&gt;/payment_ipn/veritrans/unfinish</code>.<br />
- Fill <strong>Error Redirect URL</strong> with: <code>&lt;your_website&gt;/payment_ipn/veritrans/error</code>.</p>
+    <p><br /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+   <span class="sr-only">Note: </span>
+   <br />Please make sure to input <strong>http://</strong> or <strong>https://</strong> when filling Notification URL and Redirect URL, according to your web-server configuration. If you are not sure, try opening your web URL in a browser, and check the URL is <strong>http</strong> or <strong>https</strong> on the address bar.</p>
+    </div>
+
+    <p><br /></p>
   </li>
   <li>
     <p>Choose <strong>Settings - Access Keys</strong></p>

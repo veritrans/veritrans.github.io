@@ -420,14 +420,44 @@
     <p>Pilih <strong>Settings - Configuration</strong>.</p>
 
     <p><img alt="Setting" class="img-responsive img-thumbnail" src="../../images/welcome/affiliate/sirclo02.png" />
- <br /><br /></p>
+ <br /></p>
 
-    <p>Isi <strong>Payment Notification URL</strong> dengan : <code>&lt;website_anda&gt;/payment_ipn/veritrans/notify</code>.<br />
- Contoh, jika website Anda adalah www.abc.com, maka Payment Notification URL harus diisi dengan “http://www.abc.com/payment_ipn/veritrans/notify”.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>URL Role</th>
+          <th>Redirect URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Payment Notification URL</td>
+          <td>[your-site-url]/payment_ipn/veritrans/notify</td>
+        </tr>
+        <tr>
+          <td>Finish Redirect URL</td>
+          <td>[your-site-url]/payment_ipn/veritrans/completed</td>
+        </tr>
+        <tr>
+          <td>Error Redirect URL</td>
+          <td>[your-site-url]/payment_ipn/veritrans/error</td>
+        </tr>
+        <tr>
+          <td>Unfinish Redirect URL</td>
+          <td>[your-site-url]/payment_ipn/veritrans/unfinish</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p>Isi <strong>Finish Redirect URL</strong> dengan: <code>&lt;website_anda&gt;/payment_ipn/veritrans/completed</code>.<br />
- Isi <strong>Unfinish Redirect URL</strong> dengan: <code>&lt;website_anda&gt;/payment_ipn/veritrans/unfinish</code>.<br />
- Isi <strong>Error Redirect URL</strong> dengan: <code>&lt;website_anda&gt;/payment_ipn/veritrans/error</code>.</p>
+    <p><br /></p>
+
+    <div class="alert alert-info" role="alert">
+      <p><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">Note:</span>
+   <span class="sr-only">Note: </span>
+   <br />MMohon lengkapi URL dengan <strong>http://</strong> atau <strong>https://</strong> saat mengisi Notification URL dan Redirect URL, sesuai konfigurasi web server anda. Jika anda tidak yakin, silakan buka URL website anda di browser, dan cek URL anda menggunakan <strong>http</strong> atau <strong>https</strong>.</p>
+    </div>
+
+    <p><br /></p>
   </li>
   <li>
     <p>Pilih <strong>Settings - Access Keys</strong></p>
